@@ -1,0 +1,150 @@
+«REM»
+«»
+«»
+«»	$Filename:	Log.xpt $
+«»	$Revision: 937 $
+«»	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+«»	$Author: smork $
+«»	$Id: Log.xpt 937 2010-04-20 09:06:22Z smork $
+«»
+«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+«»
+«»	This program and the accompanying materials are made available under the
+«»	terms of the Eclipse Public License v1.0.
+«»
+«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+«»
+«»
+«»
+«ENDREM»
+
+«IMPORT metamodel»
+
+«EXTENSION de::morknet::mrw::generator::base::ext::gleisteil»
+«EXTENSION de::morknet::mrw::generator::base::ext::signal»
+
+«DEFINE Gleisteile FOR Modell»
+«FILE "Gleisteile.log" LOG»
+«EXPAND Main FOREACH eAllContents.typeSelect(Gleisteil).sortBy(e|getGleisteilName(e))»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Signale FOR Modell»
+«FILE "Signale.log" LOG»
+«EXPAND Main FOREACH eAllContents.typeSelect(Signal).sortBy(s|getSignalName(s))»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Controller FOR Modell»
+«FILE "Controller.log" LOG»
+«EXPAND Main FOREACH eAllContents.typeSelect(Controller).sortBy(c|c.id)»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Abschnitte FOR Modell»
+«FILE "Abschnitte.log" LOG»
+«FOREACH gruppe AS g»
+Gruppe «name»
+«EXPAND Main FOREACH eAllContents.typeSelect(Gleisabschnitt).sortBy(a|a.name)»
+«ENDFOREACH»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Devices FOR Modell»
+«FILE "Devices.log" LOG»
+«EXPAND Device FOREACH eAllContents.typeSelect(Unit).sortBy(c|c.unit_no)»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Summary FOR Modell»
+«FILE "summery.log" LOG»
+Name: «this.name»
+«EXPAND Main FOREACH gruppe»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Main FOR Gruppe»
+«this.metaType.name»: «name»
+«EXPAND Main FOREACH abschnitt»
+«ENDDEFINE»
+
+«DEFINE Main FOR Gleisabschnitt»
+  Gleisabschnitt: «name» «unit_no»
+«EXPAND Main FOREACH bauelement»
+«ENDDEFINE»
+
+«REM»
+««««« Dump unit numbers »»»»»
+«ENDREM»
+«DEFINE Device FOR Unit»
+    «metaType.name»: [«unit_no»]
+«ENDDEFINE»
+
+«DEFINE Device FOR Signal»
+	Signal: [«unit_no»] «abschnitt.gruppe.name»/«name»
+«ENDDEFINE»
+
+«DEFINE Device FOR Verzweigung»
+	Verzweigung: [«unit_no»] «abschnitt.gruppe.name»/«name»
+«ENDDEFINE»
+
+«DEFINE Device FOR Gleisabschnitt»
+	Abschnitt: [«unit_no»] «gruppe.name»/«name»
+«ENDDEFINE»
+
+
+«REM»
+««««« Dump device infos »»»»»
+«ENDREM»
+
+«DEFINE Main FOR Gleis»
+    Gleis: «name» # «getGleisteilName(this.a)» <-> «getGleisteilName(b)» # «getDirection()»
+«ENDDEFINE»
+
+«DEFINE Main FOR Weiche»
+    Weiche: «name» # «getGleisteilName(this.a)» <-> b=«getGleisteilName(b)» c=«getGleisteilName(c)» # «getDirection()» [«unit_no»]
+«ENDDEFINE»
+
+«DEFINE Main FOR DKW»
+    DKW: «name» # a=«getGleisteilName(this.a)» b=«getGleisteilName(b)» <-> c=«getGleisteilName(c)» d=«getGleisteilName(d)» # «getDirection()» [«unit_no»]
+«ENDDEFINE»
+
+«DEFINE Main FOR Signal»
+	Signal: «name» in «abschnitt.name» # «inZaehlrichtung» [«unit_no»]
+«ENDDEFINE»
+
+«DEFINE Main FOR Bauelement»
+    «metaType.name»: «name»
+«ENDDEFINE»
+
+«DEFINE Main FOR Controller»
+// Controller «id»
+«EXPAND Main FOREACH anschluss»
+«EXPAND Main FOREACH modules»
+//
+«ENDDEFINE»
+
+«DEFINE Main FOR Anschluss»
+//      Anschluss: «number»
+«FOREACH lichtsignal AS signal»
+//          Lichtsignal «signal.name» («signal.abschnitt.name»)
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Main FOR Impulsmodul»
+//      Impulsmodul: «number»
+«FOREACH magnetartikel AS artikel»
+//          Magnetartikel «artikel.name» («artikel.abschnitt.name»)
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Main FOR Gleismodul»
+//      Gleismodul: «number» 
+«FOREACH abschnitte AS abschnitt»
+//          Abschnitt «abschnitt.name»
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Main FOR Modul»
+«ERROR "Abstract!"»
+«ENDDEFINE»

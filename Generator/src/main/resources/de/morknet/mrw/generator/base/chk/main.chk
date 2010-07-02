@@ -1,0 +1,87 @@
+/*
+**
+**	$Filename:	main.chk $
+**	$Revision: 927 $
+**	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+**	$Author: smork $
+**	$Id: main.chk 937 2010-04-20 09:06:22Z smork $
+**
+**	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+**
+**	This program and the accompanying materials are made available under the
+**	terms of the Eclipse Public License v1.0.
+**
+**	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+**
+**
+*/
+
+import metamodel;
+extension de::morknet::mrw::generator::base::ext::string;
+
+context Modell ERROR "Eine Modelleisenbahn muss da sein!" : true;
+
+context Bahnhof ERROR "Ein Bahnhof (" + name + ") muss mindestens eine Weiche haben!" :
+	this.abschnitt.bauelement.typeSelect(Verzweigung).size > 0;
+
+context Gleis WARNING "Ein Gleis sollte mindestens einen Anschluss belegt haben! " + name :
+	(a != null) || (b != null);
+
+context Weiche WARNING "Eine Weiche sollte alle Anschlüsse belegt haben! " + name :
+	a != null && b != null && c != null;
+
+context Weiche ERROR "Eine Weiche muss einen Abzweig definiert haben! " + name :
+	bIstAbzweig || cIstAbzweig;
+
+context DKW WARNING "Eine DKW sollte alle Anschlüsse belegt haben! " + name :
+	a != null && b != null && c != null && d != null;
+
+context DKW ERROR "Eine DKW muss einen Abzweig definiert haben! " + name :
+	adIstAbzweig || bcIstAbzweig;
+
+context DKW if adIstAbzweig || bcIstAbzweig ERROR "Eine DKW darf nicht zwei Abzweige definiert haben! " + name :
+	adIstAbzweig != bcIstAbzweig;
+
+context Formsignal ERROR "Ein Formsignal hat entweder zwei oder drei Spulen! " + name :
+	(spulen == 2) || (spulen == 3);
+
+context Formgleissperrsignal ERROR "Ein Formgleissperrsignal hat immer zwei Spulen! " + name :
+	spulen == 2;
+
+context Bauelement ERROR "Ein Bauteil sollte benannt sein!" :
+	isDefined(this.name);
+
+context Controller ERROR "Die ID muss zwischen 0 und 2040 liegen!" :
+	(id > 0) && (id < 2040);
+
+context Controller ERROR "Der Controller " + id + " hat mehr als 4 Lichtsignalmodule!" :
+	anschluss.size <= 4;
+
+/*
+context Modul ERROR "Die Portnummer muss 0, 1 oder 2 lauten!" :
+	(port >= 0) && (port <= 2);
+*/
+
+context Unit ERROR "Die Gerätenummer muss definiert sein!" :
+	(unit_no > 0) && (unit_no < 65536);
+
+context Anschluss WARNING "Das Lichtsignalmodul " + number + " an Controller " + controller.id + " hat keine angeschlossenen Lichtsignale!" :
+	lichtsignal.size > 0;
+
+context Impulsmodul WARNING "Das Impulsmodul " + number + " an Controller " + controller.id + " hat keine angeschlossenen Magnetartikel!" :
+	magnetartikel.size > 0;
+
+context Gleismodul WARNING "Das Gleismodul " + number + " an Controller " + controller.id + " hat keine angeschlossenen Gleise!" :
+	abschnitte.size > 0;
+	
+context Gleismodul ERROR "Das Gleismodul " + number + " an Controller " + controller.id + " hat mehr als vier Gleise anschlossen!" :
+	abschnitte.size <= 4;
+
+context Lichtsignal WARNING "Das Lichtsignal " + name + " im Abschnitt " + abschnitt.name + " hat keinen Anschluss!" :
+	anschluss != null;
+
+context Magnetartikel WARNING "Der Magnetartikel " + name + " im Abschnitt " + abschnitt.name + " hat kein Modul!" :
+	modul != null;
+
+context Gleisabschnitt WARNING "Der Gleisabschnitt " + name + " hat kein Modul!" :
+	modul != null;

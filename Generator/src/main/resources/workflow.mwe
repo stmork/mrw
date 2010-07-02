@@ -1,0 +1,49 @@
+<workflow>
+	<property name="metaModel" value="../Modelleditor/model/Modelrailway.ecore"/>
+	<property name="anlage"    value="Stellwerk" />
+
+	<component id="xmiParser" class="org.eclipse.xtend.typesystem.emf.XmiReader">
+		<modelFile value="${model}"/>
+		<metaModelFile value="${metaModel}"/>
+		<outputSlot value="${slot}"/>
+		<firstElementOnly value="true"/>
+	</component>
+
+	<component class="org.eclipse.xtend.check.CheckComponent">
+		<metaModel id="mrw" class="org.eclipse.xtend.typesystem.emf.EmfMetaModel">
+			<metaModelFile value="${metaModel}"/>
+		</metaModel>
+<!--
+		<checkFile value="ModelrailwayConstraints"/> 
+ -->
+		<checkFile value="de::morknet::mrw::generator::base::chk::main"/>
+		<emfAllChildrenSlot value="${slot}"/>
+	</component>
+
+	<component id="dirCleaner" class="org.eclipse.emf.mwe.utils.DirectoryCleaner" directory="${gen-src}" />
+	<component id="dirCleaner" class="org.eclipse.emf.mwe.utils.DirectoryCleaner" directory="../${anlage}/${gen-src}" />
+	
+	<component class="org.eclipse.xpand2.Generator" skipOnErrors="false">
+		<metaModel idRef="mrw"/>
+		<fileEncoding value="ISO-8859-15"/>
+		<globalVarDef name="actionPackage" value="${actionPackage}"/>
+		<expand
+			value="de::morknet::mrw::generator::base::xpt::Main::Main FOR model" />
+		<outlet name="LOG" path="${gen-log}">
+			<postprocessor
+				class="de.morknet.mrw.beautifier.MrwBeautifier"/>
+		</outlet>
+		<outlet name="BASE" path="../${anlage}">
+			<postprocessor
+				class="org.eclipse.xpand2.output.XmlBeautifier"/>
+		</outlet>
+		<outlet name="RCC" path="../${anlage}/${gen-src}">
+			<postprocessor
+				class="org.eclipse.xpand2.output.JavaBeautifier"/>
+		</outlet>
+		<outlet path="${gen-src}">
+			<postprocessor
+				class="org.eclipse.xpand2.output.JavaBeautifier"/>
+		</outlet>
+	</component>
+</workflow>

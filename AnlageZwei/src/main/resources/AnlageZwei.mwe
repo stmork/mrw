@@ -1,0 +1,4 @@
+<workflow>
+	<property file="workflow.properties"/>
+	<cartridge file="workflow.mwe" inheritAll="true"/>
+</workflow>

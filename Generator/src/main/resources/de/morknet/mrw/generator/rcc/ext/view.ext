@@ -1,0 +1,111 @@
+/*
+**
+**	$Filename:	view.ext $
+**	$Revision: 954 $
+**	$Date: 2010-05-01 11:31:46 +0200 (Sa, 01. Mai 2010) $
+**	$Author: smork $
+**	$Id: view.ext 954 2010-05-01 09:31:46Z smork $
+**
+**	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+**
+**	This program and the accompanying materials are made available under the
+**	terms of the Eclipse Public License v1.0.
+**
+**	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+**
+**
+*/
+
+import metamodel;
+
+extension de::morknet::mrw::generator::base::ext::constants;
+extension de::morknet::mrw::generator::base::ext::string;
+
+String asClassFilename(Element e) :
+	e.name + ".class";
+
+String asPackageName(Modell m) :
+	defaultPackage(m) + ".rcc";
+
+String asPackageName(Gruppe g) :
+	asPackageName(g.modell) + ".view";
+
+String asClassName(Gruppe g) :
+	clean(g.name).toFirstUpper();
+
+String asClassFilename(Gruppe g) :
+	asPath(asPackageName(g) + "." + asClassName(g)) + ".java";
+
+String asViewId(Gruppe g) :
+	baseId(g) + "." + clean(g.name).toLowerCase();
+
+/************************
+ Plugin ID handling
+************************/
+
+String asPluginId(Modell m) :
+	baseId(m);
+
+String asPluginIdClassname(Modell m) :
+	"PluginId";
+
+String asPluginIdFilename(Modell m) :
+	asPath(asPackageName(m) + "." + asPluginIdClassname(m)) + ".java";
+
+/************************
+ InfoView ID handling
+************************/
+
+String asInfoViewId(Modell m) :
+	baseId(m) + ".InfoView";
+
+String asInfoViewClassname(Modell m) :
+	"InfoView";
+
+String asInfoViewIdClassname(Modell m) :
+	"InfoViewId";
+
+String asInfoViewIdFilename(Modell m) :
+	asPath(asPackageName(m) + "." + asInfoViewIdClassname(m)) + ".java";
+
+/**********************
+ ButtonView ID handling
+**********************/
+
+String asButtonViewId(Modell m) :
+	baseId(m) + ".ButtonView";
+
+String asButtonViewClassname(Modell m) :
+	"ButtonView";
+
+String asButtonViewIdClassname(Modell m) :
+	"ButtonViewId";
+
+String asButtonViewIdFilename(Modell m) :
+	asPath(asPackageName(m) + "." + asButtonViewIdClassname(m)) + ".java";
+
+String asTitle(Strecke s) :
+	"Strecke " + s.name;
+
+String asTitle(Gruppe g) :
+	g.name;
+
+/**********************
+ icon paths
+**********************/
+
+String infoIcon(Modell m) :
+	"icons/info.gif";
+
+String commandIcon(Modell m) :
+	"icons/command.gif";
+
+String icon(Bahnhof bf) :
+	"icons/Bahnhof.gif";
+
+String icon(Strecke s) :
+	"icons/Strecke.gif";
+
+String icon(Gruppe g) :
+	"icons/sample.gif";
+	

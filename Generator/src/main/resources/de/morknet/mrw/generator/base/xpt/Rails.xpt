@@ -1,0 +1,359 @@
+«REM»
+«»
+«»
+«»	$Filename:	Rails.xpt $
+«»	$Revision: 937 $
+«»	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+«»	$Author: smork $
+«»	$Id: Rails.xpt 937 2010-04-20 09:06:22Z smork $
+«»
+«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+«»
+«»	This program and the accompanying materials are made available under the
+«»	terms of the Eclipse Public License v1.0.
+«»
+«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+«»
+«»
+«»
+«ENDREM»
+
+«IMPORT metamodel»
+
+«EXTENSION de::morknet::mrw::generator::base::ext::gleisteil»
+«EXTENSION de::morknet::mrw::generator::base::ext::gruppe»
+«EXTENSION de::morknet::mrw::generator::base::ext::abschnitt»
+«EXTENSION de::morknet::mrw::generator::base::ext::signal»
+«EXTENSION de::morknet::mrw::generator::base::ext::magnetartikel»
+«EXTENSION de::morknet::mrw::generator::base::ext::base»
+«EXTENSION de::morknet::mrw::generator::base::ext::module»
+«EXTENSION de::morknet::mrw::generator::base::ext::constants»
+
+«DEFINE Infrastructure FOR Modell»
+«FILE asClassFileName(this)»
+«EXPAND de::morknet::mrw::generator::rcc::xpt::Header::Header»
+
+package «defaultPackage()»;
+
+import java.util.List;
+import «basePackage()».*;
+import «actionPackage()».action.InfoSupplier;
+import de.morknet.mrw.gui.info.BeerModeInfo;
+import de.morknet.mrw.gui.info.TourInfo;
+
+/**
+ * Diese Klasse stellt die Instanz für die Modelleisenbahn <quote>«name»</quote> dar.
+ */
+public class «asClassName()» extends Modell
+{
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Konstruktur
+	 */
+	public «asClassName()»()
+	{
+		super("«name»");
+
+		create();
+		link();
+		setStartPoints();
+
+		// Betriebsgruppen initialisieren.
+		for (Gruppe gruppe : getGroups())
+		{
+			gruppe.prepare();
+		}
+	}
+
+	private void create()
+	{
+«IF gruppe.size > 0»
+		Gruppe          gruppe;
+«IF eAllContents.typeSelect(Gleisabschnitt).size > 0»
+		Abschnitt       abschnitt;
+«IF eAllContents.typeSelect(Gleisteil).size > 0»
+		Gleisteil       gleisteil;
+«ENDIF»
+«ENDIF»
+«IF eAllContents.typeSelect(Signal).size > 0»
+		Signal          signal;
+«ENDIF»
+«IF eAllContents.typeSelect(Controller).size > 0»
+		MicroController controller;
+«ENDIF»
+		DeviceUnit device;
+		int        pin;
+		int        port;
+«ENDIF»
+
+		/* ************************************************* */
+		/*              Micro controller                     */
+		/* ************************************************* */
+«FOREACH controller AS c»
+		controller = new MicroController(«c.id»);
+		add(controller);
+«ENDFOREACH»
+
+«FOREACH gruppe AS gruppe»
+		/* ************************************************* */
+		/*              Bahnhof/Strecke                      */
+		/* ************************************************* */
+		gruppe = new Gruppe(this, «getGruppenName(gruppe)»);
+		add(gruppe);
+«FOREACH gruppe.abschnitt.sortBy(a|getAbschnittName(a)) AS abschnitt»
+		abschnitt = new Abschnitt(this, gruppe, «getAbschnittName(abschnitt)»);
+«IF abschnitt.modul != null»
+		abschnitt.setMicroControllerId(«abschnitt.modul.controller.id», «abschnitt.unit_no»);
+«ENDIF»
+		add(abschnitt);
+		gruppe.add(abschnitt);
+«FOREACH abschnitt.bauelement.typeSelect(Gleisteil).sortBy(gt|getGleisteilName(gt)) AS gleisteil»
+«EXPAND createRail FOR gleisteil»
+		add(abschnitt, gleisteil);
+«ENDFOREACH»
+«FOREACH abschnitt.bauelement.typeSelect(Signal).sortBy(gt|getSignalName(gt)) AS signal»
+«EXPAND createSignal FOR signal»
+«EXPAND Configuration FOR signal»
+		add(abschnitt, signal);
+«ENDFOREACH»
+«ENDFOREACH»
+«ENDFOREACH»
+
+		/* ************************************************* */
+		/*              Pin configurations                   */
+		/* ************************************************* */
+«FOREACH controller AS c»
+«EXPAND Configuration FOR c»
+«EXPAND Configuration FOREACH c.modules»
+«ENDFOREACH»
+	}
+
+	private void setStartPoints()
+	{
+		Abschnitt abschnitt;
+«FOREACH eAllContents.typeSelect(Gleisabschnitt) AS abschnitt»
+«LET getStartGleis(abschnitt) AS start»
+«IF start != null»
+		abschnitt = findSegment(«getAbschnittName(abschnitt)»);
+		abschnitt.setStartTrack((Gleis)find(«getGleisteilName(start)»));
+«ENDIF»
+«ENDLET»
+«ENDFOREACH»
+	}
+
+	private void link()
+	{
+«EXPAND link   FOREACH eAllContents.typeSelect(Gleisteil)»
+	}
+
+	@Override
+	public BeerModeInfo getBeerModeInfo()
+	{
+		return InfoSupplier.getBeerModeInfo();
+	}
+
+	@Override
+	public List<TourInfo> getTourInfos()
+	{
+		return InfoSupplier.getTourInfos();
+	}
+}
+«ENDFILE»
+«ENDDEFINE»
+
+«REM»
+Signalkonfiguration
+«ENDREM»
+
+«DEFINE Configuration FOR Signal»
+«ERROR "Signal is zu abstrakt"»
+«ENDDEFINE»
+
+«DEFINE Configuration FOR Formsignal»
+«IF modul != null»
+	signal.setMicroControllerId(«modul.controller.id», «unit_no»);
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Configuration FOR Lichtsignal»
+«IF anschluss != null»
+	signal.setMicroControllerId(«anschluss.controller.id», «unit_no»);
+«ENDIF»
+«ENDDEFINE»
+
+«REM»
+Modulkonfiguration
+«ENDREM»
+
+«DEFINE Configuration FOR Controller»
+«IF anschluss.size > 0»
+	// Controller «id», Anschlüsse für Lichtsignale
+	port = 48;
+«FOREACH anschluss AS a»
+«IF a.lichtsignal.size > 0»
+	// Controller «id», Lichtsignal Modulnummer: «a.number»
+	pin = port;
+«FOREACH a.lichtsignal AS signal»
+	device = findSignal(Signal.buildName(findSegment(«getAbschnittName(signal.abschnitt)»), «getSignalName(signal)»));
+	device.setPinConfiguration(pin, «getPinCount(signal)»);
+	pin += «getPinCount(signal)»;
+«ENDFOREACH»
+«ENDIF»
+	port -= 16;
+«ENDFOREACH»
+«ENDIF»
+
+«IF modules.size > 0»
+	// Start with port 0
+	port = 0;
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Configuration FOR Modul»
+«ERROR "Modul ist zu abstrakt!"»
+«ENDDEFINE»
+
+«DEFINE Configuration FOR Impulsmodul»
+«IF magnetartikel.size > 0»
+	// Controller «controller.id», Magnetartikel-Modul «number»
+	pin = 0;
+«FOREACH magnetartikel AS ma»
+	device = findMagneticPart(«getMagnetartikelName(ma)»);
+	device.setPinConfiguration(port + pin, «getPinCount(ma)»);
+	pin += «getPinCount(ma)»;
+«ENDFOREACH»
+«ENDIF»
+«IF magnetartikel.typeSelect(Verzweigung).exists(v|v.neu)»
+	port += 16;
+«ELSE»
+	port +=  8;
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Configuration FOR Gleismodul»
+«IF abschnitte.size > 0»
+	// Controller «controller.id», Gleismodul «number»
+	pin = 0;
+«FOREACH abschnitte AS abschnitt»
+	device = findSegment(«getAbschnittName(abschnitt)»);
+	device.setPinConfiguration(port + pin++, 1);
+«ENDFOREACH»
+«ENDIF»
+	port += 8;
+«ENDDEFINE»
+
+«REM»
+Gleisteile erstellen
+«ENDREM»
+
+«DEFINE createRail FOR Gleis»
+		gleisteil = new Gleis(abschnitt, «getGleisteilName(this)», «aInZaehlrichtung», «istAbzweig», «istHauptgleis»);
+«ENDDEFINE»
+
+«DEFINE createRail FOR Weiche»
+		gleisteil = new Weiche(abschnitt, «getGleisteilName(this)», «aInZaehlrichtung», «bIstAbzweig», «cIstAbzweig», «bIstBevorzugt», «cIstBevorzugt», «neu»);
+«IF modul != null»
+		gleisteil.setMicroControllerId(«modul.controller.id», «unit_no»);
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE createRail FOR DKW»
+		gleisteil = new DKW(abschnitt, «getGleisteilName(this)», «aInZaehlrichtung», «bcIstAbzweig», «adIstAbzweig», «neu»);
+«IF modul != null»
+		gleisteil.setMicroControllerId(«modul.controller.id», «unit_no»);
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE createRail FOR Gleisteil»
+«ERROR "Gleisteil " + name + " ist abstrakt!"»
+«ENDDEFINE»
+
+«REM»
+Gleisteile erstellen
+«ENDREM»
+
+«DEFINE createSignal FOR Gleissperrsignal»
+		signal = new Gleissperrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Vorsignal»
+		signal = new Vorsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Blocksignal»
+		signal = new Blocksignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Einfahrsignal»
+		signal = new Einfahrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Ausfahrsignal»
+		signal = new Ausfahrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Formhauptsignal»
+		signal = new Formhauptsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung», «this.spulen»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Formvorsignal»
+		signal = new Formvorsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung», «this.spulen»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Formgleissperrsignal»
+		signal = new Gleissperrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
+«ENDDEFINE»
+
+«DEFINE createSignal FOR Signal»
+		signal = new Signal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
+«ENDDEFINE»
+
+«REM»
+Gleisteile verstöpseln
+«ENDREM»
+
+«DEFINE link FOR Gleis»
+		linkGleis(«getGleisteilName(this)»,
+			«getGleisteilName(a)»,
+			«getGleisteilName(b)»);
+«ENDDEFINE»
+
+«DEFINE link FOR Weiche»
+		linkWeiche(«getGleisteilName(this)»,
+			«getGleisteilName(a)»,
+			«getGleisteilName(b)»,
+			«getGleisteilName(c)»);
+«ENDDEFINE»
+
+«DEFINE link FOR DKW»
+		linkDKW(«getGleisteilName(this)»,
+			«getGleisteilName(a)»,
+			«getGleisteilName(b)»,
+			«getGleisteilName(c)»,
+			«getGleisteilName(d)»);
+«ENDDEFINE»
+
+«DEFINE link FOR Gleisteil»
+«ERROR "Gleisteil ist abstrakt!"»
+«ENDDEFINE»
+
+«REM»
+Gleisteile validieren
+«ENDREM»
+
+«DEFINE validate FOR Gleis»
+		linkGleis(«getGleisteilName(this)», «getGleisteilName(a)», «getGleisteilName(b)»);
+«ENDDEFINE»
+
+«DEFINE validate FOR Weiche»
+		linkWeiche(«getGleisteilName(this)», «getGleisteilName(a)», «getGleisteilName(b)», «getGleisteilName(c)»);
+«ENDDEFINE»
+
+«DEFINE validate FOR DKW»
+		linkDKW(«getGleisteilName(this)», «getGleisteilName(a)», «getGleisteilName(b)», «getGleisteilName(c)», «getGleisteilName(d)»);
+«ENDDEFINE»
+
+«DEFINE validate FOR Gleisteil»
+«ERROR "Gleisteil ist abstrakt!"»
+«ENDDEFINE»

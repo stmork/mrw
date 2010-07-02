@@ -1,0 +1,40 @@
+/*
+**
+**	$Filename:	magnetartikel.ext $
+**	$Revision: 937 $
+**	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+**	$Author: smork $
+**	$Id: magnetartikel.ext 937 2010-04-20 09:06:22Z smork $
+**
+**	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+**
+**	This program and the accompanying materials are made available under the
+**	terms of the Eclipse Public License v1.0.
+**
+**	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+**
+**
+*/
+
+import metamodel;
+
+extension de::morknet::mrw::generator::base::ext::signal;
+extension de::morknet::mrw::generator::base::ext::gleisteil;
+
+cached String getMagnetartikelName(Magnetartikel ma) :
+	ma == null ? "null" : "\"" + ma.metaType.name + " " + ma.name + "\"";
+
+String getMagnetartikelName(Verzweigung v) :
+	getGleisteilName(v);
+
+String getMagnetartikelName(Formsignal s) :
+	getSignalName(s);
+
+Integer getSpulenzahl(Magnetartikel ma) :
+	ma.spulen == 0 ? 2 : ma.spulen;
+
+private cached Integer getSpulenzahl(Modell m, Integer spulen) :
+	m.eAllContents.typeSelect(Magnetartikel).select(e|getSpulenzahl(e) == spulen).size * spulen;
+
+cached Integer getSpulenzahl(Modell m) :
+	getSpulenzahl(m, 2) + getSpulenzahl(m, 3);

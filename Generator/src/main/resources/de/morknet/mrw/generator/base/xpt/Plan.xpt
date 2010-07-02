@@ -1,0 +1,122 @@
+«REM»
+«»
+«»
+«»	$Filename:	Plan.xpt $
+«»	$Revision: 937 $
+«»	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+«»	$Author: smork $
+«»	$Id: Plan.xpt 937 2010-04-20 09:06:22Z smork $
+«»
+«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+«»
+«»	This program and the accompanying materials are made available under the
+«»	terms of the Eclipse Public License v1.0.
+«»
+«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+«»
+«»
+«»
+«ENDREM»
+
+«IMPORT metamodel»
+
+«EXTENSION de::morknet::mrw::generator::base::ext::plan»
+
+«DEFINE Main FOR Modell»
+«FILE planName() LOG»
+// dot «planName()» -Tgif -o «planImage()»
+digraph «name»
+{
+«EXPAND Version1»
+}
+«ENDFILE»
+
+«ENDDEFINE»
+
+«DEFINE Version1 FOR Modell»
+	rankdir=LR;
+	node [shape=box];
+	«FOREACH controller AS ctrl SEPARATOR " -> "»«planId(ctrl)»«ENDFOREACH»;
+«FOREACH controller AS ctrl»
+	subgraph «planId(ctrl)» 
+	{
+		rank=same;
+		«planId(ctrl)»;
+«FOREACH ctrl.anschluss AS a»
+		«planId(a)»;
+«ENDFOREACH»
+«FOREACH ctrl.modules AS m»
+		«planId(m)»;
+«ENDFOREACH»
+	}
+«ENDFOREACH»
+
+«FOREACH controller AS ctrl»
+«IF ctrl.anschluss.size > 0»
+		«planId(ctrl)»«FOREACH ctrl.anschluss AS a» -> «planId(a)»«ENDFOREACH»;
+«ENDIF»
+«FOREACH ctrl.modules AS m»
+		«planId(ctrl)» -> «planId(m)»;
+«ENDFOREACH»
+«ENDFOREACH»
+
+«ENDDEFINE»
+
+«DEFINE Version2 FOR Modell»
+	rankdir=LR;
+«FOREACH controller AS ctrl»
+	subgraph «planId(ctrl)»
+	{
+		node [style=filled,shape=box];
+«FOREACH ctrl.anschluss AS a»
+		subgraph «planId(a)»
+		{
+			rank=same;
+			«planId(ctrl)»;
+			node [style=filled];
+		}
+«ENDFOREACH»
+«FOREACH ctrl.modules AS m»
+		subgraph «planId(m)»
+		{
+			rank=same;
+			«planId(ctrl)»;
+			node [style=filled];
+		}
+«ENDFOREACH»
+	}
+«ENDFOREACH»
+
+«FOREACH controller AS ctrl SEPARATOR " -> "»«planId(ctrl)»«ENDFOREACH»
+«FOREACH controller AS ctrl»
+«IF ctrl.anschluss.size > 0»
+	«planId(ctrl)» «FOREACH ctrl.anschluss AS a» -> «planId(a)»«ENDFOREACH»
+«EXPAND Plan FOREACH ctrl.anschluss»
+«ENDIF»
+«FOREACH ctrl.modules AS m»
+	«planId(ctrl)» -> «planId(m)»
+«ENDFOREACH»
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Plan FOR Anschluss»
+«FOREACH lichtsignal AS ls»
+	«planId()» -> "«ls.name»"
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Plan FOR Gleismodul»
+«FOREACH abschnitte AS a»
+	«planId()» -> "«a.name»"
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Plan FOR Impulsmodul»
+«FOREACH magnetartikel AS ma»
+	«planId()» -> "«ma.name»"
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Plan FOR Modul»
+«ERROR planId()»
+«ENDDEFINE»

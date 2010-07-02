@@ -1,0 +1,30 @@
+EAGLE Version 4.16 Copyright (c) 1988-2005 CadSoft
+
+Electrical Rule Check for /home/sm/workspace/mrw/eagle/signal.sch at 10/06/2008 10:44:30 
+
+WARNING: Sheet 1/1: SUPPLY Pin +5V overwritten with VCC
+WARNING: Sheet 1/1, Net N$38: missing Junction at (6.5 3.5)
+WARNING: Sheet 1/1, Net N$39: missing Junction at (6.5 3.3)
+WARNING: Sheet 1/1, Net +12V: missing Junction at (6.5 -0.8)
+WARNING: Sheet 1/1, Net +12V: missing Junction at (6.5 -1)
+WARNING: Sheet 1/1, Net +12V: missing Junction at (6.6 -0.5)
+WARNING: Sheet 1/1, Net +12V: missing Junction at (6.6 -0.3)
+WARNING: Sheet 1/1, Net N$22: missing Junction at (6.6 2.8)
+WARNING: Sheet 1/1, Net N$23: missing Junction at (6.6 2.6)
+WARNING: Sheet 1/1, Net N$24: missing Junction at (6.4 2.4)
+WARNING: Sheet 1/1, Net N$25: missing Junction at (6.3 2.2)
+WARNING: Sheet 1/1, Net N$26: missing Junction at (6.4 2)
+WARNING: Sheet 1/1, Net N$21: missing Junction at (6.5 1.8)
+WARNING: Sheet 1/1, Net N$30: missing Junction at (6.3 1)
+WARNING: Sheet 1/1, Net N$31: missing Junction at (6.4 0.8)
+WARNING: Sheet 1/1, Net N$32: missing Junction at (6.4 0.6)
+WARNING: Sheet 1/1, Net N$33: missing Junction at (6.3 0.4)
+WARNING: Sheet 1/1, Net N$34: missing Junction at (6.4 0.2)
+WARNING: Sheet 1/1, Net N$35: missing Junction at (6.4 0)
+WARNING: Sheet 1/1, Net BUSA6: missing Junction at (2 2.4)
+WARNING: Sheet 1/1, Net VCC: missing Junction at (0.8 2.7)
+
+Board and schematic are consistent
+
+    0 errors
+   21 warnings

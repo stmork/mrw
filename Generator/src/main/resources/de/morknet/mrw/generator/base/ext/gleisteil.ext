@@ -1,0 +1,59 @@
+/*
+**
+**	$Filename:	gleisteil.ext $
+**	$Revision: 937 $
+**	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+**	$Author: smork $
+**	$Id: gleisteil.ext 937 2010-04-20 09:06:22Z smork $
+**
+**	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+**
+**	This program and the accompanying materials are made available under the
+**	terms of the Eclipse Public License v1.0.
+**
+**	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+**
+**
+*/
+
+import metamodel;
+
+private getType(Element e) :
+	e.metaType.name;
+
+private getType(DKW dkw) :
+	"DKW";
+
+private getType(Weiche w) :
+	"Weiche";
+
+private getType(Gleis g) :
+	"Gleis";
+
+cached String getGleisteilName(Gleisteil g) :
+	g == null ? "null" : "\"" + getType(g) + " " + g.name + "\"";
+
+cached String getDirection(Gleisteil g) :
+	g.aInZaehlrichtung ? "a > b" : "a < b";
+
+private cached List[Verzweigung] getVerzweigungen(Gleisabschnitt a) :
+	a.bauelement.typeSelect(Verzweigung);
+
+private cached List[Gleis] getGleise(Gleisabschnitt a) :
+	a.bauelement.typeSelect(Gleis);
+
+private boolean hasAbstellgleis(Gleisabschnitt a) :
+	getGleise(a).exists(g|(g.a == null) || (g.b == null));
+
+private boolean hasVerzweigungen(Gleisabschnitt a) :
+	getVerzweigungen(a).size > 0;
+
+private boolean isAbstellgleis(Gleisabschnitt a) :
+	(!hasVerzweigungen(a)) && hasAbstellgleis(a);
+
+Gleis getStartGleis(Gleisabschnitt a) :
+	getGleise(a).size == 1 ?
+		getGleise(a).first() :
+		(hasAbstellgleis(a) ?
+			getGleise(a).select(g|(g.a == null) || (g.b == null)).first() :
+			null);

@@ -1,0 +1,5 @@
+<welcomePage 
+        title="Modellbahn-Editor"
+        format="wrap">
+        <intro>Dieses Plugin ermöglicht das Editieren von Modelleisenbahnanlagen.</intro>
+</welcomePage>

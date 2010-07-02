@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Modelleisenbahn - Update site" url="http://mrw.sourceforge.net/updates/">
+      Update Site für Modelleisenbahn-Features.
+   </description>
+   <feature url="features/de.morknet.mrw.metamodel_2.0.9.jar" id="de.morknet.mrw.metamodel" version="2.0.9">
+      <category name="de.morknet.mrw.metamodel"/>
+   </feature>
+   <feature url="features/de.morknet.mrw.metamodel_2.0.10.jar" id="de.morknet.mrw.metamodel" version="2.0.10">
+      <category name="de.morknet.mrw.metamodel"/>
+   </feature>
+   <feature url="features/de.morknet.mrw.metamodel_2.0.11.jar" id="de.morknet.mrw.metamodel" version="2.0.11">
+      <category name="de.morknet.mrw.metamodel"/>
+   </feature>
+   <category-def name="de.morknet.mrw.metamodel" label="Modelleisenbahn-Editor"/>
+   <category-def name="de.morknet.mrw.rcc" label="Stellwerk"/>
+</site>

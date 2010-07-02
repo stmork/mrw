@@ -1,0 +1,7 @@
+-org.*,com.*,edu.*,junit.*,gnu.io.*,javax.*
+-de.morknet.mrw.action*
+-de.morknet.mrw.automatic*
+-de.morknet.mrw.Configuration*
+-de.morknet.mrw.*test*
+-de.morknet.mrw.comm.*Connection*
+-de.morknet.mrw.*Exception

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Stellwerk Plug-in
+Bundle-SymbolicName: de.morknet.mrw.rcc;singleton:=true
+Bundle-Version: 1.1.0
+Bundle-Activator: de.morknet.mrw.rcc.Activator
+Bundle-Vendor: MORKNet
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ClassPath: .,
+ lib/commons-logging-1.0.4.jar,
+ lib/log4j-1.2.14.jar,
+ lib/model.jar,
+ lib/RXTXcomm.jar,
+ lib/de.morknet.mrw.control.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

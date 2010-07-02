@@ -1,0 +1,303 @@
+<project name="Anlage Zwei" basedir="." default="package">
+	<property file="${user.home}/.xtext.properties" />
+	<property file="./build.properties.default" />
+
+	<property name="src-path"        value="./src/main/java"/>
+	<property name="tst-path"        value="./src/main/test"/>
+	<property name="res-path"        value="./src/main/resources"/>
+	<property name="bin-path"        value="./bin"/>
+	<property name="lib-path"        value="./lib"/>
+	<property name="instr-path"      value="./instr"/>
+	<property name="findbugs.home"   value="../findbugs"/>
+
+	<property file="${res-path}/workflow.properties" />
+	<property name="gen-src-path"    value="${gen-src}"/>
+	<property name="gen-log-path"    value="${gen-log}"/>
+
+	<property name="emma.enabled"    value="true"/>  
+
+	<!-- ==================================================== -->
+	<!--              Setting up libraries                    --> 
+	<!-- ==================================================== -->
+
+	<path id="log4j.lib">
+		<fileset dir="${lib-path}">
+			<include name="log4j*.jar"/>
+		</fileset>
+		<fileset dir="${eclipse.home.plugins}">
+			<include name="**/org.apache.commons.*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="plugins">
+		<path refid="log4j.lib"/>
+		<fileset dir="${eclipse.home.plugins}">
+			<include name="org.eclipse.emf*.jar"/>
+			<include name="org.eclipse.jface*.jar"/>
+			<include name="org.eclipse.text*.jar"/>
+			<include name="org.eclipse.equinox*.jar"/>
+			<include name="org.eclipse.jdt*.jar"/>
+			<exclude name="org.eclipse*junit*.jar"/>
+			<exclude name="**/*.source*.jar"/>
+			<exclude name="**/*.src*.jar"/>
+			<exclude name="**/*.editor*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="emma.lib">
+		<fileset dir="${lib-path}">
+			<include name="**/emma*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="junit.lib">
+		<fileset dir="${lib-path}">
+			<include name="**/junit.jar"/>
+		</fileset>
+	</path>
+
+	<path id="findbugs.lib">
+		<fileset dir="${findbugs.home}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="oaw.lib">
+		<fileset dir="${eclipse.home.plugins}">
+			<include name="**/org.eclipse.core*.jar"/>
+			<include name="**/org.eclipse.emf*.jar"/>
+			<include name="**/org.eclipse.xtend*.jar"/>
+			<include name="**/org.eclipse.xpand*.jar"/>
+			<include name="com.ibm.*.jar"/>
+			<include name="**/antlr*.jar"/>
+			<include name="**/*xerces*.jar"/>
+			<exclude name="**/*.source*.jar"/>
+			<exclude name="**/*.src*.jar"/>
+			<exclude name="**/*.editor*.jar"/>
+		</fileset>
+		<path refid="plugins"/>
+	</path>
+	
+	<!-- ==================================================== -->
+	<!--              Setting up classpaths                   --> 
+	<!-- ==================================================== -->
+
+	<path id="generate.classpath">
+		<path refid="oaw.lib"/>
+		<pathelement path="${res-path}" />
+		<pathelement path="../Generator/${res-path}" />
+		<pathelement path="../Generator/${bin-path}" />
+		<pathelement path="../Modelleditor"/>
+	</path>
+
+	<path id="compile.classpath">
+		<pathelement path="../Steuerung/${bin-path}" />
+		<pathelement path="../Stellwerk/${bin-path}" />
+		<fileset dir="../Steuerung/${lib-path}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<path refid="plugins"/>
+		<path refid="junit.lib"/>
+	</path>
+		
+	<path id="run.classpath">
+		<pathelement path="${bin-path}" />
+		<pathelement path="../Steuerung/${bin-path}" />
+		<fileset dir="../Steuerung/${lib-path}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<path refid="log4j.lib"/>
+		<path refid="junit.lib"/>
+	</path>
+
+	<path id="instr.classpath">
+		<pathelement path="${bin-path}" />
+		<pathelement path="../Steuerung/${bin-path}" />
+	</path>
+
+	<path id="emma.classpath">
+		<pathelement location="${instr-path}" />  
+		<path refid="run.classpath"/>
+		<path refid="emma.lib"/>
+	</path>
+
+	<path id="findbugs.classpath">
+		<path refid="run.classpath"/>
+		<path refid="findbugs.lib"/>
+	</path>
+
+	<path id="junit.classpath">
+		<path refid="run.classpath"/>
+		<fileset dir="${lib-path}">
+			<include name="**/ant-junit.jar"/>
+		</fileset>
+	</path>
+
+	<!-- ==================================================== -->
+	<!--            Setting up target definitions             --> 
+	<!-- ==================================================== -->
+
+	<taskdef name="workflow" classname="org.eclipse.emf.mwe.core.ant.WorkflowAntTask"           classpathref="generate.classpath"/>
+	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"               classpathref="findbugs.lib"/>
+	<taskdef name="junit"    classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="junit.classpath"/>
+	<taskdef resource="emma_ant.properties" classpathref="emma.lib" />
+
+	<!-- ==================================================== -->
+	<!--              Setting up build targets                --> 
+	<!-- ==================================================== -->
+
+	<target name="compile.cartridge">
+		<mkdir dir="../Generator/${bin-path}"/>
+		<javac srcdir="../Generator/${src-path}" destdir="../Generator/${bin-path}">
+			<classpath refid="generate.classpath"/>
+		</javac>
+	</target>
+
+	<target name="generate" depends="compile.cartridge">
+		<workflow file="AnlageZwei.mwe" classpathref="generate.classpath" failonerror="true"/>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${bin-path}"/>
+		<copy file="${src-path}/log4j.properties" todir="${bin-path}" />
+		<javac srcdir="${src-path}:${gen-src-path}:${tst-path}" destdir="${bin-path}" debug="true">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+
+	<target name="package" depends="compile">
+		<jar destfile="../Stellwerk/lib/model.jar">
+			<zipfileset dir="${bin-path}">
+				<include name="**/*.class"/>
+				<exclude name="**/test/*.class"/>
+				<exclude name="**/ConfigurationMork2.class"/>
+			</zipfileset>
+			<zipfileset dir="${src-path}">
+				<include name="**/*.java"/>
+				<exclude name="**/test/*.java"/>
+			</zipfileset>
+			<zipfileset dir="${gen-src-path}">
+				<include name="**/*.java"/>
+				<exclude name="**/ConfigurationMork2.java"/>
+			</zipfileset>
+		</jar>
+	</target>
+
+	<target name="clean">
+		<delete dir="${bin-path}"/>
+		<delete dir="${instr-path}"/>
+		<delete dir="../Generator/${bin-path}" />
+		<delete>
+			<fileset dir="." includes="TEST-*.xml"/>
+			<fileset dir="." includes="TEST-*.txt"/>
+		</delete>
+		<delete>
+			<fileset dir="." includes="coverage.*"/>
+		</delete>
+		<delete>
+			<fileset dir="." includes="*.emma"/>
+		</delete>
+		<delete file="findbugs-results.xml"/>
+	</target>
+
+	<!-- ==================================================== -->
+	<!--              Setting up runtime targets              --> 
+	<!-- ==================================================== -->
+
+	<target name="hudson" depends="clean,generate,findbugs,emma"/>
+
+	<target name="run" depends="compile">
+		<java classname="de.morknet.mrw.test.Eisenbahn" classpathref="run.classpath"/>
+	</target>
+
+	<target name="formtest" depends="compile">
+		<java classname="de.morknet.mrw.test.FormsignalTest" classpathref="run.classpath"/>
+	</target>
+
+	<target name="findbugs" depends="compile">
+		<echo message="Checking ${ant.project.name}..."/>
+		<findbugs jvmargs="-Xmx128m" home="${findbugs.home}"
+				output="xml:withMessages"
+				outputFile="findbugs-results.xml"
+				classpathref="run.classpath"
+				effort="max"
+				reportlevel="low"
+				failonerror="true">
+			<sourcePath path="${src-path}:{gen-path}"/>
+			<class location="${bin-path}"/>
+			<auxclasspath refid="run.classpath"/>
+		</findbugs>
+	</target>
+	
+	<target name="instr" depends="compile" if="emma.enabled">
+		<mkdir dir="${instr-path}"/>
+		<emma>  
+			<instr instrpathref="instr.classpath" destdir="${instr-path}" metadatafile="metadata.emma" merge="true">  
+				<filter excludes="org.*,com.*,edu.*,junit.*,gnu.io.*,java*"/>
+				<filter excludes="de.morknet.mrw.Configuration*"/>
+				<filter excludes="de.morknet.mrw.*test*"/>
+				<filter excludes="de.morknet.mrw.*rs232*"/>
+				<filter excludes="de.morknet.mrw.*Exception"/>
+			</instr>
+		</emma>  
+	</target>  
+
+	<target name="smoketest" depends="compile">
+		<junit printsummary="on" fork="on" haltonerror="yes" haltonfailure="yes">
+			<classpath refid="run.classpath" />
+			<formatter type="xml"/>
+			<test name="de.morknet.mrw.test.SmokeTest"/>
+		</junit>
+	</target>
+	
+	<target name="test" depends="compile">
+		<taskdef resource="emma_ant.properties" classpathref="emma.lib" />
+		<junit printsummary="on" fork="on" haltonerror="yes" haltonfailure="yes">
+			<classpath refid="emma.classpath" />
+			<formatter type="xml"/>
+			<jvmarg value="-Demma.coverage.out.file=coverage.emma" />  
+			<jvmarg value="-Demma.coverage.out.merge=true" />  
+			<test name="de.morknet.mrw.test.UtilTest"/>
+			<test name="de.morknet.mrw.test.EnumTest"/>
+			<test name="de.morknet.mrw.test.CanMessageTest"/>
+			<test name="de.morknet.mrw.test.MrwMessageTest"/>
+			<test name="de.morknet.mrw.test.ConsistenceTest"/>
+			<test name="de.morknet.mrw.test.SwitchTest"/>
+			<test name="de.morknet.mrw.test.DkwTest"/>
+			<test name="de.morknet.mrw.test.ControllerTest"/>
+			<test name="de.morknet.mrw.test.SimpleRouteTest"/>
+			<test name="de.morknet.mrw.test.BeerModeTest"/>
+			<test name="de.morknet.mrw.test.TourModeTest"/>
+			<test name="de.morknet.mrw.test.ErrorConditionTest"/>
+		</junit>
+	</target>
+
+	<target name="emmajava" depends="compile">
+		<emmajava classname="de.morknet.mrw.test.Coverage"
+				fullmetadata="yes"
+				sourcepath="../Steuerung/${src-path}"
+				libclasspathref="emma.lib"
+				classpathref="run.classpath">
+			<filter excludes="org.*,com.*,edu.*,junit.*,gnu.io.*,javax.*"/>
+			<filter excludes="de.morknet.mrw.Configuration*"/>
+			<filter excludes="de.morknet.mrw.*test*"/>
+			<filter excludes="de.morknet.mrw.*rs232*"/>
+			<filter excludes="de.morknet.mrw.*Exception"/>
+			<xml outfile="coverage.xml" />
+			<txt outfile="coverage.txt" />
+		</emmajava>
+	</target>
+
+	<target name="emma" depends="instr,test">  
+		<taskdef resource="emma_ant.properties" classpathref="emma.lib" />
+			<emma>
+				<report sourcepath="../Steuerung/${src-path}:${src-path}:${gen-src-path}">
+					<fileset dir=".">  
+						<include name="*.emma"/>
+					</fileset>  
+					<txt outfile="coverage.txt" />
+					<xml outfile="coverage.xml" />
+				</report>  
+			</emma>
+	</target>  
+</project>

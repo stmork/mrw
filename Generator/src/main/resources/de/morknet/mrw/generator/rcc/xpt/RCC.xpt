@@ -1,0 +1,29 @@
+«REM»
+«»
+«»
+«»	$Filename:	RCC.xpt $
+«»	$Revision: 937 $
+«»	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+«»	$Author: smork $
+«»	$Id: RCC.xpt 937 2010-04-20 09:06:22Z smork $
+«»
+«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+«»
+«»	This program and the accompanying materials are made available under the
+«»	terms of the Eclipse Public License v1.0.
+«»
+«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+«»
+«»
+«»
+«ENDREM»
+
+«IMPORT metamodel»
+
+«DEFINE Main FOR Modell»
+«EXPAND View::Main FOREACH gruppe»
+«EXPAND View::IdInterfaces»
+«EXPAND Perspective::Class»
+«EXPAND Plugin::Xml»
+«EXPAND Config::Ini»
+«ENDDEFINE»

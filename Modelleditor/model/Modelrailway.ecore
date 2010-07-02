@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metamodel"
+    nsURI="http://www.morknet.de/Modelrailway" nsPrefix="Modelrailway">
+  <eClassifiers xsi:type="ecore:EClass" name="Anschluss">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lichtsignal" upperBound="-1"
+        eType="#//Lichtsignal" eOpposite="#//Lichtsignal/anschluss"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
+        eType="#//Controller" changeable="false" eOpposite="#//Controller/anschluss"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lichtsignal" abstract="true" eSuperTypes="#//Signal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="anschluss" lowerBound="1"
+        eType="#//Anschluss" eOpposite="#//Anschluss/lichtsignal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Signal" abstract="true" eSuperTypes="#//Bauelement #//Unit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inZaehlrichtung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bauelement" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitt" lowerBound="1"
+        eType="#//Gleisabschnitt" changeable="false" eOpposite="#//Gleisabschnitt/bauelement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gleisabschnitt" eSuperTypes="#//Element #//Unit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gruppe" lowerBound="1"
+        eType="#//Gruppe" changeable="false" eOpposite="#//Gruppe/abschnitt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modul" lowerBound="1" eType="#//Gleismodul"
+        eOpposite="#//Gleismodul/abschnitte"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bauelement" lowerBound="1"
+        upperBound="-1" eType="#//Bauelement" containment="true" eOpposite="#//Bauelement/abschnitt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Unit" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit_no" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gruppe" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modell" lowerBound="1"
+        eType="#//Modell" changeable="false" eOpposite="#//Modell/gruppe"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitt" upperBound="-1"
+        eType="#//Gleisabschnitt" containment="true" eOpposite="#//Gleisabschnitt/gruppe"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Modell" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" upperBound="-1"
+        eType="#//Controller" containment="true" eOpposite="#//Controller/modell"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gruppe" upperBound="-1"
+        eType="#//Gruppe" containment="true" eOpposite="#//Gruppe/modell"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="anschluss" upperBound="-1"
+        eType="#//Anschluss" containment="true" eOpposite="#//Anschluss/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
+        eType="#//Modul" containment="true" eOpposite="#//Modul/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modell" lowerBound="1"
+        eType="#//Modell" changeable="false" eOpposite="#//Modell/controller"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Modul" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
+        eType="#//Controller" changeable="false" eOpposite="#//Controller/modules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gleismodul" eSuperTypes="#//Modul">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitte" upperBound="-1"
+        eType="#//Gleisabschnitt" eOpposite="#//Gleisabschnitt/modul"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ausfahrsignal" eSuperTypes="#//Hauptlichtsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Hauptlichtsignal" abstract="true" eSuperTypes="#//Lichtsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bahnhof" eSuperTypes="#//Gruppe"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Verzweigung" abstract="true" eSuperTypes="#//Gleisteil #//Magnetartikel #//Unit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="neu" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Magnetartikel" abstract="true" eSuperTypes="#//Bauelement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spulen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modul" lowerBound="1" eType="#//Impulsmodul"
+        eOpposite="#//Impulsmodul/magnetartikel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Impulsmodul" eSuperTypes="#//Modul">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="magnetartikel" upperBound="-1"
+        eType="#//Magnetartikel" eOpposite="#//Magnetartikel/modul"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gleisteil" abstract="true" eSuperTypes="#//Bauelement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="teile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aInZaehlrichtung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Einfahrsignal" eSuperTypes="#//Hauptlichtsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Weiche" eSuperTypes="#//Verzweigung">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cIstAbzweig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bIstAbzweig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bIstBevorzugt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cIstBevorzugt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" lowerBound="1" eType="#//Gleisteil"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" lowerBound="1" eType="#//Gleisteil"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" lowerBound="1" eType="#//Gleisteil"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Formvorsignal" eSuperTypes="#//Formsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Formsignal" abstract="true" eSuperTypes="#//Magnetartikel #//Signal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Gleis" eSuperTypes="#//Gleisteil">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="istAbzweig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="istHauptgleis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" lowerBound="1" eType="#//Gleisteil"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" lowerBound="1" eType="#//Gleisteil"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Blocksignal" eSuperTypes="#//Hauptlichtsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vorsignal" eSuperTypes="#//Lichtsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DKW" eSuperTypes="#//Verzweigung">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adIstAbzweig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bcIstAbzweig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" lowerBound="1" eType="#//Gleisteil"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" lowerBound="1" eType="#//Gleisteil"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" lowerBound="1" eType="#//Gleisteil"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="d" lowerBound="1" eType="#//Gleisteil"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gleissperrsignal" eSuperTypes="#//Lichtsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Formhauptsignal" eSuperTypes="#//Formsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Formgleissperrsignal" eSuperTypes="#//Formsignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Strecke" eSuperTypes="#//Gruppe"/>
+</ecore:EPackage>

@@ -1,0 +1,89 @@
+«REM»
+«»
+«»
+«»	$Filename:	Plugin.xpt $
+«»	$Revision: 937 $
+«»	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+«»	$Author: smork $
+«»	$Id: Plugin.xpt 937 2010-04-20 09:06:22Z smork $
+«»
+«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+«»
+«»	This program and the accompanying materials are made available under the
+«»	terms of the Eclipse Public License v1.0.
+«»
+«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+«»
+«»
+«»
+«ENDREM»
+
+«IMPORT metamodel»
+
+«EXTENSION de::morknet::mrw::generator::rcc::ext::product»
+«EXTENSION de::morknet::mrw::generator::rcc::ext::perspective»
+«EXTENSION de::morknet::mrw::generator::rcc::ext::view»
+
+«DEFINE Xml FOR Modell»
+«FILE "plugin.xml" BASE»
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<!-- oAW generated... -->
+	<extension id="«asProductId()»" point="org.eclipse.core.runtime.products">
+		<product name="Stellwerk" application="«asApplicationId()»" description=":-)">
+			<property name="windowImages" value="icons/rcc16.gif,icons/rcc32.gif,icons/rcc64.gif,icons/rcc96.gif,icons/rcc128.gif"/>
+			<property name="AppName" value="Stellwerk «this.name»"/>
+			<property name="aboutImage" value="«about()»"/>
+			<property name="aboutText" value="Stellwerk «this.name»"/>
+ 		</product>
+ 	</extension>
+
+   <extension
+         id="«asApplicationId()»"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="«asPackageName()».Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="«asPerspectiveIdClassname()»"
+            class="«asPerspectivePackageName()».«asPerspectiveClassName()»"
+            icon="«icon()»"
+            id="«asPerspectiveId()»">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="«asPackageName()».«asInfoViewClassname()»"
+            icon="«infoIcon()»"
+            id="«asInfoViewId()»"
+            name="Info">
+      </view>
+      <view
+            allowMultiple="false"
+            class="«asPackageName()».«asButtonViewClassname()»"
+            icon="«commandIcon()»"
+            id="«asButtonViewId()»"
+            name="Kommandos">
+      </view>
+«FOREACH gruppe AS grp»
+      <view
+            allowMultiple="true"
+            class="«asPackageName(grp)».«asClassName(grp)»"
+            icon="«icon(grp)»"
+            id="«asViewId(grp)»"
+            name="«asTitle(grp)»">
+      </view>
+«ENDFOREACH»
+   </extension>
+
+</plugin>
+«ENDFILE»
+«ENDDEFINE»

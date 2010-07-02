@@ -1,0 +1,26 @@
+EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
+
+Electrical Rule Check für C:/Programme/EAGLE-4.16r2/projects/mc/untitled.sch am 25.02.2008 15:26:56 
+
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 RESET
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 CS
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 SI
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 SCK
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 TX0RTS
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 TX1RTS
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 TX2RTS
+FEHLER: Seite 1/1: kein SUPPLY für POWER-Pin IC1 VDD
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 RXCAN
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC1 OSC1
+FEHLER: Seite 1/1: kein SUPPLY für POWER-Pin IC1 VSS
+FEHLER: Seite 1/1: kein SUPPLY für POWER-Pin IC2 AGND
+FEHLER: Seite 1/1: kein SUPPLY für POWER-Pin IC2 AVCC
+FEHLER: Seite 1/1: kein SUPPLY für POWER-Pin IC2 AREF
+FEHLER: Seite 1/1: kein SUPPLY für POWER-Pin IC2 VCC
+FEHLER: Seite 1/1: kein SUPPLY für POWER-Pin IC2 GND
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC2 RESET
+
+ Kein Board geladen - Die Konsistenz ist nicht überprüft
+
+   17 Fehler
+    0 Warnungen

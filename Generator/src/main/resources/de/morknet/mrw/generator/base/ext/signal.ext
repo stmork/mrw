@@ -1,0 +1,39 @@
+/*
+**
+**	$Filename:	signal.ext $
+**	$Revision: 937 $
+**	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+**	$Author: smork $
+**	$Id: signal.ext 937 2010-04-20 09:06:22Z smork $
+**
+**	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+**
+**	This program and the accompanying materials are made available under the
+**	terms of the Eclipse Public License v1.0.
+**
+**	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+**
+**
+*/
+
+import metamodel;
+
+String getSignalName(Signal s) :
+	s == null ? "null" : "\"" + s.name + "\"";
+
+cached Integer getPinCount(Vorsignal gss) : 4;
+cached Integer getPinCount(Blocksignal gss) : 2;
+cached Integer getPinCount(Einfahrsignal gss) : 3;
+cached Integer getPinCount(Ausfahrsignal gss) : 5;
+cached Integer getPinCount(Gleissperrsignal gss) : 2;
+cached Integer getPinCount(Lichtsignal ls) : 0;
+ 
+cached Integer getPinCount(Modell m) :
+	m.eAllContents.typeSelect(Vorsignal).size * 4 +
+	m.eAllContents.typeSelect(Blocksignal).size * 2 +
+	m.eAllContents.typeSelect(Einfahrsignal).size * 3 +
+	m.eAllContents.typeSelect(Ausfahrsignal).size * 6 +
+	m.eAllContents.typeSelect(Gleissperrsignal).size * 2;
+
+cached List[Signal] getSignals(Gleisabschnitt a, Boolean inDir) :
+	a.bauelement.typeSelect(Signal).select(s|s.inZaehlrichtung == inDir);

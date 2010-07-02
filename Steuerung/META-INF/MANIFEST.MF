@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Modelleisenbahn Steuerung
+Bundle-SymbolicName: de.morknet.mrw.control;singleton:=true
+Bundle-Version: 1.1.1
+Bundle-Vendor: MORKNet
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: lib/RXTXcomm.jar
+Export-Package: gnu.io

@@ -1,0 +1,22 @@
+EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
+
+Electrical Rule Check für S:/mrw/eagle/gateway.sch am 06.07.2008 22:20:33 
+
+WARNUNG: Seite 1/1: POWER-Pin IC1 AGND verbunden mit GND
+WARNUNG: Seite 1/1: POWER-Pin IC1 AVCC verbunden mit +5V
+WARNUNG: Seite 1/1: POWER-Pin IC1 AREF verbunden mit +5V
+WARNUNG: Seite 1/1: POWER-Pin IC1 VCC verbunden mit +5V
+WARNUNG: Seite 1/1: POWER-Pin IC2 VDD verbunden mit +5V
+WARNUNG: Seite 1/1: POWER-Pin IC2 VSS verbunden mit GND
+WARNUNG: Seite 1/1: POWER-Pin IC3 VCC verbunden mit +5V
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC4 T2IN
+FEHLER: Seite 1/1: Nicht angeschlossener INPUT-Pin: IC4 R2IN
+FEHLER: Seite 1/1: kein SUPPLY für impliziten POWER-Pin IC4P VCC
+WARNUNG: Nur 1 Pin an Netz N$16
+WARNUNG: Nur 1 Pin an Netz N$17
+WARNUNG: Seite 1/1, Netz +5V: fehlende Junction an Position (7.5 4.1)
+
+ Kein Board geladen - Die Konsistenz ist nicht überprüft
+
+    3 Fehler
+   10 Warnungen

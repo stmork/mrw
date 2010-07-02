@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ Steffen A. Mork
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.morknet.de/Modelrailway"
+            class="de.morknet.mrw.metamodel.provider.ModelrailwayItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.morknet.de/Modelrailway"
+            class="de.morknet.mrw.metamodel.ModelrailwayPackage"
+            genModel="model/Modelrailway.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.morknet.mrw.metamodel.presentation.ModelrailwayModelWizardID"
+            name="%_UI_ModelrailwayModelWizard_label"
+            class="de.morknet.mrw.metamodel.presentation.ModelrailwayModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="mrw32.gif">
+         <description>%_UI_ModelrailwayModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="de.morknet.mrw.metamodel.presentation.ModelrailwayEditorID"
+            name="%_UI_ModelrailwayEditor_label"
+            icon="icons/full/obj16/ModelrailwayModelFile.gif"
+            extensions="modelrailway"
+            class="de.morknet.mrw.metamodel.presentation.ModelrailwayEditor"
+            contributorClass="de.morknet.mrw.metamodel.presentation.ModelrailwayActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

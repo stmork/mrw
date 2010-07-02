@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" copyrightText="Copyright (C) 2010 committers of this modelrailway project. All rights reserved."
+    modelDirectory="/Modelleditor/src" editDirectory="/Modelleditor/src" editorDirectory="/Modelleditor/src"
+    modelPluginID="de.morknet.mrw.metamodel" modelName="Modelrailway" modelPluginClass=""
+    testsDirectory="" importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="6.0"
+    copyrightFields="false" editPluginID="de.morknet.mrw.metamodel" language="">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+  </genAnnotations>
+  <foreignModel>Modelrailway.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Modelrailway" basePackage="de.morknet.mrw"
+      disposableProviderFactory="true" ecorePackage="Modelrailway.ecore#/">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Anschluss">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Anschluss/number"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/lichtsignal"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/controller"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Lichtsignal">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Lichtsignal/anschluss"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Signal">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Signal/inZaehlrichtung"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Bauelement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Bauelement/abschnitt"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Element">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Element/name"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Gleisabschnitt">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/gruppe"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/modul"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/bauelement"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Unit">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Unit/unit_no"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Gruppe">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Gruppe/modell"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gruppe/abschnitt"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Modell">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Modell/controller"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Modell/gruppe"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Controller">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Controller/id"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/anschluss"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/modules"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/modell"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Modul">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Modul/number"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Modul/controller"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Gleismodul">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleismodul/abschnitte"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Ausfahrsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Hauptlichtsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Bahnhof"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Verzweigung">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Verzweigung/neu"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Magnetartikel">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Magnetartikel/spulen"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Magnetartikel/modul"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Impulsmodul">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Impulsmodul/magnetartikel"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Gleisteil">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Gleisteil/teile"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Gleisteil/aInZaehlrichtung"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Einfahrsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Weiche">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Weiche/cIstAbzweig"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Weiche/bIstAbzweig"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Weiche/bIstBevorzugt"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Weiche/cIstBevorzugt"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Weiche/b"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Weiche/c"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Weiche/a"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Formvorsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Formsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Gleis">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Gleis/istAbzweig"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Gleis/istHauptgleis"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleis/a"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleis/b"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Blocksignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Vorsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//DKW">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//DKW/adIstAbzweig"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//DKW/bcIstAbzweig"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//DKW/a"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//DKW/c"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//DKW/b"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//DKW/d"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Gleissperrsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Formhauptsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Formgleissperrsignal"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Strecke"/>
+  </genPackages>
+</genmodel:GenModel>

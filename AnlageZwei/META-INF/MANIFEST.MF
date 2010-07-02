@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Anlage Mork Zwei
+Bundle-SymbolicName: de.morknet.mrw.mork2; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: MORKNet
+Require-Bundle: org.eclipse.emf.mwe.core;bundle-version="0.7.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

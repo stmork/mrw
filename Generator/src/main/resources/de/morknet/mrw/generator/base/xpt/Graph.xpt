@@ -1,0 +1,111 @@
+«REM»
+«»
+«»
+«»	$Filename:	Graph.xpt $
+«»	$Revision: 937 $
+«»	$Date: 2010-04-20 11:06:22 +0200 (Di, 20. Apr 2010) $
+«»	$Author: smork $
+«»	$Id: Graph.xpt 937 2010-04-20 09:06:22Z smork $
+«»
+«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+«»
+«»	This program and the accompanying materials are made available under the
+«»	terms of the Eclipse Public License v1.0.
+«»
+«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+«»
+«»
+«»
+«ENDREM»
+
+«IMPORT metamodel»
+
+«EXTENSION de::morknet::mrw::generator::base::ext::graph»
+«EXTENSION de::morknet::mrw::generator::base::ext::gruppe»
+«EXTENSION de::morknet::mrw::generator::base::ext::abschnitt»
+«EXTENSION de::morknet::mrw::generator::base::ext::signal»
+
+«DEFINE Main FOR Modell»
+«FILE asGraphFileName(this) LOG»
+// dot «asGraphFileName(this)» -Tgif -o «asGraphImageName(this)» 
+digraph «name»
+{
+«FOREACH gruppe AS g»
+	subgraph «asClusterName(g)»
+	{
+		node [style=filled];
+«FOREACH g.abschnitt AS abschnitt»
+		subgraph «asClusterName(abschnitt)»
+		{
+			node [style=filled];
+«EXPAND Gleis FOREACH abschnitt.bauelement.typeSelect(Gleisteil)»
+«EXPAND Signals FOR abschnitt»
+			label = «getAbschnittName(abschnitt)»;
+		}
+«ENDFOREACH»
+		label = «getGruppenName(g)»;
+	}
+«ENDFOREACH»
+«EXPAND Link FOREACH eAllContents.typeSelect(Gleisteil)» 
+}
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE Gleis FOR Gleisteil»
+			«asNodeName()» [shape=«asNodeType()»];
+«ENDDEFINE»
+
+«DEFINE Signals FOR Gleisabschnitt»
+«EXPAND DrawSignal(this) FOR getSignals(true)»
+«EXPAND DrawSignal(this) FOR getSignals(false)»
+«ENDDEFINE»
+
+«DEFINE DrawSignal(Gleisabschnitt abschnitt) FOR List[Signal]»
+«IF size > 0»
+			«asStructName(abschnitt)» [shape=record,label=
+			"{«FOREACH this.typeSelect(Hauptlichtsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH-»
+«FOREACH this.typeSelect(Formhauptsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH-»
+|«FOREACH this.typeSelect(Vorsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH-»
+|«FOREACH this.typeSelect(Gleissperrsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH»}"];
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Signal FOR Signal»
+			«asSignalName()» [shape=record,label=«asSignalLabel()»];
+«ENDDEFINE»
+
+«DEFINE Link FOR Weiche»
+
+«IF aInZaehlrichtung»
+	«asNodeName(this)» -> «asNodeName(a)»;
+«ELSE»
+	«asNodeName(this)» -> «asNodeName(b)»;
+	«asNodeName(this)» -> «asNodeName(c)»;
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Link FOR DKW»
+«IF aInZaehlrichtung»
+	«asNodeName(this)» -> «asNodeName(a)»;
+	«asNodeName(this)» -> «asNodeName(b)»;
+«ELSE»
+	«asNodeName(this)» -> «asNodeName(c)»;
+	«asNodeName(this)» -> «asNodeName(d)»;
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Link FOR Gleis»
+«IF aInZaehlrichtung»
+«IF a != null»
+	«asNodeName()» -> «asNodeName(a)»;
+«ENDIF»
+«ELSE»
+«IF b != null»
+	«asNodeName()» -> «asNodeName(b)»;
+«ENDIF»
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE Link FOR Gleisteil»
+«ERROR "Ein Gleisteil ist abstrakt!"»
+«ENDDEFINE»

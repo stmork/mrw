@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_s63QAEMOEd-Zo7nGYHKgLw" name="Modelrailway">
+    <packagedElement xmi:type="uml:Class" xmi:id="_s63QAUMOEd-Zo7nGYHKgLw" name="Anschluss">
+      <ownedAttribute xmi:id="_s63QAkMOEd-Zo7nGYHKgLw" name="number" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s63QA0MOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s63QBEMOEd-Zo7nGYHKgLw" name="lichtsignal" type="_s63QCEMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633P0MOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s63QBUMOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s63QBkMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s63QB0MOEd-Zo7nGYHKgLw" name="controller" type="_s633JkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633MUMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s63QCEMOEd-Zo7nGYHKgLw" name="Lichtsignal" isAbstract="true">
+      <generalization xmi:id="_s63QCUMOEd-Zo7nGYHKgLw" general="_s63QC0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s63QCkMOEd-Zo7nGYHKgLw" name="anschluss" type="_s63QAUMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633P0MOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s63QC0MOEd-Zo7nGYHKgLw" name="Signal" isAbstract="true">
+      <generalization xmi:id="_s63QDEMOEd-Zo7nGYHKgLw" general="_s63QEEMOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_s63QDUMOEd-Zo7nGYHKgLw" general="_s633FEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s63QDkMOEd-Zo7nGYHKgLw" name="inZaehlrichtung" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s63QD0MOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s63QEEMOEd-Zo7nGYHKgLw" name="Bauelement" isAbstract="true">
+      <generalization xmi:id="_s63QEUMOEd-Zo7nGYHKgLw" general="_s63QE0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s63QEkMOEd-Zo7nGYHKgLw" name="abschnitt" type="_s63QFkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633F0MOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s63QE0MOEd-Zo7nGYHKgLw" name="Element" isAbstract="true">
+      <ownedAttribute xmi:id="_s63QFEMOEd-Zo7nGYHKgLw" name="name" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s63QFUMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s63QFkMOEd-Zo7nGYHKgLw" name="Gleisabschnitt">
+      <generalization xmi:id="_s63QF0MOEd-Zo7nGYHKgLw" general="_s63QE0MOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_s63QGEMOEd-Zo7nGYHKgLw" general="_s633FEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633EEMOEd-Zo7nGYHKgLw" name="bauelement" type="_s63QEEMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633F0MOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633EUMOEd-Zo7nGYHKgLw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633EkMOEd-Zo7nGYHKgLw" name="gruppe" type="_s633GEMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633OEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633E0MOEd-Zo7nGYHKgLw" name="modul" type="_s633OUMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633PkMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633FEMOEd-Zo7nGYHKgLw" name="Unit" isAbstract="true">
+      <ownedAttribute xmi:id="_s633FUMOEd-Zo7nGYHKgLw" name="unit_no" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633FkMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633F0MOEd-Zo7nGYHKgLw" memberEnd="_s633EEMOEd-Zo7nGYHKgLw _s63QEkMOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633GEMOEd-Zo7nGYHKgLw" name="Gruppe" isAbstract="true">
+      <generalization xmi:id="_s633GUMOEd-Zo7nGYHKgLw" general="_s63QE0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633GkMOEd-Zo7nGYHKgLw" name="modell" type="_s633HkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633N0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633G0MOEd-Zo7nGYHKgLw" name="abschnitt" type="_s63QFkMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633OEMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633HEMOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633HUMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633HkMOEd-Zo7nGYHKgLw" name="Modell">
+      <generalization xmi:id="_s633H0MOEd-Zo7nGYHKgLw" general="_s63QE0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633IEMOEd-Zo7nGYHKgLw" name="controller" type="_s633JkMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633MEMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633IUMOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633IkMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633I0MOEd-Zo7nGYHKgLw" name="gruppe" type="_s633GEMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633N0MOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633JEMOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633JUMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633JkMOEd-Zo7nGYHKgLw" name="Controller">
+      <ownedAttribute xmi:id="_s633J0MOEd-Zo7nGYHKgLw" name="id" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633KEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633KUMOEd-Zo7nGYHKgLw" name="modell" type="_s633HkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633MEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633KkMOEd-Zo7nGYHKgLw" name="anschluss" type="_s63QAUMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633MUMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633K0MOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633LEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633LUMOEd-Zo7nGYHKgLw" name="modules" type="_s633MkMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633NkMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633LkMOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633L0MOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633MEMOEd-Zo7nGYHKgLw" memberEnd="_s633IEMOEd-Zo7nGYHKgLw _s633KUMOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633MUMOEd-Zo7nGYHKgLw" memberEnd="_s633KkMOEd-Zo7nGYHKgLw _s63QB0MOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633MkMOEd-Zo7nGYHKgLw" name="Modul" isAbstract="true">
+      <ownedAttribute xmi:id="_s633M0MOEd-Zo7nGYHKgLw" name="number" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633NEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633NUMOEd-Zo7nGYHKgLw" name="controller" type="_s633JkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633NkMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633NkMOEd-Zo7nGYHKgLw" memberEnd="_s633LUMOEd-Zo7nGYHKgLw _s633NUMOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633N0MOEd-Zo7nGYHKgLw" memberEnd="_s633I0MOEd-Zo7nGYHKgLw _s633GkMOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633OEMOEd-Zo7nGYHKgLw" memberEnd="_s633G0MOEd-Zo7nGYHKgLw _s633EkMOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633OUMOEd-Zo7nGYHKgLw" name="Gleismodul">
+      <generalization xmi:id="_s633OkMOEd-Zo7nGYHKgLw" general="_s633MkMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633O0MOEd-Zo7nGYHKgLw" name="abschnitte" type="_s63QFkMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633PkMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633PEMOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633PUMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633PkMOEd-Zo7nGYHKgLw" memberEnd="_s633O0MOEd-Zo7nGYHKgLw _s633E0MOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633P0MOEd-Zo7nGYHKgLw" memberEnd="_s63QCkMOEd-Zo7nGYHKgLw _s63QBEMOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633QEMOEd-Zo7nGYHKgLw" name="Ausfahrsignal">
+      <generalization xmi:id="_s633QUMOEd-Zo7nGYHKgLw" general="_s633QkMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633QkMOEd-Zo7nGYHKgLw" name="Hauptlichtsignal" isAbstract="true">
+      <generalization xmi:id="_s633Q0MOEd-Zo7nGYHKgLw" general="_s63QCEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633REMOEd-Zo7nGYHKgLw" name="Bahnhof">
+      <generalization xmi:id="_s633RUMOEd-Zo7nGYHKgLw" general="_s633GEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633RkMOEd-Zo7nGYHKgLw" name="Verzweigung" isAbstract="true">
+      <generalization xmi:id="_s633R0MOEd-Zo7nGYHKgLw" general="_s633TEMOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_s633SEMOEd-Zo7nGYHKgLw" general="_s633V0MOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_s633SUMOEd-Zo7nGYHKgLw" general="_s633FEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633SkMOEd-Zo7nGYHKgLw" name="neu" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633S0MOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633TEMOEd-Zo7nGYHKgLw" name="Magnetartikel" isAbstract="true">
+      <generalization xmi:id="_s633TUMOEd-Zo7nGYHKgLw" general="_s63QEEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633TkMOEd-Zo7nGYHKgLw" name="spulen" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633T0MOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633UEMOEd-Zo7nGYHKgLw" name="modul" type="_s633UUMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633VkMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633UUMOEd-Zo7nGYHKgLw" name="Impulsmodul">
+      <generalization xmi:id="_s633UkMOEd-Zo7nGYHKgLw" general="_s633MkMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633U0MOEd-Zo7nGYHKgLw" name="magnetartikel" type="_s633TEMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633VkMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633VEMOEd-Zo7nGYHKgLw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633VUMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633VkMOEd-Zo7nGYHKgLw" memberEnd="_s633U0MOEd-Zo7nGYHKgLw _s633UEMOEd-Zo7nGYHKgLw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633V0MOEd-Zo7nGYHKgLw" name="Gleisteil" isAbstract="true">
+      <generalization xmi:id="_s633WEMOEd-Zo7nGYHKgLw" general="_s63QEEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633WUMOEd-Zo7nGYHKgLw" name="teile" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633WkMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633W0MOEd-Zo7nGYHKgLw" name="aInZaehlrichtung" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633XEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633XUMOEd-Zo7nGYHKgLw" name="Einfahrsignal">
+      <generalization xmi:id="_s633XkMOEd-Zo7nGYHKgLw" general="_s633QkMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633X0MOEd-Zo7nGYHKgLw" name="Weiche">
+      <generalization xmi:id="_s633YEMOEd-Zo7nGYHKgLw" general="_s633RkMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633YUMOEd-Zo7nGYHKgLw" name="cIstAbzweig" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633YkMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633Y0MOEd-Zo7nGYHKgLw" name="bIstAbzweig" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633ZEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633ZUMOEd-Zo7nGYHKgLw" name="bIstBevorzugt" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633ZkMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633Z0MOEd-Zo7nGYHKgLw" name="cIstBevorzugt" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633aEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633aUMOEd-Zo7nGYHKgLw" name="b" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633bEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633akMOEd-Zo7nGYHKgLw" name="c" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633bkMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633a0MOEd-Zo7nGYHKgLw" name="a" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633cEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633bEMOEd-Zo7nGYHKgLw" memberEnd="_s633aUMOEd-Zo7nGYHKgLw _s633bUMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633bUMOEd-Zo7nGYHKgLw" type="_s633X0MOEd-Zo7nGYHKgLw" association="_s633bEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633bkMOEd-Zo7nGYHKgLw" memberEnd="_s633akMOEd-Zo7nGYHKgLw _s633b0MOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633b0MOEd-Zo7nGYHKgLw" type="_s633X0MOEd-Zo7nGYHKgLw" association="_s633bkMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633cEMOEd-Zo7nGYHKgLw" memberEnd="_s633a0MOEd-Zo7nGYHKgLw _s633cUMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633cUMOEd-Zo7nGYHKgLw" type="_s633X0MOEd-Zo7nGYHKgLw" association="_s633cEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633ckMOEd-Zo7nGYHKgLw" name="Formvorsignal">
+      <generalization xmi:id="_s633c0MOEd-Zo7nGYHKgLw" general="_s633dEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633dEMOEd-Zo7nGYHKgLw" name="Formsignal" isAbstract="true">
+      <generalization xmi:id="_s633dUMOEd-Zo7nGYHKgLw" general="_s633TEMOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_s633dkMOEd-Zo7nGYHKgLw" general="_s63QC0MOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633d0MOEd-Zo7nGYHKgLw" name="Gleis">
+      <generalization xmi:id="_s633eEMOEd-Zo7nGYHKgLw" general="_s633V0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633eUMOEd-Zo7nGYHKgLw" name="istAbzweig" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633ekMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633e0MOEd-Zo7nGYHKgLw" name="istHauptgleis" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633fEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633fUMOEd-Zo7nGYHKgLw" name="a" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633f0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633fkMOEd-Zo7nGYHKgLw" name="b" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633gUMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633f0MOEd-Zo7nGYHKgLw" memberEnd="_s633fUMOEd-Zo7nGYHKgLw _s633gEMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633gEMOEd-Zo7nGYHKgLw" type="_s633d0MOEd-Zo7nGYHKgLw" association="_s633f0MOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633gUMOEd-Zo7nGYHKgLw" memberEnd="_s633fkMOEd-Zo7nGYHKgLw _s633gkMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633gkMOEd-Zo7nGYHKgLw" type="_s633d0MOEd-Zo7nGYHKgLw" association="_s633gUMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633g0MOEd-Zo7nGYHKgLw" name="Blocksignal">
+      <generalization xmi:id="_s633hEMOEd-Zo7nGYHKgLw" general="_s633QkMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633hUMOEd-Zo7nGYHKgLw" name="Vorsignal">
+      <generalization xmi:id="_s633hkMOEd-Zo7nGYHKgLw" general="_s63QCEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633h0MOEd-Zo7nGYHKgLw" name="DKW">
+      <generalization xmi:id="_s633iEMOEd-Zo7nGYHKgLw" general="_s633RkMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633iUMOEd-Zo7nGYHKgLw" name="adIstAbzweig" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633ikMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633i0MOEd-Zo7nGYHKgLw" name="bcIstAbzweig" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633jEMOEd-Zo7nGYHKgLw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s633jUMOEd-Zo7nGYHKgLw" name="a" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633kUMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633jkMOEd-Zo7nGYHKgLw" name="c" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633k0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633j0MOEd-Zo7nGYHKgLw" name="b" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633lUMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633kEMOEd-Zo7nGYHKgLw" name="d" type="_s633V0MOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633l0MOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633kUMOEd-Zo7nGYHKgLw" memberEnd="_s633jUMOEd-Zo7nGYHKgLw _s633kkMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633kkMOEd-Zo7nGYHKgLw" type="_s633h0MOEd-Zo7nGYHKgLw" association="_s633kUMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633k0MOEd-Zo7nGYHKgLw" memberEnd="_s633jkMOEd-Zo7nGYHKgLw _s633lEMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633lEMOEd-Zo7nGYHKgLw" type="_s633h0MOEd-Zo7nGYHKgLw" association="_s633k0MOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633lUMOEd-Zo7nGYHKgLw" memberEnd="_s633j0MOEd-Zo7nGYHKgLw _s633lkMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633lkMOEd-Zo7nGYHKgLw" type="_s633h0MOEd-Zo7nGYHKgLw" association="_s633lUMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_s633l0MOEd-Zo7nGYHKgLw" memberEnd="_s633kEMOEd-Zo7nGYHKgLw _s633mEMOEd-Zo7nGYHKgLw">
+      <ownedEnd xmi:id="_s633mEMOEd-Zo7nGYHKgLw" type="_s633h0MOEd-Zo7nGYHKgLw" association="_s633l0MOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633mUMOEd-Zo7nGYHKgLw" name="Gleissperrsignal">
+      <generalization xmi:id="_s633mkMOEd-Zo7nGYHKgLw" general="_s63QCEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633m0MOEd-Zo7nGYHKgLw" name="Formhauptsignal">
+      <generalization xmi:id="_s633nEMOEd-Zo7nGYHKgLw" general="_s633dEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633nUMOEd-Zo7nGYHKgLw" name="Formgleissperrsignal">
+      <generalization xmi:id="_s633nkMOEd-Zo7nGYHKgLw" general="_s633dEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_s633n0MOEd-Zo7nGYHKgLw" name="Strecke">
+      <generalization xmi:id="_s633oEMOEd-Zo7nGYHKgLw" general="_s633GEMOEd-Zo7nGYHKgLw"/>
+    </packagedElement>
+    <profileApplication xmi:id="_s633oUMOEd-Zo7nGYHKgLw">
+      <eAnnotations xmi:id="_s633okMOEd-Zo7nGYHKgLw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_s633o0MOEd-Zo7nGYHKgLw" base_Package="_s63QAEMOEd-Zo7nGYHKgLw" packageName="metamodel" nsPrefix="Modelrailway" nsURI="http://www.morknet.de/Modelrailway" basePackage="de.morknet.mrw" prefix="modelrailway"/>
+  <Ecore:EClass xmi:id="_s633pEMOEd-Zo7nGYHKgLw" base_Class="_s63QAUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s64eIEMOEd-Zo7nGYHKgLw" base_Property="_s63QAkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s64eIUMOEd-Zo7nGYHKgLw" base_Property="_s63QBEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s64eIkMOEd-Zo7nGYHKgLw" base_Property="_s63QB0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s64eI0MOEd-Zo7nGYHKgLw" base_Class="_s63QCEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s64eJEMOEd-Zo7nGYHKgLw" base_Property="_s63QCkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s64eJUMOEd-Zo7nGYHKgLw" base_Class="_s63QC0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s64eJkMOEd-Zo7nGYHKgLw" base_Property="_s63QDkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s65FMEMOEd-Zo7nGYHKgLw" base_Class="_s63QEEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65FMUMOEd-Zo7nGYHKgLw" base_Property="_s63QEkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s65FMkMOEd-Zo7nGYHKgLw" base_Class="_s63QE0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s65FM0MOEd-Zo7nGYHKgLw" base_Property="_s63QFEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s65FNEMOEd-Zo7nGYHKgLw" base_Class="_s63QFkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65FNUMOEd-Zo7nGYHKgLw" base_Property="_s633EEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65FNkMOEd-Zo7nGYHKgLw" base_Property="_s633EkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65FN0MOEd-Zo7nGYHKgLw" base_Property="_s633E0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s65FOEMOEd-Zo7nGYHKgLw" base_Class="_s633FEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s65FOUMOEd-Zo7nGYHKgLw" base_Property="_s633FUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s65FOkMOEd-Zo7nGYHKgLw" base_Class="_s633GEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65sQEMOEd-Zo7nGYHKgLw" base_Property="_s633GkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65sQUMOEd-Zo7nGYHKgLw" base_Property="_s633G0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s65sQkMOEd-Zo7nGYHKgLw" base_Class="_s633HkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65sQ0MOEd-Zo7nGYHKgLw" base_Property="_s633IEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65sREMOEd-Zo7nGYHKgLw" base_Property="_s633I0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s65sRUMOEd-Zo7nGYHKgLw" base_Class="_s633JkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s65sRkMOEd-Zo7nGYHKgLw" base_Property="_s633J0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65sR0MOEd-Zo7nGYHKgLw" base_Property="_s633KUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65sSEMOEd-Zo7nGYHKgLw" base_Property="_s633KkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s65sSUMOEd-Zo7nGYHKgLw" base_Property="_s633LUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s66TUEMOEd-Zo7nGYHKgLw" base_Class="_s633MkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s66TUUMOEd-Zo7nGYHKgLw" base_Property="_s633M0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s66TUkMOEd-Zo7nGYHKgLw" base_Property="_s633NUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s66TU0MOEd-Zo7nGYHKgLw" base_Class="_s633OUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s66TVEMOEd-Zo7nGYHKgLw" base_Property="_s633O0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s66TVUMOEd-Zo7nGYHKgLw" base_Class="_s633QEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s66TVkMOEd-Zo7nGYHKgLw" base_Class="_s633QkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s66TV0MOEd-Zo7nGYHKgLw" base_Class="_s633REMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s66TWEMOEd-Zo7nGYHKgLw" base_Class="_s633RkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s666YEMOEd-Zo7nGYHKgLw" base_Property="_s633SkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s666YUMOEd-Zo7nGYHKgLw" base_Class="_s633TEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s666YkMOEd-Zo7nGYHKgLw" base_Property="_s633TkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s666Y0MOEd-Zo7nGYHKgLw" base_Property="_s633UEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s666ZEMOEd-Zo7nGYHKgLw" base_Class="_s633UUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s666ZUMOEd-Zo7nGYHKgLw" base_Property="_s633U0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s666ZkMOEd-Zo7nGYHKgLw" base_Class="_s633V0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s666Z0MOEd-Zo7nGYHKgLw" base_Property="_s633WUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s666aEMOEd-Zo7nGYHKgLw" base_Property="_s633W0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s666aUMOEd-Zo7nGYHKgLw" base_Class="_s633XUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s67hcEMOEd-Zo7nGYHKgLw" base_Class="_s633X0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s67hcUMOEd-Zo7nGYHKgLw" base_Property="_s633YUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s67hckMOEd-Zo7nGYHKgLw" base_Property="_s633Y0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s67hc0MOEd-Zo7nGYHKgLw" base_Property="_s633ZUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s67hdEMOEd-Zo7nGYHKgLw" base_Property="_s633Z0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s67hdUMOEd-Zo7nGYHKgLw" base_Property="_s633aUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s67hdkMOEd-Zo7nGYHKgLw" base_Property="_s633akMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s67hd0MOEd-Zo7nGYHKgLw" base_Property="_s633a0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s67heEMOEd-Zo7nGYHKgLw" base_Class="_s633ckMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s67heUMOEd-Zo7nGYHKgLw" base_Class="_s633dEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s67hekMOEd-Zo7nGYHKgLw" base_Class="_s633d0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s68IgEMOEd-Zo7nGYHKgLw" base_Property="_s633eUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s68IgUMOEd-Zo7nGYHKgLw" base_Property="_s633e0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s68IgkMOEd-Zo7nGYHKgLw" base_Property="_s633fUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s68Ig0MOEd-Zo7nGYHKgLw" base_Property="_s633fkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s68IhEMOEd-Zo7nGYHKgLw" base_Class="_s633g0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s68IhUMOEd-Zo7nGYHKgLw" base_Class="_s633hUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s68IhkMOEd-Zo7nGYHKgLw" base_Class="_s633h0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s68Ih0MOEd-Zo7nGYHKgLw" base_Property="_s633iUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EAttribute xmi:id="_s68IiEMOEd-Zo7nGYHKgLw" base_Property="_s633i0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s68IiUMOEd-Zo7nGYHKgLw" base_Property="_s633jUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s68IikMOEd-Zo7nGYHKgLw" base_Property="_s633jkMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s68vkEMOEd-Zo7nGYHKgLw" base_Property="_s633j0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EReference xmi:id="_s68vkUMOEd-Zo7nGYHKgLw" base_Property="_s633kEMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s68vkkMOEd-Zo7nGYHKgLw" base_Class="_s633mUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s68vk0MOEd-Zo7nGYHKgLw" base_Class="_s633m0MOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s68vlEMOEd-Zo7nGYHKgLw" base_Class="_s633nUMOEd-Zo7nGYHKgLw"/>
+  <Ecore:EClass xmi:id="_s68vlUMOEd-Zo7nGYHKgLw" base_Class="_s633n0MOEd-Zo7nGYHKgLw"/>
+</xmi:XMI>
