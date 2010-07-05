@@ -1,10 +1,10 @@
 /*
 **
 **	$Filename:	CANMessage.java $
-**	$Revision: 967 $
-**	$Date: 2010-06-06 20:20:38 +0200 (So, 06. Jun 2010) $
-**	$Author: smork $
-**	$Id: CANMessage.java 967 2010-06-06 18:20:38Z smork $
+**	$Revision$
+**	$Date$
+**	$Author$
+**	$Id$
 **
 **	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
 **

@@ -1,7 +1,7 @@
 /**
  * Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
  *
- * $Id: EinfahrsignalItemProvider.java 937 2010-04-20 09:06:22Z smork $
+ * $Id$
  */
 package de.morknet.mrw.metamodel.provider;
 

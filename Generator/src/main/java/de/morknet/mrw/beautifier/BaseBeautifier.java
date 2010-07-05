@@ -1,10 +1,10 @@
 /*
 **
 **	$Filename:	BaseBeautifier.java $
-**	$Revision: 944 $
-**	$Date: 2010-04-23 09:01:13 +0200 (Fr, 23. Apr 2010) $
-**	$Author: smork $
-**	$Id: BaseBeautifier.java 944 2010-04-23 07:01:13Z smork $
+**	$Revision$
+**	$Date$
+**	$Author$
+**	$Id$
 **
 **	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
 **

@@ -1,10 +1,10 @@
 /*
 **
 **	$Filename:	Controller.java $
-**	$Revision: 954 $
-**	$Date: 2010-05-01 11:31:46 +0200 (Sa, 01. Mai 2010) $
-**	$Author: smork $
-**	$Id: Controller.java 954 2010-05-01 09:31:46Z smork $
+**	$Revision$
+**	$Date$
+**	$Author$
+**	$Id$
 **
 **	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
 **
@@ -58,7 +58,7 @@ public class Controller extends MrwController
 		log.info("=================================================================================");
 		log.info(LogUtil.now());
 		log.info(LogUtil.printf("Stellwerk für %s auf Rechner %s.", model.getName(), MrwProperties.getSimpleHostName()));
-		log.info("$Revision: 954 $");
+		log.info("$Revision$");
 		log.info("Copyright (C) committers of the modelrailway project 2007-2010");
 		log.info("=================================================================================");
 		this.task = new BlinkTask(this);

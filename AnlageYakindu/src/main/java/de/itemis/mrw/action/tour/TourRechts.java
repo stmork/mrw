@@ -1,10 +1,10 @@
 /*
 **
 **	$Filename:	TourRechts.java $
-**	$Revision: 931 $
-**	$Date: 2010-04-14 10:39:15 +0200 (Mi, 14. Apr 2010) $
-**	$Author: smork $
-**	$Id: TourRechts.java 931 2010-04-14 08:39:15Z smork $
+**	$Revision$
+**	$Date$
+**	$Author$
+**	$Id$
 **
 **	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
 **

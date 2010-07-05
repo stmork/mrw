@@ -1,10 +1,10 @@
 /*
 **
 **	$Filename:	Command.java $
-**	$Revision: 942 $
-**	$Date: 2010-04-22 16:21:25 +0200 (Do, 22. Apr 2010) $
-**	$Author: smork $
-**	$Id: Command.java 942 2010-04-22 14:21:25Z smork $
+**	$Revision$
+**	$Date$
+**	$Author$
+**	$Id$
 **
 **	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
 **

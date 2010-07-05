@@ -1,10 +1,10 @@
 /*
 **
 **	$Filename:	UtilTest.java $
-**	$Revision: 742 $
-**	$Date: 2009-09-10 11:14:31 +0200 (Do, 10. Sep 2009) $
-**	$Author: smork $
-**	$Id: Protocol.java 742 2009-09-10 09:14:31Z smork $
+**	$Revision$
+**	$Date$
+**	$Author$
+**	$Id$
 **
 **	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
 **

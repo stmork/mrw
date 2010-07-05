@@ -1,10 +1,10 @@
 /*
 **
 **	$Filename:	SwitchStateDrawer.java $
-**	$Revision: 954 $
-**	$Date: 2010-05-01 11:31:46 +0200 (Sa, 01. Mai 2010) $
-**	$Author: smork $
-**	$Id: SwitchStateDrawer.java 954 2010-05-01 09:31:46Z smork $
+**	$Revision$
+**	$Date$
+**	$Author$
+**	$Id$
 **
 **	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
 **
