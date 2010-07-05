@@ -21,3 +21,6 @@ make
 cd ../canprog
 make clean depend
 make 
+cd ../tools
+make clean depend
+make
