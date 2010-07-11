@@ -176,8 +176,8 @@
 				failonerror="true"
 				docencoding="UTF-8"
 				charset="UTF-8"
-				windowtitle="Modell(-bau-)getriebene Eisenbahnsteuerung">
-			<doctitle><![CDATA[<h1>Modell(-bau-)getriebene Eisenbahnsteuerung</h1>]]></doctitle>
+				windowtitle="Modell(-bau-)basierte Eisenbahnsteuerung">
+			<doctitle><![CDATA[<h1>Modell(-bau-)basierte Eisenbahnsteuerung</h1>]]></doctitle>
 			<bottom><![CDATA[<i>Copyright &#169; 2010 all committers of this modelrailway project]]></bottom>
 		</javadoc>
 	</target>
