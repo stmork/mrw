@@ -66,6 +66,7 @@ public class Layout
 		File dir = new File(modell.getName());
 		this.modell = modell;
 
+		log.info("Lade Layout-Informationen aus Verzeichnis: " + dir.getAbsolutePath());
 		if(!dir.mkdir())
 		{
 			if (!dir.exists())

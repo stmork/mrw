@@ -1209,7 +1209,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_cDOdIUMREd-lyqIZidRpcg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_cDOdIkMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Association" href="Modelrailway.uml#_s633VkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDOdI0MREd-lyqIZidRpcg" points="[-36, -28, 590, 30]$[-566, -28, 60, 30]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDOdI0MREd-lyqIZidRpcg" points="[-26, -26, 600, 30]$[-576, -26, 50, 30]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUt1wUMREd-lyqIZidRpcg" id="(0.24489795918367346,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUuc0EMREd-lyqIZidRpcg" id="(0.5,0.0)"/>
   </edges>
@@ -1273,7 +1273,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_cDb4gUMREd-lyqIZidRpcg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_cDb4gkMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Association" href="Modelrailway.uml#_s633bkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDb4g0MREd-lyqIZidRpcg" points="[133, 0, 37, -406]$[133, 406, 37, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDb4g0MREd-lyqIZidRpcg" points="[0, 0, -91, -408]$[0, 191, -91, -217]$[91, 191, 0, -217]$[91, 408, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUS_AEMREd-lyqIZidRpcg" id="(0.3522267206477733,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUS_AUMREd-lyqIZidRpcg" id="(0.5,0.0)"/>
   </edges>
@@ -1305,7 +1305,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_cDh_IUMREd-lyqIZidRpcg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_cDh_IkMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Association" href="Modelrailway.uml#_s633cEMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDh_I0MREd-lyqIZidRpcg" points="[65, 0, -69, -406]$[65, 406, -69, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDh_I0MREd-lyqIZidRpcg" points="[0, 0, -119, -408]$[0, 173, -119, -235]$[119, 173, 0, -235]$[119, 408, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUUNIEMREd-lyqIZidRpcg" id="(0.4251012145748988,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUUNIUMREd-lyqIZidRpcg" id="(0.75,0.0)"/>
   </edges>
@@ -1537,7 +1537,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cEwHIUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s63QEUMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cEwHIkMREd-lyqIZidRpcg" points="[48, -62, -11, 475]$[48, -443, -11, 94]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cEwHIkMREd-lyqIZidRpcg" points="[31, -62, -7, 475]$[31, -446, -7, 91]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUl58EMREd-lyqIZidRpcg" id="(0.4956521739130435,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUl58UMREd-lyqIZidRpcg" id="(0.6894409937888198,0.0)"/>
   </edges>
@@ -1637,7 +1637,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cFP2YUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633SEMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFP2YkMREd-lyqIZidRpcg" points="[-41, 0, -99, 251]$[-41, -251, -99, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFP2YkMREd-lyqIZidRpcg" points="[3, 0, -8, 253]$[3, -253, -8, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUwSAUMREd-lyqIZidRpcg" id="(0.8292682926829268,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUwSAkMREd-lyqIZidRpcg" id="(0.6639676113360324,1.0)"/>
   </edges>
@@ -1687,7 +1687,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cFfG8EMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633XkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFfG8UMREd-lyqIZidRpcg" points="[6, -62, -3, 185]$[6, -185, -3, 62]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFfG8UMREd-lyqIZidRpcg" points="[7, -62, 3, 185]$[7, -185, 3, 62]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUd-IEMREd-lyqIZidRpcg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUd-IUMREd-lyqIZidRpcg" id="(0.4965034965034965,0.0)"/>
   </edges>
@@ -1757,7 +1757,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cF26YUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633hkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF26YkMREd-lyqIZidRpcg" points="[4, -62, 38, 155]$[4, -155, 38, 62]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF26YkMREd-lyqIZidRpcg" points="[-10, -62, 26, 225]$[-10, -225, 26, 62]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUdXEEMREd-lyqIZidRpcg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUdXEUMREd-lyqIZidRpcg" id="(0.14953271028037382,0.0)"/>
   </edges>
@@ -1787,7 +1787,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cF_dQUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633nEMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF_dQkMREd-lyqIZidRpcg" points="[5, -62, -12, 180]$[5, -180, -12, 62]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF_dQkMREd-lyqIZidRpcg" points="[9, -62, -23, 180]$[9, -180, -23, 62]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUHY0EMREd-lyqIZidRpcg" id="(0.4966887417218543,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUHY0UMREd-lyqIZidRpcg" id="(0.6666666666666666,0.0)"/>
   </edges>
