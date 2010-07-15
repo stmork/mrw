@@ -160,7 +160,8 @@
 	<target name="compile">
 		<mkdir dir="${bin-path}"/>
 		<copy file="${src-path}/log4j.properties" todir="${bin-path}" />
-		<javac srcdir="${src-path}:${gen-src-path}:${tst-path}" destdir="${bin-path}" debug="true">
+		<javac srcdir="${src-path}:${gen-src-path}:${tst-path}" destdir="${bin-path}"
+				encoding="ISO-8859-15" debug="true">
 			<classpath refid="compile.classpath"/>
 		</javac>
 	</target>
@@ -256,7 +257,8 @@
 			<classpath refid="emma.classpath" />
 			<formatter type="xml"/>
 			<jvmarg value="-Demma.coverage.out.file=coverage.emma" />  
-			<jvmarg value="-Demma.coverage.out.merge=true" />  
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+			<jvmarg value="-Dfile.encoding=ISO-8859-15" />
 			<test name="de.morknet.mrw.test.UtilTest"/>
 			<test name="de.morknet.mrw.test.EnumTest"/>
 			<test name="de.morknet.mrw.test.CanMessageTest"/>

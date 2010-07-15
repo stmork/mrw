@@ -59,7 +59,8 @@
 	<target name="compile">
 		<mkdir dir="${bin-path}"/>
 		<copy file="${src-path}/log4j.properties" todir="${bin-path}" />
-		<javac srcdir="${src-path}" destdir="${bin-path}" debug="true">
+		<javac srcdir="${src-path}" destdir="${bin-path}"
+				encoding="ISO-8859-15" debug="true">
 			<classpath refid="compile.classpath"/>
 		</javac>
 	</target>
