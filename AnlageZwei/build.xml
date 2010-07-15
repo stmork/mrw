@@ -271,7 +271,7 @@
 			<test name="de.morknet.mrw.test.ErrorConditionTest"/>
 		</junit>
 	</target>
-
+	
 	<target name="emmajava" depends="compile">
 		<emmajava classname="de.morknet.mrw.test.Coverage"
 				fullmetadata="yes"
@@ -283,8 +283,9 @@
 			<filter excludes="de.morknet.mrw.*test*"/>
 			<filter excludes="de.morknet.mrw.*rs232*"/>
 			<filter excludes="de.morknet.mrw.*Exception"/>
-			<xml outfile="coverage.xml" />
-			<txt outfile="coverage.txt" />
+			<xml  outfile="coverage.xml" />
+			<txt  outfile="coverage.txt" />
+			<html outfile="coverage.html" />
 		</emmajava>
 	</target>
 
@@ -295,8 +296,9 @@
 					<fileset dir=".">  
 						<include name="*.emma"/>
 					</fileset>  
-					<txt outfile="coverage.txt" />
-					<xml outfile="coverage.xml" />
+					<txt  outfile="coverage.txt" />
+					<xml  outfile="coverage.xml" />
+					<html outfile="coverage.html" />
 				</report>  
 			</emma>
 	</target>  
