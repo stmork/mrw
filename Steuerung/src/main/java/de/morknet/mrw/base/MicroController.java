@@ -283,14 +283,14 @@ public class MicroController
 	 */
 	public void addConfigMessages(final List<MrwMessage> list)
 	{
-		list.add(MrwMessage.createCommandMsg(Command.CFGBGN, id, 0));
+		list.add(MrwMessage.createCommandMsg(Command.CFGBGN, id, 0xffff));
 
 		Collections.sort(units);
 		for (DeviceUnit device : units)
 		{
 			list.add(device.createConfigMessage());
 		}
-		list.add(MrwMessage.createCommandMsg(Command.CFGEND, id, 0));
+		list.add(MrwMessage.createCommandMsg(Command.CFGEND, id, 0xffff));
 	}
 	
 	/**

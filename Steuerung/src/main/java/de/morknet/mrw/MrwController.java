@@ -335,8 +335,8 @@ abstract public class MrwController implements CANMessageProcessor
 					Abschnitt segment = Abschnitt.findSegment(mrw.getResultId());
 					if ((result == MsgCode.MSG_OK) && (segment != null))
 					{
-						log.info("Gleisbelegung: " + segment.getName() + " " + mrw.getData(6));
-						segment.setOccupation(OccupationCode.isOccupied(mrw.getData(6)));
+						log.info("Gleisbelegung: " + segment.getName() + " " + mrw.getData(MrwMessage.IDX_INFO_START));
+						segment.setOccupation(OccupationCode.isOccupied(mrw.getData(MrwMessage.IDX_INFO_START)));
 						if (Route.hasAutomaticSegmentDeallocation())
 						{
 							Route route = Route.findRoute(segment);
@@ -363,7 +363,7 @@ abstract public class MrwController implements CANMessageProcessor
 						/*
 						 * Zustand merken.
 						 */
-						branch.setDir(DirectionCode.getDirectionCode(branch, mrw.getData(6)));
+						branch.setDir(DirectionCode.getDirectionCode(branch, mrw.getData(MrwMessage.IDX_INFO_START)));
 						log.info(LogUtil.printf("Weichenlage: %s", branch));
 
 						/*
@@ -450,10 +450,14 @@ abstract public class MrwController implements CANMessageProcessor
 					if (c != null)
 					{
 						// Zustand der Sendepuffer loggen
-						c.setBufferCount(mrw.getData(6), mrw.getData(7));
+						c.setBufferCount(
+								mrw.getData(MrwMessage.IDX_INFO_START),
+								mrw.getData(MrwMessage.IDX_INFO_START+1));
 						log.info(LogUtil.printf(
 								"Controller mit ID: %d               RX buffer: %3d TX buffer: %3d",
-								cid, mrw.getData(6), mrw.getData(7)));
+								cid,
+								mrw.getData(MrwMessage.IDX_INFO_START),
+								mrw.getData(MrwMessage.IDX_INFO_START+1)));
 					}
 					else
 					{
@@ -465,7 +469,9 @@ abstract public class MrwController implements CANMessageProcessor
 					c = model.findMicroController(cid);
 					if (c != null)
 					{
-						c.setErrorValue(mrw.getData(6), mrw.getData(7));
+						c.setErrorValue(
+								mrw.getData(MrwMessage.IDX_INFO_START),
+								mrw.getData(MrwMessage.IDX_INFO_START + 1));
 					}
 					else
 					{
@@ -477,7 +483,9 @@ abstract public class MrwController implements CANMessageProcessor
 					c = model.findMicroController(cid);
 					if (c != null)
 					{
-						c.setRevisionValue(mrw.getData(6), mrw.getData(7));
+						c.setRevisionValue(
+								mrw.getData(MrwMessage.IDX_INFO_START),
+								mrw.getData(MrwMessage.IDX_INFO_START + 1));
 					}
 					else
 					{
@@ -500,12 +508,12 @@ abstract public class MrwController implements CANMessageProcessor
 	 */
 	private void addElapsed(final MrwMessage mrw)
 	{
-		if (mrw.length() >= 7)
+		if (mrw.length() >= (MrwMessage.IDX_INFO_START + 1))
 		{
 			DeviceUnit dvc = DeviceUnit.findDeviceUnit(mrw.getResultId()); 
 			if (dvc != null) 
 			{
-				dvc.addElapsed(mrw.getData(6));
+				dvc.addElapsed(mrw.getData(MrwMessage.IDX_INFO_START));
 			}
 		}
 	}

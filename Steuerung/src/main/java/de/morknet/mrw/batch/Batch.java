@@ -69,7 +69,7 @@ public class Batch
 	/**
 	 * Die Wartezeit nach jeder CAN-Message. Diese Wartezeit schont den CAN-Bus vor Überflutung.
 	 */
-	private final static long    SEND_DELAY  =    2L;
+	private final static long    SEND_DELAY  =    1L;
 	
 	/**
 	 * Zähler für fehlerhafte CAN-Rückmeldungen.

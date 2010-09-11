@@ -45,12 +45,12 @@ public class MrwMessage extends CANMessage
 	/**
 	 * Die Boradcast ID.
 	 */
-	public final static int BROADCAST_SID = 0; 
+	public final static int BROADCAST_SID = 0x7ff; 
 
 	/**
 	 * Die Standard ID des RS232-CAN-Gateway.
 	 */
-	public final static int GATEWAY_SID = 0x7ff; 
+	public final static int GATEWAY_SID = 0; 
 
 	/**
 	 * Der Data-Index für den {@link Command}.
@@ -73,29 +73,26 @@ public class MrwMessage extends CANMessage
 	public final static int IDX_SIGNAL_CODE = 1;
 
 	/**
-	 * Der Data-Index für das Low Byte der Controller-ID des sendenden Controller. 
+	 * Diese Flag gibt an, ob die sendende Controller-Adresse auch in der Result-Meldung
+	 * enthalten sein soll. Diese Adresse ist schon in der OID eingebaut, so dass sie 
+	 * hier doppelt übertragen wird.
 	 */
-	public final static int IDX_LSID = 2;
-
-	/**
-	 * Der Data-Index für das High Byte der Controller-ID des sendenden Controller. 
-	 */
-	public final static int IDX_HSID = 3;
-
-	/**
-	 * Der Data-Index für das Low Byte der Gerätenummer des sendenden Controller. 
-	 */
-	public final static int IDX_LEID = 4;
-
-	/**
-	 * Der Data-Index für das High Byte der Gerätenummer des sendenden Controller. 
-	 */
-	public final static int IDX_HEID = 5;
+	public final static boolean USE_SID_IN_RESULT = false;
 
 	/**
 	 * Der Data-Index für den Start fon Infobytes.
 	 */
-	public final static int IDX_INFO_START = 6;
+	public final static int IDX_INFO_START = USE_SID_IN_RESULT ? 6 : 4;
+
+	/**
+	 * Der Data-Index für das Low Byte der Gerätenummer des sendenden Controller. 
+	 */
+	public final static int IDX_LEID = IDX_INFO_START - 2;
+
+	/**
+	 * Der Data-Index für das High Byte der Gerätenummer des sendenden Controller. 
+	 */
+	public final static int IDX_HEID = IDX_INFO_START - 1;
 
 	/**
 	 * Der Konstruktur für eine leere MRW-Message.
@@ -246,7 +243,10 @@ public class MrwMessage extends CANMessage
 		msg.setEid(id);
 		msg.addDataByte(Command.makeResult(cmd));
 		msg.addDataByte(code.getMsgCode());
-		msg.addDataWord(id);
+		if (USE_SID_IN_RESULT)
+		{
+			msg.addDataWord(id);
+		}
 		msg.addDataWord(no);
 		return msg;
 	}
@@ -278,13 +278,14 @@ public class MrwMessage extends CANMessage
 
 		if (isResult())
 		{
+			
 			String res_text = MsgCode.getMsgCode(data[1]).toString();
-            pw.printf("ID=%04x:%04x len=%d stat=%02x # %-12.12s %-22.22s %02x%02x:%02x%02x",
+            pw.printf("ID=%04x:%04x len=%d stat=%02x # %-12.12s %-22.22s %04x:%04x",
                     sid, eid, length, status,
                     cmd_text,
                     res_text,
-                    data[IDX_HSID], data[IDX_LSID],
-                    data[IDX_HEID], data[IDX_LEID]);
+                    getSourceControllerId(),
+                    getSourceUnitNo());
             for (i = IDX_INFO_START;i < length; i++)
             {
                 pw.printf(" 0x%02x", data[i]);
