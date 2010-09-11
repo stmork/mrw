@@ -469,9 +469,7 @@ abstract public class MrwController implements CANMessageProcessor
 					c = model.findMicroController(cid);
 					if (c != null)
 					{
-						c.setErrorValue(
-								mrw.getData(MrwMessage.IDX_INFO_START),
-								mrw.getData(MrwMessage.IDX_INFO_START + 1));
+						c.setErrorValue(mrw);
 					}
 					else
 					{
@@ -483,9 +481,7 @@ abstract public class MrwController implements CANMessageProcessor
 					c = model.findMicroController(cid);
 					if (c != null)
 					{
-						c.setRevisionValue(
-								mrw.getData(MrwMessage.IDX_INFO_START),
-								mrw.getData(MrwMessage.IDX_INFO_START + 1));
+						c.setRevisionValue(mrw);
 					}
 					else
 					{

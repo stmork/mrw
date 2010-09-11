@@ -209,22 +209,33 @@ public class MicroController
 	 * @param index Der Zählertyp.
 	 * @param value Der Zähler.
 	 */
-	public void setErrorValue(final int index, final int value)
+	public void setErrorValue(final MrwMessage msg)
 	{
+		final int index = msg.getData(MrwMessage.IDX_INFO_START);
+
 		synchronized(this)
 		{
 			booted();
 			switch(index)
 			{
 			case 0:
-				error_flags = value;
+				error_flags = msg.getData(MrwMessage.IDX_INFO_START + 1);
 				break;
 			case 1:
-				rx_err_counter = value;
+				rx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 1);
 				break;
 			case 2:
-				tx_err_counter = value;
+				tx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 1);
 				break;
+			case 3:
+				if (!MrwMessage.USE_SID_IN_RESULT)
+				{
+					error_flags    = msg.getData(MrwMessage.IDX_INFO_START + 1);
+					rx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 2);
+					tx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 3);
+				}
+				break;
+
 			default:
 				// Do nothing!
 				break;
@@ -238,20 +249,34 @@ public class MicroController
 	 * @param index Der Versionstyp.
 	 * @param value Der Wert.
 	 */
-	public void setRevisionValue(final int index, final int value)
+	public void setRevisionValue(final MrwMessage msg)
 	{
+		final int index = msg.getData(MrwMessage.IDX_INFO_START);
+
 		booted();
+		
 		switch(index)
 		{
 		case 0:
-			version = value;
+			version = msg.getData(MrwMessage.IDX_INFO_START + 1);
 			break;
 		case 1:
-			revision = (revision & 0xff00) | value;
+			revision = (revision & 0xff00) | msg.getData(MrwMessage.IDX_INFO_START + 1);
 			break;
 		case 2:
-			revision = (revision & 0x00ff) | (value << 8);
+			revision = (revision & 0x00ff) | (msg.getData(MrwMessage.IDX_INFO_START + 1) << 8);
 			break;
+		case 3:
+			if (!MrwMessage.USE_SID_IN_RESULT)
+			{
+				version  =
+					 msg.getData(MrwMessage.IDX_INFO_START + 1);
+				revision =
+					 msg.getData(MrwMessage.IDX_INFO_START + 2) |
+					(msg.getData(MrwMessage.IDX_INFO_START + 3) << 8);
+			}
+			break;
+			
 		default:
 			// Do nothing!
 			break;
