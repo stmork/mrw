@@ -917,7 +917,7 @@ abstract public class MrwController implements CANMessageProcessor
 					}
 				}
 				diff = end - System.currentTimeMillis();
-				log.debug(LogUtil.printf("Timeout: %dms %d, MCUs erreichbar.", diff, count));
+				log.debug(LogUtil.printf("Timeout: %dms, %d MCUs erreichbar.", diff, count));
 			}
 			while ((diff > 0L) && (count < mcuCount));
 
