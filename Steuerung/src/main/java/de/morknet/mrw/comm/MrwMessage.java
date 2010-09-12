@@ -80,7 +80,7 @@ public class MrwMessage extends CANMessage
 	public final static boolean USE_SID_IN_RESULT = false;
 
 	/**
-	 * Der Data-Index für den Start fon Infobytes.
+	 * Der Data-Index für den Start der Infobytes.
 	 */
 	public final static int IDX_INFO_START = USE_SID_IN_RESULT ? 6 : 4;
 
