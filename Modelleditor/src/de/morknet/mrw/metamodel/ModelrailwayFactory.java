@@ -196,6 +196,24 @@ public interface ModelrailwayFactory extends EFactory {
 	Strecke createStrecke();
 
 	/**
+	 * Returns a new object of class '<em>Beleuchtungsmodul</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Beleuchtungsmodul</em>'.
+	 * @generated
+	 */
+	Beleuchtungsmodul createBeleuchtungsmodul();
+
+	/**
+	 * Returns a new object of class '<em>Lampe</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Lampe</em>'.
+	 * @generated
+	 */
+	Lampe createLampe();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

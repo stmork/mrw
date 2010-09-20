@@ -370,6 +370,19 @@ public class ModelrailwaySwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ModelrailwayPackage.BELEUCHTUNGSMODUL: {
+				Beleuchtungsmodul beleuchtungsmodul = (Beleuchtungsmodul)theEObject;
+				T result = caseBeleuchtungsmodul(beleuchtungsmodul);
+				if (result == null) result = caseModul(beleuchtungsmodul);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelrailwayPackage.LAMPE: {
+				Lampe lampe = (Lampe)theEObject;
+				T result = caseLampe(lampe);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -836,6 +849,36 @@ public class ModelrailwaySwitch<T> {
 	 * @generated
 	 */
 	public T caseStrecke(Strecke object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Beleuchtungsmodul</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Beleuchtungsmodul</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBeleuchtungsmodul(Beleuchtungsmodul object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Lampe</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Lampe</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLampe(Lampe object) {
 		return null;
 	}
 

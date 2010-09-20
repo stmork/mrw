@@ -75,6 +75,7 @@
     <modules xsi:type="Modelrailway:Impulsmodul" number="114" magnetartikel="//@gruppe.2/@abschnitt.10/@bauelement.1 //@gruppe.2/@abschnitt.10/@bauelement.0 //@gruppe.2/@abschnitt.11/@bauelement.1 //@gruppe.2/@abschnitt.8/@bauelement.1"/>
     <modules xsi:type="Modelrailway:Gleismodul" number="314" abschnitte="//@gruppe.2/@abschnitt.13 //@gruppe.2/@abschnitt.9 //@gruppe.2/@abschnitt.11 //@gruppe.2/@abschnitt.8"/>
   </controller>
+  <controller id="15"/>
   <gruppe xsi:type="Modelrailway:Bahnhof" name="Alt Ulm">
     <abschnitt name="S1a" unit_no="101" modul="//@controller.7/@modules.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="S1a" b="//@gruppe.0/@abschnitt.4/@bauelement.2"/>

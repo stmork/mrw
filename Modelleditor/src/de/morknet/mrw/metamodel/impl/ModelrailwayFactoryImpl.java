@@ -78,6 +78,8 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 			case ModelrailwayPackage.FORMHAUPTSIGNAL: return createFormhauptsignal();
 			case ModelrailwayPackage.FORMGLEISSPERRSIGNAL: return createFormgleissperrsignal();
 			case ModelrailwayPackage.STRECKE: return createStrecke();
+			case ModelrailwayPackage.BELEUCHTUNGSMODUL: return createBeleuchtungsmodul();
+			case ModelrailwayPackage.LAMPE: return createLampe();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -271,6 +273,26 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	public Strecke createStrecke() {
 		StreckeImpl strecke = new StreckeImpl();
 		return strecke;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Beleuchtungsmodul createBeleuchtungsmodul() {
+		BeleuchtungsmodulImpl beleuchtungsmodul = new BeleuchtungsmodulImpl();
+		return beleuchtungsmodul;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Lampe createLampe() {
+		LampeImpl lampe = new LampeImpl();
+		return lampe;
 	}
 
 	/**

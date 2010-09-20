@@ -195,6 +195,11 @@ public class ControllerItemProvider
 			(createChildParameter
 				(ModelrailwayPackage.Literals.CONTROLLER__MODULES,
 				 ModelrailwayFactory.eINSTANCE.createImpulsmodul()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelrailwayPackage.Literals.CONTROLLER__MODULES,
+				 ModelrailwayFactory.eINSTANCE.createBeleuchtungsmodul()));
 	}
 
 	/**

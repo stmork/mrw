@@ -2017,6 +2017,99 @@ public interface ModelrailwayPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl <em>Beleuchtungsmodul</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl
+	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getBeleuchtungsmodul()
+	 * @generated
+	 */
+	int BELEUCHTUNGSMODUL = 31;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BELEUCHTUNGSMODUL__NUMBER = MODUL__NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Controller</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BELEUCHTUNGSMODUL__CONTROLLER = MODUL__CONTROLLER;
+
+	/**
+	 * The feature id for the '<em><b>Lampe</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BELEUCHTUNGSMODUL__LAMPE = MODUL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Beleuchtungsmodul</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BELEUCHTUNGSMODUL_FEATURE_COUNT = MODUL_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.LampeImpl <em>Lampe</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.morknet.mrw.metamodel.impl.LampeImpl
+	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getLampe()
+	 * @generated
+	 */
+	int LAMPE = 32;
+
+	/**
+	 * The feature id for the '<em><b>Schwellwert</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAMPE__SCHWELLWERT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Typ</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAMPE__TYP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Modul</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAMPE__MODUL = 2;
+
+	/**
+	 * The number of structural features of the '<em>Lampe</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAMPE_FEATURE_COUNT = 3;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Anschluss <em>Anschluss</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2822,6 +2915,70 @@ public interface ModelrailwayPackage extends EPackage {
 	EClass getStrecke();
 
 	/**
+	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Beleuchtungsmodul <em>Beleuchtungsmodul</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Beleuchtungsmodul</em>'.
+	 * @see de.morknet.mrw.metamodel.Beleuchtungsmodul
+	 * @generated
+	 */
+	EClass getBeleuchtungsmodul();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampe <em>Lampe</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lampe</em>'.
+	 * @see de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampe()
+	 * @see #getBeleuchtungsmodul()
+	 * @generated
+	 */
+	EReference getBeleuchtungsmodul_Lampe();
+
+	/**
+	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Lampe <em>Lampe</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Lampe</em>'.
+	 * @see de.morknet.mrw.metamodel.Lampe
+	 * @generated
+	 */
+	EClass getLampe();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.morknet.mrw.metamodel.Lampe#getSchwellwert <em>Schwellwert</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Schwellwert</em>'.
+	 * @see de.morknet.mrw.metamodel.Lampe#getSchwellwert()
+	 * @see #getLampe()
+	 * @generated
+	 */
+	EAttribute getLampe_Schwellwert();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.morknet.mrw.metamodel.Lampe#getTyp <em>Typ</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Typ</em>'.
+	 * @see de.morknet.mrw.metamodel.Lampe#getTyp()
+	 * @see #getLampe()
+	 * @generated
+	 */
+	EAttribute getLampe_Typ();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.morknet.mrw.metamodel.Lampe#getModul <em>Modul</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Modul</em>'.
+	 * @see de.morknet.mrw.metamodel.Lampe#getModul()
+	 * @see #getLampe()
+	 * @generated
+	 */
+	EReference getLampe_Modul();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3512,6 +3669,58 @@ public interface ModelrailwayPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRECKE = eINSTANCE.getStrecke();
+
+		/**
+		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl <em>Beleuchtungsmodul</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl
+		 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getBeleuchtungsmodul()
+		 * @generated
+		 */
+		EClass BELEUCHTUNGSMODUL = eINSTANCE.getBeleuchtungsmodul();
+
+		/**
+		 * The meta object literal for the '<em><b>Lampe</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BELEUCHTUNGSMODUL__LAMPE = eINSTANCE.getBeleuchtungsmodul_Lampe();
+
+		/**
+		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.LampeImpl <em>Lampe</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.morknet.mrw.metamodel.impl.LampeImpl
+		 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getLampe()
+		 * @generated
+		 */
+		EClass LAMPE = eINSTANCE.getLampe();
+
+		/**
+		 * The meta object literal for the '<em><b>Schwellwert</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LAMPE__SCHWELLWERT = eINSTANCE.getLampe_Schwellwert();
+
+		/**
+		 * The meta object literal for the '<em><b>Typ</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LAMPE__TYP = eINSTANCE.getLampe_Typ();
+
+		/**
+		 * The meta object literal for the '<em><b>Modul</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LAMPE__MODUL = eINSTANCE.getLampe_Modul();
 
 	}
 

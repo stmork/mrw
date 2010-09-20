@@ -62,7 +62,7 @@
         eType="#//Controller" changeable="false" eOpposite="#//Controller/modules"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gleismodul" eSuperTypes="#//Modul">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitte" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitte" upperBound="4"
         eType="#//Gleisabschnitt" eOpposite="#//Gleisabschnitt/modul"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ausfahrsignal" eSuperTypes="#//Hauptlichtsignal"/>
@@ -116,4 +116,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Formhauptsignal" eSuperTypes="#//Formsignal"/>
   <eClassifiers xsi:type="ecore:EClass" name="Formgleissperrsignal" eSuperTypes="#//Formsignal"/>
   <eClassifiers xsi:type="ecore:EClass" name="Strecke" eSuperTypes="#//Gruppe"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Beleuchtungsmodul" eSuperTypes="#//Modul">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lampe" upperBound="8" eType="#//Lampe"
+        changeable="false" containment="true" eOpposite="#//Lampe/modul"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lampe">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schwellwert" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typ" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modul" lowerBound="1" eType="#//Beleuchtungsmodul"
+        eOpposite="#//Beleuchtungsmodul/lampe"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.morknet.mrw.metamodel;singleton:=true
-Bundle-Version: 2.0.11
+Bundle-Version: 2.0.12
 Bundle-ClassPath: .
 Bundle-Activator: de.morknet.mrw.metamodel.provider.ModelrailwayEditPlugin$Implementation
 Bundle-Vendor: %providerName

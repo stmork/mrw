@@ -37,7 +37,7 @@ public interface Gleismodul extends Modul {
 	 * @return the value of the '<em>Abschnitte</em>' reference list.
 	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getGleismodul_Abschnitte()
 	 * @see de.morknet.mrw.metamodel.Gleisabschnitt#getModul
-	 * @model opposite="modul"
+	 * @model opposite="modul" upper="4"
 	 * @generated
 	 */
 	EList<Gleisabschnitt> getAbschnitte();

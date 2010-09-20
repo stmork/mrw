@@ -512,6 +512,52 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Beleuchtungsmodul} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BeleuchtungsmodulItemProvider beleuchtungsmodulItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.morknet.mrw.metamodel.Beleuchtungsmodul}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBeleuchtungsmodulAdapter() {
+		if (beleuchtungsmodulItemProvider == null) {
+			beleuchtungsmodulItemProvider = new BeleuchtungsmodulItemProvider(this);
+		}
+
+		return beleuchtungsmodulItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Lampe} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LampeItemProvider lampeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.morknet.mrw.metamodel.Lampe}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLampeAdapter() {
+		if (lampeItemProvider == null) {
+			lampeItemProvider = new LampeItemProvider(this);
+		}
+
+		return lampeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -629,6 +675,8 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 		if (formhauptsignalItemProvider != null) formhauptsignalItemProvider.dispose();
 		if (formgleissperrsignalItemProvider != null) formgleissperrsignalItemProvider.dispose();
 		if (streckeItemProvider != null) streckeItemProvider.dispose();
+		if (beleuchtungsmodulItemProvider != null) beleuchtungsmodulItemProvider.dispose();
+		if (lampeItemProvider != null) lampeItemProvider.dispose();
 	}
 
 }

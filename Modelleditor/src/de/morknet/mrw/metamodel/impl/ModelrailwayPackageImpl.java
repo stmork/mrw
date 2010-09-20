@@ -9,6 +9,7 @@ import de.morknet.mrw.metamodel.Anschluss;
 import de.morknet.mrw.metamodel.Ausfahrsignal;
 import de.morknet.mrw.metamodel.Bahnhof;
 import de.morknet.mrw.metamodel.Bauelement;
+import de.morknet.mrw.metamodel.Beleuchtungsmodul;
 import de.morknet.mrw.metamodel.Blocksignal;
 import de.morknet.mrw.metamodel.Controller;
 import de.morknet.mrw.metamodel.Einfahrsignal;
@@ -25,6 +26,7 @@ import de.morknet.mrw.metamodel.Gleisteil;
 import de.morknet.mrw.metamodel.Gruppe;
 import de.morknet.mrw.metamodel.Hauptlichtsignal;
 import de.morknet.mrw.metamodel.Impulsmodul;
+import de.morknet.mrw.metamodel.Lampe;
 import de.morknet.mrw.metamodel.Lichtsignal;
 import de.morknet.mrw.metamodel.Magnetartikel;
 import de.morknet.mrw.metamodel.Modell;
@@ -268,6 +270,20 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * @generated
 	 */
 	private EClass streckeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass beleuchtungsmodulEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass lampeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1019,6 +1035,60 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBeleuchtungsmodul() {
+		return beleuchtungsmodulEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBeleuchtungsmodul_Lampe() {
+		return (EReference)beleuchtungsmodulEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLampe() {
+		return lampeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLampe_Schwellwert() {
+		return (EAttribute)lampeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLampe_Typ() {
+		return (EAttribute)lampeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLampe_Modul() {
+		return (EReference)lampeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ModelrailwayFactory getModelrailwayFactory() {
 		return (ModelrailwayFactory)getEFactoryInstance();
 	}
@@ -1148,6 +1218,14 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		formgleissperrsignalEClass = createEClass(FORMGLEISSPERRSIGNAL);
 
 		streckeEClass = createEClass(STRECKE);
+
+		beleuchtungsmodulEClass = createEClass(BELEUCHTUNGSMODUL);
+		createEReference(beleuchtungsmodulEClass, BELEUCHTUNGSMODUL__LAMPE);
+
+		lampeEClass = createEClass(LAMPE);
+		createEAttribute(lampeEClass, LAMPE__SCHWELLWERT);
+		createEAttribute(lampeEClass, LAMPE__TYP);
+		createEReference(lampeEClass, LAMPE__MODUL);
 	}
 
 	/**
@@ -1209,6 +1287,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		formhauptsignalEClass.getESuperTypes().add(this.getFormsignal());
 		formgleissperrsignalEClass.getESuperTypes().add(this.getFormsignal());
 		streckeEClass.getESuperTypes().add(this.getGruppe());
+		beleuchtungsmodulEClass.getESuperTypes().add(this.getModul());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(anschlussEClass, Anschluss.class, "Anschluss", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1255,7 +1334,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		initEReference(getModul_Controller(), this.getController(), this.getController_Modules(), "controller", null, 1, 1, Modul.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gleismodulEClass, Gleismodul.class, "Gleismodul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGleismodul_Abschnitte(), this.getGleisabschnitt(), this.getGleisabschnitt_Modul(), "abschnitte", null, 0, -1, Gleismodul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGleismodul_Abschnitte(), this.getGleisabschnitt(), this.getGleisabschnitt_Modul(), "abschnitte", null, 0, 4, Gleismodul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ausfahrsignalEClass, Ausfahrsignal.class, "Ausfahrsignal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1317,6 +1396,14 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		initEClass(formgleissperrsignalEClass, Formgleissperrsignal.class, "Formgleissperrsignal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(streckeEClass, Strecke.class, "Strecke", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(beleuchtungsmodulEClass, Beleuchtungsmodul.class, "Beleuchtungsmodul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBeleuchtungsmodul_Lampe(), this.getLampe(), this.getLampe_Modul(), "lampe", null, 0, 8, Beleuchtungsmodul.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(lampeEClass, Lampe.class, "Lampe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLampe_Schwellwert(), ecorePackage.getEInt(), "schwellwert", null, 1, 1, Lampe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getLampe_Typ(), ecorePackage.getEInt(), "typ", null, 1, 1, Lampe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLampe_Modul(), this.getBeleuchtungsmodul(), this.getBeleuchtungsmodul_Lampe(), "modul", null, 1, 1, Lampe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

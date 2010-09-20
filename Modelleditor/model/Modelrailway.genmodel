@@ -149,5 +149,15 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Formhauptsignal"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Formgleissperrsignal"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Strecke"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Beleuchtungsmodul">
+      <genFeatures xsi:type="genmodel:GenFeature" children="true" createChild="true"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Beleuchtungsmodul/lampe"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Lampe">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Lampe/schwellwert"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Lampe/typ"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Lampe/modul"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

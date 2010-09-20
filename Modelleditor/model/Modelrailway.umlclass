@@ -358,7 +358,7 @@
     </children>
     <styles xmi:type="notation:CanonicalStyle" xmi:id="_aVM1EUMREd-lyqIZidRpcg"/>
     <element xmi:type="uml:Class" href="Modelrailway.uml#_s633OUMOEd-Zo7nGYHKgLw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aVM1EkMREd-lyqIZidRpcg" x="770" y="590"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aVM1EkMREd-lyqIZidRpcg" x="770" y="545"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_aVODMEMREd-lyqIZidRpcg" type="2001" fontName="Sans">
     <children xmi:type="notation:DecorationNode" xmi:id="_aVODM0MREd-lyqIZidRpcg" type="5003">
@@ -921,6 +921,60 @@
     <element xmi:type="uml:Class" href="Modelrailway.uml#_s633n0MOEd-Zo7nGYHKgLw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aVl2p0MREd-lyqIZidRpcg" x="975" y="330"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_JhJxoMSNEd-pqcdF3i7VKA" type="2001" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JhK_wMSNEd-pqcdF3i7VKA" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_JhQfUMSNEd-pqcdF3i7VKA" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JhK_wcSNEd-pqcdF3i7VKA" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_JhK_wsSNEd-pqcdF3i7VKA" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_JhK_w8SNEd-pqcdF3i7VKA" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_JhK_xMSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_JhK_xcSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_JhLm0MSNEd-pqcdF3i7VKA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_JhLm0cSNEd-pqcdF3i7VKA" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_JhLm0sSNEd-pqcdF3i7VKA" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_JhLm08SNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_JhLm1MSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_JhLm1cSNEd-pqcdF3i7VKA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_JhLm1sSNEd-pqcdF3i7VKA" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_JhLm18SNEd-pqcdF3i7VKA" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_JhLm2MSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_JhLm2cSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_JhLm2sSNEd-pqcdF3i7VKA"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_JhKYsMSNEd-pqcdF3i7VKA"/>
+    <element xmi:type="uml:Class" href="Modelrailway.uml#_Jgb_8MSNEd-pqcdF3i7VKA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JhKYscSNEd-pqcdF3i7VKA" x="525" y="545"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_R-xeMMSNEd-pqcdF3i7VKA" type="2001" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_R-yFQMSNEd-pqcdF3i7VKA" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_R-3k0MSNEd-pqcdF3i7VKA" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_R-yFQcSNEd-pqcdF3i7VKA" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_R-yFQsSNEd-pqcdF3i7VKA" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_R-yFQ8SNEd-pqcdF3i7VKA" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_R-yFRMSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_R-yFRcSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_R-yFRsSNEd-pqcdF3i7VKA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_R-yFR8SNEd-pqcdF3i7VKA" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_R-yFSMSNEd-pqcdF3i7VKA" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_R-yFScSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_R-yFSsSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_R-yFS8SNEd-pqcdF3i7VKA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_R-yFTMSNEd-pqcdF3i7VKA" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_R-yFTcSNEd-pqcdF3i7VKA" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_R-yFTsSNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_R-yFT8SNEd-pqcdF3i7VKA"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_R-yFUMSNEd-pqcdF3i7VKA"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_R-xeMcSNEd-pqcdF3i7VKA"/>
+    <element xmi:type="uml:Class" href="Modelrailway.uml#_R98-0MSNEd-pqcdF3i7VKA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R-xeMsSNEd-pqcdF3i7VKA" x="385" y="660" width="166"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_aU5TEUMREd-lyqIZidRpcg"/>
   <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_aU5TEkMREd-lyqIZidRpcg"/>
   <styles xmi:type="notation:FilteringStyle" xmi:id="_aU5TE0MREd-lyqIZidRpcg"/>
@@ -1154,7 +1208,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDIWhUMREd-lyqIZidRpcg" y="20"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDIWhkMREd-lyqIZidRpcg" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDIWh0MREd-lyqIZidRpcg" x="-36" y="-36"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDIWh0MREd-lyqIZidRpcg" x="-31" y="-36"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDIWiEMREd-lyqIZidRpcg" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9kEMREd-lyqIZidRpcg" x="-54" y="14"/>
@@ -1209,7 +1263,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_cDOdIUMREd-lyqIZidRpcg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_cDOdIkMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Association" href="Modelrailway.uml#_s633VkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDOdI0MREd-lyqIZidRpcg" points="[-26, -26, 600, 30]$[-576, -26, 50, 30]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDOdI0MREd-lyqIZidRpcg" points="[-36, -28, 590, 30]$[-566, -28, 60, 30]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUt1wUMREd-lyqIZidRpcg" id="(0.24489795918367346,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUuc0EMREd-lyqIZidRpcg" id="(0.5,0.0)"/>
   </edges>
@@ -1667,7 +1721,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cFZAUUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633UkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFZAUkMREd-lyqIZidRpcg" points="[-3, -62, 13, 425]$[-3, -396, 13, 91]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFZAUkMREd-lyqIZidRpcg" points="[10, -62, 24, 425]$[10, -394, 24, 93]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUvD4EMREd-lyqIZidRpcg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUvq8EMREd-lyqIZidRpcg" id="(0.3006535947712418,0.0)"/>
   </edges>
@@ -1687,7 +1741,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cFfG8EMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633XkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFfG8UMREd-lyqIZidRpcg" points="[7, -62, 3, 185]$[7, -185, 3, 62]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFfG8UMREd-lyqIZidRpcg" points="[6, -62, -3, 185]$[6, -185, -3, 62]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUd-IEMREd-lyqIZidRpcg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUd-IUMREd-lyqIZidRpcg" id="(0.4965034965034965,0.0)"/>
   </edges>
@@ -1697,7 +1751,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cFkmgUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633YEMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFkmgkMREd-lyqIZidRpcg" points="[-53, -139, 56, 155]$[-53, -203, 56, 91]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cFkmgkMREd-lyqIZidRpcg" points="[-78, -141, 61, 155]$[-78, -205, 61, 91]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUFjoEMREd-lyqIZidRpcg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUFjoUMREd-lyqIZidRpcg" id="(0.5,0.0)"/>
   </edges>
@@ -1757,7 +1811,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cF26YUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633hkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF26YkMREd-lyqIZidRpcg" points="[-10, -62, 26, 225]$[-10, -225, 26, 62]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF26YkMREd-lyqIZidRpcg" points="[0, -62, 34, 225]$[0, -225, 34, 62]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUdXEEMREd-lyqIZidRpcg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUdXEUMREd-lyqIZidRpcg" id="(0.14953271028037382,0.0)"/>
   </edges>
@@ -1787,7 +1841,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cF_dQUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s633nEMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF_dQkMREd-lyqIZidRpcg" points="[9, -62, -23, 180]$[9, -180, -23, 62]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cF_dQkMREd-lyqIZidRpcg" points="[5, -62, -12, 180]$[5, -180, -12, 62]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUHY0EMREd-lyqIZidRpcg" id="(0.4966887417218543,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUHY0UMREd-lyqIZidRpcg" id="(0.6666666666666666,0.0)"/>
   </edges>
@@ -1810,5 +1864,47 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cGFj4kMREd-lyqIZidRpcg" points="[29, -62, -36, 142]$[29, -142, -36, 62]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUGxwEMREd-lyqIZidRpcg" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUGxwUMREd-lyqIZidRpcg" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_MiyWoMSNEd-pqcdF3i7VKA" type="4001" source="_JhJxoMSNEd-pqcdF3i7VKA" target="_aVLm8EMREd-lyqIZidRpcg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MiyWo8SNEd-pqcdF3i7VKA" type="6018">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Miy9sMSNEd-pqcdF3i7VKA" y="40"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_MiyWocSNEd-pqcdF3i7VKA" fontName="Sans"/>
+    <element xmi:type="uml:Generalization" href="Modelrailway.uml#_Miv6YMSNEd-pqcdF3i7VKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MiyWosSNEd-pqcdF3i7VKA" points="[3, -17, -25, 109]$[8, -120, -20, 6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mi5EUMSNEd-pqcdF3i7VKA" id="(0.8888888888888888,0.27419354838709675)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mi5rYMSNEd-pqcdF3i7VKA" id="(0.13071895424836602,0.7096774193548387)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zNi6wMSOEd-pqcdF3i7VKA" type="4005" source="_R-xeMMSNEd-pqcdF3i7VKA" target="_JhJxoMSNEd-pqcdF3i7VKA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNjh0MSOEd-pqcdF3i7VKA" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNjh0cSOEd-pqcdF3i7VKA" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNjh0sSOEd-pqcdF3i7VKA" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNjh08SOEd-pqcdF3i7VKA" x="14" y="-8"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNjh1MSOEd-pqcdF3i7VKA" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNjh1cSOEd-pqcdF3i7VKA" x="14" y="-38"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNkI4MSOEd-pqcdF3i7VKA" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNkI4cSOEd-pqcdF3i7VKA" x="39" y="7"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNkI4sSOEd-pqcdF3i7VKA" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNkI48SOEd-pqcdF3i7VKA" x="-1" y="-43"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNkI5MSOEd-pqcdF3i7VKA" type="6008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNkI5cSOEd-pqcdF3i7VKA" x="54" y="-8"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNkI5sSOEd-pqcdF3i7VKA" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNkI58SOEd-pqcdF3i7VKA" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zNkI6MSOEd-pqcdF3i7VKA" type="6019">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zNkv8MSOEd-pqcdF3i7VKA" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_zNi6wcSOEd-pqcdF3i7VKA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zNi6wsSOEd-pqcdF3i7VKA" fontName="Sans"/>
+    <element xmi:type="uml:Association" href="Modelrailway.uml#_zNaX4MSOEd-pqcdF3i7VKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zNi6w8SOEd-pqcdF3i7VKA" points="[2, 0, -111, 141]$[113, 0, 0, 141]$[113, -118, 0, 23]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zNug8MSOEd-pqcdF3i7VKA" id="(0.9879518072289156,0.5963302752293578)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zNug8cSOEd-pqcdF3i7VKA" id="(0.8011695906432749,0.6290322580645161)"/>
   </edges>
 </notation:Diagram>
