@@ -50,11 +50,6 @@ public class Abschnitt extends DeviceUnit
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Das Modell zu dem dieser Abschnitt gehört. 
-	 */
-	private final Modell model;
-	
-	/**
 	 * Die Betriebsgruppe, zu der dieser Abschnitt zählt.
 	 */
 	private final Gruppe group;
@@ -121,7 +116,6 @@ public class Abschnitt extends DeviceUnit
 		super(modell, "Abschnitt " + number);
 		this.group = gruppe;
 		this.number = number;
-		this.model = modell;
 	}
 
 	/**
@@ -131,15 +125,6 @@ public class Abschnitt extends DeviceUnit
 	public String getNumber()
 	{
 		return this.number;
-	}
-
-	/**
-	 * Gibt das Modell dieses Abschnitts zurück.
-	 * @return Das Modell dieser Anlage.
-	 */
-	public Modell getModell()
-	{
-		return this.model;
 	}
 
 	/**
@@ -510,7 +495,8 @@ public class Abschnitt extends DeviceUnit
 	 * @return Die Konfigurationsmeldung samt Daten bzgl. dieses Abschnitts.
 	 */
 	@Override
-	public MrwMessage createConfigMessage() {
+	public MrwMessage createConfigMessage()
+	{
 		MrwMessage msg = MrwMessage.createCommandMsg(Command.CFGRAI, ctrl_id, unit_no);
 		
 		msg.addDataByte(pin);

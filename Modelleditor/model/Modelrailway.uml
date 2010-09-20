@@ -256,13 +256,15 @@
       <generalization xmi:id="_s633oEMOEd-Zo7nGYHKgLw" general="_s633GEMOEd-Zo7nGYHKgLw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Jgb_8MSNEd-pqcdF3i7VKA" name="Beleuchtungsmodul">
-      <generalization xmi:id="_Miv6YMSNEd-pqcdF3i7VKA" general="_s633MkMOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_PZ1A8MSoEd-4b90ZNQhhkQ" general="_s633MkMOEd-Zo7nGYHKgLw"/>
       <ownedAttribute xmi:id="_zNa-8MSOEd-pqcdF3i7VKA" name="lampe" type="_R98-0MSNEd-pqcdF3i7VKA" isOrdered="true" isReadOnly="true" aggregation="composite" association="_zNaX4MSOEd-pqcdF3i7VKA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zNbmAMSOEd-pqcdF3i7VKA" value="8"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zNa-8cSOEd-pqcdF3i7VKA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_R98-0MSNEd-pqcdF3i7VKA" name="Lampe">
+      <generalization xmi:id="_gW-7EMSnEd-4b90ZNQhhkQ" general="_s633FEMOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_-66iAMSoEd-4b90ZNQhhkQ" general="_s63QE0MOEd-Zo7nGYHKgLw"/>
       <ownedAttribute xmi:id="_AQdz8MSOEd-pqcdF3i7VKA" name="schwellwert">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedAttribute>

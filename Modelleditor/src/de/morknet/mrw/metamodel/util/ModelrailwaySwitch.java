@@ -380,6 +380,8 @@ public class ModelrailwaySwitch<T> {
 			case ModelrailwayPackage.LAMPE: {
 				Lampe lampe = (Lampe)theEObject;
 				T result = caseLampe(lampe);
+				if (result == null) result = caseElement(lampe);
+				if (result == null) result = caseUnit(lampe);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

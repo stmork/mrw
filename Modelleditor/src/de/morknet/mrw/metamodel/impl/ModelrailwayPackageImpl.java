@@ -1288,6 +1288,8 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		formgleissperrsignalEClass.getESuperTypes().add(this.getFormsignal());
 		streckeEClass.getESuperTypes().add(this.getGruppe());
 		beleuchtungsmodulEClass.getESuperTypes().add(this.getModul());
+		lampeEClass.getESuperTypes().add(this.getElement());
+		lampeEClass.getESuperTypes().add(this.getUnit());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(anschlussEClass, Anschluss.class, "Anschluss", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

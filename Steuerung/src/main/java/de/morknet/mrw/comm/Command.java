@@ -570,6 +570,31 @@ public enum Command
 	 * </p>
 	 */
 	CFGML4(0x3d),
+
+	/**
+	 * Konfiguriere Beleuchtungsmittel.
+	 * 
+	 * <p>
+	 * <table>
+	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
+	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
+	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
+	 * <tr><td>Länge:</td><td>6</td></tr>
+	 * <tr><td>Data[0]</td><td><pre>CFGLGT</pre></td></tr>
+	 * <tr><td>Data[1]</td><td>Schaltpin</td></tr>
+	 * <tr><td>Data[2]</td><td>Schwellwert</td></tr>
+	 * <tr><td>Data[3]</td><td>Typ</td></tr>
+	 * </table>
+	 * </p>
+	 * <p>
+	 * Mögliche Antworten:<br>
+	 * <ul>
+	 * <lI>{@link MsgCode#MSG_OK}
+	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
+	 * </ul>
+	 * </p>
+	 */
+	CFGLGT(0x3e),
 	
 	/**
 	 * Beende Konfigurationsmodus und führe RESET aus.
@@ -593,6 +618,77 @@ public enum Command
 	 * </p>
 	 */
 	CFGEND(0x42),
+
+	/**
+	 * Setzen einer neuen Mikrocontroller-ID. Ist diese tatsächlich anders, wird die
+	 * Konfiguration gelöscht und danach ein RESET ausgelöst. 
+	 * <p>
+	 * <table>
+	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
+	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
+	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Data[0]</td><td><pre>SET_ID</pre></td></tr>
+	 * <tr><td>Data[1]</td><td>Neue Controller-ID, Low Byte</td></tr>
+	 * <tr><td>Data[2]</td><td>Neue Controller-ID, High Byte</td></tr>
+	 * </table>
+	 * </p>
+	 * <p>
+	 * Mögliche Antworten:<br>
+	 * <ul>
+	 * <lI>{@link MsgCode#MSG_OK}
+	 * <lI>{@link MsgCode#MSG_ID_NOT_CHANGED}
+	 * <lI>{@link MsgCode#MSG_ID_CHANGE_DISABLED}
+	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
+	 * <lI>{@link MsgCode#MSG_BOOTED}
+	 * <lI>{@link MsgCode#MSG_INFO}
+	 * </ul>
+	 * </p>
+	 */
+	SET_ID(0x43),
+
+	/**
+	 * Kommunikationstest.
+	 * <p>
+	 * <table>
+	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
+	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
+	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Data[0]</td><td><pre>PING</pre></td></tr>
+	 * </table>
+	 * </p>
+	 * <p>
+	 * Mögliche Antworten:<br>
+	 * <ul>
+	 * <lI>{@link MsgCode#MSG_OK}
+	 * </ul>
+	 * </p>
+	 */
+	PING(0x44),
+	
+	/**
+	 * Reset auslösen.
+	 * <p>
+	 * <table>
+	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
+	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
+	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Data[0]</td><td><pre>RESET</pre></td></tr>
+	 * </table>
+	 * </p>
+	 * <p>
+	 * Mögliche Antworten:<br>
+	 * <ul>
+	 * <lI>{@link MsgCode#MSG_OK}
+	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
+	 * <lI>{@link MsgCode#MSG_BOOTED}
+	 * <lI>{@link MsgCode#MSG_INFO}
+	 * </ul>
+	 * </p>
+	 */
+	RESET(0x45),
 
 	/**
 	 * Konfiguration abfragen (nicht implementiert).
@@ -732,7 +828,7 @@ public enum Command
 	 * <p>
 	 * <table>
 	 * <tr><th align="left" colspan="2">Aufteilung Füllzustand:</th></tr>
-	 * <tr><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
+	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th></tr>
 	 * <tr><td>Füllzustand Empfangspuffer</td><td>Füllzustand Sendepuffer</td></tr>
 	 * </table>
 	 * </p>
@@ -758,16 +854,17 @@ public enum Command
 	 * </p>
 	 * <p>
 	 * Als Antwort kommen drei Frames mit dem Fehlerzustand. Die Fehlerzustand besteht aus drei Bytes. Für
-	 * jedes Byte wird ein Frame gesendet. Das siebte Datenbyte bestimmt den Index des Fehlerzustandes. Das
-	 * achte Datenbyte ist das Zustandsbyte.
+	 * jedes Byte kann ein Frame gesendet werden. Das fünfte Datenbyte bestimmt den Index des Fehlerzustandes.
+	 * Das sechste bis achte Datenbyte ist das Zustandsbyte.
 	 * </p>
 	 * <p>
 	 * <table>
 	 * <tr><th align="left" colspan="2">Aufteilung Fehlerzustand:</th></tr>
-	 * <tr><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
+	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
 	 * <tr><td>0</td><td>Error Flags</td></tr>
 	 * <tr><td>1</td><td>Zähler für Empfangsfehler</td></tr>
 	 * <tr><td>2</td><td>Zähler für Sendefehler</td></tr>
+	 * <tr><td>3</td><td>Error Flags</td><td>Zähler für Empfangsfehler</td><td>Zähler für Sendefehler</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>  
@@ -792,16 +889,17 @@ public enum Command
 	 * </p>
 	 * <p>
 	 * Als Antwort kommen drei Frames mit der Versionsnummer. Die Versionsnummer besteht aus drei Bytes. Für
-	 * jedes Byte wird ein Frame gesendet. Das siebte Datenbyte bestimmt die Nummer des Versionsbytes. Das
-	 * achte Datenbyte ist das Versionsbyte.
+	 * jedes Byte kann ein Frame gesendet werden. Das fünfte Datenbyte bestimmt die Nummer des Versionsbytes. Das
+	 * sechste bis achte Datenbyte ist das Versionsbyte.
 	 * </p>
 	 * <p>
 	 * <table>
 	 * <tr><th align="left" colspan="2">Aufteilung Versionsnummer:</th></tr>
-	 * <tr><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
+	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
 	 * <tr><td>0</td><td>Major Version</td></tr>
 	 * <tr><td>1</td><td>Minor Version, Low Byte</td></tr>
 	 * <tr><td>2</td><td>Minor Version, High Byte</td></tr>
+	 * <tr><td>3</td><td>Major Version</td><td>Minor Version, Low Byte</td><td>Minor Version, High Byte</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>  
@@ -814,75 +912,38 @@ public enum Command
 	GETVER(0x4d),
 
 	/**
-	 * Kommunikationstest.
+	 * Sensordaten übertragen.
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
 	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
 	 * <tr><td>Länge:</td><td>1</td></tr>
-	 * <tr><td>Data[0]</td><td><pre>PING</pre></td></tr>
+	 * <tr><td>Data[0]</td><td><pre>SENSOR</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
-	 * <ul>
-	 * <lI>{@link MsgCode#MSG_OK}
-	 * </ul>
+	 * Als Antwort kommen die Sensordaten bestehend aus zwei Bytes. Das
+	 * erste Byte ist der Sensortyp. Das zweite Byte beinhaltet den Wert.
 	 * </p>
-	 */
-	PING(0x44),
-	
-	/**
-	 * Reset auslösen.
 	 * <p>
 	 * <table>
-	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
-	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
-	 * <tr><td>Data[0]</td><td><pre>RESET</pre></td></tr>
+	 * <tr><th align="left" colspan="2">Aufteilung Versionsnummer:</th></tr>
+	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
+	 * <tr><td>0</td><td>Major Version</td></tr>
+	 * <tr><td>1</td><td>Minor Version, Low Byte</td></tr>
+	 * <tr><td>2</td><td>Minor Version, High Byte</td></tr>
+	 * <tr><td>3</td><td>Major Version</td><td>Minor Version, Low Byte</td><td>Minor Version, High Byte</td></tr>
 	 * </table>
 	 * </p>
-	 * <p>
+	 * <p>  
 	 * Mögliche Antworten:<br>
 	 * <ul>
-	 * <lI>{@link MsgCode#MSG_OK}
-	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
-	 * <lI>{@link MsgCode#MSG_BOOTED}
 	 * <lI>{@link MsgCode#MSG_INFO}
 	 * </ul>
 	 * </p>
 	 */
-	RESET(0x45),
-
-	/**
-	 * Setzen einer neuen Mikrocontroller-ID. Ist diese tatsächlich anders, wird die
-	 * Konfiguration gelöscht und danach ein RESET ausgelöst. 
-	 * <p>
-	 * <table>
-	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
-	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
-	 * <tr><td>Data[0]</td><td><pre>SET_ID</pre></td></tr>
-	 * <tr><td>Data[1]</td><td>Neue Controller-ID, Low Byte</td></tr>
-	 * <tr><td>Data[2]</td><td>Neue Controller-ID, High Byte</td></tr>
-	 * </table>
-	 * </p>
-	 * <p>
-	 * Mögliche Antworten:<br>
-	 * <ul>
-	 * <lI>{@link MsgCode#MSG_OK}
-	 * <lI>{@link MsgCode#MSG_ID_NOT_CHANGED}
-	 * <lI>{@link MsgCode#MSG_ID_CHANGE_DISABLED}
-	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
-	 * <lI>{@link MsgCode#MSG_BOOTED}
-	 * <lI>{@link MsgCode#MSG_INFO}
-	 * </ul>
-	 * </p>
-	 */
-	SET_ID(0x43);
+	SENSOR(0xe4);
 
 	/**
 	 * Die Kategorie der Weichenschaltkommandos.

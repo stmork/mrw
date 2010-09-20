@@ -147,6 +147,16 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	{
 		return this.unit_no;
 	}
+	
+	/**
+	 * Gibt das Modell dieses Abschnitts zurück.
+	 * @return Das Modell dieser Anlage.
+	 */
+	public Modell getModell()
+	{
+		return this.model;
+	}
+
 
 	/**
 	 * Diese Methode sucht ein Gerät an Hand ihrer ID. Die ID setzt sich aus Controller-ID und Gerätenummer zusammen.

@@ -120,7 +120,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="lampe" upperBound="8" eType="#//Lampe"
         changeable="false" containment="true" eOpposite="#//Lampe/modul"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Lampe">
+  <eClassifiers xsi:type="ecore:EClass" name="Lampe" eSuperTypes="#//Element #//Unit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schwellwert" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typ" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

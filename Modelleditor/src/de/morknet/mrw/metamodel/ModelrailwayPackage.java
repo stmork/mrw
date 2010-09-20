@@ -2073,13 +2073,31 @@ public interface ModelrailwayPackage extends EPackage {
 	int LAMPE = 32;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAMPE__NAME = ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Unit no</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAMPE__UNIT_NO = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Schwellwert</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LAMPE__SCHWELLWERT = 0;
+	int LAMPE__SCHWELLWERT = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Typ</b></em>' attribute.
@@ -2088,7 +2106,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LAMPE__TYP = 1;
+	int LAMPE__TYP = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Modul</b></em>' container reference.
@@ -2097,7 +2115,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LAMPE__MODUL = 2;
+	int LAMPE__MODUL = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Lampe</em>' class.
@@ -2106,7 +2124,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LAMPE_FEATURE_COUNT = 3;
+	int LAMPE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
