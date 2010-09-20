@@ -943,7 +943,7 @@ public enum Command
 	 * </ul>
 	 * </p>
 	 */
-	SENSOR(0xe4);
+	SENSOR(0x4e);
 
 	/**
 	 * Die Kategorie der Weichenschaltkommandos.

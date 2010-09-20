@@ -30,6 +30,7 @@ import de.morknet.mrw.base.Weiche.TurnDirection;
 import de.morknet.mrw.comm.CodeNotFoundException;
 import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.MsgCode;
+import de.morknet.mrw.comm.SensorCode;
 import de.morknet.mrw.comm.SignalCode;
 
 public class EnumTest
@@ -126,6 +127,22 @@ public class EnumTest
 	public void signalCodeErrorString()
 	{
 		SignalCode.valueOf("XXX");
+	}
+
+	@Test
+	public void sensorCode()
+	{
+		for(SensorCode code : SensorCode.values())
+		{
+			Assert.assertSame(code, SensorCode.valueOf(code.name()));
+			Assert.assertSame(code, SensorCode.getSensorCode(code.getSensorCode()));
+		}
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void sensorCodeErrorString()
+	{
+		SensorCode.valueOf("XXX");
 	}
 
 	@Test
