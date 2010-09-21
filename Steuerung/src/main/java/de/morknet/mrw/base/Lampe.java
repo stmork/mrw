@@ -56,7 +56,7 @@ public class Lampe extends DeviceUnit
 
 	/**
 	 * Setzt den Typ der Lampe.
-	 * @return Der neue Lampentyp.
+	 * @param type Der neue Lampentyp.
 	 */
 	public void setType(int type)
 	{

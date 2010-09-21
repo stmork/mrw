@@ -206,8 +206,7 @@ public class MicroController
 	/**
 	 * Diese Methode setzt diverse Fehlerzähler auf einen bestimmten Wert. Konkret werden
 	 * damit die Antworten auf eine QRYERR-Anfrage verarbeitet.
-	 * @param index Der Zählertyp.
-	 * @param value Der Zähler.
+	 * @param msg Die CAN-Message mit den Fehlerdaten.
 	 */
 	public void setErrorValue(final MrwMessage msg)
 	{
@@ -246,8 +245,7 @@ public class MicroController
 	/**
 	 * Diese Methode setzt die Firmware Version und Revision. Konkret werden
 	 * damit die Antworten auf eine GETVER-Anfrage verarbeitet.
-	 * @param index Der Versionstyp.
-	 * @param value Der Wert.
+	 * @param msg Die CAN-Meldung mit den versionsinformationen.
 	 */
 	public void setRevisionValue(final MrwMessage msg)
 	{
