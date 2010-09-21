@@ -741,6 +741,7 @@ public enum Command
 	 * Mögliche Antworten im Bootloader:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_HARDWARE_MISMATCH}
+	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
 	 * </p>
 	 */
@@ -930,13 +931,15 @@ public enum Command
 	 * <table>
 	 * <tr><th align="left" colspan="2">Aufteilung Sensorwerte:</th></tr>
 	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th></tr>
-	 * <tr><td>Sensortyp</td><td>Sensorwert</td></tr>
+	 * <tr><th align="left">Sensortyp</th><th align="left">Sensorwert</th></tr>
+	 * <tr><td align="right">1</td><td>Temperatur</td></tr>
+	 * <tr><td align="right">2</td><td>Helligkeit</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>  
 	 * Mögliche Antworten:<br>
 	 * <ul>
-	 * <lI>{@link MsgCode#MSG_INFO}
+	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
 	 * </p>
 	 */
