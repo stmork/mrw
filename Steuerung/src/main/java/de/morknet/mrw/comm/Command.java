@@ -928,12 +928,9 @@ public enum Command
 	 * </p>
 	 * <p>
 	 * <table>
-	 * <tr><th align="left" colspan="2">Aufteilung Versionsnummer:</th></tr>
-	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
-	 * <tr><td>0</td><td>Major Version</td></tr>
-	 * <tr><td>1</td><td>Minor Version, Low Byte</td></tr>
-	 * <tr><td>2</td><td>Minor Version, High Byte</td></tr>
-	 * <tr><td>3</td><td>Major Version</td><td>Minor Version, Low Byte</td><td>Minor Version, High Byte</td></tr>
+	 * <tr><th align="left" colspan="2">Aufteilung Sensorwerte:</th></tr>
+	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th></tr>
+	 * <tr><td>Sensortyp</td><td>Sensorwert</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>  
