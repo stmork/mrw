@@ -145,6 +145,13 @@ Name: «this.name»
 «ENDFOREACH»
 «ENDDEFINE»
 
+«DEFINE Main FOR Beleuchtungsmodul»
+//      Beleuchtungsmodul: «number» 
+«FOREACH lampe AS lampe»
+//          Lampe «lampe.name»
+«ENDFOREACH»
+«ENDDEFINE»
+
 «DEFINE Main FOR Modul»
 «ERROR "Abstract!"»
 «ENDDEFINE»

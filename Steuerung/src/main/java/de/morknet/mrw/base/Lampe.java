@@ -22,9 +22,11 @@ public class Lampe extends DeviceUnit
 	 * @param modell Die Modelleisenbahn, auf der die Lampe angebracht ist.
 	 * @param name Der Name der Lampe.
 	 */
-	public Lampe(Modell modell, String name)
+	public Lampe(final Modell modell, final String name, final int schwellwert, final int type)
 	{
 		super(modell, name);
+		this.schwellwert = schwellwert;
+		this.type = type;
 	}
 
 	/**
@@ -37,30 +39,12 @@ public class Lampe extends DeviceUnit
 	}
 
 	/**
-	 * Setzt den Schwellwert, ab dem das Licht bei Unterschreiten einer Helligkeit eingeschaltet werden soll. 
-	 * @param schwellwert Der Helligkeitsschwellwert.
-	 */
-	public void setSchwellwert(int schwellwert)
-	{
-		this.schwellwert = schwellwert;
-	}
-
-	/**
 	 * Gibt den Lampentyp zurück.
 	 * @return Der Lampentyp.
 	 */
 	public int getType()
 	{
 		return type;
-	}
-
-	/**
-	 * Setzt den Typ der Lampe.
-	 * @param type Der neue Lampentyp.
-	 */
-	public void setType(int type)
-	{
-		this.type = type;
 	}
 
 	@Override

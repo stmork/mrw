@@ -79,6 +79,9 @@ public class «asClassName()» extends Modell
 «IF eAllContents.typeSelect(Signal).size > 0»
 		Signal          signal;
 «ENDIF»
+«IF eAllContents.typeSelect(Lampe).size > 0»
+		Lampe           lampe;
+«ENDIF»
 «IF eAllContents.typeSelect(Controller).size > 0»
 		MicroController controller;
 «ENDIF»
@@ -187,6 +190,9 @@ Modulkonfiguration
 «ENDREM»
 
 «DEFINE Configuration FOR Controller»
+	// -----------------------------------------
+	// Microcontroller No. «id»
+	// -----------------------------------------
 «IF anschluss.size > 0»
 	// Controller «id», Anschlüsse für Lichtsignale
 	port = 48;
@@ -234,13 +240,27 @@ Modulkonfiguration
 «DEFINE Configuration FOR Gleismodul»
 «IF abschnitte.size > 0»
 	// Controller «controller.id», Gleismodul «number»
-	pin = 0;
+	pin    = 0;
 «FOREACH abschnitte AS abschnitt»
 	device = findSegment(«getAbschnittName(abschnitt)»);
 	device.setPinConfiguration(port + pin++, 1);
 «ENDFOREACH»
 «ENDIF»
 	port += 8;
+«ENDDEFINE»
+
+«DEFINE Configuration FOR Beleuchtungsmodul»
+«IF lampe.size > 0»
+	// Controller «controller.id», Beleuchtungsmodul «number»
+	pin   = 0;
+«FOREACH lampe AS lampe»
+	lampe = new Lampe(this, "«lampe.name»", «lampe.schwellwert», «lampe.typ»);
+	lampe.setMicroControllerId(«controller.id», «lampe.unit_no»);
+	lampe.setPinConfiguration(port + pin, 1);
+	pin++;
+«ENDFOREACH»
+	port += 8;
+«ENDIF»
 «ENDDEFINE»
 
 «REM»
@@ -270,7 +290,7 @@ Gleisteile erstellen
 «ENDDEFINE»
 
 «REM»
-Gleisteile erstellen
+Signale erstellen
 «ENDREM»
 
 «DEFINE createSignal FOR Gleissperrsignal»
