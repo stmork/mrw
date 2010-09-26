@@ -2,13 +2,14 @@
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Model xmi:id="_s63QAEMOEd-Zo7nGYHKgLw" name="Modelrailway">
     <packagedElement xmi:type="uml:Class" xmi:id="_s63QAUMOEd-Zo7nGYHKgLw" name="Anschluss">
-      <ownedAttribute xmi:id="_s63QAkMOEd-Zo7nGYHKgLw" name="number" visibility="public" isOrdered="true">
+      <ownedAttribute xmi:id="_s63QAkMOEd-Zo7nGYHKgLw" name="nummer" visibility="public" isOrdered="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s63QA0MOEd-Zo7nGYHKgLw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d2tQYMZMEd-xELKmGf-T-w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d2t3cMZMEd-xELKmGf-T-w"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_s63QBEMOEd-Zo7nGYHKgLw" name="lichtsignal" type="_s63QCEMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633P0MOEd-Zo7nGYHKgLw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s63QBUMOEd-Zo7nGYHKgLw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s63QBkMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s63QBEMOEd-Zo7nGYHKgLw" name="lichtsignale" type="_s63QCEMOEd-Zo7nGYHKgLw" isOrdered="true" association="_s633P0MOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-1R_sMZLEd-xELKmGf-T-w" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-1SmwMZLEd-xELKmGf-T-w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_s63QB0MOEd-Zo7nGYHKgLw" name="controller" type="_s633JkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633MUMOEd-Zo7nGYHKgLw"/>
     </packagedElement>
@@ -75,21 +76,22 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633KEMOEd-Zo7nGYHKgLw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_s633KUMOEd-Zo7nGYHKgLw" name="modell" type="_s633HkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633MEMOEd-Zo7nGYHKgLw"/>
-      <ownedAttribute xmi:id="_s633KkMOEd-Zo7nGYHKgLw" name="anschluss" type="_s63QAUMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633MUMOEd-Zo7nGYHKgLw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633K0MOEd-Zo7nGYHKgLw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633LEMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633KkMOEd-Zo7nGYHKgLw" name="anschluesse" type="_s63QAUMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633MUMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CQ1gkMZMEd-xELKmGf-T-w" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CQ2HoMZMEd-xELKmGf-T-w"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_s633LUMOEd-Zo7nGYHKgLw" name="modules" type="_s633MkMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633NkMOEd-Zo7nGYHKgLw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s633LkMOEd-Zo7nGYHKgLw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633L0MOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_s633LUMOEd-Zo7nGYHKgLw" name="module" type="_s633MkMOEd-Zo7nGYHKgLw" isOrdered="true" aggregation="composite" association="_s633NkMOEd-Zo7nGYHKgLw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSXGIMZMEd-xELKmGf-T-w" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BSXGIcZMEd-xELKmGf-T-w"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_s633MEMOEd-Zo7nGYHKgLw" memberEnd="_s633IEMOEd-Zo7nGYHKgLw _s633KUMOEd-Zo7nGYHKgLw"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_s633MUMOEd-Zo7nGYHKgLw" memberEnd="_s633KkMOEd-Zo7nGYHKgLw _s63QB0MOEd-Zo7nGYHKgLw"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_s633MkMOEd-Zo7nGYHKgLw" name="Modul" isAbstract="true">
-      <ownedAttribute xmi:id="_s633M0MOEd-Zo7nGYHKgLw" name="number" visibility="public" isOrdered="true">
+      <ownedAttribute xmi:id="_s633M0MOEd-Zo7nGYHKgLw" name="nummer" visibility="public" isOrdered="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s633NEMOEd-Zo7nGYHKgLw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ev6JQMZMEd-xELKmGf-T-w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ev6wUMZMEd-xELKmGf-T-w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_s633NUMOEd-Zo7nGYHKgLw" name="controller" type="_s633JkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633NkMOEd-Zo7nGYHKgLw"/>
     </packagedElement>
@@ -257,9 +259,9 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Jgb_8MSNEd-pqcdF3i7VKA" name="Beleuchtungsmodul">
       <generalization xmi:id="_PZ1A8MSoEd-4b90ZNQhhkQ" general="_s633MkMOEd-Zo7nGYHKgLw"/>
-      <ownedAttribute xmi:id="_zNa-8MSOEd-pqcdF3i7VKA" name="lampe" type="_R98-0MSNEd-pqcdF3i7VKA" isOrdered="true" isReadOnly="true" aggregation="composite" association="_zNaX4MSOEd-pqcdF3i7VKA">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zNbmAMSOEd-pqcdF3i7VKA" value="8"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zNa-8cSOEd-pqcdF3i7VKA"/>
+      <ownedAttribute xmi:id="_zNa-8MSOEd-pqcdF3i7VKA" name="lampen" type="_R98-0MSNEd-pqcdF3i7VKA" isOrdered="true" isReadOnly="true" aggregation="composite" association="_zNaX4MSOEd-pqcdF3i7VKA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8GkWsMZLEd-xELKmGf-T-w" value="8"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8GqdUMZLEd-xELKmGf-T-w"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_R98-0MSNEd-pqcdF3i7VKA" name="Lampe">
