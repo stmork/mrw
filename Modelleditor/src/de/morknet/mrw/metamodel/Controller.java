@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Controller#getId <em>Id</em>}</li>
- *   <li>{@link de.morknet.mrw.metamodel.Controller#getAnschluss <em>Anschluss</em>}</li>
- *   <li>{@link de.morknet.mrw.metamodel.Controller#getModules <em>Modules</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.Controller#getAnschluesse <em>Anschluesse</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.Controller#getModule <em>Module</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Controller#getModell <em>Modell</em>}</li>
  * </ul>
  * </p>
@@ -56,40 +56,40 @@ public interface Controller extends EObject {
 	void setId(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Anschluss</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Anschluesse</b></em>' containment reference list.
 	 * The list contents are of type {@link de.morknet.mrw.metamodel.Anschluss}.
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Anschluss#getController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Anschluss</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Anschluesse</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Anschluss</em>' containment reference list.
-	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getController_Anschluss()
+	 * @return the value of the '<em>Anschluesse</em>' containment reference list.
+	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getController_Anschluesse()
 	 * @see de.morknet.mrw.metamodel.Anschluss#getController
 	 * @model opposite="controller" containment="true"
 	 * @generated
 	 */
-	EList<Anschluss> getAnschluss();
+	EList<Anschluss> getAnschluesse();
 
 	/**
-	 * Returns the value of the '<em><b>Modules</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Module</b></em>' containment reference list.
 	 * The list contents are of type {@link de.morknet.mrw.metamodel.Modul}.
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Modul#getController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Modules</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Module</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modules</em>' containment reference list.
-	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getController_Modules()
+	 * @return the value of the '<em>Module</em>' containment reference list.
+	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getController_Module()
 	 * @see de.morknet.mrw.metamodel.Modul#getController
 	 * @model opposite="controller" containment="true"
 	 * @generated
 	 */
-	EList<Modul> getModules();
+	EList<Modul> getModule();
 
 	/**
 	 * Returns the value of the '<em><b>Modell</b></em>' container reference.

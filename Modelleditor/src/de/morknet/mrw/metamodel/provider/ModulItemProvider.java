@@ -63,25 +63,25 @@ public class ModulItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNumberPropertyDescriptor(object);
+			addNummerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Number feature.
+	 * This adds a property descriptor for the Nummer feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNumberPropertyDescriptor(Object object) {
+	protected void addNummerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Modul_number_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Modul_number_feature", "_UI_Modul_type"),
-				 ModelrailwayPackage.Literals.MODUL__NUMBER,
+				 getString("_UI_Modul_nummer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Modul_nummer_feature", "_UI_Modul_type"),
+				 ModelrailwayPackage.Literals.MODUL__NUMMER,
 				 true,
 				 false,
 				 false,
@@ -99,7 +99,7 @@ public class ModulItemProvider
 	@Override
 	public String getText(Object object) {
 		Modul modul = (Modul)object;
-		return getString("_UI_Modul_type") + " " + modul.getNumber();
+		return getString("_UI_Modul_type") + " " + modul.getNummer();
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class ModulItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Modul.class)) {
-			case ModelrailwayPackage.MODUL__NUMBER:
+			case ModelrailwayPackage.MODUL__NUMMER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

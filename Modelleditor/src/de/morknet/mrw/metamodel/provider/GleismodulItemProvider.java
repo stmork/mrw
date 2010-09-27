@@ -105,7 +105,7 @@ public class GleismodulItemProvider
 	@Override
 	public String getText(Object object) {
 		Gleismodul gleismodul = (Gleismodul)object;
-		return getString("_UI_Gleismodul_type") + " " + gleismodul.getNumber();
+		return getString("_UI_Gleismodul_type") + " " + gleismodul.getNummer();
 	}
 
 	/**

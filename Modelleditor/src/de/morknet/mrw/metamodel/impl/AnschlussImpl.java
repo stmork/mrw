@@ -33,8 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getNumber <em>Number</em>}</li>
- *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichtsignal <em>Lichtsignal</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getNummer <em>Nummer</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichtsignale <em>Lichtsignale</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getController <em>Controller</em>}</li>
  * </ul>
  * </p>
@@ -43,34 +43,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	/**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The default value of the '{@link #getNummer() <em>Nummer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getNummer()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUMBER_EDEFAULT = 0;
+	protected static final int NUMMER_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The cached value of the '{@link #getNummer() <em>Nummer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getNummer()
 	 * @generated
 	 * @ordered
 	 */
-	protected int number = NUMBER_EDEFAULT;
+	protected int nummer = NUMMER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLichtsignal() <em>Lichtsignal</em>}' reference list.
+	 * The cached value of the '{@link #getLichtsignale() <em>Lichtsignale</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLichtsignal()
+	 * @see #getLichtsignale()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Lichtsignal> lichtsignal;
+	protected EList<Lichtsignal> lichtsignale;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,8 +96,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getNumber() {
-		return number;
+	public int getNummer() {
+		return nummer;
 	}
 
 	/**
@@ -105,11 +105,11 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNumber(int newNumber) {
-		int oldNumber = number;
-		number = newNumber;
+	public void setNummer(int newNummer) {
+		int oldNummer = nummer;
+		nummer = newNummer;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelrailwayPackage.ANSCHLUSS__NUMBER, oldNumber, number));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelrailwayPackage.ANSCHLUSS__NUMMER, oldNummer, nummer));
 	}
 
 	/**
@@ -117,11 +117,11 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Lichtsignal> getLichtsignal() {
-		if (lichtsignal == null) {
-			lichtsignal = new EObjectWithInverseResolvingEList<Lichtsignal>(Lichtsignal.class, this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL, ModelrailwayPackage.LICHTSIGNAL__ANSCHLUSS);
+	public EList<Lichtsignal> getLichtsignale() {
+		if (lichtsignale == null) {
+			lichtsignale = new EObjectWithInverseResolvingEList<Lichtsignal>(Lichtsignal.class, this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE, ModelrailwayPackage.LICHTSIGNAL__ANSCHLUSS);
 		}
-		return lichtsignal;
+		return lichtsignale;
 	}
 
 	/**
@@ -143,8 +143,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLichtsignal()).basicAdd(otherEnd, msgs);
+			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLichtsignale()).basicAdd(otherEnd, msgs);
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -161,8 +161,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL:
-				return ((InternalEList<?>)getLichtsignal()).basicRemove(otherEnd, msgs);
+			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE:
+				return ((InternalEList<?>)getLichtsignale()).basicRemove(otherEnd, msgs);
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return eBasicSetContainer(null, ModelrailwayPackage.ANSCHLUSS__CONTROLLER, msgs);
 		}
@@ -178,7 +178,7 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
-				return eInternalContainer().eInverseRemove(this, ModelrailwayPackage.CONTROLLER__ANSCHLUSS, Controller.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ModelrailwayPackage.CONTROLLER__ANSCHLUESSE, Controller.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -191,10 +191,10 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelrailwayPackage.ANSCHLUSS__NUMBER:
-				return getNumber();
-			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL:
-				return getLichtsignal();
+			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
+				return getNummer();
+			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE:
+				return getLichtsignale();
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return getController();
 		}
@@ -210,12 +210,12 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelrailwayPackage.ANSCHLUSS__NUMBER:
-				setNumber((Integer)newValue);
+			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
+				setNummer((Integer)newValue);
 				return;
-			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL:
-				getLichtsignal().clear();
-				getLichtsignal().addAll((Collection<? extends Lichtsignal>)newValue);
+			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE:
+				getLichtsignale().clear();
+				getLichtsignale().addAll((Collection<? extends Lichtsignal>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,11 +229,11 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelrailwayPackage.ANSCHLUSS__NUMBER:
-				setNumber(NUMBER_EDEFAULT);
+			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
+				setNummer(NUMMER_EDEFAULT);
 				return;
-			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL:
-				getLichtsignal().clear();
+			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE:
+				getLichtsignale().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,10 +247,10 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelrailwayPackage.ANSCHLUSS__NUMBER:
-				return number != NUMBER_EDEFAULT;
-			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL:
-				return lichtsignal != null && !lichtsignal.isEmpty();
+			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
+				return nummer != NUMMER_EDEFAULT;
+			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE:
+				return lichtsignale != null && !lichtsignale.isEmpty();
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return getController() != null;
 		}
@@ -267,8 +267,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (number: ");
-		result.append(number);
+		result.append(" (nummer: ");
+		result.append(nummer);
 		result.append(')');
 		return result.toString();
 	}

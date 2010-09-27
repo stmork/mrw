@@ -63,26 +63,26 @@ public class AnschlussItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNumberPropertyDescriptor(object);
-			addLichtsignalPropertyDescriptor(object);
+			addNummerPropertyDescriptor(object);
+			addLichtsignalePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Number feature.
+	 * This adds a property descriptor for the Nummer feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNumberPropertyDescriptor(Object object) {
+	protected void addNummerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Anschluss_number_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Anschluss_number_feature", "_UI_Anschluss_type"),
-				 ModelrailwayPackage.Literals.ANSCHLUSS__NUMBER,
+				 getString("_UI_Anschluss_nummer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Anschluss_nummer_feature", "_UI_Anschluss_type"),
+				 ModelrailwayPackage.Literals.ANSCHLUSS__NUMMER,
 				 true,
 				 false,
 				 false,
@@ -92,19 +92,19 @@ public class AnschlussItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Lichtsignal feature.
+	 * This adds a property descriptor for the Lichtsignale feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLichtsignalPropertyDescriptor(Object object) {
+	protected void addLichtsignalePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Anschluss_lichtsignal_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Anschluss_lichtsignal_feature", "_UI_Anschluss_type"),
-				 ModelrailwayPackage.Literals.ANSCHLUSS__LICHTSIGNAL,
+				 getString("_UI_Anschluss_lichtsignale_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Anschluss_lichtsignale_feature", "_UI_Anschluss_type"),
+				 ModelrailwayPackage.Literals.ANSCHLUSS__LICHTSIGNALE,
 				 true,
 				 false,
 				 true,
@@ -133,7 +133,7 @@ public class AnschlussItemProvider
 	@Override
 	public String getText(Object object) {
 		Anschluss anschluss = (Anschluss)object;
-		return getString("_UI_Anschluss_type") + " " + anschluss.getNumber();
+		return getString("_UI_Anschluss_type") + " " + anschluss.getNummer();
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class AnschlussItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Anschluss.class)) {
-			case ModelrailwayPackage.ANSCHLUSS__NUMBER:
+			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

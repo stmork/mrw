@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampe <em>Lampe</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampen <em>Lampen</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,21 +25,21 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Beleuchtungsmodul extends Modul {
 	/**
-	 * Returns the value of the '<em><b>Lampe</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Lampen</b></em>' containment reference list.
 	 * The list contents are of type {@link de.morknet.mrw.metamodel.Lampe}.
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Lampe#getModul <em>Modul</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lampe</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Lampen</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lampe</em>' containment reference list.
-	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getBeleuchtungsmodul_Lampe()
+	 * @return the value of the '<em>Lampen</em>' containment reference list.
+	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getBeleuchtungsmodul_Lampen()
 	 * @see de.morknet.mrw.metamodel.Lampe#getModul
 	 * @model opposite="modul" containment="true" upper="8" changeable="false"
 	 * @generated
 	 */
-	EList<Lampe> getLampe();
+	EList<Lampe> getLampen();
 
 } // Beleuchtungsmodul

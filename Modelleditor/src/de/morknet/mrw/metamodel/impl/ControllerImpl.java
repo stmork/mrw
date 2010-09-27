@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getId <em>Id</em>}</li>
- *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getAnschluss <em>Anschluss</em>}</li>
- *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getModules <em>Modules</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getAnschluesse <em>Anschluesse</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getModule <em>Module</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getModell <em>Modell</em>}</li>
  * </ul>
  * </p>
@@ -65,24 +65,24 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	protected int id = ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAnschluss() <em>Anschluss</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnschluesse() <em>Anschluesse</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnschluss()
+	 * @see #getAnschluesse()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Anschluss> anschluss;
+	protected EList<Anschluss> anschluesse;
 
 	/**
-	 * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
+	 * The cached value of the '{@link #getModule() <em>Module</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModules()
+	 * @see #getModule()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Modul> modules;
+	protected EList<Modul> module;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,11 +129,11 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Anschluss> getAnschluss() {
-		if (anschluss == null) {
-			anschluss = new EObjectContainmentWithInverseEList<Anschluss>(Anschluss.class, this, ModelrailwayPackage.CONTROLLER__ANSCHLUSS, ModelrailwayPackage.ANSCHLUSS__CONTROLLER);
+	public EList<Anschluss> getAnschluesse() {
+		if (anschluesse == null) {
+			anschluesse = new EObjectContainmentWithInverseEList<Anschluss>(Anschluss.class, this, ModelrailwayPackage.CONTROLLER__ANSCHLUESSE, ModelrailwayPackage.ANSCHLUSS__CONTROLLER);
 		}
-		return anschluss;
+		return anschluesse;
 	}
 
 	/**
@@ -141,11 +141,11 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Modul> getModules() {
-		if (modules == null) {
-			modules = new EObjectContainmentWithInverseEList<Modul>(Modul.class, this, ModelrailwayPackage.CONTROLLER__MODULES, ModelrailwayPackage.MODUL__CONTROLLER);
+	public EList<Modul> getModule() {
+		if (module == null) {
+			module = new EObjectContainmentWithInverseEList<Modul>(Modul.class, this, ModelrailwayPackage.CONTROLLER__MODULE, ModelrailwayPackage.MODUL__CONTROLLER);
 		}
-		return modules;
+		return module;
 	}
 
 	/**
@@ -167,10 +167,10 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModelrailwayPackage.CONTROLLER__ANSCHLUSS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAnschluss()).basicAdd(otherEnd, msgs);
-			case ModelrailwayPackage.CONTROLLER__MODULES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getModules()).basicAdd(otherEnd, msgs);
+			case ModelrailwayPackage.CONTROLLER__ANSCHLUESSE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAnschluesse()).basicAdd(otherEnd, msgs);
+			case ModelrailwayPackage.CONTROLLER__MODULE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getModule()).basicAdd(otherEnd, msgs);
 			case ModelrailwayPackage.CONTROLLER__MODELL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -187,10 +187,10 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModelrailwayPackage.CONTROLLER__ANSCHLUSS:
-				return ((InternalEList<?>)getAnschluss()).basicRemove(otherEnd, msgs);
-			case ModelrailwayPackage.CONTROLLER__MODULES:
-				return ((InternalEList<?>)getModules()).basicRemove(otherEnd, msgs);
+			case ModelrailwayPackage.CONTROLLER__ANSCHLUESSE:
+				return ((InternalEList<?>)getAnschluesse()).basicRemove(otherEnd, msgs);
+			case ModelrailwayPackage.CONTROLLER__MODULE:
+				return ((InternalEList<?>)getModule()).basicRemove(otherEnd, msgs);
 			case ModelrailwayPackage.CONTROLLER__MODELL:
 				return eBasicSetContainer(null, ModelrailwayPackage.CONTROLLER__MODELL, msgs);
 		}
@@ -221,10 +221,10 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 		switch (featureID) {
 			case ModelrailwayPackage.CONTROLLER__ID:
 				return getId();
-			case ModelrailwayPackage.CONTROLLER__ANSCHLUSS:
-				return getAnschluss();
-			case ModelrailwayPackage.CONTROLLER__MODULES:
-				return getModules();
+			case ModelrailwayPackage.CONTROLLER__ANSCHLUESSE:
+				return getAnschluesse();
+			case ModelrailwayPackage.CONTROLLER__MODULE:
+				return getModule();
 			case ModelrailwayPackage.CONTROLLER__MODELL:
 				return getModell();
 		}
@@ -243,13 +243,13 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 			case ModelrailwayPackage.CONTROLLER__ID:
 				setId((Integer)newValue);
 				return;
-			case ModelrailwayPackage.CONTROLLER__ANSCHLUSS:
-				getAnschluss().clear();
-				getAnschluss().addAll((Collection<? extends Anschluss>)newValue);
+			case ModelrailwayPackage.CONTROLLER__ANSCHLUESSE:
+				getAnschluesse().clear();
+				getAnschluesse().addAll((Collection<? extends Anschluss>)newValue);
 				return;
-			case ModelrailwayPackage.CONTROLLER__MODULES:
-				getModules().clear();
-				getModules().addAll((Collection<? extends Modul>)newValue);
+			case ModelrailwayPackage.CONTROLLER__MODULE:
+				getModule().clear();
+				getModule().addAll((Collection<? extends Modul>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -266,11 +266,11 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 			case ModelrailwayPackage.CONTROLLER__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case ModelrailwayPackage.CONTROLLER__ANSCHLUSS:
-				getAnschluss().clear();
+			case ModelrailwayPackage.CONTROLLER__ANSCHLUESSE:
+				getAnschluesse().clear();
 				return;
-			case ModelrailwayPackage.CONTROLLER__MODULES:
-				getModules().clear();
+			case ModelrailwayPackage.CONTROLLER__MODULE:
+				getModule().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -286,10 +286,10 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 		switch (featureID) {
 			case ModelrailwayPackage.CONTROLLER__ID:
 				return id != ID_EDEFAULT;
-			case ModelrailwayPackage.CONTROLLER__ANSCHLUSS:
-				return anschluss != null && !anschluss.isEmpty();
-			case ModelrailwayPackage.CONTROLLER__MODULES:
-				return modules != null && !modules.isEmpty();
+			case ModelrailwayPackage.CONTROLLER__ANSCHLUESSE:
+				return anschluesse != null && !anschluesse.isEmpty();
+			case ModelrailwayPackage.CONTROLLER__MODULE:
+				return module != null && !module.isEmpty();
 			case ModelrailwayPackage.CONTROLLER__MODELL:
 				return getModell() != null;
 		}

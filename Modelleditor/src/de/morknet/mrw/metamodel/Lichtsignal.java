@@ -25,7 +25,7 @@ package de.morknet.mrw.metamodel;
 public interface Lichtsignal extends Signal {
 	/**
 	 * Returns the value of the '<em><b>Anschluss</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Anschluss#getLichtsignal <em>Lichtsignal</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Anschluss#getLichtsignale <em>Lichtsignale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Anschluss</em>' reference isn't clear,
@@ -35,8 +35,8 @@ public interface Lichtsignal extends Signal {
 	 * @return the value of the '<em>Anschluss</em>' reference.
 	 * @see #setAnschluss(Anschluss)
 	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getLichtsignal_Anschluss()
-	 * @see de.morknet.mrw.metamodel.Anschluss#getLichtsignal
-	 * @model opposite="lichtsignal" required="true"
+	 * @see de.morknet.mrw.metamodel.Anschluss#getLichtsignale
+	 * @model opposite="lichtsignale" required="true"
 	 * @generated
 	 */
 	Anschluss getAnschluss();

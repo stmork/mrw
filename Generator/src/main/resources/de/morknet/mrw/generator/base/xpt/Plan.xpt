@@ -42,20 +42,20 @@ digraph «name»
 	{
 		rank=same;
 		«planId(ctrl)»;
-«FOREACH ctrl.anschluss AS a»
+«FOREACH ctrl.anschluesse AS a»
 		«planId(a)»;
 «ENDFOREACH»
-«FOREACH ctrl.modules AS m»
+«FOREACH ctrl.module AS m»
 		«planId(m)»;
 «ENDFOREACH»
 	}
 «ENDFOREACH»
 
 «FOREACH controller AS ctrl»
-«IF ctrl.anschluss.size > 0»
-		«planId(ctrl)»«FOREACH ctrl.anschluss AS a» -> «planId(a)»«ENDFOREACH»;
+«IF ctrl.anschluesse.size > 0»
+		«planId(ctrl)»«FOREACH ctrl.anschluesse AS a» -> «planId(a)»«ENDFOREACH»;
 «ENDIF»
-«FOREACH ctrl.modules AS m»
+«FOREACH ctrl.module AS m»
 		«planId(ctrl)» -> «planId(m)»;
 «ENDFOREACH»
 «ENDFOREACH»
@@ -68,7 +68,7 @@ digraph «name»
 	subgraph «planId(ctrl)»
 	{
 		node [style=filled,shape=box];
-«FOREACH ctrl.anschluss AS a»
+«FOREACH ctrl.anschluesse AS a»
 		subgraph «planId(a)»
 		{
 			rank=same;
@@ -76,7 +76,7 @@ digraph «name»
 			node [style=filled];
 		}
 «ENDFOREACH»
-«FOREACH ctrl.modules AS m»
+«FOREACH ctrl.module AS m»
 		subgraph «planId(m)»
 		{
 			rank=same;
@@ -89,18 +89,18 @@ digraph «name»
 
 «FOREACH controller AS ctrl SEPARATOR " -> "»«planId(ctrl)»«ENDFOREACH»
 «FOREACH controller AS ctrl»
-«IF ctrl.anschluss.size > 0»
-	«planId(ctrl)» «FOREACH ctrl.anschluss AS a» -> «planId(a)»«ENDFOREACH»
-«EXPAND Plan FOREACH ctrl.anschluss»
+«IF ctrl.anschluesse.size > 0»
+	«planId(ctrl)» «FOREACH ctrl.anschluesse AS a» -> «planId(a)»«ENDFOREACH»
+«EXPAND Plan FOREACH ctrl.anschluesse»
 «ENDIF»
-«FOREACH ctrl.modules AS m»
+«FOREACH ctrl.module AS m»
 	«planId(ctrl)» -> «planId(m)»
 «ENDFOREACH»
 «ENDFOREACH»
 «ENDDEFINE»
 
 «DEFINE Plan FOR Anschluss»
-«FOREACH lichtsignal AS ls»
+«FOREACH lichtsignale AS ls»
 	«planId()» -> "«ls.name»"
 «ENDFOREACH»
 «ENDDEFINE»

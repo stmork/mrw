@@ -6,18 +6,12 @@
 package de.morknet.mrw.metamodel.provider;
 
 
-import de.morknet.mrw.metamodel.Beleuchtungsmodul;
-import de.morknet.mrw.metamodel.ModelrailwayFactory;
-import de.morknet.mrw.metamodel.ModelrailwayPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -25,6 +19,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.morknet.mrw.metamodel.Beleuchtungsmodul;
+import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
 /**
  * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Beleuchtungsmodul} object.
@@ -61,31 +58,8 @@ public class BeleuchtungsmodulItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLampePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Lampe feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLampePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Beleuchtungsmodul_lampe_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Beleuchtungsmodul_lampe_feature", "_UI_Beleuchtungsmodul_type"),
-				 ModelrailwayPackage.Literals.BELEUCHTUNGSMODUL__LAMPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -100,7 +74,7 @@ public class BeleuchtungsmodulItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelrailwayPackage.Literals.BELEUCHTUNGSMODUL__LAMPE);
+			childrenFeatures.add(ModelrailwayPackage.Literals.BELEUCHTUNGSMODUL__LAMPEN);
 		}
 		return childrenFeatures;
 	}
@@ -138,7 +112,7 @@ public class BeleuchtungsmodulItemProvider
 	@Override
 	public String getText(Object object) {
 		Beleuchtungsmodul beleuchtungsmodul = (Beleuchtungsmodul)object;
-		return getString("_UI_Beleuchtungsmodul_type") + " " + beleuchtungsmodul.getNumber();
+		return getString("_UI_Beleuchtungsmodul_type") + " " + beleuchtungsmodul.getNummer();
 	}
 
 	/**
@@ -153,7 +127,7 @@ public class BeleuchtungsmodulItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Beleuchtungsmodul.class)) {
-			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE:
+			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -170,11 +144,6 @@ public class BeleuchtungsmodulItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelrailwayPackage.Literals.BELEUCHTUNGSMODUL__LAMPE,
-				 ModelrailwayFactory.eINSTANCE.createLampe()));
 	}
 
 }

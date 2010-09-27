@@ -69,22 +69,22 @@ public interface ModelrailwayPackage extends EPackage {
 	int ANSCHLUSS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Nummer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANSCHLUSS__NUMBER = 0;
+	int ANSCHLUSS__NUMMER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Lichtsignal</b></em>' reference list.
+	 * The feature id for the '<em><b>Lichtsignale</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANSCHLUSS__LICHTSIGNAL = 1;
+	int ANSCHLUSS__LICHTSIGNALE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Controller</b></em>' container reference.
@@ -492,22 +492,22 @@ public interface ModelrailwayPackage extends EPackage {
 	int CONTROLLER__ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Anschluss</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Anschluesse</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__ANSCHLUSS = 1;
+	int CONTROLLER__ANSCHLUESSE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Modules</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Module</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__MODULES = 2;
+	int CONTROLLER__MODULE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Modell</b></em>' container reference.
@@ -538,13 +538,13 @@ public interface ModelrailwayPackage extends EPackage {
 	int MODUL = 10;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Nummer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODUL__NUMBER = 0;
+	int MODUL__NUMMER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Controller</b></em>' container reference.
@@ -575,13 +575,13 @@ public interface ModelrailwayPackage extends EPackage {
 	int GLEISMODUL = 11;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Nummer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GLEISMODUL__NUMBER = MODUL__NUMBER;
+	int GLEISMODUL__NUMMER = MODUL__NUMMER;
 
 	/**
 	 * The feature id for the '<em><b>Controller</b></em>' container reference.
@@ -996,13 +996,13 @@ public interface ModelrailwayPackage extends EPackage {
 	int IMPULSMODUL = 17;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Nummer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPULSMODUL__NUMBER = MODUL__NUMBER;
+	int IMPULSMODUL__NUMMER = MODUL__NUMMER;
 
 	/**
 	 * The feature id for the '<em><b>Controller</b></em>' container reference.
@@ -2027,13 +2027,13 @@ public interface ModelrailwayPackage extends EPackage {
 	int BELEUCHTUNGSMODUL = 31;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Nummer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BELEUCHTUNGSMODUL__NUMBER = MODUL__NUMBER;
+	int BELEUCHTUNGSMODUL__NUMMER = MODUL__NUMMER;
 
 	/**
 	 * The feature id for the '<em><b>Controller</b></em>' container reference.
@@ -2045,13 +2045,13 @@ public interface ModelrailwayPackage extends EPackage {
 	int BELEUCHTUNGSMODUL__CONTROLLER = MODUL__CONTROLLER;
 
 	/**
-	 * The feature id for the '<em><b>Lampe</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Lampen</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BELEUCHTUNGSMODUL__LAMPE = MODUL_FEATURE_COUNT + 0;
+	int BELEUCHTUNGSMODUL__LAMPEN = MODUL_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Beleuchtungsmodul</em>' class.
@@ -2138,26 +2138,26 @@ public interface ModelrailwayPackage extends EPackage {
 	EClass getAnschluss();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.morknet.mrw.metamodel.Anschluss#getNumber <em>Number</em>}'.
+	 * Returns the meta object for the attribute '{@link de.morknet.mrw.metamodel.Anschluss#getNummer <em>Nummer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see de.morknet.mrw.metamodel.Anschluss#getNumber()
+	 * @return the meta object for the attribute '<em>Nummer</em>'.
+	 * @see de.morknet.mrw.metamodel.Anschluss#getNummer()
 	 * @see #getAnschluss()
 	 * @generated
 	 */
-	EAttribute getAnschluss_Number();
+	EAttribute getAnschluss_Nummer();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.morknet.mrw.metamodel.Anschluss#getLichtsignal <em>Lichtsignal</em>}'.
+	 * Returns the meta object for the reference list '{@link de.morknet.mrw.metamodel.Anschluss#getLichtsignale <em>Lichtsignale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Lichtsignal</em>'.
-	 * @see de.morknet.mrw.metamodel.Anschluss#getLichtsignal()
+	 * @return the meta object for the reference list '<em>Lichtsignale</em>'.
+	 * @see de.morknet.mrw.metamodel.Anschluss#getLichtsignale()
 	 * @see #getAnschluss()
 	 * @generated
 	 */
-	EReference getAnschluss_Lichtsignal();
+	EReference getAnschluss_Lichtsignale();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.morknet.mrw.metamodel.Anschluss#getController <em>Controller</em>}'.
@@ -2404,26 +2404,26 @@ public interface ModelrailwayPackage extends EPackage {
 	EAttribute getController_Id();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Controller#getAnschluss <em>Anschluss</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Controller#getAnschluesse <em>Anschluesse</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Anschluss</em>'.
-	 * @see de.morknet.mrw.metamodel.Controller#getAnschluss()
+	 * @return the meta object for the containment reference list '<em>Anschluesse</em>'.
+	 * @see de.morknet.mrw.metamodel.Controller#getAnschluesse()
 	 * @see #getController()
 	 * @generated
 	 */
-	EReference getController_Anschluss();
+	EReference getController_Anschluesse();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Controller#getModules <em>Modules</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Controller#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Modules</em>'.
-	 * @see de.morknet.mrw.metamodel.Controller#getModules()
+	 * @return the meta object for the containment reference list '<em>Module</em>'.
+	 * @see de.morknet.mrw.metamodel.Controller#getModule()
 	 * @see #getController()
 	 * @generated
 	 */
-	EReference getController_Modules();
+	EReference getController_Module();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.morknet.mrw.metamodel.Controller#getModell <em>Modell</em>}'.
@@ -2447,15 +2447,15 @@ public interface ModelrailwayPackage extends EPackage {
 	EClass getModul();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.morknet.mrw.metamodel.Modul#getNumber <em>Number</em>}'.
+	 * Returns the meta object for the attribute '{@link de.morknet.mrw.metamodel.Modul#getNummer <em>Nummer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see de.morknet.mrw.metamodel.Modul#getNumber()
+	 * @return the meta object for the attribute '<em>Nummer</em>'.
+	 * @see de.morknet.mrw.metamodel.Modul#getNummer()
 	 * @see #getModul()
 	 * @generated
 	 */
-	EAttribute getModul_Number();
+	EAttribute getModul_Nummer();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.morknet.mrw.metamodel.Modul#getController <em>Controller</em>}'.
@@ -2943,15 +2943,15 @@ public interface ModelrailwayPackage extends EPackage {
 	EClass getBeleuchtungsmodul();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampe <em>Lampe</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampen <em>Lampen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lampe</em>'.
-	 * @see de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampe()
+	 * @return the meta object for the containment reference list '<em>Lampen</em>'.
+	 * @see de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampen()
 	 * @see #getBeleuchtungsmodul()
 	 * @generated
 	 */
-	EReference getBeleuchtungsmodul_Lampe();
+	EReference getBeleuchtungsmodul_Lampen();
 
 	/**
 	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Lampe <em>Lampe</em>}'.
@@ -3029,20 +3029,20 @@ public interface ModelrailwayPackage extends EPackage {
 		EClass ANSCHLUSS = eINSTANCE.getAnschluss();
 
 		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nummer</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ANSCHLUSS__NUMBER = eINSTANCE.getAnschluss_Number();
+		EAttribute ANSCHLUSS__NUMMER = eINSTANCE.getAnschluss_Nummer();
 
 		/**
-		 * The meta object literal for the '<em><b>Lichtsignal</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Lichtsignale</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANSCHLUSS__LICHTSIGNAL = eINSTANCE.getAnschluss_Lichtsignal();
+		EReference ANSCHLUSS__LICHTSIGNALE = eINSTANCE.getAnschluss_Lichtsignale();
 
 		/**
 		 * The meta object literal for the '<em><b>Controller</b></em>' container reference feature.
@@ -3247,20 +3247,20 @@ public interface ModelrailwayPackage extends EPackage {
 		EAttribute CONTROLLER__ID = eINSTANCE.getController_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Anschluss</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Anschluesse</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROLLER__ANSCHLUSS = eINSTANCE.getController_Anschluss();
+		EReference CONTROLLER__ANSCHLUESSE = eINSTANCE.getController_Anschluesse();
 
 		/**
-		 * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Module</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROLLER__MODULES = eINSTANCE.getController_Modules();
+		EReference CONTROLLER__MODULE = eINSTANCE.getController_Module();
 
 		/**
 		 * The meta object literal for the '<em><b>Modell</b></em>' container reference feature.
@@ -3281,12 +3281,12 @@ public interface ModelrailwayPackage extends EPackage {
 		EClass MODUL = eINSTANCE.getModul();
 
 		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nummer</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MODUL__NUMBER = eINSTANCE.getModul_Number();
+		EAttribute MODUL__NUMMER = eINSTANCE.getModul_Nummer();
 
 		/**
 		 * The meta object literal for the '<em><b>Controller</b></em>' container reference feature.
@@ -3699,12 +3699,12 @@ public interface ModelrailwayPackage extends EPackage {
 		EClass BELEUCHTUNGSMODUL = eINSTANCE.getBeleuchtungsmodul();
 
 		/**
-		 * The meta object literal for the '<em><b>Lampe</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Lampen</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BELEUCHTUNGSMODUL__LAMPE = eINSTANCE.getBeleuchtungsmodul_Lampe();
+		EReference BELEUCHTUNGSMODUL__LAMPEN = eINSTANCE.getBeleuchtungsmodul_Lampen();
 
 		/**
 		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.LampeImpl <em>Lampe</em>}' class.

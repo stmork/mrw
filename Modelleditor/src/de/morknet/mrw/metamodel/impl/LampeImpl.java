@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -213,7 +212,7 @@ public class LampeImpl extends ElementImpl implements Lampe {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newModul != null)
-				msgs = ((InternalEObject)newModul).eInverseAdd(this, ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE, Beleuchtungsmodul.class, msgs);
+				msgs = ((InternalEObject)newModul).eInverseAdd(this, ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN, Beleuchtungsmodul.class, msgs);
 			msgs = basicSetModul(newModul, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -260,7 +259,7 @@ public class LampeImpl extends ElementImpl implements Lampe {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ModelrailwayPackage.LAMPE__MODUL:
-				return eInternalContainer().eInverseRemove(this, ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE, Beleuchtungsmodul.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN, Beleuchtungsmodul.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

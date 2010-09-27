@@ -28,14 +28,14 @@ String planId(Controller ctrl) :
 	"CAN_" + ctrl.id;
 
 String planId(Anschluss a) :
-	"SER_" + a.number;
+	"SER_" + a.nummer;
 
 String planId(Gleismodul sm) :
-	"SEG_" + sm.number;
+	"SEG_" + sm.nummer;
 
 String planId(Impulsmodul im) :
-	"MAG_" + im.number;
+	"MAG_" + im.nummer;
 
 String planId(Modul m) :
-	"MOD_" + m.number;
+	"MOD_" + m.nummer;
 

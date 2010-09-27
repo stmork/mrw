@@ -360,7 +360,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAnschluss_Number() {
+	public EAttribute getAnschluss_Nummer() {
 		return (EAttribute)anschlussEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -369,7 +369,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnschluss_Lichtsignal() {
+	public EReference getAnschluss_Lichtsignale() {
 		return (EReference)anschlussEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -585,7 +585,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getController_Anschluss() {
+	public EReference getController_Anschluesse() {
 		return (EReference)controllerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -594,7 +594,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getController_Modules() {
+	public EReference getController_Module() {
 		return (EReference)controllerEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -621,7 +621,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getModul_Number() {
+	public EAttribute getModul_Nummer() {
 		return (EAttribute)modulEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1044,7 +1044,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBeleuchtungsmodul_Lampe() {
+	public EReference getBeleuchtungsmodul_Lampen() {
 		return (EReference)beleuchtungsmodulEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1113,8 +1113,8 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		// Create classes and their features
 		anschlussEClass = createEClass(ANSCHLUSS);
-		createEAttribute(anschlussEClass, ANSCHLUSS__NUMBER);
-		createEReference(anschlussEClass, ANSCHLUSS__LICHTSIGNAL);
+		createEAttribute(anschlussEClass, ANSCHLUSS__NUMMER);
+		createEReference(anschlussEClass, ANSCHLUSS__LICHTSIGNALE);
 		createEReference(anschlussEClass, ANSCHLUSS__CONTROLLER);
 
 		lichtsignalEClass = createEClass(LICHTSIGNAL);
@@ -1147,12 +1147,12 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		controllerEClass = createEClass(CONTROLLER);
 		createEAttribute(controllerEClass, CONTROLLER__ID);
-		createEReference(controllerEClass, CONTROLLER__ANSCHLUSS);
-		createEReference(controllerEClass, CONTROLLER__MODULES);
+		createEReference(controllerEClass, CONTROLLER__ANSCHLUESSE);
+		createEReference(controllerEClass, CONTROLLER__MODULE);
 		createEReference(controllerEClass, CONTROLLER__MODELL);
 
 		modulEClass = createEClass(MODUL);
-		createEAttribute(modulEClass, MODUL__NUMBER);
+		createEAttribute(modulEClass, MODUL__NUMMER);
 		createEReference(modulEClass, MODUL__CONTROLLER);
 
 		gleismodulEClass = createEClass(GLEISMODUL);
@@ -1220,7 +1220,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		streckeEClass = createEClass(STRECKE);
 
 		beleuchtungsmodulEClass = createEClass(BELEUCHTUNGSMODUL);
-		createEReference(beleuchtungsmodulEClass, BELEUCHTUNGSMODUL__LAMPE);
+		createEReference(beleuchtungsmodulEClass, BELEUCHTUNGSMODUL__LAMPEN);
 
 		lampeEClass = createEClass(LAMPE);
 		createEAttribute(lampeEClass, LAMPE__SCHWELLWERT);
@@ -1293,12 +1293,12 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(anschlussEClass, Anschluss.class, "Anschluss", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAnschluss_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnschluss_Lichtsignal(), this.getLichtsignal(), this.getLichtsignal_Anschluss(), "lichtsignal", null, 0, -1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnschluss_Controller(), this.getController(), this.getController_Anschluss(), "controller", null, 1, 1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnschluss_Nummer(), ecorePackage.getEInt(), "nummer", null, 0, 1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnschluss_Lichtsignale(), this.getLichtsignal(), this.getLichtsignal_Anschluss(), "lichtsignale", null, 0, -1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnschluss_Controller(), this.getController(), this.getController_Anschluesse(), "controller", null, 1, 1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lichtsignalEClass, Lichtsignal.class, "Lichtsignal", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLichtsignal_Anschluss(), this.getAnschluss(), this.getAnschluss_Lichtsignal(), "anschluss", null, 1, 1, Lichtsignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLichtsignal_Anschluss(), this.getAnschluss(), this.getAnschluss_Lichtsignale(), "anschluss", null, 1, 1, Lichtsignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signalEClass, Signal.class, "Signal", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSignal_InZaehlrichtung(), ecorePackage.getEBoolean(), "inZaehlrichtung", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1327,13 +1327,13 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getController_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getController_Anschluss(), this.getAnschluss(), this.getAnschluss_Controller(), "anschluss", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getController_Modules(), this.getModul(), this.getModul_Controller(), "modules", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_Anschluesse(), this.getAnschluss(), this.getAnschluss_Controller(), "anschluesse", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_Module(), this.getModul(), this.getModul_Controller(), "module", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getController_Modell(), this.getModell(), this.getModell_Controller(), "modell", null, 1, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modulEClass, Modul.class, "Modul", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getModul_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Modul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModul_Controller(), this.getController(), this.getController_Modules(), "controller", null, 1, 1, Modul.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModul_Nummer(), ecorePackage.getEInt(), "nummer", null, 0, 1, Modul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModul_Controller(), this.getController(), this.getController_Module(), "controller", null, 1, 1, Modul.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gleismodulEClass, Gleismodul.class, "Gleismodul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGleismodul_Abschnitte(), this.getGleisabschnitt(), this.getGleisabschnitt_Modul(), "abschnitte", null, 0, 4, Gleismodul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1400,12 +1400,12 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		initEClass(streckeEClass, Strecke.class, "Strecke", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(beleuchtungsmodulEClass, Beleuchtungsmodul.class, "Beleuchtungsmodul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBeleuchtungsmodul_Lampe(), this.getLampe(), this.getLampe_Modul(), "lampe", null, 0, 8, Beleuchtungsmodul.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBeleuchtungsmodul_Lampen(), this.getLampe(), this.getLampe_Modul(), "lampen", null, 0, 8, Beleuchtungsmodul.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lampeEClass, Lampe.class, "Lampe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLampe_Schwellwert(), ecorePackage.getEInt(), "schwellwert", null, 1, 1, Lampe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLampe_Typ(), ecorePackage.getEInt(), "typ", null, 1, 1, Lampe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLampe_Modul(), this.getBeleuchtungsmodul(), this.getBeleuchtungsmodul_Lampe(), "modul", null, 1, 1, Lampe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLampe_Modul(), this.getBeleuchtungsmodul(), this.getBeleuchtungsmodul_Lampen(), "modul", null, 1, 1, Lampe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

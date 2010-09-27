@@ -119,35 +119,35 @@ Name: «this.name»
 
 «DEFINE Main FOR Controller»
 // Controller «id»
-«EXPAND Main FOREACH anschluss»
-«EXPAND Main FOREACH modules»
+«EXPAND Main FOREACH anschluesse»
+«EXPAND Main FOREACH module»
 //
 «ENDDEFINE»
 
 «DEFINE Main FOR Anschluss»
-//      Anschluss: «number»
-«FOREACH lichtsignal AS signal»
+//      Anschluss: «nummer»
+«FOREACH lichtsignale AS signal»
 //          Lichtsignal «signal.name» («signal.abschnitt.name»)
 «ENDFOREACH»
 «ENDDEFINE»
 
 «DEFINE Main FOR Impulsmodul»
-//      Impulsmodul: «number»
+//      Impulsmodul: «nummer»
 «FOREACH magnetartikel AS artikel»
 //          Magnetartikel «artikel.name» («artikel.abschnitt.name»)
 «ENDFOREACH»
 «ENDDEFINE»
 
 «DEFINE Main FOR Gleismodul»
-//      Gleismodul: «number» 
+//      Gleismodul: «nummer» 
 «FOREACH abschnitte AS abschnitt»
 //          Abschnitt «abschnitt.name»
 «ENDFOREACH»
 «ENDDEFINE»
 
 «DEFINE Main FOR Beleuchtungsmodul»
-//      Beleuchtungsmodul: «number» 
-«FOREACH lampe AS lampe»
+//      Beleuchtungsmodul: «nummer» 
+«FOREACH lampen AS lampe»
 //          Lampe «lampe.name»
 «ENDFOREACH»
 «ENDDEFINE»

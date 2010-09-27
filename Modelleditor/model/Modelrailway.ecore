@@ -4,15 +4,15 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metamodel"
     nsURI="http://www.morknet.de/Modelrailway" nsPrefix="Modelrailway">
   <eClassifiers xsi:type="ecore:EClass" name="Anschluss">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lichtsignal" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nummer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lichtsignale" upperBound="-1"
         eType="#//Lichtsignal" eOpposite="#//Lichtsignal/anschluss"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
-        eType="#//Controller" changeable="false" eOpposite="#//Controller/anschluss"/>
+        eType="#//Controller" changeable="false" eOpposite="#//Controller/anschluesse"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lichtsignal" abstract="true" eSuperTypes="#//Signal">
     <eStructuralFeatures xsi:type="ecore:EReference" name="anschluss" lowerBound="1"
-        eType="#//Anschluss" eOpposite="#//Anschluss/lichtsignal"/>
+        eType="#//Anschluss" eOpposite="#//Anschluss/lichtsignale"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Signal" abstract="true" eSuperTypes="#//Bauelement #//Unit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inZaehlrichtung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -49,17 +49,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="anschluss" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="anschluesse" upperBound="-1"
         eType="#//Anschluss" containment="true" eOpposite="#//Anschluss/controller"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" upperBound="-1"
         eType="#//Modul" containment="true" eOpposite="#//Modul/controller"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modell" lowerBound="1"
         eType="#//Modell" changeable="false" eOpposite="#//Modell/controller"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Modul" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nummer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
-        eType="#//Controller" changeable="false" eOpposite="#//Controller/modules"/>
+        eType="#//Controller" changeable="false" eOpposite="#//Controller/module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gleismodul" eSuperTypes="#//Modul">
     <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitte" upperBound="4"
@@ -117,14 +117,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Formgleissperrsignal" eSuperTypes="#//Formsignal"/>
   <eClassifiers xsi:type="ecore:EClass" name="Strecke" eSuperTypes="#//Gruppe"/>
   <eClassifiers xsi:type="ecore:EClass" name="Beleuchtungsmodul" eSuperTypes="#//Modul">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lampe" upperBound="8" eType="#//Lampe"
-        changeable="false" containment="true" eOpposite="#//Lampe/modul"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lampen" upperBound="8"
+        eType="#//Lampe" changeable="false" containment="true" eOpposite="#//Lampe/modul"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lampe" eSuperTypes="#//Element #//Unit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schwellwert" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typ" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modul" lowerBound="1" eType="#//Beleuchtungsmodul"
-        eOpposite="#//Beleuchtungsmodul/lampe"/>
+        eOpposite="#//Beleuchtungsmodul/lampen"/>
   </eClassifiers>
 </ecore:EPackage>

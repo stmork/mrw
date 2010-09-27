@@ -55,7 +55,7 @@ context Controller ERROR "Die ID muss zwischen 0 und 2040 liegen!" :
 	(id > 0) && (id < 2040);
 
 context Controller ERROR "Der Controller " + id + " hat mehr als 4 Lichtsignalmodule!" :
-	anschluss.size <= 4;
+	anschluesse.size <= 4;
 
 /*
 context Modul ERROR "Die Portnummer muss 0, 1 oder 2 lauten!" :
@@ -65,16 +65,16 @@ context Modul ERROR "Die Portnummer muss 0, 1 oder 2 lauten!" :
 context Unit ERROR "Die Gerätenummer muss definiert sein!" :
 	(unit_no > 0) && (unit_no < 65536);
 
-context Anschluss WARNING "Das Lichtsignalmodul " + number + " an Controller " + controller.id + " hat keine angeschlossenen Lichtsignale!" :
-	lichtsignal.size > 0;
+context Anschluss WARNING "Das Lichtsignalmodul " + nummer + " an Controller " + controller.id + " hat keine angeschlossenen Lichtsignale!" :
+	lichtsignale.size > 0;
 
-context Impulsmodul WARNING "Das Impulsmodul " + number + " an Controller " + controller.id + " hat keine angeschlossenen Magnetartikel!" :
+context Impulsmodul WARNING "Das Impulsmodul " + nummer + " an Controller " + controller.id + " hat keine angeschlossenen Magnetartikel!" :
 	magnetartikel.size > 0;
 
-context Gleismodul WARNING "Das Gleismodul " + number + " an Controller " + controller.id + " hat keine angeschlossenen Gleise!" :
+context Gleismodul WARNING "Das Gleismodul " + nummer + " an Controller " + controller.id + " hat keine angeschlossenen Gleise!" :
 	abschnitte.size > 0;
 	
-context Gleismodul ERROR "Das Gleismodul " + number + " an Controller " + controller.id + " hat mehr als vier Gleise anschlossen!" :
+context Gleismodul ERROR "Das Gleismodul " + nummer + " an Controller " + controller.id + " hat mehr als vier Gleise anschlossen!" :
 	abschnitte.size <= 4;
 
 context Lichtsignal WARNING "Das Lichtsignal " + name + " im Abschnitt " + abschnitt.name + " hat keinen Anschluss!" :

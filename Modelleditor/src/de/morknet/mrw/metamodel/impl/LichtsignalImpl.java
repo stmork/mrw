@@ -110,9 +110,9 @@ public abstract class LichtsignalImpl extends SignalImpl implements Lichtsignal 
 		if (newAnschluss != anschluss) {
 			NotificationChain msgs = null;
 			if (anschluss != null)
-				msgs = ((InternalEObject)anschluss).eInverseRemove(this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL, Anschluss.class, msgs);
+				msgs = ((InternalEObject)anschluss).eInverseRemove(this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE, Anschluss.class, msgs);
 			if (newAnschluss != null)
-				msgs = ((InternalEObject)newAnschluss).eInverseAdd(this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL, Anschluss.class, msgs);
+				msgs = ((InternalEObject)newAnschluss).eInverseAdd(this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE, Anschluss.class, msgs);
 			msgs = basicSetAnschluss(newAnschluss, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -130,7 +130,7 @@ public abstract class LichtsignalImpl extends SignalImpl implements Lichtsignal 
 		switch (featureID) {
 			case ModelrailwayPackage.LICHTSIGNAL__ANSCHLUSS:
 				if (anschluss != null)
-					msgs = ((InternalEObject)anschluss).eInverseRemove(this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNAL, Anschluss.class, msgs);
+					msgs = ((InternalEObject)anschluss).eInverseRemove(this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE, Anschluss.class, msgs);
 				return basicSetAnschluss((Anschluss)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

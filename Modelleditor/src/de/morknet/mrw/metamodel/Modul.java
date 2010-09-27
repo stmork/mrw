@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.morknet.mrw.metamodel.Modul#getNumber <em>Number</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.Modul#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Modul#getController <em>Controller</em>}</li>
  * </ul>
  * </p>
@@ -26,34 +26,34 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Modul extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Number</b></em>' attribute.
+	 * Returns the value of the '<em><b>Nummer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Number</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Nummer</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Number</em>' attribute.
-	 * @see #setNumber(int)
-	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getModul_Number()
+	 * @return the value of the '<em>Nummer</em>' attribute.
+	 * @see #setNummer(int)
+	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getModul_Nummer()
 	 * @model
 	 * @generated
 	 */
-	int getNumber();
+	int getNummer();
 
 	/**
-	 * Sets the value of the '{@link de.morknet.mrw.metamodel.Modul#getNumber <em>Number</em>}' attribute.
+	 * Sets the value of the '{@link de.morknet.mrw.metamodel.Modul#getNummer <em>Nummer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Number</em>' attribute.
-	 * @see #getNumber()
+	 * @param value the new value of the '<em>Nummer</em>' attribute.
+	 * @see #getNummer()
 	 * @generated
 	 */
-	void setNumber(int value);
+	void setNummer(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Controller</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Controller#getModules <em>Modules</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Controller#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Controller</em>' container reference isn't clear,
@@ -62,8 +62,8 @@ public interface Modul extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Controller</em>' container reference.
 	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getModul_Controller()
-	 * @see de.morknet.mrw.metamodel.Controller#getModules
-	 * @model opposite="modules" required="true" transient="false" changeable="false"
+	 * @see de.morknet.mrw.metamodel.Controller#getModule
+	 * @model opposite="module" required="true" transient="false" changeable="false"
 	 * @generated
 	 */
 	Controller getController();

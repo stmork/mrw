@@ -28,9 +28,9 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="Modelrailway" basePackage="de.morknet.mrw"
       disposableProviderFactory="true" ecorePackage="Modelrailway.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Anschluss">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Anschluss/number"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Anschluss/nummer"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/lichtsignal"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/lichtsignale"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/controller"/>
     </genClasses>
@@ -74,14 +74,14 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Controller">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Controller/id"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/anschluss"/>
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/anschluesse"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/modules"/>
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/module"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference Modelrailway.ecore#//Controller/modell"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Modul">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Modul/number"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Modul/nummer"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference Modelrailway.ecore#//Modul/controller"/>
     </genClasses>
@@ -150,8 +150,8 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Formgleissperrsignal"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Strecke"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Beleuchtungsmodul">
-      <genFeatures xsi:type="genmodel:GenFeature" children="true" createChild="true"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Beleuchtungsmodul/lampe"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="false" ecoreFeature="ecore:EReference Modelrailway.ecore#//Beleuchtungsmodul/lampen"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Lampe">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Lampe/schwellwert"/>

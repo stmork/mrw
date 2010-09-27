@@ -105,7 +105,7 @@ public class ImpulsmodulItemProvider
 	@Override
 	public String getText(Object object) {
 		Impulsmodul impulsmodul = (Impulsmodul)object;
-		return getString("_UI_Impulsmodul_type") + " " + impulsmodul.getNumber();
+		return getString("_UI_Impulsmodul_type") + " " + impulsmodul.getNummer();
 	}
 
 	/**

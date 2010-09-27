@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.morknet.mrw.metamodel.impl.ModulImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.ModulImpl#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ModulImpl#getController <em>Controller</em>}</li>
  * </ul>
  * </p>
@@ -34,24 +34,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public abstract class ModulImpl extends EObjectImpl implements Modul {
 	/**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The default value of the '{@link #getNummer() <em>Nummer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getNummer()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUMBER_EDEFAULT = 0;
+	protected static final int NUMMER_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The cached value of the '{@link #getNummer() <em>Nummer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getNummer()
 	 * @generated
 	 * @ordered
 	 */
-	protected int number = NUMBER_EDEFAULT;
+	protected int nummer = NUMMER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,8 +77,8 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getNumber() {
-		return number;
+	public int getNummer() {
+		return nummer;
 	}
 
 	/**
@@ -86,11 +86,11 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNumber(int newNumber) {
-		int oldNumber = number;
-		number = newNumber;
+	public void setNummer(int newNummer) {
+		int oldNummer = nummer;
+		nummer = newNummer;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelrailwayPackage.MODUL__NUMBER, oldNumber, number));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelrailwayPackage.MODUL__NUMMER, oldNummer, nummer));
 	}
 
 	/**
@@ -142,7 +142,7 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ModelrailwayPackage.MODUL__CONTROLLER:
-				return eInternalContainer().eInverseRemove(this, ModelrailwayPackage.CONTROLLER__MODULES, Controller.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ModelrailwayPackage.CONTROLLER__MODULE, Controller.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -155,8 +155,8 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelrailwayPackage.MODUL__NUMBER:
-				return getNumber();
+			case ModelrailwayPackage.MODUL__NUMMER:
+				return getNummer();
 			case ModelrailwayPackage.MODUL__CONTROLLER:
 				return getController();
 		}
@@ -171,8 +171,8 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelrailwayPackage.MODUL__NUMBER:
-				setNumber((Integer)newValue);
+			case ModelrailwayPackage.MODUL__NUMMER:
+				setNummer((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,8 +186,8 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelrailwayPackage.MODUL__NUMBER:
-				setNumber(NUMBER_EDEFAULT);
+			case ModelrailwayPackage.MODUL__NUMMER:
+				setNummer(NUMMER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -201,8 +201,8 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelrailwayPackage.MODUL__NUMBER:
-				return number != NUMBER_EDEFAULT;
+			case ModelrailwayPackage.MODUL__NUMMER:
+				return nummer != NUMMER_EDEFAULT;
 			case ModelrailwayPackage.MODUL__CONTROLLER:
 				return getController() != null;
 		}
@@ -219,8 +219,8 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (number: ");
-		result.append(number);
+		result.append(" (nummer: ");
+		result.append(nummer);
 		result.append(')');
 		return result.toString();
 	}

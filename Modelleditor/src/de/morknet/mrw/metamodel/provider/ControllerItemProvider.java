@@ -105,8 +105,8 @@ public class ControllerItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelrailwayPackage.Literals.CONTROLLER__ANSCHLUSS);
-			childrenFeatures.add(ModelrailwayPackage.Literals.CONTROLLER__MODULES);
+			childrenFeatures.add(ModelrailwayPackage.Literals.CONTROLLER__ANSCHLUESSE);
+			childrenFeatures.add(ModelrailwayPackage.Literals.CONTROLLER__MODULE);
 		}
 		return childrenFeatures;
 	}
@@ -162,8 +162,8 @@ public class ControllerItemProvider
 			case ModelrailwayPackage.CONTROLLER__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ModelrailwayPackage.CONTROLLER__ANSCHLUSS:
-			case ModelrailwayPackage.CONTROLLER__MODULES:
+			case ModelrailwayPackage.CONTROLLER__ANSCHLUESSE:
+			case ModelrailwayPackage.CONTROLLER__MODULE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,22 +183,22 @@ public class ControllerItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModelrailwayPackage.Literals.CONTROLLER__ANSCHLUSS,
+				(ModelrailwayPackage.Literals.CONTROLLER__ANSCHLUESSE,
 				 ModelrailwayFactory.eINSTANCE.createAnschluss()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModelrailwayPackage.Literals.CONTROLLER__MODULES,
+				(ModelrailwayPackage.Literals.CONTROLLER__MODULE,
 				 ModelrailwayFactory.eINSTANCE.createGleismodul()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModelrailwayPackage.Literals.CONTROLLER__MODULES,
+				(ModelrailwayPackage.Literals.CONTROLLER__MODULE,
 				 ModelrailwayFactory.eINSTANCE.createImpulsmodul()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModelrailwayPackage.Literals.CONTROLLER__MODULES,
+				(ModelrailwayPackage.Literals.CONTROLLER__MODULE,
 				 ModelrailwayFactory.eINSTANCE.createBeleuchtungsmodul()));
 	}
 

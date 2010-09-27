@@ -5,8 +5,6 @@
  */
 package de.morknet.mrw.metamodel;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Lampe</b></em>'.
@@ -80,7 +78,7 @@ public interface Lampe extends Element, Unit {
 
 	/**
 	 * Returns the value of the '<em><b>Modul</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampe <em>Lampe</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampen <em>Lampen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Modul</em>' container reference isn't clear,
@@ -90,8 +88,8 @@ public interface Lampe extends Element, Unit {
 	 * @return the value of the '<em>Modul</em>' container reference.
 	 * @see #setModul(Beleuchtungsmodul)
 	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getLampe_Modul()
-	 * @see de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampe
-	 * @model opposite="lampe" required="true" transient="false"
+	 * @see de.morknet.mrw.metamodel.Beleuchtungsmodul#getLampen
+	 * @model opposite="lampen" required="true" transient="false"
 	 * @generated
 	 */
 	Beleuchtungsmodul getModul();

@@ -9,8 +9,6 @@ import de.morknet.mrw.metamodel.Beleuchtungsmodul;
 import de.morknet.mrw.metamodel.Lampe;
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl#getLampe <em>Lampe</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl#getLampen <em>Lampen</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,15 +34,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class BeleuchtungsmodulImpl extends ModulImpl implements Beleuchtungsmodul {
 	/**
-	 * The cached value of the '{@link #getLampe() <em>Lampe</em>}' containment reference list.
+	 * The cached value of the '{@link #getLampen() <em>Lampen</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLampe()
+	 * @see #getLampen()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Lampe> lampe;
-
+	protected EList<Lampe> lampen;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,11 +66,11 @@ public class BeleuchtungsmodulImpl extends ModulImpl implements Beleuchtungsmodu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Lampe> getLampe() {
-		if (lampe == null) {
-			lampe = new EObjectContainmentWithInverseEList<Lampe>(Lampe.class, this, ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE, ModelrailwayPackage.LAMPE__MODUL);
+	public EList<Lampe> getLampen() {
+		if (lampen == null) {
+			lampen = new EObjectContainmentWithInverseEList<Lampe>(Lampe.class, this, ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN, ModelrailwayPackage.LAMPE__MODUL);
 		}
-		return lampe;
+		return lampen;
 	}
 
 	/**
@@ -85,8 +82,8 @@ public class BeleuchtungsmodulImpl extends ModulImpl implements Beleuchtungsmodu
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLampe()).basicAdd(otherEnd, msgs);
+			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLampen()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -99,8 +96,8 @@ public class BeleuchtungsmodulImpl extends ModulImpl implements Beleuchtungsmodu
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE:
-				return ((InternalEList<?>)getLampe()).basicRemove(otherEnd, msgs);
+			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN:
+				return ((InternalEList<?>)getLampen()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -113,8 +110,8 @@ public class BeleuchtungsmodulImpl extends ModulImpl implements Beleuchtungsmodu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE:
-				return getLampe();
+			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN:
+				return getLampen();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -127,8 +124,8 @@ public class BeleuchtungsmodulImpl extends ModulImpl implements Beleuchtungsmodu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPE:
-				return lampe != null && !lampe.isEmpty();
+			case ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN:
+				return lampen != null && !lampen.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
