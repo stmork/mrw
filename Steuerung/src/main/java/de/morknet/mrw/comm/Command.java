@@ -611,7 +611,7 @@ public enum Command
 	 * <p>
 	 * Mögliche Antworten:<br>
 	 * <ul>
-	 * <lI>{@link MsgCode#MSG_OK}
+	 * <lI>{@link MsgCode#MSG_OK} In diesem Falle steht in Data[4] die Zahl der konfigurierten Geräte.
 	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
 	 * </ul>
@@ -683,7 +683,7 @@ public enum Command
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
-	 * <lI>{@link MsgCode#MSG_BOOTED}
+	 * <lI>{@link MsgCode#MSG_BOOTED} In Data[4] steht vom Mikroprozessor das MCUSR. Es gibt den Grund für das Booten an.
 	 * <lI>{@link MsgCode#MSG_INFO}
 	 * </ul>
 	 * </p>
@@ -803,10 +803,16 @@ public enum Command
 	 * Mögliche Antworten im Bootloader:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_CHECKSUM_ERROR}
-	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
-	 * <lI>{@link MsgCode#MSG_BOOTED}
 	 * <lI>{@link MsgCode#MSG_INFO}
 	 * </ul>
+	 * </p>
+	 * <p>
+	 * Als weitere Daten werden zurückgemeldet
+	 * <table>
+	 * <tr><th align="left" colspan="2">Aufteilung Prüfsummen:</th></tr>
+	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th></tr>
+	 * <tr><th align="left">Angeforderte Prüfsumme</th><th align="left">Prüfsumme aus den FLASH_DATA-Messages</th></tr>
+	 * </table>
 	 * </p>
 	 */
 	FLASH_CHECK(0x4a),
@@ -871,7 +877,7 @@ public enum Command
 	 * <p>  
 	 * Mögliche Antworten:<br>
 	 * <ul>
-	 * <lI>{@link MsgCode#MSG_INFO}
+	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
 	 * </p>
 	 */
@@ -906,7 +912,7 @@ public enum Command
 	 * <p>  
 	 * Mögliche Antworten:<br>
 	 * <ul>
-	 * <lI>{@link MsgCode#MSG_INFO}
+	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
 	 * </p>
 	 */

@@ -32,7 +32,7 @@ cached Integer getPinCount(Modell m) :
 	m.eAllContents.typeSelect(Vorsignal).size * 4 +
 	m.eAllContents.typeSelect(Blocksignal).size * 2 +
 	m.eAllContents.typeSelect(Einfahrsignal).size * 3 +
-	m.eAllContents.typeSelect(Ausfahrsignal).size * 6 +
+	m.eAllContents.typeSelect(Ausfahrsignal).size * 5 +
 	m.eAllContents.typeSelect(Gleissperrsignal).size * 2;
 
 cached List[Signal] getSignals(Gleisabschnitt a, Boolean inDir) :

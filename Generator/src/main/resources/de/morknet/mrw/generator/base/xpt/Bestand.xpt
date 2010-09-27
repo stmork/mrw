@@ -22,6 +22,7 @@
 
 «EXTENSION de::morknet::mrw::generator::base::ext::magnetartikel»
 «EXTENSION de::morknet::mrw::generator::base::ext::signal»
+«EXTENSION de::morknet::mrw::generator::base::ext::base»
 
 «DEFINE Main FOR Modell»
 «FILE "Bestand.log" LOG»
@@ -48,11 +49,13 @@ Hauptsignale 3-flg.: «eAllContents.typeSelect(Formhauptsignal).select(e|e.spulen
 -----------------------------------------------------------------
 LED-Zahl: «getPinCount(this)»
 Spulenzahl: «getSpulenzahl(this)»
+Lampenzahl: «getLampenzahl(this)»
 -----------------------------------------------------------------
 Controller: «eAllContents.typeSelect(Controller).size»
 Lichtsignalmodule: «eAllContents.typeSelect(Anschluss).size»
 Magnetartikelmodule: «eAllContents.typeSelect(Impulsmodul).size»
 Gleismodule: «eAllContents.typeSelect(Gleismodul).size»
+Beleuchtungsmodule: «eAllContents.typeSelect(Beleuchtungsmodul).size»
 «ENDFILE»
 «ENDDEFINE»
 
