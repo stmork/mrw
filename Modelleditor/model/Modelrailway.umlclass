@@ -1211,19 +1211,19 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDIWh0MREd-lyqIZidRpcg" x="-31" y="-36"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDIWiEMREd-lyqIZidRpcg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9kEMREd-lyqIZidRpcg" x="-54" y="14"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9kEMREd-lyqIZidRpcg" x="17" y="75"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDI9kUMREd-lyqIZidRpcg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9kkMREd-lyqIZidRpcg" x="-21" y="-39"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDI9k0MREd-lyqIZidRpcg" type="6007">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9lEMREd-lyqIZidRpcg" x="-26" y="29"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9lEMREd-lyqIZidRpcg" x="32" y="51"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDI9lUMREd-lyqIZidRpcg" type="6008">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9lkMREd-lyqIZidRpcg" y="15"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDI9l0MREd-lyqIZidRpcg" type="6009">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9mEMREd-lyqIZidRpcg" x="-7" y="14"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9mEMREd-lyqIZidRpcg" x="17" y="22"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDI9mUMREd-lyqIZidRpcg" type="6019">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDI9mkMREd-lyqIZidRpcg" y="40"/>
@@ -1240,19 +1240,19 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDOdJUMREd-lyqIZidRpcg" y="20"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDOdJkMREd-lyqIZidRpcg" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDOdJ0MREd-lyqIZidRpcg" x="22" y="-17"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDOdJ0MREd-lyqIZidRpcg" x="-14" y="-17"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDOdKEMREd-lyqIZidRpcg" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDOdKUMREd-lyqIZidRpcg" y="-15"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDOdKkMREd-lyqIZidRpcg" type="6006">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDPEMEMREd-lyqIZidRpcg" y="-30"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDPEMEMREd-lyqIZidRpcg" x="-40" y="-32"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDPEMUMREd-lyqIZidRpcg" type="6007">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDPEMkMREd-lyqIZidRpcg" y="-30"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDPEM0MREd-lyqIZidRpcg" type="6008">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDPENEMREd-lyqIZidRpcg" x="-38" y="-17"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cDPENEMREd-lyqIZidRpcg" x="-74" y="-17"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cDPENUMREd-lyqIZidRpcg" type="6009">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cDPENkMREd-lyqIZidRpcg" y="15"/>
@@ -1263,7 +1263,7 @@
     <styles xmi:type="notation:RoutingStyle" xmi:id="_cDOdIUMREd-lyqIZidRpcg" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_cDOdIkMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Association" href="Modelrailway.uml#_s633VkMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDOdI0MREd-lyqIZidRpcg" points="[-36, -43, 700, 10]$[-676, -43, 60, 10]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cDOdI0MREd-lyqIZidRpcg" points="[-36, -29, 700, 25]$[-676, -29, 60, 25]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUt1wUMREd-lyqIZidRpcg" id="(0.24489795918367346,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUuc0EMREd-lyqIZidRpcg" id="(0.5,0.0)"/>
   </edges>
