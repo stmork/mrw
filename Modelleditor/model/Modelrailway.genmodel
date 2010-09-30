@@ -151,7 +151,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Strecke"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Beleuchtungsmodul">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="false" ecoreFeature="ecore:EReference Modelrailway.ecore#//Beleuchtungsmodul/lampen"/>
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Beleuchtungsmodul/lampen"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Lampe">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Lampe/schwellwert"/>

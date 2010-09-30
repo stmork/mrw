@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.morknet.mrw.metamodel.Beleuchtungsmodul;
+import de.morknet.mrw.metamodel.ModelrailwayFactory;
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
 /**
@@ -144,6 +145,11 @@ public class BeleuchtungsmodulItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelrailwayPackage.Literals.BELEUCHTUNGSMODUL__LAMPEN,
+				 ModelrailwayFactory.eINSTANCE.createLampe()));
 	}
 
 }
