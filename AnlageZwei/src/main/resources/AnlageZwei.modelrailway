@@ -61,29 +61,51 @@
     <module xsi:type="Modelrailway:Gleismodul" nummer="311" abschnitte="//@gruppe.1/@abschnitt.8 //@gruppe.1/@abschnitt.18 //@gruppe.1/@abschnitt.17 //@gruppe.1/@abschnitt.15"/>
   </controller>
   <controller id="12">
-    <module xsi:type="Modelrailway:Gleismodul" nummer="112" abschnitte="//@gruppe.2/@abschnitt.4 //@gruppe.3/@abschnitt.4 //@gruppe.2/@abschnitt.1 //@gruppe.3/@abschnitt.5"/>
+    <module xsi:type="Modelrailway:Gleismodul" nummer="112" abschnitte="//@gruppe.2/@abschnitt.4 //@gruppe.3/@abschnitt.4 //@gruppe.3/@abschnitt.2 //@gruppe.3/@abschnitt.5"/>
     <module xsi:type="Modelrailway:Gleismodul" nummer="212" abschnitte="//@gruppe.2/@abschnitt.5 //@gruppe.1/@abschnitt.9 //@gruppe.2/@abschnitt.3 //@gruppe.2/@abschnitt.2"/>
-    <module xsi:type="Modelrailway:Gleismodul" nummer="312" abschnitte="//@gruppe.2/@abschnitt.0 //@gruppe.1/@abschnitt.2 //@gruppe.2/@abschnitt.7 //@gruppe.2/@abschnitt.6"/>
+    <module xsi:type="Modelrailway:Gleismodul" nummer="312" abschnitte="//@gruppe.3/@abschnitt.3 //@gruppe.1/@abschnitt.2 //@gruppe.2/@abschnitt.7 //@gruppe.2/@abschnitt.6"/>
   </controller>
   <controller id="13">
     <anschluesse nummer="1303" lichtsignale="//@gruppe.2/@abschnitt.1/@bauelement.1 //@gruppe.2/@abschnitt.1/@bauelement.2 //@gruppe.1/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.2"/>
     <anschluesse nummer="1302" lichtsignale="//@gruppe.3/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.2/@bauelement.2 //@gruppe.3/@abschnitt.3/@bauelement.3 //@gruppe.2/@abschnitt.7/@bauelement.1"/>
     <module xsi:type="Modelrailway:Impulsmodul" nummer="113" magnetartikel="//@gruppe.2/@abschnitt.5/@bauelement.1 //@gruppe.2/@abschnitt.3/@bauelement.1 //@gruppe.2/@abschnitt.2/@bauelement.2 //@gruppe.2/@abschnitt.2/@bauelement.1"/>
-    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="114"/>
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="313">
+      <lampen name="Gaslaterne Süd" unit_no="3130" schwellwert="64" typ="65"/>
+      <lampen name="Bahnhof Nord" unit_no="3131" schwellwert="70" typ="2"/>
+      <lampen name="Haus" unit_no="3132" schwellwert="90" typ="15"/>
+      <lampen name="Laterne Kreuzung Nord" unit_no="3133" schwellwert="64" typ="64"/>
+      <lampen name="Bahnhofshalle" unit_no="3134" schwellwert="70" typ="3"/>
+      <lampen name="Bahnhof Süd" unit_no="3135" schwellwert="70" typ="4"/>
+      <lampen name="Laterne Kreuzung Süd" unit_no="3136" schwellwert="64" typ="64"/>
+      <lampen name="frei" unit_no="3137" schwellwert="64" typ="64"/>
+    </module>
   </controller>
   <controller id="14">
-    <module xsi:type="Modelrailway:Gleismodul" nummer="114" abschnitte="//@gruppe.2/@abschnitt.13 //@gruppe.2/@abschnitt.9 //@gruppe.2/@abschnitt.11 //@gruppe.2/@abschnitt.8"/>
-    <module xsi:type="Modelrailway:Impulsmodul" nummer="214" magnetartikel="//@gruppe.2/@abschnitt.10/@bauelement.1 //@gruppe.2/@abschnitt.10/@bauelement.0 //@gruppe.2/@abschnitt.11/@bauelement.1 //@gruppe.2/@abschnitt.8/@bauelement.1"/>
+    <module xsi:type="Modelrailway:Impulsmodul" nummer="114" magnetartikel="//@gruppe.2/@abschnitt.10/@bauelement.1 //@gruppe.2/@abschnitt.10/@bauelement.0 //@gruppe.2/@abschnitt.11/@bauelement.1 //@gruppe.2/@abschnitt.8/@bauelement.1"/>
+    <module xsi:type="Modelrailway:Gleismodul" nummer="314" abschnitte="//@gruppe.2/@abschnitt.13 //@gruppe.2/@abschnitt.9 //@gruppe.2/@abschnitt.11 //@gruppe.2/@abschnitt.8"/>
   </controller>
   <controller id="15">
-    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="115"/>
-    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="215">
-      <lampen name="Gaslaterne Hbf links" unit_no="3151" schwellwert="128" typ="8"/>
-      <lampen name="Gaslaterne Hbf rechts" unit_no="3152" schwellwert="128" typ="8"/>
-      <lampen name="Stellwerk Auf " unit_no="3153" schwellwert="100" typ="9"/>
-      <lampen name="Post" unit_no="3154" schwellwert="150" typ="9"/>
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="115">
+      <lampen name="alt 3" unit_no="2150" schwellwert="32" typ="15"/>
+      <lampen name="alt 2" unit_no="2151" schwellwert="70" typ="15"/>
+      <lampen name="alt 1" unit_no="2152" schwellwert="90" typ="15"/>
+      <lampen name="Steigenberger" unit_no="2153" schwellwert="128" typ="15"/>
+      <lampen name="Gaslaterne Nord" unit_no="2154" schwellwert="64" typ="65"/>
+      <lampen name="frei" unit_no="2155"/>
+      <lampen name="Stellwerk Auf " unit_no="2156" schwellwert="100"/>
+      <lampen name="Laterne Stellwerk" unit_no="2157" schwellwert="64" typ="64"/>
     </module>
-    <module xsi:type="Modelrailway:Gleismodul" nummer="315" abschnitte="//@gruppe.3/@abschnitt.2 //@gruppe.3/@abschnitt.3 //@gruppe.3/@abschnitt.0 //@gruppe.3/@abschnitt.1"/>
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="215">
+      <lampen name="Laterne 1" unit_no="1150" schwellwert="64" typ="64"/>
+      <lampen name="Palais 3" unit_no="1151" schwellwert="30" typ="15"/>
+      <lampen name="Palais 2" unit_no="1152" schwellwert="80" typ="15"/>
+      <lampen name="Palais 1" unit_no="1153" schwellwert="65" typ="15"/>
+      <lampen name="frei" unit_no="1154"/>
+      <lampen name="frei" unit_no="1155"/>
+      <lampen name="Laterne Post" unit_no="1156" schwellwert="64" typ="64"/>
+      <lampen name="Post" unit_no="1157" schwellwert="80" typ="1"/>
+    </module>
+    <module xsi:type="Modelrailway:Gleismodul" nummer="315" abschnitte="//@gruppe.2/@abschnitt.0 //@gruppe.3/@abschnitt.0 //@gruppe.3/@abschnitt.1 //@gruppe.2/@abschnitt.1"/>
   </controller>
   <gruppe xsi:type="Modelrailway:Bahnhof" name="Alt Ulm">
     <abschnitt name="S1a" unit_no="101" modul="//@controller.7/@module.1">
@@ -351,11 +373,11 @@
     </abschnitt>
   </gruppe>
   <gruppe xsi:type="Modelrailway:Strecke" name="Berg">
-    <abschnitt name="W1a" unit_no="1001" modul="//@controller.11/@module.2">
+    <abschnitt name="W1a" unit_no="1001" modul="//@controller.14/@module.2">
       <bauelement xsi:type="Modelrailway:Gleis" name="W1a" a="//@gruppe.0/@abschnitt.10/@bauelement.0" b="//@gruppe.2/@abschnitt.1/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="b" unit_no="5151" inZaehlrichtung="true" anschluss="//@controller.0/@anschluesse.0"/>
     </abschnitt>
-    <abschnitt name="W1b" unit_no="1002" modul="//@controller.11/@module.0">
+    <abschnitt name="W1b" unit_no="1002" modul="//@controller.14/@module.2">
       <bauelement xsi:type="Modelrailway:Gleis" name="W1b" a="//@gruppe.2/@abschnitt.0/@bauelement.0" b="//@gruppe.2/@abschnitt.2/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Einfahrsignal" name="B" unit_no="4131" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.0"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="a" unit_no="4151" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.0"/>
@@ -384,29 +406,29 @@
       <bauelement xsi:type="Modelrailway:Gleis" name="HS3" a="//@gruppe.2/@abschnitt.6/@bauelement.0" b="//@gruppe.2/@abschnitt.8/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Einfahrsignal" name="A" unit_no="4331" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.1"/>
     </abschnitt>
-    <abschnitt name="BW2b" unit_no="1009" modul="//@controller.13/@module.0">
+    <abschnitt name="BW2b" unit_no="1009" modul="//@controller.13/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="BW2b" a="//@gruppe.2/@abschnitt.7/@bauelement.0" b="//@gruppe.2/@abschnitt.8/@bauelement.1"/>
-      <bauelement xsi:type="Modelrailway:Weiche" name="B4" modul="//@controller.13/@module.1" unit_no="2204" neu="true" cIstAbzweig="true" cIstBevorzugt="true" b="//@gruppe.2/@abschnitt.9/@bauelement.0" c="//@gruppe.2/@abschnitt.11/@bauelement.0" a="//@gruppe.2/@abschnitt.8/@bauelement.0"/>
+      <bauelement xsi:type="Modelrailway:Weiche" name="B4" modul="//@controller.13/@module.0" unit_no="2204" neu="true" cIstAbzweig="true" cIstBevorzugt="true" b="//@gruppe.2/@abschnitt.9/@bauelement.0" c="//@gruppe.2/@abschnitt.11/@bauelement.0" a="//@gruppe.2/@abschnitt.8/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Formvorsignal" name="p3" spulen="2" modul="//@controller.10/@module.0" unit_no="2205"/>
     </abschnitt>
-    <abschnitt name="BW2a" unit_no="1010" modul="//@controller.13/@module.0">
+    <abschnitt name="BW2a" unit_no="1010" modul="//@controller.13/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="BW2a" a="//@gruppe.2/@abschnitt.8/@bauelement.1" b="//@gruppe.2/@abschnitt.10/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Gleissperrsignal" name="2I" unit_no="4321" anschluss="//@controller.5/@anschluesse.0"/>
     </abschnitt>
     <abschnitt name="B2" unit_no="1011" modul="//@controller.6/@module.1">
-      <bauelement xsi:type="Modelrailway:Weiche" name="B5" aInZaehlrichtung="true" modul="//@controller.13/@module.1" unit_no="2205" neu="true" bIstAbzweig="true" cIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.1" c="//@gruppe.2/@abschnitt.9/@bauelement.0" a="//@gruppe.2/@abschnitt.10/@bauelement.2"/>
-      <bauelement xsi:type="Modelrailway:Weiche" name="B6" modul="//@controller.13/@module.1" unit_no="2206" neu="true" bIstAbzweig="true" bIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.0" c="//@gruppe.2/@abschnitt.13/@bauelement.0" a="//@gruppe.2/@abschnitt.12/@bauelement.0"/>
+      <bauelement xsi:type="Modelrailway:Weiche" name="B5" aInZaehlrichtung="true" modul="//@controller.13/@module.0" unit_no="2205" neu="true" bIstAbzweig="true" cIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.1" c="//@gruppe.2/@abschnitt.9/@bauelement.0" a="//@gruppe.2/@abschnitt.10/@bauelement.2"/>
+      <bauelement xsi:type="Modelrailway:Weiche" name="B6" modul="//@controller.13/@module.0" unit_no="2206" neu="true" bIstAbzweig="true" bIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.0" c="//@gruppe.2/@abschnitt.13/@bauelement.0" a="//@gruppe.2/@abschnitt.12/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Gleis" name="B2" istHauptgleis="true" a="//@gruppe.2/@abschnitt.10/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Gleissperrsignal" name="1I" unit_no="4311" inZaehlrichtung="true" anschluss="//@controller.8/@anschluesse.0"/>
     </abschnitt>
-    <abschnitt name="BW1" unit_no="1012" modul="//@controller.13/@module.0">
+    <abschnitt name="BW1" unit_no="1012" modul="//@controller.13/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="BW1" a="//@gruppe.2/@abschnitt.8/@bauelement.1" b="//@gruppe.2/@abschnitt.12/@bauelement.0"/>
-      <bauelement xsi:type="Modelrailway:Formhauptsignal" name="P1" spulen="2" modul="//@controller.13/@module.1" unit_no="4101"/>
+      <bauelement xsi:type="Modelrailway:Formhauptsignal" name="P1" spulen="2" modul="//@controller.13/@module.0" unit_no="4101"/>
     </abschnitt>
     <abschnitt name="B1" unit_no="1013" modul="//@controller.6/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="B1" istHauptgleis="true" a="//@gruppe.2/@abschnitt.11/@bauelement.0" b="//@gruppe.2/@abschnitt.10/@bauelement.1"/>
     </abschnitt>
-    <abschnitt name="BO1" unit_no="1014" modul="//@controller.13/@module.0">
+    <abschnitt name="BO1" unit_no="1014" modul="//@controller.13/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="BO1" a="//@gruppe.2/@abschnitt.10/@bauelement.1"/>
     </abschnitt>
   </gruppe>
@@ -419,12 +441,12 @@
       <bauelement xsi:type="Modelrailway:Gleis" name="W3a" a="//@gruppe.0/@abschnitt.27/@bauelement.0" b="//@gruppe.3/@abschnitt.3/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="v302" unit_no="5351" inZaehlrichtung="true" anschluss="//@controller.0/@anschluesse.0"/>
     </abschnitt>
-    <abschnitt name="W2b" unit_no="262" modul="//@controller.14/@module.2">
+    <abschnitt name="W2b" unit_no="262" modul="//@controller.11/@module.0">
       <bauelement xsi:type="Modelrailway:Gleis" name="W2b" a="//@gruppe.3/@abschnitt.0/@bauelement.0" b="//@gruppe.3/@abschnitt.4/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Blocksignal" name="202" unit_no="5201" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.1"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="v204" unit_no="5241" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.1"/>
     </abschnitt>
-    <abschnitt name="W3b" unit_no="362" modul="//@controller.14/@module.2">
+    <abschnitt name="W3b" unit_no="362" modul="//@controller.11/@module.2">
       <bauelement xsi:type="Modelrailway:Gleis" name="W3b" a="//@gruppe.3/@abschnitt.1/@bauelement.0" b="//@gruppe.3/@abschnitt.5/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Blocksignal" name="302" unit_no="5301" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.0"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="v304" unit_no="5341" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.0"/>
