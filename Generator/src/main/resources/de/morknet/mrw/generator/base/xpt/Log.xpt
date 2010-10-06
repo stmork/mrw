@@ -63,6 +63,12 @@ Name: «this.name»
 «ENDFILE»
 «ENDDEFINE»
 
+«DEFINE Lampen FOR Modell»
+«FILE "Lampen.log" LOG»
+«EXPAND Device FOREACH eAllContents.typeSelect(Lampe).sortBy(e|e.name)»
+«ENDFILE»
+«ENDDEFINE»
+
 «DEFINE Main FOR Gruppe»
 «this.metaType.name»: «name»
 «EXPAND Main FOREACH abschnitt»
@@ -81,7 +87,7 @@ Name: «this.name»
 «ENDDEFINE»
 
 «DEFINE Device FOR Signal»
-	Signal: [«unit_no»] «abschnitt.gruppe.name»/«name»
+	Signal:      [«unit_no»] «abschnitt.gruppe.name»/«name»
 «ENDDEFINE»
 
 «DEFINE Device FOR Verzweigung»
@@ -89,9 +95,12 @@ Name: «this.name»
 «ENDDEFINE»
 
 «DEFINE Device FOR Gleisabschnitt»
-	Abschnitt: [«unit_no»] «gruppe.name»/«name»
+	Abschnitt:   [«unit_no»] «gruppe.name»/«name»
 «ENDDEFINE»
 
+«DEFINE Device FOR Lampe»
+	Lampe:       [«unit_no»] «name» «schwellwert» «typ»
+«ENDDEFINE»
 
 «REM»
 ««««« Dump device infos »»»»»

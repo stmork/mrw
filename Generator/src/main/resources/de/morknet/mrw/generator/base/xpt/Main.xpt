@@ -30,6 +30,7 @@
 «EXPAND Log::Controller»
 «EXPAND Log::Abschnitte»
 «EXPAND Log::Devices»
+«EXPAND Log::Lampen»
 «EXPAND Rails::Infrastructure»
 «EXPAND Bestand::Main»
 «EXPAND RCC::Main»
