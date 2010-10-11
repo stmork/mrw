@@ -60,6 +60,11 @@ abstract public class Modell extends NamedElement
 
 	private final Log log;
 	private final static int               ROUTE_DEPTH     = 100;
+
+	/**
+	 * Die Beleuchtungssituation der Modelleisenbahn.
+	 */
+	private              int               lightness; 
 	
 	/**
 	 * Zuordnung von Betriebsgruppennamen auf Betriebsgruppe.
@@ -720,4 +725,22 @@ abstract public class Modell extends NamedElement
 	 * @see TourMode
 	 */
 	abstract public BeerModeInfo getBeerModeInfo();
+
+	/**
+	 * Setzt die Beleuchtung.
+	 * @param data Beleuchtung.
+	 */
+	public void setLightness(final int data)
+	{
+		this.lightness = data;
+	}
+	
+	/**
+	 * Gibt die Beleuchtung zurück.
+	 * @return Die Beleuchtungssituation.
+	 */
+	public int getLightness()
+	{
+		return this.lightness;
+	}
 }

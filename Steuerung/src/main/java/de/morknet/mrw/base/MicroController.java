@@ -169,6 +169,8 @@ public class MicroController
 		synchronized(this)
 		{
 			this.booted = true;
+			ping_count  = 0;
+			pong_count  = 0;
 		}
 	}
 
@@ -183,7 +185,7 @@ public class MicroController
 
 		synchronized(this)
 		{
-			reachable = (ping_count == pong_count) && booted; 
+			reachable = (ping_count <= pong_count) && booted; 
 		}
 		return reachable;
 	}

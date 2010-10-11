@@ -77,7 +77,7 @@
       <lampen name="Bahnhofshalle" unit_no="3134" schwellwert="30" typ="3"/>
       <lampen name="Bahnhof Süd" unit_no="3135" schwellwert="30" typ="4"/>
       <lampen name="Laterne Kreuzung Süd" unit_no="3136" schwellwert="28" typ="64"/>
-      <lampen name="frei" unit_no="3137"/>
+      <lampen name="Telefonzelle" unit_no="3137" schwellwert="22" typ="7"/>
     </module>
   </controller>
   <controller id="14">
@@ -91,7 +91,7 @@
       <lampen name="alt 1" unit_no="2152" schwellwert="12" typ="15"/>
       <lampen name="Steigenberger" unit_no="2153" schwellwert="40" typ="15"/>
       <lampen name="Gaslaterne Nord" unit_no="2154" schwellwert="28" typ="65"/>
-      <lampen name="frei" unit_no="2155"/>
+      <lampen name="Laterne Bahnhof 2" unit_no="2155" schwellwert="26" typ="5"/>
       <lampen name="Stellwerk Auf " unit_no="2156" schwellwert="25"/>
       <lampen name="Laterne Stellwerk" unit_no="2157" schwellwert="28" typ="64"/>
     </module>
@@ -99,9 +99,9 @@
       <lampen name="Laterne 1" unit_no="1150" schwellwert="28" typ="64"/>
       <lampen name="Palais 3" unit_no="1151" schwellwert="16" typ="15"/>
       <lampen name="Palais 2" unit_no="1152" schwellwert="20" typ="15"/>
-      <lampen name="Palais 1" unit_no="1153" schwellwert="12" typ="15"/>
+      <lampen name="Laterne Bahnhof 1" unit_no="1153" schwellwert="26" typ="6"/>
       <lampen name="frei" unit_no="1154"/>
-      <lampen name="frei" unit_no="1155"/>
+      <lampen name="Palais 1" unit_no="1155" schwellwert="12" typ="15"/>
       <lampen name="Laterne Post" unit_no="1156" schwellwert="28" typ="64"/>
       <lampen name="Post" unit_no="1157" schwellwert="40" typ="1"/>
     </module>
