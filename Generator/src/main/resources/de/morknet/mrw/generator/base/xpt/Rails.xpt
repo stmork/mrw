@@ -259,8 +259,8 @@ Modulkonfiguration
 	lampe.setPinConfiguration(port + pin, 1);
 	pin++;
 «ENDFOREACH»
-	port += 8;
 «ENDIF»
+	port += 8;
 «ENDDEFINE»
 
 «REM»

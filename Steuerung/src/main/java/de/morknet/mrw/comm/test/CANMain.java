@@ -21,6 +21,7 @@ package de.morknet.mrw.comm.test;
 
 import gnu.io.NoSuchPortException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.commons.logging.Log;
@@ -30,6 +31,7 @@ import de.morknet.mrw.comm.Connection;
 import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.comm.can.CANMessage;
 import de.morknet.mrw.comm.can.CANReceiver;
+import de.morknet.mrw.comm.can.ChecksumException;
 import de.morknet.mrw.comm.dummy.DummyConnection;
 import de.morknet.mrw.comm.rs232.RS232Connection;
 import de.morknet.mrw.util.LogUtil;
@@ -42,9 +44,9 @@ import de.morknet.mrw.util.LogUtil;
  */
 abstract public class CANMain implements de.morknet.mrw.comm.can.CANMessageProcessor
 {
-	private final static Log log = LogFactory.getLog(CANMain.class); 
-	private Connection conn;
-	private int        received = 0;
+	private final static Log        log = LogFactory.getLog(CANMain.class); 
+	private              Connection connection;
+	private              int        received = 0;
 
 	/**
 	 * Die zentrale Methode zum Versenden und Empfangen von MRW-Meldungen.
@@ -59,27 +61,27 @@ abstract public class CANMain implements de.morknet.mrw.comm.can.CANMessageProce
 			// init
 			if (args.length > 0)
 			{
-				conn = new RS232Connection(args[0]);
+				connection = new RS232Connection(args[0]);
 			}
 			else
 			{
 				try
 				{
-					conn = Connection.getDefaultConnection();
+					connection = Connection.getDefaultConnection();
 				}
 				catch(NoSuchPortException nspe)
 				{
-					conn = new DummyConnection();
+					connection = new DummyConnection();
 				}
 				catch(UnsatisfiedLinkError ule)
 				{
-					conn = new DummyConnection();
+					connection = new DummyConnection();
 				}
 			}
 			CANReceiver receiver = new CANReceiver();
 			receiver.setProcessor(this); 
-            conn.setByteProcessor(receiver);
-            conn.sync();
+            connection.setByteProcessor(receiver);
+            connection.sync();
 		}
 		catch(Exception e)
 		{
@@ -108,7 +110,7 @@ abstract public class CANMain implements de.morknet.mrw.comm.can.CANMessageProce
 			for (MrwMessage msg : list)
 			{
 				msg.dump(">");
-				conn.write(msg.getBytes());
+				connection.write(msg.getBytes());
 			}
 		}
 		catch (Exception e)
@@ -126,7 +128,7 @@ abstract public class CANMain implements de.morknet.mrw.comm.can.CANMessageProce
 		try
 		{
 			Thread.sleep(s * 1000L);
-			conn.close();
+			connection.close();
 		}
 		catch (InterruptedException e)
 		{

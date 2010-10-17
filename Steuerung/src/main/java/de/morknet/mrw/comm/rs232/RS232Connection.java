@@ -31,6 +31,7 @@ import org.apache.commons.logging.LogFactory;
 
 import de.morknet.mrw.base.MrwException;
 import de.morknet.mrw.comm.Connection;
+import de.morknet.mrw.comm.can.ChecksumException;
 
 /**
  * Diese Klasse steuert eine RS232-Verbindung zu einer realen Modelleisenbahnanlage.
@@ -99,6 +100,10 @@ public final class RS232Connection extends Connection
 								try
 								{
 									processor.processByte(buffer[i] & 0xff);
+								}
+								catch(ChecksumException ce)
+								{
+									handleChecksumException(ce);
 								}
 								catch (MrwException e)
 								{

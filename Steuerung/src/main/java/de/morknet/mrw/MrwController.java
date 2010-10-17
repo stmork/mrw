@@ -63,6 +63,7 @@ import de.morknet.mrw.comm.SensorCode;
 import de.morknet.mrw.comm.can.CANMessage;
 import de.morknet.mrw.comm.can.CANMessageProcessor;
 import de.morknet.mrw.comm.can.CANReceiver;
+import de.morknet.mrw.comm.can.ChecksumException;
 import de.morknet.mrw.comm.dummy.DummyConnection;
 import de.morknet.mrw.comm.rs232.RS232Connection;
 import de.morknet.mrw.gui.info.Layout;
@@ -929,11 +930,13 @@ abstract public class MrwController implements CANMessageProcessor
 
 			if (model.areControllerReachable())
 			{
-				setMessage(LogUtil.printf("Alle Mikrocontroller sind nach %dms erreichbar!", RESET_TIMEOUT * mcuCount - diff));
+				setMessage(LogUtil.printf("Alle Mikrocontroller sind nach %dms erreichbar!",
+						RESET_TIMEOUT * mcuCount - diff));
 			}
 			else
 			{
-				setErrorMessage(LogUtil.printf("%d Mikrocontroller sind nicht erreichbar!", mcuCount - count));
+				setErrorMessage(LogUtil.printf("%d Mikrocontroller sind nicht erreichbar!",
+						mcuCount - count));
 			}
 		}
 		else

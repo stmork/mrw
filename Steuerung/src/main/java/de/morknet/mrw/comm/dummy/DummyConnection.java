@@ -34,6 +34,7 @@ import de.morknet.mrw.comm.Connection;
 import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.comm.MsgCode;
 import de.morknet.mrw.comm.can.CANMessage;
+import de.morknet.mrw.comm.can.ChecksumException;
 import de.morknet.mrw.comm.can.MessageLengthException;
 import de.morknet.mrw.util.LogUtil;
 
@@ -81,6 +82,10 @@ public class DummyConnection extends Connection
 		try
 		{
 			processor.processByte(input & 0xff);
+		}
+		catch(ChecksumException ce)
+		{
+			handleChecksumException(ce);
 		}
 		catch (MrwException e)
 		{
@@ -266,6 +271,7 @@ public class DummyConnection extends Connection
 						write(prepareChecksumError(answer[i], simulateChecksumError));
 					}
 					write(prepareChecksumError(sum, simulateChecksumError));
+					write(0);
 				}
 			}
 		}
@@ -291,6 +297,7 @@ public class DummyConnection extends Connection
 			{
 				write(b);
 			}
+			write(0);
 		}
 	}
 

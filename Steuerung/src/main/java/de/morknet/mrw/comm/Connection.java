@@ -25,6 +25,7 @@ import java.util.Locale;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import de.morknet.mrw.comm.can.ChecksumException;
 import de.morknet.mrw.comm.rs232.RS232Connection;
 import de.morknet.mrw.util.MrwProperties;
 
@@ -117,6 +118,18 @@ abstract public class Connection
 	protected byte [] getSyncSequence()
 	{
 		return sync_sequence;
+	}
+
+	/**
+	 * Diese Methode macht die Fehlerbehandlung im Falle eines Prüfsummenfehlers. Dabei wird
+	 * eine Resynchronisation der Verbindung ausgeführt.
+	 * @param ce Die auslösende {@link ChecksumException}.
+	 * @throws IOException Wird geworfen, wenn die Resynchronisation fehlschlägt.
+	 */
+	protected void handleChecksumException(ChecksumException ce) throws IOException
+	{
+		log.error(ce.getLocalizedMessage(), ce);
+		sync();
 	}
 
 	/**

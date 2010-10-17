@@ -170,6 +170,7 @@ public class Batch
 			return cmdCount == 0;
 		}
 	}
+
 	/**
 	 * Diese Methode sendet diesen Batch über die angegebene Verbindung. Die Methode wartet, bis
 	 * ein Timeout erreicht wurde. Kommt als Rückmeldecode MSG_QUEUED, wird der Timeout um eine
