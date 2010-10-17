@@ -35,29 +35,30 @@ import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.comm.can.CANMessage;
 import de.morknet.mrw.comm.can.CANMessageProcessor;
 import de.morknet.mrw.comm.can.CANReceiver;
+import de.morknet.mrw.comm.can.ChecksumException;
 import de.morknet.mrw.comm.dummy.DummyConnection;
 
 public class FormsignalTest implements CANMessageProcessor
 {
 	private final static Log        log   = LogFactory.getLog(FormsignalTest.class);
 	private final static Modell     model = ModellFactory.getInstance();
-	private              Connection conn;
+	private              Connection connection;
 	private              int        received = 0;
 
 	private FormsignalTest() throws IOException
 	{
 		try
 		{
-			conn = Connection.getDefaultConnection();
+			connection = Connection.getDefaultConnection();
 		}
 		catch(Exception nspe)
 		{
-			conn = new DummyConnection();
+			connection = new DummyConnection();
 		}
 		CANReceiver receiver = new CANReceiver();
 		receiver.setProcessor(this); 
-        conn.setByteProcessor(receiver);
-        conn.sync();
+        connection.setByteProcessor(receiver);
+        connection.sync();
 	}
 
 	/**
@@ -124,7 +125,7 @@ public class FormsignalTest implements CANMessageProcessor
 
 		signal.setSignal(sc, false);
 		signal.addCommand(batch);
-		executer.send(conn);
+		executer.send(connection);
 		executer.clear();
 	}
 
@@ -143,6 +144,22 @@ public class FormsignalTest implements CANMessageProcessor
 			MrwMessage mrw = (MrwMessage)msg;
 
 			BatchExecuter.processResult(mrw);
+		}
+	}
+
+	public void checksumError(ChecksumException ce)
+	{
+		try
+		{
+			log.error(ce.getLocalizedMessage(), ce);
+			log.info("Prüfsummenfehler aufgetaucht.");
+			log.info("  Versuche Verbindung zu resynchronisieren...");
+			connection.sync();
+			log.info("  Verbindung resynchronisiert.");
+		}
+		catch (IOException e)
+		{
+			log.error(e.getLocalizedMessage(), e);
 		}
 	}
 }

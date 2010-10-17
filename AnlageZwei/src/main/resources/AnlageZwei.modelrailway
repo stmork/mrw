@@ -91,21 +91,26 @@
       <lampen name="alt 1" unit_no="2152" schwellwert="12" typ="15"/>
       <lampen name="Steigenberger" unit_no="2153" schwellwert="40" typ="15"/>
       <lampen name="Gaslaterne Nord" unit_no="2154" schwellwert="28" typ="65"/>
-      <lampen name="Laterne Bahnhof 2" unit_no="2155" schwellwert="26" typ="5"/>
+      <lampen name="Laterne Bahnhof 3" unit_no="2155" schwellwert="26" typ="2"/>
       <lampen name="Stellwerk Auf " unit_no="2156" schwellwert="25"/>
-      <lampen name="Laterne Stellwerk" unit_no="2157" schwellwert="28" typ="64"/>
+      <lampen name="Laterne Bahnhof 2" unit_no="2155" schwellwert="26" typ="1"/>
     </module>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="215">
       <lampen name="Laterne 1" unit_no="1150" schwellwert="28" typ="64"/>
       <lampen name="Palais 3" unit_no="1151" schwellwert="16" typ="15"/>
       <lampen name="Palais 2" unit_no="1152" schwellwert="20" typ="15"/>
-      <lampen name="Laterne Bahnhof 1" unit_no="1153" schwellwert="26" typ="6"/>
-      <lampen name="frei" unit_no="1154"/>
+      <lampen name="Laterne Stellwerk" unit_no="2157" schwellwert="28" typ="64"/>
+      <lampen name="Laterne Bahnhof 1" unit_no="1153" schwellwert="26"/>
       <lampen name="Palais 1" unit_no="1155" schwellwert="12" typ="15"/>
       <lampen name="Laterne Post" unit_no="1156" schwellwert="28" typ="64"/>
       <lampen name="Post" unit_no="1157" schwellwert="40" typ="1"/>
     </module>
     <module xsi:type="Modelrailway:Gleismodul" nummer="315" abschnitte="//@gruppe.2/@abschnitt.0 //@gruppe.3/@abschnitt.0 //@gruppe.3/@abschnitt.1 //@gruppe.2/@abschnitt.1"/>
+  </controller>
+  <controller id="16">
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="116"/>
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="216"/>
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="316"/>
   </controller>
   <gruppe xsi:type="Modelrailway:Bahnhof" name="Alt Ulm">
     <abschnitt name="S1a" unit_no="101" modul="//@controller.7/@module.1">
