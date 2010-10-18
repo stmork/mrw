@@ -64,7 +64,7 @@
     <module xsi:type="Modelrailway:Gleismodul" nummer="112" abschnitte="//@gruppe.2/@abschnitt.4 //@gruppe.3/@abschnitt.4 //@gruppe.3/@abschnitt.2 //@gruppe.3/@abschnitt.5"/>
     <module xsi:type="Modelrailway:Gleismodul" nummer="212" abschnitte="//@gruppe.2/@abschnitt.5 //@gruppe.3/@abschnitt.3 //@gruppe.2/@abschnitt.3 //@gruppe.2/@abschnitt.2"/>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="312">
-      <lampen name="Notrufsäule" unit_no="3120" schwellwert="2" typ="8"/>
+      <lampen name="Notrufsäule" unit_no="3120" schwellwert="2" typ="66"/>
       <lampen name="Bahnsteig 1" unit_no="3121" schwellwert="30"/>
       <lampen name="Bahnsteig 2" unit_no="3122" schwellwert="30" typ="1"/>
       <lampen name="Eisenbahnerhaus 1" unit_no="3123" schwellwert="30" typ="15"/>
