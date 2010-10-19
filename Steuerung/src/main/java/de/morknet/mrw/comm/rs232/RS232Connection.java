@@ -41,6 +41,7 @@ import de.morknet.mrw.comm.can.ChecksumException;
 public final class RS232Connection extends Connection
 {
 	private final static Log log = LogFactory.getLog(RS232Connection.class);
+	private final static int BUFFER_SIZE = 256;
 
 	private final CommPortIdentifier  portId;
 	private final SerialPort          port;
@@ -63,6 +64,7 @@ public final class RS232Connection extends Connection
 				SerialPort.PARITY_NONE);
 		port.setFlowControlMode(SerialPort.FLOWCONTROL_NONE);
 		port.enableReceiveTimeout(500);
+		port.setInputBufferSize(BUFFER_SIZE);	
 
 		in  = port.getInputStream();
     	out = port.getOutputStream();
@@ -83,13 +85,13 @@ public final class RS232Connection extends Connection
 		@Override
 		public void run()
 		{
-
 			try
 			{
+				final byte[] buffer = new byte[BUFFER_SIZE];
+
 				do
 				{
-					final byte[] buffer = new byte[1024];
-					final int    len = in.read(buffer);
+					final int len = in.read(buffer);
 
 					if ((processor != null) && (len > 0))
 					{
@@ -112,6 +114,7 @@ public final class RS232Connection extends Connection
 							}
 						}
 					}
+					Thread.yield();
 				}
 				while(!isInterrupted());
 			}
