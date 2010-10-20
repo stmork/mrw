@@ -23,6 +23,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import de.morknet.mrw.comm.Command;
+import de.morknet.mrw.comm.IllegalMrwMessageException;
 import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.comm.MsgCode;
 
@@ -61,7 +62,7 @@ public class MrwMessageTest
 		Assert.assertEquals("Die Result-ID ist falsch!", msg.getResultId(), (TEST_SID << 16) | TEST_EID);
 	}
 	
-	@Test(expected=IllegalStateException.class)
+	@Test(expected=IllegalMrwMessageException.class)
 	public void command()
 	{
 		MrwMessage msg = new MrwMessage();

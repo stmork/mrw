@@ -229,12 +229,9 @@ public class MicroController
 				tx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 1);
 				break;
 			case 3:
-				if (!MrwMessage.USE_SID_IN_RESULT)
-				{
-					error_flags    = msg.getData(MrwMessage.IDX_INFO_START + 1);
-					rx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 2);
-					tx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 3);
-				}
+				error_flags    = msg.getData(MrwMessage.IDX_INFO_START + 1);
+				rx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 2);
+				tx_err_counter = msg.getData(MrwMessage.IDX_INFO_START + 3);
 				break;
 
 			default:
@@ -267,14 +264,11 @@ public class MicroController
 			revision = (revision & 0x00ff) | (msg.getData(MrwMessage.IDX_INFO_START + 1) << 8);
 			break;
 		case 3:
-			if (!MrwMessage.USE_SID_IN_RESULT)
-			{
-				version  =
-					 msg.getData(MrwMessage.IDX_INFO_START + 1);
-				revision =
-					 msg.getData(MrwMessage.IDX_INFO_START + 2) |
-					(msg.getData(MrwMessage.IDX_INFO_START + 3) << 8);
-			}
+			version  =
+				 msg.getData(MrwMessage.IDX_INFO_START + 1);
+			revision =
+				 msg.getData(MrwMessage.IDX_INFO_START + 2) |
+				(msg.getData(MrwMessage.IDX_INFO_START + 3) << 8);
 			break;
 			
 		default:

@@ -247,12 +247,6 @@ public class DummyConnection extends Connection
 			answer[idx++] = bytes[3] & 0xff;
 			answer[idx++] = Command.makeResult(bytes[HEADER_LENGTH + MrwMessage.IDX_RESULT]);
 			answer[idx++] = result.getMsgCode();
-
-			if (MrwMessage.USE_SID_IN_RESULT)
-			{
-				answer[idx++] = bytes[2] & 0xff;
-				answer[idx++] = bytes[3] & 0xff;
-			}
 			answer[idx++] = bytes[4] & 0xff;
 			answer[idx++] = bytes[5] & 0xff;
 			for (int i = 0;i < info.length;i++)

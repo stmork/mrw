@@ -77,12 +77,12 @@ public class MrwMessage extends CANMessage
 	 * enthalten sein soll. Diese Adresse ist schon in der OID eingebaut, so dass sie 
 	 * hier doppelt übertragen wird.
 	 */
-	public final static boolean USE_SID_IN_RESULT = false;
+	public final static boolean xUSE_SID_IN_RESULT = false;
 
 	/**
 	 * Der Data-Index für den Start der Infobytes.
 	 */
-	public final static int IDX_INFO_START = USE_SID_IN_RESULT ? 6 : 4;
+	public final static int IDX_INFO_START = 4;
 
 	/**
 	 * Der Data-Index für das Low Byte der Gerätenummer des sendenden Controller. 
@@ -243,10 +243,6 @@ public class MrwMessage extends CANMessage
 		msg.setEid(id);
 		msg.addDataByte(Command.makeResult(cmd));
 		msg.addDataByte(code.getMsgCode());
-		if (USE_SID_IN_RESULT)
-		{
-			msg.addDataWord(id);
-		}
 		msg.addDataWord(no);
 		return msg;
 	}
