@@ -397,11 +397,6 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 				color = SEGMENT_FREE;
 			}
 		}
-
-		if (DEBUG && (gt.getRoute() != null))
-		{
-			log.debug(gt + ": " + color);
-		}
 		return color;
 	}
 
