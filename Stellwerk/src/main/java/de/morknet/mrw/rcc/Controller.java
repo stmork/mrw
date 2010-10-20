@@ -73,7 +73,7 @@ public class Controller extends MrwController
 		super.prepare();
 		timer.schedule(task, 0, 250);
 	}
-	
+
 	/**
 	 * Diese Methode gibt eine Instanz des Controllers zurück. Der Controller ist als Singleton implementiert.
 	 * @return Der steuernde Controller.

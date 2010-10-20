@@ -63,7 +63,6 @@ import de.morknet.mrw.comm.SensorCode;
 import de.morknet.mrw.comm.can.CANMessage;
 import de.morknet.mrw.comm.can.CANMessageProcessor;
 import de.morknet.mrw.comm.can.CANReceiver;
-import de.morknet.mrw.comm.can.ChecksumException;
 import de.morknet.mrw.comm.dummy.DummyConnection;
 import de.morknet.mrw.comm.rs232.RS232Connection;
 import de.morknet.mrw.gui.info.Layout;

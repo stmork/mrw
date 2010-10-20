@@ -59,6 +59,8 @@ public class CANReceiver implements ByteProcessor
 		private MessageRunner()
 		{
 			super("CAN-Message Verarbeitung");
+			setDaemon(true);
+			setPriority(MIN_PRIORITY);
 		}
 
 		/**
@@ -73,7 +75,8 @@ public class CANReceiver implements ByteProcessor
 				while(loop)
 				{
 					CANMessage msg = queue.take();
-					if (processor != null)
+
+		        	if (processor != null)
 					{
 						try
 						{
@@ -104,7 +107,7 @@ public class CANReceiver implements ByteProcessor
 	 * in eine asynchrone Warteschlange gestellt, um weiterhin Bytes empfangen zu können.
 	 * @param input Das empfangene Byte.
 	 */
-	synchronized public void processByte(final int input)
+	public void processByte(final int input)
 	{
 		if (log.isDebugEnabled() && veryVerbose )
 		{
@@ -135,14 +138,8 @@ public class CANReceiver implements ByteProcessor
 			        	{
 			        		msg.addDataByte(buffer[i+6]);
 			        	}
-			        	try
-			        	{
-							queue.put(msg);
-						}
-			        	catch (InterruptedException ie)
-			        	{
-							log.error(ie.getMessage(), ie);
-						}
+
+						queue.add(msg);
 		        	}
 		        	else
 		        	{

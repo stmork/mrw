@@ -152,7 +152,7 @@ public class MrwMessage extends CANMessage
 	{
 		if (!isResult())
 		{
-			throw new IllegalStateException("This is not a command result");
+			throw new IllegalMrwMessageException("Diese MRW-Meldung ist keine Antwort auf ein Kommando!");
 		}
 	}
 
@@ -259,7 +259,8 @@ public class MrwMessage extends CANMessage
 	{
 		if (length != 0)
 		{
-			throw new IllegalStateException("Um ein Kommando einer Meldung hinzuzufügen, muss eine Meldung vorher leer sein!");
+			throw new IllegalMrwMessageException(
+					"Um ein Kommando einer Meldung hinzuzufügen, muss eine Meldung vorher leer sein!");
 		}
 		addDataByte(cmd.getCommand());
 	}

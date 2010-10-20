@@ -68,9 +68,10 @@ public final class RS232Connection extends Connection
 
 		in  = port.getInputStream();
     	out = port.getOutputStream();
-    	
+    	log.debug("Input buffer size:  " + port.getInputBufferSize());
+    	log.debug("Output buffer size: " + port.getOutputBufferSize());
+    	    	
     	reader = new SerialReader();
-    	reader.start();
 	}
 	
 	private class SerialReader extends Thread
@@ -91,9 +92,14 @@ public final class RS232Connection extends Connection
 
 				do
 				{
-					final int len = in.read(buffer);
+					final int len;
 
-					if ((processor != null) && (len > 0))
+					synchronized(this)
+					{
+						len = in.read(buffer);
+					}
+
+					if (len > 0)
 					{
 						synchronized(processor)
 						{
@@ -114,7 +120,6 @@ public final class RS232Connection extends Connection
 							}
 						}
 					}
-					Thread.yield();
 				}
 				while(!isInterrupted());
 			}
@@ -132,19 +137,28 @@ public final class RS232Connection extends Connection
 	@Override
 	public int read() throws IOException
 	{
-		return in.read();
+		synchronized(this)
+		{
+			return in.read();
+		}
 	}
 
 	@Override
 	public void write(int i) throws IOException
 	{
-		out.write(i);
+		synchronized(this)
+		{
+			out.write(i);
+		}
 	}
 
 	@Override
-	synchronized public void write(byte[] bytes) throws IOException
+	public void write(byte[] bytes) throws IOException
 	{
-		out.write(bytes);
+		synchronized(this)
+		{
+			out.write(bytes);
+		}
 	}
 
 	@Override
@@ -171,5 +185,16 @@ public final class RS232Connection extends Connection
 		{
 			log.info("Die RS232-Übertragung wurde beendet.");
 		}
+	}
+
+	@Override
+	protected void start()
+	{
+    	reader.start();
+	}
+
+	@Override
+	protected void stop()
+	{
 	}
 }

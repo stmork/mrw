@@ -65,6 +65,16 @@ public class DummyConnection extends Connection
 	private final static int HEADER_LENGTH = 6;
 
 	@Override
+	protected void start()
+	{
+	}
+
+	@Override
+	protected void stop()
+	{
+	}
+
+	@Override
 	public void close()
 	{
 		log.debug(" close()");

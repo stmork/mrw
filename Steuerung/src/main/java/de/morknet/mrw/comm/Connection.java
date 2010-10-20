@@ -108,8 +108,39 @@ abstract public class Connection
 	 */
 	synchronized public void setByteProcessor(final ByteProcessor processor)
 	{
-		this.processor = processor;
+		if (processor == null)
+		{
+			if (this.processor == null)
+			{
+				throw new IllegalStateException("Der ByteProcessor ist bereits gelöscht!");
+			}
+			stop();
+			this.processor = processor;
+		}
+		else
+		{
+			if (this.processor != null)
+			{
+				throw new IllegalStateException("Der ByteProcessor ist bereits gesetzt!");
+			}
+			this.processor = processor;
+			start();
+		}
 	}
+	
+	/**
+	 * Diese Methode wird aufgerufen, wenn die Methode {@link #setByteProcessor(ByteProcessor)}
+	 * einen {@link ByteProcessor} setzt, der ungleich null ist. Dadurch soll das Verarbeiten
+	 * von Bytes seinen Betrieb aufnehmen.
+	 */
+	abstract protected void start();
+
+	/**
+	 * Diese Methode wird aufgerufen, wenn die Methode {@link #setByteProcessor(ByteProcessor)}
+	 * einen {@link ByteProcessor} setzt, der gleich null ist. Dadurch soll das Verarbeiten
+	 * von eingehenden Bytes abgeschaltet werden.
+	 */
+	abstract protected void stop();
 
 	/**
 	 * Diese Methode gibt die Bytesequenz zurück, mit der das CAN-Gateway synchronisiert wird.
