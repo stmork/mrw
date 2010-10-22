@@ -66,6 +66,8 @@ Name: «this.name»
 «DEFINE Lampen FOR Modell»
 «FILE "Lampen.log" LOG»
 «EXPAND Device FOREACH eAllContents.typeSelect(Lampe).sortBy(e|e.name)»
+#
+«EXPAND Device FOREACH eAllContents.typeSelect(Lampe).sortBy(e|e.schwellwert)»
 «ENDFILE»
 «ENDDEFINE»
 
