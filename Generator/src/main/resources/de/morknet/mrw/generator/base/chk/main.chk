@@ -77,6 +77,12 @@ context Gleismodul WARNING "Das Gleismodul " + nummer + " an Controller " + cont
 context Gleismodul ERROR "Das Gleismodul " + nummer + " an Controller " + controller.id + " hat mehr als vier Gleise anschlossen!" :
 	abschnitte.size <= 4;
 
+context Beleuchtungsmodul WARNING "Das Beleuchtungsmodul " + nummer + " an Controller " + controller.id + " hat keine angeschlossenen Lampen!" :
+	lampen.size > 0;
+	
+context Beleuchtungsmodul ERROR "Das Beleuchtungsmodul " + nummer + " an Controller " + controller.id + " hat mehr als acht Lampen anschlossen!" :
+	lampen.size <= 8;
+
 context Lichtsignal WARNING "Das Lichtsignal " + name + " im Abschnitt " + abschnitt.name + " hat keinen Anschluss!" :
 	anschluss != null;
 

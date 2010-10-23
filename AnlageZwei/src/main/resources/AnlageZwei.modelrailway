@@ -65,8 +65,8 @@
     <module xsi:type="Modelrailway:Gleismodul" nummer="212" abschnitte="//@gruppe.2/@abschnitt.5 //@gruppe.3/@abschnitt.3 //@gruppe.2/@abschnitt.3 //@gruppe.2/@abschnitt.2"/>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="312">
       <lampen name="Notrufsäule" unit_no="3120" schwellwert="2" typ="66"/>
-      <lampen name="Bahnsteig 1" unit_no="3121" schwellwert="32" typ="0"/>
-      <lampen name="Bahnsteig 2" unit_no="3122" schwellwert="32" typ="1"/>
+      <lampen name="Bahnsteig 1 (Alt Ulm)" unit_no="3121" schwellwert="32"/>
+      <lampen name="Bahnsteig 2 (Alt Ulm)" unit_no="3122" schwellwert="32" typ="1"/>
       <lampen name="Eisenbahnerhaus 1" unit_no="3123" schwellwert="18" typ="15"/>
       <lampen name="Laterne Bahnhof  4" unit_no="3124" schwellwert="24" typ="3"/>
       <lampen name="Fahrtrichtungsanzeiger" unit_no="3125" schwellwert="32" typ="5"/>
@@ -125,6 +125,8 @@
       <lampen name="Laterne 10" unit_no="2163" schwellwert="28" typ="64"/>
       <lampen name="Laterne Bahnhof  7" unit_no="2164" schwellwert="24" typ="6"/>
       <lampen name="Laterne Bahnhof  6" unit_no="2165" schwellwert="24" typ="5"/>
+      <lampen name="Bahnsteig 1 (Sufloch)" unit_no="2166" schwellwert="32" typ="2"/>
+      <lampen name="Bahnsteig 2 (Sufloch)" unit_no="2167" schwellwert="32" typ="3"/>
     </module>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="316">
       <lampen name="Laterne  8" unit_no="3160" schwellwert="28" typ="64"/>
