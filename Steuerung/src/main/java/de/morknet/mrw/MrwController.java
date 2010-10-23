@@ -59,7 +59,6 @@ import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.Connection;
 import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.comm.MsgCode;
-import de.morknet.mrw.comm.SensorCode;
 import de.morknet.mrw.comm.can.CANMessage;
 import de.morknet.mrw.comm.can.CANMessageProcessor;
 import de.morknet.mrw.comm.can.CANReceiver;
@@ -491,12 +490,7 @@ abstract public class MrwController implements CANMessageProcessor
 					break;
 
 				case SENSOR:
-					switch(SensorCode.getSensorCode(mrw.getData(4)))
-					{
-					case SENSOR_LIGHT:
-						model.setLightness(mrw.getData(5));
-						break;
-					}
+					model.setSensorValue(mrw);
 					break;
 
 				default:

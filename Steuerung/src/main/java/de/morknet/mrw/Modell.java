@@ -43,6 +43,9 @@ import de.morknet.mrw.base.Signal;
 import de.morknet.mrw.base.Verzweigung;
 import de.morknet.mrw.base.Weiche;
 import de.morknet.mrw.batch.Batch;
+import de.morknet.mrw.comm.MrwMessage;
+import de.morknet.mrw.comm.MsgCode;
+import de.morknet.mrw.comm.SensorCode;
 import de.morknet.mrw.gui.info.BeerModeInfo;
 import de.morknet.mrw.gui.info.TourInfo;
 import de.morknet.mrw.util.LogUtil;
@@ -65,6 +68,11 @@ abstract public class Modell extends NamedElement
 	 * Die Beleuchtungssituation der Modelleisenbahn.
 	 */
 	private              int               lightness; 
+
+	/**
+	 * Die Umgebungstemperatur der Modelleisenbahn.
+	 */
+	private              int               temperature; 
 	
 	/**
 	 * Zuordnung von Betriebsgruppennamen auf Betriebsgruppe.
@@ -727,12 +735,28 @@ abstract public class Modell extends NamedElement
 	abstract public BeerModeInfo getBeerModeInfo();
 
 	/**
-	 * Setzt die Beleuchtung.
-	 * @param data Beleuchtung.
+	 * Setzt Sensorenwerte aus einer {@link MrwMessage}.
+	 * @param msg Die {@link MrwMessage}, die die Sensorwerte enthält.
 	 */
-	public void setLightness(final int data)
+	public void setSensorValue(final MrwMessage msg)
 	{
-		this.lightness = data;
+		if (msg.getResultCode() == MsgCode.MSG_OK)
+		{
+			switch(SensorCode.getSensorCode(msg.getData(4)))
+			{
+			case SENSOR_LIGHT:
+				this.lightness = msg.getData(5);
+				break;
+
+			case SENSOR_TEMP:
+				this.temperature = msg.getData(5);
+				break;
+			}
+		}
+		else
+		{
+			log.warn("Die Sensordaten sind nicht OK: " + msg.getResultCode());
+		}
 	}
 	
 	/**
@@ -742,5 +766,14 @@ abstract public class Modell extends NamedElement
 	public int getLightness()
 	{
 		return this.lightness;
+	}
+	
+	/**
+	 * Gibt die Umgebungstemperatur zurück.
+	 * @return Die Umgebungstemperatur.
+	 */
+	public int getTemperature()
+	{
+		return this.temperature;
 	}
 }

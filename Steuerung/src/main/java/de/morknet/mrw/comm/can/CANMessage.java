@@ -171,7 +171,7 @@ public class CANMessage
 	{
 		if ((idx < 0) || (idx >= length))
 		{
-			throw new ArrayIndexOutOfBoundsException();
+			throw new ArrayIndexOutOfBoundsException("Index = " + idx);
 		}
 		return data[idx];
 	}
@@ -186,7 +186,7 @@ public class CANMessage
 	{
 		if ((idx < 0) || (idx >= length))
 		{
-			throw new ArrayIndexOutOfBoundsException();
+			throw new ArrayIndexOutOfBoundsException("Index = " + idx);
 		}
 		data[idx] = value & 0xff;
 	}
