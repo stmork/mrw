@@ -10,3 +10,6 @@ ant findbugs
 
 cd ../AnlageZwei
 ant findbugs
+
+cd ../Lichtprofile
+ant findbugs

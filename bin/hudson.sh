@@ -2,7 +2,9 @@
 
 set -e
 
-cd Steuerung
+cd Lichtprofile
+ant clean run
+cd ../Steuerung
 ant clean package
 cd ../AnlageYakindu
 ant clean generate package

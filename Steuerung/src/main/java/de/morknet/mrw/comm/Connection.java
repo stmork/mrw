@@ -114,8 +114,11 @@ abstract public class Connection
 			{
 				throw new IllegalStateException("Der ByteProcessor ist bereits gelöscht!");
 			}
-			stop();
-			this.processor = processor;
+			else
+			{
+				stop();
+				this.processor = null;
+			}
 		}
 		else
 		{
@@ -123,8 +126,11 @@ abstract public class Connection
 			{
 				throw new IllegalStateException("Der ByteProcessor ist bereits gesetzt!");
 			}
-			this.processor = processor;
-			start();
+			else
+			{
+				this.processor = processor;
+				start();
+			}
 		}
 	}
 	
