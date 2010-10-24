@@ -27,6 +27,7 @@ import org.apache.commons.logging.LogFactory;
 
 import de.morknet.mrw.comm.can.ChecksumException;
 import de.morknet.mrw.comm.rs232.RS232Connection;
+import de.morknet.mrw.comm.tcp.TcpConnection;
 import de.morknet.mrw.util.MrwProperties;
 
 /**
@@ -55,10 +56,22 @@ abstract public class Connection
 	 */
 	public static Connection getDefaultConnection() throws Exception
 	{
-		String portname = MrwProperties.getProperty("mrw.port", getDefaultPort());
-		log.debug("Port name: " + portname);
+		Connection connection;
+		
+		try
+		{
+			final String hostname = MrwProperties.getProperty("mrw.remotehost", "localhost");
+			final int    port     = 4268;
 
-		return new RS232Connection(portname);
+			connection = new TcpConnection(hostname, port);
+		}
+		catch(IOException ioe)
+		{
+			String portname = MrwProperties.getProperty("mrw.port", getDefaultPort());
+			log.debug("Port name: " + portname);
+			connection = new RS232Connection(portname);
+		}
+		return connection;
 	}
 
 	/**

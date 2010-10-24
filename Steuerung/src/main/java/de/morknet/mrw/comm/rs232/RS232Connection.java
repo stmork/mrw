@@ -94,29 +94,26 @@ public final class RS232Connection extends Connection
 				{
 					final int len;
 
-					synchronized(this)
+					synchronized(port)
 					{
 						len = in.read(buffer);
 					}
 
 					if (len > 0)
 					{
-						synchronized(processor)
+						for (int i = 0;i < len;i++)
 						{
-							for (int i = 0;i < len;i++)
+							try
 							{
-								try
-								{
-									processor.processByte(buffer[i] & 0xff);
-								}
-								catch(ChecksumException ce)
-								{
-									handleChecksumException(ce);
-								}
-								catch (MrwException e)
-								{
-									log.error(e.getLocalizedMessage(), e);
-								}
+								processor.processByte(buffer[i] & 0xff);
+							}
+							catch(ChecksumException ce)
+							{
+								handleChecksumException(ce);
+							}
+							catch (MrwException e)
+							{
+								log.error(e.getLocalizedMessage(), e);
 							}
 						}
 					}
@@ -137,7 +134,7 @@ public final class RS232Connection extends Connection
 	@Override
 	public int read() throws IOException
 	{
-		synchronized(this)
+		synchronized(port)
 		{
 			return in.read();
 		}
@@ -146,7 +143,7 @@ public final class RS232Connection extends Connection
 	@Override
 	public void write(int i) throws IOException
 	{
-		synchronized(this)
+		synchronized(port)
 		{
 			out.write(i);
 		}
@@ -155,7 +152,7 @@ public final class RS232Connection extends Connection
 	@Override
 	public void write(byte[] bytes) throws IOException
 	{
-		synchronized(this)
+		synchronized(port)
 		{
 			out.write(bytes);
 		}
