@@ -19,9 +19,6 @@
 
 package de.morknet.mrw;
 
-import gnu.io.NoSuchPortException;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -161,49 +158,10 @@ abstract public class MrwController implements CANMessageProcessor
 		Layout layout = new Layout(model);
 		layout.save();
 
-		connection = getDefaultConnection();
+		connection = Connection.getDefaultConnection();
 		connection.setByteProcessor(receiver);
 		connection.sync();
 		receiver.setProcessor(this);
-	}
-
-	/**
-	 * Diese Methode berechnet eine Verbindung zur Eisenbahn. Je nach Verbindungsstatus ist das
-	 * entweder eine echte Eisenbahnanlage (seriell angeschlossen), oder eine Simulationsanlage.
-	 * @return Die Verbindung
-	 * @throws Exception Exceptions werden übergeordnet ausgewertet.
-	 */
-	private static Connection getDefaultConnection() throws Exception
-	{
-		Connection connection;
-
-		try
-		{
-			connection = Connection.getDefaultConnection();
-/*
-			connection.close();
-			connection = new DummyConnection();
-*/
-		}
-		catch(NoSuchPortException nspe)
-		{
-			log.error(nspe.getMessage());
-			log.info("Using dummy port...");
-			connection = new DummyConnection();
-		}
-		catch(UnsatisfiedLinkError ule)
-		{
-			log.error(ule.getMessage());
-			log.info("Using dummy port...");
-			connection = new DummyConnection();
-		}
-		catch(FileNotFoundException fnfe)
-		{
-			log.error(fnfe.getMessage(), fnfe);
-			log.info("Using dummy port...");
-			connection = new DummyConnection();
-		}
-		return connection;
 	}
 
 	private class SegmentHandler extends BatchRunner

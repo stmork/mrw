@@ -19,8 +19,6 @@
 
 package de.morknet.mrw.comm.test;
 
-import gnu.io.NoSuchPortException;
-
 import java.util.ArrayList;
 
 import org.apache.commons.logging.Log;
@@ -30,7 +28,6 @@ import de.morknet.mrw.comm.Connection;
 import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.comm.can.CANMessage;
 import de.morknet.mrw.comm.can.CANReceiver;
-import de.morknet.mrw.comm.dummy.DummyConnection;
 import de.morknet.mrw.comm.rs232.RS232Connection;
 import de.morknet.mrw.util.LogUtil;
 
@@ -63,18 +60,7 @@ abstract public class CANMain implements de.morknet.mrw.comm.can.CANMessageProce
 			}
 			else
 			{
-				try
-				{
-					connection = Connection.getDefaultConnection();
-				}
-				catch(NoSuchPortException nspe)
-				{
-					connection = new DummyConnection();
-				}
-				catch(UnsatisfiedLinkError ule)
-				{
-					connection = new DummyConnection();
-				}
+				connection = Connection.getDefaultConnection();
 			}
 			CANReceiver receiver = new CANReceiver();
 			receiver.setProcessor(this); 

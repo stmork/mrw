@@ -26,6 +26,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import de.morknet.mrw.comm.can.ChecksumException;
+import de.morknet.mrw.comm.dummy.DummyConnection;
 import de.morknet.mrw.comm.rs232.RS232Connection;
 import de.morknet.mrw.comm.tcp.TcpConnection;
 import de.morknet.mrw.util.MrwProperties;
@@ -54,7 +55,7 @@ abstract public class Connection
 	 * @return Eine Verbindungsinstanz dieser Klasse.
 	 * @throws Exception Wird geworfen, falls was fehlerhaft verlaufen ist.
 	 */
-	public static Connection getDefaultConnection() throws Exception
+	public static Connection getDefaultConnection()
 	{
 		Connection connection;
 		
@@ -64,14 +65,26 @@ abstract public class Connection
 			final int    port     = 4268;
 
 			connection = new TcpConnection(hostname, port);
+			return connection;
 		}
 		catch(IOException ioe)
+		{
+			log.info(ioe.getLocalizedMessage());
+		}
+		try
 		{
 			String portname = MrwProperties.getProperty("mrw.port", getDefaultPort());
 			log.debug("Port name: " + portname);
 			connection = new RS232Connection(portname);
+			return connection;
 		}
-		return connection;
+		catch(Exception e)
+		{
+			log.info(e.getLocalizedMessage());
+		}
+
+		log.info("Using dummy port...");
+		return new DummyConnection();
 	}
 
 	/**

@@ -94,11 +94,7 @@ public final class RS232Connection extends Connection
 				{
 					final int len;
 
-					synchronized(port)
-					{
-						len = in.read(buffer);
-					}
-
+					len = in.read(buffer);
 					if (len > 0)
 					{
 						for (int i = 0;i < len;i++)
@@ -134,28 +130,19 @@ public final class RS232Connection extends Connection
 	@Override
 	public int read() throws IOException
 	{
-		synchronized(port)
-		{
-			return in.read();
-		}
+		return in.read();
 	}
 
 	@Override
 	public void write(int i) throws IOException
 	{
-		synchronized(port)
-		{
-			out.write(i);
-		}
+		out.write(i);
 	}
 
 	@Override
 	public void write(byte[] bytes) throws IOException
 	{
-		synchronized(port)
-		{
-			out.write(bytes);
-		}
+		out.write(bytes);
 	}
 
 	@Override
