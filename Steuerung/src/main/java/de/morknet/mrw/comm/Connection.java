@@ -42,7 +42,7 @@ abstract public class Connection
 	private final static byte sync_sequence [] =
 	{
 		-1,-1,-1,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 	};
 
 	/**
@@ -62,21 +62,31 @@ abstract public class Connection
 		try
 		{
 			final String hostname = MrwProperties.getProperty("mrw.remotehost", "localhost");
-			final int    port     = 4268;
+			final String port     = MrwProperties.getProperty("mrw.remoteport", "4268");
 
-			connection = new TcpConnection(hostname, port);
+			connection = new TcpConnection(hostname, Integer.parseInt(port));
 			return connection;
+		}
+		catch(NumberFormatException nfe)
+		{
+			log.error(nfe.getLocalizedMessage(), nfe);
 		}
 		catch(IOException ioe)
 		{
 			log.info(ioe.getLocalizedMessage());
 		}
+
 		try
 		{
 			String portname = MrwProperties.getProperty("mrw.port", getDefaultPort());
 			log.debug("Port name: " + portname);
 			connection = new RS232Connection(portname);
 			return connection;
+		}
+		catch(UnsatisfiedLinkError ule)
+		{
+			// Für den Fall, dass rxtx native Library nicht verfügbar ist.
+			log.info(ule.getLocalizedMessage());
 		}
 		catch(Exception e)
 		{
