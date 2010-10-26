@@ -1996,7 +1996,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_sW9dIeDMEd-M_tvrGvB2bA" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_sW7n8ODMEd-M_tvrGvB2bA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sW9dIuDMEd-M_tvrGvB2bA" points="[-1, -3, 2, 176]$[-1, -160, 2, 19]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u5qDYODMEd-M_tvrGvB2bA" id="(0.48299319727891155,0.03225806451612903)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u5qDYODMEd-M_tvrGvB2bA" id="(0.74,0.03225806451612903)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sXCVoODMEd-M_tvrGvB2bA" id="(0.9271844660194175,0.978494623655914)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_pwDugODbEd-M_tvrGvB2bA" type="4005" source="_aU7vUEMREd-lyqIZidRpcg" target="_lqYQYODMEd-M_tvrGvB2bA">
