@@ -3,7 +3,7 @@
    <description name="Modelleisenbahn - Update site" url="http://mrw.sourceforge.net/updates/">
       Update Site für Modelleisenbahn-Features.
    </description>
-   <feature url="features/de.morknet.mrw.metamodel_2.0.16.jar" id="de.morknet.mrw.metamodel" version="2.0.16">
+   <feature url="features/de.morknet.mrw.metamodel_2.0.17.jar" id="de.morknet.mrw.metamodel" version="2.0.17">
       <category name="de.morknet.mrw.metamodel"/>
    </feature>
    <category-def name="de.morknet.mrw.metamodel" label="Modelleisenbahn-Editor"/>

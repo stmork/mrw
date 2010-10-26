@@ -183,6 +183,9 @@ public class AnschlussItemProvider
 			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
