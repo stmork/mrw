@@ -23,6 +23,7 @@ package de.morknet.mrw.metamodel;
  * @generated
  */
 public interface Lichtsignal extends Signal {
+
 	/**
 	 * Returns the value of the '<em><b>Anschluss</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Anschluss#getLichtsignale <em>Lichtsignale</em>}'.

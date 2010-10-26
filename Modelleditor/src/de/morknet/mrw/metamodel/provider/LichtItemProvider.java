@@ -6,11 +6,15 @@
 package de.morknet.mrw.metamodel.provider;
 
 
+import de.morknet.mrw.metamodel.Licht;
+import de.morknet.mrw.metamodel.ModelrailwayPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -18,19 +22,14 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.morknet.mrw.metamodel.Lampe;
-import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
 /**
- * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Lampe} object.
+ * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Licht} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LampeItemProvider
+public class LichtItemProvider
 	extends BeleuchtungsmittelItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -44,7 +43,7 @@ public class LampeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LampeItemProvider(AdapterFactory adapterFactory) {
+	public LichtItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,42 +58,19 @@ public class LampeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Typ feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Lampe_typ_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Lampe_typ_feature", "_UI_Lampe_type"),
-				 ModelrailwayPackage.Literals.LAMPE__TYP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Lampe.gif.
+	 * This returns Licht.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Lampe"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Licht"));
 	}
 
 	/**
@@ -105,10 +81,10 @@ public class LampeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Lampe)object).getName();
+		String label = ((Licht)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Lampe_type") :
-			getString("_UI_Lampe_type") + " " + label;
+			getString("_UI_Licht_type") :
+			getString("_UI_Licht_type") + " " + label;
 	}
 
 	/**
@@ -121,12 +97,6 @@ public class LampeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Lampe.class)) {
-			case ModelrailwayPackage.LAMPE__TYP:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

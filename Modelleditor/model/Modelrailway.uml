@@ -12,6 +12,10 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-1SmwMZLEd-xELKmGf-T-w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_s63QB0MOEd-Zo7nGYHKgLw" name="controller" type="_s633JkMOEd-Zo7nGYHKgLw" isOrdered="true" isReadOnly="true" association="_s633MUMOEd-Zo7nGYHKgLw"/>
+      <ownedAttribute xmi:id="_pv-2AuDbEd-M_tvrGvB2bA" name="lichter" type="_lprs0ODMEd-M_tvrGvB2bA" isOrdered="true" isReadOnly="true" aggregation="composite" association="_pv-O8ODbEd-M_tvrGvB2bA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pv_dEeDbEd-M_tvrGvB2bA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pv_dEODbEd-M_tvrGvB2bA"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_s63QCEMOEd-Zo7nGYHKgLw" name="Lichtsignal" isAbstract="true">
       <generalization xmi:id="_s63QCUMOEd-Zo7nGYHKgLw" general="_s63QC0MOEd-Zo7nGYHKgLw"/>
@@ -259,17 +263,21 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Jgb_8MSNEd-pqcdF3i7VKA" name="Beleuchtungsmodul">
       <generalization xmi:id="_PZ1A8MSoEd-4b90ZNQhhkQ" general="_s633MkMOEd-Zo7nGYHKgLw"/>
-      <ownedAttribute xmi:id="_zNa-8MSOEd-pqcdF3i7VKA" name="lampen" type="_R98-0MSNEd-pqcdF3i7VKA" isOrdered="true" isReadOnly="true" aggregation="composite" association="_zNaX4MSOEd-pqcdF3i7VKA">
+      <ownedAttribute xmi:id="_zNa-8MSOEd-pqcdF3i7VKA" name="lampen" type="_jEGHcODIEd-M_tvrGvB2bA" isOrdered="true" isReadOnly="true" aggregation="composite" association="_zNaX4MSOEd-pqcdF3i7VKA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8GkWsMZLEd-xELKmGf-T-w" value="8"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8GqdUMZLEd-xELKmGf-T-w"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_R98-0MSNEd-pqcdF3i7VKA" name="Lampe">
+    <packagedElement xmi:type="uml:Class" xmi:id="_R98-0MSNEd-pqcdF3i7VKA" name="Beleuchtungsmittel" isAbstract="true">
       <generalization xmi:id="_gW-7EMSnEd-4b90ZNQhhkQ" general="_s633FEMOEd-Zo7nGYHKgLw"/>
       <generalization xmi:id="_-66iAMSoEd-4b90ZNQhhkQ" general="_s63QE0MOEd-Zo7nGYHKgLw"/>
       <ownedAttribute xmi:id="_AQdz8MSOEd-pqcdF3i7VKA" name="schwellwert">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_zNaX4MSOEd-pqcdF3i7VKA" memberEnd="_zNa-8MSOEd-pqcdF3i7VKA _zNbmAcSOEd-pqcdF3i7VKA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jEGHcODIEd-M_tvrGvB2bA" name="Lampe">
+      <generalization xmi:id="_mskC8ODIEd-M_tvrGvB2bA" general="_R98-0MSNEd-pqcdF3i7VKA"/>
       <ownedAttribute xmi:id="_SGgocMSOEd-pqcdF3i7VKA" name="typ" isOrdered="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedAttribute>
@@ -278,7 +286,14 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zNcNEMSOEd-pqcdF3i7VKA" value="1"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_zNaX4MSOEd-pqcdF3i7VKA" memberEnd="_zNa-8MSOEd-pqcdF3i7VKA _zNbmAcSOEd-pqcdF3i7VKA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lprs0ODMEd-M_tvrGvB2bA" name="Licht">
+      <generalization xmi:id="_sW7n8ODMEd-M_tvrGvB2bA" general="_R98-0MSNEd-pqcdF3i7VKA"/>
+      <ownedAttribute xmi:id="_pv-O8eDbEd-M_tvrGvB2bA" name="anschluss" type="_s63QAUMOEd-Zo7nGYHKgLw" isOrdered="true" association="_pv-O8ODbEd-M_tvrGvB2bA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pv-2AeDbEd-M_tvrGvB2bA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pv-2AODbEd-M_tvrGvB2bA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_pv-O8ODbEd-M_tvrGvB2bA" memberEnd="_pv-O8eDbEd-M_tvrGvB2bA _pv-2AuDbEd-M_tvrGvB2bA"/>
     <profileApplication xmi:id="_s633oUMOEd-Zo7nGYHKgLw">
       <eAnnotations xmi:id="_s633okMOEd-Zo7nGYHKgLw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -368,4 +383,7 @@
   <Ecore:EAttribute xmi:id="_aHc1gMSNEd-pqcdF3i7VKA"/>
   <Ecore:EAttribute xmi:id="_ORQOIMSOEd-pqcdF3i7VKA" base_Property="_AQdz8MSOEd-pqcdF3i7VKA"/>
   <Ecore:EAttribute xmi:id="_gEsakMSOEd-pqcdF3i7VKA" base_Property="_SGgocMSOEd-pqcdF3i7VKA"/>
+  <Ecore:EClass xmi:id="_i-dkEODJEd-M_tvrGvB2bA" base_Class="_jEGHcODIEd-M_tvrGvB2bA"/>
+  <Ecore:EClass xmi:id="_tCrToODMEd-M_tvrGvB2bA" base_Class="_lprs0ODMEd-M_tvrGvB2bA"/>
+  <Ecore:EClass xmi:id="_ULyxQODaEd-M_tvrGvB2bA"/>
 </xmi:XMI>

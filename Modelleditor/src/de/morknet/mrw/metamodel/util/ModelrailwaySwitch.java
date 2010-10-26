@@ -171,6 +171,23 @@ public class ModelrailwaySwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ModelrailwayPackage.LICHT: {
+				Licht licht = (Licht)theEObject;
+				T result = caseLicht(licht);
+				if (result == null) result = caseBeleuchtungsmittel(licht);
+				if (result == null) result = caseElement(licht);
+				if (result == null) result = caseUnit(licht);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelrailwayPackage.BELEUCHTUNGSMITTEL: {
+				Beleuchtungsmittel beleuchtungsmittel = (Beleuchtungsmittel)theEObject;
+				T result = caseBeleuchtungsmittel(beleuchtungsmittel);
+				if (result == null) result = caseElement(beleuchtungsmittel);
+				if (result == null) result = caseUnit(beleuchtungsmittel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ModelrailwayPackage.AUSFAHRSIGNAL: {
 				Ausfahrsignal ausfahrsignal = (Ausfahrsignal)theEObject;
 				T result = caseAusfahrsignal(ausfahrsignal);
@@ -380,6 +397,7 @@ public class ModelrailwaySwitch<T> {
 			case ModelrailwayPackage.LAMPE: {
 				Lampe lampe = (Lampe)theEObject;
 				T result = caseLampe(lampe);
+				if (result == null) result = caseBeleuchtungsmittel(lampe);
 				if (result == null) result = caseElement(lampe);
 				if (result == null) result = caseUnit(lampe);
 				if (result == null) result = defaultCase(theEObject);
@@ -566,6 +584,21 @@ public class ModelrailwaySwitch<T> {
 	 * @generated
 	 */
 	public T caseGleismodul(Gleismodul object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Licht</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Licht</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLicht(Licht object) {
 		return null;
 	}
 
@@ -881,6 +914,21 @@ public class ModelrailwaySwitch<T> {
 	 * @generated
 	 */
 	public T caseLampe(Lampe object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Beleuchtungsmittel</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Beleuchtungsmittel</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBeleuchtungsmittel(Beleuchtungsmittel object) {
 		return null;
 	}
 

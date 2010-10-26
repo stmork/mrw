@@ -33,6 +33,8 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/lichtsignale"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/controller"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/lichter"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Lichtsignal">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -88,6 +90,13 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Gleismodul">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleismodul/abschnitte"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Licht">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Licht/anschluss"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Beleuchtungsmittel">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Beleuchtungsmittel/schwellwert"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Ausfahrsignal"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Hauptlichtsignal"/>
@@ -154,10 +163,9 @@
           createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Beleuchtungsmodul/lampen"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Lampe">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Lampe/schwellwert"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Modelrailway.ecore#//Lampe/typ"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Lampe/modul"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Lampe/modul"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

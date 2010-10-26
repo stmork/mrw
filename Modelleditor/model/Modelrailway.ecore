@@ -9,6 +9,8 @@
         eType="#//Lichtsignal" eOpposite="#//Lichtsignal/anschluss"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
         eType="#//Controller" changeable="false" eOpposite="#//Controller/anschluesse"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lichter" upperBound="-1"
+        eType="#//Licht" changeable="false" containment="true" eOpposite="#//Licht/anschluss"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lichtsignal" abstract="true" eSuperTypes="#//Signal">
     <eStructuralFeatures xsi:type="ecore:EReference" name="anschluss" lowerBound="1"
@@ -65,6 +67,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitte" upperBound="4"
         eType="#//Gleisabschnitt" eOpposite="#//Gleisabschnitt/modul"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Licht" eSuperTypes="#//Beleuchtungsmittel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="anschluss" lowerBound="1"
+        eType="#//Anschluss" eOpposite="#//Anschluss/lichter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Beleuchtungsmittel" abstract="true"
+      eSuperTypes="#//Element #//Unit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schwellwert" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ausfahrsignal" eSuperTypes="#//Hauptlichtsignal"/>
   <eClassifiers xsi:type="ecore:EClass" name="Hauptlichtsignal" abstract="true" eSuperTypes="#//Lichtsignal"/>
   <eClassifiers xsi:type="ecore:EClass" name="Bahnhof" eSuperTypes="#//Gruppe"/>
@@ -120,9 +131,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="lampen" upperBound="8"
         eType="#//Lampe" changeable="false" containment="true" eOpposite="#//Lampe/modul"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Lampe" eSuperTypes="#//Element #//Unit">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schwellwert" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Lampe" eSuperTypes="#//Beleuchtungsmittel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typ" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modul" lowerBound="1" eType="#//Beleuchtungsmodul"
         eOpposite="#//Beleuchtungsmodul/lampen"/>

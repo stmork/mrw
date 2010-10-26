@@ -119,6 +119,14 @@ public class ModelrailwayAdapterFactory extends AdapterFactoryImpl {
 				return createGleismodulAdapter();
 			}
 			@Override
+			public Adapter caseLicht(Licht object) {
+				return createLichtAdapter();
+			}
+			@Override
+			public Adapter caseBeleuchtungsmittel(Beleuchtungsmittel object) {
+				return createBeleuchtungsmittelAdapter();
+			}
+			@Override
 			public Adapter caseAusfahrsignal(Ausfahrsignal object) {
 				return createAusfahrsignalAdapter();
 			}
@@ -387,6 +395,20 @@ public class ModelrailwayAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGleismodulAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.morknet.mrw.metamodel.Licht <em>Licht</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.morknet.mrw.metamodel.Licht
+	 * @generated
+	 */
+	public Adapter createLichtAdapter() {
 		return null;
 	}
 
@@ -681,6 +703,20 @@ public class ModelrailwayAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLampeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.morknet.mrw.metamodel.Beleuchtungsmittel <em>Beleuchtungsmittel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.morknet.mrw.metamodel.Beleuchtungsmittel
+	 * @generated
+	 */
+	public Adapter createBeleuchtungsmittelAdapter() {
 		return null;
 	}
 

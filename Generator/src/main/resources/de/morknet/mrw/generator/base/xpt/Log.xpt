@@ -65,9 +65,9 @@ Name: «this.name»
 
 «DEFINE Lampen FOR Modell»
 «FILE "Lampen.log" LOG»
-«EXPAND Device FOREACH eAllContents.typeSelect(Lampe).sortBy(e|e.name)»
+«EXPAND Device FOREACH eAllContents.typeSelect(Beleuchtungsmittel).sortBy(e|e.name)»
 #
-«EXPAND Device FOREACH eAllContents.typeSelect(Lampe).sortBy(e|e.schwellwert)»
+«EXPAND Device FOREACH eAllContents.typeSelect(Beleuchtungsmittel).sortBy(e|e.schwellwert)»
 «ENDFILE»
 «ENDDEFINE»
 
@@ -104,12 +104,16 @@ Name: «this.name»
 	Lampe:       [«unit_no»] «name» «schwellwert» «typ»
 «ENDDEFINE»
 
+«DEFINE Device FOR Licht»
+	Licht:       [«unit_no»] «name» «schwellwert»
+«ENDDEFINE»
+
 «REM»
 ««««« Dump device infos »»»»»
 «ENDREM»
 
 «DEFINE Main FOR Gleis»
-    Gleis: «name» # «getGleisteilName(this.a)» <-> «getGleisteilName(b)» # «getDirection()»
+    Gleis:  «name» # «getGleisteilName(this.a)» <-> «getGleisteilName(b)» # «getDirection()»
 «ENDDEFINE»
 
 «DEFINE Main FOR Weiche»
@@ -117,7 +121,7 @@ Name: «this.name»
 «ENDDEFINE»
 
 «DEFINE Main FOR DKW»
-    DKW: «name» # a=«getGleisteilName(this.a)» b=«getGleisteilName(b)» <-> c=«getGleisteilName(c)» d=«getGleisteilName(d)» # «getDirection()» [«unit_no»]
+    DKW:    «name» # a=«getGleisteilName(this.a)» b=«getGleisteilName(b)» <-> c=«getGleisteilName(c)» d=«getGleisteilName(d)» # «getDirection()» [«unit_no»]
 «ENDDEFINE»
 
 «DEFINE Main FOR Signal»
@@ -139,6 +143,9 @@ Name: «this.name»
 //      Anschluss: «nummer»
 «FOREACH lichtsignale AS signal»
 //          Lichtsignal «signal.name» («signal.abschnitt.name»)
+«ENDFOREACH»
+«FOREACH lichter AS licht»
+//          Licht       «licht.name»
 «ENDFOREACH»
 «ENDDEFINE»
 

@@ -7,6 +7,7 @@ package de.morknet.mrw.metamodel.impl;
 
 import de.morknet.mrw.metamodel.Anschluss;
 import de.morknet.mrw.metamodel.Controller;
+import de.morknet.mrw.metamodel.Licht;
 import de.morknet.mrw.metamodel.Lichtsignal;
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
@@ -23,6 +24,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -36,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichtsignale <em>Lichtsignale</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getController <em>Controller</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichter <em>Lichter</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,6 +75,16 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * @ordered
 	 */
 	protected EList<Lichtsignal> lichtsignale;
+
+	/**
+	 * The cached value of the '{@link #getLichter() <em>Lichter</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLichter()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Licht> lichter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,6 +153,18 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Licht> getLichter() {
+		if (lichter == null) {
+			lichter = new EObjectContainmentWithInverseEList<Licht>(Licht.class, this, ModelrailwayPackage.ANSCHLUSS__LICHTER, ModelrailwayPackage.LICHT__ANSCHLUSS);
+		}
+		return lichter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -149,6 +175,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return eBasicSetContainer(otherEnd, ModelrailwayPackage.ANSCHLUSS__CONTROLLER, msgs);
+			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLichter()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -165,6 +193,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				return ((InternalEList<?>)getLichtsignale()).basicRemove(otherEnd, msgs);
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return eBasicSetContainer(null, ModelrailwayPackage.ANSCHLUSS__CONTROLLER, msgs);
+			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
+				return ((InternalEList<?>)getLichter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,6 +227,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				return getLichtsignale();
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return getController();
+			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
+				return getLichter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,6 +285,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				return lichtsignale != null && !lichtsignale.isEmpty();
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return getController() != null;
+			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
+				return lichter != null && !lichter.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

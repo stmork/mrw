@@ -34,5 +34,5 @@ String basePackage(Element ne) :
 	defaultPackage(ne) + ".base";
 
 cached Integer getLampenzahl(Modell m) :
-	m.eAllContents.typeSelect(Lampe).size;
+	m.eAllContents.typeSelect(Beleuchtungsmittel).size;
 

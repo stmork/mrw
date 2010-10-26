@@ -13,7 +13,6 @@ package de.morknet.mrw.metamodel;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.morknet.mrw.metamodel.Lampe#getSchwellwert <em>Schwellwert</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Lampe#getTyp <em>Typ</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Lampe#getModul <em>Modul</em>}</li>
  * </ul>
@@ -23,33 +22,7 @@ package de.morknet.mrw.metamodel;
  * @model
  * @generated
  */
-public interface Lampe extends Element, Unit {
-	/**
-	 * Returns the value of the '<em><b>Schwellwert</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Schwellwert</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schwellwert</em>' attribute.
-	 * @see #setSchwellwert(int)
-	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getLampe_Schwellwert()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	int getSchwellwert();
-
-	/**
-	 * Sets the value of the '{@link de.morknet.mrw.metamodel.Lampe#getSchwellwert <em>Schwellwert</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schwellwert</em>' attribute.
-	 * @see #getSchwellwert()
-	 * @generated
-	 */
-	void setSchwellwert(int value);
-
+public interface Lampe extends Beleuchtungsmittel {
 	/**
 	 * Returns the value of the '<em><b>Typ</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getLichtsignale <em>Lichtsignale</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getController <em>Controller</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getLichter <em>Lichter</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,5 +89,23 @@ public interface Anschluss extends EObject {
 	 * @generated
 	 */
 	Controller getController();
+
+	/**
+	 * Returns the value of the '<em><b>Lichter</b></em>' containment reference list.
+	 * The list contents are of type {@link de.morknet.mrw.metamodel.Licht}.
+	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Licht#getAnschluss <em>Anschluss</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lichter</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lichter</em>' containment reference list.
+	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getAnschluss_Lichter()
+	 * @see de.morknet.mrw.metamodel.Licht#getAnschluss
+	 * @model opposite="anschluss" containment="true" changeable="false"
+	 * @generated
+	 */
+	EList<Licht> getLichter();
 
 } // Anschluss

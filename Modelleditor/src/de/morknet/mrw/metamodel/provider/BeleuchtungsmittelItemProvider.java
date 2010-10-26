@@ -6,8 +6,7 @@
 package de.morknet.mrw.metamodel.provider;
 
 
-import de.morknet.mrw.metamodel.Anschluss;
-import de.morknet.mrw.metamodel.ModelrailwayFactory;
+import de.morknet.mrw.metamodel.Beleuchtungsmittel;
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
 import java.util.Collection;
@@ -16,9 +15,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,17 +23,16 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Anschluss} object.
+ * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Beleuchtungsmittel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnschlussItemProvider
-	extends ItemProviderAdapter
+public class BeleuchtungsmittelItemProvider
+	extends ElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -50,7 +45,7 @@ public class AnschlussItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnschlussItemProvider(AdapterFactory adapterFactory) {
+	public BeleuchtungsmittelItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,26 +60,26 @@ public class AnschlussItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNummerPropertyDescriptor(object);
-			addLichtsignalePropertyDescriptor(object);
+			addUnit_noPropertyDescriptor(object);
+			addSchwellwertPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Nummer feature.
+	 * This adds a property descriptor for the Unit no feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNummerPropertyDescriptor(Object object) {
+	protected void addUnit_noPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Anschluss_nummer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Anschluss_nummer_feature", "_UI_Anschluss_type"),
-				 ModelrailwayPackage.Literals.ANSCHLUSS__NUMMER,
+				 getString("_UI_Unit_unit_no_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Unit_unit_no_feature", "_UI_Unit_type"),
+				 ModelrailwayPackage.Literals.UNIT__UNIT_NO,
 				 true,
 				 false,
 				 false,
@@ -94,66 +89,25 @@ public class AnschlussItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Lichtsignale feature.
+	 * This adds a property descriptor for the Schwellwert feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLichtsignalePropertyDescriptor(Object object) {
+	protected void addSchwellwertPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Anschluss_lichtsignale_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Anschluss_lichtsignale_feature", "_UI_Anschluss_type"),
-				 ModelrailwayPackage.Literals.ANSCHLUSS__LICHTSIGNALE,
+				 getString("_UI_Beleuchtungsmittel_schwellwert_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Beleuchtungsmittel_schwellwert_feature", "_UI_Beleuchtungsmittel_type"),
+				 ModelrailwayPackage.Literals.BELEUCHTUNGSMITTEL__SCHWELLWERT,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelrailwayPackage.Literals.ANSCHLUSS__LICHTER);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Anschluss.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Anschluss"));
 	}
 
 	/**
@@ -164,8 +118,10 @@ public class AnschlussItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Anschluss anschluss = (Anschluss)object;
-		return getString("_UI_Anschluss_type") + " " + anschluss.getNummer();
+		String label = ((Beleuchtungsmittel)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Beleuchtungsmittel_type") :
+			getString("_UI_Beleuchtungsmittel_type") + " " + label;
 	}
 
 	/**
@@ -179,8 +135,9 @@ public class AnschlussItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Anschluss.class)) {
-			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
+		switch (notification.getFeatureID(Beleuchtungsmittel.class)) {
+			case ModelrailwayPackage.BELEUCHTUNGSMITTEL__UNIT_NO:
+			case ModelrailwayPackage.BELEUCHTUNGSMITTEL__SCHWELLWERT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -197,22 +154,6 @@ public class AnschlussItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelrailwayPackage.Literals.ANSCHLUSS__LICHTER,
-				 ModelrailwayFactory.eINSTANCE.createLicht()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ModelrailwayEditPlugin.INSTANCE;
 	}
 
 }

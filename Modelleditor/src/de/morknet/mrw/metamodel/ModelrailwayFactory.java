@@ -70,6 +70,15 @@ public interface ModelrailwayFactory extends EFactory {
 	Gleismodul createGleismodul();
 
 	/**
+	 * Returns a new object of class '<em>Licht</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Licht</em>'.
+	 * @generated
+	 */
+	Licht createLicht();
+
+	/**
 	 * Returns a new object of class '<em>Ausfahrsignal</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

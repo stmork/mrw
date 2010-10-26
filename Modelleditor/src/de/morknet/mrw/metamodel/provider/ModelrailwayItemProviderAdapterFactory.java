@@ -190,6 +190,29 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Licht} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LichtItemProvider lichtItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.morknet.mrw.metamodel.Licht}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLichtAdapter() {
+		if (lichtItemProvider == null) {
+			lichtItemProvider = new LichtItemProvider(this);
+		}
+
+		return lichtItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Ausfahrsignal} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -661,6 +684,7 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 		if (modellItemProvider != null) modellItemProvider.dispose();
 		if (controllerItemProvider != null) controllerItemProvider.dispose();
 		if (gleismodulItemProvider != null) gleismodulItemProvider.dispose();
+		if (lichtItemProvider != null) lichtItemProvider.dispose();
 		if (ausfahrsignalItemProvider != null) ausfahrsignalItemProvider.dispose();
 		if (bahnhofItemProvider != null) bahnhofItemProvider.dispose();
 		if (impulsmodulItemProvider != null) impulsmodulItemProvider.dispose();

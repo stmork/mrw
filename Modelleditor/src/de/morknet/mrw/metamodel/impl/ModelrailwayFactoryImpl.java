@@ -64,6 +64,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 			case ModelrailwayPackage.MODELL: return createModell();
 			case ModelrailwayPackage.CONTROLLER: return createController();
 			case ModelrailwayPackage.GLEISMODUL: return createGleismodul();
+			case ModelrailwayPackage.LICHT: return createLicht();
 			case ModelrailwayPackage.AUSFAHRSIGNAL: return createAusfahrsignal();
 			case ModelrailwayPackage.BAHNHOF: return createBahnhof();
 			case ModelrailwayPackage.IMPULSMODUL: return createImpulsmodul();
@@ -133,6 +134,16 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	public Gleismodul createGleismodul() {
 		GleismodulImpl gleismodul = new GleismodulImpl();
 		return gleismodul;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Licht createLicht() {
+		LichtImpl licht = new LichtImpl();
+		return licht;
 	}
 
 	/**

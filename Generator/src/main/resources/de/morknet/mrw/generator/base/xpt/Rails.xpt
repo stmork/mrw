@@ -197,14 +197,21 @@ Modulkonfiguration
 	// Controller «id», Anschlüsse für Lichtsignale
 	port = 48;
 «FOREACH anschluesse AS a»
-«IF a.lichtsignale.size > 0»
-	// Controller «id», Lichtsignal Modulnummer: «a.nummer»
+«IF a.lichtsignale.size > 0 || a.lichter.size > 0»
+	// Controller «id», Modulnummer: «a.nummer»
 	pin = port;
 «FOREACH a.lichtsignale AS signal»
 	device = findSignal(Signal.buildName(findSegment(«getAbschnittName(signal.abschnitt)»), «getSignalName(signal)»));
 	device.setPinConfiguration(pin, «getPinCount(signal)»);
 	pin += «getPinCount(signal)»;
 «ENDFOREACH»
+«FOREACH a.lichter AS licht»
+	lampe = new Lampe(this, "«licht.name»", «licht.schwellwert», -1);
+	lampe.setMicroControllerId(«id», «licht.unit_no»);
+	lampe.setPinConfiguration(pin, 1);
+	pin++;
+«ENDFOREACH»
+
 «ENDIF»
 	port -= 16;
 «ENDFOREACH»
