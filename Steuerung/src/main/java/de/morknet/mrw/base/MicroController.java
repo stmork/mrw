@@ -25,8 +25,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.MrwMessage;
+import de.morknet.mrw.util.LogUtil;
 
 /**
  * Diese Klasse repräsentiert einen Mikrocontroller (aka CAN-Knoten).
@@ -35,6 +39,8 @@ import de.morknet.mrw.comm.MrwMessage;
  */
 public class MicroController
 {
+	private final Log    log; 
+
 	/**
 	 * Die Controller-ID dieser Mikrocontroller-Instanz.
 	 */
@@ -117,7 +123,8 @@ public class MicroController
 	 */
 	public MicroController(int id)
 	{
-		this.id = id;
+		this.id  = id;
+		this.log = LogFactory.getLog(LogUtil.printf("MicroController %3d", id));
 	}
 
 	/**
@@ -307,7 +314,16 @@ public class MicroController
 		Collections.sort(units);
 		for (DeviceUnit device : units)
 		{
-			list.add(device.createConfigMessage());
+			MrwMessage msg = device.createConfigMessage();
+			
+			if (msg != null)
+			{
+				list.add(msg);
+			}
+			else
+			{
+				log.warn ("Gerät " + device + "kann nicht konfiguriert werden!");
+			}
 		}
 		list.add(MrwMessage.createCommandMsg(Command.CFGEND, id, 0));
 	}

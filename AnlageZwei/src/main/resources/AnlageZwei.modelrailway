@@ -51,6 +51,7 @@
   <controller id="10">
     <anschluesse nummer="410">
       <lichter name="Sodbrandt 1" unit_no="4100"/>
+      <lichter name="Sodbrandt 2" unit_no="4101"/>
     </anschluesse>
     <anschluesse nummer="1002" lichtsignale="//@gruppe.1/@abschnitt.5/@bauelement.1 //@gruppe.1/@abschnitt.10/@bauelement.1 //@gruppe.1/@abschnitt.13/@bauelement.1"/>
     <anschluesse nummer="1001" lichtsignale="//@gruppe.1/@abschnitt.16/@bauelement.1"/>
@@ -60,6 +61,7 @@
   <controller id="11">
     <anschluesse nummer="411">
       <lichter name="Sufloch 1" unit_no="4110"/>
+      <lichter name="Sufloch 2" unit_no="4111"/>
     </anschluesse>
     <anschluesse nummer="1102" lichtsignale="//@gruppe.1/@abschnitt.7/@bauelement.1 //@gruppe.1/@abschnitt.12/@bauelement.1 //@gruppe.1/@abschnitt.15/@bauelement.1"/>
     <anschluesse nummer="1101" lichtsignale="//@gruppe.1/@abschnitt.18/@bauelement.1 //@gruppe.1/@abschnitt.2/@bauelement.2 //@gruppe.1/@abschnitt.9/@bauelement.1"/>

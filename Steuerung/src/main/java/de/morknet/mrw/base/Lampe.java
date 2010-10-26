@@ -50,11 +50,16 @@ public class Lampe extends DeviceUnit
 	@Override
 	public MrwMessage createConfigMessage()
 	{
-		MrwMessage msg = MrwMessage.createCommandMsg(Command.CFGLGT, ctrl_id, unit_no);
+		MrwMessage msg = null;
 
-		msg.addDataByte(pin);
-		msg.addDataByte(schwellwert);
-		msg.addDataByte(type);
+		if (type >= 0)
+		{
+			msg = MrwMessage.createCommandMsg(Command.CFGLGT, ctrl_id, unit_no);
+	
+			msg.addDataByte(pin);
+			msg.addDataByte(schwellwert);
+			msg.addDataByte(type);
+		}
 		return msg;
 	}
 
