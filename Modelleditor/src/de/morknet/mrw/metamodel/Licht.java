@@ -5,7 +5,6 @@
  */
 package de.morknet.mrw.metamodel;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

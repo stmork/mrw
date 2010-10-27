@@ -572,18 +572,20 @@ public enum Command
 	CFGML4(0x3d),
 
 	/**
-	 * Konfiguriere Beleuchtungsmittel.
+	 * Konfigurieret Beleuchtungsmittel. Dieser Frame kann mit drei oder vier Bytes versendet
+	 * werden. fehlt der Profiltyp, ist die Lampe an einem Signalmodul angeschlossen und
+	 * kann die Helligkeit nicht variieren. Es funktioniert dann nur an und aus. 
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
 	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>6</td></tr>
+	 * <tr><td>Länge:</td><td>3 oder 4</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGLGT</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin</td></tr>
 	 * <tr><td>Data[2]</td><td>Schwellwert</td></tr>
-	 * <tr><td>Data[3]</td><td>Typ</td></tr>
+	 * <tr><td>Data[3]</td><td>Typ (optional)</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>

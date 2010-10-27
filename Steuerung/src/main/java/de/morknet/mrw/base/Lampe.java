@@ -12,10 +12,21 @@ import de.morknet.mrw.comm.MrwMessage;
 public class Lampe extends DeviceUnit
 {
 	private static final long serialVersionUID = 1L;
+	private static final int TYPE_PROFILELESS = -1;
 
 	private int schwellwert;
 
 	private int type;
+
+	/**
+	 * Initialisiert diese Lampe.
+	 * @param modell Die Modelleisenbahn, auf der die Lampe angebracht ist.
+	 * @param name Der Name der Lampe.
+	 */
+	public Lampe(final Modell modell, final String name, final int schwellwert)
+	{
+		this(modell, name, schwellwert, TYPE_PROFILELESS);
+	}
 
 	/**
 	 * Initialisiert diese Lampe.
@@ -50,14 +61,13 @@ public class Lampe extends DeviceUnit
 	@Override
 	public MrwMessage createConfigMessage()
 	{
-		MrwMessage msg = null;
+		MrwMessage msg = MrwMessage.createCommandMsg(Command.CFGLGT, ctrl_id, unit_no);
 
-		if (type >= 0)
+		msg.addDataByte(pin);
+		msg.addDataByte(schwellwert);
+
+		if (type != TYPE_PROFILELESS)
 		{
-			msg = MrwMessage.createCommandMsg(Command.CFGLGT, ctrl_id, unit_no);
-	
-			msg.addDataByte(pin);
-			msg.addDataByte(schwellwert);
 			msg.addDataByte(type);
 		}
 		return msg;

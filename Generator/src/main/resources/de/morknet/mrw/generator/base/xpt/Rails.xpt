@@ -206,7 +206,7 @@ Modulkonfiguration
 	pin += «getPinCount(signal)»;
 «ENDFOREACH»
 «FOREACH a.lichter AS licht»
-	lampe = new Lampe(this, "«licht.name»", «licht.schwellwert», -1);
+	lampe = new Lampe(this, "«licht.name»", «licht.schwellwert»);
 	lampe.setMicroControllerId(«id», «licht.unit_no»);
 	lampe.setPinConfiguration(pin, 1);
 	pin++;
