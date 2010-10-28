@@ -50,8 +50,16 @@
   </controller>
   <controller id="10">
     <anschluesse nummer="410">
-      <lichter name="Sodbrandt 1" unit_no="4100"/>
-      <lichter name="Sodbrandt 2" unit_no="4101"/>
+      <lichter name="Sodbrandt 1" unit_no="4100" schwellwert="32"/>
+      <lichter name="Sodbrandt 2" unit_no="4101" schwellwert="32"/>
+      <lichter name="Sodbrandt 3" unit_no="4102" schwellwert="32"/>
+      <lichter name="Sodbrandt 4" unit_no="4103" schwellwert="32"/>
+      <lichter name="Sodbrandt 5" unit_no="4104" schwellwert="32"/>
+      <lichter name="Sodbrandt 6" unit_no="4105" schwellwert="32"/>
+      <lichter name="Sodbrandt 7" unit_no="4106" schwellwert="32"/>
+      <lichter name="Sodbrandt 8" unit_no="4107" schwellwert="32"/>
+      <lichter name="Sodbrandt 9" unit_no="4108" schwellwert="32"/>
+      <lichter name="Sodbrandt A" unit_no="4109" schwellwert="32"/>
     </anschluesse>
     <anschluesse nummer="1002" lichtsignale="//@gruppe.1/@abschnitt.5/@bauelement.1 //@gruppe.1/@abschnitt.10/@bauelement.1 //@gruppe.1/@abschnitt.13/@bauelement.1"/>
     <anschluesse nummer="1001" lichtsignale="//@gruppe.1/@abschnitt.16/@bauelement.1"/>
@@ -60,8 +68,17 @@
   </controller>
   <controller id="11">
     <anschluesse nummer="411">
-      <lichter name="Sufloch 1" unit_no="4110"/>
-      <lichter name="Sufloch 2" unit_no="4111"/>
+      <lichter name="Weingarten re." unit_no="4110" schwellwert="24"/>
+      <lichter name="Wohnhaus" unit_no="4111" schwellwert="18"/>
+      <lichter name="Gasthaus zur Post" unit_no="4112" schwellwert="26"/>
+      <lichter name="Dürerhaus re." unit_no="4113" schwellwert="30"/>
+      <lichter name="Kirche" unit_no="4114" schwellwert="42"/>
+      <lichter name="Dürerhaus li." unit_no="4115" schwellwert="32"/>
+      <lichter name="Gasthof li." unit_no="4116" schwellwert="22"/>
+      <lichter name="altes Rathaus" unit_no="4117" schwellwert="36"/>
+      <lichter name="Weingarten li." unit_no="4118" schwellwert="16"/>
+      <lichter name="neues Rathaus" unit_no="4119" schwellwert="40"/>
+      <lichter name="Straßenbeleuchtung" unit_no="4120" schwellwert="28"/>
     </anschluesse>
     <anschluesse nummer="1102" lichtsignale="//@gruppe.1/@abschnitt.7/@bauelement.1 //@gruppe.1/@abschnitt.12/@bauelement.1 //@gruppe.1/@abschnitt.15/@bauelement.1"/>
     <anschluesse nummer="1101" lichtsignale="//@gruppe.1/@abschnitt.18/@bauelement.1 //@gruppe.1/@abschnitt.2/@bauelement.2 //@gruppe.1/@abschnitt.9/@bauelement.1"/>
@@ -90,10 +107,10 @@
       <lampen name="Gaslaterne Süd" unit_no="3130" schwellwert="28" typ="65"/>
       <lampen name="Bahnhof Nord" unit_no="3131" schwellwert="32" typ="4"/>
       <lampen name="Haus" unit_no="3132" schwellwert="10" typ="15"/>
-      <lampen name="Laterne  4 (Kreuzung Nord)" unit_no="3133" schwellwert="28" typ="64"/>
+      <lampen name="Laterne  4 (Kreuzung Nord)" unit_no="3133" schwellwert="28" typ="3"/>
       <lampen name="Bahnhofshalle" unit_no="3134" schwellwert="32" typ="3"/>
       <lampen name="Bahnhof Süd" unit_no="3135" schwellwert="32" typ="2"/>
-      <lampen name="Laterne  5 (Kreuzung Süd)" unit_no="3136" schwellwert="28" typ="64"/>
+      <lampen name="Laterne  5 (Kreuzung Süd)" unit_no="3136" schwellwert="28" typ="4"/>
       <lampen name="Telefonzelle" unit_no="3137" schwellwert="26" typ="7"/>
     </module>
   </controller>
