@@ -50,16 +50,16 @@
   </controller>
   <controller id="10">
     <anschluesse nummer="410">
-      <lichter name="Sodbrandt 1" unit_no="4100" schwellwert="32"/>
-      <lichter name="Sodbrandt 2" unit_no="4101" schwellwert="32"/>
-      <lichter name="Sodbrandt 3" unit_no="4102" schwellwert="32"/>
-      <lichter name="Sodbrandt 4" unit_no="4103" schwellwert="32"/>
-      <lichter name="Sodbrandt 5" unit_no="4104" schwellwert="32"/>
-      <lichter name="Sodbrandt 6" unit_no="4105" schwellwert="32"/>
-      <lichter name="Sodbrandt 7" unit_no="4106" schwellwert="32"/>
-      <lichter name="Sodbrandt 8" unit_no="4107" schwellwert="32"/>
-      <lichter name="Sodbrandt 9" unit_no="4108" schwellwert="32"/>
-      <lichter name="Sodbrandt A" unit_no="4109" schwellwert="32"/>
+      <lichter name="Straßenbeleuchtung" unit_no="4100" schwellwert="28"/>
+      <lichter name="Haus vorne li." unit_no="4101" schwellwert="10"/>
+      <lichter name="Haus vorne re." unit_no="4102" schwellwert="4"/>
+      <lichter name="hinten 1" unit_no="4103" schwellwert="38"/>
+      <lichter name="hinten 2" unit_no="4104" schwellwert="8"/>
+      <lichter name="Kirche" unit_no="4105" schwellwert="30"/>
+      <lichter name="hinten 3" unit_no="4106" schwellwert="20"/>
+      <lichter name="hinten 4" unit_no="4107" schwellwert="14"/>
+      <lichter name="links" unit_no="4108" schwellwert="14"/>
+      <lichter name="Villa Vorne" unit_no="4109" schwellwert="34"/>
     </anschluesse>
     <anschluesse nummer="1002" lichtsignale="//@gruppe.1/@abschnitt.5/@bauelement.1 //@gruppe.1/@abschnitt.10/@bauelement.1 //@gruppe.1/@abschnitt.13/@bauelement.1"/>
     <anschluesse nummer="1001" lichtsignale="//@gruppe.1/@abschnitt.16/@bauelement.1"/>
@@ -76,9 +76,9 @@
       <lichter name="Dürerhaus li." unit_no="4115" schwellwert="32"/>
       <lichter name="Gasthof li." unit_no="4116" schwellwert="22"/>
       <lichter name="altes Rathaus" unit_no="4117" schwellwert="36"/>
-      <lichter name="Weingarten li." unit_no="4118" schwellwert="16"/>
-      <lichter name="neues Rathaus" unit_no="4119" schwellwert="40"/>
-      <lichter name="Straßenbeleuchtung" unit_no="4120" schwellwert="28"/>
+      <lichter name="Straßenbeleuchtung" unit_no="4118" schwellwert="28"/>
+      <lichter name="Weingarten li." unit_no="4119" schwellwert="16"/>
+      <lichter name="neues Rathaus" unit_no="4120" schwellwert="40"/>
     </anschluesse>
     <anschluesse nummer="1102" lichtsignale="//@gruppe.1/@abschnitt.7/@bauelement.1 //@gruppe.1/@abschnitt.12/@bauelement.1 //@gruppe.1/@abschnitt.15/@bauelement.1"/>
     <anschluesse nummer="1101" lichtsignale="//@gruppe.1/@abschnitt.18/@bauelement.1 //@gruppe.1/@abschnitt.2/@bauelement.2 //@gruppe.1/@abschnitt.9/@bauelement.1"/>
@@ -162,6 +162,18 @@
       <lampen name="Schuppen Büro" unit_no="3165" schwellwert="20" typ="15"/>
       <lampen name="Schuppen 1" unit_no="3166" schwellwert="22" typ="3"/>
       <lampen name="Schuppen 2" unit_no="3167" schwellwert="22" typ="2"/>
+    </module>
+  </controller>
+  <controller id="17">
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="117">
+      <lampen name="Stellwerk Sop" unit_no="1170" schwellwert="36" typ="2"/>
+      <lampen name="Laterne 11" unit_no="1171" schwellwert="28" typ="64"/>
+      <lampen name="Gaslaterne 3" unit_no="1172" schwellwert="28" typ="65"/>
+      <lampen name="Gaslaterne 4" unit_no="1173" schwellwert="28" typ="65"/>
+      <lampen name="Bahnhof Sodbrandt" unit_no="1174" schwellwert="32" typ="1"/>
+      <lampen name="Schuppen Sodbrandt" unit_no="1175" schwellwert="16" typ="4"/>
+      <lampen name="Bahnwärterhaus" unit_no="1176" schwellwert="10" typ="14"/>
+      <lampen name="Laterne 12" unit_no="1177" schwellwert="28" typ="64"/>
     </module>
   </controller>
   <gruppe xsi:type="Modelrailway:Bahnhof" name="Alt Ulm">
