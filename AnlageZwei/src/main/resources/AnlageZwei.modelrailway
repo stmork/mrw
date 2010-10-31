@@ -232,7 +232,7 @@
     </abschnitt>
     <abschnitt name="S2b" unit_no="202" modul="//@controller.5/@module.0">
       <bauelement xsi:type="Modelrailway:Gleis" name="S2b" a="//@gruppe.0/@abschnitt.12/@bauelement.0" b="//@gruppe.0/@abschnitt.14/@bauelement.2"/>
-      <bauelement xsi:type="Modelrailway:Gleissperrsignal" name="2I" unit_no="3221" anschluss="//@controller.5/@anschluesse.0"/>
+      <bauelement xsi:type="Modelrailway:Gleissperrsignal" name="2I" unit_no="3230" anschluss="//@controller.5/@anschluesse.0"/>
     </abschnitt>
     <abschnitt name="S2a" unit_no="201" modul="//@controller.5/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="S2a" a="//@gruppe.0/@abschnitt.14/@bauelement.2" b="//@gruppe.0/@abschnitt.15/@bauelement.0"/>
