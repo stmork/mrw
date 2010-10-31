@@ -88,24 +88,28 @@ Name: «this.name»
     «metaType.name»: [«unit_no»]
 «ENDDEFINE»
 
-«DEFINE Device FOR Signal»
-	Signal:      [«unit_no»] «abschnitt.gruppe.name»/«name»
+«DEFINE Device FOR Formsignal»
+	Formsignal:  [«unit_no»] [«modul.controller.id»] «abschnitt.gruppe.name»/«name»
+«ENDDEFINE»
+
+«DEFINE Device FOR Lichtsignal»
+	Lichtsignal: [«unit_no»] [«anschluss.controller.id»] «abschnitt.gruppe.name»/«name»
 «ENDDEFINE»
 
 «DEFINE Device FOR Verzweigung»
-	Verzweigung: [«unit_no»] «abschnitt.gruppe.name»/«name»
+	Verzweigung: [«unit_no»] [«modul.controller.id»] «abschnitt.gruppe.name»/«name»
 «ENDDEFINE»
 
 «DEFINE Device FOR Gleisabschnitt»
-	Abschnitt:   [«unit_no»] «gruppe.name»/«name»
+	Abschnitt:   [«unit_no»] [«modul.controller.id»] «gruppe.name»/«name»
 «ENDDEFINE»
 
 «DEFINE Device FOR Lampe»
-	Lampe:       [«unit_no»] «name» «schwellwert» «typ»
+	Lampe:       [«unit_no»] [«modul.controller.id»] «name» «schwellwert» «typ»
 «ENDDEFINE»
 
 «DEFINE Device FOR Licht»
-	Licht:       [«unit_no»] «name» «schwellwert»
+	Licht:       [«unit_no»] [«anschluss.controller.id»] «name» «schwellwert»
 «ENDDEFINE»
 
 «REM»
