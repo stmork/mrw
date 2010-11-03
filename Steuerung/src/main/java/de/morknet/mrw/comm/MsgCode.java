@@ -27,7 +27,8 @@ import java.util.Map;
  * @author smork
  *
  */
-public enum MsgCode {
+public enum MsgCode
+{
 	/**
 	 * Dieser Wert ist nur ein Flag, dass eine Meldung nicht gesendet werden soll.
 	 */
@@ -131,7 +132,12 @@ public enum MsgCode {
 	/**
 	 * Schaltfehler bei Weiche mit Endabschaltung.
 	 */
-	MSG_SWITCH_FAILED(19);
+	MSG_SWITCH_FAILED(19),
+
+	/**
+	 * Fehler, wenn nicht mehr Geräte konfiguriert werden können.
+	 */
+	MSG_CONFIG_BUFFER_FULL(20);
 
 	private final int msgCode;
 	private final static Map<Integer, MsgCode> map = new HashMap<Integer, MsgCode>();
