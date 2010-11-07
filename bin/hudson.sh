@@ -26,3 +26,6 @@ make
 cd ../tools
 make clean depend
 make
+cd ../daemon
+make clean depend
+make
