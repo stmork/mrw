@@ -181,7 +181,7 @@ abstract public class BatchRunner extends Thread
 		{
 			log.error("Es wird ein Reset der Mikrocontroller ausgelöst!");
 			controller.send(msg, "RESET nach doppeltem Ausführungsfehler!");
-			controller.waitForReachability(250L);
+			controller.waitForReachability(250L, 2500L);
 			log.info("Der Reset der Mikrocontroller wurde durchgeführt!");
 		}
 		catch (IOException e)

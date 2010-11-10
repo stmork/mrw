@@ -1,6 +1,6 @@
-EAGLE Version 4.16 Copyright (c) 1988-2005 CadSoft
+EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
 
-Electrical Rule Check for /home/sm/workspace/mrw/eagle/switch.sch at  8/16/2008 13:59:45 
+Electrical Rule Check for /home/sm/workspace/mrw/eagle/switch.sch at 11/09/2010 08:26:48 
 
 WARNING: Sheet 1/1: SUPPLY Pin +12V overwritten with +18V
 

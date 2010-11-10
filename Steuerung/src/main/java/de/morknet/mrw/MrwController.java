@@ -72,11 +72,12 @@ import de.morknet.mrw.util.LogUtil;
  */
 abstract public class MrwController implements CANMessageProcessor
 {
-	private   final static Log                    log           = LogFactory.getLog(MrwController.class);
-	private   final static long                   RESET_TIMEOUT =  500L;
-	private   final static long                   DELAY_PING    =   25L;
-	private   final static long                   DELAY_QUERY   =  100L;
-	private   final static long                   DELAY_RESET   =  250L;
+	private   final static Log                    log              = LogFactory.getLog(MrwController.class);
+	private   final static long                   ANSWER_DELAY     =   30L;
+	private   final static long                   DELAY_PING       =   25L;
+	private   final static long                   DELAY_QUERY      =  100L;
+	private   final static long                   DELAY_RESET      =  250L;
+	private   final static long                   DELAY_BOOTLOADER = 2500L;
 	private   final        List<Abschnitt>        selection     = new LinkedList<Abschnitt>();
 	private   final        LinkedHashSet<Trigger> trigger       = new LinkedHashSet<Trigger>(); 
 	private   final        CANReceiver            receiver      = new CANReceiver();
@@ -744,7 +745,7 @@ abstract public class MrwController implements CANMessageProcessor
 			send(msg);
 
 			// Atempause für den CAN-Bus.
-			waitForReachability(DELAY_RESET);
+			waitForReachability(DELAY_RESET, DELAY_BOOTLOADER);
 		}
 		catch (IOException ioe)
 		{
@@ -779,6 +780,7 @@ abstract public class MrwController implements CANMessageProcessor
 					send(msg);
 				}
 				ctrl.ping();
+				BatchRunner.sleep(5L);
 			}
 
 			// Atempause für den CAN-Bus.
@@ -833,7 +835,7 @@ abstract public class MrwController implements CANMessageProcessor
 			}
 
 			// Atempause für den CAN-Bus.
-			waitForReachability(DELAY_RESET);
+			waitForReachability(DELAY_RESET, 2000L);
 
 			log.info("Zustand der Mikrocontroller:");
 			for(MicroController ctrl : model.getMicroController())
@@ -849,15 +851,25 @@ abstract public class MrwController implements CANMessageProcessor
 
 	/**
 	 * Diese Methode wartet auf Erreichbarkeit aller Mikrocontroller mit einem festgelegten Timeout.
-	 * @param delay Wartezeit beim Polling.
+	 * @param delay Abfrageintervalle beim Polling.
 	 */
-	public void waitForReachability(long delay)
+	protected void waitForReachability(long delay)
+	{
+		waitForReachability(delay, 0L);
+	}
+
+	/**
+	 * Diese Methode wartet auf Erreichbarkeit aller Mikrocontroller mit einem festgelegten Timeout.
+	 * @param delay Abfrageintervalle beim Polling.
+	 * @param base Mindestwartezeit.
+	 */
+	public void waitForReachability(long delay, long base)
 	{
 		if (connection.isReal())
 		{
 			final Collection<MicroController> MCUs     = model.getMicroController(); 
 			final int                         mcuCount = MCUs.size();
-			final long                        end      = System.currentTimeMillis() + RESET_TIMEOUT * mcuCount;
+			final long                        end      = System.currentTimeMillis() + ANSWER_DELAY * mcuCount + base;
 			      long                        diff;
 			      int                         count;
 
@@ -882,7 +894,7 @@ abstract public class MrwController implements CANMessageProcessor
 			if (model.areControllerReachable())
 			{
 				setMessage(LogUtil.printf("Alle Mikrocontroller sind nach %dms erreichbar!",
-						RESET_TIMEOUT * mcuCount - diff));
+						ANSWER_DELAY * mcuCount - diff));
 			}
 			else
 			{
