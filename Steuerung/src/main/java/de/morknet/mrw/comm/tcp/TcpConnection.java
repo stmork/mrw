@@ -31,6 +31,7 @@ import org.apache.commons.logging.LogFactory;
 import de.morknet.mrw.base.MrwException;
 import de.morknet.mrw.comm.Connection;
 import de.morknet.mrw.comm.can.ChecksumException;
+import de.morknet.mrw.util.LogUtil;
 
 public class TcpConnection extends Connection
 {
@@ -50,6 +51,7 @@ public class TcpConnection extends Connection
 	 */
 	public TcpConnection(final String hostname, final int port) throws IOException
 	{
+		log.debug(LogUtil.printf("Versuche TCP-Verbindung über %s:%d", hostname, port));
 		socket = new Socket(hostname, port);
 		socket.setSoTimeout(1000);
 		in  = socket.getInputStream();

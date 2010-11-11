@@ -22,6 +22,8 @@ package de.morknet.mrw.comm.rs232;
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -32,6 +34,7 @@ import org.apache.commons.logging.LogFactory;
 import de.morknet.mrw.base.MrwException;
 import de.morknet.mrw.comm.Connection;
 import de.morknet.mrw.comm.can.ChecksumException;
+import de.morknet.mrw.util.LogUtil;
 
 /**
  * Diese Klasse steuert eine RS232-Verbindung zu einer realen Modelleisenbahnanlage.
@@ -56,15 +59,22 @@ public final class RS232Connection extends Connection
 	 */
 	public RS232Connection(String port_name) throws Exception
 	{
+		File file = new File(port_name);
+		if (!file.exists())
+		{
+			throw new FileNotFoundException(port_name);
+		}
+		port_name = file.getCanonicalPath(); 
+		log.debug(LogUtil.printf("Versuche serielle Schnittstelle %s", port_name));
 		portId = CommPortIdentifier.getPortIdentifier(port_name);
-		port = (SerialPort) portId.open("CAN", 115200);
+		port = (SerialPort)portId.open("CAN", 115200);
 		port.setSerialPortParams(115200,
 				SerialPort.DATABITS_8,
 				SerialPort.STOPBITS_1,
 				SerialPort.PARITY_NONE);
 		port.setFlowControlMode(SerialPort.FLOWCONTROL_NONE);
 		port.enableReceiveTimeout(500);
-		port.setInputBufferSize(BUFFER_SIZE);	
+		port.setInputBufferSize(BUFFER_SIZE);
 
 		in  = port.getInputStream();
     	out = port.getOutputStream();

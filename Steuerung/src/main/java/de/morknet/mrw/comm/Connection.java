@@ -65,6 +65,7 @@ abstract public class Connection
 			final String port     = MrwProperties.getProperty("mrw.remoteport", "4268");
 
 			connection = new TcpConnection(hostname, Integer.parseInt(port));
+			log.info("Benutze TCP-Verbindung...");
 			return connection;
 		}
 		catch(NumberFormatException nfe)
@@ -81,6 +82,7 @@ abstract public class Connection
 			String portname = MrwProperties.getProperty("mrw.port", getDefaultPort());
 			log.debug("Port name: " + portname);
 			connection = new RS232Connection(portname);
+			log.info("Benutze serielle Schnittstelle...");
 			return connection;
 		}
 		catch(UnsatisfiedLinkError ule)
@@ -93,8 +95,9 @@ abstract public class Connection
 			log.info(e.getLocalizedMessage());
 		}
 
-		log.info("Using dummy port...");
-		return new DummyConnection();
+		connection = new DummyConnection();
+		log.info("Benutze Dummy-Verbindung...");
+		return connection;
 	}
 
 	/**

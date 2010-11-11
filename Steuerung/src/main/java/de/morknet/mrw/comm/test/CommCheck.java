@@ -51,7 +51,7 @@ public class CommCheck extends CANMain
 	@Override
 	protected void fillBatch(java.util.List<MrwMessage> list) throws Exception
 	{
-		for (int i = 0; i < 50;i++)
+		for (int i = 0; i < 2;i++)
 		{
 			list.add(MrwMessage.createPingMsg());
 		}
