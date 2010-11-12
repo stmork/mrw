@@ -23,7 +23,6 @@ import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -60,11 +59,10 @@ public final class RS232Connection extends Connection
 	public RS232Connection(String port_name) throws Exception
 	{
 		File file = new File(port_name);
-		if (!file.exists())
+		if (file.exists())
 		{
-			throw new FileNotFoundException(port_name);
+			port_name = file.getCanonicalPath(); 
 		}
-		port_name = file.getCanonicalPath(); 
 		log.debug(LogUtil.printf("Versuche serielle Schnittstelle %s", port_name));
 		portId = CommPortIdentifier.getPortIdentifier(port_name);
 		port = (SerialPort)portId.open("CAN", 115200);
