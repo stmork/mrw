@@ -1,6 +1,6 @@
 EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
 
-Electrical Rule Check for /home/smork/workspace/mrw/eagle/mc.sch at 10/01/2008 13:41:53 
+Electrical Rule Check for /home/sm/workspace/mrw/eagle/mc.sch at 11/13/2010 12:39:37 
 
 WARNING: Sheet 1/1: POWER Pin IC1 VDD connected to +5V
 WARNING: Sheet 1/1: POWER Pin IC1 VSS connected to GND
