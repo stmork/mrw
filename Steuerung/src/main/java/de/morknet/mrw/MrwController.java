@@ -72,16 +72,18 @@ import de.morknet.mrw.util.LogUtil;
  */
 abstract public class MrwController implements CANMessageProcessor
 {
-	private   final static Log                    log              = LogFactory.getLog(MrwController.class);
-	private   final static long                   ANSWER_DELAY     =   30L;
-	private   final static long                   DELAY_PING       =   25L;
-	private   final static long                   DELAY_QUERY      =  100L;
-	private   final static long                   DELAY_RESET      =  250L;
-	private   final static long                   DELAY_BOOTLOADER = 2500L;
-	private   final static long                   DELAY_RECONFIG   = DELAY_BOOTLOADER + 4000L;
-	private   final        List<Abschnitt>        selection        = new LinkedList<Abschnitt>();
-	private   final        LinkedHashSet<Trigger> trigger          = new LinkedHashSet<Trigger>(); 
-	private   final        CANReceiver            receiver         = new CANReceiver();
+	private   final static Log                    log                 = LogFactory.getLog(MrwController.class);
+	private   final static long                   ANSWER_DELAY        =   30L;
+	private   final static long                   POLLING_DELAY_PING  =   25L;
+	private   final static long                   POLLING_DELAY_QUERY =  100L;
+	private   final static long                   POLLING_DELAY_RESET =  250L;
+	private   final static long                   DELAY_WDT_TIMEOUT   = 1000L;
+	private   final static long                   DELAY_BOOTLOADER    = 2000L;
+	private   final static long                   DELAY_RESET         = DELAY_WDT_TIMEOUT + DELAY_BOOTLOADER + 1000L;
+	private   final static long                   DELAY_RECONFIG      = DELAY_WDT_TIMEOUT + DELAY_BOOTLOADER + 4000L;
+	private   final        List<Abschnitt>        selection           = new LinkedList<Abschnitt>();
+	private   final        LinkedHashSet<Trigger> trigger             = new LinkedHashSet<Trigger>(); 
+	private   final        CANReceiver            receiver            = new CANReceiver();
 	
 	/**
 	 * Die zu steuernde Modelleisenbahnanlage.
@@ -721,7 +723,7 @@ abstract public class MrwController implements CANMessageProcessor
 			send(msg);
 
 			// Atempause für den CAN-Bus.
-			waitForReachability(DELAY_PING);
+			waitForReachability(POLLING_DELAY_PING);
 		}
 		catch (IOException ioe)
 		{
@@ -746,7 +748,7 @@ abstract public class MrwController implements CANMessageProcessor
 			send(msg);
 
 			// Atempause für den CAN-Bus.
-			waitForReachability(DELAY_RESET, DELAY_BOOTLOADER);
+			waitForReachability(POLLING_DELAY_RESET, DELAY_RESET);
 		}
 		catch (IOException ioe)
 		{
@@ -785,7 +787,7 @@ abstract public class MrwController implements CANMessageProcessor
 			}
 
 			// Atempause für den CAN-Bus.
-			waitForReachability(DELAY_QUERY);
+			waitForReachability(POLLING_DELAY_QUERY);
 
 			log.info("Zustand der Mikrocontroller:");
 			for(MicroController ctrl : model.getMicroController())
@@ -837,7 +839,7 @@ abstract public class MrwController implements CANMessageProcessor
 			}
 
 			// Atempause für den CAN-Bus.
-			waitForReachability(DELAY_RESET, DELAY_RECONFIG);
+			waitForReachability(POLLING_DELAY_RESET, DELAY_RECONFIG);
 
 			log.info("Zustand der Mikrocontroller:");
 			for(MicroController ctrl : model.getMicroController())
@@ -876,7 +878,7 @@ abstract public class MrwController implements CANMessageProcessor
 			      long                        diff;
 			      int                         count;
 
-			log.info("Warte auf Antwort...");
+			log.info(LogUtil.printf("Warte %dms auf Antwort...", delay));
 			do
 			{
 				BatchRunner.sleep(interval);
