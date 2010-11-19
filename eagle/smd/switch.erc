@@ -1,0 +1,10 @@
+EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
+
+Electrical Rule Check for /home/smork/workspace/mrw/eagle/smd/switch.sch at 11/19/2010 15:03:25 
+
+WARNING: Sheet 1/1: SUPPLY Pin +12V overwritten with +18V
+
+Board and schematic are consistent
+
+    0 errors
+    1 warnings

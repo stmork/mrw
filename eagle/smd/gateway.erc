@@ -1,0 +1,51 @@
+EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
+
+Electrical Rule Check for /home/smork/workspace/mrw/eagle/smd/gateway.sch at 11/17/2010 14:43:16 
+
+WARNING: Sheet 1/1: POWER Pin IC2 VDD connected to +5V
+WARNING: Sheet 1/1: POWER Pin IC2 VSS connected to GND
+WARNING: Sheet 1/1: POWER Pin IC1 AGND connected to GND
+WARNING: Sheet 1/1: POWER Pin IC1 AVCC connected to +5V
+WARNING: Sheet 1/1: POWER Pin IC1 AREF connected to +5V
+ERROR: Sheet 1/1: no SUPPLY for POWER Pin IC1 GND1
+ERROR: Sheet 1/1: no SUPPLY for POWER Pin IC1 GND2
+WARNING: Sheet 1/1: POWER Pin IC1 VCC1 connected to +5V
+WARNING: Sheet 1/1: POWER Pin IC1 VCC connected to GND
+ERROR: Sheet 1/1: no SUPPLY for POWER Pin IC1 VCC2
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 VCC
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 3V3OUT
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 OSCO
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 OSCI
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 RTS#
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 CTS#
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 DTR#
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 DSR#
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 DCD#
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 RI#
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 CBUS0
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 CBUS1
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 CBUS2
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 CBUS3
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 CBUS4
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 VCCIO
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC3 RESET#
+ERROR: Only INPUT Pins on net N$19
+WARNING: Only 1 Pin on net N$19
+ERROR: Only INPUT Pins on net N$20
+WARNING: Only 1 Pin on net N$20
+WARNING: Sheet 1/1, Net N$10: missing Junction at (-0.4 3)
+WARNING: Sheet 1/1, Net N$11: missing Junction at (-0.4 3.2)
+WARNING: Sheet 1/1, Net N$17: missing Junction at (7.3 3.1)
+WARNING: Sheet 1/1, Net GND: missing Junction at (6.3 -1.3)
+WARNING: Sheet 1/1, Net GND: missing Junction at (6.3 -1.4)
+WARNING: Sheet 1/1, Net GND: missing Junction at (6.3 -1.5)
+WARNING: Sheet 1/1, Net GND: missing Junction at (1.8 3.9)
+WARNING: Sheet 1/1, Net +5V: missing Junction at (8 4)
+WARNING: Sheet 1/1, Net +5V: missing Junction at (2.7 3.9)
+WARNING: Sheet 1/1: Nets N$41 and +5V too close at (2.4 3.9)
+WARNING: Sheet 1/1, Net N$41: wire overlaps pin at (2.4 3.9)
+
+Board and schematic are consistent
+
+   22 errors
+   20 warnings
