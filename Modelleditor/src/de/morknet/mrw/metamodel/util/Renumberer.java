@@ -79,16 +79,19 @@ public class Renumberer
 		{
 			int ID = controller.getId();
 			int newID;
-			int newUnitNo = ID << 8;
-			System.out.printf("ID=%d\n", ID);
+			int newUnitNo;
 
+			System.out.printf("ID=%d\n", ID);
 			newID = ID * 100 + 40;
+			newUnitNo = ID * 0x100 + 0x40;
+
 			for (Anschluss a : controller.getAnschluesse())
 			{
 				System.out.printf("  A:    %5d ->  %5d\n", a.getNummer(), newID);
 				a.setNummer(newID);
 				newID -= 10;
 
+				newUnitNo -= 0x10;
 				for (Lichtsignal signal : a.getLichtsignale())
 				{
 					System.out.printf("    LS: %5d -> 0x%04x\n", signal.getUnit_no(), newUnitNo);
@@ -102,6 +105,7 @@ public class Renumberer
 			}
 
 			newID = ID * 100 + 1;
+			newUnitNo = ID * 0x100 + 0x80;
 			for(Modul m : controller.getModule())
 			{
 				System.out.printf("  M:    %5d ->  %5d\n", m.getNummer(), newID);
@@ -114,6 +118,7 @@ public class Renumberer
 							unit.getUnit_no(), newUnitNo, unit.getClass().getSimpleName());
 					unit.setUnit_no(newUnitNo++);
 				}
+				newUnitNo += 0x10;
 			}
 		}
 	}
