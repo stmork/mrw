@@ -20,6 +20,13 @@ package de.morknet.mrw.rcc;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionPoint;
+import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.IPluginRegistry;
+import org.eclipse.core.runtime.IProduct;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.swt.widgets.Display;
@@ -44,6 +51,17 @@ public class Application implements IApplication
 		try
 		{
 			final Controller ctrl = Controller.getController();
+			
+			IExtensionRegistry registry = Platform.getExtensionRegistry();
+			
+			for (IConfigurationElement element : registry.getConfigurationElementsFor("org.eclipse.ui.views"))
+			{
+				log.info(element.getName() + "/" + element.getDeclaringExtension().getExtensionPointUniqueIdentifier());
+				for(String attr : element.getAttributeNames())
+				{
+					log.info(attr + " = " + element.getAttribute(attr));
+				}
+			}
 
 			// Do the job ;-)
 			ctrl.prepare();

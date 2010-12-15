@@ -25,9 +25,13 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
+import org.eclipse.ui.views.IViewDescriptor;
+import org.eclipse.ui.views.IViewRegistry;
 
 import de.morknet.mrw.ModellFactory;
 import de.morknet.mrw.base.MrwException;
+import de.morknet.mrw.rcc.view.Block;
+import de.morknet.mrw.rcc.view.Brambusch;
 import de.morknet.mrw.util.LogUtil;
 
 /**
@@ -37,6 +41,24 @@ import de.morknet.mrw.util.LogUtil;
  */
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor implements PerspectiveId
 {
+	@Override
+	public boolean openWindows() {
+		boolean success = super.openWindows();
+		if (success)
+		{
+/*
+			RccViewPart brambusch = new Brambusch();
+			RccViewPart block = new Block();
+*/
+			IViewRegistry registry = PlatformUI.getWorkbench().getViewRegistry();
+			for (IViewDescriptor view : registry.getViews())
+			{
+				log.info(view.getId());
+			}
+		}
+		return success;
+	}
+
 	private static final Log log = LogFactory.getLog(ApplicationWorkbenchAdvisor.class);
 
 	@Override
