@@ -68,4 +68,12 @@ public class TourModeTrigger extends Trigger
 		log.info("<endPointReached() " + tour);
 		return route;
 	}
+	
+	@Override
+	public void routeRemoved()
+	{
+		log.info(">routeRemoved() " + tour);
+		tour.extend();
+		log.info("<routeRemoved() " + tour);
+	}
 }

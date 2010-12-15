@@ -74,4 +74,12 @@ abstract public class Trigger
 		log.debug("=endPointReached() " + abschnitt.getName());
 		return route;
 	}
+
+	/**
+	 * Diese Methode wird aufgerufen, wenn eine Route entfernt wurde.
+	 */
+	public void routeRemoved()
+	{
+		log.debug("=routeRemoved()");
+	}
 }
