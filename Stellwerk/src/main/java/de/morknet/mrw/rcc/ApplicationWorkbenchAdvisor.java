@@ -30,8 +30,6 @@ import org.eclipse.ui.views.IViewRegistry;
 
 import de.morknet.mrw.ModellFactory;
 import de.morknet.mrw.base.MrwException;
-import de.morknet.mrw.rcc.view.Block;
-import de.morknet.mrw.rcc.view.Brambusch;
 import de.morknet.mrw.util.LogUtil;
 
 /**
