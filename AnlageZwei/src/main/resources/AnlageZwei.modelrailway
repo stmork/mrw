@@ -97,7 +97,7 @@
       <lampen name="Laterne Bahnhof  4" unit_no="3244" schwellwert="24" typ="3"/>
       <lampen name="Fahrtrichtungsanzeiger" unit_no="3245" schwellwert="32" typ="5"/>
       <lampen name="Bahnsteiguhr" unit_no="3246" schwellwert="32" typ="6"/>
-      <lampen name="Laterne  6" unit_no="3247" schwellwert="28" typ="64"/>
+      <lampen name="Laterne  6" unit_no="3247" schwellwert="28" typ="6"/>
     </module>
   </controller>
   <controller id="13">
@@ -108,10 +108,10 @@
       <lampen name="Gaslaterne Süd" unit_no="3476" schwellwert="28" typ="65"/>
       <lampen name="Bahnhof Nord" unit_no="3477" schwellwert="32" typ="4"/>
       <lampen name="Haus" unit_no="3478" schwellwert="10" typ="15"/>
-      <lampen name="Laterne  4 (Kreuzung Nord)" unit_no="3479" schwellwert="28" typ="3"/>
+      <lampen name="Laterne  4 (Kreuzung Nord)" unit_no="3479" schwellwert="28" typ="4"/>
       <lampen name="Bahnhofshalle" unit_no="3480" schwellwert="32" typ="3"/>
       <lampen name="Bahnhof Süd" unit_no="3481" schwellwert="32" typ="2"/>
-      <lampen name="Laterne  5 (Kreuzung Süd)" unit_no="3482" schwellwert="28" typ="4"/>
+      <lampen name="Laterne  5 (Kreuzung Süd)" unit_no="3482" schwellwert="28" typ="5"/>
       <lampen name="Telefonzelle" unit_no="3483" schwellwert="26" typ="7"/>
     </module>
   </controller>
@@ -131,7 +131,7 @@
       <lampen name="Laterne Bahnhof  2" unit_no="3975" schwellwert="24" typ="1"/>
     </module>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1502">
-      <lampen name="Laterne  2" unit_no="3992" schwellwert="28" typ="64"/>
+      <lampen name="Laterne  2" unit_no="3992" schwellwert="28" typ="2"/>
       <lampen name="Palais 3" unit_no="3993" schwellwert="8" typ="15"/>
       <lampen name="Palais 2" unit_no="3994" schwellwert="20" typ="15"/>
       <lampen name="Laterne  3 (Stellwerk Auf)" unit_no="3995" schwellwert="28" typ="64"/>
@@ -146,16 +146,16 @@
     <module xsi:type="Modelrailway:Gleismodul" nummer="1601" abschnitte="//@gruppe.2/@abschnitt.7 //@gruppe.2/@abschnitt.6 //@gruppe.1/@abschnitt.2 //@gruppe.1/@abschnitt.9"/>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1602">
       <lampen name="Siedlungshaus 1" unit_no="4244" schwellwert="14" typ="15"/>
-      <lampen name="Laterne  9" unit_no="4245" schwellwert="28" typ="64"/>
+      <lampen name="Laterne  9" unit_no="4245" schwellwert="28" typ="1"/>
       <lampen name="Siedlungshaus 2" unit_no="4246" schwellwert="16" typ="15"/>
-      <lampen name="Laterne 10" unit_no="4247" schwellwert="28" typ="64"/>
+      <lampen name="Laterne 10" unit_no="4247" schwellwert="28" typ="2"/>
       <lampen name="Laterne Bahnhof  7" unit_no="4248" schwellwert="24" typ="6"/>
       <lampen name="Laterne Bahnhof  6" unit_no="4249" schwellwert="24" typ="5"/>
       <lampen name="Bahnsteig 1 (Sufloch)" unit_no="4250" schwellwert="32" typ="2"/>
       <lampen name="Bahnsteig 2 (Sufloch)" unit_no="4251" schwellwert="32" typ="3"/>
     </module>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1603">
-      <lampen name="Laterne  8" unit_no="4268" schwellwert="28" typ="64"/>
+      <lampen name="Laterne  8" unit_no="4268" schwellwert="28" typ="0"/>
       <lampen name="Laterne Bahnhof  5" unit_no="4269" schwellwert="24" typ="4"/>
       <lampen name="Eisenbahnerhaus 2" unit_no="4270" schwellwert="34" typ="15"/>
       <lampen name="Laterne  7" unit_no="4271" schwellwert="28" typ="64"/>
@@ -168,13 +168,18 @@
   <controller id="17">
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1701">
       <lampen name="Stellwerk Sop" unit_no="4480" schwellwert="36" typ="2"/>
-      <lampen name="Laterne 11" unit_no="4481" schwellwert="28" typ="64"/>
+      <lampen name="Laterne 11" unit_no="4481" schwellwert="28" typ="3"/>
       <lampen name="Gaslaterne 3" unit_no="4482" schwellwert="28" typ="65"/>
       <lampen name="Gaslaterne 4" unit_no="4483" schwellwert="28" typ="65"/>
       <lampen name="Bahnhof Sodbrandt" unit_no="4484" schwellwert="32" typ="1"/>
       <lampen name="Schuppen Sodbrandt" unit_no="4485" schwellwert="16" typ="4"/>
-      <lampen name="Bahnwärterhaus" unit_no="4486" schwellwert="10" typ="14"/>
-      <lampen name="Laterne 12" unit_no="4487" schwellwert="28" typ="64"/>
+      <lampen name="Laterne Bahnhof  8" unit_no="4486" schwellwert="24" typ="1"/>
+      <lampen name="Bahnwärterhaus" unit_no="4487" schwellwert="10" typ="14"/>
+    </module>
+    <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1702">
+      <lampen name="Laterne 12" unit_no="4504" schwellwert="28" typ="4"/>
+      <lampen name="Laterne Bahnhof 10" unit_no="4505" schwellwert="24" typ="3"/>
+      <lampen name="Laterne Bahnhof  9" unit_no="4506" schwellwert="24" typ="2"/>
     </module>
   </controller>
   <gruppe xsi:type="Modelrailway:Bahnhof" name="Alt Ulm">
