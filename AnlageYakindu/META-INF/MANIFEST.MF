@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Anlage Yakindu
 Bundle-SymbolicName: de.itemis.mrw.yakindu; singleton:=true
 Bundle-Version: 1.0.0
-Require-Bundle: org.eclipse.emf.mwe.core;bundle-version="0.7.2"
+Require-Bundle: org.eclipse.emf.mwe.core;bundle-version="0.7.2",
+ org.apache.commons.logging;bundle-version="1.0.4"
 Bundle-Vendor: itemis AG
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
