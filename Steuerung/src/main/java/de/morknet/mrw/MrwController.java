@@ -1039,6 +1039,10 @@ abstract public class MrwController implements CANMessageProcessor
 					case RIGHT:
 						swt.turn(batch, swt.getA(), swt.getB());
 						break;
+
+					default:
+						// Not available
+						break;
 					}
 				}
 				else if (gt instanceof DKW)
@@ -1052,6 +1056,10 @@ abstract public class MrwController implements CANMessageProcessor
 						break;
 					case ARC:
 						dkw.turn(batch, dkw.getA(), dkw.getD());
+						break;
+
+					default:
+						// Not available
 						break;
 					}
 				}

@@ -751,6 +751,10 @@ abstract public class Modell extends NamedElement
 			case SENSOR_TEMP:
 				this.temperature = msg.getData(5);
 				break;
+
+			default:
+				log.warn(LogUtil.printf("Unbekannte Sensordaten: Typ:%02x", msg.getData(4)));
+				break;
 			}
 		}
 		else
