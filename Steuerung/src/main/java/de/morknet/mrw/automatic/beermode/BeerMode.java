@@ -276,14 +276,14 @@ public class BeerMode extends MrwActionControl
 	private static void dumpCounter()
 	{
 		log.info("=====================================================================");
-		for (Abschnitt a : poolCounter.keySet())
+		for (Map.Entry<Abschnitt, Integer> entry : poolCounter.entrySet())
 		{
-			log.info(a.getName() +  " " + poolCounter.get(a));
+			log.info(entry.getKey().getName() +  " " + entry.getValue());
 		}
 		log.info("---------------------------------------------------------------------");
-		for (Abschnitt a : viaCounter.keySet())
+		for (Map.Entry<Abschnitt, Integer> entry : viaCounter.entrySet())
 		{
-			log.info(a.getName() +  " " + viaCounter.get(a));
+			log.info(entry.getKey().getName() +  " " + entry.getValue());
 		}
 		log.info("=====================================================================");
 	}
