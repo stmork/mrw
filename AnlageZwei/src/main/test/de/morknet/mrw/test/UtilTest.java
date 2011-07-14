@@ -34,6 +34,7 @@ import de.morknet.mrw.util.MrwProperties;
 import de.morknet.mrw.util.MrwRandom;
 import de.morknet.mrw.util.NameUtil;
 import de.morknet.mrw.util.Protocol;
+import de.morknet.mrw.util.ReferenceCounter;
 
 public class UtilTest
 {
@@ -177,6 +178,42 @@ public class UtilTest
 	public void random6()
 	{
 		random(6);
+	}
+
+	@Test
+	public void referenceCounter()
+	{
+		ReferenceCounter<String> counter = new ReferenceCounter<String>();
+		
+		Assert.assertEquals(0, counter.getValue("unknown"));
+		counter.count("val1");
+		counter.count("val1");
+		Assert.assertEquals(2, counter.getValue("val1"));
+		counter.count("val2", 2);
+		Assert.assertEquals(2, counter.getValue("val1"));
+		Assert.assertEquals(2, counter.getValue("val2"));
+		counter.count("val3", 0);
+		Assert.assertEquals(2, counter.getValue("val1"));
+		Assert.assertEquals(2, counter.getValue("val2"));
+		Assert.assertEquals(0, counter.getValue("val3"));
+		counter.count("val3", -1);
+		Assert.assertEquals(2, counter.getValue("val1"));
+		Assert.assertEquals(2, counter.getValue("val2"));
+		Assert.assertEquals(-1, counter.getValue("val3"));
+		counter.count("val1");
+		Assert.assertEquals(3, counter.getValue("val1"));
+		Assert.assertEquals(2, counter.getValue("val2"));
+		Assert.assertEquals(-1, counter.getValue("val3"));
+		counter.zero();
+		Assert.assertEquals(0, counter.getValue("val1"));
+		Assert.assertEquals(0, counter.getValue("val2"));
+		Assert.assertEquals(0, counter.getValue("val3"));
+		Assert.assertEquals(3, counter.keySet().size());
+		counter.clear();
+		Assert.assertEquals(0, counter.getValue("val1"));
+		Assert.assertEquals(0, counter.getValue("val2"));
+		Assert.assertEquals(0, counter.getValue("val3"));
+		Assert.assertEquals(0, counter.keySet().size());
 	}
 
 	private void random(final int dom)

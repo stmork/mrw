@@ -20,9 +20,7 @@
 package de.morknet.mrw.automatic.beermode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -37,6 +35,7 @@ import de.morknet.mrw.base.Gruppe;
 import de.morknet.mrw.batch.RouteEnableRunner;
 import de.morknet.mrw.gui.info.BeerModeInfo;
 import de.morknet.mrw.util.MrwRandom;
+import de.morknet.mrw.util.ReferenceCounter;
 
 /**
  * Diese Klasse stellt die Steuerung für den Biermodus bereit. Aus einem definiertem Bahnhof wird
@@ -52,8 +51,8 @@ public class BeerMode extends MrwActionControl
 	private final static Log                    log         = LogFactory.getLog(BeerMode.class);
 	private final static Modell                 model       = ModellFactory.getInstance();
 	private final static BeerModeInfo           info        = model.getBeerModeInfo();
-	private final static Map<Abschnitt,Integer> poolCounter = new HashMap<Abschnitt, Integer>();
-	private final static Map<Abschnitt,Integer> viaCounter  = new HashMap<Abschnitt, Integer>();
+	private final static ReferenceCounter<Abschnitt> poolCounter = new ReferenceCounter<Abschnitt>();
+	private final static ReferenceCounter<Abschnitt> viaCounter  = new ReferenceCounter<Abschnitt>();
 	private final static Gruppe                 poolStation = model.findGroup(info.getPoolStationName());
 	private final static Gruppe                 viaStation  = model.findGroup(info.getViaStationName());
 	private final static MrwRandom              aRandom     = new MrwRandom();
@@ -197,8 +196,8 @@ public class BeerMode extends MrwActionControl
 				{
 					RouteEnableRunner runner = new RouteEnableRunner(controller, route);
 					runner.start();
-					count(poolCounter, hops.get(2));
-					count(viaCounter,  hops.get(1));
+					poolCounter.count(hops.get(2));
+					viaCounter.count(hops.get(1));
 				}
 			}
 			catch (RoutingException re)
@@ -244,14 +243,8 @@ public class BeerMode extends MrwActionControl
 	 */
 	private static void initCounter()
 	{
-		for (Abschnitt a : getPoolStation().getMainSegments())
-		{
-			poolCounter.put(a, 0);
-		}
-		for (Abschnitt a : getViaStation().getMainSegments())
-		{
-			viaCounter.put(a, 0);
-		}
+		poolCounter.zero();
+		viaCounter.zero();
 	}
 	
 	/**
@@ -259,14 +252,8 @@ public class BeerMode extends MrwActionControl
 	 */
 	private static void clearCounter()
 	{
-		for (Abschnitt a : poolCounter.keySet())
-		{
-			poolCounter.put(a, 0);
-		}
-		for (Abschnitt a : viaCounter.keySet())
-		{
-			viaCounter.put(a, 0);
-		}
+		poolCounter.zero();
+		viaCounter.zero();
 	}
 
 	/**
@@ -276,34 +263,18 @@ public class BeerMode extends MrwActionControl
 	private static void dumpCounter()
 	{
 		log.info("=====================================================================");
-		for (Map.Entry<Abschnitt, Integer> entry : poolCounter.entrySet())
+		for (Abschnitt abschnitt : poolCounter.keySet())
 		{
-			log.info(entry.getKey().getName() +  " " + entry.getValue());
+			log.info(abschnitt.getName() +  " " + poolCounter.getValue(abschnitt));
 		}
 		log.info("---------------------------------------------------------------------");
-		for (Map.Entry<Abschnitt, Integer> entry : viaCounter.entrySet())
+		for (Abschnitt abschnitt : viaCounter.keySet())
 		{
-			log.info(entry.getKey().getName() +  " " + entry.getValue());
+			log.info(abschnitt.getName() +  " " + viaCounter.getValue(abschnitt));
 		}
 		log.info("=====================================================================");
 	}
 	
-	private void count(Map<Abschnitt,Integer> map, Abschnitt a)
-	{
-		Abschnitt main = a.getMainSegment(inDirection);
-		Integer counter = map.get(main);
-
-		if (counter == null)
-		{
-			log.warn(main.getName());
-		}
-		else
-		{
-			counter++;
-			map.put(main, counter);
-		}
-	}
-
 	/**
 	 * Diese Methode gibt die Fahrtrichtung zurück.
 	 * @return Die Fahrtrichtung dieses Biermodus.

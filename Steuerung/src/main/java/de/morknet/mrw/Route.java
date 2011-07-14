@@ -21,7 +21,6 @@ package de.morknet.mrw;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -46,6 +45,7 @@ import de.morknet.mrw.batch.Batch;
 import de.morknet.mrw.batch.BatchExecuter;
 import de.morknet.mrw.util.LogUtil;
 import de.morknet.mrw.util.NameUtil;
+import de.morknet.mrw.util.ReferenceCounter;
 
 /**
  * In der Route sind alle Informationen für eine Fahrstraße gespeichert. Die abgeleitete Liste
@@ -96,7 +96,7 @@ public class Route extends LinkedList<Gleisteil>
 	 * In dieser Map wird pro Abschnitt die Anzahl der Abzweigungen festgehalten.
 	 * Diese Zahl dient zur Ermittlung, ob Hp1 oder Hp2 auf ein Signal gegeben wird.
 	 */
-	private final HashMap<Abschnitt, Integer> counter = new HashMap<Abschnitt, Integer>();
+	private final ReferenceCounter<Abschnitt> counter = new ReferenceCounter<Abschnitt>();
 
 	/**
 	 * Menge aller durch Routen belegten Gleisteile. Wird bei einem Routing festgestellt, dass
@@ -361,16 +361,10 @@ public class Route extends LinkedList<Gleisteil>
 		for (Gleisteil gt : this)
 		{
 			Abschnitt abschnitt = gt.getSegment();
-			Integer abzweige = counter.get(abschnitt);
-			if (abzweige == null)
-			{
-				abzweige = Integer.valueOf(0);
-			}
 			if (gt.isBranch())
 			{
-				abzweige++;
+				counter.count(abschnitt);
 			}
-			counter.put(abschnitt, abzweige);
 
 			gt.setRoute(this);
 		}
@@ -412,7 +406,7 @@ public class Route extends LinkedList<Gleisteil>
 			}
 			Abschnitt last = ownedSegments.get(max);
 			Batch batch = executer.createBatch();
-			int abzweige = counter.get(last);
+			int abzweige = counter.getValue(last);
 	
 			log.debug("Berechne Signalbilder...");
 			if (!last.isStumpf(direction))
@@ -436,7 +430,7 @@ public class Route extends LinkedList<Gleisteil>
 			{
 				Abschnitt segment = ownedSegments.get(i);
 				
-				int act = counter.get(segment);
+				int act = counter.getValue(segment);
 				abzweige += act;
 		
 				for (Signal s : segment.getSignals(direction))
