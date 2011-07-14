@@ -179,7 +179,7 @@
 				charset="UTF-8"
 				windowtitle="Modell(-bau-)basierte Eisenbahnsteuerung">
 			<doctitle><![CDATA[<h1>Modell(-bau-)basierte Eisenbahnsteuerung</h1>]]></doctitle>
-			<bottom><![CDATA[<i>Copyright &#169; 2010 all committers of this modelrailway project]]></bottom>
+			<bottom><![CDATA[<i>Copyright &#169; 2011 all committers of this modelrailway project]]></bottom>
 		</javadoc>
 	</target>
 </project>
