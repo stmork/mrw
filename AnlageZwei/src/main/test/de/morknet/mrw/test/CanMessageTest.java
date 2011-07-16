@@ -38,7 +38,7 @@ public class CanMessageTest
 		Assert.assertEquals("Eine leere CAN-Message darf keine Datenbytes haben!", msg.length(), 0);
 		msg.dump("Test");
 	}
-	
+
 	@Test
 	public void id()
 	{
@@ -115,7 +115,22 @@ public class CanMessageTest
 			Assert.assertEquals("Die Datenbytes müssen identisch sein!", msg.getData(b + b), b);
 			Assert.assertEquals("Die Datenbytes müssen identisch sein!", msg.getData(b + b + 1), 0);
 		}
-		msg.addDataByte(0xaa);
+		msg.addDataWord(0xaa);
+	}
+	
+	@Test
+	public void modify()
+	{
+		CANMessage msg = new CANMessage(0, 0, 0);
+		int value = 0xeb;
+		
+		Assert.assertTrue(value != (value ^0xff));
+
+		msg.addDataByte(value ^ 0xff);
+		Assert.assertEquals(value ^0xff, msg.getData(0));
+
+		msg.modifyData(0, value);
+		Assert.assertEquals(value, msg.getData(0));
 	}
 
 	@Test(expected=ArrayIndexOutOfBoundsException.class)

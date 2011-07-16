@@ -742,19 +742,28 @@ abstract public class Modell extends NamedElement
 	{
 		if (msg.getResultCode() == MsgCode.MSG_OK)
 		{
-			switch(SensorCode.getSensorCode(msg.getData(4)))
+			if (msg.length() >= 6)
 			{
-			case SENSOR_LIGHT:
-				this.lightness = msg.getData(5);
-				break;
-
-			case SENSOR_TEMP:
-				this.temperature = msg.getData(5);
-				break;
-
-			default:
-				log.warn(LogUtil.printf("Unbekannte Sensordaten: Typ:%02x", msg.getData(4)));
-				break;
+				switch(SensorCode.getSensorCode(msg.getData(4)))
+				{
+				case SENSOR_LIGHT:
+					this.lightness = msg.getData(5);
+					break;
+	
+				case SENSOR_TEMP:
+					msg.dump("< TEMP");
+					this.temperature = msg.getData(5);
+					break;
+	
+				default:
+					log.warn(LogUtil.printf("Unbekannte Sensordaten: Typ:%02x", msg.getData(4)));
+					break;
+				}
+			}
+			else
+			{
+				msg.dump(null);
+				log.warn(LogUtil.printf("Die Meldung ist mit %d Bytes zu kurz!", msg.length()));
 			}
 		}
 		else

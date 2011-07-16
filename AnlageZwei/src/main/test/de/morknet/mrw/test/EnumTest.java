@@ -35,6 +35,10 @@ import de.morknet.mrw.comm.SignalCode;
 
 public class EnumTest
 {
+	/*
+	 * Occupation code tests
+	 */
+
 	@Test
 	public void occupationCode()
 	{
@@ -51,7 +55,7 @@ public class EnumTest
 	}
 	
 	@Test(expected=CodeNotFoundException.class)
-	public void occupationCodeErrorInt()
+	public void occupationCodeNotFound()
 	{
 		OccupationCode.getOccupationCode(2);
 	}
@@ -62,6 +66,10 @@ public class EnumTest
 		OccupationCode.valueOf("XXX");
 	}
 
+	/*
+	 * Direction code tests
+	 */
+	
 	@Test
 	public void directionCode()
 	{
@@ -71,11 +79,21 @@ public class EnumTest
 		Assert.assertSame(DirectionCode.CROSS, DirectionCode.valueOf("CROSS"));
 	}
 
+	@Test(expected=CodeNotFoundException.class)
+	public void directionCodeNotFound()
+	{
+		DirectionCode.getDirectionCode(null, 0);
+	}
+
 	@Test(expected=IllegalArgumentException.class)
 	public void directionCodeErrorString()
 	{
 		DirectionCode.valueOf("XXX");
 	}
+
+	/*
+	 * Command tests
+	 */
 
 	@Test
 	public void command()
@@ -90,11 +108,21 @@ public class EnumTest
 		}
 	}
 	
+	@Test(expected=CodeNotFoundException.class)
+	public void commandCodeNotFound()
+	{
+		Command.getCommand(0xffff);
+	}
+
 	@Test(expected=IllegalArgumentException.class)
 	public void commandErrorString()
 	{
 		Command.valueOf("XXX");
 	}
+
+	/*
+	 * Message code tests
+	 */
 
 	@Test
 	public void msgCode()
@@ -106,11 +134,21 @@ public class EnumTest
 		}
 	}
 
+	@Test(expected=CodeNotFoundException.class)
+	public void msgCoderCodeNotFound()
+	{
+		MsgCode.getMsgCode(0xffff);
+	}
+
 	@Test(expected=IllegalArgumentException.class)
 	public void msgCodeErrorString()
 	{
 		MsgCode.valueOf("XXX");
 	}
+
+	/*
+	 * Signal code tests
+	 */
 
 	@Test
 	public void signalCode()
@@ -123,11 +161,21 @@ public class EnumTest
 		}
 	}
 
+	@Test(expected=CodeNotFoundException.class)
+	public void signalCodeNotFound()
+	{
+		SignalCode.getSignalCode(0xffff);
+	}
+
 	@Test(expected=IllegalArgumentException.class)
 	public void signalCodeErrorString()
 	{
 		SignalCode.valueOf("XXX");
 	}
+
+	/*
+	 * Sensor code tests
+	 */
 
 	@Test
 	public void sensorCode()
@@ -144,6 +192,16 @@ public class EnumTest
 	{
 		SensorCode.valueOf("XXX");
 	}
+
+	@Test(expected=CodeNotFoundException.class)
+	public void sensorCodeNotFound()
+	{
+		SensorCode.getSensorCode(0);
+	}
+
+	/*
+	 * Turn direction tests
+	 */
 
 	@Test
 	public void turnDirectionBranch()

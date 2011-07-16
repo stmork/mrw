@@ -19,6 +19,7 @@
 
 package de.morknet.mrw.test;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.junit.Assert;
@@ -27,13 +28,20 @@ import org.junit.Test;
 import de.morknet.mrw.Route;
 import de.morknet.mrw.automatic.TourPoint;
 import de.morknet.mrw.automatic.Trigger;
+import de.morknet.mrw.base.MicroController;
 import de.morknet.mrw.batch.BatchRunner;
+import de.morknet.mrw.comm.Command;
+import de.morknet.mrw.comm.MrwMessage;
+import de.morknet.mrw.comm.SensorCode;
 import de.morknet.mrw.gui.info.BeerModeInfo;
 import de.morknet.mrw.gui.info.TourInfo;
 import de.morknet.mrw.util.LogUtil;
 
 public class ControllerTest extends ControllerTestBase
 {
+	private static final int TEST_TEMPERATURE = 42;
+	private static final int TEST_BRIGHTNESS = 19;
+
 	@Test()
 	public void ping()
 	{
@@ -175,5 +183,35 @@ public class ControllerTest extends ControllerTestBase
 		controller.addTrigger(trigger);
 		controller.moveTrigger(trigger);
 		controller.removeTrigger(trigger);
+	}
+	
+	@Test
+	public void pingModel()
+	{
+		model.ping();
+		for (MicroController mc : model.getMicroController())
+		{
+			model.ping(mc.getId());
+		}
+	}
+	
+	@Test
+	public void sensors() throws IOException
+	{
+		MrwMessage msg;
+		
+		msg = MrwMessage.createCommandMsg(Command.SENSOR, 0, 0);
+		msg.addDataByte(SensorCode.SENSOR_LIGHT.getSensorCode());
+		msg.addDataByte(TEST_BRIGHTNESS);
+		controller.send(msg);
+		sleep(1);
+		Assert.assertEquals(TEST_BRIGHTNESS, model.getLightness());
+
+		msg = MrwMessage.createCommandMsg(Command.SENSOR, 0, 0);
+		msg.addDataByte(SensorCode.SENSOR_TEMP.getSensorCode());
+		msg.addDataByte(TEST_TEMPERATURE);
+		controller.send(msg);
+		sleep(1);
+		Assert.assertEquals(TEST_TEMPERATURE, model.getTemperature());
 	}
 }

@@ -26,7 +26,6 @@ import java.util.Random;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import de.morknet.mrw.base.DirectionCode;
 import de.morknet.mrw.base.MrwException;
 import de.morknet.mrw.base.OccupationCode;
 import de.morknet.mrw.comm.Command;
@@ -158,7 +157,7 @@ public class DummyConnection extends Connection
 			{
 				try
 				{
-					final Command cmd = Command.getCommand(bytes[6]);
+					final Command cmd = Command.getCommand(bytes[HEADER_LENGTH + MrwMessage.IDX_COMMAND]);
 
 					// Delay each command
 					count++;
@@ -177,7 +176,7 @@ public class DummyConnection extends Connection
 						break;
 	
 					case GETDIR:
-						sendResult(bytes, MsgCode.MSG_OK, DirectionCode.LEFT.getDirectionCode());
+						sendResult(bytes, MsgCode.MSG_OK, random.nextInt(2) + 1);
 						break;
 	
 					case GETRBS:
@@ -192,12 +191,14 @@ public class DummyConnection extends Connection
 						sendResult(bytes, MsgCode.MSG_OK, 0, 0);
 						sendResult(bytes, MsgCode.MSG_OK, 1, 0);
 						sendResult(bytes, MsgCode.MSG_OK, 2, 0);
+						sendResult(bytes, MsgCode.MSG_OK, 3, 0, 0, 0);
 						break;
 	
 					case GETVER:
 						sendResult(bytes, MsgCode.MSG_OK, 0, 1);
 						sendResult(bytes, MsgCode.MSG_OK, 1, 2);
 						sendResult(bytes, MsgCode.MSG_OK, 2, 3);
+						sendResult(bytes, MsgCode.MSG_OK, 3, 1, 2, 3);
 						break;
 	
 					case RESET:
@@ -207,6 +208,13 @@ public class DummyConnection extends Connection
 						sendResult(bytes, MsgCode.MSG_BOOTED);
 						break;
 	
+					case SENSOR:
+						sendResult(bytes, MsgCode.MSG_OK,
+								bytes[HEADER_LENGTH + MrwMessage.IDX_COMMAND + 1], // SensorCode
+								bytes[HEADER_LENGTH + MrwMessage.IDX_COMMAND + 2], // sensor value
+								random.nextInt(16) + 1); // affected receiver count
+						break;
+
 					default:
 						sendResult(bytes, MsgCode.MSG_OK);
 						break;

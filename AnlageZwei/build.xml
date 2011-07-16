@@ -284,6 +284,7 @@
 			<filter excludes="de.morknet.mrw.Configuration*"/>
 			<filter excludes="de.morknet.mrw.*test*"/>
 			<filter excludes="de.morknet.mrw.*rs232*"/>
+			<filter excludes="de.morknet.mrw.*tcp*"/>
 			<filter excludes="de.morknet.mrw.*Exception"/>
 			<xml  outfile="coverage.xml" />
 			<txt  outfile="coverage.txt" />

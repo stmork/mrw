@@ -70,4 +70,31 @@ public class MrwMessageTest
 		msg.addDataByte(0);
 		msg.addDataByte(TEST_COMMAND);
 	}
+
+	@Test(expected=IllegalMrwMessageException.class)
+	public void noResult()
+	{
+		MrwMessage msg = new MrwMessage();
+		Assert.assertEquals(false, msg.isResult());
+		msg.getResultCode();
+	}
+
+	@Test
+	public void isResult()
+	{
+		MsgCode code = MsgCode.MSG_IGNORED;
+
+		MrwMessage msg = MrwMessage.createResultMessage(Command.PING, code, 0, 0);
+		Assert.assertEquals(true, msg.isResult());
+		Assert.assertEquals(code, msg.getResultCode());
+	}
+
+	@Test
+	public void dump()
+	{
+		MrwMessage msg = MrwMessage.createPingMsg();
+		
+		msg.dump("Test");
+		msg.dump(null);
+	}
 }
