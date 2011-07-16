@@ -6,7 +6,7 @@
 **	$Author$
 **	$Id$
 **
-**	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+**	Copyright (C) 2011 committers of this modelrailway project. All rights reserved.
 **
 **	This program and the accompanying materials are made available under the
 **	terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
@@ -58,6 +58,18 @@ public class CanMessageTest
 		msg.setEid(TEST_EID);
 		Assert.assertEquals("Die Gerätenummer ist falsch!", msg.getEid(), TEST_EID);
 		Assert.assertTrue("Der CAN-Frame muss ein Extended Frame sein!", msg.isExtended());
+	}
+
+	@Test
+	public void dump()
+	{
+		CANMessage msg = new CANMessage(0, 0, 0);
+
+		msg.addDataByte(0);
+		msg.addDataWord(0x1122);
+		
+		msg.dump("Test");
+		msg.dump(null);
 	}
 
 	@Test

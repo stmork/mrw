@@ -6,7 +6,7 @@
 **	$Author$
 **	$Id$
 **
-**	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+**	Copyright (C) 2011 committers of this modelrailway project. All rights reserved.
 **
 **	This program and the accompanying materials are made available under the
 **	terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
@@ -300,15 +300,15 @@ public class CANMessage
 		PrintWriter  pw = new PrintWriter(sw);
 
 		pw.printf("ID=%04x:%04x len=%d stat=%02x", sid, eid, length, status);
-	    for (int i = 0;i < length; i++)
-	    {
-	        pw.printf(" 0x%02x", data[i]);
-	    }
-	    if (comment != null)
-	    {
-	    	pw.printf(" # %s", comment);
-	    }
-	    log.debug(sw.toString());
-	    pw.close();
+		for (int i = 0;i < length; i++)
+		{
+		    pw.printf(" 0x%02x", data[i]);
+		}
+		if (comment != null)
+		{
+			pw.printf(" # %s", comment);
+		}
+		log.debug(sw.toString());
+		pw.close();
 	}
 }
