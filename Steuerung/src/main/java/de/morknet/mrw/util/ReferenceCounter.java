@@ -20,7 +20,6 @@
 package de.morknet.mrw.util;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -33,7 +32,7 @@ import java.util.Set;
  */
 public class ReferenceCounter<T>
 {
-	private final Map<T, Counter> map = new HashMap<T, Counter>();
+	private final HashMap<T, Counter> map = new HashMap<T, Counter>();
 
 	private class Counter
 	{
