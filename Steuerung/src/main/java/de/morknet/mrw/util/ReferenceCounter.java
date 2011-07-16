@@ -48,7 +48,7 @@ public class ReferenceCounter<T>
 			return counter;
 		}
 
-		public void set(int value)
+		private void set(int value)
 		{
 			counter = value;
 		}
