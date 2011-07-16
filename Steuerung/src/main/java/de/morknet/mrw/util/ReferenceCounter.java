@@ -19,6 +19,7 @@
 
 package de.morknet.mrw.util;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -30,8 +31,13 @@ import java.util.Set;
  *
  * @param <T> Der Referenztyp
  */
-public class ReferenceCounter<T>
+public class ReferenceCounter<T> implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private final HashMap<T, Counter> map = new HashMap<T, Counter>();
 
 	private class Counter
