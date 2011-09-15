@@ -31,7 +31,7 @@
 			value="de::morknet::mrw::generator::base::xpt::Main::Main FOR model" />
 		<outlet name="LOG" path="${gen-log}">
 			<postprocessor
-				class="de.morknet.mrw.beautifier.MrwBeautifier"/>
+				class="de.morknet.oaw.tools.postprocessor.Beautifier"/>
 		</outlet>
 		<outlet name="BASE" path="../${anlage}">
 			<postprocessor

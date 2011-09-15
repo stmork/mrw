@@ -69,6 +69,7 @@
 			<include name="**/org.eclipse.xtend*.jar"/>
 			<include name="**/org.eclipse.xpand*.jar"/>
 			<include name="com.ibm.*.jar"/>
+			<include name="de.morknet.oaw.*.jar"/>
 			<include name="**/antlr*.jar"/>
 			<include name="**/*xerces*.jar"/>
 			<exclude name="**/*.source*.jar"/>
