@@ -141,14 +141,7 @@
 	<!--              Setting up build targets                --> 
 	<!-- ==================================================== -->
 
-	<target name="compile.cartridge">
-		<mkdir dir="../Generator/${bin-path}"/>
-		<javac srcdir="../Generator/${src-path}" destdir="../Generator/${bin-path}">
-			<classpath refid="generate.classpath"/>
-		</javac>
-	</target>
-
-	<target name="generate" depends="compile.cartridge">
+	<target name="generate">
 		<workflow file="AnlageYakindu.mwe" classpathref="generate.classpath" failonerror="true"/>
 	</target>
 
