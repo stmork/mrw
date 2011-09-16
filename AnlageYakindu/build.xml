@@ -18,7 +18,7 @@
 	<!-- ==================================================== -->
 
 	<path id="log4j.lib">
-		<fileset dir="${lib-path}">
+		<fileset dir="../Generator/${lib-path}">
 			<include name="log4j*.jar"/>
 		</fileset>
 		<fileset dir="${eclipse.home.plugins}">
@@ -44,12 +44,6 @@
 	<path id="emma.lib">
 		<fileset dir="${lib-path}">
 			<include name="**/emma*.jar"/>
-		</fileset>
-	</path>
-
-	<path id="junit.lib">
-		<fileset dir="${lib-path}">
-			<include name="**/junit.jar"/>
 		</fileset>
 	</path>
 
@@ -95,7 +89,6 @@
 			<include name="**/*.jar"/>
 		</fileset>
 		<path refid="plugins"/>
-		<path refid="junit.lib"/>
 	</path>
 		
 	<path id="run.classpath">
@@ -105,30 +98,11 @@
 			<include name="**/*.jar"/>
 		</fileset>
 		<path refid="log4j.lib"/>
-		<path refid="junit.lib"/>
-	</path>
-
-	<path id="instr.classpath">
-		<pathelement path="${bin-path}" />
-		<pathelement path="../Steuerung/${bin-path}" />
-	</path>
-
-	<path id="emma.classpath">
-		<pathelement location="${instr-path}" />  
-		<path refid="run.classpath"/>
-		<path refid="emma.lib"/>
 	</path>
 
 	<path id="findbugs.classpath">
 		<path refid="run.classpath"/>
 		<path refid="findbugs.lib"/>
-	</path>
-
-	<path id="junit.classpath">
-		<path refid="run.classpath"/>
-		<fileset dir="${lib-path}">
-			<include name="**/ant-junit.jar"/>
-		</fileset>
 	</path>
 
 	<!-- ==================================================== -->
