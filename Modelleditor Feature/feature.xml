@@ -115,24 +115,14 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.eclipse.uml2.common.edit"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.eclipse.emf.mwe.core" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.mwe.utils" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xpand" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtend" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.logging" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtend.typesystem.emf" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtend.typesystem.uml2" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jface" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="de.itemis.xtext.antlr" version="0.7.2" match="greaterOrEqual"/>
-      <import plugin="com.ibm.icu" version="4.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.core" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="de.morknet.mrw.metamodel" version="2.0.14" match="greaterOrEqual"/>
+      <import plugin="de.morknet.oaw.dependencies"/>
+      <import plugin="de.morknet.oaw.tools5"/>
+      <import plugin="org.eclipse.xtend.typesystem.xsd"/>
    </requires>
 
    <plugin
