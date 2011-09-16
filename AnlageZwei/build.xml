@@ -70,12 +70,12 @@
 			<include name="**/org.eclipse.xpand*.jar"/>
 			<include name="com.ibm.*.jar"/>
 			<include name="de.morknet.oaw.*.jar"/>
-			<include name="**/antlr*.jar"/>
-			<include name="**/*xerces*.jar"/>
+			<include name="**/*antlr*.jar"/>
 			<exclude name="**/*.source*.jar"/>
 			<exclude name="**/*.src*.jar"/>
 			<exclude name="**/*.editor*.jar"/>
 		</fileset>
+		<fileset dir="../Generator/${lib-path}"/>
 		<path refid="plugins"/>
 	</path>
 	
