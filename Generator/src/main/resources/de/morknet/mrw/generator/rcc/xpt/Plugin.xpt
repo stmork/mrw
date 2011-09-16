@@ -29,7 +29,7 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 <?eclipse version="3.2"?>
 <plugin>
-	<!-- oAW generated... -->
+	<!-- Xpand generated... -->
 	<extension id="«asProductId()»" point="org.eclipse.core.runtime.products">
 		<product name="Stellwerk" application="«asApplicationId()»" description=":-)">
 			<property name="windowImages" value="icons/rcc16.gif,icons/rcc32.gif,icons/rcc64.gif,icons/rcc96.gif,icons/rcc128.gif"/>
