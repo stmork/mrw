@@ -35,7 +35,7 @@
 		</outlet>
 		<outlet name="BASE" path="../${anlage}">
 			<postprocessor
-				class="org.eclipse.xpand2.output.XmlBeautifier"/>
+				class="org.eclipse.xtend.typesystem.xsd.XMLBeautifier"/>
 		</outlet>
 		<outlet name="RCC" path="../${anlage}/${gen-src}">
 			<postprocessor

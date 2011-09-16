@@ -4,6 +4,7 @@ Bundle-Name: Anlage Mork Zwei
 Bundle-SymbolicName: de.morknet.mrw.mork2; singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Vendor: MORKNet
-Require-Bundle: org.eclipse.emf.mwe.core;bundle-version="0.7.2",
- org.apache.commons.logging;bundle-version="1.0.4"
+Require-Bundle: org.eclipse.emf.mwe.core,
+ org.apache.commons.logging,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
