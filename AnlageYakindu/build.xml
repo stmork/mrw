@@ -123,7 +123,8 @@
 		<mkdir dir="${bin-path}"/>
 		<copy file="${src-path}/log4j.properties" todir="${bin-path}" />
 		<javac srcdir="${src-path}:${gen-src-path}" destdir="${bin-path}"
-				encoding="ISO-8859-15" debug="true">
+				encoding="ISO-8859-15" debug="true"
+				includeantruntime="false">
 			<classpath refid="compile.classpath"/>
 		</javac>
 	</target>
