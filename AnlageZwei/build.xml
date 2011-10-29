@@ -21,7 +21,7 @@
 	<!-- ==================================================== -->
 
 	<path id="log4j.lib">
-		<fileset dir="${lib-path}">
+		<fileset dir="../Generator/${lib-path}">
 			<include name="log4j*.jar"/>
 		</fileset>
 		<fileset dir="${eclipse.home.plugins}">

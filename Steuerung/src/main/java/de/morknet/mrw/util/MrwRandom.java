@@ -30,6 +30,7 @@ public class MrwRandom extends SecureRandom
 {
 	private final static int RANGE      = 32767;
 	private final static int DICE_COUNT = 16;
+	private              int q          = 0;
 
 	private static final long serialVersionUID = 1L;
 
@@ -45,7 +46,6 @@ public class MrwRandom extends SecureRandom
 	public int nextInt(int size)
 	{
 		final int max = RANGE - RANGE % size;
-		int q = 0;
 		for (int i = 0;i < DICE_COUNT;i++)
 		{
 			q += super.nextInt(max);
