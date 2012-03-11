@@ -62,7 +62,7 @@ public class BeerModeTrigger extends Trigger {
 		if ((route == null) && (abschnitt.getGroup() == BeerMode.getPoolStation()))
 		{
 			controller.setMessage("Zug hat Ziel erreicht.");
-			beermode.selectNextTrack(inDirection);
+			beermode.selectNextTrack(inDirection, false);
 		}
 		log.info("<railEntered()");
 	}

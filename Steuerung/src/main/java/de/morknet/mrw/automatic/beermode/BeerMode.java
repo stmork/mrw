@@ -34,6 +34,7 @@ import de.morknet.mrw.base.Abschnitt;
 import de.morknet.mrw.base.Gruppe;
 import de.morknet.mrw.batch.RouteEnableRunner;
 import de.morknet.mrw.gui.info.BeerModeInfo;
+import de.morknet.mrw.util.LogUtil;
 import de.morknet.mrw.util.MrwRandom;
 import de.morknet.mrw.util.ReferenceCounter;
 
@@ -48,6 +49,8 @@ import de.morknet.mrw.util.ReferenceCounter;
  */
 public class BeerMode extends MrwActionControl
 {
+	private final static int                    MIN_WAIT    = 10;
+	private final static int                    MAX_WAIT    = 30;
 	private final static Log                    log         = LogFactory.getLog(BeerMode.class);
 	private final static Modell                 model       = ModellFactory.getInstance();
 	private final static BeerModeInfo           info        = model.getBeerModeInfo();
@@ -58,6 +61,7 @@ public class BeerMode extends MrwActionControl
 	private final static MrwRandom              aRandom     = new MrwRandom();
 	private final static MrwRandom              vRandom     = new MrwRandom();
 	private final static MrwRandom              eRandom     = new MrwRandom();
+	private final static MrwRandom              tRandom     = new MrwRandom();
 	private final        boolean                inDirection;
 	private final        BeerModeTrigger        trigger;
 	private       static BeerMode               beerModeLeft;
@@ -111,7 +115,7 @@ public class BeerMode extends MrwActionControl
 			clearCounter();
 			trigger.setDirection(inDirection);
 			controller.addTrigger(trigger);
-			selectNextTrack(inDirection);
+			selectNextTrack(inDirection, false);
 			success = true;
 		}
 		catch (SelectTrackException aee)
@@ -147,10 +151,10 @@ public class BeerMode extends MrwActionControl
 	 * Diese Methode sucht sich abh‰ngig von der Fahrtichtung einen Zug zur Fahrt aus.
 	 * @param inDirection Die Fahrtrichtung relativ zur Z‰hrichtung der Gleise.
 	 */
-	public void selectNextTrack(boolean inDirection)
+	public void selectNextTrack(final boolean inDirection, final boolean doWait)
 	{
-		Gruppe poolStation = getPoolStation();
-		Gruppe viaStation  = getViaStation();
+		final Gruppe poolStation = getPoolStation();
+		final Gruppe viaStation  = getViaStation();
 		
 		log.debug(">selectNextTrack(" + inDirection + ")");
 		if ((poolStation != null) && (viaStation != null))
@@ -190,6 +194,19 @@ public class BeerMode extends MrwActionControl
 
 			try
 			{
+				try
+				{
+					final long wait = doWait ? tRandom.nextInt((MAX_WAIT - MIN_WAIT) * 1000) + MIN_WAIT * 1000L : 0L;
+
+					log.debug(LogUtil.printf(" Waiting %f seconds...", wait * 0.001));
+					Thread.sleep(wait);
+				}
+				catch (InterruptedException e)
+				{
+					log.error("Probleme beim Warten auf n‰chste Biertour!");
+					log.error(e.getLocalizedMessage(), e);
+				}
+
 				controller.setMessage("N‰chste Fahrstraﬂe wird geschaltet...");
 				route = model.route(hops, false, inDirection);
 				if (route != null)
