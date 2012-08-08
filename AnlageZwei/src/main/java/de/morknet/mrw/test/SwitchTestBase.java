@@ -40,6 +40,9 @@ public class SwitchTestBase extends ControllerTestBase
 	@After
 	public void after()
 	{
-		executer.clear();
+		if (executer != null)
+		{
+			executer.clear();
+		}
 	}
 }
