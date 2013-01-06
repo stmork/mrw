@@ -22,6 +22,7 @@ package de.morknet.mrw.util;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Diese Klasse implementiert einen Referenzzähler, ohne übermäßig viele
@@ -38,37 +39,18 @@ public class ReferenceCounter<T> implements Serializable
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private final HashMap<T, Counter> map = new HashMap<T, Counter>();
-
-	private class Counter
-	{
-		private int counter;
-		
-		private void count(int value)
-		{
-			counter += value;
-		}
-		
-		private int getValue()
-		{
-			return counter;
-		}
-
-		private void set(int value)
-		{
-			counter = value;
-		}
-	}
+	private final HashMap<T, AtomicInteger> map = new HashMap<T, AtomicInteger>();
 
 	/**
 	 * Diese Methode zählt den Zähler für diese Referenz um eins hoch. Ist die Referenz
 	 * noch nicht registriert, wird dies automatisch erledigt.
 	 * 
 	 * @param type Die zu zählende Referenz.
+	 * @return Der gezählte Wert
 	 */
-	public void count(T type)
+	public int count(T type)
 	{
-		count(type, 1);
+		return count(type, 1);
 	}
 
 	/**
@@ -77,16 +59,17 @@ public class ReferenceCounter<T> implements Serializable
 	 * 
 	 * @param type Die zu zählende Referenz.
 	 * @param value Der Wert, um den der Zähler hochgesetzt werden soll.
+	 * @return Der gezählte Wert
 	 */
-	public void count(T type, int value)
+	public int count(T type, int value)
 	{
-		Counter counter = map.get(type);
+		AtomicInteger counter = map.get(type);
 		if (counter == null)
 		{
-			counter = new Counter();
+			counter = new AtomicInteger();
 			map.put(type, counter);
 		}
-		counter.count(value);
+		return counter.addAndGet(value);
 	}
 	
 	/**
@@ -98,13 +81,14 @@ public class ReferenceCounter<T> implements Serializable
 	 */
 	public int getValue(T type)
 	{
-		Counter counter = map.get(type);
+		AtomicInteger counter = map.get(type);
 		
-		return counter != null ? counter.getValue() : 0;
+		return counter != null ? counter.get() : 0;
 	}
 
 	/**
 	 * Diese Methode gibt einen Set aller registrierten Referenzen zurück.
+	 * 
 	 * @return Der Set aller registrierten Referenzen.
 	 */
 	public Set<T> keySet()
@@ -113,11 +97,12 @@ public class ReferenceCounter<T> implements Serializable
 	}
 
 	/**
-	 * Diese Methode löscht die Zähler aller hier registrierten Referenzen.
+	 * Diese Methode löscht die Zähler aller hier registrierten Referenzen. Die
+	 * Referenzen bleiben erhalten.
 	 */
 	public void zero()
 	{
-		for (Counter counter : map.values())
+		for (AtomicInteger counter : map.values())
 		{
 			counter.set(0);
 		}

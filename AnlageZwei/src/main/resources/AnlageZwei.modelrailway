@@ -6,7 +6,9 @@
     <module xsi:type="Modelrailway:Gleismodul" nummer="102" abschnitte="//@gruppe.0/@abschnitt.10 //@gruppe.0/@abschnitt.26 //@gruppe.0/@abschnitt.27 //@gruppe.0/@abschnitt.19"/>
   </controller>
   <controller id="2">
-    <anschluesse nummer="240" lichtsignale="//@gruppe.0/@abschnitt.26/@bauelement.4 //@gruppe.0/@abschnitt.42/@bauelement.1"/>
+    <anschluesse nummer="240" lichtsignale="//@gruppe.0/@abschnitt.26/@bauelement.4 //@gruppe.0/@abschnitt.42/@bauelement.1">
+      <lichter name="Alte Fabrik" unit_no="2444" schwellwert="20"/>
+    </anschluesse>
     <anschluesse nummer="230" lichtsignale="//@gruppe.0/@abschnitt.39/@bauelement.1 //@gruppe.0/@abschnitt.35/@bauelement.1 //@gruppe.0/@abschnitt.32/@bauelement.1"/>
     <module xsi:type="Modelrailway:Impulsmodul" nummer="201" magnetartikel="//@gruppe.0/@abschnitt.26/@bauelement.1 //@gruppe.0/@abschnitt.26/@bauelement.2 //@gruppe.0/@abschnitt.26/@bauelement.0 //@gruppe.0/@abschnitt.17/@bauelement.1"/>
     <module xsi:type="Modelrailway:Impulsmodul" nummer="202" magnetartikel="//@gruppe.0/@abschnitt.10/@bauelement.1 //@gruppe.0/@abschnitt.10/@bauelement.2"/>
@@ -155,7 +157,7 @@
       <lampen name="Bahnsteig 2 (Sufloch)" unit_no="4251" schwellwert="32" typ="3"/>
     </module>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1603">
-      <lampen name="Laterne  8" unit_no="4268" schwellwert="28" typ="0"/>
+      <lampen name="Laterne  8" unit_no="4268" schwellwert="28"/>
       <lampen name="Laterne Bahnhof  5" unit_no="4269" schwellwert="24" typ="4"/>
       <lampen name="Eisenbahnerhaus 2" unit_no="4270" schwellwert="34" typ="15"/>
       <lampen name="Laterne  7" unit_no="4271" schwellwert="28" typ="64"/>

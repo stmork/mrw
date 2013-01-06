@@ -200,7 +200,14 @@ public class DummyConnection extends Connection
 						sendResult(bytes, MsgCode.MSG_OK, 2, 3);
 						sendResult(bytes, MsgCode.MSG_OK, 3, 1, 2, 3);
 						break;
-	
+
+					case CFGEND:
+						sendResult(bytes, MsgCode.MSG_OK, 0);
+						sendResult(bytes, MsgCode.MSG_RESET_PENDING);
+						sleep(2500L);
+						sendResult(bytes, MsgCode.MSG_BOOTED);
+						break;
+
 					case RESET:
 						sendResult(bytes, MsgCode.MSG_OK);
 						sendResult(bytes, MsgCode.MSG_RESET_PENDING);
