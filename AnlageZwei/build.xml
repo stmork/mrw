@@ -277,8 +277,12 @@
 					<fileset dir="${bin-path}"/>
 				</classfiles>
 				<sourcefiles>
-					<fileset dir="../Steuerung/${src-path}"/>
-					<fileset dir="${src-path}"/>
+					<fileset dir="../Steuerung/${src-path}">
+						<exclude name="**/*Exception*.java"/>
+					</fileset>
+					<fileset dir="${src-path}">
+						<exclude name="**/test/*.java"/>
+					</fileset>
 					<fileset dir="${gen-src-path}"/>
 				</sourcefiles>
 			</structure>
