@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -51,7 +52,7 @@ public class BatchExecuter
 	 * Liste der zu verarbeitenden Batches.
 	 */
 	private final        LinkedList<Batch>  workQueue = new LinkedList<Batch>();
-	private       static int                idCounter   = 0;
+	private final static AtomicInteger      idCounter   = new AtomicInteger(0);
 	private final        int                ID;
 
 	/**
@@ -64,10 +65,8 @@ public class BatchExecuter
 		{
 			executerSet.add(this);
 		}
-		synchronized (BatchExecuter.class)
-		{
-			ID = idCounter++;
-		}
+
+		ID = idCounter.getAndAdd(1);
 		log.debug(LogUtil.printf("BatchExecuter mit ID %d erzeugt.", ID));
 	}
 

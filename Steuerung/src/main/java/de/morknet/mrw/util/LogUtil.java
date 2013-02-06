@@ -59,7 +59,10 @@ public class LogUtil
 	 */
 	public final static String now()
 	{
-		return format.format(new Date());
+		synchronized (format)
+		{
+			return format.format(new Date());
+		}
 	}
 
 	/**
@@ -69,7 +72,10 @@ public class LogUtil
 	 */
 	public final static String format(Date date)
 	{
-		return format.format(date);
+		synchronized (format)
+		{
+			return format.format(date);
+		}
 	}
 
 	/**

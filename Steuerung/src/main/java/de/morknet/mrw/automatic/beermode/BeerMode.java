@@ -209,13 +209,11 @@ public class BeerMode extends MrwActionControl
 
 				controller.setMessage("N‰chste Fahrstraﬂe wird geschaltet...");
 				route = model.route(hops, false, inDirection);
-				if (route != null)
-				{
-					RouteEnableRunner runner = new RouteEnableRunner(controller, route);
-					runner.start();
-					poolCounter.count(hops.get(2));
-					viaCounter.count(hops.get(1));
-				}
+
+				RouteEnableRunner runner = new RouteEnableRunner(controller, route);
+				runner.start();
+				poolCounter.count(hops.get(2));
+				viaCounter.count(hops.get(1));
 			}
 			catch (RoutingException re)
 			{

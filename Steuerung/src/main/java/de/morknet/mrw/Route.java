@@ -327,7 +327,7 @@ public class Route extends LinkedList<Gleisteil>
 	/**
 	 * Diese Methode schaltet alle Weichen der Fahrstraﬂe in die richtige Lage.
 	 * @param executer
-	 * @return
+	 * @return Einen {@link Batch}, um die Weichen einer Fahrstraﬂe zu schalten.
 	 * @throws RoutingRequirementsMissingException 
 	 */
 	private Batch turnRail(final BatchExecuter executer) throws RoutingRequirementsMissingException
@@ -343,18 +343,18 @@ public class Route extends LinkedList<Gleisteil>
 		Batch batch = executer.createBatch();
 
 		Gleisteil [] teile = new Gleisteil[size()];
-		Gleisteil prev, teil, next;
+		Gleisteil prev, tail, next;
 
 		this.toArray(teile);
 		prev = get(0);
-		teil = get(1);
+		tail = get(1);
 		for (int i = 1; i < (size() - 1); i++)
 		{
 			next = get(i+1);
-			teil.turn (batch, prev, next);
+			tail.turn (batch, prev, next);
 
-			prev = teil;
-			teil = next;
+			prev = tail;
+			tail = next;
 		}
 
 		counter.clear();
@@ -518,8 +518,6 @@ public class Route extends LinkedList<Gleisteil>
 	{
 		synchronized(this)
 		{
-			Batch batch;
-	
 			if (maintainance)
 			{
 				return turnMaintainance(executer);
@@ -527,27 +525,17 @@ public class Route extends LinkedList<Gleisteil>
 	
 			try
 			{
-				batch = turnRail(executer);
-				if (batch != null)
-				{
-					batch = turnSignal(executer);
-					if (batch != null)
-					{
-//						batch.setDelay(250L);
-						batch = turnOn(executer);
-						if (batch != null)
-						{
-							return executer;
-						}
-					}
-				}
+				turnRail(executer);
+				turnSignal(executer);
+				turnOn(executer);
+
+				return executer;
 			}
 			catch(RoutingRequirementsMissingException re)
 			{
 				executer.clear();
 				throw re;
 			}
-			return null;
 		}
 	}
 

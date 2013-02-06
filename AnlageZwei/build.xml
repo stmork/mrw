@@ -1,4 +1,4 @@
-<project name="Anlage Zwei" basedir="." default="package">
+<project name="Anlage Zwei" basedir="." default="package" xmlns:jacoco="antlib:org.jacoco.ant">
 	<property file="${user.home}/.xtext.properties" />
 	<property file="./build.properties.default" />
 
@@ -13,8 +13,7 @@
 	<property file="${res-path}/workflow.properties" />
 	<property name="gen-src-path"    value="${gen-src}"/>
 	<property name="gen-log-path"    value="${gen-log}"/>
-
-	<property name="emma.enabled"    value="true"/>  
+	<property name="coverage-path"   value="./coverage"/>	
 
 	<!-- ==================================================== -->
 	<!--              Setting up libraries                    --> 
@@ -44,9 +43,9 @@
 		</fileset>
 	</path>
 
-	<path id="emma.lib">
+	<path id="coverage.lib">
 		<fileset dir="${lib-path}">
-			<include name="**/emma*.jar"/>
+			<include name="**/*jacoco*.jar"/>
 		</fileset>
 	</path>
 
@@ -116,10 +115,10 @@
 		<pathelement path="../Steuerung/${bin-path}" />
 	</path>
 
-	<path id="emma.classpath">
+	<path id="coverage.classpath">
 		<pathelement location="${instr-path}" />  
 		<path refid="run.classpath"/>
-		<path refid="emma.lib"/>
+		<path refid="coverage.lib"/>
 	</path>
 
 	<path id="findbugs.classpath">
@@ -141,7 +140,10 @@
 	<taskdef name="workflow" classname="org.eclipse.emf.mwe.core.ant.WorkflowAntTask"           classpathref="generate.classpath"/>
 	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"               classpathref="findbugs.lib"/>
 	<taskdef name="junit"    classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="junit.classpath"/>
-	<taskdef resource="emma_ant.properties" classpathref="emma.lib" />
+
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="${lib-path}/jacocoant.jar"/>
+	</taskdef>
 
 	<!-- ==================================================== -->
 	<!--              Setting up build targets                --> 
@@ -182,6 +184,7 @@
 	<target name="clean">
 		<delete dir="${bin-path}"/>
 		<delete dir="${instr-path}"/>
+		<delete dir="${coverage-path}"/>
 		<delete dir="../Generator/${bin-path}" />
 		<delete>
 			<fileset dir="." includes="TEST-*.xml"/>
@@ -191,7 +194,8 @@
 			<fileset dir="." includes="coverage.*"/>
 		</delete>
 		<delete>
-			<fileset dir="." includes="*.emma"/>
+			<fileset dir="." includes="*."/>
+			<fileset dir="." includes="*.exec"/>
 		</delete>
 		<delete file="findbugs-results.xml"/>
 	</target>
@@ -200,7 +204,7 @@
 	<!--              Setting up runtime targets              --> 
 	<!-- ==================================================== -->
 
-	<target name="hudson" depends="clean,generate,findbugs,emma"/>
+	<target name="jenkins" depends="clean,generate,findbugs,jacoco"/>
 
 	<target name="run" depends="compile">
 		<java classname="de.morknet.mrw.test.Eisenbahn" classpathref="run.classpath"/>
@@ -225,19 +229,12 @@
 		</findbugs>
 	</target>
 	
-	<target name="instr" depends="compile" if="emma.enabled">
+	<target name="instr" depends="compile">
 		<mkdir dir="${instr-path}"/>
-		<emma>  
-			<instr instrpathref="instr.classpath" destdir="${instr-path}" metadatafile="metadata.emma" merge="true">  
-				<filter excludes="org.*,com.*,edu.*,junit.*,gnu.io.*,java*"/>
-				<filter excludes="de.morknet.mrw.Configuration*"/>
-				<filter excludes="de.morknet.mrw.*test*"/>
-				<filter excludes="de.morknet.mrw.*rs232*"/>
-				<filter excludes="de.morknet.mrw.*tcp*"/>
-				<filter excludes="de.morknet.mrw.*Exception"/>
-			</instr>
-		</emma>  
-	</target>  
+		<jacoco:instrument destdir="${instr-path}">
+			<fileset dir="${bin-path}" includes="**/*.class"/>
+		</jacoco:instrument>
+	</target>
 
 	<target name="smoketest" depends="compile">
 		<junit printsummary="on" fork="on" haltonerror="yes" haltonfailure="yes">
@@ -246,59 +243,48 @@
 			<test name="de.morknet.mrw.test.SmokeTest"/>
 		</junit>
 	</target>
-	
+
 	<target name="test" depends="compile">
-		<taskdef resource="emma_ant.properties" classpathref="emma.lib" />
-		<junit printsummary="on" fork="on" haltonerror="yes" haltonfailure="yes">
-			<classpath refid="emma.classpath" />
-			<formatter type="xml"/>
-			<jvmarg value="-Demma.coverage.out.file=coverage.emma" />  
-			<jvmarg value="-Demma.coverage.out.merge=true" />
-			<jvmarg value="-Dfile.encoding=ISO-8859-15" />
-			<test name="de.morknet.mrw.test.UtilTest"/>
-			<test name="de.morknet.mrw.test.EnumTest"/>
-			<test name="de.morknet.mrw.test.CanMessageTest"/>
-			<test name="de.morknet.mrw.test.MrwMessageTest"/>
-			<test name="de.morknet.mrw.test.ConsistenceTest"/>
-			<test name="de.morknet.mrw.test.SwitchTest"/>
-			<test name="de.morknet.mrw.test.DkwTest"/>
-			<test name="de.morknet.mrw.test.ControllerTest"/>
-			<test name="de.morknet.mrw.test.SimpleRouteTest"/>
-			<test name="de.morknet.mrw.test.BeerModeTest"/>
-			<test name="de.morknet.mrw.test.TourModeTest"/>
-			<test name="de.morknet.mrw.test.ErrorConditionTest"/>
-		</junit>
-	</target>
-	
-	<target name="emmajava" depends="compile">
-		<emmajava classname="de.morknet.mrw.test.Coverage"
-				fullmetadata="yes"
-				sourcepath="../Steuerung/${src-path}"
-				libclasspathref="emma.lib"
-				classpathref="run.classpath">
-			<filter excludes="org.*,com.*,edu.*,junit.*,gnu.io.*,javax.*"/>
-			<filter excludes="de.morknet.mrw.Configuration*"/>
-			<filter excludes="de.morknet.mrw.*test*"/>
-			<filter excludes="de.morknet.mrw.*rs232*"/>
-			<filter excludes="de.morknet.mrw.*tcp*"/>
-			<filter excludes="de.morknet.mrw.*Exception"/>
-			<xml  outfile="coverage.xml" />
-			<txt  outfile="coverage.txt" />
-			<html outfile="coverage.html" />
-		</emmajava>
+		<jacoco:coverage>
+		    <junit printsummary="on" fork="true" forkmode="once" haltonerror="yes" haltonfailure="yes">
+				<classpath refid="coverage.classpath" />
+				<formatter type="xml"/>
+				<jvmarg value="-Dfile.encoding=ISO-8859-15" />
+				<test name="de.morknet.mrw.test.UtilTest"/>
+				<test name="de.morknet.mrw.test.EnumTest"/>
+				<test name="de.morknet.mrw.test.CanMessageTest"/>
+				<test name="de.morknet.mrw.test.MrwMessageTest"/>
+				<test name="de.morknet.mrw.test.ConsistenceTest"/>
+				<test name="de.morknet.mrw.test.SwitchTest"/>
+				<test name="de.morknet.mrw.test.DkwTest"/>
+				<test name="de.morknet.mrw.test.ControllerTest"/>
+				<test name="de.morknet.mrw.test.SimpleRouteTest"/>
+				<test name="de.morknet.mrw.test.BeerModeTest"/>
+				<test name="de.morknet.mrw.test.TourModeTest"/>
+				<test name="de.morknet.mrw.test.ErrorConditionTest"/>
+			</junit>
+		</jacoco:coverage>
 	</target>
 
-	<target name="emma" depends="instr,test">  
-		<taskdef resource="emma_ant.properties" classpathref="emma.lib" />
-			<emma>
-				<report sourcepath="../Steuerung/${src-path}:${src-path}:${gen-src-path}">
-					<fileset dir=".">  
-						<include name="*.emma"/>
-					</fileset>  
-					<txt  outfile="coverage.txt" />
-					<xml  outfile="coverage.xml" />
-					<html outfile="coverage.html" />
-				</report>  
-			</emma>
-	</target>  
+	<target name="jacoco" depends="instr,test">
+		<jacoco:report>
+			<executiondata>
+				<file file="jacoco.exec"/>
+			</executiondata>
+   
+			<structure name="MRW Steuerung">
+				<classfiles>
+					<fileset dir="${bin-path}"/>
+				</classfiles>
+				<sourcefiles>
+					<fileset dir="../Steuerung/${src-path}"/>
+					<fileset dir="${src-path}"/>
+					<fileset dir="${gen-src-path}"/>
+				</sourcefiles>
+			</structure>
+			                       
+			<html destdir="${coverage-path}"/>
+			<xml destfile="coverage.xml"/>
+		</jacoco:report>
+	</target>
 </project>

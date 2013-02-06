@@ -24,6 +24,7 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -70,13 +71,13 @@ public class MicroController
 	/**
 	 * Anzahl versendeter Pings.
 	 */
-	volatile private int ping_count = 0;
+	private final AtomicInteger ping_count = new AtomicInteger(0);
 
 	/**
 	 * Anzahl empfangener Ping-Antworten
 	 */
-	volatile private int pong_count = 0;
-
+	private final AtomicInteger pong_count = new AtomicInteger(0);
+	
 	/**
 	 * Füllstand des Empfangspuffers.
 	 */
@@ -134,7 +135,7 @@ public class MicroController
 	{
 		synchronized (this)
 		{
-			ping_count++;
+			ping_count.addAndGet(1);
 		}
 	}
 
@@ -145,7 +146,7 @@ public class MicroController
 	{
 		synchronized (this)
 		{
-			pong_count++;
+			pong_count.addAndGet(1);
 			booted();
 		}
 	}
@@ -157,8 +158,9 @@ public class MicroController
 	{
 		synchronized (this)
 		{
-			ping_count     = 0;
-			pong_count     = 0;
+			
+			ping_count.set(0);
+			pong_count.set(0);
 			error_flags    = 0;
 			rx_count       = 0;
 			tx_count       = 0;
@@ -176,8 +178,8 @@ public class MicroController
 		synchronized(this)
 		{
 			this.booted = true;
-			ping_count  = 0;
-			pong_count  = 0;
+			ping_count.set(0);
+			pong_count.set(0);
 		}
 	}
 
@@ -192,7 +194,7 @@ public class MicroController
 
 		synchronized(this)
 		{
-			reachable = (ping_count <= pong_count) && booted; 
+			reachable = (ping_count.get() <= pong_count.get()) && booted; 
 		}
 		return reachable;
 	}
@@ -339,7 +341,7 @@ public class MicroController
 		
 		pw.printf("Controller ID: %04x  Ver: %d.%d Ping: %5d Pong: %5d RXB: %5d TXB: %5d  EFlags: %02x RX error: %3d TX error: %3d",
 			id, version, revision,
-			ping_count, pong_count,
+			ping_count.get(), pong_count.get(),
 			rx_count, tx_count,
 			error_flags, rx_err_counter, tx_err_counter);
 		String result = sw.toString();

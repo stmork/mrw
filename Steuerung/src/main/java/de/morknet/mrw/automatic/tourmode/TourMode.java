@@ -147,11 +147,8 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 		log.debug(">onDeactivate()");
 		if (route != null)
 		{
-			synchronized(route)
-			{
-				route.enableAutomaticRouteDeallocation();
-			}
-			route = null;
+			route.enableAutomaticRouteDeallocation();
+			this.route = null;
 		}
 		controller.removeTrigger(trigger);
 		log.info("Tour deaktiviert");

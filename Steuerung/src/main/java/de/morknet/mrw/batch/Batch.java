@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -89,7 +90,7 @@ public class Batch
 	/**
 	 * Der kontinuierlich wachsende Batch ID Zähler.
 	 */
-	private       static int     idCounter   = 0;
+	private final static AtomicInteger idCounter   = new AtomicInteger(0);
 	
 	/**
 	 * Die ID dieses Batches.
@@ -104,10 +105,8 @@ public class Batch
 	Batch(BatchExecuter executer)
 	{
 		this.executer = executer;
-		synchronized(Batch.class)
-		{
-			ID = idCounter++;
-		}
+
+		ID = idCounter.getAndAdd(1);
 		log.debug(LogUtil.printf("Batch mit ID %d erzeugt.", ID));
 	}
 

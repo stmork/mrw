@@ -473,10 +473,8 @@ abstract public class MrwController implements CANMessageProcessor
 		if (mrw.length() >= (MrwMessage.IDX_INFO_START + 1))
 		{
 			DeviceUnit dvc = DeviceUnit.findDeviceUnit(mrw.getResultId()); 
-			if (dvc != null) 
-			{
-				dvc.addElapsed(mrw.getData(MrwMessage.IDX_INFO_START));
-			}
+
+			dvc.addElapsed(mrw.getData(MrwMessage.IDX_INFO_START));
 		}
 	}
 
@@ -1146,15 +1144,12 @@ abstract public class MrwController implements CANMessageProcessor
 		{
 			final Route route = model.route(getSegmentSelection(), shunting, direction);
 
-			if (route != null)
-			{
-				runner = new RouteEnableRunner(this, route);
-				runner.enableRouteSelection();
-				runner.start();
-	
-				// UI aktualisieren
-				clearSegmentSelection();
-			}
+			runner = new RouteEnableRunner(this, route);
+			runner.enableRouteSelection();
+			runner.start();
+
+			// UI aktualisieren
+			clearSegmentSelection();
 		}
 		catch (RoutingException re)
 		{
@@ -1224,12 +1219,10 @@ abstract public class MrwController implements CANMessageProcessor
 		}
 		
 		// Route berechnen
-		Route route = model.maintainanceRoute(getSegmentSelection());
-		if (route != null)
-		{
-			runner = new RouteEnableRunner(this, route);
-			runner.start();
-		}
+		final Route route = model.maintainanceRoute(getSegmentSelection());
+
+		runner = new RouteEnableRunner(this, route);
+		runner.start();
 		
 		// UI aktualisieren
 		clearSegmentSelection();

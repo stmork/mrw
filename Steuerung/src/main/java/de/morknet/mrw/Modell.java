@@ -457,7 +457,7 @@ abstract public class Modell extends NamedElement
 	 * @param hops Die Liste der Gleisabschnitte, an denen entlang die Fahrstraße gebildet werden soll.
 	 * @param shunting Rangierflag.
 	 * @param inDirection Flag, ob die Fahrstraße in Zählrichtung oder gegen Zählrichtung geführt werden soll.
-	 * @return
+	 * @return Die Route zum Schalten einer Fahrstraße.
 	 */
 	private Route validateRouting(
 			      Route           route,
