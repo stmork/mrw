@@ -29,3 +29,6 @@ make
 cd ../daemon
 make clean depend
 make
+
+cd ../AnlageZwei
+ant jacoco
