@@ -63,6 +63,8 @@ abstract public class ControllerTestBase
 	@BeforeClass
 	public static void setUp() throws Exception
 	{
+		log.info("\n\n\n\n\n");
+		log.info("=============================================================");
 		log.info("Starte Test mit Eisenbahnanlage '" + model.getName() + "'.");
 		controller.prepareSimple();
 
@@ -100,6 +102,8 @@ abstract public class ControllerTestBase
 		controller.resetMicroController();
 		controller.close();
 		log.info("Test der Eisenbahnanlage '" + model.getName() + "' beendet.");
+		log.info("=============================================================");
+		log.info("\n\n\n\n\n");
 	}
 
 	final protected void selectSegments(final String ... names)
