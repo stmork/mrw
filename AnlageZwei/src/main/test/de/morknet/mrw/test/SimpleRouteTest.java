@@ -45,14 +45,6 @@ public class SimpleRouteTest extends ControllerTestBase
 	}
 	
 	@Test
-	public void routeError()
-	{
-		final Route route = assertRoute(false, false, "", "S5a", "S2a");
-		
-		Assert.assertNull("Es darf keine Fahrstraﬂe geschaltet worden sein!", route);
-	}
-	
-	@Test
 	public void routes3()
 	{
 		assertRoute(true,  false, "R",           "S2a",  "S2b");
@@ -63,6 +55,14 @@ public class SimpleRouteTest extends ControllerTestBase
 		assertRoute(false, true,  "LRXR",        "SO5a", "3", "N1b");
 		assertRoute(false, true,  "LRR)LLLRRRR", "SO4a", "4", "SO5a");
 		assertRoute(false, true,  "LRRR)RRR",    "SO3a", "N7a");
+	}
+	
+	@Test
+	public void routeError()
+	{
+		final Route route = assertRoute(false, false, "", "S5a", "S2a");
+		
+		Assert.assertNull("Es darf keine Fahrstraﬂe geschaltet worden sein!", route);
 	}
 
 	@Test
