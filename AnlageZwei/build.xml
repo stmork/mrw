@@ -150,6 +150,7 @@
 	<!-- ==================================================== -->
 
 	<target name="generate">
+		<echo message="${eclipse.home}"/>
 		<workflow file="AnlageZwei.mwe" classpathref="generate.classpath" failonerror="true"/>
 	</target>
 

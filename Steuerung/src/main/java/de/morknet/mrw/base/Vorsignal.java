@@ -42,6 +42,15 @@ public class Vorsignal extends Signal
 		super(abschnitt, name, inDirection);
 	}
 
+	/**
+	 * Diese Methode setzt das Vorsignal entweder auf SignalCommand.S0 oder SignalCommand.OFF
+	 * abhängig ob der Zustand vorher auf SignalCode.SIGNAL_OFF stand oder nicht.
+	 */
+	public void combinedSignalOff()
+	{
+		setSignal(nominalState == SignalCode.SIGNAL_OFF ? SignalCommand.OFF : SignalCommand.S0, true);
+	}
+
 	@Override
 	protected SignalCommand setSignalCommand(SignalCommand sb, boolean rangieren) {
 		sb = correctState(sb, rangieren);

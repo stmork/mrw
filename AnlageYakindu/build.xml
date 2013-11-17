@@ -116,6 +116,7 @@
 	<!-- ==================================================== -->
 
 	<target name="generate">
+		<echo message="${eclipse.home}"/>
 		<workflow file="AnlageYakindu.mwe" classpathref="generate.classpath" failonerror="true"/>
 	</target>
 

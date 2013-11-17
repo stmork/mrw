@@ -384,7 +384,9 @@ public class Abschnitt extends DeviceUnit
 		{
 			if ((s instanceof Vorsignal) && isMainSignalH0(direction) && (!(s instanceof Formsignal)))
 			{
-				s.setSignal(SignalCommand.S0, true);
+				final Vorsignal vs = (Vorsignal)s;
+
+				vs.combinedSignalOff();
 				s.addCommand(batch);
 				s.setState();
 			}
