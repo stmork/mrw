@@ -177,6 +177,7 @@
 				splitindex="true"
 				use="true"
 				failonerror="true"
+				encoding="ISO-8859-15"
 				docencoding="UTF-8"
 				charset="UTF-8"
 				windowtitle="Modell(-bau-)basierte Eisenbahnsteuerung">
