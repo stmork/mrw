@@ -29,13 +29,13 @@ public class TourRechts extends TourInfo {
 		"O1a,O2a",
 		"N2",
 		"W2c",
-		"O2a,O3a,O4a,O1a",
+		"O4a,O3a,O2a,O1a",
 		"N3",
 		"W3c",
-		"O3a,O4a,O1a,O2a",
-		"N3",
-		"O3c",
-		"O4a,O1a,O2a,O3a"
+		"O2a,O1a",
+		"N2",
+		"O2c",
+		"O3a,O4a,O1a,O2a"
 	};
 
 	private final static TourInfo tour = new TourRechts();
