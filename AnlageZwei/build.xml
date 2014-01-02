@@ -180,6 +180,11 @@
 				<exclude name="**/ConfigurationMork2.java"/>
 			</zipfileset>
 		</jar>
+		<copy todir="../Stellwerk">
+			<fileset dir=".">
+				<include name="Mork2/**"/>
+			</fileset>
+		</copy>
 	</target>
 
 	<target name="clean">

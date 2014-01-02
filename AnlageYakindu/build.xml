@@ -144,5 +144,10 @@
 				<include name="**/*.java"/>
 			</zipfileset>
 		</jar>
+		<copy todir="../Stellwerk">
+			<fileset dir=".">
+				<include name="Yakindu/**"/>
+			</fileset>
+		</copy>
 	</target>
 </project>

@@ -131,7 +131,7 @@
 		<copy file="./icons/mrw_banner.bmp" todir="${stellwerk.deploy}"
 		        failonerror="true" overwrite="true"/>
 		<copy todir="${stellwerk.deploy}" failonerror="true" overwrite="true">
-			<fileset dir="..">
+			<fileset dir=".">
 				<include name="Mork2/**"/>
 				<include name="Yakindu/**"/>
 			</fileset>
@@ -142,6 +142,7 @@
 		<delete dir="${bin-path}" />
 		<delete dir="${doc-path}" />
 		<delete file="${jar-file}" />
+		<delete file="findbugs-results.xml"/>
 	</target>
 
 	<!-- ==================================================== -->
