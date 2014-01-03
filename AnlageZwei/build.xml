@@ -244,7 +244,7 @@
 		</findbugs>
 	</target>
 	
-	<target name="instr" depends="compile">
+	<target name="instr" depends="clean,compile">
 		<mkdir dir="${instr-path}"/>
 		<jacoco:instrument destdir="${instr-path}">
 			<fileset dir="${bin-path}" includes="**/*.class"/>
