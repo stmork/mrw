@@ -7,9 +7,9 @@ ant clean run
 cd ../Steuerung
 ant clean package
 cd ../AnlageYakindu
-ant clean generate deploy
+ant clean generate package
 cd ../AnlageZwei
-ant clean generate deploy
+ant clean generate package
 cd ../Stellwerk
 ant clean package javadoc
 #ant deploy
