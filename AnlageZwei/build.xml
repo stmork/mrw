@@ -253,7 +253,7 @@
 		</junit>
 	</target>
 
-	<target name="test" depends="clean,compile">
+	<target name="test" depends="compile">
 		<jacoco:coverage destfile="${jacoco-exec}">
 		    <junit printsummary="on" fork="true" forkmode="once" haltonerror="yes" haltonfailure="yes">
 				<classpath refid="coverage.classpath" />
