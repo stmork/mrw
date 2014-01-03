@@ -21,12 +21,9 @@
 
 	<!-- Compiler settings. -->
 	<property name="javacFailOnError" value="false"/>
-	<property name="javacDebugInfo" value="on"/>
-	<property name="javacVerbose" value="false"/>
-	<property name="logExtension" value=".log"/>
-	<property name="compilerArg" value=""/>
-	<property name="javacSource" value="1.5"/>
-	<property name="javacTarget" value="1.5"/>
+	<property name="javacDebugInfo"   value="on"/>
+	<property name="javacVerbose"     value="false"/>
+	<property name="logExtension"     value=".log"/>
 
 	<condition property="dir_bootclasspath" value="${java.home}/../Classes">
 		<os family="mac"/>
@@ -130,12 +127,6 @@
 		        failonerror="true" overwrite="true"/>
 		<copy file="./icons/mrw_banner.bmp" todir="${stellwerk.deploy}"
 		        failonerror="true" overwrite="true"/>
-		<copy todir="${stellwerk.deploy}" failonerror="true" overwrite="true">
-			<fileset dir=".">
-				<include name="Mork2/**"/>
-				<include name="Yakindu/**"/>
-			</fileset>
-		</copy>
 	</target>
 
 	<target name="clean">

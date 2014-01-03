@@ -1,11 +1,14 @@
-<project name="Anlage Yakindu" basedir="." default="package">
+<project name="Anlage Yakindu" basedir="." default="deploy">
 	<property file="${user.home}/.xtext.properties" />
+	<property file="${user.home}/.build.properties" />
 	<property file="./build.properties.default" />
+	<property name="stellwerk.deploy" value="${mrw.home}/eclipse"/>
 
 	<property name="src-path"        value="./src/main/java"/>
 	<property name="res-path"        value="./src/main/resources"/>
 	<property name="bin-path"        value="./bin"/>
 	<property name="lib-path"        value="./lib"/>
+	<property name="model-file"      value="./model.jar"/>
 
 	<property file="${res-path}/workflow.properties" />
 	<property name="gen-src-path"    value="${gen-src}"/>
@@ -130,13 +133,8 @@
 		</javac>
 	</target>
 
-	<target name="clean">
-		<delete dir="${bin-path}"/>
-		<delete dir="../Generator/${bin-path}" />
-	</target>
-
 	<target name="package" depends="compile">
-		<jar destfile="../Stellwerk/lib/model.jar">
+		<jar destfile="${model-file}">
 			<zipfileset dir="${bin-path}">
 				<include name="**/*.class"/>
 			</zipfileset>
@@ -144,10 +142,21 @@
 				<include name="**/*.java"/>
 			</zipfileset>
 		</jar>
-		<copy todir="../Stellwerk">
+	</target>
+	
+	<target name="deploy" depends="package">
+		<mkdir dir="${stellwerk.deploy}"/>
+		<copy todir="${stellwerk.deploy}">
 			<fileset dir=".">
 				<include name="Yakindu/**"/>
 			</fileset>
 		</copy>
+		<copy file="${model-file}" todir="../Stellwerk/lib"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${bin-path}"/>
+		<delete dir="../Generator/${bin-path}" />
+		<delete file="${model-file}"/>
 	</target>
 </project>

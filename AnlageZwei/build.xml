@@ -1,6 +1,8 @@
-<project name="Anlage Zwei" basedir="." default="package" xmlns:jacoco="antlib:org.jacoco.ant">
+<project name="Anlage Zwei" basedir="." default="deploy" xmlns:jacoco="antlib:org.jacoco.ant">
 	<property file="${user.home}/.xtext.properties" />
+	<property file="${user.home}/.build.properties" />
 	<property file="./build.properties.default" />
+	<property name="stellwerk.deploy" value="${mrw.home}/eclipse"/>
 
 	<property name="src-path"        value="./src/main/java"/>
 	<property name="tst-path"        value="./src/main/test"/>
@@ -8,6 +10,7 @@
 	<property name="bin-path"        value="./bin"/>
 	<property name="lib-path"        value="./lib"/>
 	<property name="instr-path"      value="./instr"/>
+	<property name="model-file"      value="./model.jar"/>
 	<property name="findbugs.home"   value="../findbugs"/>
 
 	<property file="${res-path}/workflow.properties" />
@@ -165,7 +168,7 @@
 	</target>
 
 	<target name="package" depends="compile">
-		<jar destfile="../Stellwerk/lib/model.jar">
+		<jar destfile="${model-file}">
 			<zipfileset dir="${bin-path}">
 				<include name="**/*.class"/>
 				<exclude name="**/test/*.class"/>
@@ -180,11 +183,16 @@
 				<exclude name="**/ConfigurationMork2.java"/>
 			</zipfileset>
 		</jar>
-		<copy todir="../Stellwerk">
+	</target>
+	
+	<target name="deploy" depends="package">
+		<mkdir dir="${stellwerk.deploy}"/>
+		<copy todir="${stellwerk.deploy}">
 			<fileset dir=".">
 				<include name="Mork2/**"/>
 			</fileset>
 		</copy>
+		<copy file="${model-file}" todir="../Stellwerk/lib"/>
 	</target>
 
 	<target name="clean">
@@ -204,6 +212,7 @@
 			<fileset dir="." includes="*.exec"/>
 		</delete>
 		<delete file="findbugs-results.xml"/>
+		<delete file="${model-file}"/>
 	</target>
 
 	<!-- ==================================================== -->
