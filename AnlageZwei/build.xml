@@ -286,6 +286,7 @@
 					<fileset dir="../Steuerung/${bin-path}"/>
 					<fileset dir="${bin-path}">
 						<exclude name="**/test/*.class"/>
+						<exclude name="**/*Exception*.class"/>
 					</fileset>
 				</classfiles>
 

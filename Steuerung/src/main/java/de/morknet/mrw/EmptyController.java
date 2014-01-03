@@ -33,8 +33,8 @@ import de.morknet.mrw.util.LogUtil;
  */
 public abstract class EmptyController extends MrwController
 {
-	private final static Log            log  = LogFactory.getLog(EmptyController.class);
-	private              Route          route;
+	private final static Log            log   = LogFactory.getLog(EmptyController.class);
+	private              Route          route = null;
 
 	/**
 	 * Diese Methode implementiert die Ausgabe einer Fehlermeldung.
