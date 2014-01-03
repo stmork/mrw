@@ -259,7 +259,7 @@
 		</junit>
 	</target>
 
-	<target name="test" depends="compile">
+	<target name="test" depends="instr">
 		<jacoco:coverage>
 		    <junit printsummary="on" fork="true" forkmode="once" haltonerror="yes" haltonfailure="yes">
 				<classpath refid="coverage.classpath" />
@@ -281,7 +281,7 @@
 		</jacoco:coverage>
 	</target>
 
-	<target name="jacoco" depends="instr,test">
+	<target name="jacoco" depends="test">
 		<jacoco:report>
 			<executiondata>
 				<file file="jacoco.exec"/>
