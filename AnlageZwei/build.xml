@@ -9,14 +9,18 @@
 	<property name="res-path"        value="./src/main/resources"/>
 	<property name="bin-path"        value="./bin"/>
 	<property name="lib-path"        value="./lib"/>
-	<property name="instr-path"      value="./instr"/>
 	<property name="model-file"      value="./model.jar"/>
-	<property name="findbugs.home"   value="../findbugs"/>
+
+	<property name="findbugs.home"     value="../findbugs"/>
+	<property name="findbugs.results"  value="./findbugs-results.xml"/>
 
 	<property file="${res-path}/workflow.properties" />
 	<property name="gen-src-path"    value="${gen-src}"/>
 	<property name="gen-log-path"    value="${gen-log}"/>
+
 	<property name="coverage-path"   value="./coverage"/>	
+	<property name="instr-path"      value="./instr"/>
+	<property name="jacoco-exec"     value="./jacoco.exec"/>
 
 	<!-- ==================================================== -->
 	<!--              Setting up libraries                    --> 
@@ -113,13 +117,9 @@
 		<path refid="junit.lib"/>
 	</path>
 
-	<path id="instr.classpath">
+	<path id="coverage.classpath">
 		<pathelement path="${bin-path}" />
 		<pathelement path="../Steuerung/${bin-path}" />
-	</path>
-
-	<path id="coverage.classpath">
-		<pathelement location="${instr-path}" />  
 		<path refid="run.classpath"/>
 		<path refid="coverage.lib"/>
 	</path>
@@ -196,10 +196,13 @@
 	</target>
 
 	<target name="clean">
+		<delete dir="../Generator/${bin-path}" />
 		<delete dir="${bin-path}"/>
 		<delete dir="${instr-path}"/>
 		<delete dir="${coverage-path}"/>
-		<delete dir="../Generator/${bin-path}" />
+		<delete file="${jacoco-exec}"/>
+		<delete file="${findbugs.results}"/>
+		<delete file="${model-file}"/>
 		<delete>
 			<fileset dir="." includes="TEST-*.xml"/>
 			<fileset dir="." includes="TEST-*.txt"/>
@@ -211,8 +214,6 @@
 			<fileset dir="." includes="*."/>
 			<fileset dir="." includes="*.exec"/>
 		</delete>
-		<delete file="findbugs-results.xml"/>
-		<delete file="${model-file}"/>
 	</target>
 
 	<!-- ==================================================== -->
@@ -244,13 +245,6 @@
 		</findbugs>
 	</target>
 	
-	<target name="instr" depends="clean,compile">
-		<mkdir dir="${instr-path}"/>
-		<jacoco:instrument destdir="${instr-path}">
-			<fileset dir="${bin-path}" includes="**/*.class"/>
-		</jacoco:instrument>
-	</target>
-
 	<target name="smoketest" depends="compile">
 		<junit printsummary="on" fork="on" haltonerror="yes" haltonfailure="yes">
 			<classpath refid="run.classpath" />
@@ -260,7 +254,7 @@
 	</target>
 
 	<target name="test" depends="clean,compile">
-		<jacoco:coverage>
+		<jacoco:coverage destfile="${jacoco-exec}">
 		    <junit printsummary="on" fork="true" forkmode="once" haltonerror="yes" haltonfailure="yes">
 				<classpath refid="coverage.classpath" />
 				<formatter type="xml"/>
@@ -284,13 +278,17 @@
 	<target name="jacoco" depends="test">
 		<jacoco:report>
 			<executiondata>
-				<file file="jacoco.exec"/>
+				<file file="${jacoco-exec}"/>
 			</executiondata>
    
 			<structure name="MRW Steuerung">
 				<classfiles>
-					<fileset dir="${bin-path}"/>
+					<fileset dir="../Steuerung/${bin-path}"/>
+					<fileset dir="${bin-path}">
+						<exclude name="**/test/*.class"/>
+					</fileset>
 				</classfiles>
+
 				<sourcefiles>
 					<fileset dir="../Steuerung/${src-path}">
 						<exclude name="**/*Exception*.java"/>

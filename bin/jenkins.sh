@@ -31,4 +31,4 @@ make clean depend
 make
 
 cd ../AnlageZwei
-ant clean jacoco
+ant jacoco
