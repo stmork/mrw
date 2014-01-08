@@ -2,11 +2,11 @@
 <feature
       id="de.morknet.mrw.metamodel"
       label="Modelleisenbahn-Editor"
-      version="2.0.18"
+      version="2.0.19"
       provider-name="MORKNet"
       plugin="de.morknet.mrw.metamodel">
 
-   <description url="http://mrw.sourceforge.net">
+   <description url="http://eisenbahnsteuerung.org">
       Modell(-bau-)basierte Eisenbahnsteuerung
    </description>
 
@@ -106,8 +106,8 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <url>
-      <update label="Modelleisenbahn" url="http://mrw.sourceforge.net/updates/"/>
-      <discovery label="Modell(-bau-)basierte Eisenbahnsteuerung" url="http://mrw.sourceforge.net/"/>
+      <update label="Modelleisenbahn" url="http://eisenbahnsteuerung.org/updates/"/>
+      <discovery label="Modell(-bau-)basierte Eisenbahnsteuerung" url="http://eisenbahnsteuerung.org/"/>
    </url>
 
    <requires>
