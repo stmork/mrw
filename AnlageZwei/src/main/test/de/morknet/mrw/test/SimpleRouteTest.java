@@ -90,16 +90,4 @@ public class SimpleRouteTest extends ControllerTestBase
 		model.findSegment("N5a").free();
 		model.findSegment("4").free();
 	}
-
-	@Test
-	public void tour()
-	{
-		if (controller.isDummyConnection())
-		{
-			controller.removeAllRoutes();
-			assertTour(true,  true,  "LXRRLRRR",            "S4c", "N3d");
-			assertTour(false, true,  "RLRXRRLRRLLXRXLLRLL", "N3d", "B2");
-			assertTour(false, false, "LLRLLXRXLLRRLRRXRLR", "B2", "B1", "N3d");
-		}
-	}
 }

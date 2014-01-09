@@ -57,8 +57,8 @@ abstract public class ControllerTestBase
 	protected final static Modell         model      = ModellFactory.getInstance();
 
 	private final static long SEGMENT_ENTER_DELAY    =  250L;
-	private final static long SEGMENT_TRAVERSE_DELAY =  550L;
-	private final static long ROUTE_CLEAR_DELAY      =  550L;
+	private final static long SEGMENT_TRAVERSE_DELAY =  500L;
+	private final static long ROUTE_CLEAR_DELAY      =  500L;
 
 	@BeforeClass
 	public static void setUp() throws Exception
