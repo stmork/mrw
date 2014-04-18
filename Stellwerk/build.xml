@@ -18,6 +18,7 @@
 	<property name="doc-path"      value="../api"/>
 	<property name="findbugs.home" value="../findbugs"/>
 	<property name="jar-file"      value="./${bundleId}_${bundleVersion}.jar"/>
+	<property name="startup"       value="./startup.sh"/>
 
 	<!-- Compiler settings. -->
 	<property name="javacFailOnError" value="false"/>
@@ -127,6 +128,12 @@
 		        failonerror="true" overwrite="true"/>
 		<copy file="./icons/mrw_banner.bmp" todir="${stellwerk.deploy}"
 		        failonerror="true" overwrite="true"/>
+		<copy file="${startup}" todir="${stellwerk.deploy}"
+		        failonerror="true" overwrite="true"/>
+		<exec executable="chmod">
+			<arg value="a+rx"/>
+			<arg value="${stellwerk.deploy}/${startup}"/>
+		</exec>
 	</target>
 
 	<target name="clean">
