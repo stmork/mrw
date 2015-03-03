@@ -2,7 +2,6 @@
 **
 **	$Filename:	ResetMicroControllerAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

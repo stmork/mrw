@@ -2,7 +2,6 @@
 **
 **	$Filename:	InvalidBatchExecuterException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	Command.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

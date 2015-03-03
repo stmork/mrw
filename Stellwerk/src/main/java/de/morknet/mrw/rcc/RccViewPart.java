@@ -2,7 +2,6 @@
 **
 **	$Filename:	RccViewPart.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	ModellFactory.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

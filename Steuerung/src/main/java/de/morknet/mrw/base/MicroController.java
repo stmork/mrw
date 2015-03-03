@@ -2,7 +2,6 @@
 **
 **	$Filename:	MicroController.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	NoNeighbourFoundException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

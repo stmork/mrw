@@ -2,7 +2,6 @@
 **
 **	$Filename:	Application.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

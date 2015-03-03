@@ -2,7 +2,6 @@
 **
 **	$Filename:	TourModeTrigger.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

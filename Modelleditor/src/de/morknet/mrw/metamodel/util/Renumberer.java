@@ -2,7 +2,6 @@
 **
 **	$Filename:	Renumberer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

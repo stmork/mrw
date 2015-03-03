@@ -2,7 +2,6 @@
 **
 **	$Filename:	Controller.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

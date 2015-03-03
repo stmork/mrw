@@ -2,7 +2,6 @@
 **
 **	$Filename:	Resets.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

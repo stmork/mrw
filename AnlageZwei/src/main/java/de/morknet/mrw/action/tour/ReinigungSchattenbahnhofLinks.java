@@ -2,7 +2,6 @@
 **
 **	$Filename:	ReinigungSchattenbahnhofLinks.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

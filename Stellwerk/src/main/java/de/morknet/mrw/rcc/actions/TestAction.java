@@ -2,7 +2,6 @@
 **
 **	$Filename:	TestAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

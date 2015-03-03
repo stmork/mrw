@@ -2,7 +2,6 @@
 **
 **	$Filename:	SignalStateDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

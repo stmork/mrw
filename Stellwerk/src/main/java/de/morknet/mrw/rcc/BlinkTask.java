@@ -2,7 +2,6 @@
 **
 **	$Filename:	BlinkTask.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	OccupationCode.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

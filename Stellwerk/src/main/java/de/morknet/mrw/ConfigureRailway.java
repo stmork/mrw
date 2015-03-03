@@ -2,7 +2,6 @@
 **
 **	$Filename:	ConfigureRailway.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

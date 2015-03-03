@@ -2,7 +2,6 @@
 **
 **	$Filename:	LockWithoutRouteException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

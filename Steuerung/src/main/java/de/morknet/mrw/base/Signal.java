@@ -2,7 +2,6 @@
 **
 **	$Filename:	Signal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

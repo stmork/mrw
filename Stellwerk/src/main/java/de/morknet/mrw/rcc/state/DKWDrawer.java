@@ -2,7 +2,6 @@
 **
 **	$Filename:	DKWDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

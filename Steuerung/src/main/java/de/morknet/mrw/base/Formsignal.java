@@ -2,7 +2,6 @@
 **
 **	$Filename:	Formsignal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

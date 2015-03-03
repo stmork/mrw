@@ -2,7 +2,6 @@
 **
 **	$Filename:	SwitchDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

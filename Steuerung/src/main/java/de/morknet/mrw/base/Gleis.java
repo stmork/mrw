@@ -2,7 +2,6 @@
 **
 **	$Filename:	Gleis.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	TourMode.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

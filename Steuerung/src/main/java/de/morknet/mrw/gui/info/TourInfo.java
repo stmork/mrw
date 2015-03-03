@@ -2,7 +2,6 @@
 **
 **	$Filename:	TourInfo.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

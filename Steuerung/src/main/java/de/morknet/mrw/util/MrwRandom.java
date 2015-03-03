@@ -2,7 +2,6 @@
 **
 **	$Filename:	MrwRandom.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

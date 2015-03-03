@@ -2,7 +2,6 @@
 **
 **	$Filename:	MrwController.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

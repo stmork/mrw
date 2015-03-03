@@ -2,7 +2,6 @@
 **
 **	$Filename:	Config.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

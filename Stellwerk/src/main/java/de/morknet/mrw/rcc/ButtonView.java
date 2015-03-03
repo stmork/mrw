@@ -2,7 +2,6 @@
 **
 **	$Filename:	ButtonView.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

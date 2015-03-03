@@ -2,7 +2,6 @@
 **
 **	$Filename:	Connection.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

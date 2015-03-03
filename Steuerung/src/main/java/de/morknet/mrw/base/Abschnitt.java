@@ -2,7 +2,6 @@
 **
 **	$Filename:	Abschnitt.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

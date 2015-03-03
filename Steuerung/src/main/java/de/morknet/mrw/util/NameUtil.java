@@ -2,7 +2,6 @@
 **
 **	$Filename:	NameUtil.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

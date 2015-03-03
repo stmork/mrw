@@ -2,7 +2,6 @@
 **
 **	$Filename:	Gruppe.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

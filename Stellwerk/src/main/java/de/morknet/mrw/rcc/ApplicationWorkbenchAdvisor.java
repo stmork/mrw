@@ -2,7 +2,6 @@
 **
 **	$Filename:	ApplicationWorkbenchAdvisor.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

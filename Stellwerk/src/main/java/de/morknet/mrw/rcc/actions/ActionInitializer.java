@@ -2,7 +2,6 @@
 **
 **	$Filename:	ActionInitializer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

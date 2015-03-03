@@ -2,7 +2,6 @@
 **
 **	$Filename:	SensorCode.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

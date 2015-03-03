@@ -2,7 +2,6 @@
 **
 **	$Filename:	Route.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

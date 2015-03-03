@@ -2,7 +2,6 @@
 **
 **	$Filename:	BeerMode.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

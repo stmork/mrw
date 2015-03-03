@@ -2,7 +2,6 @@
 **
 **	$Filename:	RailwayBase.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

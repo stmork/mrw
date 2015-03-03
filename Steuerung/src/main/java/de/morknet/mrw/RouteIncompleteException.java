@@ -2,7 +2,6 @@
 **
 **	$Filename:	RouteIncompleteException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

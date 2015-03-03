@@ -2,7 +2,6 @@
 **
 **	$Filename:	UnknownDirectionCodeException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

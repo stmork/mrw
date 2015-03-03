@@ -2,7 +2,6 @@
 **
 **	$Filename:	ClearAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

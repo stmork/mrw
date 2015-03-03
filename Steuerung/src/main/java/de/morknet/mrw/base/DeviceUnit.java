@@ -2,7 +2,6 @@
 **
 **	$Filename:	DeviceUnit.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

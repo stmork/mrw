@@ -2,7 +2,6 @@
 **
 **	$Filename:	MrwActionControl.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

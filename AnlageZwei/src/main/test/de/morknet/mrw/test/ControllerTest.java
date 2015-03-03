@@ -2,7 +2,6 @@
 **
 **	$Filename:	ControllerTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

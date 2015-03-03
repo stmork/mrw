@@ -2,7 +2,6 @@
 **
 **	$Filename:	Gleisteil.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	VorsignalDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	SetId.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

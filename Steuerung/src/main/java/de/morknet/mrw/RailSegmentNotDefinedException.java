@@ -2,7 +2,6 @@
 **
 **	$Filename:	RailSegmentNotDefinedException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

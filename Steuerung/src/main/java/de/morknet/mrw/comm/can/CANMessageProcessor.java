@@ -2,7 +2,6 @@
 **
 **	$Filename:	CANMessageProvider.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

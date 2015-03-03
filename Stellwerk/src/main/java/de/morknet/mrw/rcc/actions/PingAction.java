@@ -2,7 +2,6 @@
 **
 **	$Filename:	PingAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

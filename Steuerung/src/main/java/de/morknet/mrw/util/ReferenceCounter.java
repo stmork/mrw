@@ -2,7 +2,6 @@
 **
 **	$Filename:	ReferenceCounter.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	InfoView.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	ConsistenceTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

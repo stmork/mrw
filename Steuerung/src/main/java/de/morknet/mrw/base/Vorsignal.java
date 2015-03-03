@@ -2,7 +2,6 @@
 **
 **	$Filename:	Vorsignal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

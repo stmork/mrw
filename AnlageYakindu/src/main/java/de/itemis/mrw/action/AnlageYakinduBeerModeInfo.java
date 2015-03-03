@@ -2,7 +2,6 @@
 **
 **	$Filename:	AnlageYakinduBeerModeInfo.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

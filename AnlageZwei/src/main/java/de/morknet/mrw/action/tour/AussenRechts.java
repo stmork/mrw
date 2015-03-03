@@ -2,7 +2,6 @@
 **
 **	$Filename:	AussenRechts.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

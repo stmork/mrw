@@ -2,7 +2,6 @@
 **
 **	$Filename:	AussenLinks.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

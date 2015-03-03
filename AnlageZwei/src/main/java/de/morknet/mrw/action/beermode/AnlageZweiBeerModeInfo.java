@@ -2,7 +2,6 @@
 **
 **	$Filename:	AnlageZweiBeerModeInfo.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

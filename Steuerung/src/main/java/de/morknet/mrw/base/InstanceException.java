@@ -2,7 +2,6 @@
 **
 **	$Filename:	InstanceException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

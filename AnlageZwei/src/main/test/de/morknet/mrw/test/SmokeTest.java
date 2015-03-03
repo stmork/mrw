@@ -2,7 +2,6 @@
 **
 **	$Filename:	SmokeTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

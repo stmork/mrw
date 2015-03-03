@@ -2,7 +2,6 @@
 **
 **	$Filename:	EinfahrsignalDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

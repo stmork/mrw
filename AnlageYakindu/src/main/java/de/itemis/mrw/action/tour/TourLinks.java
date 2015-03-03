@@ -2,7 +2,6 @@
 **
 **	$Filename:	TourLinks.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

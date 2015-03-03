@@ -2,7 +2,6 @@
 **
 **	$Filename:	BergtourAbwaerts.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

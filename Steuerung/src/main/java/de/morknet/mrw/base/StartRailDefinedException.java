@@ -2,7 +2,6 @@
 **
 **	$Filename:	StartRailDefinedException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

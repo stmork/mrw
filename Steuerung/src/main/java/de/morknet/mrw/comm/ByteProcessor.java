@@ -2,7 +2,6 @@
 **
 **	$Filename:	ByteProcessor.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

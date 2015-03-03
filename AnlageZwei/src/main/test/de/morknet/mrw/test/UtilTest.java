@@ -2,7 +2,6 @@
 **
 **	$Filename:	UtilTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

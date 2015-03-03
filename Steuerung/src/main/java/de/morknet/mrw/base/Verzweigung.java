@@ -2,7 +2,6 @@
 **
 **	$Filename:	Verzweigung.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	MrwException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

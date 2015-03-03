@@ -2,7 +2,6 @@
 **
 **	$Filename:	ProcessingInProgressException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	HearableTests.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

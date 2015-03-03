@@ -2,7 +2,6 @@
 **
 **	$Filename:	QueryModelStateAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

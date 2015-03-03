@@ -2,7 +2,6 @@
 **
 **	$Filename:	Blocksignal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

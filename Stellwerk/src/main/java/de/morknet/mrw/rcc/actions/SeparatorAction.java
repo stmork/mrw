@@ -2,7 +2,6 @@
 **
 **	$Filename:	SeparatorAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

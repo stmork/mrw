@@ -2,7 +2,6 @@
 **
 **	$Filename:	ExceptionCallback.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

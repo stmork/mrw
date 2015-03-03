@@ -2,7 +2,6 @@
 **
 **	$Filename:	RoutingRuntimeException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

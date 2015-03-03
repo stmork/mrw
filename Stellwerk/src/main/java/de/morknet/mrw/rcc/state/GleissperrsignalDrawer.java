@@ -2,7 +2,6 @@
 **
 **	$Filename:	GleissperrsignalDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

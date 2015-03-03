@@ -2,7 +2,6 @@
 **
 **	$Filename:	EnumTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

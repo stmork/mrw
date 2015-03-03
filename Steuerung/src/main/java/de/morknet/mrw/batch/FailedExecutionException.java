@@ -2,7 +2,6 @@
 **
 **	$Filename:	FailedExecutionExcepton.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

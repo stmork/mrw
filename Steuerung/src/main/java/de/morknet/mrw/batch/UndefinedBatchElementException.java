@@ -2,7 +2,6 @@
 **
 **	$Filename:	UndefinedBatchElementException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

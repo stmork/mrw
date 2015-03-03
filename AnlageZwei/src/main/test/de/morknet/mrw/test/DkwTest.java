@@ -2,7 +2,6 @@
 **
 **	$Filename:	DkwTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

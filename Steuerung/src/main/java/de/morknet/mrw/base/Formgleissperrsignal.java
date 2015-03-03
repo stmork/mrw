@@ -2,7 +2,6 @@
 **
 **	$Filename:	Formgleissperrsignal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

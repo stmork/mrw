@@ -2,7 +2,6 @@
 **
 **	$Filename:	TourRechts.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

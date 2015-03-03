@@ -2,7 +2,6 @@
 **
 **	$Filename:	UnknownTurnStateException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

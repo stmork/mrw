@@ -2,7 +2,6 @@
 **
 **	$Filename:	KreuztourRechts.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

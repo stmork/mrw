@@ -2,7 +2,6 @@
 **
 **	$Filename:	EmptyController.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

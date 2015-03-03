@@ -2,7 +2,6 @@
 **
 **	$Filename:	RS232Connection.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

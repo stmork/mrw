@@ -2,7 +2,6 @@
 **
 **	$Filename:	Colors.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	MsgCode.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

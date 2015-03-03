@@ -2,7 +2,6 @@
 **
 **	$Filename:	ApplicationActionBarAdvisor.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

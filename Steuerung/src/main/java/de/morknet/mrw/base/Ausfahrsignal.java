@@ -2,7 +2,6 @@
 **
 **	$Filename:	Ausfahrsignal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

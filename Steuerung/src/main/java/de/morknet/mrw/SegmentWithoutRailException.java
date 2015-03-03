@@ -2,7 +2,6 @@
 **
 **	$Filename:	SegmentWithoutRailException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

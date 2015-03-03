@@ -2,7 +2,6 @@
 **
 **	$Filename:	ReinigungstourRechts.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

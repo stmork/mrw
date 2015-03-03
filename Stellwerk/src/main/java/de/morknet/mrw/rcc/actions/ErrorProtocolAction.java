@@ -2,7 +2,6 @@
 **
 **	$Filename:	ErrorProtocolAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

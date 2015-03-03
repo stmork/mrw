@@ -2,7 +2,6 @@
 **
 **	$Filename:	BatchElementDefinedException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	HauptsignalDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

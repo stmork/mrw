@@ -2,7 +2,6 @@
 **
 **	$Filename:	BeerModeTrigger.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

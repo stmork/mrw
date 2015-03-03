@@ -2,7 +2,6 @@
 **
 **	$Filename:	CommCheck.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

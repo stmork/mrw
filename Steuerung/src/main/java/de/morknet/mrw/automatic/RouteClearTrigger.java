@@ -2,7 +2,6 @@
 **
 **	$Filename:	RouteClearTrigger.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

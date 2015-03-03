@@ -2,7 +2,6 @@
 **
 **	$Filename:	CANReceiver.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

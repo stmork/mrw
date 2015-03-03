@@ -2,7 +2,6 @@
 **
 **	$Filename:	ErrorConditionTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

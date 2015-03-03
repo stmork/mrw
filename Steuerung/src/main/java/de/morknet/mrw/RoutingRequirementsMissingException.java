@@ -2,7 +2,6 @@
 **
 **	$Filename:	RoutingRequirementsMissingException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

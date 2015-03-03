@@ -2,7 +2,6 @@
 **
 **	$Filename:	TrackNotRoutedException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

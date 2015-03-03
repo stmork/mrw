@@ -2,7 +2,6 @@
 **
 **	$Filename:	SelectTrackException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

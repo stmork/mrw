@@ -2,7 +2,6 @@
 **
 **	$Filename:	Coordinates.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

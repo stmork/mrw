@@ -2,7 +2,6 @@
 **
 **	$Filename:	CodeNotFoundException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

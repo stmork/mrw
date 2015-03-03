@@ -2,7 +2,6 @@
 **
 **	$Filename:	SimpleRouteTest.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

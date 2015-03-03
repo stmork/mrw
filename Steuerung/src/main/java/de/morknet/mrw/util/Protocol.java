@@ -2,7 +2,6 @@
 **
 **	$Filename:	Protocol.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

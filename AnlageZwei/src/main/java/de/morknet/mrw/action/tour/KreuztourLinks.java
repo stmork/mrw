@@ -2,7 +2,6 @@
 **
 **	$Filename:	KreuztourLinks.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

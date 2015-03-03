@@ -2,7 +2,6 @@
 **
 **	$Filename:	Layout.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

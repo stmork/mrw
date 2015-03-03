@@ -2,7 +2,6 @@
 **
 **	$Filename:	Batch.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

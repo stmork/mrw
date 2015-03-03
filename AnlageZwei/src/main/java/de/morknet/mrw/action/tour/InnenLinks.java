@@ -2,7 +2,6 @@
 **
 **	$Filename:	InnenLinks.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

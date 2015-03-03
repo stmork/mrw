@@ -2,7 +2,6 @@
 **
 **	$Filename:	TcpConnection.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

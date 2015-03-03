@@ -2,7 +2,6 @@
 **
 **	$Filename:	QueryBuffer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

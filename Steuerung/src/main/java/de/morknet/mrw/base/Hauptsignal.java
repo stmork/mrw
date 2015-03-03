@@ -2,7 +2,6 @@
 **
 **	$Filename:	Hauptsignal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

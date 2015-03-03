@@ -2,7 +2,6 @@
 **
 **	$Filename:	StateDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

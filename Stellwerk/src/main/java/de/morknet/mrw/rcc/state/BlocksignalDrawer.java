@@ -2,7 +2,6 @@
 **
 **	$Filename:	BlocksignalDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

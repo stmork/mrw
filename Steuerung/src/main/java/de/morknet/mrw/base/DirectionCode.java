@@ -2,7 +2,6 @@
 **
 **	$Filename:	DirectionCode.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

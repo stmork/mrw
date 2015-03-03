@@ -2,7 +2,6 @@
 **
 **	$Filename:	GroupView.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	AusfahrsignalDrawer.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

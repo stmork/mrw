@@ -2,7 +2,6 @@
 **
 **	$Filename:	UnknownDeviceException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

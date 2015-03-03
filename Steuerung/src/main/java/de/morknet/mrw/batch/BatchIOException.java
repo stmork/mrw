@@ -2,7 +2,6 @@
 **
 **	$Filename:	BatchIOException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

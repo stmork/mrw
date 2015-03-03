@@ -2,7 +2,6 @@
 **
 **	$Filename:	LogUtil.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

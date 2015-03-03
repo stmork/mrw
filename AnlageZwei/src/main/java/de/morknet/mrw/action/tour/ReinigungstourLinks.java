@@ -2,7 +2,6 @@
 **
 **	$Filename:	ReinigungstourLinks.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

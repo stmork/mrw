@@ -2,7 +2,6 @@
 **
 **	$Filename:	RouteEnableRunner.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

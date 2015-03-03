@@ -2,7 +2,6 @@
 **
 **	$Filename:	InvertSwitchesAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

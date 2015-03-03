@@ -2,7 +2,6 @@
 **
 **	$Filename:	BatchRetransmissionException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	ReinigungSchattenbahnhofRechts.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	TourPoint.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

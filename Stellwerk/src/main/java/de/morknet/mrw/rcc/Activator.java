@@ -2,7 +2,6 @@
 **
 **	$Filename:	Activator.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

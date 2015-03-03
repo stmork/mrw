@@ -2,7 +2,6 @@
 **
 **	$Filename:	PersonentourRechts.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	Formhauptsignal.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

@@ -2,7 +2,6 @@
 **
 **	$Filename:	NamedElement.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

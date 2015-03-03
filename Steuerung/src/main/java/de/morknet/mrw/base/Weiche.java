@@ -2,7 +2,6 @@
 **
 **	$Filename:	Weiche.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

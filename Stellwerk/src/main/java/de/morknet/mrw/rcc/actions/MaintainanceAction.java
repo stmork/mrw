@@ -2,7 +2,6 @@
 **
 **	$Filename:	MaintainanceAction.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **

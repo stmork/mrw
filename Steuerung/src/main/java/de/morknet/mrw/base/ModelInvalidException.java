@@ -2,7 +2,6 @@
 **
 **	$Filename:	ModelInvalidException.java $
 **	$Revision$
-**	$Date$
 **	$Author$
 **	$Id$
 **
