@@ -1,5 +1,6 @@
 #!/bin/bash
 
+svn upgrade
 set -e
 
 cd Lichtprofile
@@ -18,7 +19,6 @@ cd ../Microcontroller
 ant clean generate
 
 cd ../mc
-svn upgrade
 make clean depend
 make 
 cd ../canprog
