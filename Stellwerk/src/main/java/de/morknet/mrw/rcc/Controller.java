@@ -38,8 +38,8 @@ import de.morknet.mrw.util.LogUtil;
 import de.morknet.mrw.util.MrwProperties;
 
 /**
- * Diese Klasse stellt den zentralen Controller gem�� dem MVC-Pattern dar. Dieser Controller ist von {@link MrwController}
- * abgeleitet, welcher unabh�ngig von der Benutzeroberfl�che die Funktionalit�t der Eisenbahnsteuerung zur Verf�gung stellt.
+ * Diese Klasse stellt den zentralen Controller gemÃâ¬ÃÂ dem MVC-Pattern dar. Dieser Controller ist von {@link MrwController}
+ * abgeleitet, welcher unabhÃâ¬ngig von der BenutzeroberflÃâ¬che die FunktionalitÃâ¬t der Eisenbahnsteuerung zur VerfÃÅgung stellt.
  * @author sm
  *
  */
@@ -57,7 +57,7 @@ public class Controller extends MrwController
 	{
 		log.info("=================================================================================");
 		log.info(LogUtil.now());
-		log.info(LogUtil.printf("Stellwerk f�r %s auf Rechner %s.", model.getName(), MrwProperties.getSimpleHostName()));
+		log.info(LogUtil.printf("Stellwerk fÃÅr %s auf Rechner %s.", model.getName(), MrwProperties.getSimpleHostName()));
 		log.info("$Revision$");
 		log.info("Copyright (C) committers of the modelrailway project 2007-2010");
 		log.info("=================================================================================");
@@ -75,7 +75,7 @@ public class Controller extends MrwController
 	}
 
 	/**
-	 * Diese Methode gibt eine Instanz des Controllers zur�ck. Der Controller ist als Singleton implementiert.
+	 * Diese Methode gibt eine Instanz des Controllers zurÃÅck. Der Controller ist als Singleton implementiert.
 	 * @return Der steuernde Controller.
 	 */
 	public static Controller getController()
@@ -84,7 +84,7 @@ public class Controller extends MrwController
 	}
 
 	/**
-	 * �ber diese Methode wird diesem Controller der {@link ButtonView} mitgeteilt.
+	 * ÃÂber diese Methode wird diesem Controller der {@link ButtonView} mitgeteilt.
 	 * @param buttons Der {@link ButtonView} mit den Fahrtkontrollen. 
 	 */
 	public void register(ButtonView buttons)
@@ -94,9 +94,9 @@ public class Controller extends MrwController
 	}
 
 	/**
-	 * �ber diese Methode wird der {@link InfoView} registriert. In diesem werden die Fahrstra�en und die ausgew�hlten
+	 * ÃÂber diese Methode wird der {@link InfoView} registriert. In diesem werden die FahrstraÃÂen und die ausgewÃâ¬hlten
 	 * Gleisabschnitte angezeigt.
-	 * @param view Der {@link InfoView} mit Fahrstra�en und ausgew�hlten Gleisabschnitten.
+	 * @param view Der {@link InfoView} mit FahrstraÃÂen und ausgewÃâ¬hlten Gleisabschnitten.
 	 */
 	public void register(InfoView view)
 	{
@@ -104,7 +104,7 @@ public class Controller extends MrwController
 	}
 
 	/**
-	 * �ber diese Methode wird eine Tab mit der Darstellung einer Betriebsgruppe registriert.
+	 * ÃÂber diese Methode wird eine Tab mit der Darstellung einer Betriebsgruppe registriert.
 	 * @param grouping Die zu registrierende Darstellung einer Betriebsgruppe.
 	 * @see GroupView
 	 */
@@ -139,7 +139,7 @@ public class Controller extends MrwController
 
 	/**
 	 * Diese Methode veranlasst das Aktualisieren der {@link ButtonView}. Die Buttons werden je nach Auswahlzustand
-	 * der Fahrtstra�en im InfoView bzw. der Auswahl der Gleisabschnitte aktiviert oder deaktiviert.
+	 * der FahrtstraÃÂen im InfoView bzw. der Auswahl der Gleisabschnitte aktiviert oder deaktiviert.
 	 */
 	public void updateButtons()
 	{
@@ -206,8 +206,8 @@ public class Controller extends MrwController
 	}
 
 	/**
-	 * Diese Methode gibt die in der Fahrstra�enansicht ausgew�hlte Fahrstra�e zur�ck.
-	 * @return Die ausgew�hlte Fahrstra�e.
+	 * Diese Methode gibt die in der FahrstraÃÂenansicht ausgewÃâ¬hlte FahrstraÃÂe zurÃÅck.
+	 * @return Die ausgewÃâ¬hlte FahrstraÃÂe.
 	 */
 	@Override
 	public Route getSelectedRoute()
@@ -216,8 +216,8 @@ public class Controller extends MrwController
 	}
 
 	/**
-	 * Diese Methode w�hlt in der Info-Ansicht eine Fahrstra�e aus.
-	 * @param route Die auszuw�hlende Fahrstra�e.
+	 * Diese Methode wÃâ¬hlt in der Info-Ansicht eine FahrstraÃÂe aus.
+	 * @param route Die auszuwÃâ¬hlende FahrstraÃÂe.
 	 */
 	@Override
 	public void selectRoute(Route route)
@@ -300,8 +300,8 @@ public class Controller extends MrwController
 	}
 
 	/**
-	 * Diese Methode gibt den Blinkstatus des angegebenen Ger�ts zur�ck.
-	 * @param device Das zu pr�fende Ger�t.
+	 * Diese Methode gibt den Blinkstatus des angegebenen GerÃâ¬ts zurÃÅck.
+	 * @param device Das zu prÃÅfende GerÃâ¬t.
 	 * @return Ob der Blinkstatus an oder aus ist.
 	 */
 	public boolean isOff(DeviceUnit device)

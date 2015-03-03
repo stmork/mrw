@@ -25,7 +25,7 @@ import de.morknet.mrw.batch.Batch;
 import de.morknet.mrw.comm.Command;
 
 /**
- * Diese Klasse repräsentiert eine Weiche.
+ * Diese Klasse reprÃ¤sentiert eine Weiche.
  * @author smork
  *
  */
@@ -41,7 +41,7 @@ public final class Weiche extends Verzweigung
 	private final boolean bIstBevorzugt;
 
 	/**
-	 * Diese Aufzählung liefert alle Schaltzustände einer Weiche.
+	 * Diese AufzÃ¤hlung liefert alle SchaltzustÃ¤nde einer Weiche.
 	 * @author sm
 	 *
 	 */
@@ -69,7 +69,7 @@ public final class Weiche extends Verzweigung
 		}
 
 		/**
-		 * Diese Methode gibt die Weichenlage als {@link DirectionCode} zurück.
+		 * Diese Methode gibt die Weichenlage als {@link DirectionCode} zurÃ¼ck.
 		 * @return Die Weichenlage als {@link DirectionCode}.
 		 */
 		public DirectionCode getDirectionCode()
@@ -78,7 +78,7 @@ public final class Weiche extends Verzweigung
 		}
 
 		/**
-		 * Diese Methode gibt das Schaltkommando zurück.
+		 * Diese Methode gibt das Schaltkommando zurÃ¼ck.
 		 * @return Das Schaltkommando.
 		 */
 		public Command getCommand()
@@ -99,9 +99,9 @@ public final class Weiche extends Verzweigung
 
 	/**
 	 * Dieser Konstruktur initialisiert eine Weiche.
-	 * @param abschnitt Der dazugehörende Gleisabschnitt.
+	 * @param abschnitt Der dazugehÃ¶rende Gleisabschnitt.
 	 * @param number Die Weichennummer.
-	 * @param aIsHigh Zungenrichtung in Zählrichtung.
+	 * @param aIsHigh Zungenrichtung in ZÃ¤hlrichtung.
 	 * @param bIstAbzweig Links ist Abzweig.
 	 * @param cIstAbzweig Rechts ist Abzweig.
 	 * @param bIstBevorzugt Links ist bevorzugte Fahrtrichtung.
@@ -179,7 +179,7 @@ public final class Weiche extends Verzweigung
 		{
 			if (!a.hasTrackElement(this))
 			{
-				log.error("Stecker A ist nicht rückverkoppelt!");
+				log.error("Stecker A ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!a.isDirectionCorrect(this, aIsHigh))
@@ -198,7 +198,7 @@ public final class Weiche extends Verzweigung
 		{
 			if (!b.hasTrackElement(this))
 			{
-				log.error("Stecker B ist nicht rückverkoppelt!");
+				log.error("Stecker B ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!b.isDirectionCorrect(this, !aIsHigh))
@@ -217,7 +217,7 @@ public final class Weiche extends Verzweigung
 		{
 			if (!c.hasTrackElement(this))
 			{
-				log.error("Stecker B ist nicht rückverkoppelt!");
+				log.error("Stecker B ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!c.isDirectionCorrect(this, !aIsHigh))
@@ -325,7 +325,7 @@ public final class Weiche extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt die Weichenlage zurück.
+	 * Diese Methode gibt die Weichenlage zurÃ¼ck.
 	 * @return Die aktuelle Weichenlage.
 	 */
 	public TurnDirection getDir()
@@ -355,8 +355,8 @@ public final class Weiche extends Verzweigung
 	}
 	
 	/**
-	 * Diese Methode ermittelt, ob der Abzweig nach links führt.
-	 * @return Flag, ob Abzweig nach links führt.
+	 * Diese Methode ermittelt, ob der Abzweig nach links fÃ¼hrt.
+	 * @return Flag, ob Abzweig nach links fÃ¼hrt.
 	 */
 	public final boolean istBAbzweig()
 	{
@@ -364,7 +364,7 @@ public final class Weiche extends Verzweigung
 	}
 	
 	/**
-	 * Diese Methode gibt die Weichennummer samt Weichenlage als Text zurück.
+	 * Diese Methode gibt die Weichennummer samt Weichenlage als Text zurÃ¼ck.
 	 * @return Die Weichennummer und Weichenlage als Text.
 	 */ 
 	public String toString()
@@ -373,7 +373,7 @@ public final class Weiche extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt das {@link Gleisteil} in Zungenrichtung zurück.
+	 * Diese Methode gibt das {@link Gleisteil} in Zungenrichtung zurÃ¼ck.
 	 * @return Das {@link Gleisteil} in Zungenrichtung.
 	 */
 	public Gleisteil getA()
@@ -382,7 +382,7 @@ public final class Weiche extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt das nach links benachbarte {@link Gleisteil} zurück. 
+	 * Diese Methode gibt das nach links benachbarte {@link Gleisteil} zurÃ¼ck. 
 	 * @return Das benachbarte linke {@link Gleisteil}.
 	 */
 	public Gleisteil getB()
@@ -391,7 +391,7 @@ public final class Weiche extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt das nach rechts benachbarte {@link Gleisteil} zurück. 
+	 * Diese Methode gibt das nach rechts benachbarte {@link Gleisteil} zurÃ¼ck. 
 	 * @return Das benachbarte rechte {@link Gleisteil}.
 	 */
 	public Gleisteil getC()

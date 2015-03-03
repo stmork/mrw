@@ -1,122 +1,122 @@
-«REM»
-«»
-«»
-«»	$Filename:	Plan.xpt $
-«»	$Revision$
-«»	$Date$
-«»	$Author$
-«»	$Id$
-«»
-«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
-«»
-«»	This program and the accompanying materials are made available under the
-«»	terms of the Eclipse Public License v1.0.
-«»
-«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
-«»
-«»
-«»
-«ENDREM»
+Â«REMÂ»
+Â«Â»
+Â«Â»
+Â«Â»	$Filename:	Plan.xpt $
+Â«Â»	$Revision$
+Â«Â»	$Date$
+Â«Â»	$Author$
+Â«Â»	$Id$
+Â«Â»
+Â«Â»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+Â«Â»
+Â«Â»	This program and the accompanying materials are made available under the
+Â«Â»	terms of the Eclipse Public License v1.0.
+Â«Â»
+Â«Â»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+Â«Â»
+Â«Â»
+Â«Â»
+Â«ENDREMÂ»
 
-«IMPORT metamodel»
+Â«IMPORT metamodelÂ»
 
-«EXTENSION de::morknet::mrw::generator::base::ext::plan»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::planÂ»
 
-«DEFINE Main FOR Modell»
-«FILE planName() LOG»
-// dot «planName()» -Tgif -o «planImage()»
-digraph «name»
+Â«DEFINE Main FOR ModellÂ»
+Â«FILE planName() LOGÂ»
+// dot Â«planName()Â» -Tgif -o Â«planImage()Â»
+digraph Â«nameÂ»
 {
-«EXPAND Version1»
+Â«EXPAND Version1Â»
 }
-«ENDFILE»
+Â«ENDFILEÂ»
 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE Version1 FOR Modell»
+Â«DEFINE Version1 FOR ModellÂ»
 	rankdir=LR;
 	node [shape=box];
-	«FOREACH controller AS ctrl SEPARATOR " -> "»«planId(ctrl)»«ENDFOREACH»;
-«FOREACH controller AS ctrl»
-	subgraph «planId(ctrl)» 
+	Â«FOREACH controller AS ctrl SEPARATOR " -> "Â»Â«planId(ctrl)Â»Â«ENDFOREACHÂ»;
+Â«FOREACH controller AS ctrlÂ»
+	subgraph Â«planId(ctrl)Â» 
 	{
 		rank=same;
-		«planId(ctrl)»;
-«FOREACH ctrl.anschluesse AS a»
-		«planId(a)»;
-«ENDFOREACH»
-«FOREACH ctrl.module AS m»
-		«planId(m)»;
-«ENDFOREACH»
+		Â«planId(ctrl)Â»;
+Â«FOREACH ctrl.anschluesse AS aÂ»
+		Â«planId(a)Â»;
+Â«ENDFOREACHÂ»
+Â«FOREACH ctrl.module AS mÂ»
+		Â«planId(m)Â»;
+Â«ENDFOREACHÂ»
 	}
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 
-«FOREACH controller AS ctrl»
-«IF ctrl.anschluesse.size > 0»
-		«planId(ctrl)»«FOREACH ctrl.anschluesse AS a» -> «planId(a)»«ENDFOREACH»;
-«ENDIF»
-«FOREACH ctrl.module AS m»
-		«planId(ctrl)» -> «planId(m)»;
-«ENDFOREACH»
-«ENDFOREACH»
+Â«FOREACH controller AS ctrlÂ»
+Â«IF ctrl.anschluesse.size > 0Â»
+		Â«planId(ctrl)Â»Â«FOREACH ctrl.anschluesse AS aÂ» -> Â«planId(a)Â»Â«ENDFOREACHÂ»;
+Â«ENDIFÂ»
+Â«FOREACH ctrl.module AS mÂ»
+		Â«planId(ctrl)Â» -> Â«planId(m)Â»;
+Â«ENDFOREACHÂ»
+Â«ENDFOREACHÂ»
 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE Version2 FOR Modell»
+Â«DEFINE Version2 FOR ModellÂ»
 	rankdir=LR;
-«FOREACH controller AS ctrl»
-	subgraph «planId(ctrl)»
+Â«FOREACH controller AS ctrlÂ»
+	subgraph Â«planId(ctrl)Â»
 	{
 		node [style=filled,shape=box];
-«FOREACH ctrl.anschluesse AS a»
-		subgraph «planId(a)»
+Â«FOREACH ctrl.anschluesse AS aÂ»
+		subgraph Â«planId(a)Â»
 		{
 			rank=same;
-			«planId(ctrl)»;
+			Â«planId(ctrl)Â»;
 			node [style=filled];
 		}
-«ENDFOREACH»
-«FOREACH ctrl.module AS m»
-		subgraph «planId(m)»
+Â«ENDFOREACHÂ»
+Â«FOREACH ctrl.module AS mÂ»
+		subgraph Â«planId(m)Â»
 		{
 			rank=same;
-			«planId(ctrl)»;
+			Â«planId(ctrl)Â»;
 			node [style=filled];
 		}
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 	}
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 
-«FOREACH controller AS ctrl SEPARATOR " -> "»«planId(ctrl)»«ENDFOREACH»
-«FOREACH controller AS ctrl»
-«IF ctrl.anschluesse.size > 0»
-	«planId(ctrl)» «FOREACH ctrl.anschluesse AS a» -> «planId(a)»«ENDFOREACH»
-«EXPAND Plan FOREACH ctrl.anschluesse»
-«ENDIF»
-«FOREACH ctrl.module AS m»
-	«planId(ctrl)» -> «planId(m)»
-«ENDFOREACH»
-«ENDFOREACH»
-«ENDDEFINE»
+Â«FOREACH controller AS ctrl SEPARATOR " -> "Â»Â«planId(ctrl)Â»Â«ENDFOREACHÂ»
+Â«FOREACH controller AS ctrlÂ»
+Â«IF ctrl.anschluesse.size > 0Â»
+	Â«planId(ctrl)Â» Â«FOREACH ctrl.anschluesse AS aÂ» -> Â«planId(a)Â»Â«ENDFOREACHÂ»
+Â«EXPAND Plan FOREACH ctrl.anschluesseÂ»
+Â«ENDIFÂ»
+Â«FOREACH ctrl.module AS mÂ»
+	Â«planId(ctrl)Â» -> Â«planId(m)Â»
+Â«ENDFOREACHÂ»
+Â«ENDFOREACHÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Plan FOR Anschluss»
-«FOREACH lichtsignale AS ls»
-	«planId()» -> "«ls.name»"
-«ENDFOREACH»
-«ENDDEFINE»
+Â«DEFINE Plan FOR AnschlussÂ»
+Â«FOREACH lichtsignale AS lsÂ»
+	Â«planId()Â» -> "Â«ls.nameÂ»"
+Â«ENDFOREACHÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Plan FOR Gleismodul»
-«FOREACH abschnitte AS a»
-	«planId()» -> "«a.name»"
-«ENDFOREACH»
-«ENDDEFINE»
+Â«DEFINE Plan FOR GleismodulÂ»
+Â«FOREACH abschnitte AS aÂ»
+	Â«planId()Â» -> "Â«a.nameÂ»"
+Â«ENDFOREACHÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Plan FOR Impulsmodul»
-«FOREACH magnetartikel AS ma»
-	«planId()» -> "«ma.name»"
-«ENDFOREACH»
-«ENDDEFINE»
+Â«DEFINE Plan FOR ImpulsmodulÂ»
+Â«FOREACH magnetartikel AS maÂ»
+	Â«planId()Â» -> "Â«ma.nameÂ»"
+Â«ENDFOREACHÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Plan FOR Modul»
-«ERROR planId()»
-«ENDDEFINE»
+Â«DEFINE Plan FOR ModulÂ»
+Â«ERROR planId()Â»
+Â«ENDDEFINEÂ»

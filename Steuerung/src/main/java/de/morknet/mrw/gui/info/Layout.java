@@ -36,7 +36,7 @@ import de.morknet.mrw.base.NamedElement;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse liefert Layout-Informationen für den Spurplan der Eisenbahnanlage für die GUI.
+ * Diese Klasse liefert Layout-Informationen fÃ¼r den Spurplan der Eisenbahnanlage fÃ¼r die GUI.
  * @author sm
  *
  */
@@ -53,8 +53,8 @@ public class Layout
 	private static final String SIGNALE    = "Signale";
 
 	/**
-	 * Dieser Konstruktur lädt die Layout-Informationen für die Modelleisenbahn. Fehlende Layout-Informationen
-	 * zu Bauteilen werden automatisch hinzugefügt, so dass sie beim Aufruf von {@link #save()} mit in die Properties-Datei
+	 * Dieser Konstruktur lÃ¤dt die Layout-Informationen fÃ¼r die Modelleisenbahn. Fehlende Layout-Informationen
+	 * zu Bauteilen werden automatisch hinzugefÃ¼gt, so dass sie beim Aufruf von {@link #save()} mit in die Properties-Datei
 	 * gespeichert werden.
 	 * @param modell Die Modelleisenbahn.
 	 * @throws IOException Falls beim Einlesen was schief geht.
@@ -123,7 +123,7 @@ public class Layout
 	}
 
 	/**
-	 * Diese Methode speichert die Layout-Informationen zurück in eine Properties-Datei.
+	 * Diese Methode speichert die Layout-Informationen zurÃ¼ck in eine Properties-Datei.
 	 * @throws IOException Falls beim Schreiben was schief geht.
 	 */
 	public void save() throws IOException

@@ -23,8 +23,8 @@ import de.morknet.mrw.base.MrwException;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese RuntimeException wird geworfen, wenn ein Code in einer Enum nicht aufgelöst werden kann. Die
- * enums {@link SignalCode}, {@link MsgCode} und {@link Command} stellen diese Funktionalität zur Verfügung.
+ * Diese RuntimeException wird geworfen, wenn ein Code in einer Enum nicht aufgelÃ¶st werden kann. Die
+ * enums {@link SignalCode}, {@link MsgCode} und {@link Command} stellen diese FunktionalitÃ¤t zur VerfÃ¼gung.
  * @author smork
  *
  */
@@ -34,11 +34,11 @@ public class CodeNotFoundException extends MrwException
 
 	/**
 	 * Dieser Konstruktor bereitet eine Fehlermeldung auf.
-	 * @param cls Die Enumeration, die den Code nicht auflösen konnte 
-	 * @param code Der nicht aufzulösende Code.
+	 * @param cls Die Enumeration, die den Code nicht auflÃ¶sen konnte 
+	 * @param code Der nicht aufzulÃ¶sende Code.
 	 */
 	public CodeNotFoundException(Class<?> cls, int code)
 	{
-		super(LogUtil.printf("Code %d für %s nicht gefunden!", code, cls.getSimpleName()));
+		super(LogUtil.printf("Code %d fÃ¼r %s nicht gefunden!", code, cls.getSimpleName()));
 	}
 }

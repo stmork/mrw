@@ -77,7 +77,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	private Action errorProtocolAction;
 
 	/**
-	 * Konstruktur f�r diese Klasse.
+	 * Konstruktur fÃÅr diese Klasse.
 	 * @param configurer Die Konfiguration.
 	 */
 	public ApplicationActionBarAdvisor(IActionBarConfigurer configurer)

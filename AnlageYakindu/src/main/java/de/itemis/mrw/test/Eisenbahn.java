@@ -36,7 +36,7 @@ public class Eisenbahn {
 		Modell model = ModellFactory.getInstance();
 		
 		int errors = model.validate();
-		log.info("Validierung vollst�ndig. Fehlerzahl: " + errors);
+		log.info("Validierung vollstÃ€ndig. Fehlerzahl: " + errors);
 		
 		if (errors == 0)
 		{

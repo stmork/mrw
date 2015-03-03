@@ -24,7 +24,7 @@ import de.morknet.mrw.util.NameUtil;
 
 
 /**
- * Diese Exception wird geworfen, zu einer ID ein Ger‰t nict bekannt ist. Dies stellt ein Fehler im
+ * Diese Exception wird geworfen, zu einer ID ein Ger√§t nict bekannt ist. Dies stellt ein Fehler im
  * Modell dar.
  * @author smork
  *
@@ -33,7 +33,7 @@ public class UnknownDeviceException extends de.morknet.mrw.base.InstanceExceptio
 {
 	/**
 	 * Dieser Konstruktur bereitet eine Fehlermeldung auf.
-	 * @param message Die erg‰nzende Fehlermeldung.
+	 * @param message Die erg√§nzende Fehlermeldung.
 	 * @param id Die ID des Mikrocontrollers.
 	 */
 	public UnknownDeviceException(final String message, final int id)

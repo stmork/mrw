@@ -23,14 +23,14 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 
 /**
- * Dieses Interface stellt einige h�ufig gebrauchte Farben als Konstanten bereit.
+ * Dieses Interface stellt einige hÃâ¬ufig gebrauchte Farben als Konstanten bereit.
  * @author sm
  *
  */
 public interface Colors
 {
 	/**
-	 * Wei�.
+	 * WeiÃÂ.
 	 */
 	public final static Color WHITE        = new Color(null, 255, 255, 255); 
 
@@ -85,17 +85,17 @@ public interface Colors
 	public final static Color LIGHT_RED    = new Color(null, 255, 180, 180); 
 
 	/**
-	 * Dunkelgr�n.
+	 * DunkelgrÃÅn.
 	 */
 	public final static Color DARK_GREEN   = new Color(null,   0, 128,   0);
 	
 	/**
-	 * Gr�n.
+	 * GrÃÅn.
 	 */
 	public final static Color GREEN        = new Color(null,   0, 255,   0);
 	
 	/**
-	 * Hellgr�n.
+	 * HellgrÃÅn.
 	 */
 	public final static Color LIGHT_GREEN  = new Color(null, 180, 255, 180); 
 
@@ -130,27 +130,27 @@ public interface Colors
 	public final static Color BG_COLOR = Display.getCurrent().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND);
 	
 	/**
-	 * Farbdefinition f�r <em>Fahrstra�e wird geschaltet</em>.
+	 * Farbdefinition fÃÅr <em>FahrstraÃÂe wird geschaltet</em>.
 	 */
 	public final static Color SEGMENT_SWITCHING = YELLOW;
 	
 	/**
-	 * Farbdefinition f�r <em>Gleisabschnitt ist verriegelt und Strom eingeschaltet</em>.
+	 * Farbdefinition fÃÅr <em>Gleisabschnitt ist verriegelt und Strom eingeschaltet</em>.
 	 */
 	public final static Color SEGMENT_ENABLED   = GREEN;
 
 	/**
-	 * Farbdefinition f�r <em>Gleisabschnitt ist verriegelt und Strom ausgeschaltet</em>.
+	 * Farbdefinition fÃÅr <em>Gleisabschnitt ist verriegelt und Strom ausgeschaltet</em>.
 	 */
 	public final static Color SEGMENT_DISABLED  = LIGHT_GREEN;
 
 	/**
-	 * Farbdefinition f�r <em>Gleisabschnitt ist belegt</em>.
+	 * Farbdefinition fÃÅr <em>Gleisabschnitt ist belegt</em>.
 	 */
 	public final static Color SEGMENT_OCCUPIED  = ORANGE;
 
 	/**
-	 * Farbdefinition f�r <em>Gleisabschnitt ist frei</em>.
+	 * Farbdefinition fÃÅr <em>Gleisabschnitt ist frei</em>.
 	 */
 	public final static Color SEGMENT_FREE      = WHITE;
 }

@@ -35,7 +35,7 @@ import de.morknet.mrw.util.LogUtil;
 import de.morknet.mrw.util.NameUtil;
 
 /**
- * Der BatchExecuter ist eine Verwaltungsklasse für Batches. 
+ * Der BatchExecuter ist eine Verwaltungsklasse fÃ¼r Batches. 
  * @author smork
  *
  */
@@ -71,7 +71,7 @@ public class BatchExecuter
 	}
 
 	/**
-	 * Diese Methode erzeugt einen neuen Batch und trägt ihn in die Liste der zu verarbeitenden
+	 * Diese Methode erzeugt einen neuen Batch und trÃ¤gt ihn in die Liste der zu verarbeitenden
 	 * Batches ein.
 	 * @return der neue Batch.
 	 */
@@ -89,7 +89,7 @@ public class BatchExecuter
 	
 	/**
 	 * Diese Methode sendet alle in diesem BatchExecuter gesammelten Batches.
-	 * @param connection Die Verbindun, über die die Batches ihre Kommandos senden.
+	 * @param connection Die Verbindun, Ã¼ber die die Batches ihre Kommandos senden.
 	 */
 	public void send(Connection connection)
 	{
@@ -137,8 +137,8 @@ public class BatchExecuter
 
 	/**
 	 * Diese Methode verarbeitet die Antwort eines Kommandos.
-	 * @param msg Die Rückantwort eines Kommandos
-	 * @return True, wenn die Rückantwort einem Batch zugeordnet werden konnte.
+	 * @param msg Die RÃ¼ckantwort eines Kommandos
+	 * @return True, wenn die RÃ¼ckantwort einem Batch zugeordnet werden konnte.
 	 */
 	public static boolean processResult(MrwMessage msg)
 	{
@@ -171,7 +171,7 @@ public class BatchExecuter
 				}
 				else
 				{
-					log.debug("Batch für Meldung mit ID " + NameUtil.getIdString(id) + " nicht gefunden.");
+					log.debug("Batch fÃ¼r Meldung mit ID " + NameUtil.getIdString(id) + " nicht gefunden.");
 				}
 			}
 		}
@@ -179,7 +179,7 @@ public class BatchExecuter
 	}
 
 	/**
-	 * Prüft, ob dieser BatchExecuter Batches zur Verarbeitung anstehend hat.
+	 * PrÃ¼ft, ob dieser BatchExecuter Batches zur Verarbeitung anstehend hat.
 	 * @return True, falls Batches zur Verarbeitung anstehen.
 	 */
 	public static boolean hasBatches()
@@ -204,7 +204,7 @@ public class BatchExecuter
 	}
 
 	/**
-	 * Diese Methode löscht alle Batches aus den entsprechenden Warteschlangen und
+	 * Diese Methode lÃ¶scht alle Batches aus den entsprechenden Warteschlangen und
 	 * deinitialisiert diese.
 	 */
 	public void clear()
@@ -225,7 +225,7 @@ public class BatchExecuter
 	}
 
 	/**
-	 * Diese Methode gibt die ID dieses BatchExecuter zurück.
+	 * Diese Methode gibt die ID dieses BatchExecuter zurÃ¼ck.
 	 * @return Die ID dieses BatchExecuters.
 	 */
 	public int getId()

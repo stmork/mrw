@@ -23,7 +23,7 @@ import de.morknet.mrw.base.MrwException;
 
 /**
  * Diese Exception fasst alle Exceptions zusammen, die im Zusammenhang mit der Batch-Verarbeitung
- * auftreten können.
+ * auftreten kÃ¶nnen.
  * @author smork
  *
  */

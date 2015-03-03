@@ -38,7 +38,7 @@ import de.morknet.mrw.comm.can.MessageLengthException;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse simuliert eine Kommunikationsverbindung zu einer Eisenbahnanlage. Sie ist in der Lage diverse Fehlerfälle zu
+ * Diese Klasse simuliert eine Kommunikationsverbindung zu einer Eisenbahnanlage. Sie ist in der Lage diverse FehlerfÃ¤lle zu
  * simulieren, was zum Testen brauchbar ist.
  * @author sm
  *
@@ -48,7 +48,7 @@ public class DummyConnection extends Connection
 	private final static Log    log    = LogFactory.getLog(DummyConnection.class);
 	private final static Random random = new Random();
 	
-	// Flags für das Fehlerverhalten.
+	// Flags fÃ¼r das Fehlerverhalten.
 	private boolean forceSwitchFailure;
 	private boolean rejectFullAnswer;
 	private boolean rejectSwitchAnswer;
@@ -110,12 +110,12 @@ public class DummyConnection extends Connection
 		{
 			if (errorOffset <= 0)
 			{
-				// Zähler zufällig neu initialisieren
+				// ZÃ¤hler zufÃ¤llig neu initialisieren
 				errorOffset = random.nextInt(maxErrorOffset);
 				
-				// Prüfsumme "versauen"
+				// PrÃ¼fsumme "versauen"
 				output = input ^ (random.nextInt(0xfe) + 1);
-				log.warn(LogUtil.printf("Erzwinge Prüfsummenfehler (%02x -> %02x)...", input, output));
+				log.warn(LogUtil.printf("Erzwinge PrÃ¼fsummenfehler (%02x -> %02x)...", input, output));
 				
 				if (oneshot)
 				{
@@ -304,7 +304,7 @@ public class DummyConnection extends Connection
 	}
 
 	/**
-	 * Diese Methode simuliert das Empfangen einer CAN-Message über diese Verbindung. Evtl. eingestelltes Fehlerverhalten greift hier.
+	 * Diese Methode simuliert das Empfangen einer CAN-Message Ã¼ber diese Verbindung. Evtl. eingestelltes Fehlerverhalten greift hier.
 	 * @param msg Die zu empfangende CAN-Message.
 	 * @throws IOException Die Exception, die geworfen wird, falls beim Empfang was schief lief.
 	 */
@@ -321,7 +321,7 @@ public class DummyConnection extends Connection
 	}
 
 	/**
-	 * Diese Methode stellt das Fehlerverhalten für Weichenschaltkommandos ein. Ist der Fehlermodus aktiviert, wird
+	 * Diese Methode stellt das Fehlerverhalten fÃ¼r Weichenschaltkommandos ein. Ist der Fehlermodus aktiviert, wird
 	 * jedes Weichenschaltkommando mit einem {@link MsgCode#MSG_SWITCH_FAILED} quittiert.
 	 * @param forceSwitchFailure Flag, ob Weichenschaltfehler gemeldet werden sollen.
 	 */
@@ -331,7 +331,7 @@ public class DummyConnection extends Connection
 	}
 
 	/**
-	 * Diese Methode stellt das Fehlerverhalten für Weichenschaltkommandos ein. Ist dieser Fehlermodus aktiviert, kommen
+	 * Diese Methode stellt das Fehlerverhalten fÃ¼r Weichenschaltkommandos ein. Ist dieser Fehlermodus aktiviert, kommen
 	 * auf Weichenschaltkommandos keine Vollzugsantworten {@link MsgCode#MSG_OK} mehr. Dies kann bei einer Verklemmung einer
 	 * Weiche passieren. 
 	 * @param rejectSwitchAnswer Flag, ob Vollzugsmeldungen gesendet werden sollen.
@@ -343,9 +343,9 @@ public class DummyConnection extends Connection
 
 	/**
 	 * Diese Methode stellt das Fehlerverhalten aller Schaltkommandos ein. Ist dieser Fehlermodus aktiviert, kommen
-	 * keine Vollzugsantworten mehr {@link MsgCode#MSG_OK}. Das System verhält sich dann so, als ob die Anlage nicht mehr
+	 * keine Vollzugsantworten mehr {@link MsgCode#MSG_OK}. Das System verhÃ¤lt sich dann so, als ob die Anlage nicht mehr
 	 * verbunden ist.
-	 * @param rejectAnswer Flag, ob  überhaupt Vollzugsmeldungen gesendet werden sollen.
+	 * @param rejectAnswer Flag, ob  Ã¼berhaupt Vollzugsmeldungen gesendet werden sollen.
 	 */
 	public void setRejectFullAnswer(final boolean rejectAnswer)
 	{
@@ -353,12 +353,12 @@ public class DummyConnection extends Connection
 	}
 
 	/**
-	 * Diese Methode stellt das Fehlerverhalten bzgl. der Prüfsummenfehler ein. Dabei können sporadisch fehlerhaft empfangene
-	 * Bytes simuliert werden, wodurch letztlich Prüfsummenfehler auftreten. Dabei kann gewählt werden, ob einmalig ein
+	 * Diese Methode stellt das Fehlerverhalten bzgl. der PrÃ¼fsummenfehler ein. Dabei kÃ¶nnen sporadisch fehlerhaft empfangene
+	 * Bytes simuliert werden, wodurch letztlich PrÃ¼fsummenfehler auftreten. Dabei kann gewÃ¤hlt werden, ob einmalig ein
 	 * Fehler verursacht werden soll, oder wiederholt. Letzteres stellt eine instabile Kommunikationsverbindung dar. Das
-	 * Auftreten kann zufällig nach maximal einstellbarer Bytezahl gewählt werden.
+	 * Auftreten kann zufÃ¤llig nach maximal einstellbarer Bytezahl gewÃ¤hlt werden.
 	 * @param maxErrorOffset Die Maximalzahl an Bytes, bis zu der ein Fehler wahrscheinlich aufgetreten sein muss.
-	 * @param oneshot Flag, ob einmalig oder wiederholt Bytes verfälscht werden sollen.
+	 * @param oneshot Flag, ob einmalig oder wiederholt Bytes verfÃ¤lscht werden sollen.
 	 */
 	public void setChecksumError(final int maxErrorOffset, final boolean oneshot)
 	{

@@ -1,29 +1,29 @@
-«REM»
-«»
-«»
-«»	$Filename:	Config.xpt $
-«»	$Revision$
-«»	$Date$
-«»	$Author$
-«»	$Id$
-«»
-«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
-«»
-«»	This program and the accompanying materials are made available under the
-«»	terms of the Eclipse Public License v1.0.
-«»
-«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
-«»
-«»
-«»
-«ENDREM»
+Â«REMÂ»
+Â«Â»
+Â«Â»
+Â«Â»	$Filename:	Config.xpt $
+Â«Â»	$Revision$
+Â«Â»	$Date$
+Â«Â»	$Author$
+Â«Â»	$Id$
+Â«Â»
+Â«Â»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+Â«Â»
+Â«Â»	This program and the accompanying materials are made available under the
+Â«Â»	terms of the Eclipse Public License v1.0.
+Â«Â»
+Â«Â»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+Â«Â»
+Â«Â»
+Â«Â»
+Â«ENDREMÂ»
 
-«IMPORT metamodel»
+Â«IMPORT metamodelÂ»
 
-«EXTENSION de::morknet::mrw::generator::rcc::ext::product»
+Â«EXTENSION de::morknet::mrw::generator::rcc::ext::productÂ»
 
-«DEFINE Ini FOR Modell»
-«FILE "config.ini" BASE»
+Â«DEFINE Ini FOR ModellÂ»
+Â«FILE "config.ini" BASEÂ»
 # Eclipse runtime configuration file
 # This file contains a number of key/value pairs that are merged into the 
 # System properties on system startup.  The values control the way the 
@@ -69,17 +69,17 @@ osgi.bundles=org.eclipse.equinox.common@2:start, org.eclipse.update.configurator
 # The product to run.  A given Eclipse configuration may contain many products.
 # The product identified will supply the branding (window icons, title bar text) etc 
 # as well as define the default application to run.  
-eclipse.product=«asProductId()»
+eclipse.product=Â«asProductId()Â»
 
 # The application to run.  The value specified here is the id of the application extension
 # the runtime will find, instantiate and execute once the system is up.  Note that typically 
 # the identified eclipse.product defines the default application to run.
-eclipse.application=«asApplicationId()»
+eclipse.application=Â«asApplicationId()Â»
 
 # The build identifier
 eclipse.buildId=@build@
 
 # End of file marker - must be here
 eof=eof
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

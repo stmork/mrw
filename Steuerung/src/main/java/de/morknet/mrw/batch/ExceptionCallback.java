@@ -20,8 +20,8 @@
 package de.morknet.mrw.batch;
 
 /**
- * Dieses Interface definiert Callbacks, die bei Fehlerauflösungen aufgerufen werden, die aus einem anderem Thread
- * heraus ausgelöst werden
+ * Dieses Interface definiert Callbacks, die bei FehlerauflÃ¶sungen aufgerufen werden, die aus einem anderem Thread
+ * heraus ausgelÃ¶st werden
  * @author sm
  *
  */
@@ -33,7 +33,7 @@ public interface ExceptionCallback
 	public void errorOnSend();
 
 	/**
-	 * Dieser Callback wird aufgerufen, wenn beim Auflösen eines Fehlerzustandes wiederum ein Fehler aufgetreten ist.
+	 * Dieser Callback wird aufgerufen, wenn beim AuflÃ¶sen eines Fehlerzustandes wiederum ein Fehler aufgetreten ist.
 	 */
 	public void errorOnClear();
 }

@@ -36,9 +36,9 @@ import de.morknet.mrw.comm.SignalCode;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse repräsentiert einen einzelnen Gleisabschnitt. Dieser Abschnitt kann über einen Gleisbesetztmelder
- * als belegt oder frei markiert werden. Der Abschnitt besteht aus Gleisteilen und Signalen und gehört direkt
- * zu einer Betriebsgruppe. Da Gleisbesetztmeldungen einem Abschnitt direkt zugeordnet werden können, ist
+ * Diese Klasse reprÃ¤sentiert einen einzelnen Gleisabschnitt. Dieser Abschnitt kann Ã¼ber einen Gleisbesetztmelder
+ * als belegt oder frei markiert werden. Der Abschnitt besteht aus Gleisteilen und Signalen und gehÃ¶rt direkt
+ * zu einer Betriebsgruppe. Da Gleisbesetztmeldungen einem Abschnitt direkt zugeordnet werden kÃ¶nnen, ist
  * ein Abschnitt so auch eine {@link DeviceUnit}.
  * @see Gruppe
  * @see Gleisteil
@@ -50,7 +50,7 @@ public class Abschnitt extends DeviceUnit
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Die Betriebsgruppe, zu der dieser Abschnitt zählt.
+	 * Die Betriebsgruppe, zu der dieser Abschnitt zÃ¤hlt.
 	 */
 	private final Gruppe group;
 	
@@ -65,7 +65,7 @@ public class Abschnitt extends DeviceUnit
 	volatile private boolean occupation = false;
 	
 	/**
-	 * Das Startgleis, von dem aus eine Fahrstraße geführt werden kann. Kann daher nur ein Gleis sein,
+	 * Das Startgleis, von dem aus eine FahrstraÃŸe gefÃ¼hrt werden kann. Kann daher nur ein Gleis sein,
 	 * keine Verzweigung.
 	 */
 	private Gleis start = null;
@@ -76,12 +76,12 @@ public class Abschnitt extends DeviceUnit
 	volatile private boolean enabled = false;
 
 	/**
-	 * Gibt an, ob ein Hauptsignal in Zählrichtung vorhanden ist.
+	 * Gibt an, ob ein Hauptsignal in ZÃ¤hlrichtung vorhanden ist.
 	 */
 	private Hauptsignal forwardMainSignal = null;
 	
 	/**
-	 * Gibt an, ob ein Hauptsignal gegen die Zählrichtung vorhanden ist.
+	 * Gibt an, ob ein Hauptsignal gegen die ZÃ¤hlrichtung vorhanden ist.
 	 */
 	private Hauptsignal backwardMainSignal = null;
 	
@@ -91,12 +91,12 @@ public class Abschnitt extends DeviceUnit
 	private boolean hasSwitch = false;
 
 	/**
-	 * Liste der Signale die gegen die Zählrichtung zeigen.
+	 * Liste der Signale die gegen die ZÃ¤hlrichtung zeigen.
 	 */
 	private final LinkedList<Signal> backwardSignals = new LinkedList<Signal>();
 	
 	/**
-	 * Liste der Signale die in Zählrichtung zeigen.
+	 * Liste der Signale die in ZÃ¤hlrichtung zeigen.
 	 */
 	private final LinkedList<Signal> forwardSignals = new LinkedList<Signal>();
 
@@ -119,7 +119,7 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt den Namen ohne dem vorangestellten &quot;Abschnitt &quot; zurück
+	 * Diese Methode gibt den Namen ohne dem vorangestellten &quot;Abschnitt &quot; zurÃ¼ck
 	 * @return Die reine Abschnittsnummer.
 	 */
 	public String getNumber()
@@ -128,8 +128,8 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Fügt ein Gleisteil diesem Abschnitt hinzu.
-	 * @param g Das hinzuzufügende Gleisteil.
+	 * FÃ¼gt ein Gleisteil diesem Abschnitt hinzu.
+	 * @param g Das hinzuzufÃ¼gende Gleisteil.
 	 */
 	public void add(Gleisteil g)
 	{
@@ -138,8 +138,8 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Fügt ein Signal diesem Abschnitt hinzu.
-	 * @param s Das hinzuzufügende Signal.
+	 * FÃ¼gt ein Signal diesem Abschnitt hinzu.
+	 * @param s Das hinzuzufÃ¼gende Signal.
 	 */
 	public void add(Signal s)
 	{
@@ -176,7 +176,7 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Gibt zurück, ob der Abschnitt belegt ist.
+	 * Gibt zurÃ¼ck, ob der Abschnitt belegt ist.
 	 * @return Gleisbelegung im Abschnitt.
 	 */
 	synchronized public final boolean isOccupied()
@@ -185,7 +185,7 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Gibt zurück, ob der Abschnitt frei ist.
+	 * Gibt zurÃ¼ck, ob der Abschnitt frei ist.
 	 * @return Gleisbelegung im Abschnitt.
 	 */
 	synchronized public final boolean isFree()
@@ -219,8 +219,8 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode definiert das Startgleis für diesen Gleisabschnitt. Es wird für die
-	 * Fahrstraßenplanung eingesetzt.
+	 * Diese Methode definiert das Startgleis fÃ¼r diesen Gleisabschnitt. Es wird fÃ¼r die
+	 * FahrstraÃŸenplanung eingesetzt.
 	 * @param gleis Das Startgleis.
 	 * @throws StartRailDefinedException Falls schon ein Startgleis definiert wurde.
 	 */
@@ -234,9 +234,9 @@ public class Abschnitt extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt das Startgleis für diesen Gleisabschnitt zurück. Es wird für die
-	 * Fahrstraßenplanung eingesetzt.
-	 * @return Das Startgleis für die Fahrstraßenplanung.
+	 * Diese Methode gibt das Startgleis fÃ¼r diesen Gleisabschnitt zurÃ¼ck. Es wird fÃ¼r die
+	 * FahrstraÃŸenplanung eingesetzt.
+	 * @return Das Startgleis fÃ¼r die FahrstraÃŸenplanung.
 	 */
 	public Gleis getStartTrack()
 	{
@@ -244,8 +244,8 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Gibt die Liste der zur Fahrtrichtung passenden Signale zurück. 
-	 * @param direction Die Zählrichtungsangabe.
+	 * Gibt die Liste der zur Fahrtrichtung passenden Signale zurÃ¼ck. 
+	 * @param direction Die ZÃ¤hlrichtungsangabe.
 	 * @return Liste der Signale.
 	 */
 	public Collection<Signal> getSignals(boolean direction)
@@ -288,11 +288,11 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode schaltet diesen Gleisabschnitt ein. Es wird nur ein Einschalt-Kommando in den übergebenen
-	 * Batch eingereiht, wenn der Gleisabschnitt vorher ausgeschaltet war. Für deb Fall, dass eine Antwort
+	 * Diese Methode schaltet diesen Gleisabschnitt ein. Es wird nur ein Einschalt-Kommando in den Ã¼bergebenen
+	 * Batch eingereiht, wenn der Gleisabschnitt vorher ausgeschaltet war. FÃ¼r deb Fall, dass eine Antwort
 	 * auf ein vorstehendes Einschaltkommando aussteht, wird eine Exception geworfen.
 	 * @param batch Der Batch, in den das Einschaltkommando eingereiht werden soll.
-	 * @throws ProcessingInProgressException Falls ein Schaltvorgang schon läuft.
+	 * @throws ProcessingInProgressException Falls ein Schaltvorgang schon lÃ¤uft.
 	 */
 	public void on(Batch batch)
 	{
@@ -313,7 +313,7 @@ public class Abschnitt extends DeviceUnit
 	/**
 	 * Diese Methode schaltet den Abschnitt aus. Ein weiteres Flag bestimmt, ob die Signale
 	 * ebenfalls ausgeschaltet werden sollen. 
-	 * @param batch Der Batch, der die Kommandos enthält.
+	 * @param batch Der Batch, der die Kommandos enthÃ¤lt.
 	 * @param turnSignals Flag, ob Signale ebenfalls ausgeschaltet werden sollen.
 	 */
 	public void off(Batch batch, boolean turnSignals)
@@ -432,7 +432,7 @@ public class Abschnitt extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt zurück, ob dieser Abschnitt aktiviert ist und somit Strom führt.
+	 * Diese Methode gibt zurÃ¼ck, ob dieser Abschnitt aktiviert ist und somit Strom fÃ¼hrt.
 	 * @return Der Betriebszustand des Abschnitts.
 	 */
 	public boolean isEnabled()
@@ -441,7 +441,7 @@ public class Abschnitt extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt zurück, ob dieser Abschnitt deaktiviert ist und somit kein Strom führt.
+	 * Diese Methode gibt zurÃ¼ck, ob dieser Abschnitt deaktiviert ist und somit kein Strom fÃ¼hrt.
 	 * @return Der Betriebszustand des Abschnitts.
 	 */
 	public boolean isDisabled()
@@ -450,7 +450,7 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt die Betriebsgruppe zurück zu der dieser Abschnitt gehört.
+	 * Diese Methode gibt die Betriebsgruppe zurÃ¼ck zu der dieser Abschnitt gehÃ¶rt.
 	 * @return Die Betriebsgruppe dieses Abschnitts.
 	 */
 	public Gruppe getGroup()
@@ -459,7 +459,7 @@ public class Abschnitt extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt eine Sammlung der in diesem Abschnitt enthaltenen Gleisteile zurück.
+	 * Diese Methode gibt eine Sammlung der in diesem Abschnitt enthaltenen Gleisteile zurÃ¼ck.
 	 * @return Die Sammlung der Gleisteile dieses Abschnitts.
 	 */
 	public Collection<Gleisteil> getTrackElements()
@@ -474,8 +474,8 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode löst eine Mikrocontroller-ID/Gerätenummer in einen Gleisabschnitt auf.
-	 * @param id Die Mikrocontroller-ID kombiniert mit der Grätenummer.
+	 * Diese Methode lÃ¶st eine Mikrocontroller-ID/GerÃ¤tenummer in einen Gleisabschnitt auf.
+	 * @param id Die Mikrocontroller-ID kombiniert mit der GrÃ¤tenummer.
 	 * @return Der gefundene Gleisabschnitt.
 	 */
 	public static Abschnitt findSegment(final int id)
@@ -484,7 +484,7 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Erzeugt eine Abfragemeldung für diesen Abschnitt zurück. 
+	 * Erzeugt eine Abfragemeldung fÃ¼r diesen Abschnitt zurÃ¼ck. 
 	 * @return Die Abfrage-Meldung einer Gleisbesetztmeldung. 
 	 */
 	public MrwMessage createQuestionMsg()
@@ -493,7 +493,7 @@ public class Abschnitt extends DeviceUnit
 	}
 
 	/**
-	 * Gibt eine Konfigurationsmeldung für diese DeviceUnit zurück.
+	 * Gibt eine Konfigurationsmeldung fÃ¼r diese DeviceUnit zurÃ¼ck.
 	 * @return Die Konfigurationsmeldung samt Daten bzgl. dieses Abschnitts.
 	 */
 	@Override
@@ -508,7 +508,7 @@ public class Abschnitt extends DeviceUnit
 
 	/**
 	 * Testet, ob es einen Prellbock in diesem Abschnitt gibt, der in die angegebene 
-	 * Richtung bzgl. der Zählrichtung zeigt.
+	 * Richtung bzgl. der ZÃ¤hlrichtung zeigt.
 	 * @param inDirection
 	 * @return Ob in der angegebenen Fahrtrichtung ein Prellbock steht.
 	 */
@@ -550,7 +550,7 @@ public class Abschnitt extends DeviceUnit
 
 	/**
 	 * Diese Methode gibt die Beschreibung dieses Gleisabschnitts im Klartext aus.
-	 * @return Der selbsterklärende Klartext dieses Gleisabschnitts.
+	 * @return Der selbsterklÃ¤rende Klartext dieses Gleisabschnitts.
 	 */
 	public String toString()
 	{
@@ -571,7 +571,7 @@ public class Abschnitt extends DeviceUnit
 		 * Diese Methode vergleicht die Namen zweier Gleisabschnitte.
 		 * @param seg0 Der erste zu vergleichende Gleisabschnitt.
 		 * @param seg1 Der erste zu vergleichende Gleisabschnitt.
-		 * @return Ein Integerwert, der die Größenverhältnisse widergibt.
+		 * @return Ein Integerwert, der die GrÃ¶ÃŸenverhÃ¤ltnisse widergibt.
 		 */
 		public int compare(Abschnitt seg0, Abschnitt seg1)
 		{

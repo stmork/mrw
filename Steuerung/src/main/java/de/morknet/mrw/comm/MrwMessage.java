@@ -31,9 +31,9 @@ import de.morknet.mrw.comm.SignalCode;
 import de.morknet.mrw.comm.can.CANMessage;
 
 /**
- * Diese Klasse repräsentiert eine MRW-Message. Diese kann entweder ein Kommando, oder eine Kommando-Rückmeldung
+ * Diese Klasse reprÃ¤sentiert eine MRW-Message. Diese kann entweder ein Kommando, oder eine Kommando-RÃ¼ckmeldung
  * beinhalten. Die Klasse ist von CANMessage abgeleitet, welche nur eine allgemeine Form einer CAN-Meldung
- * darstellt. Diese Klasse ist speziell für MRW zugeschnitten und beinhaltet so auch einige nützliche
+ * darstellt. Diese Klasse ist speziell fÃ¼r MRW zugeschnitten und beinhaltet so auch einige nÃ¼tzliche
  * Konstanten.
  * @author smork
  *
@@ -53,49 +53,49 @@ public class MrwMessage extends CANMessage
 	public final static int GATEWAY_SID = 0; 
 
 	/**
-	 * Der Data-Index für den {@link Command}.
+	 * Der Data-Index fÃ¼r den {@link Command}.
 	 */
 	public final static int IDX_COMMAND = 0;
 	
 	/**
-	 * Der Data-Index für den Rückmelde-Code des Kommandos.
+	 * Der Data-Index fÃ¼r den RÃ¼ckmelde-Code des Kommandos.
 	 */
 	public final static int IDX_RESULT = IDX_COMMAND;
 	
 	/**
-	 * Der Data-Index für den {@link MsgCode}.
+	 * Der Data-Index fÃ¼r den {@link MsgCode}.
 	 */
 	public final static int IDX_MSG_CODE = 1;
 	
 	/**
-	 * Der Data-Index für den {@link SignalCode} beim SETSGN-Kommando. 
+	 * Der Data-Index fÃ¼r den {@link SignalCode} beim SETSGN-Kommando. 
 	 */
 	public final static int IDX_SIGNAL_CODE = 1;
 
 	/**
 	 * Diese Flag gibt an, ob die sendende Controller-Adresse auch in der Result-Meldung
 	 * enthalten sein soll. Diese Adresse ist schon in der OID eingebaut, so dass sie 
-	 * hier doppelt übertragen wird.
+	 * hier doppelt Ã¼bertragen wird.
 	 */
 	public final static boolean xUSE_SID_IN_RESULT = false;
 
 	/**
-	 * Der Data-Index für den Start der Infobytes.
+	 * Der Data-Index fÃ¼r den Start der Infobytes.
 	 */
 	public final static int IDX_INFO_START = 4;
 
 	/**
-	 * Der Data-Index für das Low Byte der Gerätenummer des sendenden Controller. 
+	 * Der Data-Index fÃ¼r das Low Byte der GerÃ¤tenummer des sendenden Controller. 
 	 */
 	public final static int IDX_LEID = IDX_INFO_START - 2;
 
 	/**
-	 * Der Data-Index für das High Byte der Gerätenummer des sendenden Controller. 
+	 * Der Data-Index fÃ¼r das High Byte der GerÃ¤tenummer des sendenden Controller. 
 	 */
 	public final static int IDX_HEID = IDX_INFO_START - 1;
 
 	/**
-	 * Der Konstruktur für eine leere MRW-Message.
+	 * Der Konstruktur fÃ¼r eine leere MRW-Message.
 	 */
 	public MrwMessage()
 	{
@@ -103,7 +103,7 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Prüft, ob es sich um eine Ergebnis-Meldung handelt.
+	 * PrÃ¼ft, ob es sich um eine Ergebnis-Meldung handelt.
 	 * @return True, falls diese Meldung eine Ergebnis-Meldung ist.
 	 */
 	public boolean isResult()
@@ -112,7 +112,7 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Gibt die gesamte ID des Absenders an. Das erzwingt eine Überprüfung auf eine
+	 * Gibt die gesamte ID des Absenders an. Das erzwingt eine ÃœberprÃ¼fung auf eine
 	 * Ergebnis-Meldung. 
 	 * @return Die gesamte ID des Absenders.
 	 */
@@ -123,7 +123,7 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Gibt den Ergebnis-Code zurück. Das erzwingt eine Überprüfung auf eine
+	 * Gibt den Ergebnis-Code zurÃ¼ck. Das erzwingt eine ÃœberprÃ¼fung auf eine
 	 * Ergebnis-Meldung. 
 	 * @return Der Ergebnis-Code der Meldung.
 	 */
@@ -134,9 +134,9 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Gibt das Kommando zurück, das dieser Ergebnis-Meldung zu Grunde liegt. Das erzwingt eine Überprüfung auf eine
+	 * Gibt das Kommando zurÃ¼ck, das dieser Ergebnis-Meldung zu Grunde liegt. Das erzwingt eine ÃœberprÃ¼fung auf eine
 	 * Ergebnis-Meldung.  
-	 * @return Das auslösende Kommando.
+	 * @return Das auslÃ¶sende Kommando.
 	 */
 	public Command getCommand()
 	{
@@ -145,7 +145,7 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Prüft, ob es sich bei dieser Message um eine Ergebnis-Meldung handelt. Wenn nicht, wird eine
+	 * PrÃ¼ft, ob es sich bei dieser Message um eine Ergebnis-Meldung handelt. Wenn nicht, wird eine
 	 * IllegalStateException geworfen.
 	 */
 	private void checkResult()
@@ -160,7 +160,7 @@ public class MrwMessage extends CANMessage
 	 * Diese statische Methode erzeugt eine Meldung und initialisiert diese.
 	 * @param cmd Das Kommando
 	 * @param id Der Ziel-Controller
-	 * @param no Das Ziel Gerät
+	 * @param no Das Ziel GerÃ¤t
 	 * @return Die erzeugt Meldung.
 	 */
 	public static MrwMessage createCommandMsg(Command cmd, int id, int no)
@@ -233,7 +233,7 @@ public class MrwMessage extends CANMessage
 	 * @param cmd Der Kommando-Code
 	 * @param code Der Antwort-Code
 	 * @param id Die Controller-ID von der die Antwort stammen soll.
-	 * @param no Die Gerätenummer, die die Antwort erzeugt.
+	 * @param no Die GerÃ¤tenummer, die die Antwort erzeugt.
 	 * @return Die Antwort-Meldung.
 	 */
 	public static MrwMessage createResultMessage(Command cmd, MsgCode code, int id, int no)
@@ -248,15 +248,15 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Diese Methode fügt einer Meldung ein Kommando-Code hinzu.
-	 * @param cmd Der hinzuzufügende Kommando-Code.
+	 * Diese Methode fÃ¼gt einer Meldung ein Kommando-Code hinzu.
+	 * @param cmd Der hinzuzufÃ¼gende Kommando-Code.
 	 */
 	public void addDataByte(Command cmd)
 	{
 		if (length != 0)
 		{
 			throw new IllegalMrwMessageException(
-					"Um ein Kommando einer Meldung hinzuzufügen, muss eine Meldung vorher leer sein!");
+					"Um ein Kommando einer Meldung hinzuzufÃ¼gen, muss eine Meldung vorher leer sein!");
 		}
 		addDataByte(cmd.getCommand());
 	}
@@ -313,7 +313,7 @@ public class MrwMessage extends CANMessage
 
 	/**
 	 * Diese Methode gibt den Inhalt dieser Meldung im Klartext aus.
-	 * @param comment Ein optionaler zusätzlicher Kommentar. 
+	 * @param comment Ein optionaler zusÃ¤tzlicher Kommentar. 
 	 */
 	synchronized public void dump(String comment)
 	{
@@ -328,7 +328,7 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Gibt die ID des Quellcontrollers zurück.
+	 * Gibt die ID des Quellcontrollers zurÃ¼ck.
 	 * @return Die ID des Absenders.
 	 */
 	public int getSourceControllerId()
@@ -338,8 +338,8 @@ public class MrwMessage extends CANMessage
 	}
 
 	/**
-	 * Gibt die ID des Quellgerätes zurück.
-	 * @return Die ID des Gerätes.
+	 * Gibt die ID des QuellgerÃ¤tes zurÃ¼ck.
+	 * @return Die ID des GerÃ¤tes.
 	 */
 	public int getSourceUnitNo()
 	{

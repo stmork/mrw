@@ -95,7 +95,7 @@
 		<copy file="${src-path}/log4j.properties" todir="${bin-path}" />
 		
 		<javac destdir="${bin-path}" verbose="${javacVerbose}"
-				encoding="ISO-8859-15"
+				encoding="UTF-8"
 				includeantruntime="false"
 				debug="${javacDebugInfo}">
 			<classpath refid="compile.classpath"/>
@@ -176,7 +176,7 @@
 				splitindex="true"
 				use="true"
 				failonerror="true"
-				encoding="ISO-8859-15"
+				encoding="UTF-8"
 				docencoding="UTF-8"
 				charset="UTF-8"
 				windowtitle="Modell(-bau-)basierte Eisenbahnsteuerung">

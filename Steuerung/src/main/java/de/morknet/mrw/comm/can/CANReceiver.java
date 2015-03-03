@@ -31,7 +31,7 @@ import de.morknet.mrw.util.LogUtil;
 
 /**
  * Diese Klasse baut aus einzelnen empfangenen Bytes eine CAN-Message zusammen und schickt diese
- * CAN-Message zur Auswertung an den nächsten Verarbeitungsprozessor weiter.
+ * CAN-Message zur Auswertung an den nÃ¤chsten Verarbeitungsprozessor weiter.
  * @author sm
  *
  */
@@ -64,7 +64,7 @@ public class CANReceiver implements ByteProcessor
 		}
 
 		/**
-		 * Diese Methode führt die Verarbeitung der CAN-Messages in einer Schleife aus. Die Schleife
+		 * Diese Methode fÃ¼hrt die Verarbeitung der CAN-Messages in einer Schleife aus. Die Schleife
 		 * wird durch Aufruf von {@link Thread#interrupt()} abgebrochen.
 		 */
 		@Override
@@ -103,8 +103,8 @@ public class CANReceiver implements ByteProcessor
 
 	/**
 	 * Diese Methode verarbeitet ein einzelnes empfangenes Byte zu einer CAN-Meldung. Sobald
-	 * die CAN-Meldung vollständig ist, wird eine CAN-Meldung instanziiert und zur Weiterverarbeitung
-	 * in eine asynchrone Warteschlange gestellt, um weiterhin Bytes empfangen zu können.
+	 * die CAN-Meldung vollstÃ¤ndig ist, wird eine CAN-Meldung instanziiert und zur Weiterverarbeitung
+	 * in eine asynchrone Warteschlange gestellt, um weiterhin Bytes empfangen zu kÃ¶nnen.
 	 * @param input Das empfangene Byte.
 	 */
 	public void processByte(final int input)
@@ -167,8 +167,8 @@ public class CANReceiver implements ByteProcessor
 	}
 
 	/**
-	 * Diese Methode definiert die Verarbeitungsinstanz für CAN-Meldungen.
-	 * @param processor Die Verarbeitungsinstanz für CAN-Meldungen.
+	 * Diese Methode definiert die Verarbeitungsinstanz fÃ¼r CAN-Meldungen.
+	 * @param processor Die Verarbeitungsinstanz fÃ¼r CAN-Meldungen.
 	 */
 	public void setProcessor(CANMessageProcessor processor)
 	{
@@ -185,7 +185,7 @@ public class CANReceiver implements ByteProcessor
 	}
 
 	/**
-	 * Diese Methode schließt die Verarbeitung von CAN-Messages ab.
+	 * Diese Methode schlieÃŸt die Verarbeitung von CAN-Messages ab.
 	 */
 	public void close()
 	{
@@ -211,7 +211,7 @@ public class CANReceiver implements ByteProcessor
 	}
 
 	/**
-	 * Löscht den Empfangspuffer.
+	 * LÃ¶scht den Empfangspuffer.
 	 */
 	private void init()
 	{

@@ -44,7 +44,7 @@ public abstract class MrwActionControl
 	protected              Route         route;
 
 	/**
-	 * Diesem Konstruktor wird er {@link MrwController} und der Action-Name übergeben
+	 * Diesem Konstruktor wird er {@link MrwController} und der Action-Name Ã¼bergeben
 	 * @param controller Der {@link MrwController}.
 	 * @param actionName Der Name dieser Action.
 	 */
@@ -102,7 +102,7 @@ public abstract class MrwActionControl
 
 	/**
 	 * Diese Methode dient dazu, im Fehlerfalle diese Action zu deaktivieren. Es wird
-	 * dabei die Callback-Methode onDeactivate aufgerufen. Unabhängig vom Erfolg dieses
+	 * dabei die Callback-Methode onDeactivate aufgerufen. UnabhÃ¤ngig vom Erfolg dieses
 	 * Aufrufs ist diese Action danach deaktiviert!.
 	 */
 	public final void deactivate()
@@ -123,7 +123,7 @@ public abstract class MrwActionControl
 	}
 	
 	/**
-	 * Diese Methode meldet zurück, ob diese Action aktiv ist.
+	 * Diese Methode meldet zurÃ¼ck, ob diese Action aktiv ist.
 	 * @return Der Aktivierungszustand dieser Action.
 	 */
 	public final boolean isActive()
@@ -132,7 +132,7 @@ public abstract class MrwActionControl
 	}
 
 	/**
-	 * Diese Methode gibt die aktuell geschaltete Route zurück.
+	 * Diese Methode gibt die aktuell geschaltete Route zurÃ¼ck.
 	 * @return Die aktuell geschaltete Route.s
 	 */
 	public final Route getRoute()

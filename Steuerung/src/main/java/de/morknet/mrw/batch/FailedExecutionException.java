@@ -22,7 +22,7 @@ package de.morknet.mrw.batch;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Exception wird bei fehlerhafter Ausführung eines Kommandos geworfen.
+ * Diese Exception wird bei fehlerhafter AusfÃ¼hrung eines Kommandos geworfen.
  * @author sm
  *
  */

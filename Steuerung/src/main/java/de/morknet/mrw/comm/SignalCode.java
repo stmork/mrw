@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Diese Enum stellt Konstanten für Signalbilder zur Verfügung.
+ * Diese Enum stellt Konstanten fÃ¼r Signalbilder zur VerfÃ¼gung.
  * @author smork
  *
  */
@@ -98,8 +98,8 @@ public enum SignalCode
 	}
 
 	/**
-	 * Diese Methode gibt zum Signal Code den Integer-Wert für die {@link MrwMessage} wieder.
-	 * @return Der Integer-Wert für eine {@link MrwMessage}.
+	 * Diese Methode gibt zum Signal Code den Integer-Wert fÃ¼r die {@link MrwMessage} wieder.
+	 * @return Der Integer-Wert fÃ¼r eine {@link MrwMessage}.
 	 */
 	public int getSignalCode()
 	{
@@ -124,7 +124,7 @@ public enum SignalCode
 	}
 
 	/**
-	 * Diese Methode gibt den Signal Code als reinen Text des Signalbildes zurück.
+	 * Diese Methode gibt den Signal Code als reinen Text des Signalbildes zurÃ¼ck.
 	 * @return Das Signalbild als Klartext.
 	 */
 	public String getShortCode()

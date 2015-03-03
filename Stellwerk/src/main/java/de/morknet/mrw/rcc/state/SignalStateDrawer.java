@@ -37,7 +37,7 @@ import de.morknet.mrw.rcc.Coordinates;
 
 /**
  * Diese Klasse steuert das Zeichnen eines Signals. Dabei werden Formsignale als Lichtsignale
- * gezeichnet, da sich deren Funktionalit�t nicht voneinander unterscheidet. Es wird dabei auch die
+ * gezeichnet, da sich deren FunktionalitÃÂ¶t nicht voneinander unterscheidet. Es wird dabei auch die
  * jeweilige Fahrtrichtung beachtet, sodass das Signal je nach Fahrtrichtung oberhalb bzw. umgedreht
  * unterhalb des Gleises gezeichnet wird.
  * @author sm
@@ -62,7 +62,7 @@ abstract public class SignalStateDrawer extends StateDrawer implements Colors, C
 	}
 
 	/**
-	 * Diese Methode bereitet eine affine Transformation vor, mit der die Fahrtrichtung beim Zeichnen ber�cksichtigt wird.
+	 * Diese Methode bereitet eine affine Transformation vor, mit der die Fahrtrichtung beim Zeichnen berÃÅcksichtigt wird.
 	 * @param gc Der Grafikkontext, in den gezeicnet werden soll.
 	 * @param s Das zu zeichnende Signal.
 	 */
@@ -167,7 +167,7 @@ abstract public class SignalStateDrawer extends StateDrawer implements Colors, C
 	/**
 	 * Diese Methode holt eine Instanz, die ein Signal zeichnen soll.
 	 * @param v Das zu zeichnende Signal.
-	 * @return Den Zeichner f�r das Signal.
+	 * @return Den Zeichner fÃÅr das Signal.
 	 */
 	private static SignalStateDrawer createInstance(Signal s)
 	{

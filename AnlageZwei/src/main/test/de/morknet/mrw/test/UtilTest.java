@@ -83,7 +83,7 @@ public class UtilTest
 		{
 			final String empty = LogUtil.empty(i);
 
-			Assert.assertEquals("Die erwartete Länge des Leerstrings stimmt nicht!", i, empty.length());
+			Assert.assertEquals("Die erwartete LÃ¤nge des Leerstrings stimmt nicht!", i, empty.length());
 		}
 	}
 
@@ -112,9 +112,9 @@ public class UtilTest
 	@Test
 	public void registry()
 	{
-		Assert.assertEquals("heute.ist.ein.schoener.tag", NameUtil.getRegistryIdString("Heute ist ein schöner Tag!"));
-		Assert.assertEquals("heute.luecke",               NameUtil.getRegistryIdString("Heute     Lücke........"));
-		Assert.assertEquals("umlaute.ae.oe.uessaeoeue",   NameUtil.getRegistryIdString("Umlaute:  ÄÖÜßäöü"));
+		Assert.assertEquals("heute.ist.ein.schoener.tag", NameUtil.getRegistryIdString("Heute ist ein schÃ¶ner Tag!"));
+		Assert.assertEquals("heute.luecke",               NameUtil.getRegistryIdString("Heute     LÃ¼cke........"));
+		Assert.assertEquals("umlaute.ae.oe.uessaeoeue",   NameUtil.getRegistryIdString("Umlaute:  Ã„Ã–ÃœÃŸÃ¤Ã¶Ã¼"));
 	}
 	
 	@Test
@@ -235,9 +235,9 @@ public class UtilTest
 		double s   = (double)r / max;
 		double err = s/avrg * 100;
 		log.info(LogUtil.printf("%d %f - %f (%f%%)", r, s, avrg, err));
-		Assert.assertTrue("Der Fehler ist zu groß!", (75.0 < err) && (err <= 133.3));
+		Assert.assertTrue("Der Fehler ist zu groÃŸ!", (75.0 < err) && (err <= 133.3));
 
-		// Auswertung der Einzelfehler. Wie häufig wurde eine bestimmte Zahl gewürfelt?
+		// Auswertung der Einzelfehler. Wie hÃ¤ufig wurde eine bestimmte Zahl gewÃ¼rfelt?
 		int errCount = 0;
 		for (int i = 0; i < dom;i++)
 		{

@@ -25,7 +25,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link Action} l�st eine Abfrage nach dem Zustand der Modelleisenbahn aus.
+ * Diese {@link Action} lÃÂ¶st eine Abfrage nach dem Zustand der Modelleisenbahn aus.
  * @author sm
  *
  */

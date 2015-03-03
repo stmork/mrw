@@ -23,7 +23,7 @@ import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.SignalCode;
 
 /**
- * Diese Klasse repr‰sentiert ein Gleissperrlichtsignal. Es kann folgende Zust‰nde anzeigen:
+ * Diese Klasse repr√§sentiert ein Gleissperrlichtsignal. Es kann folgende Zust√§nde anzeigen:
  * <ul>
  * <li>SIGNAL_OFF
  * <li>SIGNAL_TST
@@ -38,9 +38,9 @@ public class Gleissperrsignal extends Signal
 
 	/**
 	 * Dieser Konstruktor initialisiert ein Gleissperrsignal. 
-	 * @param segment Der dazugehˆrende Gleisabschnitt.
+	 * @param segment Der dazugeh√∂rende Gleisabschnitt.
 	 * @param number Die Signalnummer.
-	 * @param aIsHigh Die Z‰hlrichtung.
+	 * @param aIsHigh Die Z√§hlrichtung.
 	 */
 	public Gleissperrsignal(final Abschnitt segment, final String number, final boolean aIsHigh)
 	{

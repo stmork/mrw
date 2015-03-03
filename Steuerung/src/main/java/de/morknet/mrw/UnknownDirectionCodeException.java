@@ -30,8 +30,8 @@ public class UnknownDirectionCodeException extends RoutingRuntimeException {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit dem übergebenen Richtungscode auf.
-	 * @param route Die verursachende Fahrstraße.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit dem Ã¼bergebenen Richtungscode auf.
+	 * @param route Die verursachende FahrstraÃŸe.
 	 * @param code Der verursachende Richtungscode.
 	 * @see DirectionCode
 	 */

@@ -25,7 +25,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link Action} l�st den Wartungsmodus aus.
+ * Diese {@link Action} lÃÂ¶st den Wartungsmodus aus.
  * @author sm
  *
  */

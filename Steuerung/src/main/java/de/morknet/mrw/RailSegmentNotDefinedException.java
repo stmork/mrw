@@ -30,7 +30,7 @@ public class RailSegmentNotDefinedException extends RoutingRuntimeException
 
 	/**
 	 * Diese Konstruktur bereitet eine Fehlermeldung auf.
-	 * @param route Die auslösende Fahrstraße.
+	 * @param route Die auslÃ¶sende FahrstraÃŸe.
 	 */
 	public RailSegmentNotDefinedException(final Route route)
 	{

@@ -1,39 +1,39 @@
-«REM»
-«»
-«»
-«»	$Filename:	Main.xpt $
-«»	$Revision$
-«»	$Date$
-«»	$Author$
-«»	$Id$
-«»
-«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
-«»
-«»	This program and the accompanying materials are made available under the
-«»	terms of the Eclipse Public License v1.0.
-«»
-«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
-«»
-«»
-«»
-«ENDREM»
+Â«REMÂ»
+Â«Â»
+Â«Â»
+Â«Â»	$Filename:	Main.xpt $
+Â«Â»	$Revision$
+Â«Â»	$Date$
+Â«Â»	$Author$
+Â«Â»	$Id$
+Â«Â»
+Â«Â»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+Â«Â»
+Â«Â»	This program and the accompanying materials are made available under the
+Â«Â»	terms of the Eclipse Public License v1.0.
+Â«Â»
+Â«Â»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+Â«Â»
+Â«Â»
+Â«Â»
+Â«ENDREMÂ»
 
-«IMPORT metamodel»
-«IMPORT de::morknet::mrw::generator::rcc::xpt»
+Â«IMPORT metamodelÂ»
+Â«IMPORT de::morknet::mrw::generator::rcc::xptÂ»
 
-«EXTENSION de::morknet::mrw::generator::base::ext::gleisteil»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::gleisteilÂ»
 
-«DEFINE Main FOR Modell»
-«EXPAND Log::Summary»
-«EXPAND Log::Gleisteile»
-«EXPAND Log::Signale»
-«EXPAND Log::Controller»
-«EXPAND Log::Abschnitte»
-«EXPAND Log::Devices»
-«EXPAND Log::Lampen»
-«EXPAND Rails::Infrastructure»
-«EXPAND Bestand::Main»
-«EXPAND RCC::Main»
-«EXPAND Graph::Main»
-«EXPAND Plan::Main»
-«ENDDEFINE»
+Â«DEFINE Main FOR ModellÂ»
+Â«EXPAND Log::SummaryÂ»
+Â«EXPAND Log::GleisteileÂ»
+Â«EXPAND Log::SignaleÂ»
+Â«EXPAND Log::ControllerÂ»
+Â«EXPAND Log::AbschnitteÂ»
+Â«EXPAND Log::DevicesÂ»
+Â«EXPAND Log::LampenÂ»
+Â«EXPAND Rails::InfrastructureÂ»
+Â«EXPAND Bestand::MainÂ»
+Â«EXPAND RCC::MainÂ»
+Â«EXPAND Graph::MainÂ»
+Â«EXPAND Plan::MainÂ»
+Â«ENDDEFINEÂ»

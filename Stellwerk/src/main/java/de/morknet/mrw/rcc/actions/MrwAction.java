@@ -25,7 +25,7 @@ import de.morknet.mrw.automatic.MrwActionControl;
 import de.morknet.mrw.util.NameUtil;
 
 /**
- * Diese Klasse definiert das Verhalten von bestimmten Aktivierungszust�nden einer {@link Action}.
+ * Diese Klasse definiert das Verhalten von bestimmten AktivierungszustÃâ¬nden einer {@link Action}.
  * @author sm
  *
  */
@@ -39,7 +39,7 @@ public abstract class MrwAction extends org.eclipse.jface.action.Action
 
 	/**
 	 * Dieser Konstruktur initialisiert diese Action.
-	 * @param name Der Name dieser Action, der im Men� angezeigt wird.
+	 * @param name Der Name dieser Action, der im MenÃÅ angezeigt wird.
 	 * @param actionControl Der steuernde {@link MrwActionControl}.
 	 */
 	protected MrwAction(final String name, final MrwActionControl actionControl)
@@ -50,7 +50,7 @@ public abstract class MrwAction extends org.eclipse.jface.action.Action
 	}
 
 	/**
-	 * Dieser Callback sorgt f�r das Aktualisieren der GUI.
+	 * Dieser Callback sorgt fÃÅr das Aktualisieren der GUI.
 	 */
 	abstract public void update();
 
@@ -107,8 +107,8 @@ public abstract class MrwAction extends org.eclipse.jface.action.Action
 	}
 
 	/**
-	 * Diese Methode gibt die zu dieser Action geh�renden Fahrstra�e zur�ck.
-	 * @return Die Fahrstra�e
+	 * Diese Methode gibt die zu dieser Action gehÃÂ¶renden FahrstraÃÂe zurÃÅck.
+	 * @return Die FahrstraÃÂe
 	 * @see Route
 	 */
 	public final Route getRoute()

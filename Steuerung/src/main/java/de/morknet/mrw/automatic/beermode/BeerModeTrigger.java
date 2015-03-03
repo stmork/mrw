@@ -28,7 +28,7 @@ import de.morknet.mrw.automatic.Trigger;
 import de.morknet.mrw.base.Abschnitt;
 
 /**
- * Diese Klasse stellt Callbacks zur Verf¸gung, um auf den Biermodus reagieren zu kˆnnen.
+ * Diese Klasse stellt Callbacks zur Verf√ºgung, um auf den Biermodus reagieren zu k√∂nnen.
  * @author smork
  *
  */
@@ -51,8 +51,8 @@ public class BeerModeTrigger extends Trigger {
 	
 	/**
 	 * Dieser Trigger-Callback reagiert darauf, dass der Zielabschnitt erreicht wurde. In
-	 * diesem Fall wird der Biermodus angewiesen, sich einen neuen Zug auszuw‰hlen.
-	 * @param route Die geschaltete Fahrstraﬂe.
+	 * diesem Fall wird der Biermodus angewiesen, sich einen neuen Zug auszuw√§hlen.
+	 * @param route Die geschaltete Fahrstra√üe.
 	 * @param abschnitt Der Abschnitt, in den eingetreten wurde.
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class BeerModeTrigger extends Trigger {
 	}
 
 	/**
-	 * Diese Methode setzt die Fahrtrichtung relativ zur Z‰hlrichtung der Gleise.
+	 * Diese Methode setzt die Fahrtrichtung relativ zur Z√§hlrichtung der Gleise.
 	 * @param inDirection Die Fahrtrichtung.
 	 */
 	public void setDirection(boolean inDirection)

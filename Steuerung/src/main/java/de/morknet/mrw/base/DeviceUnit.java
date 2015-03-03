@@ -34,7 +34,7 @@ import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.MrwMessage;
 
 /**
- * Diese Basisklasse verwaltet ein schaltbares Ger‰t. Ein solches Ger‰t kˆnnen Weichen, Signale und
+ * Diese Basisklasse verwaltet ein schaltbares Ger√§t. Ein solches Ger√§t k√∂nnen Weichen, Signale und
  * Gleisabschnitte sein.
  * @author smork
  *
@@ -52,17 +52,17 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	protected int   ctrl_id;
 
 	/**
-	 * Die Ger‰tenummer. In einer CAN-Message ist das die Extended-ID.
+	 * Die Ger√§tenummer. In einer CAN-Message ist das die Extended-ID.
 	 */
 	protected int   unit_no;
 	
 	/**
-	 * Der Startpin, ab der sich dieses Ger‰t am Mikrocontroller befindet. 
+	 * Der Startpin, ab der sich dieses Ger√§t am Mikrocontroller befindet. 
 	 */
 	protected int   pin;
 	
 	/**
-	 * Die Gesamtzahl der benˆtigten IO-Pins am Mikrocontroller.
+	 * Die Gesamtzahl der ben√∂tigten IO-Pins am Mikrocontroller.
 	 */
 	protected int   count;
 	
@@ -72,7 +72,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	protected int   elapsed;
 
 	/**
-	 * Die Zahl der Schaltauftr‰ge. Zusammen mit {@link #elapsed} kann daraus die durchschnittliche Schaltzeit berechnet werden.
+	 * Die Zahl der Schaltauftr√§ge. Zusammen mit {@link #elapsed} kann daraus die durchschnittliche Schaltzeit berechnet werden.
 	 */
 	protected int   elapsedCount;
 
@@ -83,8 +83,8 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	private final static Map<Integer, DeviceUnit> devices = new HashMap<Integer, DeviceUnit>();
 	
 	/**
-	 * Diese abstrakte Methode gibt das Schaltkommando zur¸ck.
-	 * @return Das Schaltkommando passend zu diesem Ger‰t. 
+	 * Diese abstrakte Methode gibt das Schaltkommando zur√ºck.
+	 * @return Das Schaltkommando passend zu diesem Ger√§t. 
 	 */
 	abstract protected Command getCommand();
 	
@@ -96,9 +96,9 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	abstract public MrwMessage createConfigMessage();
 
 	/**
-	 * Dieser Konstruktur initialisiert dieses Ger‰t in ein Modell und benennt es.
-	 * @param modell Das Modell, zu dem dieses Ger‰t gehˆrt.
-	 * @param name Der Name dieses Ger‰ts.
+	 * Dieser Konstruktur initialisiert dieses Ger√§t in ein Modell und benennt es.
+	 * @param modell Das Modell, zu dem dieses Ger√§t geh√∂rt.
+	 * @param name Der Name dieses Ger√§ts.
 	 */
 	public DeviceUnit(final Modell modell, final String name)
 	{
@@ -108,9 +108,9 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 
 	/**
-	 * Diese Methode definiert f¸r dieses Ger‰t die Controller-ID und die Ger‰tenummer.
+	 * Diese Methode definiert f√ºr dieses Ger√§t die Controller-ID und die Ger√§tenummer.
 	 * @param ctrl_id Die zu setzende Controller-ID.
-	 * @param unit_no Die zu setzende Ger‰tenummer.
+	 * @param unit_no Die zu setzende Ger√§tenummer.
 	 */
 	final public void setMicroControllerId(final int ctrl_id, final int unit_no)
 	{
@@ -131,7 +131,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 
 	/**
-	 * Diese Methode gibt die Microcontroller-ID zur¸ck.
+	 * Diese Methode gibt die Microcontroller-ID zur√ºck.
 	 * @return Die Microcontroller-ID-
 	 */
 	final public int getMicroControllerId()
@@ -140,8 +140,8 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 
 	/**
-	 * Diese Methode gibt die Ger‰tenummer zur¸ck.
-	 * @return Die Ger‰tenummer.
+	 * Diese Methode gibt die Ger√§tenummer zur√ºck.
+	 * @return Die Ger√§tenummer.
 	 */
 	final public int getDeviceUnitNumber()
 	{
@@ -149,7 +149,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 	
 	/**
-	 * Gibt das Modell dieses Abschnitts zur¸ck.
+	 * Gibt das Modell dieses Abschnitts zur√ºck.
 	 * @return Das Modell dieser Anlage.
 	 */
 	public Modell getModell()
@@ -159,24 +159,24 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 
 
 	/**
-	 * Diese Methode sucht ein Ger‰t an Hand ihrer ID. Die ID setzt sich aus Controller-ID und Ger‰tenummer zusammen.
-	 * @param id Die Ger‰te-ID.
-	 * @return Das gefundene Ger‰t.
+	 * Diese Methode sucht ein Ger√§t an Hand ihrer ID. Die ID setzt sich aus Controller-ID und Ger√§tenummer zusammen.
+	 * @param id Die Ger√§te-ID.
+	 * @return Das gefundene Ger√§t.
 	 */
 	final public static DeviceUnit findDeviceUnit(final int id)
 	{
 		DeviceUnit device = devices.get(id);
 		if (device == null)
 		{
-			throw new UnknownDeviceException("Eine Ger‰te-ID l‰sst sich nicht auf ein Ger‰t abbilden!", id);
+			throw new UnknownDeviceException("Eine Ger√§te-ID l√§sst sich nicht auf ein Ger√§t abbilden!", id);
 		}
 		return device;
 	}
 
 	/**
-	 * Diese Methode definiert den Startpin und die Anzahl der benˆtigten IO-Pins.
-	 * @param pin Der Startpin, ab dem der Mikrocontroller dieses Ger‰t verwaltet.
-	 * @param count Die Zahl der benˆtigten IO-Pins.
+	 * Diese Methode definiert den Startpin und die Anzahl der ben√∂tigten IO-Pins.
+	 * @param pin Der Startpin, ab dem der Mikrocontroller dieses Ger√§t verwaltet.
+	 * @param count Die Zahl der ben√∂tigten IO-Pins.
 	 */
 	final public void setPinConfiguration (final int pin, final int count)
 	{
@@ -186,8 +186,8 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 
 	/**
 	 * Diese Methode erzeugt eine CAN-Meldung und initialisiert diese mit den IDs
-	 * dieses Ger‰ts.
-	 * @return Die ger‰teabh‰ngig erzeugte CAN-Meldung.
+	 * dieses Ger√§ts.
+	 * @return Die ger√§teabh√§ngig erzeugte CAN-Meldung.
 	 * @see MrwMessage
 	 */
 	protected MrwMessage createMsg()
@@ -198,7 +198,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 
 	/**
-	 * Diese Methode f¸gt einer Konfigurations-Meldung die IO-Pin-Belegung bei.
+	 * Diese Methode f√ºgt einer Konfigurations-Meldung die IO-Pin-Belegung bei.
 	 * @param msg
 	 */
 	protected void addPinConfig(final MrwMessage msg)
@@ -210,16 +210,16 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 
 	/**
-	 * Diese Methode f¸gt einem Schaltauftrag Daten hinzu. Je nach Ger‰t wird diese
-	 * Methode ¸berladen und daher in dieser Basisimplementierung leer.
-	 * @param msg Die CAN-Meldung, der Daten hinzugef¸gt werden sollen.
+	 * Diese Methode f√ºgt einem Schaltauftrag Daten hinzu. Je nach Ger√§t wird diese
+	 * Methode √ºberladen und daher in dieser Basisimplementierung leer.
+	 * @param msg Die CAN-Meldung, der Daten hinzugef√ºgt werden sollen.
 	 */
 	protected void addData(MrwMessage msg)
 	{
 	}
 	
 	/**
-	 * Diese Methode f¸gt einen Schaltauftrag einem Verarbeitungsstapel hinzu
+	 * Diese Methode f√ºgt einen Schaltauftrag einem Verarbeitungsstapel hinzu
 	 * @param batch Der Kommandostapel.
 	 */
 	final public void addCommand(final Batch batch)
@@ -231,9 +231,9 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 
 	/**
-	 * Diese Methode f¸gt dem Ger‰t eine Schaltzeit hinzu. So kˆnnen durchschnittliche
+	 * Diese Methode f√ºgt dem Ger√§t eine Schaltzeit hinzu. So k√∂nnen durchschnittliche
 	 * Schaltzeiten ermittelt werden. 
-	 * @param elapsed Die hinzuzuf¸gende Schaltzeit als Zeitquantum. Dieses Zeitquantum
+	 * @param elapsed Die hinzuzuf√ºgende Schaltzeit als Zeitquantum. Dieses Zeitquantum
 	 *  entspricht der Periodendauer eines Timerinterrupts auf dem Mikrocontroller. Ist
 	 *  dieses Quantum 0, wird es nicht registriert.
 	 */
@@ -247,7 +247,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 	
 	/**
-	 * Diese Methode gibt die durchschnittliche Schaltzeit zur¸ck.
+	 * Diese Methode gibt die durchschnittliche Schaltzeit zur√ºck.
 	 * @param quantum Das Timerquantum, dass der Berechnung zugrunde liegt.
 	 * @return Die absolute durchschnittliche Schaltzeit in Sekunden.
 	 */
@@ -257,10 +257,10 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 
 	/**
-	 * Diese Vergleichsmethode sorgt daf¸r, dass Ger‰te gem‰ﬂ ihrer ansteigenden
-	 * Pin-Konfiguration sortiert werden. Das macht das Debuggen der Ger‰tekonfiguration
+	 * Diese Vergleichsmethode sorgt daf√ºr, dass Ger√§te gem√§√ü ihrer ansteigenden
+	 * Pin-Konfiguration sortiert werden. Das macht das Debuggen der Ger√§tekonfiguration
 	 * leichter.
-	 * @param unit Das zu vergleichende Ger‰t.
+	 * @param unit Das zu vergleichende Ger√§t.
 	 */
 	final public int compareTo(final DeviceUnit unit)
 	{
@@ -287,10 +287,10 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 	
 	/**
-	 * Diese Methode weist ein {@link BatchElement} diesem Ger‰t zu. Damit wird signalisiert, dass
+	 * Diese Methode weist ein {@link BatchElement} diesem Ger√§t zu. Damit wird signalisiert, dass
 	 * ein Kommando verschickt wurde. Das BatchElement darf nicht null sein, ansonsten wird eine
 	 * {@link UndefinedBatchElementException} geworfen.
-	 * @param element Das mit dem Ger‰t verbundene BatchElement mit dem verschickten Kommando.
+	 * @param element Das mit dem Ger√§t verbundene BatchElement mit dem verschickten Kommando.
 	 * @throws UndefinedBatchElementException Falls das BatchElement null war.
 	 * @throws BatchElementDefinedException Falls schon ein BatchElement vorher definiert war.
 	 */
@@ -311,7 +311,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 	
 	/**
-	 * Diese Methode markiert diesem Ger‰t, dass die Kommandoverarbeitung abgeschlossen wurde. Das
+	 * Diese Methode markiert diesem Ger√§t, dass die Kommandoverarbeitung abgeschlossen wurde. Das
 	 * {@link BatchElement} wird ausgetragen.
 	 */
 	public void clearBatchElement()
@@ -320,8 +320,8 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	}
 	
 	/**
-	 * Diese Methode meldet zur¸ck, ob ein Kommando zur Verarbeitung verschickt wurde.
-	 * @return Zustand, ob ein Kommando zur Verarbeitung verschickt wurde und die Ausf¸hrung noch aussteht.
+	 * Diese Methode meldet zur√ºck, ob ein Kommando zur Verarbeitung verschickt wurde.
+	 * @return Zustand, ob ein Kommando zur Verarbeitung verschickt wurde und die Ausf√ºhrung noch aussteht.
 	 */
 	public boolean isProcessing()
 	{
@@ -330,7 +330,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 
 	/**
 	 * Diese Methode gibt im Falle einer ausstehenden Kommandoverarbeitung das damit verbundene
-	 * {@link BatchElement} zur¸ck. Ist keine Kommandoverarbeitung ausstehend, wird eine
+	 * {@link BatchElement} zur√ºck. Ist keine Kommandoverarbeitung ausstehend, wird eine
 	 * {@link UndefinedBatchElementException} geworfen.
 	 * @return Das mit einer ausstehenden Kommandoverarbeitung verbundene {@link BatchElement}.
 	 */

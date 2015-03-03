@@ -22,7 +22,7 @@ package de.morknet.mrw.base;
 import de.morknet.mrw.comm.Command;
 
 /**
- * Dieser Klasse repr‰sentiert ein Einfahrlichtsignal. Es kann folgende Zust‰nde anzeigen:
+ * Dieser Klasse repr√§sentiert ein Einfahrlichtsignal. Es kann folgende Zust√§nde anzeigen:
  * <ul>
  * <li>SIGNAL_OFF
  * <li>SIGNAL_TST
@@ -39,9 +39,9 @@ public final class Einfahrsignal extends Hauptsignal
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Einfahrsignal.
-	 * @param abschnitt Der Gleisabschnitt zu dem das Einfahrsignal gehˆrt.
+	 * @param abschnitt Der Gleisabschnitt zu dem das Einfahrsignal geh√∂rt.
 	 * @param name Der Name des Signals.
-	 * @param aIsHigh Die Richtung relativ zur Z‰hrichtung. 
+	 * @param aIsHigh Die Richtung relativ zur Z√§hrichtung. 
 	 */
 	public Einfahrsignal(Abschnitt abschnitt, String name, boolean aIsHigh)
 	{

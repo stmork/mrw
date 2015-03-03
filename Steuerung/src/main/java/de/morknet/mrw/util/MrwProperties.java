@@ -82,9 +82,9 @@ public class MrwProperties
 	}
 
 	/**
-	 * Diese Methode gibt aus den Eisenbahneinstellungen einen Wert zurück. Wird kein Wert ermittelt, wird danach
-	 * an den Schlüssel der einfache Hostname angehängt und ein weiterer Versuch zur Ermittlung des Wertes durchgeführt. 
-	 * @param key Der Schlüssel des Wertes.
+	 * Diese Methode gibt aus den Eisenbahneinstellungen einen Wert zurÃ¼ck. Wird kein Wert ermittelt, wird danach
+	 * an den SchlÃ¼ssel der einfache Hostname angehÃ¤ngt und ein weiterer Versuch zur Ermittlung des Wertes durchgefÃ¼hrt. 
+	 * @param key Der SchlÃ¼ssel des Wertes.
 	 * @return Der ermittelte Wert.
 	 */
 	public final static String getProperty(final String key)
@@ -93,10 +93,10 @@ public class MrwProperties
 	}
 
 	/**
-	 * Diese Methode gibt aus den Eisenbahneinstellungen einen Wert zurück. Wird kein Wert ermittelt, wird danach
-	 * an den Schlüssel der einfache Hostname angehängt und ein weiterer Versuch zur Ermittlung des Wertes durchgeführt. 
-	 * @param key Der Schlüssel des Wertes.
-	 * @param defaultValue Der Default-Wert des Schlüssels.
+	 * Diese Methode gibt aus den Eisenbahneinstellungen einen Wert zurÃ¼ck. Wird kein Wert ermittelt, wird danach
+	 * an den SchlÃ¼ssel der einfache Hostname angehÃ¤ngt und ein weiterer Versuch zur Ermittlung des Wertes durchgefÃ¼hrt. 
+	 * @param key Der SchlÃ¼ssel des Wertes.
+	 * @param defaultValue Der Default-Wert des SchlÃ¼ssels.
 	 * @return Der ermittelte Wert.
 	 */
 	public final static String getProperty(final String key, final String defaultValue)
@@ -130,7 +130,7 @@ public class MrwProperties
 	}
 	
 	/**
-	 * Diese Methode gibt den einfachen Hostnamen dieses Rechners wieder. Wenn der Rückgabewert null
+	 * Diese Methode gibt den einfachen Hostnamen dieses Rechners wieder. Wenn der RÃ¼ckgabewert null
 	 * ist, konnte der einfache Hostname nicht ermittelt werden.
 	 * @return Der einfache Hostname.
 	 */

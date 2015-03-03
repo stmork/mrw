@@ -22,7 +22,7 @@ package de.morknet.mrw;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese RuntimeException wird geworfen, wenn die Fahrstraﬂe nicht komplett eingerichtet werden konnte.
+ * Diese RuntimeException wird geworfen, wenn die Fahrstra√üe nicht komplett eingerichtet werden konnte.
  * @author smork
  *
  */
@@ -31,11 +31,11 @@ public class RouteIncompleteException extends RoutingException
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit der ¸bergebenen Fahrstraﬂe auf.
-	 * @param route Die verursachende Fahrstraﬂe.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit der √ºbergebenen Fahrstra√üe auf.
+	 * @param route Die verursachende Fahrstra√üe.
 	 */
 	public RouteIncompleteException(final Route route)
 	{
-		super (route, LogUtil.printf("Fahrstraﬂe (%s) konnte nicht komplett berechnet werden", route));
+		super (route, LogUtil.printf("Fahrstra√üe (%s) konnte nicht komplett berechnet werden", route));
 	}
 }

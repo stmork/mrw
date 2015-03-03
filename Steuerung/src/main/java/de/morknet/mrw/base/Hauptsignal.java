@@ -22,7 +22,7 @@ package de.morknet.mrw.base;
 import de.morknet.mrw.comm.SignalCode;
 
 /**
- * Diese Klasse repräsentiert allgemein ein Hauptsignal.
+ * Diese Klasse reprÃ¤sentiert allgemein ein Hauptsignal.
  * @author smork
  *
  */
@@ -32,9 +32,9 @@ abstract public class Hauptsignal extends Signal
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Hauptsignal.
-	 * @param abschnitt Der zum Hauptsignal gehörende Gleisabschnitt.
+	 * @param abschnitt Der zum Hauptsignal gehÃ¶rende Gleisabschnitt.
 	 * @param number Die Signalnummer
-	 * @param inDirection Die Sichtrichtung relativ zur Zählrichtung des Gleises.
+	 * @param inDirection Die Sichtrichtung relativ zur ZÃ¤hlrichtung des Gleises.
 	 */
 	public Hauptsignal(Abschnitt abschnitt, String number, boolean inDirection)
 	{

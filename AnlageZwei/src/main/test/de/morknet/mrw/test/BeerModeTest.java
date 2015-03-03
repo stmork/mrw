@@ -61,7 +61,7 @@ public class BeerModeTest extends ControllerTestBase
 		
 		Assert.assertNotNull("Der Biermodus muss existieren!", beermode);
 		
-		// Spezialität von Mork2-Anlage
+		// SpezialitÃ¤t von Mork2-Anlage
 		ModellFactory.getInstance().findSegment("S1").occupy();
 
 		// N-1 Gleise im Schattenbahnhof vorbelegen
@@ -75,19 +75,19 @@ public class BeerModeTest extends ControllerTestBase
 		beermode.run();
 		Assert.assertTrue(LogUtil.printf("Der Biermodus %s muss aktiv sein!", beermode), beermode.isActive());
 
-		// Touren durchführen
+		// Touren durchfÃ¼hren
 		for (int count = 1; count < TOUR_COUNT; count++)
 		{
 			route = beermode.getRoute();
-			Assert.assertNotNull("Es muss eine Fahrstraße vorhanden sein!", route);
+			Assert.assertNotNull("Es muss eine FahrstraÃŸe vorhanden sein!", route);
 			simulateTour(route);
 		}
 		
-		// Deaktivieren. Nächste Fahrstraße müsste trotzdem schon aktiv
+		// Deaktivieren. NÃ¤chste FahrstraÃŸe mÃ¼sste trotzdem schon aktiv
 		// sein. Die ziehen wir dann aber noch durch.
 		beermode.deactivate();
 		route = beermode.getRoute();
-		Assert.assertNotNull("Es muss eine Fahrstraße vorhanden sein!", route);
+		Assert.assertNotNull("Es muss eine FahrstraÃŸe vorhanden sein!", route);
 		simulateTour(route);
 		
 		for(Abschnitt a : free)

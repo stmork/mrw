@@ -3,7 +3,7 @@
    <description name="Modelleisenbahn - Update site" url="http://eisenbahnsteuerung.org/updates/">
       Update Site für Modelleisenbahn-Features.
    </description>
-   <feature url="features/de.morknet.mrw.metamodel_2.0.19.jar" id="de.morknet.mrw.metamodel" version="2.0.19">
+   <feature url="features/de.morknet.mrw.metamodel_2.0.18.jar" id="de.morknet.mrw.metamodel" version="2.0.18">
       <category name="de.morknet.mrw.metamodel"/>
    </feature>
    <category-def name="de.morknet.mrw.metamodel" label="Modelleisenbahn-Editor"/>

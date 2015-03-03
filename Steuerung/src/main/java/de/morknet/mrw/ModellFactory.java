@@ -25,8 +25,8 @@ import org.apache.commons.logging.LogFactory;
 import de.morknet.mrw.util.MrwProperties;
 
 /**
- * Diese Klasse instanziiert die Beschreibung für eine Modelleisenbahn. Der Klassenname der Modelleisenbahn muss
- * in der Datei <it>$HOME/.comm.properties</it> als Schlüssel <em>mrw.railway</em> hinterlegt sein. Die Modelleisenbahn
+ * Diese Klasse instanziiert die Beschreibung fÃ¼r eine Modelleisenbahn. Der Klassenname der Modelleisenbahn muss
+ * in der Datei <it>$HOME/.comm.properties</it> als SchlÃ¼ssel <em>mrw.railway</em> hinterlegt sein. Die Modelleisenbahn
  * wird als Singleton instanziiert.
  * @author sm
  *
@@ -38,7 +38,7 @@ public class ModellFactory
 	private              Modell        modell      = null;
 
 	/**
-	 * Der Schlüssel in der Konfigurationsdatei für den verwendeten Anlagennamen. 
+	 * Der SchlÃ¼ssel in der Konfigurationsdatei fÃ¼r den verwendeten Anlagennamen. 
 	 */
 	public  final static String        RAILWAY_KEY = "mrw.railway";
 
@@ -82,7 +82,7 @@ public class ModellFactory
 	}
 
 	/**
-	 * Diese Methode gibt eine Instanz einer Modelleisenbahnanlage zurück.
+	 * Diese Methode gibt eine Instanz einer Modelleisenbahnanlage zurÃ¼ck.
 	 * @return Die Modelleisenbahnanlage.
 	 */
 	public static Modell getInstance()

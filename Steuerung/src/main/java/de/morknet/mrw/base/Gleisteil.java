@@ -30,7 +30,7 @@ import de.morknet.mrw.Route;
 import de.morknet.mrw.batch.Batch;
 
 /**
- * Diese abstrakte Klasse repräsentiert ein Gleisteil. Ein Gleisteil kann sein:
+ * Diese abstrakte Klasse reprÃ¤sentiert ein Gleisteil. Ein Gleisteil kann sein:
  * <ul>
  * <li>Ein Gleis
  * <li>Eine Verzweigung (also Weiche oder DKW)
@@ -49,55 +49,55 @@ abstract public class Gleisteil extends DeviceUnit
 	protected final Log log;
 	
 	/**
-	 * Der Gleisabschnitt zu dem dieses Gleisteil gehört.
+	 * Der Gleisabschnitt zu dem dieses Gleisteil gehÃ¶rt.
 	 */
 	protected final Abschnitt segment;
 
 	/**
-	 * Flag, ob Gleisverbindung a in Zählrichtung zeigt.
+	 * Flag, ob Gleisverbindung a in ZÃ¤hlrichtung zeigt.
 	 */
 	protected final boolean aIsHigh;
 
 	/**
-	 * Die Fahrstraße zu der dieses Gleisteil gehört.
+	 * Die FahrstraÃŸe zu der dieses Gleisteil gehÃ¶rt.
 	 */
 	volatile protected Route route = null;
 	
 	/**
-	 * Die Liste der benachbarten Gleisteile in Zährichtung.
+	 * Die Liste der benachbarten Gleisteile in ZÃ¤hrichtung.
 	 */
 	protected final List<Gleisteil> forward  = new ArrayList<Gleisteil>(); 
 
 	/**
-	 * Die Liste der banachbarten Gleisteile entgegen Zählrichtung.
+	 * Die Liste der banachbarten Gleisteile entgegen ZÃ¤hlrichtung.
 	 */
 	protected final List<Gleisteil> backward = new ArrayList<Gleisteil>();
 
 	/**
-	 * Diese Methode überprüft die benachbarten Gleisteile auf Plausibilität.
-	 * @return Erfolg, wenn die Plausibilität in Ordnung ist.
+	 * Diese Methode Ã¼berprÃ¼ft die benachbarten Gleisteile auf PlausibilitÃ¤t.
+	 * @return Erfolg, wenn die PlausibilitÃ¤t in Ordnung ist.
 	 */
 	abstract public int validate();
 
 	/**
-	 * Diese Methode überprüft, ob das angegebenene Gleisteil direkt mit diesem hier verbunden ist.
-	 * @param gt Das auf Nachbarschaft zu überprüfende Gleisteil.
+	 * Diese Methode Ã¼berprÃ¼ft, ob das angegebenene Gleisteil direkt mit diesem hier verbunden ist.
+	 * @param gt Das auf Nachbarschaft zu Ã¼berprÃ¼fende Gleisteil.
 	 * @return True, falls das Gleisteil benachbart ist.
 	 */
 	abstract protected boolean hasTrackElement(Gleisteil gt);
 	
 	/**
-	 * Diese Methode überprüft, ob die Zählrichtung des angegebenen Gleisteils mit diesem hier übereinstimmt.
-	 * @param gt Das zu überprüfende Gleisteil.
-	 * @param isDirection Die zu überprüfende Fahrtrichtung.
+	 * Diese Methode Ã¼berprÃ¼ft, ob die ZÃ¤hlrichtung des angegebenen Gleisteils mit diesem hier Ã¼bereinstimmt.
+	 * @param gt Das zu Ã¼berprÃ¼fende Gleisteil.
+	 * @param isDirection Die zu Ã¼berprÃ¼fende Fahrtrichtung.
 	 * @return Das Ergebnis.
 	 */
 	abstract protected boolean isDirectionCorrect(Gleisteil gt, boolean isDirection);
 	
 	/**
-	 * Diese Methode ermittelt das Kommando, um eine Verzweigung in die richtige Lage abhängig von den benachbarten Gleisteilen
+	 * Diese Methode ermittelt das Kommando, um eine Verzweigung in die richtige Lage abhÃ¤ngig von den benachbarten Gleisteilen
 	 * zu bringen. Das resultierende Schaltkommando wird in den {@link Batch} eingetragen.
-	 * @param batch Der {@link Batch} für den Schaltauftrag.
+	 * @param batch Der {@link Batch} fÃ¼r den Schaltauftrag.
 	 * @param prev Das vorhergehende Gleisteil.
 	 * @param next Das nachfolgende Gleisteil.
 	 */
@@ -119,10 +119,10 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt abhängig von der geforderten Gleisrichtung bzgl. der Zählrichtung
-	 * die benachbarten Gleisteile zurück.
-	 * @param direction Die geforderte Richtung relativ zur Zählrichtung.
-	 * @return Die benachbarten Gleisteile relativ zur geforderten Zählrichtung.
+	 * Diese Methode gibt abhÃ¤ngig von der geforderten Gleisrichtung bzgl. der ZÃ¤hlrichtung
+	 * die benachbarten Gleisteile zurÃ¼ck.
+	 * @param direction Die geforderte Richtung relativ zur ZÃ¤hlrichtung.
+	 * @return Die benachbarten Gleisteile relativ zur geforderten ZÃ¤hlrichtung.
 	 */
 	public List<Gleisteil> getRouting(final boolean direction)
 	{
@@ -130,7 +130,7 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt die Gleisbelegung zum dazugehörigen Gleisabschnitt zurück.
+	 * Diese Methode gibt die Gleisbelegung zum dazugehÃ¶rigen Gleisabschnitt zurÃ¼ck.
 	 * @return Der Gleisbesetztzustand.
 	 */
 	public boolean isFree()
@@ -139,8 +139,8 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 	
 	/** 
-	 * Diese Methode gibt den Gleisabschnitt zu diesem Gleisabschnitt zurück.
-	 * @return Der zu diesem Gleisteil gehörende Gleisabschnitt.
+	 * Diese Methode gibt den Gleisabschnitt zu diesem Gleisabschnitt zurÃ¼ck.
+	 * @return Der zu diesem Gleisteil gehÃ¶rende Gleisabschnitt.
 	 */
 	public Abschnitt getSegment()
 	{
@@ -148,8 +148,8 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 
 	/** 
-	 * Diese Methode gibt die Betriebsgruppe zu diesem Gleisabschnitt zurück.
-	 * @return Der zu diesem Gleisteil gehörende Betriebsgruppe.
+	 * Diese Methode gibt die Betriebsgruppe zu diesem Gleisabschnitt zurÃ¼ck.
+	 * @return Der zu diesem Gleisteil gehÃ¶rende Betriebsgruppe.
 	 */
 	public Gruppe getGruppe()
 	{
@@ -157,8 +157,8 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt die zu diesem Gleisteil definierte Fahrstraße zurück.
-	 * @return Die Fahrstraße, die dieses Gleisteil benutzt.
+	 * Diese Methode gibt die zu diesem Gleisteil definierte FahrstraÃŸe zurÃ¼ck.
+	 * @return Die FahrstraÃŸe, die dieses Gleisteil benutzt.
 	 */
 	public Route getRoute()
 	{
@@ -169,9 +169,9 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode setzt für dieses Gleisteil die dazugehörige Fahrstraße. Wird
-	 * die Fahrstraße entfernt, wird automatisch dieses Gleisteil entriegelt.
-	 * @param route Die zu setzende Fahrstraße.
+	 * Diese Methode setzt fÃ¼r dieses Gleisteil die dazugehÃ¶rige FahrstraÃŸe. Wird
+	 * die FahrstraÃŸe entfernt, wird automatisch dieses Gleisteil entriegelt.
+	 * @param route Die zu setzende FahrstraÃŸe.
 	 */
 	public void setRoute(Route route)
 	{
@@ -186,12 +186,12 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt den Verriegelungszustand dieses Gleisteils zurück. Wenn das 
-	 * Gleisteil verriegelt ist, ohne dass eine Fahrstraße definiert wurde, wird eine 
+	 * Diese Methode gibt den Verriegelungszustand dieses Gleisteils zurÃ¼ck. Wenn das 
+	 * Gleisteil verriegelt ist, ohne dass eine FahrstraÃŸe definiert wurde, wird eine 
 	 * {@link LockWithoutRouteException} geworfen.
 	 * @return Der Verriegelungszustand
 	 * @throws LockWithoutRouteException Wenn dieses Gleisteil verriegelt ist, ohne dass 
-	 * eine Fahrstraße definiert wurde. In diesem Fall wird die Verriegelung aufgehoben.
+	 * eine FahrstraÃŸe definiert wurde. In diesem Fall wird die Verriegelung aufgehoben.
 	 */ 
 	public boolean isLocked()
 	{
@@ -207,10 +207,10 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode verriegelt dieses Gleisteil. Jede externe Zustandsänderung
-	 * (z.B. manuelle Weichenschaltun) führt zu einer Auflösung der Fahrstraße.
+	 * Diese Methode verriegelt dieses Gleisteil. Jede externe ZustandsÃ¤nderung
+	 * (z.B. manuelle Weichenschaltun) fÃ¼hrt zu einer AuflÃ¶sung der FahrstraÃŸe.
 	 * @throws LockWithoutRouteException Wenn versucht wird, dieses Gleisteil zu verriegeln
-	 * ohne dass eine Fahrstraße definiert war.
+	 * ohne dass eine FahrstraÃŸe definiert war.
 	 */
 	public void lock()
 	{
@@ -225,8 +225,8 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt zurück, ob der Gleisverbindung "a" in Zählrichtung gerichtet ist.
-	 * @return Die Zählrichtung an Gleisverbindung "a".
+	 * Diese Methode gibt zurÃ¼ck, ob der Gleisverbindung "a" in ZÃ¤hlrichtung gerichtet ist.
+	 * @return Die ZÃ¤hlrichtung an Gleisverbindung "a".
 	 */
 	public final boolean aIsHigh()
 	{
@@ -234,7 +234,7 @@ abstract public class Gleisteil extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode gibt das Gleisteil als Klartext zurück.
+	 * Diese Methode gibt das Gleisteil als Klartext zurÃ¼ck.
 	 * @return Der Klartext dieses Gleisteils.
 	 */
 	public String toString()

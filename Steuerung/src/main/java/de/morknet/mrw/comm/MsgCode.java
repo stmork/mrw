@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Diese Enum listet Rückmelde-Codes auf.
+ * Diese Enum listet RÃ¼ckmelde-Codes auf.
  * @author smork
  *
  */
@@ -70,32 +70,32 @@ public enum MsgCode
 	MSG_NOT_CONFIGURED_YET(6),
 	
 	/**
-	 * Kommando gehörte zu unbekanntem Gerät.
+	 * Kommando gehÃ¶rte zu unbekanntem GerÃ¤t.
 	 */
 	MSG_NO_UNITNO_DEFINED(7),
 	
 	/**
-	 * Das Kommando passt nicht zu einem Gerät.
+	 * Das Kommando passt nicht zu einem GerÃ¤t.
 	 */
 	MSG_UNITTYPE_WRONG(8),
 	
 	/**
-	 * Der Controller wartet auf ausgelösten Reset.
+	 * Der Controller wartet auf ausgelÃ¶sten Reset.
 	 */
 	MSG_RESET_PENDING(9),
 	
 	/**
-	 * Kommando hat keine Gerätenummer.
+	 * Kommando hat keine GerÃ¤tenummer.
 	 */
 	MSG_UNITNO_MISSING(10),
 	
 	/**
-	 * Kommando kann Gerätenummer nicht zuordnen.
+	 * Kommando kann GerÃ¤tenummer nicht zuordnen.
 	 */
 	MSG_UNIT_NOT_FOUND(11),
 	
 	/**
-	 * Konfigurationskommando außerhalb vom Konfigmodus aufgerufen.
+	 * Konfigurationskommando auÃŸerhalb vom Konfigmodus aufgerufen.
 	 */
 	MSG_NOT_IN_CONFIG_MODE(12),
 	
@@ -105,12 +105,12 @@ public enum MsgCode
 	MSG_BOOTED(13),
 	
 	/**
-	 * Die Controller-ID wurde nicht geändert.
+	 * Die Controller-ID wurde nicht geÃ¤ndert.
 	 */
 	MSG_ID_NOT_CHANGED(14),
 	
 	/**
-	 * Prüfsummenfehler beim Flashen neuer Firmware.
+	 * PrÃ¼fsummenfehler beim Flashen neuer Firmware.
 	 */
 	MSG_CHECKSUM_ERROR(15),
 	
@@ -120,7 +120,7 @@ public enum MsgCode
 	MSG_INFO(16),
 	
 	/**
-	 * Die Controller-ID wurde nicht geändert, weil der ID-Taster nicht gedrückt wurde.
+	 * Die Controller-ID wurde nicht geÃ¤ndert, weil der ID-Taster nicht gedrÃ¼ckt wurde.
 	 */
 	MSG_ID_CHANGE_DISABLED(17),
 	
@@ -135,7 +135,7 @@ public enum MsgCode
 	MSG_SWITCH_FAILED(19),
 
 	/**
-	 * Fehler, wenn nicht mehr Geräte konfiguriert werden können.
+	 * Fehler, wenn nicht mehr GerÃ¤te konfiguriert werden kÃ¶nnen.
 	 */
 	MSG_CONFIG_BUFFER_FULL(20);
 
@@ -156,8 +156,8 @@ public enum MsgCode
 	}
 
 	/**
-	 * Diese Methode gibt zum Rückmelde-Wert den Integer-Wert für die {@link MrwMessage} wieder.
-	 * @return Der Integer-Wert für eine {@link MrwMessage}.
+	 * Diese Methode gibt zum RÃ¼ckmelde-Wert den Integer-Wert fÃ¼r die {@link MrwMessage} wieder.
+	 * @return Der Integer-Wert fÃ¼r eine {@link MrwMessage}.
 	 */
 	public int getMsgCode()
 	{
@@ -165,10 +165,10 @@ public enum MsgCode
 	}
 	
 	/**
-	 * Diese Methode wandelt die Integer-Variante des Rückmelde-Codes aus einer {@link MrwMessage} in eine Enum-Instanz um. 
-	 * @param code Der Rückmelde-Wert als Integer
-	 * @return Der resultierende Rückmelde-Wert als enum.
-	 * @throws CodeNotFoundException Wenn zum Rückmelde-Code keine Enum-Instanz gefunden wurde.
+	 * Diese Methode wandelt die Integer-Variante des RÃ¼ckmelde-Codes aus einer {@link MrwMessage} in eine Enum-Instanz um. 
+	 * @param code Der RÃ¼ckmelde-Wert als Integer
+	 * @return Der resultierende RÃ¼ckmelde-Wert als enum.
+	 * @throws CodeNotFoundException Wenn zum RÃ¼ckmelde-Code keine Enum-Instanz gefunden wurde.
 	 */
 	public static MsgCode getMsgCode(int code)
 	{

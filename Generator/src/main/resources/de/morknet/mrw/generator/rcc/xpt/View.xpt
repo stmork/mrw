@@ -1,63 +1,63 @@
-«REM»
-«»
-«»
-«»	$Filename:	View.xpt $
-«»	$Revision$
-«»	$Date$
-«»	$Author$
-«»	$Id$
-«»
-«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
-«»
-«»	This program and the accompanying materials are made available under the
-«»	terms of the Eclipse Public License v1.0.
-«»
-«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
-«»
-«»
-«»
-«ENDREM»
+Â«REMÂ»
+Â«Â»
+Â«Â»
+Â«Â»	$Filename:	View.xpt $
+Â«Â»	$Revision$
+Â«Â»	$Date$
+Â«Â»	$Author$
+Â«Â»	$Id$
+Â«Â»
+Â«Â»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+Â«Â»
+Â«Â»	This program and the accompanying materials are made available under the
+Â«Â»	terms of the Eclipse Public License v1.0.
+Â«Â»
+Â«Â»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+Â«Â»
+Â«Â»
+Â«Â»
+Â«ENDREMÂ»
 
-«IMPORT metamodel»
+Â«IMPORT metamodelÂ»
 
-«EXTENSION de::morknet::mrw::generator::rcc::ext::view»
-«EXTENSION de::morknet::mrw::generator::rcc::ext::perspective»
-«EXTENSION de::morknet::mrw::generator::base::ext::gruppe»
-«EXTENSION de::morknet::mrw::generator::base::ext::gleisteil»
+Â«EXTENSION de::morknet::mrw::generator::rcc::ext::viewÂ»
+Â«EXTENSION de::morknet::mrw::generator::rcc::ext::perspectiveÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::gruppeÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::gleisteilÂ»
 
-«DEFINE Main FOR Gruppe»
-«FILE asClassFilename() RCC»
-«EXPAND Header::Header»
+Â«DEFINE Main FOR GruppeÂ»
+Â«FILE asClassFilename() RCCÂ»
+Â«EXPAND Header::HeaderÂ»
 
-package «asPackageName()»;
+package Â«asPackageName()Â»;
 
-import «asPackageName(modell)».GroupView;
+import Â«asPackageName(modell)Â».GroupView;
 
 /**
- * Diese Klasse stellt die Darstellung der Betriebsgruppe «name» in der GUI dar.
+ * Diese Klasse stellt die Darstellung der Betriebsgruppe Â«nameÂ» in der GUI dar.
  * @author sm
  *
  */
-public class «asClassName()» extends GroupView
+public class Â«asClassName()Â» extends GroupView
 {
 	/**
 	 * Die View-ID.
 	 */
-	public static final String ID = "«asViewId()»";
+	public static final String ID = "Â«asViewId()Â»";
 
 	/**
 	 * Der Konstruktur.
 	 */
-    public «asClassName()»()
+    public Â«asClassName()Â»()
     {
-		super(«getGruppenName()»);
-«FOREACH abschnitt.bauelement.typeSelect(Gleis).select(e|e.istHauptgleis) AS hg»
-		addHauptgleis(«getGleisteilName(hg)»);
-«ENDFOREACH»
+		super(Â«getGruppenName()Â»);
+Â«FOREACH abschnitt.bauelement.typeSelect(Gleis).select(e|e.istHauptgleis) AS hgÂ»
+		addHauptgleis(Â«getGleisteilName(hg)Â»);
+Â«ENDFOREACHÂ»
 	}
 	
 	/**
-	 * Diese Klasse gibt die ID dieses {@link GroupView}s zurück.
+	 * Diese Klasse gibt die ID dieses {@link GroupView}s zurÃ¼ck.
 	 * @return Die ID dieses {@link GroupView}s.
 	 */
 	public String getId()
@@ -65,83 +65,83 @@ public class «asClassName()» extends GroupView
 		return ID;
 	}
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE IdInterfaces FOR Modell»
-«EXPAND PerspectiveId»
-«EXPAND PluginId»
-«EXPAND InfoViewId»
-«EXPAND ButtonViewId»
-«ENDDEFINE»
+Â«DEFINE IdInterfaces FOR ModellÂ»
+Â«EXPAND PerspectiveIdÂ»
+Â«EXPAND PluginIdÂ»
+Â«EXPAND InfoViewIdÂ»
+Â«EXPAND ButtonViewIdÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE PerspectiveId FOR Modell»
-«FILE asPerspectiveIdFilename() RCC»
-«EXPAND Header::Header»
+Â«DEFINE PerspectiveId FOR ModellÂ»
+Â«FILE asPerspectiveIdFilename() RCCÂ»
+Â«EXPAND Header::HeaderÂ»
 
-package «asPackageName()»;
+package Â«asPackageName()Â»;
 
-interface «asPerspectiveIdClassname()»
+interface Â«asPerspectiveIdClassname()Â»
 {
-	final static String PERSPECTIVE_ID = "«asPerspectiveId()»";
+	final static String PERSPECTIVE_ID = "Â«asPerspectiveId()Â»";
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE PluginId FOR Modell»
-«FILE asPluginIdFilename() RCC»
-«EXPAND Header::Header»
+Â«DEFINE PluginId FOR ModellÂ»
+Â«FILE asPluginIdFilename() RCCÂ»
+Â«EXPAND Header::HeaderÂ»
 
-package «asPackageName()»;
+package Â«asPackageName()Â»;
 
 /**
  * Dieses Interface stellt die ID des Plugins bereit.
  *
  */
-public interface «asPluginIdClassname()»
+public interface Â«asPluginIdClassname()Â»
 {
 	/**
 	 * Die ID des Plugins.
 	 */
-	public final static String PLUGIN_ID = "«asPluginId()»";
+	public final static String PLUGIN_ID = "Â«asPluginId()Â»";
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE InfoViewId FOR Modell»
-«FILE asInfoViewIdFilename() RCC»
-package «asPackageName()»;
+Â«DEFINE InfoViewId FOR ModellÂ»
+Â«FILE asInfoViewIdFilename() RCCÂ»
+package Â«asPackageName()Â»;
 
 /**
  * Dieses Interface stellt die ID des {@link InfoView}s bereit.
  *
  */
-public interface «asInfoViewIdClassname()»
+public interface Â«asInfoViewIdClassname()Â»
 {
 	/**
 	 * Die ID des {@link InfoView}s.
 	 */
-	public final static String ID = "«asInfoViewId()»";
+	public final static String ID = "Â«asInfoViewId()Â»";
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE ButtonViewId FOR Modell»
-«FILE asButtonViewIdFilename() RCC»
-«EXPAND Header::Header»
+Â«DEFINE ButtonViewId FOR ModellÂ»
+Â«FILE asButtonViewIdFilename() RCCÂ»
+Â«EXPAND Header::HeaderÂ»
 
-package «asPackageName()»;
+package Â«asPackageName()Â»;
 
 /**
  * Dieses Interface stellt die ID des {@link ButtonView}s bereit.
  *
  */
-public interface «asButtonViewIdClassname()»
+public interface Â«asButtonViewIdClassname()Â»
 {
 	/**
 	 * Die ID des {@link ButtonView}s.
 	 */
-	public final static String ID = "«asButtonViewId()»";
+	public final static String ID = "Â«asButtonViewId()Â»";
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»

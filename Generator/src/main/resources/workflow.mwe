@@ -25,7 +25,7 @@
 	
 	<component class="org.eclipse.xpand2.Generator" skipOnErrors="false">
 		<metaModel idRef="mrw"/>
-		<fileEncoding value="ISO-8859-15"/>
+		<fileEncoding value="UTF-8"/>
 		<globalVarDef name="actionPackage" value="${actionPackage}"/>
 		<expand
 			value="de::morknet::mrw::generator::base::xpt::Main::Main FOR model" />

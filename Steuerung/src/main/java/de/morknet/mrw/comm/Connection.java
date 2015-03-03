@@ -32,7 +32,7 @@ import de.morknet.mrw.comm.tcp.TcpConnection;
 import de.morknet.mrw.util.MrwProperties;
 
 /**
- * Diese Klasse repräsentiert eine Kommunikationsverbindung zu einer Eisenbahnanlage.
+ * Diese Klasse reprÃ¤sentiert eine Kommunikationsverbindung zu einer Eisenbahnanlage.
  * @author sm
  *
  */
@@ -51,7 +51,7 @@ abstract public class Connection
 	protected ByteProcessor processor;
 
 	/**
-	 * Diese Methode öffnet die konfigurierte Default-Verbindung.
+	 * Diese Methode Ã¶ffnet die konfigurierte Default-Verbindung.
 	 * @return Eine Verbindungsinstanz dieser Klasse.
 	 * @throws Exception Wird geworfen, falls was fehlerhaft verlaufen ist.
 	 */
@@ -87,7 +87,7 @@ abstract public class Connection
 		}
 		catch(UnsatisfiedLinkError ule)
 		{
-			// Für den Fall, dass rxtx native Library nicht verfügbar ist.
+			// FÃ¼r den Fall, dass rxtx native Library nicht verfÃ¼gbar ist.
 			log.info(ule.getLocalizedMessage());
 		}
 		catch(Exception e)
@@ -101,7 +101,7 @@ abstract public class Connection
 	}
 
 	/**
-	 * Diese Methode ermittelt abhängig vom eingesetzten Betriebssystem den Dateinamen des
+	 * Diese Methode ermittelt abhÃ¤ngig vom eingesetzten Betriebssystem den Dateinamen des
 	 * Default-Anschlusses.
 	 * @return Der Dateiname des Default-Anschlusses.
 	 */
@@ -120,10 +120,10 @@ abstract public class Connection
 	}
 	
 	/**
-	 * Diese Methode liefert zurück, ob eine reale Verbindung zu einer Modelleisenbahn besteht. Auch
+	 * Diese Methode liefert zurÃ¼ck, ob eine reale Verbindung zu einer Modelleisenbahn besteht. Auch
 	 * eine reale Verbindung kann hier false liefern, wenn die Verbindung z.B. schon abgebaut ist. Es muss
 	 * also eine physikalische Verbindung bestehen und diese muss auch initialisiert und aktiv sein.
-	 * @return Zustand über reale Verbindung zur Modelleisenbahn.
+	 * @return Zustand Ã¼ber reale Verbindung zur Modelleisenbahn.
 	 */
 	public boolean isReal()
 	{
@@ -131,19 +131,19 @@ abstract public class Connection
 	}
 
 	/**
-	 * Diese Methode sendet eine spezielle Bytesequenz über die Verbindung, um eine
+	 * Diese Methode sendet eine spezielle Bytesequenz Ã¼ber die Verbindung, um eine
 	 * synchronisierte Verbindung herzustellen.
 	 * @throws IOException Wird geworfen, falls ein Verbindungsfehler aufgetreten ist.
 	 */
 	public void sync() throws IOException
 	{
-		log.info("Versende Synchronisierungssequenz über die Verbindung...");
+		log.info("Versende Synchronisierungssequenz Ã¼ber die Verbindung...");
 		write(sync_sequence);
 	}
 
 	/**
-	 * Diese Methode setzt die Klasse, die die über diese Connection empfagnenen Bytes auswertet.
-	 * @param processor Die Auswerteklasse für empfangene Bytes.
+	 * Diese Methode setzt die Klasse, die die Ã¼ber diese Connection empfagnenen Bytes auswertet.
+	 * @param processor Die Auswerteklasse fÃ¼r empfangene Bytes.
 	 */
 	synchronized public void setByteProcessor(final ByteProcessor processor)
 	{
@@ -151,7 +151,7 @@ abstract public class Connection
 		{
 			if (this.processor == null)
 			{
-				throw new IllegalStateException("Der ByteProcessor ist bereits gelöscht!");
+				throw new IllegalStateException("Der ByteProcessor ist bereits gelÃ¶scht!");
 			}
 			else
 			{
@@ -188,7 +188,7 @@ abstract public class Connection
 	abstract protected void stop();
 
 	/**
-	 * Diese Methode gibt die Bytesequenz zurück, mit der das CAN-Gateway synchronisiert wird.
+	 * Diese Methode gibt die Bytesequenz zurÃ¼ck, mit der das CAN-Gateway synchronisiert wird.
 	 * @return Die Bytesequenz zum Synchronisieren des CAN-Gateways.
 	 */
 	protected byte [] getSyncSequence()
@@ -197,10 +197,10 @@ abstract public class Connection
 	}
 
 	/**
-	 * Diese Methode macht die Fehlerbehandlung im Falle eines Prüfsummenfehlers. Dabei wird
-	 * eine Resynchronisation der Verbindung ausgeführt.
-	 * @param ce Die auslösende {@link ChecksumException}.
-	 * @throws IOException Wird geworfen, wenn die Resynchronisation fehlschlägt.
+	 * Diese Methode macht die Fehlerbehandlung im Falle eines PrÃ¼fsummenfehlers. Dabei wird
+	 * eine Resynchronisation der Verbindung ausgefÃ¼hrt.
+	 * @param ce Die auslÃ¶sende {@link ChecksumException}.
+	 * @throws IOException Wird geworfen, wenn die Resynchronisation fehlschlÃ¤gt.
 	 */
 	protected void handleChecksumException(ChecksumException ce) throws IOException
 	{
@@ -209,21 +209,21 @@ abstract public class Connection
 	}
 
 	/**
-	 * Diese Methode liest ein einzelnes Byte über diese Verbindung ein.
+	 * Diese Methode liest ein einzelnes Byte Ã¼ber diese Verbindung ein.
 	 * @return Das gelesene Byte
 	 * @throws IOException Diese Exception wird geworfen, wenn das Lesen fehlschlug.
 	 */
 	abstract public int read() throws IOException;
 	
 	/**
-	 * Diese Methode schreibt ein einzelnes Byte über die Kommunikationsverbindung.
+	 * Diese Methode schreibt ein einzelnes Byte Ã¼ber die Kommunikationsverbindung.
 	 * @param i Das zu schreibende Byte.
 	 * @throws IOException Diese Exception wird geworfen, wenn das Schreiben fehlschlug.
 	 */
 	abstract public void write(int i) throws IOException;
 
 	/**
-	 * Diese Methode schreibt ein Array aus Bytes über die Kommunikationsverbindung.
+	 * Diese Methode schreibt ein Array aus Bytes Ã¼ber die Kommunikationsverbindung.
 	 * @param bytes Die zu schreibenden Bytes.
 	 * @throws IOException Diese Exception wird geworfen, wenn das Schreiben fehlschlug.
 	 */

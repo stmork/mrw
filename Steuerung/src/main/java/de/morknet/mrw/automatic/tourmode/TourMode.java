@@ -43,15 +43,15 @@ import de.morknet.mrw.batch.RouteEnableRunner;
 import de.morknet.mrw.gui.info.TourInfo;
 
 /**
- * Diese Klasse fährt eine vorgegebene Fahrtstrecke ab. Diese Fahrtstrecke ist nicht mit einer Fahrstraße zu verwechseln. Die Strecke
- * wird durch eine Fahrstraße abgefahren. Die Fahrstraße wandert sozusagen durch diese Fahrtstrecke. Somit ist in der Regel die
- * Fahrstraße kürzer, als die Fahrstrecke. Solange die Fahrstrecke noch nicht vollständig abgefahren ist, wird die dazugehörige
- * Fahrstraße nicht abgeschaltet und kann somit nur aus einem endendem Gleisabschnitt bestehen, der abgeschaltet ist und in dem 
- * ein Zug steht. Sobald eine Erweiterung der Fahrstraße möglich ist, wird diese automatisch durch {@link Trigger} geschaltet.
- * Fahrtrecken können zyklisch
- * sein. In diesem Fall werden die abgefahrenen Tourpunkte hinten wieder an die Bearbeitungsliste gehängt. Eine Beendigung dieses
- * Vorgangs kann nur manuell durch Deaktivieren dieses TourModes geschehen. In diesem Fall wird die Fahrstraße nicht verlängert. Beim
- * Erreichen des letzten Gleisabschnitts wird dann die Fahrstraße aufgelöst.
+ * Diese Klasse fÃ¤hrt eine vorgegebene Fahrtstrecke ab. Diese Fahrtstrecke ist nicht mit einer FahrstraÃŸe zu verwechseln. Die Strecke
+ * wird durch eine FahrstraÃŸe abgefahren. Die FahrstraÃŸe wandert sozusagen durch diese Fahrtstrecke. Somit ist in der Regel die
+ * FahrstraÃŸe kÃ¼rzer, als die Fahrstrecke. Solange die Fahrstrecke noch nicht vollstÃ¤ndig abgefahren ist, wird die dazugehÃ¶rige
+ * FahrstraÃŸe nicht abgeschaltet und kann somit nur aus einem endendem Gleisabschnitt bestehen, der abgeschaltet ist und in dem 
+ * ein Zug steht. Sobald eine Erweiterung der FahrstraÃŸe mÃ¶glich ist, wird diese automatisch durch {@link Trigger} geschaltet.
+ * Fahrtrecken kÃ¶nnen zyklisch
+ * sein. In diesem Fall werden die abgefahrenen Tourpunkte hinten wieder an die Bearbeitungsliste gehÃ¤ngt. Eine Beendigung dieses
+ * Vorgangs kann nur manuell durch Deaktivieren dieses TourModes geschehen. In diesem Fall wird die FahrstraÃŸe nicht verlÃ¤ngert. Beim
+ * Erreichen des letzten Gleisabschnitts wird dann die FahrstraÃŸe aufgelÃ¶st.
  * @see Trigger
  * @see Route
  * @see TourInfo
@@ -198,7 +198,7 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 	}
 
 	/**
-	 * Diese Methode versucht, einen ersten Abschnitt als Zielpunkt zu finden, der außerhalb
+	 * Diese Methode versucht, einen ersten Abschnitt als Zielpunkt zu finden, der auÃŸerhalb
 	 * des ersten {@link TourPoint}s liegt.
 	 * @param startHops Die Liste der ersten abzuarbeitenden Abschnitte.
 	 * @return Der darauffolgende erste Abschnitt eines {@link TourPoint}s.
@@ -211,7 +211,7 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 			TourPoint point = tourPoints.removeFirst();
 			for (Abschnitt a : point.getSegments())
 			{
-				log.debug(" Prüfe: " + a.getNumber());
+				log.debug(" PrÃ¼fe: " + a.getNumber());
 				if (!startHops.contains(a))
 				{
 					bump(point, null);
@@ -229,7 +229,7 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 	}
 
 	/**
-	 * Diese Methode löst die Berechnung einer Fahrstraße aus.
+	 * Diese Methode lÃ¶st die Berechnung einer FahrstraÃŸe aus.
 	 * @param startHops Die Liste der ersten Abschnitte, die abgefahren werden soll. Diese stammt
 	 * aus der Auswahl der GUI.
 	 */
@@ -262,8 +262,8 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 	}
 
 	/**
-	 * Diese Methode überprüft einen gegebenen Gleisabschnitt, ob dieser für diese Fahrtstrecke relevant ist.
-	 * @param abschnitt Der zu überprüfende Gleisabschnitt.
+	 * Diese Methode Ã¼berprÃ¼ft einen gegebenen Gleisabschnitt, ob dieser fÃ¼r diese Fahrtstrecke relevant ist.
+	 * @param abschnitt Der zu Ã¼berprÃ¼fende Gleisabschnitt.
 	 * @return Die Relevanz des gegebenen Gleisabschnitts.
 	 */
 	public boolean isSegmentRelevant(Abschnitt abschnitt)
@@ -272,7 +272,7 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 	}
 
 	/**
-	 * Diese Methode erweitert die Fahrt um einen nächsten TourPunkt.
+	 * Diese Methode erweitert die Fahrt um einen nÃ¤chsten TourPunkt.
 	 */
 	public void extend()
 	{
@@ -294,10 +294,10 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 	}
 
 	/**
-	 * Diese Methode erweitert die Fahrt um die übergebenen nächsten TourPunkte. Die Zahl bestimmt die maximal
-	 * zulässigen Erweiterungen. Unter Umständen kann es sein, dass die Fahrstraße überhaupt nicht erweitert werden kann.
-	 * @param maxHops Die Zahl der maximalen Erweiterungen der Fahrstraße.
-	 * @return Die Zahl der tatsächlich durchgeführten Erweiterungen der Fahrstraße.
+	 * Diese Methode erweitert die Fahrt um die Ã¼bergebenen nÃ¤chsten TourPunkte. Die Zahl bestimmt die maximal
+	 * zulÃ¤ssigen Erweiterungen. Unter UmstÃ¤nden kann es sein, dass die FahrstraÃŸe Ã¼berhaupt nicht erweitert werden kann.
+	 * @param maxHops Die Zahl der maximalen Erweiterungen der FahrstraÃŸe.
+	 * @return Die Zahl der tatsÃ¤chlich durchgefÃ¼hrten Erweiterungen der FahrstraÃŸe.
 	 */
 	public int extendByCount(final int maxHops)
 	{
@@ -324,7 +324,7 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 					{
 						try
 						{
-							log.debug("Prüfe, ob um Abschnitt " + a.getNumber() + " erweitert werden kann.");
+							log.debug("PrÃ¼fe, ob um Abschnitt " + a.getNumber() + " erweitert werden kann.");
 							dummyHops.add(a);
 							modell.appendRoute(route, dummyHops);
 
@@ -355,7 +355,7 @@ public class TourMode extends MrwActionControl implements ExceptionCallback
 	}
 
 	/**
-	 * Diese Methode gibt den ersten möglich Tourpunkt an.
+	 * Diese Methode gibt den ersten mÃ¶glich Tourpunkt an.
 	 * @return Der erste Tourpunkt, der angefahren wird.
 	 */
 	public final TourPoint getFirstTourPoint()

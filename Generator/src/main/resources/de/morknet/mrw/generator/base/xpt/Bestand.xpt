@@ -1,65 +1,65 @@
-«REM»
-«»
-«»
-«»	$Filename:	Bestand.xpt $
-«»	$Revision$
-«»	$Date$
-«»	$Author$
-«»	$Id$
-«»
-«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
-«»
-«»	This program and the accompanying materials are made available under the
-«»	terms of the Eclipse Public License v1.0.
-«»
-«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
-«»
-«»
-«»
-«ENDREM»
+Â«REMÂ»
+Â«Â»
+Â«Â»
+Â«Â»	$Filename:	Bestand.xpt $
+Â«Â»	$Revision$
+Â«Â»	$Date$
+Â«Â»	$Author$
+Â«Â»	$Id$
+Â«Â»
+Â«Â»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+Â«Â»
+Â«Â»	This program and the accompanying materials are made available under the
+Â«Â»	terms of the Eclipse Public License v1.0.
+Â«Â»
+Â«Â»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+Â«Â»
+Â«Â»
+Â«Â»
+Â«ENDREMÂ»
 
-«IMPORT metamodel»
+Â«IMPORT metamodelÂ»
 
-«EXTENSION de::morknet::mrw::generator::base::ext::magnetartikel»
-«EXTENSION de::morknet::mrw::generator::base::ext::signal»
-«EXTENSION de::morknet::mrw::generator::base::ext::base»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::magnetartikelÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::signalÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::baseÂ»
 
-«DEFINE Main FOR Modell»
-«FILE "Bestand.log" LOG»
-Bahnhöfe: «eAllContents.typeSelect(Bahnhof).size»
-Strecken:  «eAllContents.typeSelect(Strecke).size»
-Abschnitte: «eAllContents.typeSelect(Gleisabschnitt).size»
-DKW: «eAllContents.typeSelect(DKW).size» davon alt: «eAllContents.typeSelect(DKW).select(e|!e.neu).size»
-Weichen: «eAllContents.typeSelect(Weiche).size» davon alt: «eAllContents.typeSelect(Weiche).select(e|!e.neu).size»
+Â«DEFINE Main FOR ModellÂ»
+Â«FILE "Bestand.log" LOGÂ»
+BahnhÃ¶fe: Â«eAllContents.typeSelect(Bahnhof).sizeÂ»
+Strecken:  Â«eAllContents.typeSelect(Strecke).sizeÂ»
+Abschnitte: Â«eAllContents.typeSelect(Gleisabschnitt).sizeÂ»
+DKW: Â«eAllContents.typeSelect(DKW).sizeÂ» davon alt: Â«eAllContents.typeSelect(DKW).select(e|!e.neu).sizeÂ»
+Weichen: Â«eAllContents.typeSelect(Weiche).sizeÂ» davon alt: Â«eAllContents.typeSelect(Weiche).select(e|!e.neu).sizeÂ»
 
-«EXPAND Bestand FOREACH gruppe»
+Â«EXPAND Bestand FOREACH gruppeÂ»
 -----------------------------------------------------------------
 Lichtsignale:
-Blocksignale: «eAllContents.typeSelect(Blocksignal).size»
-Einfahrsignale: «eAllContents.typeSelect(Einfahrsignal).size»
-Ausfahrsignale: «eAllContents.typeSelect(Ausfahrsignal).size»
-Vorsignale: «eAllContents.typeSelect(Vorsignal).size»
-Gleissperrsignale: «eAllContents.typeSelect(Gleissperrsignal).size»
+Blocksignale: Â«eAllContents.typeSelect(Blocksignal).sizeÂ»
+Einfahrsignale: Â«eAllContents.typeSelect(Einfahrsignal).sizeÂ»
+Ausfahrsignale: Â«eAllContents.typeSelect(Ausfahrsignal).sizeÂ»
+Vorsignale: Â«eAllContents.typeSelect(Vorsignal).sizeÂ»
+Gleissperrsignale: Â«eAllContents.typeSelect(Gleissperrsignal).sizeÂ»
 -----------------------------------------------------------------
 Formsignale:
-Vorsignale 2-flg.: «eAllContents.typeSelect(Formvorsignal).select(e|e.spulen == 2).size»
-Vorsignale 3-flg.: «eAllContents.typeSelect(Formvorsignal).select(e|e.spulen == 3).size»
-Hauptsignale 2-flg.: «eAllContents.typeSelect(Formhauptsignal).select(e|e.spulen == 2).size»
-Hauptsignale 3-flg.: «eAllContents.typeSelect(Formhauptsignal).select(e|e.spulen == 3).size»
+Vorsignale 2-flg.: Â«eAllContents.typeSelect(Formvorsignal).select(e|e.spulen == 2).sizeÂ»
+Vorsignale 3-flg.: Â«eAllContents.typeSelect(Formvorsignal).select(e|e.spulen == 3).sizeÂ»
+Hauptsignale 2-flg.: Â«eAllContents.typeSelect(Formhauptsignal).select(e|e.spulen == 2).sizeÂ»
+Hauptsignale 3-flg.: Â«eAllContents.typeSelect(Formhauptsignal).select(e|e.spulen == 3).sizeÂ»
 -----------------------------------------------------------------
-LED-Zahl: «getPinCount(this)»
-Spulenzahl: «getSpulenzahl(this)»
-Lampenzahl: «getLampenzahl(this)»
+LED-Zahl: Â«getPinCount(this)Â»
+Spulenzahl: Â«getSpulenzahl(this)Â»
+Lampenzahl: Â«getLampenzahl(this)Â»
 -----------------------------------------------------------------
-Controller: «eAllContents.typeSelect(Controller).size»
-Lichtsignalmodule: «eAllContents.typeSelect(Anschluss).size»
-Magnetartikelmodule: «eAllContents.typeSelect(Impulsmodul).size»
-Gleismodule: «eAllContents.typeSelect(Gleismodul).size»
-Beleuchtungsmodule: «eAllContents.typeSelect(Beleuchtungsmodul).size»
-«ENDFILE»
-«ENDDEFINE»
+Controller: Â«eAllContents.typeSelect(Controller).sizeÂ»
+Lichtsignalmodule: Â«eAllContents.typeSelect(Anschluss).sizeÂ»
+Magnetartikelmodule: Â«eAllContents.typeSelect(Impulsmodul).sizeÂ»
+Gleismodule: Â«eAllContents.typeSelect(Gleismodul).sizeÂ»
+Beleuchtungsmodule: Â«eAllContents.typeSelect(Beleuchtungsmodul).sizeÂ»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Bestand FOR Gruppe»
-Gruppe: «name»
-Abschnitte: «eAllContents.typeSelect(Gleisabschnitt).size»
-«ENDDEFINE»
+Â«DEFINE Bestand FOR GruppeÂ»
+Gruppe: Â«nameÂ»
+Abschnitte: Â«eAllContents.typeSelect(Gleisabschnitt).sizeÂ»
+Â«ENDDEFINEÂ»

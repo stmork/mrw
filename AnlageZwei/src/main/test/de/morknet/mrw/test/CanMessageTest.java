@@ -46,7 +46,7 @@ public class CanMessageTest
 
 		msg.setSid(TEST_SID);
 		Assert.assertEquals("Die Microcontroller-ID ist falsch!", msg.getSid(), TEST_SID);
-		Assert.assertEquals("Die Ger‰tenummer ist falsch!", msg.getEid(), 0);
+		Assert.assertEquals("Die Ger√§tenummer ist falsch!", msg.getEid(), 0);
 		Assert.assertFalse("Der CAN-Frame darf kein Extended Frame sein!", msg.isExtended());
 
 		msg.setExtended(true);
@@ -56,7 +56,7 @@ public class CanMessageTest
 		Assert.assertFalse("Der CAN-Frame darf kein Extended Frame sein!", msg.isExtended());
 
 		msg.setEid(TEST_EID);
-		Assert.assertEquals("Die Ger‰tenummer ist falsch!", msg.getEid(), TEST_EID);
+		Assert.assertEquals("Die Ger√§tenummer ist falsch!", msg.getEid(), TEST_EID);
 		Assert.assertTrue("Der CAN-Frame muss ein Extended Frame sein!", msg.isExtended());
 	}
 
@@ -81,7 +81,7 @@ public class CanMessageTest
 			for (int b = 0; b < i;b++)
 			{
 				msg.addDataByte(b);
-				Assert.assertEquals("Die Datenbytes m¸ssen identisch sein!", msg.getData(b), b);
+				Assert.assertEquals("Die Datenbytes m√ºssen identisch sein!", msg.getData(b), b);
 			}
 			Assert.assertEquals(LogUtil.printf("Diese CAN-Message muss %d Bytes haben!", 7+i), msg.getBytes().length, 7 + i);
 			Assert.assertEquals(LogUtil.printf("Diese CAN-Message muss %d Datenbytes haben!", i), msg.length(), i);
@@ -97,8 +97,8 @@ public class CanMessageTest
 			for (int b = 0; b < i;b++)
 			{
 				msg.addDataWord(b);
-				Assert.assertEquals("Die Datenbytes m¸ssen identisch sein!", msg.getData(b + b), b);
-				Assert.assertEquals("Die Datenbytes m¸ssen identisch sein!", msg.getData(b + b + 1), 0);
+				Assert.assertEquals("Die Datenbytes m√ºssen identisch sein!", msg.getData(b + b), b);
+				Assert.assertEquals("Die Datenbytes m√ºssen identisch sein!", msg.getData(b + b + 1), 0);
 			}
 			Assert.assertEquals(LogUtil.printf("Diese CAN-Message muss %d Bytes haben!", 7+i+i), msg.getBytes().length, 7+i+i);
 			Assert.assertEquals(LogUtil.printf("Diese CAN-Message muss %d Datenbytes haben!", i+i), msg.length(), i + i);
@@ -112,7 +112,7 @@ public class CanMessageTest
 		for (int b = 0; b < 8;b++)
 		{
 			msg.addDataByte(b);
-			Assert.assertEquals("Die Datenbytes m¸ssen identisch sein!", msg.getData(b), b);
+			Assert.assertEquals("Die Datenbytes m√ºssen identisch sein!", msg.getData(b), b);
 		}
 		msg.addDataByte(0xaa);
 	}
@@ -124,8 +124,8 @@ public class CanMessageTest
 		for (int b = 0; b < 4;b++)
 		{
 			msg.addDataWord(b);
-			Assert.assertEquals("Die Datenbytes m¸ssen identisch sein!", msg.getData(b + b), b);
-			Assert.assertEquals("Die Datenbytes m¸ssen identisch sein!", msg.getData(b + b + 1), 0);
+			Assert.assertEquals("Die Datenbytes m√ºssen identisch sein!", msg.getData(b + b), b);
+			Assert.assertEquals("Die Datenbytes m√ºssen identisch sein!", msg.getData(b + b + 1), 0);
 		}
 		msg.addDataWord(0xaa);
 	}

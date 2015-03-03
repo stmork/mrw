@@ -34,7 +34,7 @@ public class InvalidBatchExecuterException extends BatchProcessingException
 	 */
 	public InvalidBatchExecuterException(final BatchExecuter batchExecuter)
 	{
-		super(LogUtil.printf("BatchExecuter mit ID %d ist nicht gültig!", batchExecuter.getId()));
+		super(LogUtil.printf("BatchExecuter mit ID %d ist nicht gÃ¼ltig!", batchExecuter.getId()));
 	}
 
 	private static final long serialVersionUID = 1L;

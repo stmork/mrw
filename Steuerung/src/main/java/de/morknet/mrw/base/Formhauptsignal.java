@@ -23,7 +23,7 @@ import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.SignalCode;
 
 /**
- * Diese Klasse repräsentiert ein Formhauptsignal.
+ * Diese Klasse reprÃ¤sentiert ein Formhauptsignal.
  * @author sm
  *
  */
@@ -35,9 +35,9 @@ public final class Formhauptsignal extends Hauptsignal implements Formsignal
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Formhauptsignal.
-	 * @param abschnitt Der dazugehörende Gleisabschnitt.
+	 * @param abschnitt Der dazugehÃ¶rende Gleisabschnitt.
 	 * @param number Die Signalnummer.
-	 * @param inDirection Die Zählrichtung.
+	 * @param inDirection Die ZÃ¤hlrichtung.
 	 * @param spulen Die Zahl der Schaltspulen.
 	 */
 	public Formhauptsignal(Abschnitt abschnitt, String number, boolean inDirection, int spulen)

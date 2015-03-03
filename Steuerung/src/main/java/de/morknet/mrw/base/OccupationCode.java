@@ -25,7 +25,7 @@ import java.util.Map;
 import de.morknet.mrw.comm.CodeNotFoundException;
 
 /**
- * Dieses Interface repräsentiert die Antwort-Codes der Gleisbesetztmeldung
+ * Dieses Interface reprÃ¤sentiert die Antwort-Codes der Gleisbesetztmeldung
  * auf das GETRBS-Kommando.
  * @author smork
  *
@@ -59,7 +59,7 @@ public enum OccupationCode
 	}
 	
 	/**
-	 * Diese Methode gibt den Gleisbelegungscode als Integer zurück, so wie er von den Microcontrollern gemeldet wird.
+	 * Diese Methode gibt den Gleisbelegungscode als Integer zurÃ¼ck, so wie er von den Microcontrollern gemeldet wird.
 	 * @return Der Gleisbelegungscode.
 	 */
 	public int getOccupationCode()

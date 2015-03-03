@@ -161,7 +161,7 @@
 		<mkdir dir="${bin-path}"/>
 		<copy file="${src-path}/log4j.properties" todir="${bin-path}" />
 		<javac srcdir="${src-path}:${gen-src-path}:${tst-path}" destdir="${bin-path}"
-				encoding="ISO-8859-15" debug="true"
+				encoding="UTF-8" debug="true"
 				includeantruntime="false">
 			<classpath refid="compile.classpath"/>
 		</javac>
@@ -258,7 +258,7 @@
 		    <junit printsummary="on" fork="true" forkmode="once" haltonerror="yes" haltonfailure="yes">
 				<classpath refid="coverage.classpath" />
 				<formatter type="xml"/>
-				<jvmarg value="-Dfile.encoding=ISO-8859-15" />
+				<jvmarg value="-Dfile.encoding=UTF-8" />
 				<test name="de.morknet.mrw.test.UtilTest"/>
 				<test name="de.morknet.mrw.test.EnumTest"/>
 				<test name="de.morknet.mrw.test.CanMessageTest"/>

@@ -22,7 +22,7 @@ package de.morknet.mrw.base;
 import de.morknet.mrw.comm.Command;
 
 /**
- * Diese Klasse repräsentiert ein Formvorsignal.
+ * Diese Klasse reprÃ¤sentiert ein Formvorsignal.
  * @author sm
  *
  */
@@ -34,9 +34,9 @@ public final class Formvorsignal extends Vorsignal implements Formsignal
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Formvorsignal.
-	 * @param abschnitt Der Gleisabschnitt zu dem das Formvorsignal gehört.
+	 * @param abschnitt Der Gleisabschnitt zu dem das Formvorsignal gehÃ¶rt.
 	 * @param name Der Name des Signals.
-	 * @param inDirection Die Richtung relativ zur Zährichtung. 
+	 * @param inDirection Die Richtung relativ zur ZÃ¤hrichtung. 
 	 * @param spulen Die Zahl der Antriebsspulen.
 	 */
 	public Formvorsignal(Abschnitt abschnitt, String name, boolean inDirection, int spulen)

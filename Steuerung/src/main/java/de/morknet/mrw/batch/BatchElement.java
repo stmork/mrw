@@ -25,7 +25,7 @@ import de.morknet.mrw.comm.MsgCode;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse repräsentiert ein CAN-Kommando und das dazugehörige Gerät.
+ * Diese Klasse reprÃ¤sentiert ein CAN-Kommando und das dazugehÃ¶rige GerÃ¤t.
  * @author smork
  *
  */
@@ -37,9 +37,9 @@ public class BatchElement
 	private       MsgCode    resultCode;
 
 	/**
-	 * Dieser Konstruktur initialisiert alle Informationen für ein Schaltkommando
-	 * @param batch Der {@link Batch}, der das Kommando enthält.
-	 * @param device Das zu schaltende Gerät.
+	 * Dieser Konstruktur initialisiert alle Informationen fÃ¼r ein Schaltkommando
+	 * @param batch Der {@link Batch}, der das Kommando enthÃ¤lt.
+	 * @param device Das zu schaltende GerÃ¤t.
 	 * @param msg Die MRW-Message
 	 * @see DeviceUnit
 	 * @see MrwMessage
@@ -52,8 +52,8 @@ public class BatchElement
 	}
 
 	/**
-	 * Diese Methode gibt den Batch zurück, der zu diesem Element gehört.
-	 * @return Der Batch, der dieses BatchElement enthält.
+	 * Diese Methode gibt den Batch zurÃ¼ck, der zu diesem Element gehÃ¶rt.
+	 * @return Der Batch, der dieses BatchElement enthÃ¤lt.
 	 */
 	public Batch getBatch()
 	{
@@ -61,7 +61,7 @@ public class BatchElement
 	}
 			
 	/**
-	 * Diese Methode gibt das Kommando als CAN-Meldung zurück. 
+	 * Diese Methode gibt das Kommando als CAN-Meldung zurÃ¼ck. 
 	 * @return Die CAN-Meldung dieses BatchElements.
 	 */
 	public MrwMessage getMessage()
@@ -70,8 +70,8 @@ public class BatchElement
 	}
 
 	/**
-	 * Setzt den Rückmelde-Code zu diesem Batchelement.
-	 * @param result Der zu setzende Rückmelde-Code.
+	 * Setzt den RÃ¼ckmelde-Code zu diesem Batchelement.
+	 * @param result Der zu setzende RÃ¼ckmelde-Code.
 	 */
 	public void setResultCode(MsgCode result)
 	{
@@ -79,7 +79,7 @@ public class BatchElement
 	}
 	
 	/**
-	 * Diese Methode gibt Informationen zu diesem BatchElement als Text zurück.
+	 * Diese Methode gibt Informationen zu diesem BatchElement als Text zurÃ¼ck.
 	 * @return Infotext zu diesem BatchElement.
 	 */
 	public String toString()
@@ -90,8 +90,8 @@ public class BatchElement
 	}
 
 	/**
-	 * Gibt das mit diesem BatchElement verbundene Gerät zurück.
-	 * @return Das Gerät dieses BatchElements.
+	 * Gibt das mit diesem BatchElement verbundene GerÃ¤t zurÃ¼ck.
+	 * @return Das GerÃ¤t dieses BatchElements.
 	 */
 	public DeviceUnit getDeviceUnit()
 	{

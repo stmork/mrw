@@ -24,7 +24,7 @@ import java.io.Serializable;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Basisklasse wird für alle bennanten Elemente einer Modelleisenbahn verwendet.
+ * Diese Basisklasse wird fÃ¼r alle bennanten Elemente einer Modelleisenbahn verwendet.
  * @author smork
  *
  */
@@ -58,7 +58,7 @@ abstract public class NamedElement implements Serializable
 	}
 
 	/**
-	 * Diese Methode gibt die Koordinaten dieses Bauteils zurück. 
+	 * Diese Methode gibt die Koordinaten dieses Bauteils zurÃ¼ck. 
 	 * @return Die Koordinaten dieses Bauteils als Text.
 	 */
 	public String getLayoutInfo()
@@ -83,7 +83,7 @@ abstract public class NamedElement implements Serializable
 	}
 
 	/**
-	 * Diese Methode gibt die x-Position dieses Bauteils zurück.
+	 * Diese Methode gibt die x-Position dieses Bauteils zurÃ¼ck.
 	 * @return die x-Position dieses Bauteils.
 	 */
 	public int getLogX()
@@ -101,7 +101,7 @@ abstract public class NamedElement implements Serializable
 	}
 
 	/**
-	 * Diese Methode gibt die y-Position dieses Bauteils zurück.
+	 * Diese Methode gibt die y-Position dieses Bauteils zurÃ¼ck.
 	 * @return die y-Position dieses Bauteils.
 	 */
 	public int getLogY()

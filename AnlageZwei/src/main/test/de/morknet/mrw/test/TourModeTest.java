@@ -51,15 +51,15 @@ public class TourModeTest extends ControllerTestBase
 			Assert.assertNotNull(LogUtil.printf("Die Tour %s konnte nicht bereitgestellt werden!", info), tour);
 			log.info("============ Simuliere Tour " + tour + " ============");
 			TourPoint start = tour.getFirstTourPoint();
-			Assert.assertNotNull("Es muss Informationen ¸ber den Startpunkt geben!", start);
+			Assert.assertNotNull("Es muss Informationen √ºber den Startpunkt geben!", start);
 
 			Abschnitt a = start.getSegments().get(0);
 			Assert.assertNotNull("Es muss einen Gleisabschnitt im Startpunkt geben!", a);
 
 			controller.addSegmentSelection(a);
-			Assert.assertTrue("Es muss exakt ein Gleisabschnitt ausgew‰hlt sein!",
+			Assert.assertTrue("Es muss exakt ein Gleisabschnitt ausgew√§hlt sein!",
 					controller.getSegmentSelection().size() == 1);
-			Assert.assertSame("Der gew‰hlte Startpunkt muss gleich dem Startgleisabschnitt sein",
+			Assert.assertSame("Der gew√§hlte Startpunkt muss gleich dem Startgleisabschnitt sein",
 					controller.getSegmentSelection().get(0), a);
 
 			// Fahrt starten.
@@ -67,11 +67,11 @@ public class TourModeTest extends ControllerTestBase
 			tour.run();
 			Assert.assertTrue(LogUtil.printf("Die Fahrt '%s' muss aktiv sein!", tour), tour.isActive());
 			route = tour.getRoute();
-			Assert.assertNotNull("Es muss eine Fahrstraﬂe vorhanden sein!", route);
+			Assert.assertNotNull("Es muss eine Fahrstra√üe vorhanden sein!", route);
 			simulateTour(route, info.isLoop() ? MAX_CYCLIC_SEGMENTS : 0);
 			tour.deactivate();
 			
-			// Alle Gleise und Fahrstraﬂen freigeben!
+			// Alle Gleise und Fahrstra√üen freigeben!
 			controller.removeAllRoutes();
 			for(Abschnitt abschnitt : model.getSegments())
 			{

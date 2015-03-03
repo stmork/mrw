@@ -43,14 +43,14 @@ public class TestController extends EmptyController
 	{
 		log.info("=================================================================================");
 		log.info(LogUtil.now());
-		log.info("Test controller für " + model.getName());
+		log.info("Test controller fÃ¼r " + model.getName());
 		log.info("$Revision$");
 		log.info("Copyright itemis AG 2007-2009");
 		log.info("=================================================================================");
 	}
 	
 	/**
-	 * Diese Methode gibt die Controller-Instanz zurück.
+	 * Diese Methode gibt die Controller-Instanz zurÃ¼ck.
 	 * @return Der Testcontroller.
 	 */
 	public static TestController getController()

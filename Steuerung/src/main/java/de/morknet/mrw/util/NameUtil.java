@@ -30,9 +30,9 @@ import de.morknet.mrw.base.Signal;
 public class NameUtil
 {
 	/**
-	 * Gibt die Fahrtart einer Fahrstraße im Klartext aus. 
+	 * Gibt die Fahrtart einer FahrstraÃŸe im Klartext aus. 
 	 * @param shunting Ob rangiert wird.
-	 * @param direction In welche Richtung relativ zur Zählrichtung gefahren wird.
+	 * @param direction In welche Richtung relativ zur ZÃ¤hlrichtung gefahren wird.
 	 * @return Die Fahrtart im Klartext.
 	 */
 	public final static String logRouteType(final boolean shunting, final boolean direction)
@@ -41,8 +41,8 @@ public class NameUtil
 	}
 
 	/**
-	 * Gibt die Fahrtart einer Fahrstraße im Klartext aus. 
-	 * @param route Die Fahrstraße selbst.
+	 * Gibt die Fahrtart einer FahrstraÃŸe im Klartext aus. 
+	 * @param route Die FahrstraÃŸe selbst.
 	 * @return Die Fahrtart im Klartext.
 	 */
 	public final static String logRouteType(final Route route)
@@ -51,7 +51,7 @@ public class NameUtil
 	}
 
 	/**
-	 * Gibt den reinen Namen eines Signals zurück.
+	 * Gibt den reinen Namen eines Signals zurÃ¼ck.
 	 * @param s Das Signal mit dem entsprechenden Signalname.
 	 * @return Der Signalname ohne seine Betriebsgruppe.
 	 */
@@ -62,7 +62,7 @@ public class NameUtil
 	}
 
 	/**
-	 * Diese Methode gibt einen formatierten String einer CAN-Message ID zurück.
+	 * Diese Methode gibt einen formatierten String einer CAN-Message ID zurÃ¼ck.
 	 * @param id Die zu formatierende CAN-Message ID.
 	 * @return Die formatierte CAN-Message ID.
 	 */
@@ -79,8 +79,8 @@ public class NameUtil
 	
 	/**
 	 * Diese Methode wandelt einen Text in einen ID-String um. Whitespaces werden in einen Punkt "." umgewandelt.
-	 * Großbuchstaben werden in einen Kleinbuchstaben gewandelt und es wird ein Punkt vorangestellt. Ansonsten
-	 * werden nur Buchstaben und Ziffern übernommen.
+	 * GroÃŸbuchstaben werden in einen Kleinbuchstaben gewandelt und es wird ein Punkt vorangestellt. Ansonsten
+	 * werden nur Buchstaben und Ziffern Ã¼bernommen.
 	 * @param name Der umzuwandelnde Text.
 	 * @return Der umgewandelte ID-String.
 	 */
@@ -104,19 +104,19 @@ public class NameUtil
 			{
 				switch(c)
 				{
-				case 'ä':
-				case 'Ä':
+				case 'Ã¤':
+				case 'Ã„':
 					buffer.append("ae");
 					break;
-				case 'ö':
-				case 'Ö':
+				case 'Ã¶':
+				case 'Ã–':
 					buffer.append("oe");
 					break;
-				case 'ü':
-				case 'Ü':
+				case 'Ã¼':
+				case 'Ãœ':
 					buffer.append("ue");
 					break;
-				case 'ß':
+				case 'ÃŸ':
 					buffer.append("ss");
 					break;
 				default:

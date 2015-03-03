@@ -23,7 +23,7 @@ import de.morknet.mrw.MrwController;
 import de.morknet.mrw.Route;
 
 /**
- * Diese Thread-Klasse wird dazu benutzt, eine Fahrstraße asynchron freizugeben. Sie wird
+ * Diese Thread-Klasse wird dazu benutzt, eine FahrstraÃŸe asynchron freizugeben. Sie wird
  * im Falle einer manuellen Manipulation einer Weiche benutzt.
  * @author smork
  *
@@ -31,13 +31,13 @@ import de.morknet.mrw.Route;
 public class ClearRouteRunner extends BatchRunner
 {
 	/**
-	 * Dieser Konstruktur initialisiert diesen BatchRunner zum Auflösen einer Fahrstraße.
+	 * Dieser Konstruktur initialisiert diesen BatchRunner zum AuflÃ¶sen einer FahrstraÃŸe.
 	 * @param controller Der steuernde Controller.
-	 * @param route Die aufzulösende Fahrstraße.
+	 * @param route Die aufzulÃ¶sende FahrstraÃŸe.
 	 */
 	public ClearRouteRunner(MrwController controller, Route route)
 	{
-		super(controller, "Konfliktauflösung für manuelle Weichenschaltung", route, null);
+		super(controller, "KonfliktauflÃ¶sung fÃ¼r manuelle Weichenschaltung", route, null);
 	}
 
 	@Override

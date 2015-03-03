@@ -32,7 +32,7 @@ import de.morknet.mrw.Modell;
 import de.morknet.mrw.Route;
 
 /**
- * Diese Klasse repräsentiert eine Betriebsgruppe einer Eisenbahn. Eine Betriebsgruppe kann eine freie Strecke
+ * Diese Klasse reprÃ¤sentiert eine Betriebsgruppe einer Eisenbahn. Eine Betriebsgruppe kann eine freie Strecke
  * oder ein Bahnhof sein.
  * @author smork
  *
@@ -72,8 +72,8 @@ public class Gruppe extends NamedElement
 	}
 
 	/**
-	 * Diese Methode ermittelt, ob die GUI-Darstellung entgegen der Zählrichtung dargestellt werden soll.
-	 * @return Die Zählrichtung
+	 * Diese Methode ermittelt, ob die GUI-Darstellung entgegen der ZÃ¤hlrichtung dargestellt werden soll.
+	 * @return Die ZÃ¤hlrichtung
 	 */
 	public boolean isInvertedDirection()
 	{
@@ -94,7 +94,7 @@ public class Gruppe extends NamedElement
 	}
 
 	/**
-	 * Diese Methode bereitet die internen Listen für die allgemeine Verwendung vor. 
+	 * Diese Methode bereitet die internen Listen fÃ¼r die allgemeine Verwendung vor. 
 	 */
 	public void prepare()
 	{
@@ -126,7 +126,7 @@ public class Gruppe extends NamedElement
 	}
 
 	/**
-	 * Diese Methode gibt die Sammlung aller Signale zurück.
+	 * Diese Methode gibt die Sammlung aller Signale zurÃ¼ck.
 	 * @return Die Sammlung aller Signale.
 	 */
 	public Collection<Signal> getAllSignals()
@@ -135,7 +135,7 @@ public class Gruppe extends NamedElement
 	}
 
 	/**
-	 * Diese Methode gibt die Sammlung aller Gleisteile zurück.
+	 * Diese Methode gibt die Sammlung aller Gleisteile zurÃ¼ck.
 	 * @return Die Sammlung aller Gleisteile.
 	 */
 	public Collection<Gleisteil> getTrackElements()
@@ -144,7 +144,7 @@ public class Gruppe extends NamedElement
 	}
 	
 	/**
-	 * Diese Methode gibt die Sammlung aller Gleisabschnitte zurück. 
+	 * Diese Methode gibt die Sammlung aller Gleisabschnitte zurÃ¼ck. 
 	 * @return Die Sammlung aller Gleisabschnitte.
 	 */
 	public Collection<Abschnitt> getSegments()
@@ -153,7 +153,7 @@ public class Gruppe extends NamedElement
 	}
 	
 	/**
-	 * Gibt die Liste von Hauptgleisen einer Betriebsgruppe zurück.
+	 * Gibt die Liste von Hauptgleisen einer Betriebsgruppe zurÃ¼ck.
 	 * @return Liste von Abschnitten der Hauptgleise.
 	 */
 	public List<Abschnitt> getMainSegments()
@@ -162,9 +162,9 @@ public class Gruppe extends NamedElement
 	}
 
 	/**
-	 * Gibt eine Liste von Abschnitten zurück, die gewissen Kriterien gehorcht.
+	 * Gibt eine Liste von Abschnitten zurÃ¼ck, die gewissen Kriterien gehorcht.
 	 * @param occupied Abschnitt muss diesem Flag entsprechen.
-	 * @param inDirection Art der Richtung relativ zur Zählrichtung.
+	 * @param inDirection Art der Richtung relativ zur ZÃ¤hlrichtung.
 	 * @return Liste von Abschnitten.
 	 */
 	public List<Abschnitt> getListOfDirectedSegments(final boolean occupied, final boolean inDirection)
@@ -198,13 +198,13 @@ public class Gruppe extends NamedElement
 				{
 					/*
 					 * Wird nach frei gefragt, muss das Hauptgleis und die beiden
-					 * benachbarten Ausfahrgleise frei sein. Außerdem dürfen diese
-					 * Abschnitte keiner Fahrstraße zugeordnet sein. 
+					 * benachbarten Ausfahrgleise frei sein. AuÃŸerdem dÃ¼rfen diese
+					 * Abschnitte keiner FahrstraÃŸe zugeordnet sein. 
 					 */
 					Abschnitt vNachbar = vGleise.get(0).segment;
 					Abschnitt rNachbar = rGleise.get(0).segment;
-					log.debug("Nachbar vorwärts: " + vNachbar.getName());
-					log.debug("Nachbar rückwärts: " + rNachbar.getName());
+					log.debug("Nachbar vorwÃ¤rts: " + vNachbar.getName());
+					log.debug("Nachbar rÃ¼ckwÃ¤rts: " + rNachbar.getName());
 					if ((!vNachbar.isOccupied()) && (!abschnitt.isOccupied()) && (!rNachbar.isOccupied()) &&
 							(Route.findRoute(rNachbar) == null) &&
 							(Route.findRoute(abschnitt) == null) &&

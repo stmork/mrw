@@ -45,7 +45,7 @@ public class MrwMessageTest
 		
 		MrwMessage msg = MrwMessage.createCommandMsg(TEST_COMMAND, TEST_SID, TEST_EID);
 		Assert.assertEquals("Die Microcontroller-ID ist falsch!", msg.getSid(), TEST_SID);
-		Assert.assertEquals("Die Ger‰tenummer ist falsch!", msg.getEid(), TEST_EID);
+		Assert.assertEquals("Die Ger√§tenummer ist falsch!", msg.getEid(), TEST_EID);
 		Assert.assertTrue("Der CAN-Frame muss ein Extended Frame sein!", msg.isExtended());
 	}
 
@@ -58,7 +58,7 @@ public class MrwMessageTest
 		Assert.assertEquals("Der Kommando-Code ist falsch!", msg.getCommand(), TEST_COMMAND);
 		Assert.assertEquals("Der Antwort-Code ist falsch!", msg.getResultCode(), TEST_MSGCODE);
 		Assert.assertEquals("Die Microcontroller-ID ist falsch", msg.getSourceControllerId(), TEST_SID);
-		Assert.assertEquals("Die Ger‰tenummer ist falsch!", msg.getSourceUnitNo(), TEST_EID);
+		Assert.assertEquals("Die Ger√§tenummer ist falsch!", msg.getSourceUnitNo(), TEST_EID);
 		Assert.assertEquals("Die Result-ID ist falsch!", msg.getResultId(), (TEST_SID << 16) | TEST_EID);
 	}
 	

@@ -37,7 +37,7 @@ import de.morknet.mrw.base.Signal;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse gibt Informationen über einen abzufahrenden Tourpunkt einer Fahrt.
+ * Diese Klasse gibt Informationen Ã¼ber einen abzufahrenden Tourpunkt einer Fahrt.
  * @see TourMode
  * @author sm
  *
@@ -98,7 +98,7 @@ public class TourPoint
 				else
 				{
 					throw new IllegalArgumentException(LogUtil.printf(
-							"Stützpunkt %s lässt sich nicht in Gleisabschnitt auflösen!", name));
+							"StÃ¼tzpunkt %s lÃ¤sst sich nicht in Gleisabschnitt auflÃ¶sen!", name));
 				}
 			}
 			while(st.hasMoreTokens());
@@ -106,7 +106,7 @@ public class TourPoint
 		if (segments.isEmpty())
 		{
 			throw new IllegalArgumentException(LogUtil.printf(
-					"Es konnten keine Gleisabschnitte für diesen Tourabschnitt (%s) gefunden werden", input));
+					"Es konnten keine Gleisabschnitte fÃ¼r diesen Tourabschnitt (%s) gefunden werden", input));
 		}
 		
 		if (log.isTraceEnabled())
@@ -115,14 +115,14 @@ public class TourPoint
 			{
 				if (a.getSignals(direction).size() == 0)
 				{
-					log.warn(LogUtil.printf("  Stützpunkt %s hat kein Hauptsignal!", a.getNumber()));
+					log.warn(LogUtil.printf("  StÃ¼tzpunkt %s hat kein Hauptsignal!", a.getNumber()));
 				}
 			}
 		}
 	}
 
 	/**
-	 * Diese Methode gibt die erlaubten Gleisabschnitte an diesem TourPoint zurück. 
+	 * Diese Methode gibt die erlaubten Gleisabschnitte an diesem TourPoint zurÃ¼ck. 
 	 * @return Die Liste der an diesem TourPoint erlaubten Gleisabschnitte. 
 	 */
 	public List<Abschnitt> getSegments()

@@ -44,14 +44,14 @@ public class TcpConnection extends Connection
 
 	/**
 	 * Dieser Konstruktur baut eine Verbindung zu einer realen Modelleisenbahnanlage
-	 * über eine TCP-Verbindung auf. Remote muss daher der mrw_daemon laufen.
+	 * Ã¼ber eine TCP-Verbindung auf. Remote muss daher der mrw_daemon laufen.
 	 * @param hostname Der Hostname der TCP-Verbindung
 	 * @param port Der Socket-Port der TCP-Verbindung
 	 * @throws IOException Wird geworfen, wenn irgendetwas schief geht.
 	 */
 	public TcpConnection(final String hostname, final int port) throws IOException
 	{
-		log.debug(LogUtil.printf("Versuche TCP-Verbindung über %s:%d", hostname, port));
+		log.debug(LogUtil.printf("Versuche TCP-Verbindung Ã¼ber %s:%d", hostname, port));
 		socket = new Socket(hostname, port);
 		socket.setSoTimeout(1000);
 		in  = socket.getInputStream();
@@ -114,7 +114,7 @@ public class TcpConnection extends Connection
 			}
 			finally
 			{
-				log.info("Beende TCP-Übertragung...");
+				log.info("Beende TCP-Ãœbertragung...");
 			}
 		}
 	}
@@ -122,7 +122,7 @@ public class TcpConnection extends Connection
 	@Override
 	public void close()
 	{
-		log.info("Beenden der TCP-Übertragung einleiten...");
+		log.info("Beenden der TCP-Ãœbertragung einleiten...");
 		try
 		{
 			reader.interrupt();
@@ -139,7 +139,7 @@ public class TcpConnection extends Connection
 		}
 		finally
 		{
-			log.info("Die TCP-Übertragung wurde beendet.");
+			log.info("Die TCP-Ãœbertragung wurde beendet.");
 		}
 	}
 

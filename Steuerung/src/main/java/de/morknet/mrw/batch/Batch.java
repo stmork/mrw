@@ -36,9 +36,9 @@ import de.morknet.mrw.util.LogUtil;
 import de.morknet.mrw.util.NameUtil;
 
 /**
- * Diese Klasse repräsentiert einen Stapel von Kommandos. Die Kommandos werden als MRW-Meldung repräsentiert.
- * Zur MRW-Meldung passt genau ein Gerät. Beides wird als BatchElement in diesem Batch gehalten. Sinn dieses
- * Batches ist, dass alle Kommandos dieses Batches erfolgreich ausgeführt sein muss, bevor der nächste Batch
+ * Diese Klasse reprÃ¤sentiert einen Stapel von Kommandos. Die Kommandos werden als MRW-Meldung reprÃ¤sentiert.
+ * Zur MRW-Meldung passt genau ein GerÃ¤t. Beides wird als BatchElement in diesem Batch gehalten. Sinn dieses
+ * Batches ist, dass alle Kommandos dieses Batches erfolgreich ausgefÃ¼hrt sein muss, bevor der nÃ¤chste Batch
  * verarbeitet werden darf.
  * @author smork
  *
@@ -48,12 +48,12 @@ public class Batch
 	private final static Log log = LogFactory.getLog(Batch.class); 
 
 	/**
-	 * Mapper von der Gerätenummer auf das passende BatchElement.
+	 * Mapper von der GerÃ¤tenummer auf das passende BatchElement.
 	 */
 	private final        LinkedHashSet<BatchElement>  elements    = new LinkedHashSet<BatchElement>();
 	
 	/**
-	 * Der BatchExecuter zu dem dieser Thread gehört.
+	 * Der BatchExecuter zu dem dieser Thread gehÃ¶rt.
 	 */
 	private final BatchExecuter executer;
 	
@@ -68,12 +68,12 @@ public class Batch
 	private              long    delay       =    0L;
 	
 	/**
-	 * Die Wartezeit nach jeder CAN-Message. Diese Wartezeit schont den CAN-Bus vor Überflutung.
+	 * Die Wartezeit nach jeder CAN-Message. Diese Wartezeit schont den CAN-Bus vor Ãœberflutung.
 	 */
 	private final static long    SEND_DELAY  =    1L;
 	
 	/**
-	 * Zähler für fehlerhafte CAN-Rückmeldungen.
+	 * ZÃ¤hler fÃ¼r fehlerhafte CAN-RÃ¼ckmeldungen.
 	 */
 	private              int     errorCount  = 0;
 
@@ -88,7 +88,7 @@ public class Batch
 	private              boolean sent        = false;
 	
 	/**
-	 * Der kontinuierlich wachsende Batch ID Zähler.
+	 * Der kontinuierlich wachsende Batch ID ZÃ¤hler.
 	 */
 	private final static AtomicInteger idCounter   = new AtomicInteger(0);
 	
@@ -98,9 +98,9 @@ public class Batch
 	private final        int     ID;
 	
 	/**
-	 * Erzeugt einen neuen Batch. Dieser Batch kann nur vollständig OK verarbeitet werden
-	 * oder er führt zu einem Abbruch der weiteren Verarbeitung.
-	 * @param executer Der übergeordnete BatchExecuter.
+	 * Erzeugt einen neuen Batch. Dieser Batch kann nur vollstÃ¤ndig OK verarbeitet werden
+	 * oder er fÃ¼hrt zu einem Abbruch der weiteren Verarbeitung.
+	 * @param executer Der Ã¼bergeordnete BatchExecuter.
 	 */
 	Batch(BatchExecuter executer)
 	{
@@ -111,9 +111,9 @@ public class Batch
 	}
 
 	/**
-	 * Fügt ein Kommando dem Batch hinzu. Dieses Kommando wird mittels eines Gerätes zu einem
+	 * FÃ¼gt ein Kommando dem Batch hinzu. Dieses Kommando wird mittels eines GerÃ¤tes zu einem
 	 * BatchElement verbunden.
-	 * @param device Das zum Kommando passende Gerät.
+	 * @param device Das zum Kommando passende GerÃ¤t.
 	 * @param msg Das Kommando als MRW-Meldung.
 	 */
 	public void addBatchElement(DeviceUnit device, MrwMessage msg)
@@ -127,13 +127,13 @@ public class Batch
 				BatchElement element = new BatchElement(this, device, msg);
 				elements.add(element);
 				cmdCount++;
-				log.debug("BatchElement " + element + " hinzugefügt.");
+				log.debug("BatchElement " + element + " hinzugefÃ¼gt.");
 			}
 		}
 	}
 
 	/**
-	 * Entfernt ein BatchElement aus diesem Batch. Dies passiert, wenn ein Kommando erfolgreich ausgeführt
+	 * Entfernt ein BatchElement aus diesem Batch. Dies passiert, wenn ein Kommando erfolgreich ausgefÃ¼hrt
 	 * wurde.
 	 * @param element Das BatchElement, das entfernt werden soll.
 	 */
@@ -159,7 +159,7 @@ public class Batch
 	}
 
 	/**
-	 * Prüft, ob überhaupt Kommandos zum Versenden anstehen.
+	 * PrÃ¼ft, ob Ã¼berhaupt Kommandos zum Versenden anstehen.
 	 * @return Ob die Kommandoliste leer ist.
 	 */
 	public boolean isEmpty()
@@ -171,10 +171,10 @@ public class Batch
 	}
 
 	/**
-	 * Diese Methode sendet diesen Batch über die angegebene Verbindung. Die Methode wartet, bis
-	 * ein Timeout erreicht wurde. Kommt als Rückmeldecode MSG_QUEUED, wird der Timeout um eine
+	 * Diese Methode sendet diesen Batch Ã¼ber die angegebene Verbindung. Die Methode wartet, bis
+	 * ein Timeout erreicht wurde. Kommt als RÃ¼ckmeldecode MSG_QUEUED, wird der Timeout um eine
 	 * Sekunde hochgesetzt.
-	 * @param connection Die Verbindung, über die die Kommandos dieses Batches gesendet werden soll.
+	 * @param connection Die Verbindung, Ã¼ber die die Kommandos dieses Batches gesendet werden soll.
 	 * @throws IOException Wird bei Sendefehlern geworfen.
 	 */
 	void sendBatch(Connection connection) throws IOException
@@ -208,7 +208,7 @@ public class Batch
 				errorCount = 0;
 			}
 			// Hier erfolgt das Versenden der Kommandos. Das darf nicht synchronisiert erfolgen, da
-			// schon während des Versendens die ersten Rückmeldungen erfolgen können.
+			// schon wÃ¤hrend des Versendens die ersten RÃ¼ckmeldungen erfolgen kÃ¶nnen.
 			long sendStart = System.currentTimeMillis();
 			for(MrwMessage msg : msgList)
 			{
@@ -216,7 +216,7 @@ public class Batch
 				connection.write(msg.getBytes());
 				try
 				{
-					// Atempause für den CAN-Bus.
+					// Atempause fÃ¼r den CAN-Bus.
 					Thread.sleep(SEND_DELAY);
 				}
 				catch (InterruptedException e)
@@ -229,7 +229,7 @@ public class Batch
 			long sendEnd = System.currentTimeMillis();
 			log.debug(LogUtil.printf("Senden der %d Kommandos in %d ms erfolgt.",
 					cmdCount, sendEnd - sendStart));
-			log.debug("Warte auf Ausführung der Kommandos (Go, ATmega, Go!)...");
+			log.debug("Warte auf AusfÃ¼hrung der Kommandos (Go, ATmega, Go!)...");
 			
 			try
 			{
@@ -238,7 +238,7 @@ public class Batch
 				
 				// Solange noch
 				// 1. Restzeit vorhanden ist
-				// 2. Noch Rückmeldungen ausstehen 
+				// 2. Noch RÃ¼ckmeldungen ausstehen 
 				// 3. kein Fehler aufgetaucht ist
 				// wird die Restzeit gewartet.
 				synchronized (this)
@@ -247,16 +247,16 @@ public class Batch
 					{
 						log.debug(LogUtil.printf("Warte %d ms...", diff));
 						wait(diff);
-						log.debug(LogUtil.printf("Es sind noch %d ms Wartezeit übrig.",
+						log.debug(LogUtil.printf("Es sind noch %d ms Wartezeit Ã¼brig.",
 								start + timeout - System.currentTimeMillis()));
 					}
 				}
 				synchronized(elements)
 				{
-					// Auflistung aller unvollständigen Kommandos.
+					// Auflistung aller unvollstÃ¤ndigen Kommandos.
 					if (elements.size() > 0)
 					{
-						log.info("Liste der nicht ausgeführten Kommandos - " + getIdString() + ":");
+						log.info("Liste der nicht ausgefÃ¼hrten Kommandos - " + getIdString() + ":");
 						for(BatchElement element : elements)
 						{
 							log.info(element);
@@ -271,17 +271,17 @@ public class Batch
 					throw new FailedExecutionException(this);
 				}
 				
-				// Unvollständigkeit loggen und Exception werfen.
+				// UnvollstÃ¤ndigkeit loggen und Exception werfen.
 				if (!isComplete())
 				{
-					log.info("Zeit für Batch Kommandoausführung abgelaufen.");
+					log.info("Zeit fÃ¼r Batch KommandoausfÃ¼hrung abgelaufen.");
 					throw new BatchNotCompletedException(this);
 				}
-				log.debug("Batch Kommandoausführung durchgeführt. " + getIdString());
+				log.debug("Batch KommandoausfÃ¼hrung durchgefÃ¼hrt. " + getIdString());
 
 				if (delay > 0L)
 				{
-					log.debug(LogUtil.printf("Verzögere %d ms...", delay));
+					log.debug(LogUtil.printf("VerzÃ¶gere %d ms...", delay));
 					Thread.sleep(delay);
 					log.debug("Fertig.");
 				}
@@ -293,15 +293,15 @@ public class Batch
 		}
 		else
 		{
-			log.info("Keine Kommandos für diesen Batch.");
+			log.info("Keine Kommandos fÃ¼r diesen Batch.");
 		}
 		log.debug("<sendBatch() " + getIdString());
 	}
 
 	/**
-	 * Diese Methode liefert die Restlaufzeit in der auf rückemeldende Kommandos gewartet werden soll. 
-	 * @param start Der Startzeitpunkt, ab dem Kommandos übertragen wurden.
-	 * @return Gültige Restlaufzeit der Kommandos.
+	 * Diese Methode liefert die Restlaufzeit in der auf rÃ¼ckemeldende Kommandos gewartet werden soll. 
+	 * @param start Der Startzeitpunkt, ab dem Kommandos Ã¼bertragen wurden.
+	 * @return GÃ¼ltige Restlaufzeit der Kommandos.
 	 */
 	private long getWaitTime(long start)
 	{
@@ -316,9 +316,9 @@ public class Batch
 	}
 
 	/**
-	 * Diese Methode verarbeitet eine MRW-Meldung gemäß ihrem Rückmelde-Code. Der Code MSG_OK markiert ein
+	 * Diese Methode verarbeitet eine MRW-Meldung gemÃ¤ÃŸ ihrem RÃ¼ckmelde-Code. Der Code MSG_OK markiert ein
 	 * BatchElement als erfolgreich verarbeitet. Ein MSG_QUEUED setzt den Timeout um eine Sekunde hoch.
-	 * Die Rückmelde-Codes
+	 * Die RÃ¼ckmelde-Codes
 	 * <ul>
 	 * <li>MSG_NO_UNITNO_DEFINED
 	 * <li>MSG_UNIT_NOT_FOUND
@@ -327,7 +327,7 @@ public class Batch
 	 * <li>MSG_NOT_CONFIGURED_YET
 	 * <li>MSG_SWITCH_FAILED
 	 * </ul>
-	 * erhöhen den Fehlerzähler.
+	 * erhÃ¶hen den FehlerzÃ¤hler.
 	 * @param msg Die verarbeitende MRW-Meldung.
 	 * @return Ob die Meldung verarbeitet wurde.
 	 */
@@ -351,7 +351,7 @@ public class Batch
 				break;
 
 			case MSG_QUEUED:
-				// Timeout verlängern
+				// Timeout verlÃ¤ngern
 				synchronized(this)
 				{
 					timeout += 1000L;
@@ -370,13 +370,13 @@ public class Batch
 				synchronized(this)
 				{
 					errorCount++;
-					log.error(LogUtil.printf("Fehlerzustand %s aufgetreten! Fehlerzähler: %d",
+					log.error(LogUtil.printf("Fehlerzustand %s aufgetreten! FehlerzÃ¤hler: %d",
 							result, errorCount));
 				}
 				break;
 
 			default:
-				// Alle anderen Rückemelde-Codes werden ignoriert.
+				// Alle anderen RÃ¼ckemelde-Codes werden ignoriert.
 				log.warn(LogUtil.printf("Antwortcode %s nicht verarbeitet.", result));
 				break;
 			}
@@ -386,7 +386,7 @@ public class Batch
 	}
 
 	/**
-	 * Prüft, ob Fehler aufgetreten sind.
+	 * PrÃ¼ft, ob Fehler aufgetreten sind.
 	 * @return True, falls es zu fehlern kam
 	 */
 	public boolean hasError()
@@ -398,9 +398,9 @@ public class Batch
 	}
 
 	/**
-	 * Prüft, ob im Batch alle Kommandos zu einer erfolgreichen Rückmeldung geführt haben, oder 
-	 * ob noch Rückmeldungen ausstehen. 
-	 * @return Zustand, ob alle Rückmeldungen erfolgreich eingetroffen sind.
+	 * PrÃ¼ft, ob im Batch alle Kommandos zu einer erfolgreichen RÃ¼ckmeldung gefÃ¼hrt haben, oder 
+	 * ob noch RÃ¼ckmeldungen ausstehen. 
+	 * @return Zustand, ob alle RÃ¼ckmeldungen erfolgreich eingetroffen sind.
 	 */
 	public boolean isComplete()
 	{
@@ -411,7 +411,7 @@ public class Batch
 	}
 
 	/**
-	 * Löscht alle Kommandos aus diesem Batch.
+	 * LÃ¶scht alle Kommandos aus diesem Batch.
 	 */
 	public void clear()
 	{
@@ -426,8 +426,8 @@ public class Batch
 	}
 	
 	/**
-	 * Diese Methode bildet einen Text, der die IDs dieses Batches und des dazugehörigen
-	 * {@link BatchExecuter} enthält.
+	 * Diese Methode bildet einen Text, der die IDs dieses Batches und des dazugehÃ¶rigen
+	 * {@link BatchExecuter} enthÃ¤lt.
 	 * @return Der Text mit den ID-Informationen
 	 */
 	public String getIdString()
@@ -436,7 +436,7 @@ public class Batch
 	}
 
 	/**
-	 * Diese Methode gibt die ID dieses Batches zurück.
+	 * Diese Methode gibt die ID dieses Batches zurÃ¼ck.
 	 * @return Die ID dieses Batches.
 	 */
 	public int getId()
@@ -445,7 +445,7 @@ public class Batch
 	}
 
 	/**
-	 * Diese Methode gibt die Zahl der Schaltkommandos in diesem Batch zurück. 
+	 * Diese Methode gibt die Zahl der Schaltkommandos in diesem Batch zurÃ¼ck. 
 	 * @return Die Zahl der Schaltkommandos in diesem Batch.
 	 */
 	public Object getElementCount()

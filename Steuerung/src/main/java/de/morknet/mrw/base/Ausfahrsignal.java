@@ -22,7 +22,7 @@ package de.morknet.mrw.base;
 import de.morknet.mrw.comm.Command;
 
 /**
- * Diese Klasse repr‰sentiert ein Ausfahrlichtsignal. Es kann folgende Zust‰nde anzeigen:
+ * Diese Klasse repr√§sentiert ein Ausfahrlichtsignal. Es kann folgende Zust√§nde anzeigen:
  * <ul>
  * <li>SIGNAL_OFF
  * <li>SIGNAL_TST
@@ -40,9 +40,9 @@ public final class Ausfahrsignal extends Hauptsignal
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Ausfahrsignal.
-	 * @param abschnitt Der Gleisabschnitt zu dem das Ausfahrsignal gehˆrt.
+	 * @param abschnitt Der Gleisabschnitt zu dem das Ausfahrsignal geh√∂rt.
 	 * @param name Der Name des Signals.
-	 * @param aIsHigh Die Richtung relativ zur Z‰hrichtung. 
+	 * @param aIsHigh Die Richtung relativ zur Z√§hrichtung. 
 	 */
 	public Ausfahrsignal(Abschnitt abschnitt, String name, boolean aIsHigh) 
 	{

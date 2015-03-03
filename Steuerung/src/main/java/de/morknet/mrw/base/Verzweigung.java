@@ -24,7 +24,7 @@ import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.MrwMessage;
 
 /**
- * Diese Klasse repr‰sentiert eine Verzweigung. Eine Verzweigung kann eine {@link Weiche} oder {@link DKW} sein.
+ * Diese Klasse repr√§sentiert eine Verzweigung. Eine Verzweigung kann eine {@link Weiche} oder {@link DKW} sein.
  * @author sm
  *
  */
@@ -39,9 +39,9 @@ abstract public class Verzweigung extends Gleisteil
 
 	/**
 	 * Dieser Konstruktor initialisiert eine Verzweigung.
-	 * @param segment Der dazugehˆrende Gleisabschnitt.
+	 * @param segment Der dazugeh√∂rende Gleisabschnitt.
 	 * @param number Die Verzweigungsnummer.
-	 * @param aIsHigh Z‰hlrichtung.
+	 * @param aIsHigh Z√§hlrichtung.
 	 * @param limitStop Flag, ob Verzweigung Endabschaltung hat.
 	 */
 	public Verzweigung(
@@ -64,8 +64,8 @@ abstract public class Verzweigung extends Gleisteil
 	}
 
 	/**
-	 * Diese Methode ermittelt eine Verzweigung abh‰ngig von der  Mikrocontroller-ID/Ger‰tenummer.
-	 * @param id Die Mikrocontroller-ID/Ger‰tenummer.
+	 * Diese Methode ermittelt eine Verzweigung abh√§ngig von der  Mikrocontroller-ID/Ger√§tenummer.
+	 * @param id Die Mikrocontroller-ID/Ger√§tenummer.
 	 * @return Die ermittelte Verzweigung.
 	 */
 	public static Verzweigung findVerzweigung(int id)

@@ -27,7 +27,7 @@ package de.morknet.mrw.batch;
 public class BatchRetransmissionException extends BatchProcessingException
 {
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung für den fehlerhaften {@link Batch} auf.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung fÃ¼r den fehlerhaften {@link Batch} auf.
 	 * @param batch Der fehlerhafte {@link Batch}.
 	 */
 	public BatchRetransmissionException(final Batch batch)

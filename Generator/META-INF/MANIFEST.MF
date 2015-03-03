@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Generator
 Bundle-SymbolicName: de.morknet.mrw.generator;singleton:=true
-Bundle-Version: 2.0.4
+Bundle-Version: 2.0.5
 Bundle-Localization: plugin
 Require-Bundle: de.morknet.oaw.dependencies,
  de.morknet.oaw.tools5,
@@ -10,4 +10,4 @@ Require-Bundle: de.morknet.oaw.dependencies,
  org.eclipse.jdt.core,
  org.eclipse.xtend.typesystem.xsd
 Bundle-Vendor: MORKNet
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

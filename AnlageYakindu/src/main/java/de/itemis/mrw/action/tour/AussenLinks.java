@@ -50,7 +50,7 @@ public class AussenLinks extends TourInfo {
 	@Override
 	public String getName()
 	{
-		return "Au�en links";
+		return "AuÃen links";
 	}
 
 	@Override

@@ -41,7 +41,7 @@ public class Lampe extends DeviceUnit
 	}
 
 	/**
-	 * Gibt den Schwellwert zurück, ab dem das Licht bei Unterschreiten einer Helligkeit eingeschaltet wird.
+	 * Gibt den Schwellwert zurÃ¼ck, ab dem das Licht bei Unterschreiten einer Helligkeit eingeschaltet wird.
 	 * @return Der Helligkeitsschwellwert.
 	 */
 	public int getSchwellwert()
@@ -50,7 +50,7 @@ public class Lampe extends DeviceUnit
 	}
 
 	/**
-	 * Gibt den Lampentyp zurück.
+	 * Gibt den Lampentyp zurÃ¼ck.
 	 * @return Der Lampentyp.
 	 */
 	public int getType()

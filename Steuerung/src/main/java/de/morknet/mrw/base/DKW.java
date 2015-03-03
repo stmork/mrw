@@ -25,7 +25,7 @@ import de.morknet.mrw.batch.Batch;
 import de.morknet.mrw.comm.Command;
 
 /**
- * Diese Klasse repräsentiert eine Doppelkreuzungsweiche (DKW).
+ * Diese Klasse reprÃ¤sentiert eine Doppelkreuzungsweiche (DKW).
  * @author smork
  *
  */
@@ -40,7 +40,7 @@ public final class DKW extends Verzweigung
 	private final boolean bcIstBevorzugt; // Kreuz
 
 	/**
-	 * Diese Aufzählung liefert alle Schaltzustände einer DKW. Die Ausrichtung der banachbarten
+	 * Diese AufzÃ¤hlung liefert alle SchaltzustÃ¤nde einer DKW. Die Ausrichtung der banachbarten
 	 * Gleisteile sieht so aus:
 	 * <pre>
 	 *     A_   _C   
@@ -59,7 +59,7 @@ public final class DKW extends Verzweigung
 		AC_BD(DirectionCode.ARC,   Command.SETLFT, "Bogen"),  // Bogen
 
 		/**
-		 * Weichenlage Überkreuzfahrt.
+		 * Weichenlage Ãœberkreuzfahrt.
 		 */
 		AD_BC(DirectionCode.CROSS, Command.SETRGT, "Kreuz");  // Kreuz
 		
@@ -75,7 +75,7 @@ public final class DKW extends Verzweigung
 		}
 
 		/**
-		 * Diese Methode gibt die Weichenlage als {@link DirectionCode} zurück.
+		 * Diese Methode gibt die Weichenlage als {@link DirectionCode} zurÃ¼ck.
 		 * @return Die Weichenlage als {@link DirectionCode}.
 		 */
 		public DirectionCode getDirectionCode()
@@ -84,7 +84,7 @@ public final class DKW extends Verzweigung
 		}
 		
 		/**
-		 * Diese Methode gibt das Schaltkommando zurück.
+		 * Diese Methode gibt das Schaltkommando zurÃ¼ck.
 		 * @return Das Schaltkommando.
 		 */
 		public Command getCommand()
@@ -105,9 +105,9 @@ public final class DKW extends Verzweigung
 
 	/**
 	 * Dieser Konstruktor initialisiert die DKW.
-	 * @param segment Der dazugehörende Gleisabschnitt.
+	 * @param segment Der dazugehÃ¶rende Gleisabschnitt.
 	 * @param number Die Weichennummer.
-	 * @param aIsHigh Gleisteil a zeigt in Zählrichtung.
+	 * @param aIsHigh Gleisteil a zeigt in ZÃ¤hlrichtung.
 	 * @param bcIstAbzweig
 	 * @param adIstAbzweig Richtung 
 	 * @param limitStop DKW hat Endabschaltung.
@@ -185,7 +185,7 @@ public final class DKW extends Verzweigung
 		{
 			if (!a.hasTrackElement(this))
 			{
-				log.error("Stecker A ist nicht rückverkoppelt!");
+				log.error("Stecker A ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!a.isDirectionCorrect(this, aIsHigh))
@@ -204,7 +204,7 @@ public final class DKW extends Verzweigung
 		{
 			if (!b.hasTrackElement(this))
 			{
-				log.error("Stecker B ist nicht rückverkoppelt!");
+				log.error("Stecker B ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!b.isDirectionCorrect(this, aIsHigh))
@@ -223,7 +223,7 @@ public final class DKW extends Verzweigung
 		{
 			if (!c.hasTrackElement(this))
 			{
-				log.error("Stecker C ist nicht rückverkoppelt!");
+				log.error("Stecker C ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!c.isDirectionCorrect(this, !aIsHigh))
@@ -242,7 +242,7 @@ public final class DKW extends Verzweigung
 		{
 			if (!d.hasTrackElement(this))
 			{
-				log.error("Stecker D ist nicht rückverkoppelt!");
+				log.error("Stecker D ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!d.isDirectionCorrect(this, !aIsHigh))
@@ -378,7 +378,7 @@ public final class DKW extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt die Weichenlage zurück.
+	 * Diese Methode gibt die Weichenlage zurÃ¼ck.
 	 * @return Die aktuelle Weichenlage.
 	 */
 	public TurnDirection getDir()
@@ -408,7 +408,7 @@ public final class DKW extends Verzweigung
 	}
 	
 	/**
-	 * Diese Methode gibt die Weichennummer samt Weichenlage als Text zurück.
+	 * Diese Methode gibt die Weichennummer samt Weichenlage als Text zurÃ¼ck.
 	 * @return Die Weichennummer und Weichenlage als Text.
 	 */
 	public String toString()
@@ -417,7 +417,7 @@ public final class DKW extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung links oben zurück.
+	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung links oben zurÃ¼ck.
 	 * @return Das {@link Gleisteil} in Richtung links oben.
 	 */
 	public Gleisteil getA()
@@ -426,7 +426,7 @@ public final class DKW extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung links unten zurück.
+	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung links unten zurÃ¼ck.
 	 * @return Das {@link Gleisteil} in Richtung links unten.
 	 */
 	public Gleisteil getB()
@@ -435,7 +435,7 @@ public final class DKW extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung rechts oben zurück.
+	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung rechts oben zurÃ¼ck.
 	 * @return Das {@link Gleisteil} in Richtung rechts oben.
 	 */
 	public Gleisteil getC()
@@ -444,7 +444,7 @@ public final class DKW extends Verzweigung
 	}
 
 	/**
-	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung rechts unten zurück.
+	 * Diese Methode gibt das benachbarte {@link Gleisteil} in Richtung rechts unten zurÃ¼ck.
 	 * @return Das {@link Gleisteil} in Richtung rechts unten.
 	 */
 	public Gleisteil getD()

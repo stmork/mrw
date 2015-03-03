@@ -27,7 +27,7 @@ import org.apache.commons.logging.LogFactory;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse stellt ein einfaches Verhalten für einen {@link MrwController} bereit.
+ * Diese Klasse stellt ein einfaches Verhalten fÃ¼r einen {@link MrwController} bereit.
  * @author sm
  *
  */

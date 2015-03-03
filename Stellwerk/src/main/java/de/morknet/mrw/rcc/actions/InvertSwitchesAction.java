@@ -25,7 +25,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link Action} l�sst s�mtliche Weichen in die entsprechend andere Lage umlaufen.
+ * Diese {@link Action} lÃâ¬sst sÃâ¬mtliche Weichen in die entsprechend andere Lage umlaufen.
  * @author sm
  *
  */

@@ -27,7 +27,7 @@ import de.morknet.mrw.Route;
 import de.morknet.mrw.base.Abschnitt;
 
 /**
- * Diese Klasse dient den Action-Klassen dazu, gewisse Fahrzust‰nde mitzuteilen. Die Trigger werden
+ * Diese Klasse dient den Action-Klassen dazu, gewisse Fahrzust√§nde mitzuteilen. Die Trigger werden
  * in einer Liste innerhalb des {@link MrwController} verwaltet und der Reihe nach abgearbeitet.
  * @author smork
  * @see MrwController
@@ -40,7 +40,7 @@ abstract public class Trigger
 	/**
 	 * Diese Methode wird aufgerufen, wenn der {@link MrwController} das Verlassen
 	 * eines Gleisabschnitts festgestellt hat.
-	 * @param route Die Fahrstraﬂe zu der der verlassene Gleisabschnitt z‰hlt.
+	 * @param route Die Fahrstra√üe zu der der verlassene Gleisabschnitt z√§hlt.
 	 * @param abschnitt Der verlassene Gleisabschnitt.
 	 * @see MrwController
 	 */
@@ -52,7 +52,7 @@ abstract public class Trigger
 	/**
 	 * Diese Methode wird aufgerufen, wenn der {@link MrwController} das Erreichen
 	 * eines Gleisabschnitts festgestellt hat.
-	 * @param route Die Fahrstraﬂe zu der der erreichte Gleisabschnitt z‰hlt.
+	 * @param route Die Fahrstra√üe zu der der erreichte Gleisabschnitt z√§hlt.
 	 * @param abschnitt Der erreichte Gleisabschnitt.
 	 * @see MrwController
 	 */
@@ -64,9 +64,9 @@ abstract public class Trigger
 	/**
 	 * Diese Methode wird aufgerufen, wenn der {@link MrwController} das Erreichen
 	 * des letzten Gleisabschnitts festgestellt hat.
-	 * @param route Die Fahrstraﬂe zu der der letzte Gleisabschnitt z‰hlt.
+	 * @param route Die Fahrstra√üe zu der der letzte Gleisabschnitt z√§hlt.
 	 * @param abschnitt Der letzte erreichte Gleisabschnitt.
-	 * @return Die ¸bergebene Fahrstraﬂe.
+	 * @return Die √ºbergebene Fahrstra√üe.
 	 * @see MrwController
 	 */
 	public Route endPointReached(final Route route, final Abschnitt abschnitt)

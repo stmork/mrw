@@ -82,7 +82,7 @@ public class ErrorConditionTest extends ControllerTestBase
 		}
 		else
 		{
-			log.info("Im Realmodus kˆnnen keine Weichenfehler produziert werden!");
+			log.info("Im Realmodus k√∂nnen keine Weichenfehler produziert werden!");
 		}
 	}
 
@@ -96,7 +96,7 @@ public class ErrorConditionTest extends ControllerTestBase
 		}
 		else
 		{
-			log.info("Im Realmodus kˆnnen keine Weichenfehler produziert werden!");
+			log.info("Im Realmodus k√∂nnen keine Weichenfehler produziert werden!");
 		}
 	}
 
@@ -110,7 +110,7 @@ public class ErrorConditionTest extends ControllerTestBase
 		}
 		else
 		{
-			log.info("Im Realmodus kˆnnen keine Fehler produziert werden!");
+			log.info("Im Realmodus k√∂nnen keine Fehler produziert werden!");
 		}
 	}
 
@@ -124,7 +124,7 @@ public class ErrorConditionTest extends ControllerTestBase
 		}
 		else
 		{
-			log.info("Im Realmodus kˆnnen keine Pr¸fsummenfehler produziert werden!");
+			log.info("Im Realmodus k√∂nnen keine Pr√ºfsummenfehler produziert werden!");
 		}
 	}
 
@@ -138,7 +138,7 @@ public class ErrorConditionTest extends ControllerTestBase
 		}
 		else
 		{
-			log.info("Im Realmodus kˆnnen keine Pr¸fsummenfehler produziert werden!");
+			log.info("Im Realmodus k√∂nnen keine Pr√ºfsummenfehler produziert werden!");
 		}
 	}
 	
@@ -161,9 +161,9 @@ public class ErrorConditionTest extends ControllerTestBase
 		{
 			final Route route = assertStartRoute(true, true, "L)RRR",   "S4c", "N7a");
 
-			Assert.assertNotNull("Es muss eine Fahrstraﬂe geschaltet sein!", route);
+			Assert.assertNotNull("Es muss eine Fahrstra√üe geschaltet sein!", route);
 			DeviceUnit unit = model.findMagneticPart(name);
-			Assert.assertNotNull(LogUtil.printf("Es muss Ger‰t %s gefunden werden!", unit.getName()), unit);
+			Assert.assertNotNull(LogUtil.printf("Es muss Ger√§t %s gefunden werden!", unit.getName()), unit);
 	
 			MrwMessage msg = MrwMessage.createResultMessage(
 					Command.GETDIR, MsgCode.MSG_OK,
@@ -174,17 +174,17 @@ public class ErrorConditionTest extends ControllerTestBase
 
 			if (mustFind)
 			{
-				Assert.assertNull("Es darf keine Fahrstraﬂe mehr aktiv sein!", controller.getSelectedRoute());
+				Assert.assertNull("Es darf keine Fahrstra√üe mehr aktiv sein!", controller.getSelectedRoute());
 			}
 			else
 			{
-				Assert.assertNotNull("Es muss noch eine Fahrstraﬂe aktiv sein!", controller.getSelectedRoute());
+				Assert.assertNotNull("Es muss noch eine Fahrstra√üe aktiv sein!", controller.getSelectedRoute());
 				controller.removeRoute(route);
 			}
 		}
 		else
 		{
-			log.info("Im Realmodus kˆnnen Manipulationen von Fahrstraﬂen nicht getestet werden!");
+			log.info("Im Realmodus k√∂nnen Manipulationen von Fahrstra√üen nicht getestet werden!");
 		}
 	}
 }

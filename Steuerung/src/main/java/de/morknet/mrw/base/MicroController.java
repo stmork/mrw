@@ -34,7 +34,7 @@ import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse repräsentiert einen Mikrocontroller (aka CAN-Knoten).
+ * Diese Klasse reprÃ¤sentiert einen Mikrocontroller (aka CAN-Knoten).
  * @author sm
  *
  */
@@ -53,18 +53,18 @@ public class MicroController
 	public final static long MC_FREQUENCY      = 16000000L;
 	
 	/**
-	 * Die Zahl der Takte zwischen einem Timer-Overflow. Diese bildet sich aus dem 8-Bit-Zähler und
+	 * Die Zahl der Takte zwischen einem Timer-Overflow. Diese bildet sich aus dem 8-Bit-ZÃ¤hler und
 	 * dem Prescaler von 1024.
 	 */
 	public final static long MC_TIMER_OVERFLOW = (1L << 18);
 
 	/**
-	 * Die absolute Länge eines Timer-Durchlaufs in Sekunden.
+	 * Die absolute LÃ¤nge eines Timer-Durchlaufs in Sekunden.
 	 */
 	public final static double MC_TIMER_QUANTUM = (double)MC_TIMER_OVERFLOW / (double)MC_FREQUENCY;
 
 	/**
-	 * Liste aller angeschlossenen Geräte.
+	 * Liste aller angeschlossenen GerÃ¤te.
 	 */
 	private final ArrayList<DeviceUnit> units = new ArrayList<DeviceUnit>();
 
@@ -79,12 +79,12 @@ public class MicroController
 	private final AtomicInteger pong_count = new AtomicInteger(0);
 	
 	/**
-	 * Füllstand des Empfangspuffers.
+	 * FÃ¼llstand des Empfangspuffers.
 	 */
 	volatile private int rx_count = 0;
 
 	/**
-	 * Füllstand des Sendepuffers.
+	 * FÃ¼llstand des Sendepuffers.
 	 */
 	volatile private int tx_count = 0;
 
@@ -129,7 +129,7 @@ public class MicroController
 	}
 
 	/**
-	 * Diese Methode zählt die Ping-Anfragezahl hoch.
+	 * Diese Methode zÃ¤hlt die Ping-Anfragezahl hoch.
 	 */
 	public void ping()
 	{
@@ -140,7 +140,7 @@ public class MicroController
 	}
 
 	/**
-	 * Diese Methode zählt die Ping-Antwortzahl (Pong) hoch.
+	 * Diese Methode zÃ¤hlt die Ping-Antwortzahl (Pong) hoch.
 	 */
 	public void pong()
 	{
@@ -152,7 +152,7 @@ public class MicroController
 	}
 
 	/**
-	 * Diese Methode löscht alle Zustandszähler. 
+	 * Diese Methode lÃ¶scht alle ZustandszÃ¤hler. 
 	 */
 	public void reset()
 	{
@@ -184,8 +184,8 @@ public class MicroController
 	}
 
 	/**
-	 * Diese Methode meldet zurück, ob der Controller erreichbar ist. Das bedeutet, dass
-	 * nach gleich vielen Ping-Anfragen, gleich viele Antworten (Pong) erfolgt sein müssen. 
+	 * Diese Methode meldet zurÃ¼ck, ob der Controller erreichbar ist. Das bedeutet, dass
+	 * nach gleich vielen Ping-Anfragen, gleich viele Antworten (Pong) erfolgt sein mÃ¼ssen. 
 	 * @return Die Erreichbarkeit.
 	 */
 	public boolean isReachable()
@@ -200,9 +200,9 @@ public class MicroController
 	}
 	
 	/**
-	 * Diese Methode setzt die Füllstände des Sende- und Empfangspuffers.
-	 * @param rx_count Füllstand des Empfangspuffers.
-	 * @param tx_count Füllstand des Sendepuffers.
+	 * Diese Methode setzt die FÃ¼llstÃ¤nde des Sende- und Empfangspuffers.
+	 * @param rx_count FÃ¼llstand des Empfangspuffers.
+	 * @param tx_count FÃ¼llstand des Sendepuffers.
 	 */
 	public void setBufferCount(final int rx_count, final int tx_count)
 	{
@@ -215,7 +215,7 @@ public class MicroController
 	}
 
 	/**
-	 * Diese Methode setzt diverse Fehlerzähler auf einen bestimmten Wert. Konkret werden
+	 * Diese Methode setzt diverse FehlerzÃ¤hler auf einen bestimmten Wert. Konkret werden
 	 * damit die Antworten auf eine QRYERR-Anfrage verarbeitet.
 	 * @param msg Die CAN-Message mit den Fehlerdaten.
 	 */
@@ -287,7 +287,7 @@ public class MicroController
 	}
 	
 	/**
-	 * Diese Methode gibt die Controller-ID zurück.
+	 * Diese Methode gibt die Controller-ID zurÃ¼ck.
 	 * @return Die Controller-ID.
 	 */
 	public int getId()
@@ -296,8 +296,8 @@ public class MicroController
 	}
 
 	/**
-	 * Diese Methode fügt ein Gerät diesem Controller hinzu.
-	 * @param unit Das zu steuernde Gerät.
+	 * Diese Methode fÃ¼gt ein GerÃ¤t diesem Controller hinzu.
+	 * @param unit Das zu steuernde GerÃ¤t.
 	 */
 	public void addDeviceUnit(final DeviceUnit unit)
 	{
@@ -305,9 +305,9 @@ public class MicroController
 	}
 	
 	/**
-	 * Diese Methode fügt einer Liste alle CAN-Meldungen hinzu, die für das Konfigurieren
-	 * dieses Controllers nötig sind.
-	 * @param list Die Liste, die mit Konfigurationsmeldungen befüllt wird.
+	 * Diese Methode fÃ¼gt einer Liste alle CAN-Meldungen hinzu, die fÃ¼r das Konfigurieren
+	 * dieses Controllers nÃ¶tig sind.
+	 * @param list Die Liste, die mit Konfigurationsmeldungen befÃ¼llt wird.
 	 */
 	public void addConfigMessages(final List<MrwMessage> list)
 	{
@@ -324,15 +324,15 @@ public class MicroController
 			}
 			else
 			{
-				log.warn ("Gerät " + device + "kann nicht konfiguriert werden!");
+				log.warn ("GerÃ¤t " + device + "kann nicht konfiguriert werden!");
 			}
 		}
 		list.add(MrwMessage.createCommandMsg(Command.CFGEND, id, 0));
 	}
 	
 	/**
-	 * Diese Methode erzeugt einen Klartext über den Zustand dieses Controllers.
-	 * @return Der Klartext über den Zustand dieses Controllers.
+	 * Diese Methode erzeugt einen Klartext Ã¼ber den Zustand dieses Controllers.
+	 * @return Der Klartext Ã¼ber den Zustand dieses Controllers.
 	 */
 	public String toString()
 	{

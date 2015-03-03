@@ -53,7 +53,7 @@ public class AussenRechts extends TourInfo
 	@Override
 	public String getName()
 	{
-		return "Auﬂen";
+		return "Au√üen";
 	}
 
 	@Override

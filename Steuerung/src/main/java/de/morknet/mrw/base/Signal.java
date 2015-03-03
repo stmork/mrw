@@ -28,7 +28,7 @@ import de.morknet.mrw.comm.SignalCode;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse repräsentiert abstrakt ein Signal.
+ * Diese Klasse reprÃ¤sentiert abstrakt ein Signal.
  * @author smork
  *
  */
@@ -42,7 +42,7 @@ abstract public class Signal extends DeviceUnit
 	private       SignalCode currentState = SignalCode.SIGNAL_OFF;
 
 	/**
-	 * Das Log für Meldungen.
+	 * Das Log fÃ¼r Meldungen.
 	 */
 	protected final Log log;
 	
@@ -57,13 +57,13 @@ abstract public class Signal extends DeviceUnit
 	protected SignalCode    nominalState = SignalCode.SIGNAL_OFF;
 
 	/**
-	 * Diese Aufzählung listet die Signalkommandos auf.
+	 * Diese AufzÃ¤hlung listet die Signalkommandos auf.
 	 * <ul>
 	 * <li>OFF - Das Signal wird ausgeschaltet.
 	 * <li>S0 - Halt
 	 * <li>S1 - Fahrt
 	 * <li>S2 - Langsamfahrt
-	 * <li>TEST - Testmodus, alle Lämpchen sind an.
+	 * <li>TEST - Testmodus, alle LÃ¤mpchen sind an.
 	 * </ul>
 	 * Je nach Signal und Rangiermodus kann dadurch ein anderes Signalbild entstehen. Aus Langsamfahrt muss
 	 * also nicht Hp2 resultieren, sondern z.B. Hp1 bei einem Blocksignal bzw. Sh1 bei einem Ausfahrsignal
@@ -102,7 +102,7 @@ abstract public class Signal extends DeviceUnit
 
 	/**
 	 * Diese Methode bildet aus einer Signalnummer einen eindeutigen Namen. Dieser besteht aus
-	 * dem Namen der zum Signal gehörenden Betriebsgruppe und eben der Signalnummer.
+	 * dem Namen der zum Signal gehÃ¶renden Betriebsgruppe und eben der Signalnummer.
 	 * @param segment Der Abschnitt, in dem das Signal steht.
 	 * @param name Die Signalnummer.
 	 * @return Der eindeutige Name bestehend aus Betriebsgruppennamen und Signalnummer.
@@ -114,7 +114,7 @@ abstract public class Signal extends DeviceUnit
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Signal.
-	 * @param segment Der Gleisabschnitt, zu dem das Signal gehören soll
+	 * @param segment Der Gleisabschnitt, zu dem das Signal gehÃ¶ren soll
 	 * @param number Die Signalnummer.
 	 * @param inDirection Die Fahrtrichtung.
 	 */
@@ -128,7 +128,7 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt die Signalnummer zurück.
+	 * Diese Methode gibt die Signalnummer zurÃ¼ck.
 	 * @return Die Signalnummer.
 	 */
 	public String getNumber()
@@ -137,9 +137,9 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt relativ zur Zählrichtung den Standort wider.
+	 * Diese Methode gibt relativ zur ZÃ¤hlrichtung den Standort wider.
 	 * @param direction 
-	 * @return Flag, ob die geforderte Richtung entgegen der Zählrichtung ist.
+	 * @return Flag, ob die geforderte Richtung entgegen der ZÃ¤hlrichtung ist.
 	 */
 	public boolean isDirection(boolean direction)
 	{
@@ -147,7 +147,7 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode korrigiert Signalkommandos in Abhängigkeit zur Darstellungsform des Signals und ob es sich
+	 * Diese Methode korrigiert Signalkommandos in AbhÃ¤ngigkeit zur Darstellungsform des Signals und ob es sich
 	 * beim Schaltvorgang um eine Rangierfahrt handelt.
 	 * @param sb Das Signalkommando
 	 * @param shunting Flag, ob es sich um Rangierfahrt handelt.
@@ -159,7 +159,7 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt den Gleisabschnitt des Signals zurück.
+	 * Diese Methode gibt den Gleisabschnitt des Signals zurÃ¼ck.
 	 * @return Der Gleisabschnitt zum Signal.
 	 */
 	public Abschnitt getSegment()
@@ -179,7 +179,7 @@ abstract public class Signal extends DeviceUnit
 	/**
 	 * Diese Methode bereitet eine MRW-Message so auf, dass ein Schaltkommando mit dem 
 	 * richtigen Signalbild entsteht.
-	 * @param msg die zu füllende MRW-Meldung.
+	 * @param msg die zu fÃ¼llende MRW-Meldung.
 	 * @see MrwMessage
 	 * @see SignalCode
 	 */
@@ -189,7 +189,7 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt das Schaltkommando für Signale zurück.
+	 * Diese Methode gibt das Schaltkommando fÃ¼r Signale zurÃ¼ck.
 	 * @return Das Signal-Kommando zum Schalten eines Signals.
 	 */
 	protected Command getCommand()
@@ -247,7 +247,7 @@ abstract public class Signal extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode berechnet aus einem Signalkommando das richtige Signalbild abhängig von diesem
+	 * Diese Methode berechnet aus einem Signalkommando das richtige Signalbild abhÃ¤ngig von diesem
 	 * Signal und ob rangiert oder gefahren werden soll.
 	 * @param sc Das zu interpretierende Signalkommando.
 	 * @param shunting Das Rangierflag.
@@ -256,13 +256,13 @@ abstract public class Signal extends DeviceUnit
 	abstract protected SignalCommand setSignalCommand(SignalCommand sc, boolean shunting);
 	
 	/**
-	 * Diese Methode gibt den Kommando-Code zum Konfigurieren der Microcontroller zurück.
+	 * Diese Methode gibt den Kommando-Code zum Konfigurieren der Microcontroller zurÃ¼ck.
 	 * @return Das Konfigurationskommando.
 	 */
 	abstract protected Command getConfigCode();
 
 	/**
-	 * Diese Methode gibt den aktuellen Zustand des Signals zurück.
+	 * Diese Methode gibt den aktuellen Zustand des Signals zurÃ¼ck.
 	 * @return Das aktuelle Signalbild dieses Signals.
 	 */
 	public SignalCode getSignalState()
@@ -271,9 +271,9 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt den Kommandocode zum Schalten eines Signals in Abhängigkeit des Sollzustandes
-	 * zurück.
-	 * @return Der Schaltcode für das Schaltkommando.
+	 * Diese Methode gibt den Kommandocode zum Schalten eines Signals in AbhÃ¤ngigkeit des Sollzustandes
+	 * zurÃ¼ck.
+	 * @return Der Schaltcode fÃ¼r das Schaltkommando.
 	 */
 	protected SignalCode getNominalState()
 	{

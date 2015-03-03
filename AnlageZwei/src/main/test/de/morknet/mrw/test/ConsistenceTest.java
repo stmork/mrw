@@ -35,8 +35,8 @@ public class ConsistenceTest extends ControllerTestBase
 	@Test
 	public void actions()
 	{
-		Assert.assertNotNull("Biermodus nicht verfügbar!", model.getBeerModeInfo());
-		Assert.assertNotNull("Tourinfos nicht verfügbar!", model.getTourInfos());
+		Assert.assertNotNull("Biermodus nicht verfÃ¼gbar!", model.getBeerModeInfo());
+		Assert.assertNotNull("Tourinfos nicht verfÃ¼gbar!", model.getTourInfos());
 		model.areControllerReachable();
 	}
 	
@@ -115,7 +115,7 @@ public class ConsistenceTest extends ControllerTestBase
 		for (Gruppe g : model.getGroups())
 		{
 			Assert.assertSame("Gruppe muss identisch sein!", model.findGroup(g.getName()), g);
-			Assert.assertNotNull("Es muss ein Layout verfügbar sein!", g.getLayoutInfo());
+			Assert.assertNotNull("Es muss ein Layout verfÃ¼gbar sein!", g.getLayoutInfo());
 			g.getListOfDirectedSegments(false, false);
 			g.getListOfDirectedSegments(false, true);
 			g.isInvertedDirection();

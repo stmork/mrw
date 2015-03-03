@@ -25,7 +25,7 @@ import java.io.StringWriter;
 import de.morknet.mrw.base.MrwException;
 
 /**
- * Diese Exception wird geworfen, wenn die Länge der Daten nicht mit dem Längenfeld der Message übereinstimmt.
+ * Diese Exception wird geworfen, wenn die LÃ¤nge der Daten nicht mit dem LÃ¤ngenfeld der Message Ã¼bereinstimmt.
  * @author sm
  *
  */
@@ -47,7 +47,7 @@ public class MessageLengthException extends MrwException
 		final StringWriter sw = new StringWriter();
 		final PrintWriter  pw = new PrintWriter(sw);
 
-		pw.printf("Paket enthält falsche Anzahl an Bytes (%d %d):", buffer[0], buffer.length - 6);
+		pw.printf("Paket enthÃ¤lt falsche Anzahl an Bytes (%d %d):", buffer[0], buffer.length - 6);
 		for (int i = 0;i < buffer.length;i++)
 		{
 			pw.printf(" %02x", buffer[i] & 0xff);

@@ -20,7 +20,7 @@
 package de.morknet.mrw.base;
 
 /**
- * Diese Exception wird geworfen, wenn die Instanz einer Modelleisenbahn ungültig ist.
+ * Diese Exception wird geworfen, wenn die Instanz einer Modelleisenbahn ungÃ¼ltig ist.
  * @author smork
  *
  */

@@ -26,7 +26,7 @@ import de.morknet.mrw.gui.info.TourInfo;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link MrwAction} l�st eine Fahrstrecke aus.
+ * Diese {@link MrwAction} lÃÂ¶st eine Fahrstrecke aus.
  * @author sm
  *
  */
@@ -34,7 +34,7 @@ public class TourModeAction extends MrwAction
 {
 	/**
 	 * Dieser Konstruktur initialisiert die Fahrstrecke.
-	 * @param info Die Informationen �ber die Fahrstrecke.
+	 * @param info Die Informationen ÃÅber die Fahrstrecke.
 	 */
 	public TourModeAction(final TourInfo info)
 	{
@@ -52,7 +52,7 @@ public class TourModeAction extends MrwAction
 	}
 
 	/**
-	 * Diese Methode gibt den Namen der Fahrstrecke zur�ck.
+	 * Diese Methode gibt den Namen der Fahrstrecke zurÃÅck.
 	 * @return Der Name der Fahrstrecke.
 	 */
 	public String toString()

@@ -1,59 +1,59 @@
-«REM»
-«»
-«»
-«»	$Filename:	Rails.xpt $
-«»	$Revision$
-«»	$Date$
-«»	$Author$
-«»	$Id$
-«»
-«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
-«»
-«»	This program and the accompanying materials are made available under the
-«»	terms of the Eclipse Public License v1.0.
-«»
-«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
-«»
-«»
-«»
-«ENDREM»
+Â«REMÂ»
+Â«Â»
+Â«Â»
+Â«Â»	$Filename:	Rails.xpt $
+Â«Â»	$Revision$
+Â«Â»	$Date$
+Â«Â»	$Author$
+Â«Â»	$Id$
+Â«Â»
+Â«Â»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+Â«Â»
+Â«Â»	This program and the accompanying materials are made available under the
+Â«Â»	terms of the Eclipse Public License v1.0.
+Â«Â»
+Â«Â»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+Â«Â»
+Â«Â»
+Â«Â»
+Â«ENDREMÂ»
 
-«IMPORT metamodel»
+Â«IMPORT metamodelÂ»
 
-«EXTENSION de::morknet::mrw::generator::base::ext::gleisteil»
-«EXTENSION de::morknet::mrw::generator::base::ext::gruppe»
-«EXTENSION de::morknet::mrw::generator::base::ext::abschnitt»
-«EXTENSION de::morknet::mrw::generator::base::ext::signal»
-«EXTENSION de::morknet::mrw::generator::base::ext::magnetartikel»
-«EXTENSION de::morknet::mrw::generator::base::ext::base»
-«EXTENSION de::morknet::mrw::generator::base::ext::module»
-«EXTENSION de::morknet::mrw::generator::base::ext::constants»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::gleisteilÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::gruppeÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::abschnittÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::signalÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::magnetartikelÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::baseÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::moduleÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::constantsÂ»
 
-«DEFINE Infrastructure FOR Modell»
-«FILE asClassFileName(this)»
-«EXPAND de::morknet::mrw::generator::rcc::xpt::Header::Header»
+Â«DEFINE Infrastructure FOR ModellÂ»
+Â«FILE asClassFileName(this)Â»
+Â«EXPAND de::morknet::mrw::generator::rcc::xpt::Header::HeaderÂ»
 
-package «defaultPackage()»;
+package Â«defaultPackage()Â»;
 
 import java.util.List;
-import «basePackage()».*;
-import «actionPackage()».action.InfoSupplier;
+import Â«basePackage()Â».*;
+import Â«actionPackage()Â».action.InfoSupplier;
 import de.morknet.mrw.gui.info.BeerModeInfo;
 import de.morknet.mrw.gui.info.TourInfo;
 
 /**
- * Diese Klasse stellt die Instanz für die Modelleisenbahn <quote>«name»</quote> dar.
+ * Diese Klasse stellt die Instanz fÃ¼r die Modelleisenbahn <quote>Â«nameÂ»</quote> dar.
  */
-public class «asClassName()» extends Modell
+public class Â«asClassName()Â» extends Modell
 {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Konstruktur
 	 */
-	public «asClassName()»()
+	public Â«asClassName()Â»()
 	{
-		super("«name»");
+		super("Â«nameÂ»");
 
 		create();
 		link();
@@ -68,86 +68,86 @@ public class «asClassName()» extends Modell
 
 	private void create()
 	{
-«IF gruppe.size > 0»
+Â«IF gruppe.size > 0Â»
 		Gruppe          gruppe;
-«IF eAllContents.typeSelect(Gleisabschnitt).size > 0»
+Â«IF eAllContents.typeSelect(Gleisabschnitt).size > 0Â»
 		Abschnitt       abschnitt;
-«IF eAllContents.typeSelect(Gleisteil).size > 0»
+Â«IF eAllContents.typeSelect(Gleisteil).size > 0Â»
 		Gleisteil       gleisteil;
-«ENDIF»
-«ENDIF»
-«IF eAllContents.typeSelect(Signal).size > 0»
+Â«ENDIFÂ»
+Â«ENDIFÂ»
+Â«IF eAllContents.typeSelect(Signal).size > 0Â»
 		Signal          signal;
-«ENDIF»
-«IF eAllContents.typeSelect(Lampe).size > 0»
+Â«ENDIFÂ»
+Â«IF eAllContents.typeSelect(Lampe).size > 0Â»
 		Lampe           lampe;
-«ENDIF»
-«IF eAllContents.typeSelect(Controller).size > 0»
+Â«ENDIFÂ»
+Â«IF eAllContents.typeSelect(Controller).size > 0Â»
 		MicroController controller;
-«ENDIF»
+Â«ENDIFÂ»
 		DeviceUnit device;
 		int        pin;
 		int        port;
-«ENDIF»
+Â«ENDIFÂ»
 
 		/* ************************************************* */
 		/*              Micro controller                     */
 		/* ************************************************* */
-«FOREACH controller AS c»
-		controller = new MicroController(«c.id»);
+Â«FOREACH controller AS cÂ»
+		controller = new MicroController(Â«c.idÂ»);
 		add(controller);
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 
-«FOREACH gruppe AS gruppe»
+Â«FOREACH gruppe AS gruppeÂ»
 		/* ************************************************* */
 		/*              Bahnhof/Strecke                      */
 		/* ************************************************* */
-		gruppe = new Gruppe(this, «getGruppenName(gruppe)»);
+		gruppe = new Gruppe(this, Â«getGruppenName(gruppe)Â»);
 		add(gruppe);
-«FOREACH gruppe.abschnitt.sortBy(a|getAbschnittName(a)) AS abschnitt»
-		abschnitt = new Abschnitt(this, gruppe, «getAbschnittName(abschnitt)»);
-«IF abschnitt.modul != null»
-		abschnitt.setMicroControllerId(«abschnitt.modul.controller.id», «abschnitt.unit_no»);
-«ENDIF»
+Â«FOREACH gruppe.abschnitt.sortBy(a|getAbschnittName(a)) AS abschnittÂ»
+		abschnitt = new Abschnitt(this, gruppe, Â«getAbschnittName(abschnitt)Â»);
+Â«IF abschnitt.modul != nullÂ»
+		abschnitt.setMicroControllerId(Â«abschnitt.modul.controller.idÂ», Â«abschnitt.unit_noÂ»);
+Â«ENDIFÂ»
 		add(abschnitt);
 		gruppe.add(abschnitt);
-«FOREACH abschnitt.bauelement.typeSelect(Gleisteil).sortBy(gt|getGleisteilName(gt)) AS gleisteil»
-«EXPAND createRail FOR gleisteil»
+Â«FOREACH abschnitt.bauelement.typeSelect(Gleisteil).sortBy(gt|getGleisteilName(gt)) AS gleisteilÂ»
+Â«EXPAND createRail FOR gleisteilÂ»
 		add(abschnitt, gleisteil);
-«ENDFOREACH»
-«FOREACH abschnitt.bauelement.typeSelect(Signal).sortBy(gt|getSignalName(gt)) AS signal»
-«EXPAND createSignal FOR signal»
-«EXPAND Configuration FOR signal»
+Â«ENDFOREACHÂ»
+Â«FOREACH abschnitt.bauelement.typeSelect(Signal).sortBy(gt|getSignalName(gt)) AS signalÂ»
+Â«EXPAND createSignal FOR signalÂ»
+Â«EXPAND Configuration FOR signalÂ»
 		add(abschnitt, signal);
-«ENDFOREACH»
-«ENDFOREACH»
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
+Â«ENDFOREACHÂ»
+Â«ENDFOREACHÂ»
 
 		/* ************************************************* */
 		/*              Pin configurations                   */
 		/* ************************************************* */
-«FOREACH controller AS c»
-«EXPAND Configuration FOR c»
-«EXPAND Configuration FOREACH c.module»
-«ENDFOREACH»
+Â«FOREACH controller AS cÂ»
+Â«EXPAND Configuration FOR cÂ»
+Â«EXPAND Configuration FOREACH c.moduleÂ»
+Â«ENDFOREACHÂ»
 	}
 
 	private void setStartPoints()
 	{
 		Abschnitt abschnitt;
-«FOREACH eAllContents.typeSelect(Gleisabschnitt) AS abschnitt»
-«LET getStartGleis(abschnitt) AS start»
-«IF start != null»
-		abschnitt = findSegment(«getAbschnittName(abschnitt)»);
-		abschnitt.setStartTrack((Gleis)find(«getGleisteilName(start)»));
-«ENDIF»
-«ENDLET»
-«ENDFOREACH»
+Â«FOREACH eAllContents.typeSelect(Gleisabschnitt) AS abschnittÂ»
+Â«LET getStartGleis(abschnitt) AS startÂ»
+Â«IF start != nullÂ»
+		abschnitt = findSegment(Â«getAbschnittName(abschnitt)Â»);
+		abschnitt.setStartTrack((Gleis)find(Â«getGleisteilName(start)Â»));
+Â«ENDIFÂ»
+Â«ENDLETÂ»
+Â«ENDFOREACHÂ»
 	}
 
 	private void link()
 	{
-«EXPAND link   FOREACH eAllContents.typeSelect(Gleisteil)»
+Â«EXPAND link   FOREACH eAllContents.typeSelect(Gleisteil)Â»
 	}
 
 	@Override
@@ -162,225 +162,225 @@ public class «asClassName()» extends Modell
 		return InfoSupplier.getTourInfos();
 	}
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Signalkonfiguration
-«ENDREM»
+Â«ENDREMÂ»
 
-«DEFINE Configuration FOR Signal»
-«ERROR "Signal is zu abstrakt"»
-«ENDDEFINE»
+Â«DEFINE Configuration FOR SignalÂ»
+Â«ERROR "Signal is zu abstrakt"Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE Configuration FOR Formsignal»
-«IF modul != null»
-	signal.setMicroControllerId(«modul.controller.id», «unit_no»);
-«ENDIF»
-«ENDDEFINE»
+Â«DEFINE Configuration FOR FormsignalÂ»
+Â«IF modul != nullÂ»
+	signal.setMicroControllerId(Â«modul.controller.idÂ», Â«unit_noÂ»);
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Configuration FOR Lichtsignal»
-«IF anschluss != null»
-	signal.setMicroControllerId(«anschluss.controller.id», «unit_no»);
-«ENDIF»
-«ENDDEFINE»
+Â«DEFINE Configuration FOR LichtsignalÂ»
+Â«IF anschluss != nullÂ»
+	signal.setMicroControllerId(Â«anschluss.controller.idÂ», Â«unit_noÂ»);
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Modulkonfiguration
-«ENDREM»
+Â«ENDREMÂ»
 
-«DEFINE Configuration FOR Controller»
+Â«DEFINE Configuration FOR ControllerÂ»
 	// -----------------------------------------
-	// Microcontroller No. «id»
+	// Microcontroller No. Â«idÂ»
 	// -----------------------------------------
-«IF anschluesse.size > 0»
-	// Controller «id», Anschlüsse für Lichtsignale
+Â«IF anschluesse.size > 0Â»
+	// Controller Â«idÂ», AnschlÃ¼sse fÃ¼r Lichtsignale
 	port = 48;
-«FOREACH anschluesse AS a»
-«IF a.lichtsignale.size > 0 || a.lichter.size > 0»
-	// Controller «id», Modulnummer: «a.nummer»
+Â«FOREACH anschluesse AS aÂ»
+Â«IF a.lichtsignale.size > 0 || a.lichter.size > 0Â»
+	// Controller Â«idÂ», Modulnummer: Â«a.nummerÂ»
 	pin = port;
-«FOREACH a.lichtsignale AS signal»
-	device = findSignal(Signal.buildName(findSegment(«getAbschnittName(signal.abschnitt)»), «getSignalName(signal)»));
-	device.setPinConfiguration(pin, «getPinCount(signal)»);
-	pin += «getPinCount(signal)»;
-«ENDFOREACH»
-«FOREACH a.lichter AS licht»
-	lampe = new Lampe(this, "«licht.name»", «licht.schwellwert»);
-	lampe.setMicroControllerId(«id», «licht.unit_no»);
+Â«FOREACH a.lichtsignale AS signalÂ»
+	device = findSignal(Signal.buildName(findSegment(Â«getAbschnittName(signal.abschnitt)Â»), Â«getSignalName(signal)Â»));
+	device.setPinConfiguration(pin, Â«getPinCount(signal)Â»);
+	pin += Â«getPinCount(signal)Â»;
+Â«ENDFOREACHÂ»
+Â«FOREACH a.lichter AS lichtÂ»
+	lampe = new Lampe(this, "Â«licht.nameÂ»", Â«licht.schwellwertÂ»);
+	lampe.setMicroControllerId(Â«idÂ», Â«licht.unit_noÂ»);
 	lampe.setPinConfiguration(pin, 1);
 	pin++;
-«ENDFOREACH»
+Â«ENDFOREACHÂ»
 
-«ENDIF»
+Â«ENDIFÂ»
 	port -= 16;
-«ENDFOREACH»
-«ENDIF»
+Â«ENDFOREACHÂ»
+Â«ENDIFÂ»
 
-«IF module.size > 0»
+Â«IF module.size > 0Â»
 	// Start with port 0
 	port = 0;
-«ENDIF»
-«ENDDEFINE»
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Configuration FOR Modul»
-«ERROR "Modul ist zu abstrakt!"»
-«ENDDEFINE»
+Â«DEFINE Configuration FOR ModulÂ»
+Â«ERROR "Modul ist zu abstrakt!"Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE Configuration FOR Impulsmodul»
-«IF magnetartikel.size > 0»
-	// Controller «controller.id», Magnetartikel-Modul «nummer»
+Â«DEFINE Configuration FOR ImpulsmodulÂ»
+Â«IF magnetartikel.size > 0Â»
+	// Controller Â«controller.idÂ», Magnetartikel-Modul Â«nummerÂ»
 	pin = 0;
-«FOREACH magnetartikel AS ma»
-	device = findMagneticPart(«getMagnetartikelName(ma)»);
-	device.setPinConfiguration(port + pin, «getPinCount(ma)»);
-	pin += «getPinCount(ma)»;
-«ENDFOREACH»
-«ENDIF»
-«IF magnetartikel.typeSelect(Verzweigung).exists(v|v.neu)»
+Â«FOREACH magnetartikel AS maÂ»
+	device = findMagneticPart(Â«getMagnetartikelName(ma)Â»);
+	device.setPinConfiguration(port + pin, Â«getPinCount(ma)Â»);
+	pin += Â«getPinCount(ma)Â»;
+Â«ENDFOREACHÂ»
+Â«ENDIFÂ»
+Â«IF magnetartikel.typeSelect(Verzweigung).exists(v|v.neu)Â»
 	port += 16;
-«ELSE»
+Â«ELSEÂ»
 	port +=  8;
-«ENDIF»
-«ENDDEFINE»
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Configuration FOR Gleismodul»
-«IF abschnitte.size > 0»
-	// Controller «controller.id», Gleismodul «nummer»
+Â«DEFINE Configuration FOR GleismodulÂ»
+Â«IF abschnitte.size > 0Â»
+	// Controller Â«controller.idÂ», Gleismodul Â«nummerÂ»
 	pin    = 0;
-«FOREACH abschnitte AS abschnitt»
-	device = findSegment(«getAbschnittName(abschnitt)»);
+Â«FOREACH abschnitte AS abschnittÂ»
+	device = findSegment(Â«getAbschnittName(abschnitt)Â»);
 	device.setPinConfiguration(port + pin++, 1);
-«ENDFOREACH»
-«ENDIF»
+Â«ENDFOREACHÂ»
+Â«ENDIFÂ»
 	port += 8;
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE Configuration FOR Beleuchtungsmodul»
-«IF lampen.size > 0»
-	// Controller «controller.id», Beleuchtungsmodul «nummer»
+Â«DEFINE Configuration FOR BeleuchtungsmodulÂ»
+Â«IF lampen.size > 0Â»
+	// Controller Â«controller.idÂ», Beleuchtungsmodul Â«nummerÂ»
 	pin   = 0;
-«FOREACH lampen AS lampe»
-	lampe = new Lampe(this, "«lampe.name»", «lampe.schwellwert», «lampe.typ»);
-	lampe.setMicroControllerId(«controller.id», «lampe.unit_no»);
+Â«FOREACH lampen AS lampeÂ»
+	lampe = new Lampe(this, "Â«lampe.nameÂ»", Â«lampe.schwellwertÂ», Â«lampe.typÂ»);
+	lampe.setMicroControllerId(Â«controller.idÂ», Â«lampe.unit_noÂ»);
 	lampe.setPinConfiguration(port + pin, 1);
 	pin++;
-«ENDFOREACH»
-«ENDIF»
+Â«ENDFOREACHÂ»
+Â«ENDIFÂ»
 	port += 8;
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Gleisteile erstellen
-«ENDREM»
+Â«ENDREMÂ»
 
-«DEFINE createRail FOR Gleis»
-		gleisteil = new Gleis(abschnitt, «getGleisteilName(this)», «aInZaehlrichtung», «istAbzweig», «istHauptgleis»);
-«ENDDEFINE»
+Â«DEFINE createRail FOR GleisÂ»
+		gleisteil = new Gleis(abschnitt, Â«getGleisteilName(this)Â», Â«aInZaehlrichtungÂ», Â«istAbzweigÂ», Â«istHauptgleisÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createRail FOR Weiche»
-		gleisteil = new Weiche(abschnitt, «getGleisteilName(this)», «aInZaehlrichtung», «bIstAbzweig», «cIstAbzweig», «bIstBevorzugt», «cIstBevorzugt», «neu»);
-«IF modul != null»
-		gleisteil.setMicroControllerId(«modul.controller.id», «unit_no»);
-«ENDIF»
-«ENDDEFINE»
+Â«DEFINE createRail FOR WeicheÂ»
+		gleisteil = new Weiche(abschnitt, Â«getGleisteilName(this)Â», Â«aInZaehlrichtungÂ», Â«bIstAbzweigÂ», Â«cIstAbzweigÂ», Â«bIstBevorzugtÂ», Â«cIstBevorzugtÂ», Â«neuÂ»);
+Â«IF modul != nullÂ»
+		gleisteil.setMicroControllerId(Â«modul.controller.idÂ», Â«unit_noÂ»);
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE createRail FOR DKW»
-		gleisteil = new DKW(abschnitt, «getGleisteilName(this)», «aInZaehlrichtung», «bcIstAbzweig», «adIstAbzweig», «neu»);
-«IF modul != null»
-		gleisteil.setMicroControllerId(«modul.controller.id», «unit_no»);
-«ENDIF»
-«ENDDEFINE»
+Â«DEFINE createRail FOR DKWÂ»
+		gleisteil = new DKW(abschnitt, Â«getGleisteilName(this)Â», Â«aInZaehlrichtungÂ», Â«bcIstAbzweigÂ», Â«adIstAbzweigÂ», Â«neuÂ»);
+Â«IF modul != nullÂ»
+		gleisteil.setMicroControllerId(Â«modul.controller.idÂ», Â«unit_noÂ»);
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE createRail FOR Gleisteil»
-«ERROR "Gleisteil " + name + " ist abstrakt!"»
-«ENDDEFINE»
+Â«DEFINE createRail FOR GleisteilÂ»
+Â«ERROR "Gleisteil " + name + " ist abstrakt!"Â»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Signale erstellen
-«ENDREM»
+Â«ENDREMÂ»
 
-«DEFINE createSignal FOR Gleissperrsignal»
-		signal = new Gleissperrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR GleissperrsignalÂ»
+		signal = new Gleissperrsignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Vorsignal»
-		signal = new Vorsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR VorsignalÂ»
+		signal = new Vorsignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Blocksignal»
-		signal = new Blocksignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR BlocksignalÂ»
+		signal = new Blocksignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Einfahrsignal»
-		signal = new Einfahrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR EinfahrsignalÂ»
+		signal = new Einfahrsignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Ausfahrsignal»
-		signal = new Ausfahrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR AusfahrsignalÂ»
+		signal = new Ausfahrsignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Formhauptsignal»
-		signal = new Formhauptsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung», «this.spulen»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR FormhauptsignalÂ»
+		signal = new Formhauptsignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ», Â«this.spulenÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Formvorsignal»
-		signal = new Formvorsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung», «this.spulen»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR FormvorsignalÂ»
+		signal = new Formvorsignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ», Â«this.spulenÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Formgleissperrsignal»
-		signal = new Gleissperrsignal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR FormgleissperrsignalÂ»
+		signal = new Gleissperrsignal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ»);
+Â«ENDDEFINEÂ»
 
-«DEFINE createSignal FOR Signal»
-		signal = new Signal(abschnitt, «getSignalName(this)», «this.inZaehlrichtung»);
-«ENDDEFINE»
+Â«DEFINE createSignal FOR SignalÂ»
+		signal = new Signal(abschnitt, Â«getSignalName(this)Â», Â«this.inZaehlrichtungÂ»);
+Â«ENDDEFINEÂ»
 
-«REM»
-Gleisteile verstöpseln
-«ENDREM»
+Â«REMÂ»
+Gleisteile verstÃ¶pseln
+Â«ENDREMÂ»
 
-«DEFINE link FOR Gleis»
-		linkGleis(«getGleisteilName(this)»,
-			«getGleisteilName(a)»,
-			«getGleisteilName(b)»);
-«ENDDEFINE»
+Â«DEFINE link FOR GleisÂ»
+		linkGleis(Â«getGleisteilName(this)Â»,
+			Â«getGleisteilName(a)Â»,
+			Â«getGleisteilName(b)Â»);
+Â«ENDDEFINEÂ»
 
-«DEFINE link FOR Weiche»
-		linkWeiche(«getGleisteilName(this)»,
-			«getGleisteilName(a)»,
-			«getGleisteilName(b)»,
-			«getGleisteilName(c)»);
-«ENDDEFINE»
+Â«DEFINE link FOR WeicheÂ»
+		linkWeiche(Â«getGleisteilName(this)Â»,
+			Â«getGleisteilName(a)Â»,
+			Â«getGleisteilName(b)Â»,
+			Â«getGleisteilName(c)Â»);
+Â«ENDDEFINEÂ»
 
-«DEFINE link FOR DKW»
-		linkDKW(«getGleisteilName(this)»,
-			«getGleisteilName(a)»,
-			«getGleisteilName(b)»,
-			«getGleisteilName(c)»,
-			«getGleisteilName(d)»);
-«ENDDEFINE»
+Â«DEFINE link FOR DKWÂ»
+		linkDKW(Â«getGleisteilName(this)Â»,
+			Â«getGleisteilName(a)Â»,
+			Â«getGleisteilName(b)Â»,
+			Â«getGleisteilName(c)Â»,
+			Â«getGleisteilName(d)Â»);
+Â«ENDDEFINEÂ»
 
-«DEFINE link FOR Gleisteil»
-«ERROR "Gleisteil ist abstrakt!"»
-«ENDDEFINE»
+Â«DEFINE link FOR GleisteilÂ»
+Â«ERROR "Gleisteil ist abstrakt!"Â»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Gleisteile validieren
-«ENDREM»
+Â«ENDREMÂ»
 
-«DEFINE validate FOR Gleis»
-		linkGleis(«getGleisteilName(this)», «getGleisteilName(a)», «getGleisteilName(b)»);
-«ENDDEFINE»
+Â«DEFINE validate FOR GleisÂ»
+		linkGleis(Â«getGleisteilName(this)Â», Â«getGleisteilName(a)Â», Â«getGleisteilName(b)Â»);
+Â«ENDDEFINEÂ»
 
-«DEFINE validate FOR Weiche»
-		linkWeiche(«getGleisteilName(this)», «getGleisteilName(a)», «getGleisteilName(b)», «getGleisteilName(c)»);
-«ENDDEFINE»
+Â«DEFINE validate FOR WeicheÂ»
+		linkWeiche(Â«getGleisteilName(this)Â», Â«getGleisteilName(a)Â», Â«getGleisteilName(b)Â», Â«getGleisteilName(c)Â»);
+Â«ENDDEFINEÂ»
 
-«DEFINE validate FOR DKW»
-		linkDKW(«getGleisteilName(this)», «getGleisteilName(a)», «getGleisteilName(b)», «getGleisteilName(c)», «getGleisteilName(d)»);
-«ENDDEFINE»
+Â«DEFINE validate FOR DKWÂ»
+		linkDKW(Â«getGleisteilName(this)Â», Â«getGleisteilName(a)Â», Â«getGleisteilName(b)Â», Â«getGleisteilName(c)Â», Â«getGleisteilName(d)Â»);
+Â«ENDDEFINEÂ»
 
-«DEFINE validate FOR Gleisteil»
-«ERROR "Gleisteil ist abstrakt!"»
-«ENDDEFINE»
+Â«DEFINE validate FOR GleisteilÂ»
+Â«ERROR "Gleisteil ist abstrakt!"Â»
+Â«ENDDEFINEÂ»

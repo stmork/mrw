@@ -95,7 +95,7 @@ abstract public class Modell extends NamedElement
 	private final Map<String,  Signal>     signals         = new HashMap<String, Signal>();
 
 	/**
-	 * Zuordnung von Gerätename auf Gerät.
+	 * Zuordnung von GerÃ¤tename auf GerÃ¤t.
 	 */
 	private final Map<String,  DeviceUnit> magneticPart    = new HashMap<String, DeviceUnit>();
 
@@ -117,8 +117,8 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Das hier ist eine Krücke, weil Log4j nicht zwischen DEBUG und TRACE unterscheidet.
-	 * @return Ob TRACE Logging durchgeführt werden soll.
+	 * Das hier ist eine KrÃ¼cke, weil Log4j nicht zwischen DEBUG und TRACE unterscheidet.
+	 * @return Ob TRACE Logging durchgefÃ¼hrt werden soll.
 	 */
 	public static boolean isVerbose()
 	{
@@ -126,7 +126,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode fügt dem Modell einen weiteren Gleisabschnitt hinzu.
+	 * Diese Methode fÃ¼gt dem Modell einen weiteren Gleisabschnitt hinzu.
 	 * @param a Der weitere Gleisabschnitt.
 	 */
 	protected void add(Abschnitt a)
@@ -135,8 +135,8 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode fügt einem Gleisabschnitt ein Gleisteil hinzu. Falls das Gleisteil
-	 * eine Verzweigung ist, wird diese den Magnetartikeln hinzugefügt.
+	 * Diese Methode fÃ¼gt einem Gleisabschnitt ein Gleisteil hinzu. Falls das Gleisteil
+	 * eine Verzweigung ist, wird diese den Magnetartikeln hinzugefÃ¼gt.
 	 * @param a Der Gleisabschnitt, der das Gleisteil erhalten soll.
 	 * @param g Das weitere Gleisteil.
 	 */
@@ -151,8 +151,8 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode fügt einem Gleisabschnitt ein Signal hinzu. Falls das Signal
-	 * ein Formsignal ist, wird dieses den Magnetartikeln hinzugefügt.
+	 * Diese Methode fÃ¼gt einem Gleisabschnitt ein Signal hinzu. Falls das Signal
+	 * ein Formsignal ist, wird dieses den Magnetartikeln hinzugefÃ¼gt.
 	 * @param a Der Gleisabschnitt, der das Signal erhalten soll.
 	 * @param s Das weitere Signal.
 	 */
@@ -167,7 +167,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode fügt dem Modelll einen weiteren Mikrocontroller hinzu.
+	 * Diese Methode fÃ¼gt dem Modelll einen weiteren Mikrocontroller hinzu.
 	 * @param c Der weitere Mikrocontroller.
 	 */
 	public void add(MicroController c)
@@ -176,7 +176,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode fügt eine Betriebsgruppe dem Modell hinzu.
+	 * Diese Methode fÃ¼gt eine Betriebsgruppe dem Modell hinzu.
 	 * @param g Die weitere Betriebsgruppe.
 	 */
 	protected void add(Gruppe g)
@@ -358,7 +358,7 @@ abstract public class Modell extends NamedElement
 	
 	/**
 	 * Diese Methode validiert die Modelleisenbahn. Dazu wird jedes Gleisteil auf gegenseitige
-	 * Verbindung überprüft.
+	 * Verbindung Ã¼berprÃ¼ft.
 	 * @return True, falls die Anlage OK ist.
 	 */
 	public int validate()
@@ -372,14 +372,14 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode baut rekursiv eine Fahrstraße aus Gleisteilen zusammen.
-	 * @param route Die zu bildende Fahrstraße
-	 * @param list Liste, in die die Gleisteile der Fahrstraße eingetragen werden.
-	 * @param start Das startende Gleisteil. Dieses ist nicht das erste der gesamten Fahrstraße sondern ist das letzte schon gefundene Gleisteil, von dem aus die weitere Suche startet.
+	 * Diese Methode baut rekursiv eine FahrstraÃŸe aus Gleisteilen zusammen.
+	 * @param route Die zu bildende FahrstraÃŸe
+	 * @param list Liste, in die die Gleisteile der FahrstraÃŸe eingetragen werden.
+	 * @param start Das startende Gleisteil. Dieses ist nicht das erste der gesamten FahrstraÃŸe sondern ist das letzte schon gefundene Gleisteil, von dem aus die weitere Suche startet.
 	 * @param end Das Zielgleisteil.
 	 * @param depth Die aktuelle Suchtiefe.
-	 * @param forceSameGroup Ein Flag, dass bestimmt, ob die Fahrstraße die Betriebsgruppe verlassen darf oder nicht.
-	 * @return Erfolgsflag, ob eine Fahrstraße gefunden werden konnte.
+	 * @param forceSameGroup Ein Flag, dass bestimmt, ob die FahrstraÃŸe die Betriebsgruppe verlassen darf oder nicht.
+	 * @return Erfolgsflag, ob eine FahrstraÃŸe gefunden werden konnte.
 	 */
 	private boolean findRoute(
 			Route                 route,
@@ -409,13 +409,13 @@ abstract public class Modell extends NamedElement
 		}
 		else
 		{
-			// Für alle möglichen Abzweigungen der entsprechenden Richtung.
+			// FÃ¼r alle mÃ¶glichen Abzweigungen der entsprechenden Richtung.
 			for (Gleisteil teil  : start.getRouting(route.getDirection()))
 			{
 				boolean sameGroup;
 				if (forceSameGroup || route.isShunting())
 				{
-					// Beim Rangieren muss die Fahrstraße in derselben Betriebsgruppe verbleiben.
+					// Beim Rangieren muss die FahrstraÃŸe in derselben Betriebsgruppe verbleiben.
 					// Auch, wenn es durch das forceSameGroup-Flag erzwungen wird.
 					sameGroup = (teil.getSegment().getGroup() == end.getSegment().getGroup());
 				}
@@ -433,13 +433,13 @@ abstract public class Modell extends NamedElement
 						route.addTrackElement(teil);
 						if (findRoute(route, list, teil, end, depth + 1, forceSameGroup))
 						{
-							// Rücklauf aus Rekursion
+							// RÃ¼cklauf aus Rekursion
 							list.addFirst(teil);
 							return true;
 						}
 						else
 						{
-							// Gleisteil für neue Belegungen wieder freigeben.
+							// Gleisteil fÃ¼r neue Belegungen wieder freigeben.
 							route.removeTrackElement(teil);
 						}
 					}
@@ -452,12 +452,12 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode überprüft die angegebene Fahrstraße auf Gültigkeit.
-	 * @param route Die zu überprüfende Fahrstraße. Falls dieser Wert null ist, wird eine neue Fahrstraße angelegt.
-	 * @param hops Die Liste der Gleisabschnitte, an denen entlang die Fahrstraße gebildet werden soll.
+	 * Diese Methode Ã¼berprÃ¼ft die angegebene FahrstraÃŸe auf GÃ¼ltigkeit.
+	 * @param route Die zu Ã¼berprÃ¼fende FahrstraÃŸe. Falls dieser Wert null ist, wird eine neue FahrstraÃŸe angelegt.
+	 * @param hops Die Liste der Gleisabschnitte, an denen entlang die FahrstraÃŸe gebildet werden soll.
 	 * @param shunting Rangierflag.
-	 * @param inDirection Flag, ob die Fahrstraße in Zählrichtung oder gegen Zählrichtung geführt werden soll.
-	 * @return Die Route zum Schalten einer Fahrstraße.
+	 * @param inDirection Flag, ob die FahrstraÃŸe in ZÃ¤hlrichtung oder gegen ZÃ¤hlrichtung gefÃ¼hrt werden soll.
+	 * @return Die Route zum Schalten einer FahrstraÃŸe.
 	 */
 	private Route validateRouting(
 			      Route           route,
@@ -501,8 +501,8 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode bildet eine Fahrstraße entlang von vordefinierten Gleisabschnitten.
-	 * @param route Die zu bildende Fahrstraße.
+	 * Diese Methode bildet eine FahrstraÃŸe entlang von vordefinierten Gleisabschnitten.
+	 * @param route Die zu bildende FahrstraÃŸe.
 	 * @param start Der startende Gleisabschnitt.
 	 * @param hops Die Liste weiterer Gleisabschnitte.
 	 */
@@ -519,14 +519,14 @@ abstract public class Modell extends NamedElement
 				list.clear();
 				Abschnitt end = hops.get(i);
 				log.debug(LogUtil.printf(
-						"Fahrstraße >>> %s-%s Betriebsgruppe gleich? %b",
+						"FahrstraÃŸe >>> %s-%s Betriebsgruppe gleich? %b",
 						start.getName(), end.getName(), start.getGroup() == end.getGroup()));
 				synchronized(route)
 				{
 					if(findRoute(route, list,
 							start.getStartTrack(), // Startgleis
 							end.getStartTrack(),   // Zielgleis
-							1,                     // Rekursionszähler
+							1,                     // RekursionszÃ¤hler
 							start.getGroup() == end.getGroup()))
 					{
 						log.debug(LogUtil.printf("Ziel %s wurde erreicht!", end.getNumber()));
@@ -544,7 +544,7 @@ abstract public class Modell extends NamedElement
 			}
 			if (route.size() < 2)
 			{
-				throw new RoutingRequirementsMissingException(route, "Fahrstraße hat nicht genug Gleisteile!");
+				throw new RoutingRequirementsMissingException(route, "FahrstraÃŸe hat nicht genug Gleisteile!");
 			}
 		}
 		finally
@@ -555,11 +555,11 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Berechnet eine Fahrstraße über die angegebenen Markierungspunkte in Form von Abschnitten.
+	 * Berechnet eine FahrstraÃŸe Ã¼ber die angegebenen Markierungspunkte in Form von Abschnitten.
 	 * @param hops Die Markierungspunkte
-	 * @param shunting Flag für Rangierfahrt sonst normale Fahrt
-	 * @param inDirection Flag für Fahrtrichtung gleich Zählrichtung
-	 * @return Die berechnete Fahrstraße.
+	 * @param shunting Flag fÃ¼r Rangierfahrt sonst normale Fahrt
+	 * @param inDirection Flag fÃ¼r Fahrtrichtung gleich ZÃ¤hlrichtung
+	 * @return Die berechnete FahrstraÃŸe.
 	 * @throws RoutingException 
 	 */
 	public Route route(
@@ -576,9 +576,9 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Verlängert eine bestehende Fahrstraße um die angegebenen Markierungspunkte in
+	 * VerlÃ¤ngert eine bestehende FahrstraÃŸe um die angegebenen Markierungspunkte in
 	 * Form von Abschnitten.
-	 * @param route Die schon bestehende Fahrstraße.
+	 * @param route Die schon bestehende FahrstraÃŸe.
 	 * @param hops Die Markierungspunkte.
 	 * @return Erfolgsflag.
 	 * @throws RoutingException 
@@ -595,13 +595,13 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Legt eine neue Fahrstraße um die angegebenen Markierungspunkte in
+	 * Legt eine neue FahrstraÃŸe um die angegebenen Markierungspunkte in
 	 * Form von Abschnitten an.
 	 * @param hops Die Markierungspunkte.
-	 * @param shunting Flag für Rangierfahrt sonst normale Fahrt
-	 * @param inDirection Flag für Fahrtrichtung gleich Zählrichtung
-	 * @param blockDeallocation Flag für blockweise Gleisfreigabe.
-	 * @return Die initialisierte Fahrstraße.
+	 * @param shunting Flag fÃ¼r Rangierfahrt sonst normale Fahrt
+	 * @param inDirection Flag fÃ¼r Fahrtrichtung gleich ZÃ¤hlrichtung
+	 * @param blockDeallocation Flag fÃ¼r blockweise Gleisfreigabe.
+	 * @return Die initialisierte FahrstraÃŸe.
 	 * @throws RoutingException 
 	 */
 	public Route startTour(
@@ -621,9 +621,9 @@ abstract public class Modell extends NamedElement
 
 
 	/**
-	 * Erzeugt eine Fahrstraße als Wartungsmodus.
+	 * Erzeugt eine FahrstraÃŸe als Wartungsmodus.
 	 * @param selection Die Auswahl der Abschnitte, die trotz Belegung aktiviert werden soll. 
-	 * @return Die Wartungsfahrstraße.
+	 * @return Die WartungsfahrstraÃŸe.
 	 */
 	public Route maintainanceRoute(final List<Abschnitt> selection)
 	{
@@ -633,7 +633,7 @@ abstract public class Modell extends NamedElement
 	}
 	
 	/**
-	 * Gibt alle bekannten Gleisteile zurück.
+	 * Gibt alle bekannten Gleisteile zurÃ¼ck.
 	 * @return Sammlung aller Gleisteile.
 	 */
 	public Collection<Gleisteil> getTrackElements()
@@ -642,7 +642,7 @@ abstract public class Modell extends NamedElement
 	}
 	
 	/**
-	 * Gibt alle bekannten Gleisabschnitte zurück.
+	 * Gibt alle bekannten Gleisabschnitte zurÃ¼ck.
 	 * @return Sammlung aller Gleisabschnitte.
 	 */
 	public Collection<Abschnitt> getSegments()
@@ -651,7 +651,7 @@ abstract public class Modell extends NamedElement
 	}
 	
 	/**
-	 * Gibt alle bekannte betriebsgruppen zurück.
+	 * Gibt alle bekannte betriebsgruppen zurÃ¼ck.
 	 * @return Sammlung aller betriebsgruppen.
 	 */
 	public Collection<Gruppe> getGroups()
@@ -660,7 +660,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Gibt alle bekannten Signale zurück.
+	 * Gibt alle bekannten Signale zurÃ¼ck.
 	 * @return Sammlung aller Signale.
 	 */
 	public Collection<Signal> getSignals()
@@ -669,7 +669,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Überprüft, ob alle Microcontroller erreichbar sind. Dies geschieht auf der Grundlage, dass pro
+	 * ÃœberprÃ¼ft, ob alle Microcontroller erreichbar sind. Dies geschieht auf der Grundlage, dass pro
 	 * Microcontroller die Zahl der Pings gleich der Zahl der Pongs sein muss.
 	 * @return Erreichbartkeit aller Microcontroller.
 	 */
@@ -686,7 +686,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Führt am angegebenen Microcontroller ein Ping durch.
+	 * FÃ¼hrt am angegebenen Microcontroller ein Ping durch.
 	 * @param id Ping an den Microcontroller mit der entsprechenden ID.
 	 */
 	public void ping(int id)
@@ -699,7 +699,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Führt an allen Microcontrollern ein Ping durch.
+	 * FÃ¼hrt an allen Microcontrollern ein Ping durch.
 	 */
 	public void ping()
 	{
@@ -710,7 +710,7 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Gibt die Liste der Microcontroller zurück.
+	 * Gibt die Liste der Microcontroller zurÃ¼ck.
 	 * @return Liste der Microcontroller.
 	 */
 	public Collection<MicroController> getMicroController()
@@ -719,16 +719,16 @@ abstract public class Modell extends NamedElement
 	}
 
 	/**
-	 * Diese Methode gibt Informationen über den Biermodus zurück.
-	 * @return Informationen über den Biermodus
+	 * Diese Methode gibt Informationen Ã¼ber den Biermodus zurÃ¼ck.
+	 * @return Informationen Ã¼ber den Biermodus
 	 * @see BeerModeInfo
 	 * @see BeerMode
 	 */
 	abstract public List<TourInfo> getTourInfos();
 
 	/**
-	 * Diese Methode gibt Informationen über Fahrtstrecken zurück.
-	 * @return Informationen über Fahrtstrecken.
+	 * Diese Methode gibt Informationen Ã¼ber Fahrtstrecken zurÃ¼ck.
+	 * @return Informationen Ã¼ber Fahrtstrecken.
 	 * @see TourInfo
 	 * @see TourMode
 	 */
@@ -736,7 +736,7 @@ abstract public class Modell extends NamedElement
 
 	/**
 	 * Setzt Sensorenwerte aus einer {@link MrwMessage}.
-	 * @param msg Die {@link MrwMessage}, die die Sensorwerte enthält.
+	 * @param msg Die {@link MrwMessage}, die die Sensorwerte enthÃ¤lt.
 	 */
 	public void setSensorValue(final MrwMessage msg)
 	{
@@ -773,7 +773,7 @@ abstract public class Modell extends NamedElement
 	}
 	
 	/**
-	 * Gibt die Beleuchtung zurück.
+	 * Gibt die Beleuchtung zurÃ¼ck.
 	 * @return Die Beleuchtungssituation.
 	 */
 	public int getLightness()
@@ -782,7 +782,7 @@ abstract public class Modell extends NamedElement
 	}
 	
 	/**
-	 * Gibt die Umgebungstemperatur zurück.
+	 * Gibt die Umgebungstemperatur zurÃ¼ck.
 	 * @return Die Umgebungstemperatur.
 	 */
 	public int getTemperature()

@@ -69,7 +69,7 @@ public class FormsignalTest implements CANMessageProcessor
 		log.info("Guten Tag!");
 		
 		int errors = model.validate();
-		log.info("Validierung vollständig. Fehlerzahl: " + errors);
+		log.info("Validierung vollstÃ¤ndig. Fehlerzahl: " + errors);
 		
 		if (errors == 0)
 		{
@@ -152,7 +152,7 @@ public class FormsignalTest implements CANMessageProcessor
 		try
 		{
 			log.error(ce.getLocalizedMessage(), ce);
-			log.info("Prüfsummenfehler aufgetaucht.");
+			log.info("PrÃ¼fsummenfehler aufgetaucht.");
 			log.info("  Versuche Verbindung zu resynchronisieren...");
 			connection.sync();
 			log.info("  Verbindung resynchronisiert.");

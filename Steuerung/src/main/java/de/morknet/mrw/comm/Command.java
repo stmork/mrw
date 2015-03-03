@@ -26,7 +26,7 @@ import de.morknet.mrw.base.DirectionCode;
 import de.morknet.mrw.base.OccupationCode;
 
 /**
- * Diese Enum listet Kommando-Codes auf. Alle Kommando-Codes werden gemäß diesem Zustandsautomaten in den einzelnen Betriebsmodi
+ * Diese Enum listet Kommando-Codes auf. Alle Kommando-Codes werden gemÃ¤ÃŸ diesem Zustandsautomaten in den einzelnen Betriebsmodi
  * verarbeitet:
  * <p>
  * Bild: <img src="doc-files/Kommandoverarbeitung.jpg"/>
@@ -44,13 +44,13 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>SETLFT</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <li>{@link MsgCode#MSG_QUEUED}
 	 * <lI>{@link MsgCode#MSG_OK}
@@ -70,13 +70,13 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>SETRGT</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <li>{@link MsgCode#MSG_QUEUED}
 	 * <lI>{@link MsgCode#MSG_OK}
@@ -95,8 +95,8 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>GETDIR</pre></td></tr>
 	 * </table>
 	 * </p>
@@ -105,12 +105,12 @@ public enum Command
 	 * </p>
 	 * <p>
 	 * <table>
-	 * <tr><th align="left" colspan="2">Aufteilung Füllzustand:</th></tr>
+	 * <tr><th align="left" colspan="2">Aufteilung FÃ¼llzustand:</th></tr>
 	 * <tr><td>Data[6]</td><td>{@link DirectionCode}</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <li>{@link MsgCode#MSG_UNIT_NOT_FOUND}
@@ -129,13 +129,13 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>SETRON</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <li>{@link MsgCode#MSG_UNIT_NOT_FOUND}
@@ -151,13 +151,13 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>SETROF</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <li>{@link MsgCode#MSG_UNIT_NOT_FOUND}
@@ -173,8 +173,8 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>GETRBS</pre></td></tr>
 	 * </table>
 	 * </p>
@@ -188,7 +188,7 @@ public enum Command
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <li>{@link MsgCode#MSG_UNIT_NOT_FOUND}
@@ -206,14 +206,14 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>2</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>2</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>SETSGN</pre></td></tr>
 	 * <tr><td>Data[1]</td><td> {@link SignalCode}</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <li>{@link MsgCode#MSG_QUEUED}
 	 * <lI>{@link MsgCode#MSG_OK}
@@ -235,13 +235,13 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGBGN</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
@@ -256,8 +256,8 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>5</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>5</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGSWN</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin links/Bogen</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin rechts/Kreuz</td></tr>
@@ -266,7 +266,7 @@ public enum Command
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -282,15 +282,15 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGSWO</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin links/Bogen</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin rechts/Kreuz</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -306,15 +306,15 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGRAI</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin Gleis</td></tr>
 	 * <tr><td>Data[2]</td><td>Abfragepin Gleis</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -330,15 +330,15 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGPF2</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin Vr0</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin Vr1</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -354,8 +354,8 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>4</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>4</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGPF3</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin Vr0</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin Vr1</td></tr>
@@ -363,7 +363,7 @@ public enum Command
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -379,15 +379,15 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGMF2</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin Hp0</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin Hp1</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -403,8 +403,8 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>4</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>4</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGMF3</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin Hp0</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin Hp1</td></tr>
@@ -412,7 +412,7 @@ public enum Command
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -422,21 +422,21 @@ public enum Command
 	CFGMF3(0x37),
 	
 	/**
-	 * Konfiguriere Lichtvorsignal mit zwei Zuständen (Vr0, Vr1) und zwei Anschlüssen.
+	 * Konfiguriere Lichtvorsignal mit zwei ZustÃ¤nden (Vr0, Vr1) und zwei AnschlÃ¼ssen.
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGPL2</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin gelb</td></tr>
-	 * <tr><td>Data[2]</td><td>Schaltpin grün</td></tr>
+	 * <tr><td>Data[2]</td><td>Schaltpin grÃ¼n</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -446,23 +446,23 @@ public enum Command
 	CFGPL2(0x38),
 
 	/**
-	 * Konfiguriere Lichtvorsignal mit drei Zuständen (Vr0, Vr1, Vr2) und vier Anschlüssen.
+	 * Konfiguriere Lichtvorsignal mit drei ZustÃ¤nden (Vr0, Vr1, Vr2) und vier AnschlÃ¼ssen.
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>5</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>5</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGPL3</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin gelb links oben</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin gelb links unten</td></tr>
-	 * <tr><td>Data[1]</td><td>Schaltpin grün rechts oben</td></tr>
-	 * <tr><td>Data[2]</td><td>Schaltpin grün rechts unten</td></tr>
+	 * <tr><td>Data[1]</td><td>Schaltpin grÃ¼n rechts oben</td></tr>
+	 * <tr><td>Data[2]</td><td>Schaltpin grÃ¼n rechts unten</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -472,21 +472,21 @@ public enum Command
 	CFGPL3(0x39),
 
 	/**
-	 * Konfiguriere Lichtgleissperrsignal mit zwei Zuständen (Sh0, Sh1) und zwei Anschlüssen.
+	 * Konfiguriere Lichtgleissperrsignal mit zwei ZustÃ¤nden (Sh0, Sh1) und zwei AnschlÃ¼ssen.
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGSL2</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin rot</td></tr>
-	 * <tr><td>Data[2]</td><td>Schaltpin weiß</td></tr>
+	 * <tr><td>Data[2]</td><td>Schaltpin weiÃŸ</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -496,21 +496,21 @@ public enum Command
 	CFGSL2(0x3a),
 
 	/**
-	 * Konfiguriere Blocksignal mit zwei Zuständen (Hp0, Hp1) und zwei Anschlüssen.
+	 * Konfiguriere Blocksignal mit zwei ZustÃ¤nden (Hp0, Hp1) und zwei AnschlÃ¼ssen.
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGML2</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin rot</td></tr>
-	 * <tr><td>Data[2]</td><td>Schaltpin grün</td></tr>
+	 * <tr><td>Data[2]</td><td>Schaltpin grÃ¼n</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -520,22 +520,22 @@ public enum Command
 	CFGML2(0x3b),
 
 	/**
-	 * Konfiguriere Einfahrsignal mit drei Zuständen (Hp0, Hp1, Hp2) und drei Anschlüssen.
+	 * Konfiguriere Einfahrsignal mit drei ZustÃ¤nden (Hp0, Hp1, Hp2) und drei AnschlÃ¼ssen.
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>4</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>4</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGML3</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin rot</td></tr>
-	 * <tr><td>Data[2]</td><td>Schaltpin grün</td></tr>
+	 * <tr><td>Data[2]</td><td>Schaltpin grÃ¼n</td></tr>
 	 * <tr><td>Data[3]</td><td>Schaltpin gelb</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -545,24 +545,24 @@ public enum Command
 	CFGML3(0x3c),
 
 	/**
-	 * Konfiguriere Ausfahrsignal mit vier Zuständen (Hp0, Hp1, Hp2, Hp0/Sh1) und fünf Anschlüssen.
+	 * Konfiguriere Ausfahrsignal mit vier ZustÃ¤nden (Hp0, Hp1, Hp2, Hp0/Sh1) und fÃ¼nf AnschlÃ¼ssen.
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>6</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>6</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGML4</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin rot links</td></tr>
 	 * <tr><td>Data[2]</td><td>Schaltpin rot rechts</td></tr>
-	 * <tr><td>Data[3]</td><td>Schaltpin weiß</td></tr>
-	 * <tr><td>Data[4]</td><td>Schaltpin grün</td></tr>
+	 * <tr><td>Data[3]</td><td>Schaltpin weiÃŸ</td></tr>
+	 * <tr><td>Data[4]</td><td>Schaltpin grÃ¼n</td></tr>
 	 * <tr><td>Data[5]</td><td>Schaltpin gelb</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -580,8 +580,8 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>Gerätenummer</td></tr>
-	 * <tr><td>Länge:</td><td>3 oder 4</td></tr>
+	 * <tr><td>Extended-ID:</td><td>GerÃ¤tenummer</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3 oder 4</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGLGT</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Schaltpin</td></tr>
 	 * <tr><td>Data[2]</td><td>Schwellwert</td></tr>
@@ -589,7 +589,7 @@ public enum Command
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
@@ -599,21 +599,21 @@ public enum Command
 	CFGLGT(0x3e),
 	
 	/**
-	 * Beende Konfigurationsmodus und führe RESET aus.
+	 * Beende Konfigurationsmodus und fÃ¼hre RESET aus.
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>CFGEND</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
-	 * <lI>{@link MsgCode#MSG_OK} In diesem Falle steht in Data[4] die Zahl der konfigurierten Geräte.
+	 * <lI>{@link MsgCode#MSG_OK} In diesem Falle steht in Data[4] die Zahl der konfigurierten GerÃ¤te.
 	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
 	 * <lI>{@link MsgCode#MSG_NOT_IN_CONFIG_MODE}
 	 * </ul>
@@ -622,21 +622,21 @@ public enum Command
 	CFGEND(0x42),
 
 	/**
-	 * Setzen einer neuen Mikrocontroller-ID. Ist diese tatsächlich anders, wird die
-	 * Konfiguration gelöscht und danach ein RESET ausgelöst. 
+	 * Setzen einer neuen Mikrocontroller-ID. Ist diese tatsÃ¤chlich anders, wird die
+	 * Konfiguration gelÃ¶scht und danach ein RESET ausgelÃ¶st. 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>3</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>3</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>SET_ID</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Neue Controller-ID, Low Byte</td></tr>
 	 * <tr><td>Data[2]</td><td>Neue Controller-ID, High Byte</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_ID_NOT_CHANGED}
@@ -655,13 +655,13 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>PING</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
@@ -670,22 +670,22 @@ public enum Command
 	PING(0x44),
 	
 	/**
-	 * Reset auslösen.
+	 * Reset auslÃ¶sen.
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>RESET</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * <lI>{@link MsgCode#MSG_RESET_PENDING}
-	 * <lI>{@link MsgCode#MSG_BOOTED} In Data[4] steht vom Mikroprozessor das MCUSR. Es gibt den Grund für das Booten an.
+	 * <lI>{@link MsgCode#MSG_BOOTED} In Data[4] steht vom Mikroprozessor das MCUSR. Es gibt den Grund fÃ¼r das Booten an.
 	 * <lI>{@link MsgCode#MSG_INFO}
 	 * </ul>
 	 * </p>
@@ -696,7 +696,7 @@ public enum Command
 	 * Konfiguration abfragen (nicht implementiert).
 	 * 
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_UNKNOWN_CMD}
 	 * </ul>
@@ -708,7 +708,7 @@ public enum Command
 	 * Konfiguration abfragen (nicht implementiert).
 	 * 
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_UNKNOWN_CMD}
 	 * </ul>
@@ -717,14 +717,14 @@ public enum Command
 	GETDVC(0x47),
 
 	/**
-	 * Firmware-Update auslösen (funktioniert nur im Bootloader).
+	 * Firmware-Update auslÃ¶sen (funktioniert nur im Bootloader).
 	 * 
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>5</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>5</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>FLASH_REQ</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Jumperstellung</td></tr>
 	 * <tr><td>Data[2]</td><td>Signaturbyte 1 der MPU</td></tr>
@@ -740,7 +740,7 @@ public enum Command
 	 * </p>
 	 * 
 	 * <p>
-	 * Mögliche Antworten im Bootloader:<br>
+	 * MÃ¶gliche Antworten im Bootloader:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_HARDWARE_MISMATCH}
 	 * <lI>{@link MsgCode#MSG_OK}
@@ -755,16 +755,16 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>6 oder 8</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>6 oder 8</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>FLASH_DATA</pre></td></tr>
 	 * <tr><td>Data[1]</td><td>Adresse, Low Byte</td></tr>
 	 * <tr><td>Data[2]</td><td>Adresse, Mid Byte</td></tr>
 	 * <tr><td>Data[3]</td><td>Adresse, High Byte</td></tr>
 	 * <tr><td>Data[4]</td><td>Programmbyte</td></tr>
 	 * <tr><td>Data[5]</td><td>Programmbyte</td></tr>
-	 * <tr><td>Data[6]</td><td>Programmbyte (bei Frame Länge 8)</td></tr>
-	 * <tr><td>Data[7]</td><td>Programmbyte (bei Frame Länge 8)</td></tr>
+	 * <tr><td>Data[6]</td><td>Programmbyte (bei Frame LÃ¤nge 8)</td></tr>
+	 * <tr><td>Data[7]</td><td>Programmbyte (bei Frame LÃ¤nge 8)</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
@@ -783,15 +783,15 @@ public enum Command
 	FLASH_DATA (0x49),
 	
 	/**
-	 * Prüfsumme des Firmwareupdates (nur im Updatemodus des Bootloaders).
+	 * PrÃ¼fsumme des Firmwareupdates (nur im Updatemodus des Bootloaders).
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>2</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>2</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>FLASH_CHECK</pre></td></tr>
-	 * <tr><td>Data[1]</td><td>Prüfsumme</td></tr>
+	 * <tr><td>Data[1]</td><td>PrÃ¼fsumme</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
@@ -802,18 +802,18 @@ public enum Command
 	 * </p>
 	 * 
 	 * <p>
-	 * Mögliche Antworten im Bootloader:<br>
+	 * MÃ¶gliche Antworten im Bootloader:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_CHECKSUM_ERROR}
 	 * <lI>{@link MsgCode#MSG_INFO}
 	 * </ul>
 	 * </p>
 	 * <p>
-	 * Als weitere Daten werden zurückgemeldet
+	 * Als weitere Daten werden zurÃ¼ckgemeldet
 	 * <table>
-	 * <tr><th align="left" colspan="2">Aufteilung Prüfsummen:</th></tr>
+	 * <tr><th align="left" colspan="2">Aufteilung PrÃ¼fsummen:</th></tr>
 	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th></tr>
-	 * <tr><th align="left">Angeforderte Prüfsumme</th><th align="left">Prüfsumme aus den FLASH_DATA-Messages</th></tr>
+	 * <tr><th align="left">Angeforderte PrÃ¼fsumme</th><th align="left">PrÃ¼fsumme aus den FLASH_DATA-Messages</th></tr>
 	 * </table>
 	 * </p>
 	 */
@@ -826,23 +826,23 @@ public enum Command
 	 * <table>
 	 * <tr><th align="left" colspan="2">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>QRYBUF</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Als Antwort kommt ein Frame mit dem Füllzustand der Sende- und Empfangspuffer.
+	 * Als Antwort kommt ein Frame mit dem FÃ¼llzustand der Sende- und Empfangspuffer.
 	 * </p>
 	 * <p>
 	 * <table>
-	 * <tr><th align="left" colspan="2">Aufteilung Füllzustand:</th></tr>
+	 * <tr><th align="left" colspan="2">Aufteilung FÃ¼llzustand:</th></tr>
 	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th></tr>
-	 * <tr><td>Füllzustand Empfangspuffer</td><td>Füllzustand Sendepuffer</td></tr>
+	 * <tr><td>FÃ¼llzustand Empfangspuffer</td><td>FÃ¼llzustand Sendepuffer</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
@@ -851,19 +851,19 @@ public enum Command
 	QRYBUF(0x4b),
 	
 	/**
-	 * Fehlerzähler abfragen.
+	 * FehlerzÃ¤hler abfragen.
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>QRYERR</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Als Antwort kommen drei Frames mit dem Fehlerzustand. Die Fehlerzustand besteht aus drei Bytes. Für
-	 * jedes Byte kann ein Frame gesendet werden. Das fünfte Datenbyte bestimmt den Index des Fehlerzustandes.
+	 * Als Antwort kommen drei Frames mit dem Fehlerzustand. Die Fehlerzustand besteht aus drei Bytes. FÃ¼r
+	 * jedes Byte kann ein Frame gesendet werden. Das fÃ¼nfte Datenbyte bestimmt den Index des Fehlerzustandes.
 	 * Das sechste bis achte Datenbyte ist das Zustandsbyte.
 	 * </p>
 	 * <p>
@@ -871,13 +871,13 @@ public enum Command
 	 * <tr><th align="left" colspan="2">Aufteilung Fehlerzustand:</th></tr>
 	 * <tr><th align="left">Data[4]</th><th align="left">Data[5]</th><th align="left">Data[6]</th><th align="left">Data[7]</th></tr>
 	 * <tr><td>0</td><td>Error Flags</td></tr>
-	 * <tr><td>1</td><td>Zähler für Empfangsfehler</td></tr>
-	 * <tr><td>2</td><td>Zähler für Sendefehler</td></tr>
-	 * <tr><td>3</td><td>Error Flags</td><td>Zähler für Empfangsfehler</td><td>Zähler für Sendefehler</td></tr>
+	 * <tr><td>1</td><td>ZÃ¤hler fÃ¼r Empfangsfehler</td></tr>
+	 * <tr><td>2</td><td>ZÃ¤hler fÃ¼r Sendefehler</td></tr>
+	 * <tr><td>3</td><td>Error Flags</td><td>ZÃ¤hler fÃ¼r Empfangsfehler</td><td>ZÃ¤hler fÃ¼r Sendefehler</td></tr>
 	 * </table>
 	 * </p>
 	 * <p>  
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
@@ -891,14 +891,14 @@ public enum Command
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>GETVER</pre></td></tr>
 	 * </table>
 	 * </p>
 	 * <p>
-	 * Als Antwort kommen drei Frames mit der Versionsnummer. Die Versionsnummer besteht aus drei Bytes. Für
-	 * jedes Byte kann ein Frame gesendet werden. Das fünfte Datenbyte bestimmt die Nummer des Versionsbytes. Das
+	 * Als Antwort kommen drei Frames mit der Versionsnummer. Die Versionsnummer besteht aus drei Bytes. FÃ¼r
+	 * jedes Byte kann ein Frame gesendet werden. Das fÃ¼nfte Datenbyte bestimmt die Nummer des Versionsbytes. Das
 	 * sechste bis achte Datenbyte ist das Versionsbyte.
 	 * </p>
 	 * <p>
@@ -912,7 +912,7 @@ public enum Command
 	 * </table>
 	 * </p>
 	 * <p>  
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
@@ -921,13 +921,13 @@ public enum Command
 	GETVER(0x4d),
 
 	/**
-	 * Sensordaten übertragen.
+	 * Sensordaten Ã¼bertragen.
 	 * <p>
 	 * <table>
 	 * <tr><th colspan="2" align="left">Aufbau CAN-Frame:</th></tr>
 	 * <tr><td>Standard-ID:</td><td>Controller-ID</td></tr>
-	 * <tr><td>Extended-ID:</td><td>nicht nötig</td></tr>
-	 * <tr><td>Länge:</td><td>1</td></tr>
+	 * <tr><td>Extended-ID:</td><td>nicht nÃ¶tig</td></tr>
+	 * <tr><td>LÃ¤nge:</td><td>1</td></tr>
 	 * <tr><td>Data[0]</td><td><pre>SENSOR</pre></td></tr>
 	 * </table>
 	 * </p>
@@ -945,7 +945,7 @@ public enum Command
 	 * </table>
 	 * </p>
 	 * <p>  
-	 * Mögliche Antworten:<br>
+	 * MÃ¶gliche Antworten:<br>
 	 * <ul>
 	 * <lI>{@link MsgCode#MSG_OK}
 	 * </ul>
@@ -1006,8 +1006,8 @@ public enum Command
 	}
 	
 	/**
-	 * Diese Methode gibt den Kommando-Code als Integer für eine {@link MrwMessage} zurück.
-	 * @return Der Kommando-Code als Integer für eine {@link MrwMessage}.
+	 * Diese Methode gibt den Kommando-Code als Integer fÃ¼r eine {@link MrwMessage} zurÃ¼ck.
+	 * @return Der Kommando-Code als Integer fÃ¼r eine {@link MrwMessage}.
 	 */
 	public int getCommand()
 	{
@@ -1032,9 +1032,9 @@ public enum Command
 	}
 
 	/**
-	 * Diese Methode testet, ob der Integer-Wert zum Kommando-Code aus einer Rückgabe stammt.
+	 * Diese Methode testet, ob der Integer-Wert zum Kommando-Code aus einer RÃ¼ckgabe stammt.
 	 * @param code Der zu testende Kommando-Code.
-	 * @return Ob der Kommando-Code eine Rückmeldung ist.
+	 * @return Ob der Kommando-Code eine RÃ¼ckmeldung ist.
 	 * @see MrwMessage
 	 */
 	public static boolean isResult(int code)
@@ -1043,10 +1043,10 @@ public enum Command
 	}
 	
 	/**
-	 * Diese Methode macht aus einer Byte-Repräsentation eines Kommando-Codes ein Integer-Wert mit
-	 * Rückmeldeflag.
+	 * Diese Methode macht aus einer Byte-ReprÃ¤sentation eines Kommando-Codes ein Integer-Wert mit
+	 * RÃ¼ckmeldeflag.
 	 * @param code Der Kommando-Code als Byte.
-	 * @return Der Kommando-Code mit Rückmeldeflag als Integer.
+	 * @return Der Kommando-Code mit RÃ¼ckmeldeflag als Integer.
 	 */
 	public static int makeResult(byte code)
 	{
@@ -1054,9 +1054,9 @@ public enum Command
 	}
 
 	/**
-	 * Diese Methode macht aus einem Kommando-Code ein Integer-Wert mit Rückmeldeflag.
+	 * Diese Methode macht aus einem Kommando-Code ein Integer-Wert mit RÃ¼ckmeldeflag.
 	 * @param cmd Der Kommando-Code.
-	 * @return Der Kommando-Code mit Rückmeldeflag als Integer.
+	 * @return Der Kommando-Code mit RÃ¼ckmeldeflag als Integer.
 	 */
 	public static int makeResult(Command cmd)
 	{

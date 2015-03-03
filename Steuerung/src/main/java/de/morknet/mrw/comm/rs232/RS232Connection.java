@@ -52,7 +52,7 @@ public final class RS232Connection extends Connection
 	private final SerialReader        reader;
 
 	/**
-	 * Dieser Konstruktur baut eine Verbindung zu einer realen Modelleisenbahnanlage über eine RS232-Verbindung auf.
+	 * Dieser Konstruktur baut eine Verbindung zu einer realen Modelleisenbahnanlage Ã¼ber eine RS232-Verbindung auf.
 	 * @param port_name Der Portname der RS232-Verbindung
 	 * @throws Exception Wird geworfen, wenn irgendetwas schief geht.
 	 */
@@ -130,7 +130,7 @@ public final class RS232Connection extends Connection
 			}
 			finally
 			{
-				log.info("Beende RS232-Übertragung...");
+				log.info("Beende RS232-Ãœbertragung...");
 			}
 		}
 	}
@@ -162,7 +162,7 @@ public final class RS232Connection extends Connection
 	@Override
 	public void close()
 	{
-		log.info("Beenden der RS232-Übertragung einleiten...");
+		log.info("Beenden der RS232-Ãœbertragung einleiten...");
 		try
 		{
 			reader.interrupt();
@@ -175,7 +175,7 @@ public final class RS232Connection extends Connection
 		}
 		finally
 		{
-			log.info("Die RS232-Übertragung wurde beendet.");
+			log.info("Die RS232-Ãœbertragung wurde beendet.");
 		}
 	}
 

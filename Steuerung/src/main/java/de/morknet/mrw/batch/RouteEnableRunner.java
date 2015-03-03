@@ -24,8 +24,8 @@ import de.morknet.mrw.Route;
 import de.morknet.mrw.RoutingException;
 
 /**
- * Diese Klasse schaltet eine Fahrstraße asynchron in einem eigenständigen Thread. Der Thread wird durch
- * einen {@link BatchRunner} definiert, der ein definiertes Fehlerauflösungsverhalten hat.
+ * Diese Klasse schaltet eine FahrstraÃŸe asynchron in einem eigenstÃ¤ndigen Thread. Der Thread wird durch
+ * einen {@link BatchRunner} definiert, der ein definiertes FehlerauflÃ¶sungsverhalten hat.
  * @author sm
  *
  */
@@ -34,9 +34,9 @@ public class RouteEnableRunner extends BatchRunner
 	private boolean selectRoute = false;
 
 	/**
-	 * Dieser Konstruktur initialisiert das Schalten einer Fahrstraße 
+	 * Dieser Konstruktur initialisiert das Schalten einer FahrstraÃŸe 
 	 * @param controller Der steuernde Controller.
-	 * @param route Die zu schaltende Fahrstraße.
+	 * @param route Die zu schaltende FahrstraÃŸe.
 	 */
 	public RouteEnableRunner(final MrwController controller, final Route route)
 	{
@@ -44,10 +44,10 @@ public class RouteEnableRunner extends BatchRunner
 	}
 
 	/**
-	 * Dieser Konstruktur initialisiert das Schalten einer Fahrstraße 
+	 * Dieser Konstruktur initialisiert das Schalten einer FahrstraÃŸe 
 	 * @param controller Der steuernde Controller.
-	 * @param route Die zu schaltende Fahrstraße.
-	 * @param feedback Die Feedback-Callbacks für Fehlerfälle
+	 * @param route Die zu schaltende FahrstraÃŸe.
+	 * @param feedback Die Feedback-Callbacks fÃ¼r FehlerfÃ¤lle
 	 */
 	public RouteEnableRunner(final MrwController controller, final Route route, final ExceptionCallback feedback)
 	{
@@ -80,7 +80,7 @@ public class RouteEnableRunner extends BatchRunner
 				log.debug("<<doJob()");
 			}
 		}
-		controller.setMessage(" Fahrstraße vollständig geschaltet.");
+		controller.setMessage(" FahrstraÃŸe vollstÃ¤ndig geschaltet.");
 		log.debug(" <doJob()");
 	}
 
@@ -95,7 +95,7 @@ public class RouteEnableRunner extends BatchRunner
 	}
 
 	/**
-	 * Diese Methode aktiviert das automatische Selektieren einer Fahrstraße im {@link MrwController}, falls
+	 * Diese Methode aktiviert das automatische Selektieren einer FahrstraÃŸe im {@link MrwController}, falls
 	 * diese erfolgreich geschaltet werden konnte.
 	 */
 	public void enableRouteSelection()

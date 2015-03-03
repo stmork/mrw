@@ -22,8 +22,8 @@ package de.morknet.mrw.base;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Exception wird bei der Suche für automatische Fahrstraßen geworfen, wenn die Modellgegebenheiten
- * nicht erfüllt sind.
+ * Diese Exception wird bei der Suche fÃ¼r automatische FahrstraÃŸen geworfen, wenn die Modellgegebenheiten
+ * nicht erfÃ¼llt sind.
  * @author smork
  *
  */
@@ -33,10 +33,10 @@ public class NoNeighbourFoundException extends InstanceException
 
 	/**
 	 * Dieser Konstruktur bereitet eine Fehlermeldung auf.
-	 * @param abschnitt Der auslösende Gleisabschnitt.
+	 * @param abschnitt Der auslÃ¶sende Gleisabschnitt.
 	 */
 	public NoNeighbourFoundException(final Abschnitt abschnitt)
 	{
-		super(LogUtil.printf("Es kann kein eindeutiges Nachbargleis für Abschnitt %s festgestellt werden!", abschnitt.getNumber()));
+		super(LogUtil.printf("Es kann kein eindeutiges Nachbargleis fÃ¼r Abschnitt %s festgestellt werden!", abschnitt.getNumber()));
 	}
 }

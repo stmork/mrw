@@ -22,7 +22,7 @@ package de.morknet.mrw.base;
 import de.morknet.mrw.comm.Command;
 
 /**
- * Diese Klasse repr‰sentiert ein Blocksignal. Es kann folgende Zust‰nde anzeigen:
+ * Diese Klasse repr√§sentiert ein Blocksignal. Es kann folgende Zust√§nde anzeigen:
  * <ul>
  * <li>SIGNAL_OFF
  * <li>SIGNAL_TST
@@ -38,9 +38,9 @@ public final class Blocksignal extends Hauptsignal
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Blocksignal.
-	 * @param abschnitt Der Gleisabschnitt zu dem das Blocksignal gehˆrt.
+	 * @param abschnitt Der Gleisabschnitt zu dem das Blocksignal geh√∂rt.
 	 * @param name Der Name des Signals.
-	 * @param aIsHigh Die Richtung relativ zur Z‰hrichtung. 
+	 * @param aIsHigh Die Richtung relativ zur Z√§hrichtung. 
 	 */
 	public Blocksignal(Abschnitt abschnitt, String name, boolean aIsHigh)
 	{

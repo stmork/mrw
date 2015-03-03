@@ -32,7 +32,7 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor
 {
 	/**
-	 * Der Konstruktur f�r diese Klasse.
+	 * Der Konstruktur fÃÅr diese Klasse.
 	 * @param configurer Die Konfiguration.
 	 */
 	public ApplicationWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer)

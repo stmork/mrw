@@ -24,7 +24,7 @@ import java.util.List;
 import org.eclipse.jface.action.Action;
 
 /**
- * Diese Klasse verwaltet die {@link Action}s. Diese k�nnen in der GUI als Men�elemente angezeigt werden.
+ * Diese Klasse verwaltet die {@link Action}s. Diese kÃÂ¶nnen in der GUI als MenÃÅelemente angezeigt werden.
  * @author sm
  *
  */
@@ -42,7 +42,7 @@ abstract public class ActionInitializer
 	}
 	
 	/**
-	 * Diese Methode gibt alle bekannten {@link MrwAction}s zur�ck.
+	 * Diese Methode gibt alle bekannten {@link MrwAction}s zurÃÅck.
 	 * @return Die Liste der {@link MrwAction}.
 	 */
 	public static List<MrwAction> getActions()

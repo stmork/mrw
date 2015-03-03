@@ -23,7 +23,7 @@ import de.morknet.mrw.util.LogUtil;
 import de.morknet.mrw.util.Protocol;
 
 /**
- * Diese RuntimeException bildet die Basis für alle Eisenbahn-Exceptions.
+ * Diese RuntimeException bildet die Basis fÃ¼r alle Eisenbahn-Exceptions.
  * @author smork
  *
  */
@@ -33,7 +33,7 @@ abstract public class MrwException extends RuntimeException
 	private static final long     serialVersionUID = 1L;
 
 	/**
-	 * Dieser Konstruktor nimmt die Fehlermeldung entgegen und trägt sie in ein Fehlerprotokoll ein.
+	 * Dieser Konstruktor nimmt die Fehlermeldung entgegen und trÃ¤gt sie in ein Fehlerprotokoll ein.
 	 * @param message Die Fehlermeldung.
 	 */
 	protected MrwException(final String message)
@@ -48,7 +48,7 @@ abstract public class MrwException extends RuntimeException
 	}
 	
 	/**
-	 * Diese Methode gibt das Fehlerprotokoll aller MrwExceptions zurück.
+	 * Diese Methode gibt das Fehlerprotokoll aller MrwExceptions zurÃ¼ck.
 	 */
 	public static void protocol()
 	{

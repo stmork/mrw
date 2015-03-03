@@ -33,7 +33,7 @@ import de.morknet.mrw.util.LogUtil;
 
 /**
  * Diese Klasse definiert ein einfaches Verhalten zum Versenden von MRW-Meldungen und gibt die empfangenen
- * Meldebestätigungen aus.
+ * MeldebestÃ¤tigungen aus.
  * @author sm
  *
  */
@@ -74,8 +74,8 @@ abstract public class CANMain implements de.morknet.mrw.comm.can.CANMessageProce
 	}
 
 	/**
-	 * Diese Methode ist ein Callback, um eine Liste mit MRW-Meldungen zu füllen.
-	 * @param list Die zu füllende Liste. 
+	 * Diese Methode ist ein Callback, um eine Liste mit MRW-Meldungen zu fÃ¼llen.
+	 * @param list Die zu fÃ¼llende Liste. 
 	 * @throws Exception Eine geworfene Exception, falls was schief geht.
 	 */
 	abstract protected void fillBatch(java.util.List<MrwMessage> list) throws Exception;
@@ -90,7 +90,7 @@ abstract public class CANMain implements de.morknet.mrw.comm.can.CANMessageProce
 		{
 			java.util.List<MrwMessage> list = new ArrayList<MrwMessage>();
 			fillBatch(list);
-			log.info(LogUtil.printf("Übertrage %d Meldungen...\n", list.size()));
+			log.info(LogUtil.printf("Ãœbertrage %d Meldungen...\n", list.size()));
 			for (MrwMessage msg : list)
 			{
 				msg.dump(">");

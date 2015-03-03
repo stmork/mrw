@@ -23,7 +23,7 @@ import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.SignalCode;
 
 /**
- * Diese Klasse repr‰sentiert ein Vorsignal.
+ * Diese Klasse repr√§sentiert ein Vorsignal.
  * @author smork
  *
  */
@@ -33,9 +33,9 @@ public class Vorsignal extends Signal
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Vorsignal.
-	 * @param abschnitt Der Gleisabschnitt zu dem das Vorsignal gehˆrt.
+	 * @param abschnitt Der Gleisabschnitt zu dem das Vorsignal geh√∂rt.
 	 * @param name Der Name des Signals.
-	 * @param inDirection Die Richtung relativ zur Z‰hrichtung. 
+	 * @param inDirection Die Richtung relativ zur Z√§hrichtung. 
 	 */
 	public Vorsignal(Abschnitt abschnitt, String name, boolean inDirection)
 	{
@@ -44,7 +44,7 @@ public class Vorsignal extends Signal
 
 	/**
 	 * Diese Methode setzt das Vorsignal entweder auf SignalCommand.S0 oder SignalCommand.OFF
-	 * abh‰ngig ob der Zustand vorher auf SignalCode.SIGNAL_OFF stand oder nicht.
+	 * abh√§ngig ob der Zustand vorher auf SignalCode.SIGNAL_OFF stand oder nicht.
 	 */
 	public void combinedSignalOff()
 	{

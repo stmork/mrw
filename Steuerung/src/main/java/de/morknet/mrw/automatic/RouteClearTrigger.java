@@ -27,7 +27,7 @@ import de.morknet.mrw.Route;
 import de.morknet.mrw.base.Abschnitt;
 
 /**
- * Dieser Trigger löst automatisch eine Fahrstraße auf, wenn der Endpunkt der Fahrstraße erreicht ist.
+ * Dieser Trigger lÃ¶st automatisch eine FahrstraÃŸe auf, wenn der Endpunkt der FahrstraÃŸe erreicht ist.
  * @see Route
  * @author sm
  *
@@ -38,7 +38,7 @@ public class RouteClearTrigger extends Trigger
 	private final        MrwController ctrl;
 
 	/**
-	 * Dieser Konstruktur initialisiert das Auflösen von Fahrstraßen.
+	 * Dieser Konstruktur initialisiert das AuflÃ¶sen von FahrstraÃŸen.
 	 * @param ctrl
 	 */
 	public RouteClearTrigger(MrwController ctrl)
@@ -53,19 +53,19 @@ public class RouteClearTrigger extends Trigger
 		{
 			if (!route.getLastSegment().isStumpf(route.getDirection()))
 			{
-				log.info("Fahrstraße auflösen: " + route);
+				log.info("FahrstraÃŸe auflÃ¶sen: " + route);
 				ctrl.removeRoute(route);
 				route = null;
-				log.info("Fahrstraße aufgelöst.");
+				log.info("FahrstraÃŸe aufgelÃ¶st.");
 			}
 			else
 			{
-				log.info("Letzter Abschnitt ist erreicht und stumpf, daher Fahrstraße nicht aufgelöst");
+				log.info("Letzter Abschnitt ist erreicht und stumpf, daher FahrstraÃŸe nicht aufgelÃ¶st");
 			}
 		}
 		else
 		{
-			log.info("Die Fahrstraße wurde nicht aufgelöst.");
+			log.info("Die FahrstraÃŸe wurde nicht aufgelÃ¶st.");
 		}
 		return route;
 	}

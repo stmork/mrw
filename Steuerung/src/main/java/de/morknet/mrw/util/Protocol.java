@@ -26,7 +26,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * Diese Klasse pflegt Einträge für ein Protokoll-Log.
+ * Diese Klasse pflegt EintrÃ¤ge fÃ¼r ein Protokoll-Log.
  * @author smork
  *
  */
@@ -36,7 +36,7 @@ public class Protocol
 	private final List<String> entries = new LinkedList<String>();
 	
 	/**
-	 * Dieser Konstruktur verteilt einen Default-Namen für dieses Protokoll.
+	 * Dieser Konstruktur verteilt einen Default-Namen fÃ¼r dieses Protokoll.
 	 */
 	public Protocol()
 	{
@@ -44,7 +44,7 @@ public class Protocol
 	}
 
 	/**
-	 * Dieser Konstruktur verteilt einen vorgegebenen Namen für dieses Protokoll.
+	 * Dieser Konstruktur verteilt einen vorgegebenen Namen fÃ¼r dieses Protokoll.
 	 * @param name Der Protokollname.
 	 */
 	public Protocol(final String name)
@@ -53,7 +53,7 @@ public class Protocol
 	}
 	
 	/**
-	 * Diese Methode fügt einen Logeintrag dem Protokoll hinzu. Es wird dasa aktuelle Datum dem Eintrag vorangestellt.
+	 * Diese Methode fÃ¼gt einen Logeintrag dem Protokoll hinzu. Es wird dasa aktuelle Datum dem Eintrag vorangestellt.
 	 * @param entry Der Logeintrag.
 	 */
 	public void add(final String entry)
@@ -73,7 +73,7 @@ public class Protocol
 		{
 			if (entries.isEmpty())
 			{
-				log.info("Keine Einträge.");
+				log.info("Keine EintrÃ¤ge.");
 			}
 			for (String e : entries)
 			{
@@ -83,7 +83,7 @@ public class Protocol
 	}
 
 	/**
-	 * Diese Methode löscht das Logprotokoll.
+	 * Diese Methode lÃ¶scht das Logprotokoll.
 	 */
 	public void clear()
 	{

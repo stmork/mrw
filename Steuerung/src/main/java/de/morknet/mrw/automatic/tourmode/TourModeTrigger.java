@@ -27,7 +27,7 @@ import de.morknet.mrw.automatic.Trigger;
 import de.morknet.mrw.base.Abschnitt;
 
 /**
- * Diese Klasse behandelt die Trigger für Fahrtstrecken. Er löst das Erweitern von Fahrtstraßen aus.
+ * Diese Klasse behandelt die Trigger fÃ¼r Fahrtstrecken. Er lÃ¶st das Erweitern von FahrtstraÃŸen aus.
  * @see Route
  * @see TourMode
  * @author sm
@@ -54,7 +54,7 @@ public class TourModeTrigger extends Trigger
 		log.info(" " + abschnitt.getNumber());
 		if (tour.isSegmentRelevant(abschnitt))
 		{
-			log.debug("Abschnitt " + abschnitt.getNumber() + " für [" + tour + "] relevant.");
+			log.debug("Abschnitt " + abschnitt.getNumber() + " fÃ¼r [" + tour + "] relevant.");
 			tour.extend();
 		}
 		log.info("<railLeft() " + tour);

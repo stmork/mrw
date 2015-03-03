@@ -20,7 +20,7 @@
 package de.morknet.mrw.base;
 
 /**
- * Dieses Interface repr‰sentiert eine Implementierung als Formsignal.
+ * Dieses Interface repr√§sentiert eine Implementierung als Formsignal.
  * @author sm
  *
  */

@@ -31,7 +31,7 @@ import de.morknet.mrw.comm.MrwMessage;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse führt das Schalten von Kommandos aus.
+ * Diese Klasse fÃ¼hrt das Schalten von Kommandos aus.
  * @author smork
  *
  */
@@ -49,8 +49,8 @@ abstract public class BatchRunner extends Thread
 	 * Dieser Konstruktur initialisiert diesen BatchRunner 
 	 * @param controller Der steuernde Controller
 	 * @param title Ein beliebiger Threadname
-	 * @param route Die zu schaltende Fahrstraße
-	 * @param feedback Evtl. Callbacks für Rückmeldungen
+	 * @param route Die zu schaltende FahrstraÃŸe
+	 * @param feedback Evtl. Callbacks fÃ¼r RÃ¼ckmeldungen
 	 */
 	protected BatchRunner(
 			final MrwController     controller,
@@ -66,24 +66,24 @@ abstract public class BatchRunner extends Thread
 	}
 
 	/**
-	 * Diese Methode führt den eigentlichen Auftrag aus.
+	 * Diese Methode fÃ¼hrt den eigentlichen Auftrag aus.
 	 * @param controller Der steuernde Controller.
 	 * @throws RoutingException 
 	 */
 	abstract protected void doJob(MrwController controller);
 
 	/**
-	 * Dieser Callback dient zum Aktualisieren der Anzeige nach Ausführung des Jobs.
+	 * Dieser Callback dient zum Aktualisieren der Anzeige nach AusfÃ¼hrung des Jobs.
 	 * @param controller
 	 */
 	abstract protected void doUpdateUI(MrwController controller);
 	
 	/**
-	 * Diese Methode führt das Schalten von Kommandos aus und regelt das Fehlerverhalten. Von hier aus werden
+	 * Diese Methode fÃ¼hrt das Schalten von Kommandos aus und regelt das Fehlerverhalten. Von hier aus werden
 	 * Exceptions gefangen und vermerkt ({@link #getException()}). Es werden Fehlermeldungen an den {@link MrwController}
-	 * geschickt und es wird der Fehlerzustand wieder aufgelöst. Kann der Fehlerzustand nicht aufgelöst werden, wird ein
-	 * RESET an die Microcontroller gesendet (doppelter Ausführungsfehler). Schlägt auch dieser fehl, sollte das Programm
-	 * verlassen werden und nach dem Fehler hardware-seitg gesucht werden (dreifacher Ausführungsfehler).
+	 * geschickt und es wird der Fehlerzustand wieder aufgelÃ¶st. Kann der Fehlerzustand nicht aufgelÃ¶st werden, wird ein
+	 * RESET an die Microcontroller gesendet (doppelter AusfÃ¼hrungsfehler). SchlÃ¤gt auch dieser fehl, sollte das Programm
+	 * verlassen werden und nach dem Fehler hardware-seitg gesucht werden (dreifacher AusfÃ¼hrungsfehler).
 	 */
 	@Override
 	final public void run()
@@ -121,7 +121,7 @@ abstract public class BatchRunner extends Thread
 		finally
 		{
 			long diff = System.currentTimeMillis() - start;
-			log.debug(LogUtil.printf(" Stapelverarbeitung für %s brauchte %d ms.",
+			log.debug(LogUtil.printf(" Stapelverarbeitung fÃ¼r %s brauchte %d ms.",
 					this.title, diff));
 		}
 
@@ -136,15 +136,15 @@ abstract public class BatchRunner extends Thread
 		log.debug(">clearErrorCondition()");
 		try
 		{
-			log.warn("Es wird versucht, den Fehlerzustand aufzulösen...");
+			log.warn("Es wird versucht, den Fehlerzustand aufzulÃ¶sen...");
 			route.computeForcedClearBatch(errorExecuter);
 			controller.send(errorExecuter);
-			log.info("Fehlerzustand aufgelöst...");
+			log.info("Fehlerzustand aufgelÃ¶st...");
 		}
 		catch(Exception e)
 		{
 			log.error(e.getMessage(), e);
-			controller.setErrorMessage("Doppelter Ausführungsfehler: Fehler aufgetreten, während Fehlerzustand aufgelöst wird!");
+			controller.setErrorMessage("Doppelter AusfÃ¼hrungsfehler: Fehler aufgetreten, wÃ¤hrend Fehlerzustand aufgelÃ¶st wird!");
 
 			try
 			{
@@ -170,7 +170,7 @@ abstract public class BatchRunner extends Thread
 
 	/**
 	 * Diese Methode schickt ein RESET-Kommando an die Mikrocontroller. Das ist der letzte Versuch, einen
-	 * Fehlerzustand aufzulösen. Sollte auch dieser fehlschlagen, wird dieses Programm hart beendet.
+	 * Fehlerzustand aufzulÃ¶sen. Sollte auch dieser fehlschlagen, wird dieses Programm hart beendet.
 	 */
 	private void reset()
 	{
@@ -179,14 +179,14 @@ abstract public class BatchRunner extends Thread
 
 		try
 		{
-			log.error("Es wird ein Reset der Mikrocontroller ausgelöst!");
-			controller.send(msg, "RESET nach doppeltem Ausführungsfehler!");
+			log.error("Es wird ein Reset der Mikrocontroller ausgelÃ¶st!");
+			controller.send(msg, "RESET nach doppeltem AusfÃ¼hrungsfehler!");
 			controller.waitForReachability(250L, 2500L);
-			log.info("Der Reset der Mikrocontroller wurde durchgeführt!");
+			log.info("Der Reset der Mikrocontroller wurde durchgefÃ¼hrt!");
 		}
 		catch (IOException e)
 		{
-			final RuntimeException re = new RuntimeException("Dreifacher Ausführungsfehler: Bitte Programm verlassen!", e);
+			final RuntimeException re = new RuntimeException("Dreifacher AusfÃ¼hrungsfehler: Bitte Programm verlassen!", e);
 
 			log.fatal(e.getMessage(), e);
 			controller.setErrorMessage(re.getMessage());
@@ -199,8 +199,8 @@ abstract public class BatchRunner extends Thread
 	}
 	
 	/**
-	 * Diese Methode gibt die zum BatchRunner gehörende Fahrstraße zurück.
-	 * @return Die mit diesem BatchRunner verbundene Fahrstraße.
+	 * Diese Methode gibt die zum BatchRunner gehÃ¶rende FahrstraÃŸe zurÃ¼ck.
+	 * @return Die mit diesem BatchRunner verbundene FahrstraÃŸe.
 	 */
 	final public Route getRoute()
 	{
@@ -208,8 +208,8 @@ abstract public class BatchRunner extends Thread
 	}
 	
 	/**
-	 * Hier gibt der BatchRunner eine verursachende Exception zurück.
-	 * @return Die verursachende Exception für einen Fehler.
+	 * Hier gibt der BatchRunner eine verursachende Exception zurÃ¼ck.
+	 * @return Die verursachende Exception fÃ¼r einen Fehler.
 	 */
 	final public RuntimeException getException()
 	{
@@ -217,12 +217,12 @@ abstract public class BatchRunner extends Thread
 	}
 	
 	/**
-	 * Diese Methode gibt Informationen über diesen BatchRunner zurück.
-	 * @return Informationen über diesen BatchRunner.
+	 * Diese Methode gibt Informationen Ã¼ber diesen BatchRunner zurÃ¼ck.
+	 * @return Informationen Ã¼ber diesen BatchRunner.
 	 */
 	public String toString()
 	{
-		return LogUtil.printf("BatchRunner für Fahrstraße %s (%s)", route.toString(), isAlive() ? "läuft" : "beendet");
+		return LogUtil.printf("BatchRunner fÃ¼r FahrstraÃŸe %s (%s)", route.toString(), isAlive() ? "lÃ¤uft" : "beendet");
 	}
 
 	/**

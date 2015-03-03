@@ -19,7 +19,7 @@
 package de.morknet.mrw.rcc;
 
 /**
- * Dieses Interface stellt einige Konstanten f�r die Darstellung des Spurplans bereit. Der Spurplan ist gerastert. In ein
+ * Dieses Interface stellt einige Konstanten fÃÅr die Darstellung des Spurplans bereit. Der Spurplan ist gerastert. In ein
  * Rasterfeld passt exakt eine Weiche oder ein Signal. Dabei kann es sich auch um ein kombiniertes Signal aus Vor- und
  * Hauptsignal handeln.
  * @see GroupView
@@ -29,12 +29,12 @@ package de.morknet.mrw.rcc;
 public interface Coordinates
 {
 	/**
-	 * Diese Konstante bestimmt die L�nge eines Abstellgleises in x-Richtung.
+	 * Diese Konstante bestimmt die LÃâ¬nge eines Abstellgleises in x-Richtung.
 	 */
 	public final static int OVERRUN_X       =  2;
 
 	/**
-	 * Diese Konstante bestimmt die L�nge eines Abstellgleises in y-Richtung.
+	 * Diese Konstante bestimmt die LÃâ¬nge eines Abstellgleises in y-Richtung.
 	 */
 	public final static int OVERRUN_Y       =  0;
 	
@@ -44,7 +44,7 @@ public interface Coordinates
 	public final static int SCALE_X         = 32;
 	
 	/**
-	 * H�he eines Spurplanelementes.
+	 * HÃÂ¶he eines Spurplanelementes.
 	 */
 	public final static int SCALE_Y         = 32;
 	

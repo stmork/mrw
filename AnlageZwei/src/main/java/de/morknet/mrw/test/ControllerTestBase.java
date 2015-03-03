@@ -83,9 +83,9 @@ abstract public class ControllerTestBase
 
 		Assert.assertTrue(model.validate() == 0);
 		controller.selectRoute(null);
-		Assert.assertNull("Es darf keine Fahrstraße ausgewählt sein!", controller.getSelectedRoute());
+		Assert.assertNull("Es darf keine FahrstraÃŸe ausgewÃ¤hlt sein!", controller.getSelectedRoute());
 		
-		Assert.assertTrue("Es darf keine Fahrstraße vorhanden sein!", Route.getRoutes().isEmpty());
+		Assert.assertTrue("Es darf keine FahrstraÃŸe vorhanden sein!", Route.getRoutes().isEmpty());
 		for (Abschnitt a : model.getSegments())
 		{
 			a.free();
@@ -157,7 +157,7 @@ abstract public class ControllerTestBase
 				sleep(10L); // Hier wird ein Thread Switch erzwungen.
 				log.debug("Gibt's Batches? " + BatchExecuter.hasBatches());
 			}
-			log.info(LogUtil.printf("Warte %d Sekunden auf Ausführung von [%s]...", seconds, runner));
+			log.info(LogUtil.printf("Warte %d Sekunden auf AusfÃ¼hrung von [%s]...", seconds, runner));
 			runner.join(1000L * seconds);
 		}
 		catch (InterruptedException e)
@@ -224,19 +224,19 @@ abstract public class ControllerTestBase
 			DirectionCode dc = switchCodeMap.get(c); 
 
 			Assert.assertNotNull(LogUtil.printf(
-					"Unbekanntes Weichenkürzel '%c' an Stelle %d! Das ist Testfallfehler, kein Programmfehler!",c,i), 
+					"Unbekanntes WeichenkÃ¼rzel '%c' an Stelle %d! Das ist Testfallfehler, kein Programmfehler!",c,i), 
 					dc);
 			Assert.assertEquals(LogUtil.printf(
 					"Falsche Weichenstellung an %d. Weiche (%s)!", i+1, v.getName()),
 					dc, v.getDirectionCode());
-			Assert.assertSame(LogUtil.printf("Die Verzweigung %s konnte der Fahrstraße %s nicht zugeordnet werden!",
+			Assert.assertSame(LogUtil.printf("Die Verzweigung %s konnte der FahrstraÃŸe %s nicht zugeordnet werden!",
 					v.getName(), route.toString()),
 					route, Route.findConflictingRoute(v));
 			
 			if (v instanceof Weiche)
 			{
 				Weiche w = (Weiche)v;
-				Assert.assertTrue(LogUtil.printf("An einer Weiche (%s) sollte es ein weiterführendes Gleisteil geben!", v.getName()),
+				Assert.assertTrue(LogUtil.printf("An einer Weiche (%s) sollte es ein weiterfÃ¼hrendes Gleisteil geben!", v.getName()),
 						route.isPart(w, w.getA()) ||
 						route.isPart(w, w.getB()) ||
 						route.isPart(w, w.getC()));
@@ -244,7 +244,7 @@ abstract public class ControllerTestBase
 			else if (v instanceof DKW)
 			{
 				DKW dkw = (DKW)v;
-				Assert.assertTrue(LogUtil.printf("An einer DKW (%s) sollte es ein weiterführendes Gleisteil geben!", v.getName()),
+				Assert.assertTrue(LogUtil.printf("An einer DKW (%s) sollte es ein weiterfÃ¼hrendes Gleisteil geben!", v.getName()),
 						route.isPart(dkw, dkw.getA()) ||
 						route.isPart(dkw, dkw.getB()) ||
 						route.isPart(dkw, dkw.getC()) ||
@@ -259,7 +259,7 @@ abstract public class ControllerTestBase
 	{
 		Route route = runner.getRoute();
 
-		Assert.assertTrue(LogUtil.printf("Die Fahrstraße (%s) muss verriegelt sein!", route),
+		Assert.assertTrue(LogUtil.printf("Die FahrstraÃŸe (%s) muss verriegelt sein!", route),
 				route.isLocked());
 		for (Abschnitt a = route.getLastSegment(); a != null; a = route.getPrevSegment(a))
 		{
@@ -267,7 +267,7 @@ abstract public class ControllerTestBase
 			{
 				if (gt.isLocked())
 				{
-					Assert.assertSame(LogUtil.printf("Die Gleisteile (%s) einer Fahrstraße (%s) müssen zu dieser gehören!",
+					Assert.assertSame(LogUtil.printf("Die Gleisteile (%s) einer FahrstraÃŸe (%s) mÃ¼ssen zu dieser gehÃ¶ren!",
 							gt.toString(), route.toString()),
 							gt.getRoute(), route);
 				}
@@ -277,7 +277,7 @@ abstract public class ControllerTestBase
 		{
 			Assert.assertTrue(LogUtil.printf("Das Gleisteil (%s) muss verriegelt sein!", gt.toString()),
 					gt.isLocked());
-			Assert.assertSame(LogUtil.printf("Die Gleisteile (%s) einer Fahrstraße (%s) müssen zu dieser gehören!",
+			Assert.assertSame(LogUtil.printf("Die Gleisteile (%s) einer FahrstraÃŸe (%s) mÃ¼ssen zu dieser gehÃ¶ren!",
 					gt.toString(), route.toString()),
 					gt.getRoute(), route);
 		}
@@ -285,7 +285,7 @@ abstract public class ControllerTestBase
 
 	final protected void assertSelectedRoute(final BatchRunner runner)
 	{
-		Assert.assertSame("Die gewählten Fahrstraßen sind nicht identisch!", 
+		Assert.assertSame("Die gewÃ¤hlten FahrstraÃŸen sind nicht identisch!", 
 				controller.getSelectedRoute(), runner.getRoute());
 	}
 
@@ -297,7 +297,7 @@ abstract public class ControllerTestBase
 	{
 		final Route route = assertStartRoute(shunting, direction, switchCodes, segmentNames);
 		controller.removeAllRoutes();
-		Assert.assertNull("Es darf keine Fahrstraße ausgewählt sein!", controller.getSelectedRoute());
+		Assert.assertNull("Es darf keine FahrstraÃŸe ausgewÃ¤hlt sein!", controller.getSelectedRoute());
 		return route;
 	}
 
@@ -308,7 +308,7 @@ abstract public class ControllerTestBase
 			final String ... segmentNames)
 	{
 		controller.clearSegmentSelection();
-		Assert.assertNull("Es darf keine Fahrstraße ausgewählt sein!", controller.getSelectedRoute());
+		Assert.assertNull("Es darf keine FahrstraÃŸe ausgewÃ¤hlt sein!", controller.getSelectedRoute());
 		selectSegments(segmentNames);
 		for(Abschnitt a : controller.getSegmentSelection())
 		{
@@ -320,7 +320,7 @@ abstract public class ControllerTestBase
 		{
 			final Route route  = runner.getRoute();
 
-			Assert.assertFalse("Die Fahrstraße darf kein Wartungsmodus sein!", route.isMaintainance());
+			Assert.assertFalse("Die FahrstraÃŸe darf kein Wartungsmodus sein!", route.isMaintainance());
 			waitForRunner(runner);
 	
 			if (runner.getException() != null)
@@ -331,17 +331,17 @@ abstract public class ControllerTestBase
 			}
 	
 			Assert.assertTrue(
-					LogUtil.printf("Die Anzahl der Stützpunkte einer Fahrstraße (%s) muss mindestens 2 betragen!", route.toString()),
+					LogUtil.printf("Die Anzahl der StÃ¼tzpunkte einer FahrstraÃŸe (%s) muss mindestens 2 betragen!", route.toString()),
 					route.getHopCount() >= 2);
 			Assert.assertTrue(
-					LogUtil.printf("Die Anzahl der Stützpunkte einer Fahrstraße (%s) kann nicht größer als die Auswahl sein!", route.toString()),
+					LogUtil.printf("Die Anzahl der StÃ¼tzpunkte einer FahrstraÃŸe (%s) kann nicht grÃ¶ÃŸer als die Auswahl sein!", route.toString()),
 					route.getHopCount() <= segmentNames.length);
-			Assert.assertTrue("Es muss eine Fahrstraße vorhanden sein!", Route.hasRoutes());
+			Assert.assertTrue("Es muss eine FahrstraÃŸe vorhanden sein!", Route.hasRoutes());
 	
 			assertSwitches(runner, switchCodes);
 			assertSegments(runner);
 			assertSelectedRoute(runner);
-			Assert.assertEquals("Es darf kein Gleisabschnitt ausgewählt sein!", controller.getSegmentSelection().size(), 0);
+			Assert.assertEquals("Es darf kein Gleisabschnitt ausgewÃ¤hlt sein!", controller.getSegmentSelection().size(), 0);
 			return route;
 		}
 		return null;
@@ -363,13 +363,13 @@ abstract public class ControllerTestBase
 
 		assertSwitches(runner, switchCodes);
 		assertSelectedRoute(runner);
-		Assert.assertEquals("Es darf kein Gleisabschnitt ausgewählt sein!", controller.getSegmentSelection().size(), 0);
+		Assert.assertEquals("Es darf kein Gleisabschnitt ausgewÃ¤hlt sein!", controller.getSegmentSelection().size(), 0);
 	}
 	
 	final protected void assertCloseRoute(final Route route)
 	{
 		controller.removeAllRoutes();
-		Assert.assertNull("Es darf keine Fahrstraße ausgewählt sein!", controller.getSelectedRoute());
+		Assert.assertNull("Es darf keine FahrstraÃŸe ausgewÃ¤hlt sein!", controller.getSelectedRoute());
 	}
 
 	final protected void assertTour(
@@ -386,7 +386,7 @@ abstract public class ControllerTestBase
 		{
 			controller.removeRoute(route);
 		}
-		Assert.assertNull("Es darf keine Fahrstraße ausgewählt sein!", controller.getSelectedRoute());
+		Assert.assertNull("Es darf keine FahrstraÃŸe ausgewÃ¤hlt sein!", controller.getSelectedRoute());
 	}
 
 	private final static class RouteSimulator extends Thread
@@ -399,7 +399,7 @@ abstract public class ControllerTestBase
 		{
 			if (!controller.isDummyConnection())
 			{
-				throw new IllegalStateException("Simulationen können nur auf einer Dummy-Connection durchgeführt werden!");
+				throw new IllegalStateException("Simulationen kÃ¶nnen nur auf einer Dummy-Connection durchgefÃ¼hrt werden!");
 			}
 			this.route       = route;
 			this.maxSegments = maxSegments;
@@ -416,7 +416,7 @@ abstract public class ControllerTestBase
 				act = route.getFirstSegment();
 				while((succ = route.getSuccSegment(act)) != null)
 				{
-					// Einfahren in nächsten Gleisabschnitt
+					// Einfahren in nÃ¤chsten Gleisabschnitt
 					msg = MrwMessage.createResultMessage(
 							Command.GETRBS, MsgCode.MSG_OK,
 							succ.getMicroControllerId(), succ.getDeviceUnitNumber());
@@ -466,7 +466,7 @@ abstract public class ControllerTestBase
 	{
 		if (controller.isDummyConnection())
 		{
-			log.info("Simuliere Fahrt durch Fahrstraße " + route);
+			log.info("Simuliere Fahrt durch FahrstraÃŸe " + route);
 			route.getFirstSegment().occupy();
 			try
 			{
@@ -486,7 +486,7 @@ abstract public class ControllerTestBase
 		}
 		else
 		{
-			log.info("Im Realmodus wird keine Fahrsimulation durchgeführt!");
+			log.info("Im Realmodus wird keine Fahrsimulation durchgefÃ¼hrt!");
 		}
 	}
 }

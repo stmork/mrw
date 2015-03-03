@@ -20,7 +20,7 @@
 package de.morknet.mrw;
 
 /**
- * Diese Exception wird geworfen, wenn beim Berechnen einer Fahrstraße Fehler unterlaufen. Diese
+ * Diese Exception wird geworfen, wenn beim Berechnen einer FahrstraÃŸe Fehler unterlaufen. Diese
  * Exception ist keine RuntimeException. Sie wird auch nicht ins Fehlerprotokoll eingetragen.
  * @author sm
  *
@@ -32,7 +32,7 @@ public class RoutingException extends Exception
 
 	/**
 	 * Dieser Konstruktur reicht eine Fehlermeldung weiter.
-	 * @param route Die zugehörige Fahrstraße
+	 * @param route Die zugehÃ¶rige FahrstraÃŸe
 	 * @param message Die Fehlermeldung.
 	 */
 	protected RoutingException(final Route route, final String message)
@@ -42,8 +42,8 @@ public class RoutingException extends Exception
 	}
 
 	/**
-	 * Diese Methode gibt die Fahrstraße zurück, durch die diese Exception ausgelöst wurde.
-	 * @return Die auslösende Fahrstraße.
+	 * Diese Methode gibt die FahrstraÃŸe zurÃ¼ck, durch die diese Exception ausgelÃ¶st wurde.
+	 * @return Die auslÃ¶sende FahrstraÃŸe.
 	 */
 	public Route getRoute()
 	{

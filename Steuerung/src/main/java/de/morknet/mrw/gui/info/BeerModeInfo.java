@@ -22,7 +22,7 @@ package de.morknet.mrw.gui.info;
 import de.morknet.mrw.automatic.beermode.BeerMode;
 
 /**
- * Diese Klasse beinhaltet Informationen für den Biermodus.
+ * Diese Klasse beinhaltet Informationen fÃ¼r den Biermodus.
  * @see BeerMode
  * @author sm
  *
@@ -30,13 +30,13 @@ import de.morknet.mrw.automatic.beermode.BeerMode;
 abstract public class BeerModeInfo
 {
 	/**
-	 * Diese Methode gibt den Namen des Schattenbahnhofs zurück.
+	 * Diese Methode gibt den Namen des Schattenbahnhofs zurÃ¼ck.
 	 * @return Der Name des Schattenbahnhofs.
 	 */
 	abstract public String getPoolStationName();
 
 	/**
-	 * Diese Methode gibt den Namen des Durchgangsbahnhofs zurück.
+	 * Diese Methode gibt den Namen des Durchgangsbahnhofs zurÃ¼ck.
 	 * @return Der Name des Durchgangsbahnhofs.
 	 */
 	abstract public String getViaStationName();

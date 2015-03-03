@@ -22,7 +22,7 @@ package de.morknet.mrw;
 import de.morknet.mrw.base.Gleisteil;
 
 /**
- * Diese RuntimeException wird geworfen, wenn ein betroffenes Gleisteil nicht zur richtigen Fahrstraﬂe passt.
+ * Diese RuntimeException wird geworfen, wenn ein betroffenes Gleisteil nicht zur richtigen Fahrstra√üe passt.
  * @author smork
  *
  */
@@ -30,12 +30,12 @@ public class TrackNotRoutedException extends RoutingRuntimeException {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit der ¸bergebenen Fahrstraﬂe und dem Gleisteil auf.
-	 * @param route Die verursachende Fahrstraﬂe.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit der √ºbergebenen Fahrstra√üe und dem Gleisteil auf.
+	 * @param route Die verursachende Fahrstra√üe.
 	 * @param gt Das verursachende Gleisteil.
 	 */
 	public TrackNotRoutedException(final Route route, final Gleisteil gt)
 	{
-		super(route, "Gleisteil nicht Bestandteil dieser Fahrstraﬂe! (" + gt.getRoute() + "/" + route + ")");
+		super(route, "Gleisteil nicht Bestandteil dieser Fahrstra√üe! (" + gt.getRoute() + "/" + route + ")");
 	}
 }

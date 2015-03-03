@@ -22,7 +22,7 @@ package de.morknet.mrw.batch;
 import de.morknet.mrw.base.Abschnitt;
 
 /**
- * Diese Exception wird geworfen, wenn für einen Gleisabschnitt bereits ein {@link Batch} läuft.
+ * Diese Exception wird geworfen, wenn fÃ¼r einen Gleisabschnitt bereits ein {@link Batch} lÃ¤uft.
  * @author sm
  *
  */

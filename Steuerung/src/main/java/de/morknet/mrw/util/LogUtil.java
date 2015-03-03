@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * In dieser Klasse sind einige Hilfsmethoden für das Logging untergebracht. 
+ * In dieser Klasse sind einige Hilfsmethoden fÃ¼r das Logging untergebracht. 
  * @author smork
  *
  */
@@ -36,7 +36,7 @@ public class LogUtil
 	private final static int    emptyLen = emptyTxt.length();
 	
 	/**
-	 * Diese Methode führt ein printf in einen String durch. 
+	 * Diese Methode fÃ¼hrt ein printf in einen String durch. 
 	 * @param fmt Der Format-String.
 	 * @param args Die Argumente, die im Format-String verarbeitet werden.
 	 * @return Der formatierte Text.
@@ -54,7 +54,7 @@ public class LogUtil
 	}
 	
 	/**
-	 * Diese Methode gibt den aktuellen Zeitpunkt als formatierten Text zurück.
+	 * Diese Methode gibt den aktuellen Zeitpunkt als formatierten Text zurÃ¼ck.
 	 * @return Der aktuelle Zeitpunkt als Klartext.
 	 */
 	public final static String now()
@@ -66,7 +66,7 @@ public class LogUtil
 	}
 
 	/**
-	 * Diese Methode gibt den angegebenen Zeitpunkt als formatierten Text zurück.
+	 * Diese Methode gibt den angegebenen Zeitpunkt als formatierten Text zurÃ¼ck.
 	 * @param date Der angegebene Zeitpunkt.
 	 * @return Der angegebene Zeitpunkt als Klartext.
 	 */
@@ -79,10 +79,10 @@ public class LogUtil
 	}
 
 	/**
-	 * Diese Methode füllt einen String mit einer Leertaste auf.
-	 * @param name Der aufzufüllende String.
-	 * @param min Die Mindestlänge des Strings.
-	 * @return Der aufgefüllte String.
+	 * Diese Methode fÃ¼llt einen String mit einer Leertaste auf.
+	 * @param name Der aufzufÃ¼llende String.
+	 * @param min Die MindestlÃ¤nge des Strings.
+	 * @return Der aufgefÃ¼llte String.
 	 */
 	public final static String pad(final String name, final int min)
 	{
@@ -90,11 +90,11 @@ public class LogUtil
 	}
 
 	/**
-	 * Diese Methode füllt einen String mit einem beliebigen Zeichen auf.
-	 * @param name Der aufzufüllende String.
-	 * @param min Die Mindestlänge des Strings.
-	 * @param padding Das aufzufüllende Zeichen.
-	 * @return Der aufgefüllte String.
+	 * Diese Methode fÃ¼llt einen String mit einem beliebigen Zeichen auf.
+	 * @param name Der aufzufÃ¼llende String.
+	 * @param min Die MindestlÃ¤nge des Strings.
+	 * @param padding Das aufzufÃ¼llende Zeichen.
+	 * @return Der aufgefÃ¼llte String.
 	 */
 	public final static String pad(final String name, final int min, final char padding)
 	{
@@ -108,10 +108,10 @@ public class LogUtil
 	}
 
 	/**
-	 * Diese Methode füllt einen Text linksseitig mit Leerzeichen auf.
+	 * Diese Methode fÃ¼llt einen Text linksseitig mit Leerzeichen auf.
 	 * @param text Der Text, der rechts steht.
-	 * @param min Die Minimallänge des aufgefüllten Textes.
-	 * @return Der links aufgefüllte Text.
+	 * @param min Die MinimallÃ¤nge des aufgefÃ¼llten Textes.
+	 * @return Der links aufgefÃ¼llte Text.
 	 */
 	public final static String padLeft(final String text, final int min)
 	{
@@ -119,11 +119,11 @@ public class LogUtil
 	}
 
 	/**
-	 * Diese Methode füllt linksseitig mit einem Zeichen Zeichen auf.
+	 * Diese Methode fÃ¼llt linksseitig mit einem Zeichen Zeichen auf.
 	 * @param text Der Text, der rechts steht.
-	 * @param padding Das Zeichen, das linksseitig aufgefüllt wird.
-	 * @param min Die Minimallänge des aufgefüllten Textes.
-	 * @return Der links aufgefüllte Text.
+	 * @param padding Das Zeichen, das linksseitig aufgefÃ¼llt wird.
+	 * @param min Die MinimallÃ¤nge des aufgefÃ¼llten Textes.
+	 * @return Der links aufgefÃ¼llte Text.
 	 */
 	public final static String padLeft(final String text, final int min, final char padding)
 	{
@@ -142,7 +142,7 @@ public class LogUtil
 	}
 
 	/**
-	 * Diese Methode gibt einen Text mit einer definierten Anzahl an Leerzeichen zurück.
+	 * Diese Methode gibt einen Text mit einer definierten Anzahl an Leerzeichen zurÃ¼ck.
 	 * @param len Die Zahl der Leerzeichen.
 	 * @return Der Leerzeichentext.
 	 */

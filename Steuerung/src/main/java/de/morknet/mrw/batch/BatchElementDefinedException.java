@@ -23,7 +23,7 @@ import de.morknet.mrw.base.DeviceUnit;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Exception wird geworfen, wenn ein BatchElement einem Ger‰t zugeordnet werden soll, dem schon eins
+ * Diese Exception wird geworfen, wenn ein BatchElement einem Ger√§t zugeordnet werden soll, dem schon eins
  * zugeordnet worden ist.
  * @author smork
  *
@@ -32,7 +32,7 @@ public class BatchElementDefinedException extends BatchProcessingException
 {
 	/**
 	 * Dieser Konstruktur bereitet eine Fehlermeldung auf.
-	 * @param deviceUnit Das verursachende Ger‰t.
+	 * @param deviceUnit Das verursachende Ger√§t.
 	 */
 	public BatchElementDefinedException(DeviceUnit deviceUnit)
 	{

@@ -1,111 +1,111 @@
-«REM»
-«»
-«»
-«»	$Filename:	Graph.xpt $
-«»	$Revision$
-«»	$Date$
-«»	$Author$
-«»	$Id$
-«»
-«»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
-«»
-«»	This program and the accompanying materials are made available under the
-«»	terms of the Eclipse Public License v1.0.
-«»
-«»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
-«»
-«»
-«»
-«ENDREM»
+Â«REMÂ»
+Â«Â»
+Â«Â»
+Â«Â»	$Filename:	Graph.xpt $
+Â«Â»	$Revision$
+Â«Â»	$Date$
+Â«Â»	$Author$
+Â«Â»	$Id$
+Â«Â»
+Â«Â»	Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+Â«Â»
+Â«Â»	This program and the accompanying materials are made available under the
+Â«Â»	terms of the Eclipse Public License v1.0.
+Â«Â»
+Â«Â»	The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+Â«Â»
+Â«Â»
+Â«Â»
+Â«ENDREMÂ»
 
-«IMPORT metamodel»
+Â«IMPORT metamodelÂ»
 
-«EXTENSION de::morknet::mrw::generator::base::ext::graph»
-«EXTENSION de::morknet::mrw::generator::base::ext::gruppe»
-«EXTENSION de::morknet::mrw::generator::base::ext::abschnitt»
-«EXTENSION de::morknet::mrw::generator::base::ext::signal»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::graphÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::gruppeÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::abschnittÂ»
+Â«EXTENSION de::morknet::mrw::generator::base::ext::signalÂ»
 
-«DEFINE Main FOR Modell»
-«FILE asGraphFileName(this) LOG»
-// dot «asGraphFileName(this)» -Tgif -o «asGraphImageName(this)» 
-digraph «name»
+Â«DEFINE Main FOR ModellÂ»
+Â«FILE asGraphFileName(this) LOGÂ»
+// dot Â«asGraphFileName(this)Â» -Tgif -o Â«asGraphImageName(this)Â» 
+digraph Â«nameÂ»
 {
-«FOREACH gruppe AS g»
-	subgraph «asClusterName(g)»
+Â«FOREACH gruppe AS gÂ»
+	subgraph Â«asClusterName(g)Â»
 	{
 		node [style=filled];
-«FOREACH g.abschnitt AS abschnitt»
-		subgraph «asClusterName(abschnitt)»
+Â«FOREACH g.abschnitt AS abschnittÂ»
+		subgraph Â«asClusterName(abschnitt)Â»
 		{
 			node [style=filled];
-«EXPAND Gleis FOREACH abschnitt.bauelement.typeSelect(Gleisteil)»
-«EXPAND Signals FOR abschnitt»
-			label = «getAbschnittName(abschnitt)»;
+Â«EXPAND Gleis FOREACH abschnitt.bauelement.typeSelect(Gleisteil)Â»
+Â«EXPAND Signals FOR abschnittÂ»
+			label = Â«getAbschnittName(abschnitt)Â»;
 		}
-«ENDFOREACH»
-		label = «getGruppenName(g)»;
+Â«ENDFOREACHÂ»
+		label = Â«getGruppenName(g)Â»;
 	}
-«ENDFOREACH»
-«EXPAND Link FOREACH eAllContents.typeSelect(Gleisteil)» 
+Â«ENDFOREACHÂ»
+Â«EXPAND Link FOREACH eAllContents.typeSelect(Gleisteil)Â» 
 }
-«ENDFILE»
-«ENDDEFINE»
+Â«ENDFILEÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Gleis FOR Gleisteil»
-			«asNodeName()» [shape=«asNodeType()»];
-«ENDDEFINE»
+Â«DEFINE Gleis FOR GleisteilÂ»
+			Â«asNodeName()Â» [shape=Â«asNodeType()Â»];
+Â«ENDDEFINEÂ»
 
-«DEFINE Signals FOR Gleisabschnitt»
-«EXPAND DrawSignal(this) FOR getSignals(true)»
-«EXPAND DrawSignal(this) FOR getSignals(false)»
-«ENDDEFINE»
+Â«DEFINE Signals FOR GleisabschnittÂ»
+Â«EXPAND DrawSignal(this) FOR getSignals(true)Â»
+Â«EXPAND DrawSignal(this) FOR getSignals(false)Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE DrawSignal(Gleisabschnitt abschnitt) FOR List[Signal]»
-«IF size > 0»
-			«asStructName(abschnitt)» [shape=record,label=
-			"{«FOREACH this.typeSelect(Hauptlichtsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH-»
-«FOREACH this.typeSelect(Formhauptsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH-»
-|«FOREACH this.typeSelect(Vorsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH-»
-|«FOREACH this.typeSelect(Gleissperrsignal) AS s SEPARATOR ","»«s.name»«ENDFOREACH»}"];
-«ENDIF»
-«ENDDEFINE»
+Â«DEFINE DrawSignal(Gleisabschnitt abschnitt) FOR List[Signal]Â»
+Â«IF size > 0Â»
+			Â«asStructName(abschnitt)Â» [shape=record,label=
+			"{Â«FOREACH this.typeSelect(Hauptlichtsignal) AS s SEPARATOR ","Â»Â«s.nameÂ»Â«ENDFOREACH-Â»
+Â«FOREACH this.typeSelect(Formhauptsignal) AS s SEPARATOR ","Â»Â«s.nameÂ»Â«ENDFOREACH-Â»
+|Â«FOREACH this.typeSelect(Vorsignal) AS s SEPARATOR ","Â»Â«s.nameÂ»Â«ENDFOREACH-Â»
+|Â«FOREACH this.typeSelect(Gleissperrsignal) AS s SEPARATOR ","Â»Â«s.nameÂ»Â«ENDFOREACHÂ»}"];
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Signal FOR Signal»
-			«asSignalName()» [shape=record,label=«asSignalLabel()»];
-«ENDDEFINE»
+Â«DEFINE Signal FOR SignalÂ»
+			Â«asSignalName()Â» [shape=record,label=Â«asSignalLabel()Â»];
+Â«ENDDEFINEÂ»
 
-«DEFINE Link FOR Weiche»
+Â«DEFINE Link FOR WeicheÂ»
 
-«IF aInZaehlrichtung»
-	«asNodeName(this)» -> «asNodeName(a)»;
-«ELSE»
-	«asNodeName(this)» -> «asNodeName(b)»;
-	«asNodeName(this)» -> «asNodeName(c)»;
-«ENDIF»
-«ENDDEFINE»
+Â«IF aInZaehlrichtungÂ»
+	Â«asNodeName(this)Â» -> Â«asNodeName(a)Â»;
+Â«ELSEÂ»
+	Â«asNodeName(this)Â» -> Â«asNodeName(b)Â»;
+	Â«asNodeName(this)Â» -> Â«asNodeName(c)Â»;
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Link FOR DKW»
-«IF aInZaehlrichtung»
-	«asNodeName(this)» -> «asNodeName(a)»;
-	«asNodeName(this)» -> «asNodeName(b)»;
-«ELSE»
-	«asNodeName(this)» -> «asNodeName(c)»;
-	«asNodeName(this)» -> «asNodeName(d)»;
-«ENDIF»
-«ENDDEFINE»
+Â«DEFINE Link FOR DKWÂ»
+Â«IF aInZaehlrichtungÂ»
+	Â«asNodeName(this)Â» -> Â«asNodeName(a)Â»;
+	Â«asNodeName(this)Â» -> Â«asNodeName(b)Â»;
+Â«ELSEÂ»
+	Â«asNodeName(this)Â» -> Â«asNodeName(c)Â»;
+	Â«asNodeName(this)Â» -> Â«asNodeName(d)Â»;
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Link FOR Gleis»
-«IF aInZaehlrichtung»
-«IF a != null»
-	«asNodeName()» -> «asNodeName(a)»;
-«ENDIF»
-«ELSE»
-«IF b != null»
-	«asNodeName()» -> «asNodeName(b)»;
-«ENDIF»
-«ENDIF»
-«ENDDEFINE»
+Â«DEFINE Link FOR GleisÂ»
+Â«IF aInZaehlrichtungÂ»
+Â«IF a != nullÂ»
+	Â«asNodeName()Â» -> Â«asNodeName(a)Â»;
+Â«ENDIFÂ»
+Â«ELSEÂ»
+Â«IF b != nullÂ»
+	Â«asNodeName()Â» -> Â«asNodeName(b)Â»;
+Â«ENDIFÂ»
+Â«ENDIFÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE Link FOR Gleisteil»
-«ERROR "Ein Gleisteil ist abstrakt!"»
-«ENDDEFINE»
+Â«DEFINE Link FOR GleisteilÂ»
+Â«ERROR "Ein Gleisteil ist abstrakt!"Â»
+Â«ENDDEFINEÂ»

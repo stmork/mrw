@@ -65,7 +65,7 @@ import de.morknet.mrw.gui.info.Layout;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse stellt die zentrale Steuerung dar. Die Funktionalit‰t wird in dieser abstrakten Klasse
+ * Diese Klasse stellt die zentrale Steuerung dar. Die Funktionalit√§t wird in dieser abstrakten Klasse
  * abgebildet. Die jeweilige Darstellung in einer Konsole oder GUI muss in der entsprechend abgeleiteten Klasse erfolgen.
  * @author sm
  *
@@ -110,7 +110,7 @@ abstract public class MrwController implements CANMessageProcessor
 	/**
 	 * Diese Methode initialisiert diesen Controller. Dabei werden alle Bauelemente in einen
 	 * definierten Zustand gebracht und der Zustand der Bauelemente abgefragt.
-	 * @throws Exception Exceptions werden ¸bergeordnet ausgewertet.
+	 * @throws Exception Exceptions werden √ºbergeordnet ausgewertet.
 	 */
 	public void prepare() throws Exception
 	{
@@ -158,7 +158,7 @@ abstract public class MrwController implements CANMessageProcessor
 			throw new ModelInvalidException(errors);
 		}
 		
-		log.info("Validierung vollst‰ndig. Fehlerzahl: " + errors);
+		log.info("Validierung vollst√§ndig. Fehlerzahl: " + errors);
 		Layout layout = new Layout(model);
 		layout.save();
 
@@ -191,11 +191,11 @@ abstract public class MrwController implements CANMessageProcessor
 				if (successor.hasMainSignal(direction) && route.hasBlockDeallocation())
 				{
 					/*
-					 * Wenn ein Hauptsignal erreicht wurde, m¸ssen alle Gleisabschnitte dahinter
+					 * Wenn ein Hauptsignal erreicht wurde, m√ºssen alle Gleisabschnitte dahinter
 					 * freigegeben werden, sonst funktioniert der Actiontrigger nicht. Das betrifft
 					 * eigentlich nur den hintersten Gleisabschnitt.
 					 */
-					log.debug("Blockfreigaben f¸r Fahrstraﬂe " + route);
+					log.debug("Blockfreigaben f√ºr Fahrstra√üe " + route);
 					route.clearUptoSegment(segment);
 				}
 			}
@@ -218,12 +218,12 @@ abstract public class MrwController implements CANMessageProcessor
 			}
 
 			/*
-			 * Dieser Aufruf dient f¸r den Fall, dass ein Zug in einen Abschnitt
+			 * Dieser Aufruf dient f√ºr den Fall, dass ein Zug in einen Abschnitt
 			 * verlassen hat und gleichzeitig in den nachfolgenden eingefahren ist. Diese
 			 * Bedingung ist wichtig, da diese nicht eintritt, wenn z.B. durch Kontaktprobleme
 			 * ein Zug aus einem Abschnitt verschwindet. 
 			 */
-			log.debug("3. Check: Trigger f¸r Gleisabschnitt verlassen...");
+			log.debug("3. Check: Trigger f√ºr Gleisabschnitt verlassen...");
 			log.info("Abschnitt " + segment.getNumber() + " verlassen.");
 			synchronized(trigger)
 			{
@@ -234,10 +234,10 @@ abstract public class MrwController implements CANMessageProcessor
 			}
 
 			/*
-			 * Diese Aufrufe dienen f¸r den Fall, dass ein Zug in einen Abschnitt
+			 * Diese Aufrufe dienen f√ºr den Fall, dass ein Zug in einen Abschnitt
 			 * eingetreten ist und gleichzeitig den vorhergehenden verlassen hat. 
 			 */
-			log.debug("4. Check: Trigger f¸r letzter Gleisabschnitt erreicht...");
+			log.debug("4. Check: Trigger f√ºr letzter Gleisabschnitt erreicht...");
 			if (route.getLastSegment() == successor)
 			{			
 				log.info("Letzter Abschnitt " + successor.getNumber());
@@ -250,8 +250,8 @@ abstract public class MrwController implements CANMessageProcessor
 				}
 			}
 			
-			// Trigger f¸r "Abschnitt eingefahren" aufrufen
-			log.debug("5. Check: Trigger f¸r Gleisabschnitt erreicht...");
+			// Trigger f√ºr "Abschnitt eingefahren" aufrufen
+			log.debug("5. Check: Trigger f√ºr Gleisabschnitt erreicht...");
 			log.info("Abschnitt " + successor.getNumber() + " erreicht.");
 			synchronized(trigger)
 			{
@@ -270,7 +270,7 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Hier wird eine CAN-Meldung verarbeitet. Unter Umst‰nden wird die Meldung an die entsprechenden
+	 * Hier wird eine CAN-Meldung verarbeitet. Unter Umst√§nden wird die Meldung an die entsprechenden
 	 * {@link BatchExecuter} weitergereicht. Desweiteren werden die bekannten Trigger aufgerufen.
 	 * @param msg Die eingetroffene CAN-Meldung
 	 * @see CANMessage
@@ -329,26 +329,26 @@ abstract public class MrwController implements CANMessageProcessor
 						log.info(LogUtil.printf("Weichenlage: %s", branch));
 
 						/*
-						 * Wenn eine Verzweigung gesperrt ist und zu einer Fahrstraﬂe gehˆrt, darf keine
+						 * Wenn eine Verzweigung gesperrt ist und zu einer Fahrstra√üe geh√∂rt, darf keine
 						 * Schaltmeldung mehr kommen. Kommt sie trotzdem, weist das auf einen manuellen
 						 * Eingriff hin. Ausnahme: Wenn es vorher einen Batch gab, dann war diese
 						 * Meldung programmatisch gewollt und somit nicht manuell.
 						 */
 						if (!hadBatch)
 						{
-							log.info("Manuelle Weichenschaltung erfolgt. Pr¸fung auf betroffene Fahrstraﬂe...");
+							log.info("Manuelle Weichenschaltung erfolgt. Pr√ºfung auf betroffene Fahrstra√üe...");
 							Route route = Route.findConflictingRoute(branch);
 							if (route != null)
 							{
-								setErrorMessage("Manipulation einer g¸ltigen Fahrstraﬂe durch manuelle Weichenschaltung!");
-								log.warn("> Fahrstraﬂe " + route + " wird aufgelˆst.");
+								setErrorMessage("Manipulation einer g√ºltigen Fahrstra√üe durch manuelle Weichenschaltung!");
+								log.warn("> Fahrstra√üe " + route + " wird aufgel√∂st.");
 								deactivateAction(route);
 								ClearRouteRunner liberator = new ClearRouteRunner(this, route);
 								liberator.start();
 							}
 							else
 							{
-								log.info("Keine Fahrstraﬂe von manueller Weichenschaltung betroffen.");
+								log.info("Keine Fahrstra√üe von manueller Weichenschaltung betroffen.");
 							}
 						}
 						updateTrackPlan();
@@ -371,7 +371,7 @@ abstract public class MrwController implements CANMessageProcessor
 					c = model.findMicroController(cid);
 					if (c != null)
 					{
-						// Ping-R¸ckmeldung
+						// Ping-R√ºckmeldung
 						c.pong();
 					}
 					else
@@ -384,10 +384,10 @@ abstract public class MrwController implements CANMessageProcessor
 					switch (result)
 					{
 					case MSG_RESET_PENDING:
-						log.warn(LogUtil.printf("Reset am Controller mit ID %d wird durchgef¸hrt.", cid));
+						log.warn(LogUtil.printf("Reset am Controller mit ID %d wird durchgef√ºhrt.", cid));
 						break;
 					case MSG_OK:
-						log.warn(LogUtil.printf("Reset am Controller mit ID %d ausgelˆst.", cid));
+						log.warn(LogUtil.printf("Reset am Controller mit ID %d ausgel√∂st.", cid));
 						break;
 					case MSG_BOOTED:
 						log.warn(LogUtil.printf("******** Controller mit ID %d ist hochgefahren und betriebsbereit", cid ));
@@ -464,9 +464,9 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode wertet die Laufzeit eines Schaltauftrages aus. Die Laufzeiten werden pro Ger‰t ({@link DeviceUnit})
-	 * verwaltet. Die Auswertung berechnet ¸ber alle Schaltauftr‰ge den Durchschnittswert.
-	 * @param mrw Die CAN-Meldung, die die Laufzeit enth‰lt.
+	 * Diese Methode wertet die Laufzeit eines Schaltauftrages aus. Die Laufzeiten werden pro Ger√§t ({@link DeviceUnit})
+	 * verwaltet. Die Auswertung berechnet √ºber alle Schaltauftr√§ge den Durchschnittswert.
+	 * @param mrw Die CAN-Meldung, die die Laufzeit enth√§lt.
 	 */
 	private void addElapsed(final MrwMessage mrw)
 	{
@@ -510,7 +510,7 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode schlieﬂt die aktuelle Verbindung zur Eisenbahn.
+	 * Diese Methode schlie√üt die aktuelle Verbindung zur Eisenbahn.
 	 */
 	final public void close()
 	{
@@ -552,9 +552,9 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode h‰ngt den angegebenen {@link Trigger} an das Ende der Liste aller {@link Trigger}. Die
-	 * Ausf¸hrung erfolgt asynchron, um eine {@link ConcurrentModificationException} zur vermeiden.
-	 * @param t Der {@link Trigger}, der an das Ende geh‰ngt werden soll.
+	 * Diese Methode h√§ngt den angegebenen {@link Trigger} an das Ende der Liste aller {@link Trigger}. Die
+	 * Ausf√ºhrung erfolgt asynchron, um eine {@link ConcurrentModificationException} zur vermeiden.
+	 * @param t Der {@link Trigger}, der an das Ende geh√§ngt werden soll.
 	 */
 	final public void moveTrigger(final Trigger t)
 	{
@@ -583,8 +583,8 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode schaltet eine bestimmte Fahrstraﬂe aus.
-	 * @param route Die auszuschaltende Fahrstraﬂe.
+	 * Diese Methode schaltet eine bestimmte Fahrstra√üe aus.
+	 * @param route Die auszuschaltende Fahrstra√üe.
 	 */
 	final public void removeRoute(final Route route)
 	{
@@ -602,7 +602,7 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 	
 	/**
-	 * Diese Methode schaltet alle Fahrstraﬂen aus.
+	 * Diese Methode schaltet alle Fahrstra√üen aus.
 	 */
 	final public void removeAllRoutes()
 	{
@@ -630,7 +630,7 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode schaltet alle L‰mpchen der Lichtsignale der Eisenbahnanlage aus.
+	 * Diese Methode schaltet alle L√§mpchen der Lichtsignale der Eisenbahnanlage aus.
 	 */
 	final public void clearSignals()
 	{
@@ -668,7 +668,7 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode schaltet alle L‰mpchen der Lichtsignale der Eisenbahnanlage an.
+	 * Diese Methode schaltet alle L√§mpchen der Lichtsignale der Eisenbahnanlage an.
 	 */
 	final public void testSignals()
 	{
@@ -720,7 +720,7 @@ abstract public class MrwController implements CANMessageProcessor
 			}
 			send(msg);
 
-			// Atempause f¸r den CAN-Bus.
+			// Atempause f√ºr den CAN-Bus.
 			waitForReachability(POLLING_DELAY_PING);
 		}
 		catch (IOException ioe)
@@ -745,7 +745,7 @@ abstract public class MrwController implements CANMessageProcessor
 			}
 			send(msg);
 
-			// Atempause f¸r den CAN-Bus.
+			// Atempause f√ºr den CAN-Bus.
 			waitForReachability(POLLING_DELAY_RESET, DELAY_RESET);
 		}
 		catch (IOException ioe)
@@ -759,7 +759,7 @@ abstract public class MrwController implements CANMessageProcessor
 	 * <ul>
 	 * <li>Versionsnummer</li>
 	 * <li>Fehlerzustand des CAN-Controllers</li>
-	 * <li>F¸llzustand des Sende- und Empfangspuffers</li>
+	 * <li>F√ºllzustand des Sende- und Empfangspuffers</li>
 	 * <li>Erreichbarkeit per Ping</li>
 	 * </ul>
 	 */
@@ -784,7 +784,7 @@ abstract public class MrwController implements CANMessageProcessor
 				BatchRunner.sleep(5L);
 			}
 
-			// Atempause f¸r den CAN-Bus.
+			// Atempause f√ºr den CAN-Bus.
 			waitForReachability(POLLING_DELAY_QUERY);
 
 			log.info("Zustand der Mikrocontroller:");
@@ -793,7 +793,7 @@ abstract public class MrwController implements CANMessageProcessor
 				log.info(ctrl);
 			}
 
-			log.info("Schaltzeiten der Ger‰te:");
+			log.info("Schaltzeiten der Ger√§te:");
 			for (Gleisteil element : model.getTrackElements())
 			{
 				DeviceUnit dvc = (DeviceUnit)element;
@@ -815,7 +815,7 @@ abstract public class MrwController implements CANMessageProcessor
 	 * <ul>
 	 * <li>Versionsnummer</li>
 	 * <li>Fehlerzustand des CAN-Controllers</li>
-	 * <li>F¸llzustand des Sende- und Empfangspuffers</li>
+	 * <li>F√ºllzustand des Sende- und Empfangspuffers</li>
 	 * <li>Erreichbarkeit per Ping</li>
 	 * </ul>
 	 */
@@ -836,7 +836,7 @@ abstract public class MrwController implements CANMessageProcessor
 				BatchRunner.sleep(1L);
 			}
 
-			// Atempause f¸r den CAN-Bus.
+			// Atempause f√ºr den CAN-Bus.
 			waitForReachability(POLLING_DELAY_RESET, DELAY_RECONFIG);
 
 			log.info("Zustand der Mikrocontroller:");
@@ -913,8 +913,8 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode f¸hrt die Modelleisenbahn in einen definierten Ausgangszustand. Dabei
-	 * werden zuerst alle Actions deaktiviert, danach werden alle Fahrstraﬂen ausgeschaltet.
+	 * Diese Methode f√ºhrt die Modelleisenbahn in einen definierten Ausgangszustand. Dabei
+	 * werden zuerst alle Actions deaktiviert, danach werden alle Fahrstra√üen ausgeschaltet.
 	 * Zuletzt werden alle Gleisabschnitte abgeschaltet und die Signale in einen definierten
 	 * Zustand gebracht (Hp0, Vr0 bzw. Off bei Dunkeltastung).
 	 */
@@ -932,7 +932,7 @@ abstract public class MrwController implements CANMessageProcessor
 		BatchExecuter executer = new BatchExecuter();
 		Batch batch;
 
-		// Erster Versuch: Alle Routen lˆschen
+		// Erster Versuch: Alle Routen l√∂schen
 		for (Route r : Route.getRoutes())
 		{
 			r.computeClearBatches(executer);
@@ -956,7 +956,7 @@ abstract public class MrwController implements CANMessageProcessor
 			executer.clear();
 		}
 
-		// Alle Fahrstraﬂen lˆschen
+		// Alle Fahrstra√üen l√∂schen
 		List<Route> routes = new ArrayList<Route>();
 		routes.addAll(Route.getRoutes());
 		if (!routes.isEmpty())
@@ -1015,7 +1015,7 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode l‰sst alle Weichen in die jeweils andere Lage umlaufen.
+	 * Diese Methode l√§sst alle Weichen in die jeweils andere Lage umlaufen.
 	 */
 	public void turnAllSwitches()
 	{
@@ -1083,9 +1083,9 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode gibt alle ausgew‰hlten Gleisabschnitte zur¸ck. Diese kˆnnen z.B. f¸r das
-	 * Schalten einer Fahrstraﬂe benutzt werden.
-	 * @return Der ausf¸hrende BatchRunner
+	 * Diese Methode gibt alle ausgew√§hlten Gleisabschnitte zur√ºck. Diese k√∂nnen z.B. f√ºr das
+	 * Schalten einer Fahrstra√üe benutzt werden.
+	 * @return Der ausf√ºhrende BatchRunner
 	 */
 	final public List<Abschnitt> getSegmentSelection()
 	{
@@ -1093,8 +1093,8 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode f¸gt einen Gleisabschnitt der Auswahlliste hinzu.
-	 * @param segment Der hinzuzuf¸gende Gleisabschnitt. 
+	 * Diese Methode f√ºgt einen Gleisabschnitt der Auswahlliste hinzu.
+	 * @param segment Der hinzuzuf√ºgende Gleisabschnitt. 
 	 */
 	final public void addSegmentSelection(final Abschnitt segment)
 	{
@@ -1113,7 +1113,7 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode lˆscht die Auswahl an Gleisabschnitten.
+	 * Diese Methode l√∂scht die Auswahl an Gleisabschnitten.
 	 */
 	final public void clearSegmentSelection()
 	{
@@ -1123,10 +1123,10 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode schaltet eine Fahrstraﬂe gem‰ﬂ der ausgew‰hlten Gleisabschnitte.
+	 * Diese Methode schaltet eine Fahrstra√üe gem√§√ü der ausgew√§hlten Gleisabschnitte.
 	 * @param shunting  Rangierflag
 	 * @param direction Fahrtrichting
-	 * @return Der BatchRunner, der die Schaltung ausf¸hrt.
+	 * @return Der BatchRunner, der die Schaltung ausf√ºhrt.
 	 */
 	final public BatchRunner computeRoute(
 			final boolean shunting,
@@ -1167,9 +1167,9 @@ abstract public class MrwController implements CANMessageProcessor
 	}
 
 	/**
-	 * Diese Methode verl‰ngert eine bestehende Fahrstraﬂe entlang der ausgew‰hlten Gleisabschnitte.
-	 * @param route Die zu verl‰ngernde Fahrstraﬂe.
-	 * @return Der ausf¸hrende BatchRunner
+	 * Diese Methode verl√§ngert eine bestehende Fahrstra√üe entlang der ausgew√§hlten Gleisabschnitte.
+	 * @param route Die zu verl√§ngernde Fahrstra√üe.
+	 * @return Der ausf√ºhrende BatchRunner
 	 */
 	final public BatchRunner extendRoute(final Route route)
 	{
@@ -1280,7 +1280,7 @@ abstract public class MrwController implements CANMessageProcessor
 
 	/**
 	 * Dieser Callback deaktiviert eine bestimmte Action. Actions kann ein Biermodus oder Touren sein.
-	 * @param route Die zur Action gehˆrende Fahrstraﬂe.
+	 * @param route Die zur Action geh√∂rende Fahrstra√üe.
 	 * @see MrwActionControl
 	 * @see BeerMode
 	 * @see TourMode
@@ -1288,14 +1288,14 @@ abstract public class MrwController implements CANMessageProcessor
 	abstract public void    deactivateAction(Route route);
 	
 	/**
-	 * Diese Methode w‰hlt eine Fahrstraﬂe aus.
-	 * @param route Die auszuw‰hlende Fahrstraﬂe.
+	 * Diese Methode w√§hlt eine Fahrstra√üe aus.
+	 * @param route Die auszuw√§hlende Fahrstra√üe.
 	 */
 	abstract public    void    selectRoute(Route route);
 
 	/**
-	 * Diese Methode gibt die aktuell ausgew‰hlte Fahrstraﬂe an. Typischerweise ist das eine Auswahl aus der GUI.
-	 * @return Die ausgew‰hlte Fahrstraﬂe.
+	 * Diese Methode gibt die aktuell ausgew√§hlte Fahrstra√üe an. Typischerweise ist das eine Auswahl aus der GUI.
+	 * @return Die ausgew√§hlte Fahrstra√üe.
 	 */
 	abstract public    Route   getSelectedRoute();
 }

@@ -94,10 +94,10 @@ public class ControllerTest extends ControllerTestBase
 	public void maintainance()
 	{
 		BatchRunner runner = controller.maintainanceMode();
-		Assert.assertNotNull("Der Wartungsmodus ließ sich nicht aktivieren!", runner);
+		Assert.assertNotNull("Der Wartungsmodus lieÃŸ sich nicht aktivieren!", runner);
 
 		Route route = runner.getRoute();
-		Assert.assertNotNull("Der Wartungsmodus hat keine Pseudofahrstraße!", route);
+		Assert.assertNotNull("Der Wartungsmodus hat keine PseudofahrstraÃŸe!", route);
 
 		controller.removeRoute(route);
 	}
@@ -124,14 +124,14 @@ public class ControllerTest extends ControllerTestBase
 	public void beermode()
 	{
 		BeerModeInfo info = model.getBeerModeInfo();
-		Assert.assertNotNull("Info über Biermodus nicht verfügbar!", info);
+		Assert.assertNotNull("Info Ã¼ber Biermodus nicht verfÃ¼gbar!", info);
 		
 		String name = info.getPoolStationName();
-		Assert.assertNotNull("Der Name des Schattenbahnhofs ist nicht verfügbar!", name);
+		Assert.assertNotNull("Der Name des Schattenbahnhofs ist nicht verfÃ¼gbar!", name);
 		Assert.assertNotNull("Der Schattenbahnhof ist nicht auffindbar!", model.findGroup(name));
 
 		name = info.getViaStationName();
-		Assert.assertNotNull("Der Name des Durchgangsbahnhofs ist nicht verfügbar!", name);
+		Assert.assertNotNull("Der Name des Durchgangsbahnhofs ist nicht verfÃ¼gbar!", name);
 		Assert.assertNotNull("Der Durchgangsbahnhof ist nicht auffindbar!", model.findGroup(name));
 	}
 
@@ -139,7 +139,7 @@ public class ControllerTest extends ControllerTestBase
 	public void tourInfos()
 	{
 		List<TourInfo> infos = model.getTourInfos();
-		Assert.assertNotNull("Infos über Touren nicht verfügbar!", infos);
+		Assert.assertNotNull("Infos Ã¼ber Touren nicht verfÃ¼gbar!", infos);
 		
 		for(TourInfo info : infos)
 		{
@@ -149,7 +149,7 @@ public class ControllerTest extends ControllerTestBase
 			info.getName();
 			List<String> names = info.getSegmentNames();
 			
-			Assert.assertNotNull("Beschreibungen für Tourpunkte sind nicht verfügbar!", names);
+			Assert.assertNotNull("Beschreibungen fÃ¼r Tourpunkte sind nicht verfÃ¼gbar!", names);
 			for(String name : names)
 			{
 				TourPoint point = new TourPoint(name, direction);

@@ -60,7 +60,7 @@ public class BergtourAbwaerts extends TourInfo
 	@Override
 	public String getName()
 	{
-		return "Berg abw‰rts";
+		return "Berg abw√§rts";
 	}
 
 	@Override

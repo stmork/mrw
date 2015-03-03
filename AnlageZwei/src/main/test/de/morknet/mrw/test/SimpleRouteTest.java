@@ -62,7 +62,7 @@ public class SimpleRouteTest extends ControllerTestBase
 	{
 		final Route route = assertRoute(false, false, "", "S5a", "S2a");
 		
-		Assert.assertNull("Es darf keine Fahrstraße geschaltet worden sein!", route);
+		Assert.assertNull("Es darf keine FahrstraÃŸe geschaltet worden sein!", route);
 	}
 
 	@Test

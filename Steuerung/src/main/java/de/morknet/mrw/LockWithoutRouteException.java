@@ -23,7 +23,7 @@ import de.morknet.mrw.base.Gleisteil;
 
 /**
  * Diese RuntimeException wird geworfen, wenn ein Gleisteil verriegelt werden soll, ohne dass es
- * zu einer Fahrstraße gehört.
+ * zu einer FahrstraÃŸe gehÃ¶rt.
  * @author smork
  *
  */
@@ -32,11 +32,11 @@ public class LockWithoutRouteException extends RoutingRuntimeException
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit dem übergebenen Gleisteil auf.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit dem Ã¼bergebenen Gleisteil auf.
 	 * @param gleisteil Das verursachende Gleisteil.
 	 */
 	public LockWithoutRouteException(final Gleisteil gleisteil)
 	{
-		super(null, "Dieses Gleisteil (" + gleisteil.getName() + ") kann nicht ohne Fahrstraße verriegelt werden!");
+		super(null, "Dieses Gleisteil (" + gleisteil.getName() + ") kann nicht ohne FahrstraÃŸe verriegelt werden!");
 	}
 }

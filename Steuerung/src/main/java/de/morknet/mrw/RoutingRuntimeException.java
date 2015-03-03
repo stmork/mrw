@@ -22,8 +22,8 @@ package de.morknet.mrw;
 import de.morknet.mrw.base.MrwException;
 
 /**
- * Diese RuntimeException charakterisiert alle Exceptions, die zusammen mit der Fahrstraßensuche
- * zusammenhängen.
+ * Diese RuntimeException charakterisiert alle Exceptions, die zusammen mit der FahrstraÃŸensuche
+ * zusammenhÃ¤ngen.
  * @author smork
  *
  */
@@ -34,7 +34,7 @@ abstract public class RoutingRuntimeException extends MrwException
 
 	/**
 	 * Dieser Konstruktur reicht eine Fehlermeldung weiter.
-	 * @param route Die zugehörige Fahrstraße
+	 * @param route Die zugehÃ¶rige FahrstraÃŸe
 	 * @param message Die Fehlermeldung.
 	 */
 	protected RoutingRuntimeException(final Route route, final String message)
@@ -44,8 +44,8 @@ abstract public class RoutingRuntimeException extends MrwException
 	}
 
 	/**
-	 * Diese Methode gibt die Fahrstraße zurück, durch die diese Exception ausgelöst wurde.
-	 * @return Die auslösende Fahrstraße.
+	 * Diese Methode gibt die FahrstraÃŸe zurÃ¼ck, durch die diese Exception ausgelÃ¶st wurde.
+	 * @return Die auslÃ¶sende FahrstraÃŸe.
 	 */
 	public Route getRoute()
 	{

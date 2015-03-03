@@ -22,11 +22,11 @@ import de.morknet.mrw.automatic.beermode.BeerMode;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese Klasse stellt die Steuerung f�r den Biermodus bereit. Aus einem definiertem Bahnhof wird
- * ein Zug aus einem besetzten Gleis ausgew�hlt, durch ein freies Gleis eines weiteren Bahnhofs
- * gef�hrt und wieder auf ein freies Gleis des ersten Bahnhofs gef�hrt. Ist der Zug angekommen, wird
- * der n�chste Zug ausgew�hlt. Die Auswahl des Zuges und des freien Gleises geschieht zuf�llig. Die
- * Fahrtrichtung wird dabei ber�cksichtigt.
+ * Diese Klasse stellt die Steuerung fÃÅr den Biermodus bereit. Aus einem definiertem Bahnhof wird
+ * ein Zug aus einem besetzten Gleis ausgewÃâ¬hlt, durch ein freies Gleis eines weiteren Bahnhofs
+ * gefÃÅhrt und wieder auf ein freies Gleis des ersten Bahnhofs gefÃÅhrt. Ist der Zug angekommen, wird
+ * der nÃâ¬chste Zug ausgewÃâ¬hlt. Die Auswahl des Zuges und des freien Gleises geschieht zufÃâ¬llig. Die
+ * Fahrtrichtung wird dabei berÃÅcksichtigt.
  * @author smork
  *
  */
@@ -40,7 +40,7 @@ public class BeerModeAction extends MrwAction
 	}
 
 	/**
-	 * Diese Methode initialisiert zwei Biermodi jeweils f�r die beiden Fahrtrichtungen.
+	 * Diese Methode initialisiert zwei Biermodi jeweils fÃÅr die beiden Fahrtrichtungen.
 	 */
 	public static void initBeerModeActions()
 	{

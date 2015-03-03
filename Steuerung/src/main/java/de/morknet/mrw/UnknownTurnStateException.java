@@ -34,11 +34,11 @@ public class UnknownTurnStateException extends RoutingRuntimeException
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit den übergebenen Gleisteilen auf.
-	 * @param route Die verursachende Fahrstraße.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit den Ã¼bergebenen Gleisteilen auf.
+	 * @param route Die verursachende FahrstraÃŸe.
 	 * @param prev Das vermeintlich vorhergehende Gleisteil.
 	 * @param branch Die Weiche, an der der Fehler aufgetreten ist.
-	 * @param next Das vermeintlich nächste Gleisteil.
+	 * @param next Das vermeintlich nÃ¤chste Gleisteil.
 	 */
 	public UnknownTurnStateException(final Route route, final Gleisteil prev, final Weiche branch, final Gleisteil next)
 	{
@@ -51,11 +51,11 @@ public class UnknownTurnStateException extends RoutingRuntimeException
 	}
 
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit den übergebenen Gleisteilen auf.
-	 * @param route Die verursachende Fahrstraße.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit den Ã¼bergebenen Gleisteilen auf.
+	 * @param route Die verursachende FahrstraÃŸe.
 	 * @param prev Das vermeintlich vorhergehende Gleisteil.
 	 * @param dkw Die DKW, an der der Fehler aufgetreten ist.
-	 * @param next Das vermeintlich nächste Gleisteil.
+	 * @param next Das vermeintlich nÃ¤chste Gleisteil.
 	 */
 	public UnknownTurnStateException(final Route route, final Gleisteil prev, final DKW dkw, final Gleisteil next)
 	{

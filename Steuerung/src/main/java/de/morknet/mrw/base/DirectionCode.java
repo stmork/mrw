@@ -25,7 +25,7 @@ import java.util.Map;
 import de.morknet.mrw.comm.CodeNotFoundException;
 
 /**
- * Diese Enum repräsentiert die Richtungs-Codes auf das GETDIR-Kommando.
+ * Diese Enum reprÃ¤sentiert die Richtungs-Codes auf das GETDIR-Kommando.
  * @author smork
  *
  */
@@ -74,7 +74,7 @@ public enum DirectionCode
 	}
 	
 	/**
-	 * Diese Methode gibt den Richtungs-Code als Integer zurück, so wie er von den Microcontrollern gemeldet wird.
+	 * Diese Methode gibt den Richtungs-Code als Integer zurÃ¼ck, so wie er von den Microcontrollern gemeldet wird.
 	 * @return Der Richtungs-Code.
 	 */
 	public int getDirectionCode()

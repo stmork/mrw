@@ -49,8 +49,8 @@ public enum SensorCode
 	}
 
 	/**
-	 * Diese Methode gibt zum Sensortypes den Integer-Wert für die {@link MrwMessage} wieder.
-	 * @return Der Integer-Wert für eine {@link MrwMessage}.
+	 * Diese Methode gibt zum Sensortypes den Integer-Wert fÃ¼r die {@link MrwMessage} wieder.
+	 * @return Der Integer-Wert fÃ¼r eine {@link MrwMessage}.
 	 */
 	public int getSensorCode()
 	{
@@ -59,7 +59,7 @@ public enum SensorCode
 	
 	/**
 	 * Diese Methode wandelt die Integer-Variante des Sensortypes aus einer {@link MrwMessage} in eine Enum-Instanz um. 
-	 * @param code Der Rückmelde-Wert als Integer
+	 * @param code Der RÃ¼ckmelde-Wert als Integer
 	 * @return Der resultierende Sensortypes als enum.
 	 * @throws CodeNotFoundException Wenn zum Sensortypes keine Enum-Instanz gefunden wurde.
 	 */

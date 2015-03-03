@@ -23,7 +23,7 @@ import de.morknet.mrw.base.Abschnitt;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Exception wird geworfen, wenn eine Fahrstraße über einen Gleisabaschnitt ohne Gleis geführt werden
+ * Diese Exception wird geworfen, wenn eine FahrstraÃŸe Ã¼ber einen Gleisabaschnitt ohne Gleis gefÃ¼hrt werden
  * soll.
  * @author smork
  *
@@ -33,8 +33,8 @@ public class SegmentWithoutRailException extends RoutingRuntimeException
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit dem übergebenen Gleisabschnitt auf.
-	 * @param route Die verursachende Fahrstraße.
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit dem Ã¼bergebenen Gleisabschnitt auf.
+	 * @param route Die verursachende FahrstraÃŸe.
 	 * @param abschnitt Der verursachende Gleisabschnitt.
 	 */
 	public SegmentWithoutRailException(final Route route, final Abschnitt abschnitt)

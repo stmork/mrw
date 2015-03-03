@@ -22,7 +22,7 @@ package de.morknet.mrw.comm.test;
 import de.morknet.mrw.comm.MrwMessage;
 
 /**
- * Diese Klasse versendet an alle Mikrocontroller (= ID 0) das QRYBUF-Kommando, um deren Füllstand abzufragen.
+ * Diese Klasse versendet an alle Mikrocontroller (= ID 0) das QRYBUF-Kommando, um deren FÃ¼llstand abzufragen.
  * @author sm
  *
  */

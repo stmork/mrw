@@ -25,7 +25,7 @@ import java.io.StringWriter;
 import de.morknet.mrw.base.MrwException;
 
 /**
- * Diese Exception wird geworfen, wenn ein Prüfsummenfehler bei der Übertragung einer CAN-Meldung festgestellt wurde.
+ * Diese Exception wird geworfen, wenn ein PrÃ¼fsummenfehler bei der Ãœbertragung einer CAN-Meldung festgestellt wurde.
  * @author sm
  *
  */
@@ -35,7 +35,7 @@ public class ChecksumException extends MrwException
 
 	/**
 	 * Dieser Konstruktor bereitet eine Fehlermeldung auf.
-	 * @param checksum Die empfangene fehlerhafte Prüfsumme.
+	 * @param checksum Die empfangene fehlerhafte PrÃ¼fsumme.
 	 * @param length Die Zahl der empfangenen Bytes.
 	 * @param buffer Die empfangenen Bytes.
 	 */
@@ -49,7 +49,7 @@ public class ChecksumException extends MrwException
 		final StringWriter sw = new StringWriter();
 		final PrintWriter  pw = new PrintWriter(sw);
 
-		pw.printf("Prüfsummenfehler sum=%02x length=%d values:", checksum & 0xff, length);
+		pw.printf("PrÃ¼fsummenfehler sum=%02x length=%d values:", checksum & 0xff, length);
 		for (int i = 0;i < length;i++)
 		{
 			pw.printf(" %02x", buffer[i] & 0xff);

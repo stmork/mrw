@@ -22,7 +22,7 @@ package de.morknet.mrw.comm;
 import de.morknet.mrw.comm.can.CANMessage;
 
 /**
- * Dieses Interface definiert das Verhalten für das Verarbeiten eines einzelnen Bytes, dass von der Modelleisenbahnanlage
+ * Dieses Interface definiert das Verhalten fÃ¼r das Verarbeiten eines einzelnen Bytes, dass von der Modelleisenbahnanlage
  * gesendet wurde. Die Bytes werden gesammelt und zu einer MRW-Message zusammengebaut.
  * @see CANMessage
  * @author sm

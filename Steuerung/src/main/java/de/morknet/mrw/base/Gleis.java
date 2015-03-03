@@ -24,7 +24,7 @@ import de.morknet.mrw.comm.Command;
 import de.morknet.mrw.comm.MrwMessage;
 
 /**
- * Diese Klasse repräsentiert ein einfaches Gleis
+ * Diese Klasse reprÃ¤sentiert ein einfaches Gleis
  * @author sm
  *
  */
@@ -39,9 +39,9 @@ public final class Gleis extends Gleisteil
 
 	/**
 	 * Dieser Konstruktur initialisiert ein einfaches Gleis.
-	 * @param abschnitt Der zugehörige Gleisabschnitt.
+	 * @param abschnitt Der zugehÃ¶rige Gleisabschnitt.
 	 * @param name Der Gleisname.
-	 * @param direction Zählrichtung
+	 * @param direction ZÃ¤hlrichtung
 	 * @param branch Flag, ob es eine Verzweigung ist.
 	 * @param mainTrack Flag, ob es ein Hauptgleis ist.
 	 */
@@ -106,7 +106,7 @@ public final class Gleis extends Gleisteil
 		{
 			if(!a.hasTrackElement(this))
 			{
-				log.error("Stecker A ist nicht rückverkoppelt!");
+				log.error("Stecker A ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!a.isDirectionCorrect(this, aIsHigh))
@@ -119,7 +119,7 @@ public final class Gleis extends Gleisteil
 		{
 			if(!b.hasTrackElement(this))
 			{
-				log.error("Stecker B ist nicht rückverkoppelt!");
+				log.error("Stecker B ist nicht rÃ¼ckverkoppelt!");
 				errors++;
 			}
 			if (!b.isDirectionCorrect(this, !aIsHigh))

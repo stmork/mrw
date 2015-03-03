@@ -25,7 +25,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link Action} l�st eine �berf�hrung der Modelleisenbahn in einen definierten
+ * Diese {@link Action} lÃÂ¶st eine ÃÂberfÃÅhrung der Modelleisenbahn in einen definierten
  * Ausgangszustand aus.
  * @author sm
  *

@@ -48,8 +48,8 @@ import de.morknet.mrw.util.NameUtil;
 import de.morknet.mrw.util.ReferenceCounter;
 
 /**
- * In der Route sind alle Informationen für eine Fahrstraße gespeichert. Die abgeleitete Liste
- * enthält in der Reihenfolge des Durchfahrens alle Gleisteile.
+ * In der Route sind alle Informationen fÃ¼r eine FahrstraÃŸe gespeichert. Die abgeleitete Liste
+ * enthÃ¤lt in der Reihenfolge des Durchfahrens alle Gleisteile.
  * @author sm
  *
  */
@@ -67,28 +67,28 @@ public class Route extends LinkedList<Gleisteil>
 	private final static boolean AUTOMATIC_SEGMENT_DEALLOCATION = true;
 
 	/**
-	 *  Flag, ob die Fahrstraße nach dem Durchfahren freigegeben werden soll.
+	 *  Flag, ob die FahrstraÃŸe nach dem Durchfahren freigegeben werden soll.
 	 */
 	private boolean automaticRouteDeallocation;
 
 	/**
-	 * Diese Liste enthält die Abschnitte als Richtungsvorgabe in der Reihenfolge, über
-	 * die die Fahrstraße führen soll.
+	 * Diese Liste enthÃ¤lt die Abschnitte als Richtungsvorgabe in der Reihenfolge, Ã¼ber
+	 * die die FahrstraÃŸe fÃ¼hren soll.
 	 */
 	private final LinkedList<Abschnitt> routing    = new LinkedList<Abschnitt>();
 	
 	/**
-	 *  Alle an dieser Fahrstraße beteiligten Signale.
+	 *  Alle an dieser FahrstraÃŸe beteiligten Signale.
 	 */
 	private final LinkedHashSet<Signal> ownedSignals = new LinkedHashSet<Signal>();
 
 	/**
-	 * Menge der abgenutzten Gleisabschnitte. Diese wurden befahren, sind aber noch Teil der Fahrstraße.
+	 * Menge der abgenutzten Gleisabschnitte. Diese wurden befahren, sind aber noch Teil der FahrstraÃŸe.
 	 */
 	private final HashSet<Abschnitt> usedSegments = new HashSet<Abschnitt>();
 
 	/**
-	 * Alle an dieser Fahrstraße beteiligten Abschnitte in der Reihenfolge ihres Durchfahrens.
+	 * Alle an dieser FahrstraÃŸe beteiligten Abschnitte in der Reihenfolge ihres Durchfahrens.
 	 */
 	private final LinkedList<Abschnitt> ownedSegments = new LinkedList<Abschnitt>();
 
@@ -100,15 +100,15 @@ public class Route extends LinkedList<Gleisteil>
 
 	/**
 	 * Menge aller durch Routen belegten Gleisteile. Wird bei einem Routing festgestellt, dass
-	 * ein Gleisteil in dieser Menge enthalten ist, kann die Route über dieses Gleisteil nicht
-	 * weiter verfolgt werden. Die Gleisteile sind nicht auf eine bestimmte Fahrstraße gebunden,
-	 * sondern bilden die Gleisteile der Gesamtanlage, die nicht zur Fahrstraßenbildung zur
-	 * Verfügung stehen.
+	 * ein Gleisteil in dieser Menge enthalten ist, kann die Route Ã¼ber dieses Gleisteil nicht
+	 * weiter verfolgt werden. Die Gleisteile sind nicht auf eine bestimmte FahrstraÃŸe gebunden,
+	 * sondern bilden die Gleisteile der Gesamtanlage, die nicht zur FahrstraÃŸenbildung zur
+	 * VerfÃ¼gung stehen.
 	 */
 	private final static Set<Gleisteil> allocatedTrackElements = new HashSet<Gleisteil>();
 
 	/**
-	 * Liste aller verriegelten Fahrstraßen.
+	 * Liste aller verriegelten FahrstraÃŸen.
 	 */
 	private final static List<Route> lockedRoutes = new ArrayList<Route>();
 	
@@ -118,22 +118,22 @@ public class Route extends LinkedList<Gleisteil>
 	private final boolean shunting;
 	
 	/**
-	 * In Zählrichtung oder gegen Zählrichtung.
+	 * In ZÃ¤hlrichtung oder gegen ZÃ¤hlrichtung.
 	 */
 	private final boolean direction;
 
 	/**
-	 *  Markierung, ob diese Fahrstraße verriegelt ist.
+	 *  Markierung, ob diese FahrstraÃŸe verriegelt ist.
 	 */
 	volatile private boolean locked = false;
 
 	/**
-	 * Das Modell, das die Fahrstraße berechnet.
+	 * Das Modell, das die FahrstraÃŸe berechnet.
 	 */
 	private final Modell model;
 
 	/**
-	 * Dieses Flag definiert, ob diese Fahrstraße im Wartungsmodus ist.
+	 * Dieses Flag definiert, ob diese FahrstraÃŸe im Wartungsmodus ist.
 	 */
 	private final boolean maintainance;
 
@@ -147,7 +147,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Dieser Konstruktur initialisiert eine einfache Fahrstraße. Diese wird manuell durch Knopfdruck ausgelöst.
+	 * Dieser Konstruktur initialisiert eine einfache FahrstraÃŸe. Diese wird manuell durch Knopfdruck ausgelÃ¶st.
 	 * @param model Die Modelleisenbahn.
 	 * @param shunting Rangierflag.
 	 * @param direction Fahrtrichtung.
@@ -158,7 +158,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Dieser Konstruktur erzeugt eine normale Fahrstraße.
+	 * Dieser Konstruktur erzeugt eine normale FahrstraÃŸe.
 	 * @param model Die Modelleisenbahn.
 	 * @param shunting Rangierflag.
 	 * @param direction Fahrtrichtung.
@@ -176,13 +176,13 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Dies hier ist der eigentliche Konstruktur. Hier werden die Werte dieser Fahrstraße initialisert.
+	 * Dies hier ist der eigentliche Konstruktur. Hier werden die Werte dieser FahrstraÃŸe initialisert.
 	 * @param model Die Modelleisenbahn.
 	 * @param shunting Rangierflag.
 	 * @param direction Fahrtrichtung.
 	 * @param automaticDeallocation Automatische Gleisfreigabe.
 	 * @param blockDeallocation Blockweise Freigabe.
-	 * @param maintainance Flag für Wartungsmodus.
+	 * @param maintainance Flag fÃ¼r Wartungsmodus.
 	 */
 	private Route(
 			final Modell  model,
@@ -201,10 +201,10 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode initialisiert die Fahrstraße im Wartungsmodus.
+	 * Diese Methode initialisiert die FahrstraÃŸe im Wartungsmodus.
 	 * @param segments Alle Gleisabschnitte.
 	 * @param signals Alle Signale.
-	 * @param selection Die ausgewählten Gleisabschnitte.
+	 * @param selection Die ausgewÃ¤hlten Gleisabschnitte.
 	 */
 	void prepareMaintainanceMode(
 			final Collection<Abschnitt> segments,
@@ -216,7 +216,7 @@ public class Route extends LinkedList<Gleisteil>
 			if (lockedRoutes.size() > 0)
 			{
 				throw new IllegalStateException(
-						"Es darf zu Wartungszwecken keine andere Fahrstraße vorhanden sein!");
+						"Es darf zu Wartungszwecken keine andere FahrstraÃŸe vorhanden sein!");
 			}
 			synchronized(ownedSegments)
 			{
@@ -249,9 +249,9 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode berechnet alle Kommandos, um diese Fahrstraße in den Wartungsmodus zu pberführen.
+	 * Diese Methode berechnet alle Kommandos, um diese FahrstraÃŸe in den Wartungsmodus zu pberfÃ¼hren.
 	 * @param executer Der BatchExecuter.
-	 * @return Der übergebene BatchExecuter.
+	 * @return Der Ã¼bergebene BatchExecuter.
 	 */
 	private BatchExecuter turnMaintainance(final BatchExecuter executer)
 	{
@@ -281,7 +281,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode fügt einen zur Fahrstraßenbestimmung benötigten Fixpunkt hinzu.
+	 * Diese Methode fÃ¼gt einen zur FahrstraÃŸenbestimmung benÃ¶tigten Fixpunkt hinzu.
 	 * 
 	 * @param a Ein weiterer festgelegter Routenpunkt.
 	 */
@@ -291,7 +291,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Hier wird eine erfolgreich geroutete Fahrstraße für die Freischaltung
+	 * Hier wird eine erfolgreich geroutete FahrstraÃŸe fÃ¼r die Freischaltung
 	 * vorbereitet. Alle beteiligten Gleisabschnitte und Signale werden ermittelt.
 	 */
 	void prepare()
@@ -314,7 +314,7 @@ public class Route extends LinkedList<Gleisteil>
 					}
 				}
 		
-				// Alle Signale in Fahrtrichtung auswählen
+				// Alle Signale in Fahrtrichtung auswÃ¤hlen
 				ownedSignals.clear();
 				for (Abschnitt abschnitt : ownedSegments)
 				{
@@ -325,20 +325,20 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode schaltet alle Weichen der Fahrstraße in die richtige Lage.
+	 * Diese Methode schaltet alle Weichen der FahrstraÃŸe in die richtige Lage.
 	 * @param executer
-	 * @return Einen {@link Batch}, um die Weichen einer Fahrstraße zu schalten.
+	 * @return Einen {@link Batch}, um die Weichen einer FahrstraÃŸe zu schalten.
 	 * @throws RoutingRequirementsMissingException 
 	 */
 	private Batch turnRail(final BatchExecuter executer) throws RoutingRequirementsMissingException
 	{
 		if (size() < 2)
 		{
-			throw new RoutingRequirementsMissingException(this, "Fahrstraße hat nicht genug Gleisteile!");
+			throw new RoutingRequirementsMissingException(this, "FahrstraÃŸe hat nicht genug Gleisteile!");
 		}
 
 		/*
-		 * Dieser Codeabschnitt schaltet die Fahrstraße.
+		 * Dieser Codeabschnitt schaltet die FahrstraÃŸe.
 		 */
 		Batch batch = executer.createBatch();
 
@@ -373,10 +373,10 @@ public class Route extends LinkedList<Gleisteil>
 
 	/**
 	 * Diese Methode stellt an Hand von Abzweigen fest, ob das
-	 * Signal langsam überfahren werden darf. Es ist konkret die
+	 * Signal langsam Ã¼berfahren werden darf. Es ist konkret die
 	 * Wahl zwischen Hp1 und Hp2.
 	 * @param abzweige Zahl der Abzweige
-	 * @return Signalkommando für die Langsamfahrstelle.
+	 * @return Signalkommando fÃ¼r die Langsamfahrstelle.
 	 */
 	private SignalCommand computeSignalSymbol(Abschnitt segment, int abzweige)
 	{
@@ -386,7 +386,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode schaltet alle Signale der Fahrstraße.
+	 * Diese Methode schaltet alle Signale der FahrstraÃŸe.
 	 * @param executer
 	 * @return Der Stapel mit den Signalschaltkommandos.
 	 * @throws RoutingRequirementsMissingException 
@@ -402,7 +402,7 @@ public class Route extends LinkedList<Gleisteil>
 			
 			if (max < 0)
 			{
-				throw new RoutingRequirementsMissingException(this, "Fahrstraße enthält keine Gleisabschnitte!");
+				throw new RoutingRequirementsMissingException(this, "FahrstraÃŸe enthÃ¤lt keine Gleisabschnitte!");
 			}
 			Abschnitt last = ownedSegments.get(max);
 			Batch batch = executer.createBatch();
@@ -422,7 +422,7 @@ public class Route extends LinkedList<Gleisteil>
 			}
 	
 			/*
-			 * Die Abschnitte werden vordersten Gleisabschnitt zum hintersten durchiteriert. So können die Zustände der
+			 * Die Abschnitte werden vordersten Gleisabschnitt zum hintersten durchiteriert. So kÃ¶nnen die ZustÃ¤nde der
 			 * Hauptsignale an die davor stehenden Vorsignale weitergereicht werden. Gleissperrsignale
 			 * werden zwar wie Hauptsignale signalisiert, bestimmen jedoch keine vorhergehenden Vorsignale.
 			 */
@@ -481,7 +481,7 @@ public class Route extends LinkedList<Gleisteil>
 	/**
 	 * Diese Methode schaltet die Gleisabschnitte ein. Dabei werden die Abschnitte von hinten nach
 	 * vorne der Reihe nach eingeschaltet, so dass der erste Abschnitt mit dem Zug als letzter aktiviert wird.
-	 * @param executer Die Stapelausführung, dass den neuen Abschnittsstapel erhält.
+	 * @param executer Die StapelausfÃ¼hrung, dass den neuen Abschnittsstapel erhÃ¤lt.
 	 * @return Der Stapel zum Einschalten der Gleisabschnitt.
 	 */
 	private Batch turnOn(BatchExecuter executer)
@@ -509,9 +509,9 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode bereitet die Stapelausführung zum Schalten einer Fahrstraße vor.
-	 * @param executer Der ausführende {@link BatchExecuter}.
-	 * @return Die Stapelausführung zum Schalten einer Fahrstraße.
+	 * Diese Methode bereitet die StapelausfÃ¼hrung zum Schalten einer FahrstraÃŸe vor.
+	 * @param executer Der ausfÃ¼hrende {@link BatchExecuter}.
+	 * @return Die StapelausfÃ¼hrung zum Schalten einer FahrstraÃŸe.
 	 * @throws RoutingRequirementsMissingException 
 	 */
 	public BatchExecuter turn(final BatchExecuter executer) throws RoutingRequirementsMissingException
@@ -540,7 +540,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Listet ein Gleisteil vorläufig als belegt. So kann es nicht wiederverwendet werden.
+	 * Listet ein Gleisteil vorlÃ¤ufig als belegt. So kann es nicht wiederverwendet werden.
 	 * @param gt Das belegende Gleisteil.
 	 */
 	public void addTrackElement(Gleisteil gt)
@@ -565,8 +565,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Diese Methode füllt einen BatchExecuter mit Kommandos, um diese Fahrstraße zwangsabzuschalten.
-	 * @param executer Der BatchExecuter der die Batches mit den Freischaltaufträgen erhält.
+	 * Diese Methode fÃ¼llt einen BatchExecuter mit Kommandos, um diese FahrstraÃŸe zwangsabzuschalten.
+	 * @param executer Der BatchExecuter der die Batches mit den FreischaltauftrÃ¤gen erhÃ¤lt.
 	 */
 	public void computeForcedClearBatch(BatchExecuter executer)
 	{
@@ -583,9 +583,9 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode erzeugt Kommandos, um alle Gleisabschnitte dieser Fahrstraße
+	 * Diese Methode erzeugt Kommandos, um alle Gleisabschnitte dieser FahrstraÃŸe
 	 * wieder freizugeben. Im Wartungsmodus werden alle Gleisabschnitte abgeschaltet.
-	 * @param executer Der BatchExecuter der die Batches mit den Freischaltaufträgen erhält.
+	 * @param executer Der BatchExecuter der die Batches mit den FreischaltauftrÃ¤gen erhÃ¤lt.
 	 */
 	public void computeClearBatches(final BatchExecuter executer)
 	{
@@ -614,7 +614,7 @@ public class Route extends LinkedList<Gleisteil>
 					a.preSignalOff(batch, direction);
 				}
 	
-				// Hier kommt die eigentliche Fahrstraßenauflösung.
+				// Hier kommt die eigentliche FahrstraÃŸenauflÃ¶sung.
 				batch = executer.createBatch();
 				for (Abschnitt a : ownedSegments)
 				{
@@ -626,8 +626,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Diese Methode füllt die Batches mit Kommandos, um alle Gleisabschnitte bis zum angegebenen Gleisabschnitt
-	 * aufzulösen.
+	 * Diese Methode fÃ¼llt die Batches mit Kommandos, um alle Gleisabschnitte bis zum angegebenen Gleisabschnitt
+	 * aufzulÃ¶sen.
 	 * @param executer Der BatchExecuter, der die Batches enthalten wird.
 	 * @param targetSegment Der hinterste freizugebende Gleisabschnitt.
 	 */
@@ -683,7 +683,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Löst diese Fahrstraße komplett auf.
+	 * LÃ¶st diese FahrstraÃŸe komplett auf.
 	 */
 	public void clear()
 	{
@@ -722,7 +722,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Löscht alle Abschnitte bis zum angegebenen Abschnitt aus einer Fahrstraße und entfernt die entsprechenden Referenzen.
+	 * LÃ¶scht alle Abschnitte bis zum angegebenen Abschnitt aus einer FahrstraÃŸe und entfernt die entsprechenden Referenzen.
 	 * @param targetSegment Der hinterste freizugebende Gleisabschnitt.
 	 */
 	public void clearUptoSegment(Abschnitt targetSegment)
@@ -783,23 +783,23 @@ public class Route extends LinkedList<Gleisteil>
 	{
 		log.debug(LogUtil.printf("Gebe Abschnitt %s frei.", segment.getNumber()));
 
-		// Gleisteile aufräumen
+		// Gleisteile aufrÃ¤umen
 		for (Gleisteil gt : segment.getTrackElements())
 		{
 			synchronized(gt)
 			{
-				// Gleisteil hat keine Fahrstraße
+				// Gleisteil hat keine FahrstraÃŸe
 				gt.setRoute(null);
 				
 				// Entfernen aus Liste aller benutzten Gleisteile
 				removeTrackElement(gt);
 				
-				// Entfernen aus dieser Fahrstraße
+				// Entfernen aus dieser FahrstraÃŸe
 				remove(gt);
 			}
 		}
 		
-		// Signale aufräumen
+		// Signale aufrÃ¤umen
 		synchronized(ownedSegments)
 		{
 			for (Signal s : segment.getSignals(direction))
@@ -807,7 +807,7 @@ public class Route extends LinkedList<Gleisteil>
 				ownedSignals.remove(s);
 			}
 		
-			// Abschnitt aufräumen
+			// Abschnitt aufrÃ¤umen
 			if (routing.getFirst() == segment)
 			{
 				routing.remove(segment);
@@ -818,9 +818,9 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode prüft, ob ein Gleisteil für das Suchen einer Fahrstraße brauchbar ist.
-	 * @param teil Das zu prüfende Gleisteil
-	 * @return True, wenn Gleisteil für Fahrstraße geeignet ist.
+	 * Diese Methode prÃ¼ft, ob ein Gleisteil fÃ¼r das Suchen einer FahrstraÃŸe brauchbar ist.
+	 * @param teil Das zu prÃ¼fende Gleisteil
+	 * @return True, wenn Gleisteil fÃ¼r FahrstraÃŸe geeignet ist.
 	 */
 	public boolean isFree(Gleisteil teil)
 	{
@@ -830,13 +830,13 @@ public class Route extends LinkedList<Gleisteil>
 	
 			if (teil.getRoute() != null)
 			{
-				// Gleisteil ist schon für durch Route belegt.
+				// Gleisteil ist schon fÃ¼r durch Route belegt.
 				return false;
 			}
 
 			if (shunting && (teil.getGruppe() != start.getGroup()))
 			{
-				// Beim Rangieren darf die Fahrstraße die Gruppe nicht
+				// Beim Rangieren darf die FahrstraÃŸe die Gruppe nicht
 				// verlassen.
 				return false;
 			}
@@ -845,7 +845,7 @@ public class Route extends LinkedList<Gleisteil>
 			{
 				if (allocatedTrackElements.contains(teil))
 				{
-					// Gleisteil ist schon für Fahrstraße zumindest verplant.
+					// Gleisteil ist schon fÃ¼r FahrstraÃŸe zumindest verplant.
 					return false;
 				}
 			}
@@ -862,7 +862,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Listet alle Gleisteile dieser Fahrstraße auf.
+	 * Listet alle Gleisteile dieser FahrstraÃŸe auf.
 	 */
 	public void dump()
 	{
@@ -882,8 +882,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Baut einen Text, der diese Fahrstraße beschreibt auf.
-	 * @return Der Kurztext dieser Fahrstraße
+	 * Baut einen Text, der diese FahrstraÃŸe beschreibt auf.
+	 * @return Der Kurztext dieser FahrstraÃŸe
 	 */
 	public String toString()
 	{
@@ -911,8 +911,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt zurück, ob diese Fahrstraße dem Rangieren dient.
-	 * @return Wird auf dieser Fahrstraße rangiert.
+	 * Gibt zurÃ¼ck, ob diese FahrstraÃŸe dem Rangieren dient.
+	 * @return Wird auf dieser FahrstraÃŸe rangiert.
 	 */
 	public boolean isShunting()
 	{
@@ -920,8 +920,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt aus, ob die Fahrstraße in Zählrichtung gerichtet ist.
-	 * @return Fahrtrichtung relativ zur Zählrichtung.
+	 * Gibt aus, ob die FahrstraÃŸe in ZÃ¤hlrichtung gerichtet ist.
+	 * @return Fahrtrichtung relativ zur ZÃ¤hlrichtung.
 	 */
 	public boolean getDirection()
 	{
@@ -929,8 +929,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Gibt zurück, ob diese Fahrstraße gegen Veränderung verriegelt ist.
-	 * @return Der Verriegelungszustand dieser Fahrstraße
+	 * Gibt zurÃ¼ck, ob diese FahrstraÃŸe gegen VerÃ¤nderung verriegelt ist.
+	 * @return Der Verriegelungszustand dieser FahrstraÃŸe
 	 */
 	synchronized public boolean isLocked()
 	{
@@ -938,8 +938,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode gibt zurück, ob sich diese Fahrstraße im Wartungsmodus befindet.
-	 * @return True, wenn Fahrstraße im Wartungsmodus. 
+	 * Diese Methode gibt zurÃ¼ck, ob sich diese FahrstraÃŸe im Wartungsmodus befindet.
+	 * @return True, wenn FahrstraÃŸe im Wartungsmodus. 
 	 */
 	public boolean isMaintainance()
 	{
@@ -947,7 +947,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Verriegelt die Fahrstraße, um Veränderungen zu verhindern.
+	 * Verriegelt die FahrstraÃŸe, um VerÃ¤nderungen zu verhindern.
 	 */
 	public void lock()
 	{
@@ -957,8 +957,8 @@ public class Route extends LinkedList<Gleisteil>
 			{
 				/*
 				 * Alle beteiligten Signale werden gegen Verstellen verriegelt. Beim
-				 * Verlängern der Fahrstraße können sich Signalbilder verändern (Vorsignale!), 
-				 * diese Signalbilder werden neu übernommen.
+				 * VerlÃ¤ngern der FahrstraÃŸe kÃ¶nnen sich Signalbilder verÃ¤ndern (Vorsignale!), 
+				 * diese Signalbilder werden neu Ã¼bernommen.
 				 */
 				for (Signal s : ownedSignals)
 				{
@@ -974,7 +974,7 @@ public class Route extends LinkedList<Gleisteil>
 				}
 				
 				/*
-				 * Die Fahrstraße selbst wird verriegelt.
+				 * Die FahrstraÃŸe selbst wird verriegelt.
 				 */
 				if (!locked)
 				{
@@ -986,8 +986,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Gibt zurück, ob Fahrstraßen geschaltet sind.
-	 * @return Gibt es Fahrstraßen
+	 * Gibt zurÃ¼ck, ob FahrstraÃŸen geschaltet sind.
+	 * @return Gibt es FahrstraÃŸen
 	 */
 	public static boolean hasRoutes()
 	{
@@ -998,8 +998,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt die Liste der Fahrstraßen zurück.
-	 * @return Liste der Fahrstraßen
+	 * Gibt die Liste der FahrstraÃŸen zurÃ¼ck.
+	 * @return Liste der FahrstraÃŸen
 	 */
 	public static List<Route> getRoutes()
 	{
@@ -1010,7 +1010,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Gibt die Fahrstraße zurück, in der der angegebene Abschnitt ist.
+	 * Gibt die FahrstraÃŸe zurÃ¼ck, in der der angegebene Abschnitt ist.
 	 * @param abschnitt Der Abschnitt, der seine Route sucht.
 	 * @return Die Route passend zum Abschnitt.
 	 */
@@ -1033,9 +1033,9 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Gibt den vorhergehenden Abschnitt des angegebenen Abschnitts zurück. 
-	 * @param abschnitt Abschnitt, von dem rückwärts gesucht werden soll.
-	 * @return Der Vorgänger dieses Abschnitts.
+	 * Gibt den vorhergehenden Abschnitt des angegebenen Abschnitts zurÃ¼ck. 
+	 * @param abschnitt Abschnitt, von dem rÃ¼ckwÃ¤rts gesucht werden soll.
+	 * @return Der VorgÃ¤nger dieses Abschnitts.
 	 */
 	public Abschnitt getPrevSegment(Abschnitt abschnitt)
 	{
@@ -1052,8 +1052,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt den nächsten Abschnitt des angegebenen Abschnitts zurück.
-	 * @param abschnitt Abschnitt, von dem vorwärts gesucht werden soll.
+	 * Gibt den nÃ¤chsten Abschnitt des angegebenen Abschnitts zurÃ¼ck.
+	 * @param abschnitt Abschnitt, von dem vorwÃ¤rts gesucht werden soll.
 	 * @return Der Nachfolger dieses Abschnitts.
 	 */
 	public Abschnitt getSuccSegment(Abschnitt abschnitt)
@@ -1074,8 +1074,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Prüft, ob ein Zug in diesen Abschnitt eingefahren ist.
-	 * @param abschnitt Der zu prüfende Abschnitt
+	 * PrÃ¼ft, ob ein Zug in diesen Abschnitt eingefahren ist.
+	 * @param abschnitt Der zu prÃ¼fende Abschnitt
 	 * @return True, wenn ein Zug eingefahren ist.
 	 */
 	public boolean checkIfSegmentEntered(Abschnitt abschnitt)
@@ -1092,7 +1092,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Testet, ob der angegebene Abschnitt verlassen wurde. Das setzt voraus, dass die nächste Abschnitt belegt ist.
+	 * Testet, ob der angegebene Abschnitt verlassen wurde. Das setzt voraus, dass die nÃ¤chste Abschnitt belegt ist.
 	 * @param abschnitt Der zu trestende Abschnitt.
 	 * @return Test, ob angegebener Abschnitt verlassen wurde.
 	 */
@@ -1110,8 +1110,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt den ersten Abschnitt dieser Fahrstraße zurück.
-	 * @return Der erste Abschnitt dieser Fahrstraße.
+	 * Gibt den ersten Abschnitt dieser FahrstraÃŸe zurÃ¼ck.
+	 * @return Der erste Abschnitt dieser FahrstraÃŸe.
 	 */
 	public Abschnitt getFirstSegment()
 	{
@@ -1119,8 +1119,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt den letzten Abschnitt dieser Fahrstraße zurück.
-	 * @return Der letzte Abschnitt dieser Fahrstraße.
+	 * Gibt den letzten Abschnitt dieser FahrstraÃŸe zurÃ¼ck.
+	 * @return Der letzte Abschnitt dieser FahrstraÃŸe.
 	 */
 	public Abschnitt getLastSegment()
 	{
@@ -1143,7 +1143,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt zurück, ob die automatische Gleisfreigabe aktiv ist.
+	 * Gibt zurÃ¼ck, ob die automatische Gleisfreigabe aktiv ist.
 	 * @return Aktivierung der automatischen Gleisfreigabe.
 	 */
 	public static boolean hasAutomaticSegmentDeallocation()
@@ -1152,7 +1152,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode ermittelt, ob Gleisabschnitte dieser Fahrstraße blockweise wieder freigegeben werden.
+	 * Diese Methode ermittelt, ob Gleisabschnitte dieser FahrstraÃŸe blockweise wieder freigegeben werden.
 	 * @return Blockweise Freigabe von Gleisabschnitten.
 	 */
 	public boolean hasBlockDeallocation()
@@ -1161,9 +1161,9 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Gibt zurück, ob die Fahrstraße nach dem Durchfahren automatisch aufgelöst
+	 * Gibt zurÃ¼ck, ob die FahrstraÃŸe nach dem Durchfahren automatisch aufgelÃ¶st
 	 * werden soll.
-	 * @return Automatische Fahrstraßenfreigabe.
+	 * @return Automatische FahrstraÃŸenfreigabe.
 	 */
 	public boolean hasAutomaticRouteDeallocation()
 	{
@@ -1171,7 +1171,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode aktiviert die automatische Fahrstraßenauflösung.
+	 * Diese Methode aktiviert die automatische FahrstraÃŸenauflÃ¶sung.
 	 */
 	public void enableAutomaticRouteDeallocation()
 	{
@@ -1179,9 +1179,9 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode ermittelt die Fahrstraße, zu der die übergebene Verzweigung gehört.
-	 * @param branch Die Verzweigung, zu der eine Fahrstraße gesucht wird.
-	 * @return Die gefundene Fahrstraße.
+	 * Diese Methode ermittelt die FahrstraÃŸe, zu der die Ã¼bergebene Verzweigung gehÃ¶rt.
+	 * @param branch Die Verzweigung, zu der eine FahrstraÃŸe gesucht wird.
+	 * @return Die gefundene FahrstraÃŸe.
 	 */
 	public static Route findConflictingRoute(Verzweigung branch)
 	{
@@ -1192,7 +1192,7 @@ public class Route extends LinkedList<Gleisteil>
 				Route conflict = branch.getRoute();
 				if (!conflict.contains(branch))
 				{
-					throw new IllegalStateException("Verzweigung gehört der falschen Fahrstraße an.");
+					throw new IllegalStateException("Verzweigung gehÃ¶rt der falschen FahrstraÃŸe an.");
 				}
 				if (!conflict.maintainance)
 				{
@@ -1204,8 +1204,8 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Diese Methode gibt die Zahl der Stützpunkte zurück.
-	 * @return Zahl der Stützpunkte, die die Fahrstraße festlegt.
+	 * Diese Methode gibt die Zahl der StÃ¼tzpunkte zurÃ¼ck.
+	 * @return Zahl der StÃ¼tzpunkte, die die FahrstraÃŸe festlegt.
 	 */
 	public int getHopCount()
 	{
@@ -1213,7 +1213,7 @@ public class Route extends LinkedList<Gleisteil>
 	}
 	
 	/**
-	 * Diese Methode gibt das letzte Gleisteil zurück.
+	 * Diese Methode gibt das letzte Gleisteil zurÃ¼ck.
 	 * @return Das letzte Gleisteil oder null, wenn keins vorhanden ist.
 	 */
 	private Gleisteil peekLastElement()
@@ -1224,11 +1224,11 @@ public class Route extends LinkedList<Gleisteil>
 	}
 
 	/**
-	 * Diese Methode prüft, ob das zu einem Gleisteil benachbarte Gleisteil ebenfalls
-	 * an der Fahrstraße beteiligt ist.
+	 * Diese Methode prÃ¼ft, ob das zu einem Gleisteil benachbarte Gleisteil ebenfalls
+	 * an der FahrstraÃŸe beteiligt ist.
 	 * @param gt Das Gleisteil
-	 * @param next Das benachbarte Gleisteil, das darauf geprüft wird, ob es in dieser Fahrstraße benachbart ist.
-	 * @return Ob das benachbarte Gleisteil an dieser Fahrstraße beteiligt ist.
+	 * @param next Das benachbarte Gleisteil, das darauf geprÃ¼ft wird, ob es in dieser FahrstraÃŸe benachbart ist.
+	 * @return Ob das benachbarte Gleisteil an dieser FahrstraÃŸe beteiligt ist.
 	 */
 	public boolean isPart(Gleisteil gt, Gleisteil next)
 	{
@@ -1240,18 +1240,18 @@ public class Route extends LinkedList<Gleisteil>
 		}
 		if (gt instanceof Gleis)
 		{
-			// Ein einzelnes beteiligtes Gleis ist naturgemäß immer beteiligt ;-) 
+			// Ein einzelnes beteiligtes Gleis ist naturgemÃ¤ÃŸ immer beteiligt ;-) 
 			result = true;
 		}
 		else if ((next == null) || (gt == peekLastElement()))
 		{
-			// Prüfung auf letztes Gleisteil oder Abstellgleis.
+			// PrÃ¼fung auf letztes Gleisteil oder Abstellgleis.
 			result = true;
 		}
 		else
 		{
-			// Prüfung des Nachbargleisteils, ob es auch Nachbargleisteil
-			// in der Fahrstraße ist.
+			// PrÃ¼fung des Nachbargleisteils, ob es auch Nachbargleisteil
+			// in der FahrstraÃŸe ist.
 			int idxA = indexOf(gt);
 			int idxB = indexOf(next);
 			int diff = idxA - idxB;

@@ -22,8 +22,8 @@ package de.morknet.mrw;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese RuntimeException wird geworfen, wenn während des Berechnens einer Fahrstraße
- * eine Voraussetzung nicht erfüllt ist.
+ * Diese RuntimeException wird geworfen, wenn wÃ¤hrend des Berechnens einer FahrstraÃŸe
+ * eine Voraussetzung nicht erfÃ¼llt ist.
  * @author smork
  *
  */
@@ -31,9 +31,9 @@ public class RoutingRequirementsMissingException extends RoutingException {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Dieser Konstruktur bereitet eine Fehlermeldung mit der übergebenen Fahrstraße auf.
-	 * @param message Eine ergänzende Fehlermeldung.
-	 * @param route Die verursachende Fahrstraße
+	 * Dieser Konstruktur bereitet eine Fehlermeldung mit der Ã¼bergebenen FahrstraÃŸe auf.
+	 * @param message Eine ergÃ¤nzende Fehlermeldung.
+	 * @param route Die verursachende FahrstraÃŸe
 	 */
 	public RoutingRequirementsMissingException(final Route route, final String message)
 	{

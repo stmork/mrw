@@ -25,8 +25,8 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Diese Klasse implementiert einen Referenzzähler, ohne übermäßig viele
- * Objekte zu verbrauchen, wie das bei java.lang.Integer nötig wäre, weil
+ * Diese Klasse implementiert einen ReferenzzÃ¤hler, ohne Ã¼bermÃ¤ÃŸig viele
+ * Objekte zu verbrauchen, wie das bei java.lang.Integer nÃ¶tig wÃ¤re, weil
  * jene Klasse imutable ist.
  * @author sm
  *
@@ -42,11 +42,11 @@ public class ReferenceCounter<T> implements Serializable
 	private final HashMap<T, AtomicInteger> map = new HashMap<T, AtomicInteger>();
 
 	/**
-	 * Diese Methode zählt den Zähler für diese Referenz um eins hoch. Ist die Referenz
+	 * Diese Methode zÃ¤hlt den ZÃ¤hler fÃ¼r diese Referenz um eins hoch. Ist die Referenz
 	 * noch nicht registriert, wird dies automatisch erledigt.
 	 * 
-	 * @param type Die zu zählende Referenz.
-	 * @return Der gezählte Wert
+	 * @param type Die zu zÃ¤hlende Referenz.
+	 * @return Der gezÃ¤hlte Wert
 	 */
 	public int count(T type)
 	{
@@ -54,12 +54,12 @@ public class ReferenceCounter<T> implements Serializable
 	}
 
 	/**
-	 * Diese Methode zählt den Zähler für diese Referenz um eins hoch. Ist die Referenz
+	 * Diese Methode zÃ¤hlt den ZÃ¤hler fÃ¼r diese Referenz um eins hoch. Ist die Referenz
 	 * noch nicht registriert, wird dies automatisch erledigt.
 	 * 
-	 * @param type Die zu zählende Referenz.
-	 * @param value Der Wert, um den der Zähler hochgesetzt werden soll.
-	 * @return Der gezählte Wert
+	 * @param type Die zu zÃ¤hlende Referenz.
+	 * @param value Der Wert, um den der ZÃ¤hler hochgesetzt werden soll.
+	 * @return Der gezÃ¤hlte Wert
 	 */
 	public int count(T type, int value)
 	{
@@ -73,11 +73,11 @@ public class ReferenceCounter<T> implements Serializable
 	}
 	
 	/**
-	 * Diese Methode gibt den aktuellen Zählerstand zurück. Ist die Referenz nicht registriert,
-	 * wird 0 zurückgegeben und die Referenz wird nicht registriert.
+	 * Diese Methode gibt den aktuellen ZÃ¤hlerstand zurÃ¼ck. Ist die Referenz nicht registriert,
+	 * wird 0 zurÃ¼ckgegeben und die Referenz wird nicht registriert.
 	 * 
-	 * @param type Die gezählte Referenz.
-	 * @return Der Zähler passend zur Referenz.
+	 * @param type Die gezÃ¤hlte Referenz.
+	 * @return Der ZÃ¤hler passend zur Referenz.
 	 */
 	public int getValue(T type)
 	{
@@ -87,7 +87,7 @@ public class ReferenceCounter<T> implements Serializable
 	}
 
 	/**
-	 * Diese Methode gibt einen Set aller registrierten Referenzen zurück.
+	 * Diese Methode gibt einen Set aller registrierten Referenzen zurÃ¼ck.
 	 * 
 	 * @return Der Set aller registrierten Referenzen.
 	 */
@@ -97,7 +97,7 @@ public class ReferenceCounter<T> implements Serializable
 	}
 
 	/**
-	 * Diese Methode löscht die Zähler aller hier registrierten Referenzen. Die
+	 * Diese Methode lÃ¶scht die ZÃ¤hler aller hier registrierten Referenzen. Die
 	 * Referenzen bleiben erhalten.
 	 */
 	public void zero()

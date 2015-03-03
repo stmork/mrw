@@ -22,7 +22,7 @@ package de.morknet.mrw.base;
 import de.morknet.mrw.comm.Command;
 
 /**
- * Diese Klasse repräsentiert ein Formgleissperrsignal.
+ * Diese Klasse reprÃ¤sentiert ein Formgleissperrsignal.
  * @author sm
  *
  */
@@ -32,9 +32,9 @@ public final class Formgleissperrsignal extends Gleissperrsignal implements Form
 
 	/**
 	 * Dieser Konstruktur initialisiert ein Formgleissperrsignal.
-	 * @param segment Der dazugehörende Gleisabschnitt.
+	 * @param segment Der dazugehÃ¶rende Gleisabschnitt.
 	 * @param number Die Signalnummer.
-	 * @param direction Die Zählrichtung.
+	 * @param direction Die ZÃ¤hlrichtung.
 	 */
 	public Formgleissperrsignal(Abschnitt segment, String number, boolean direction)
 	{

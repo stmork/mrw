@@ -30,7 +30,7 @@ public class BatchIOException extends BatchProcessingException
 {
 	/**
 	 * Dieser Konstruktur initialisiert eine BatchProcessingException mit einer Meldung.
-	 * @param e Die auslösende {@link IOException}.
+	 * @param e Die auslÃ¶sende {@link IOException}.
 	 */
 	public BatchIOException(IOException e)
 	{

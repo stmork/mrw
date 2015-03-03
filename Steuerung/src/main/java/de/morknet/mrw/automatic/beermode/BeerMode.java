@@ -39,11 +39,11 @@ import de.morknet.mrw.util.MrwRandom;
 import de.morknet.mrw.util.ReferenceCounter;
 
 /**
- * Diese Klasse stellt die Steuerung für den Biermodus bereit. Aus einem definiertem Bahnhof wird
- * ein Zug aus einem besetzten Gleis ausgewählt, durch ein freies Gleis eines weiteren Bahnhofs
- * geführt und wieder auf ein freies Gleis des ersten Bahnhofs geführt. Ist der Zug angekommen, wird
- * der nächste Zug ausgewählt. Die Auswahl des Zuges und des freien Gleises geschieht zufällig. Die
- * Fahrtrichtung wird dabei berücksichtigt.
+ * Diese Klasse stellt die Steuerung fÃ¼r den Biermodus bereit. Aus einem definiertem Bahnhof wird
+ * ein Zug aus einem besetzten Gleis ausgewÃ¤hlt, durch ein freies Gleis eines weiteren Bahnhofs
+ * gefÃ¼hrt und wieder auf ein freies Gleis des ersten Bahnhofs gefÃ¼hrt. Ist der Zug angekommen, wird
+ * der nÃ¤chste Zug ausgewÃ¤hlt. Die Auswahl des Zuges und des freien Gleises geschieht zufÃ¤llig. Die
+ * Fahrtrichtung wird dabei berÃ¼cksichtigt.
  * @author smork
  *
  */
@@ -76,9 +76,9 @@ public class BeerMode extends MrwActionControl
 	}
 
 	/**
-	 * Diese Methode gibt einen linksfahrenden Biermodus zurück.
+	 * Diese Methode gibt einen linksfahrenden Biermodus zurÃ¼ck.
 	 * @param controller Der steuernde Controller
-	 * @return Der Biermodus, der alles nach links fahren lässt.
+	 * @return Der Biermodus, der alles nach links fahren lÃ¤sst.
 	 */
 	synchronized public final static BeerMode getBeerModeLeft(final MrwController controller)
 	{
@@ -90,9 +90,9 @@ public class BeerMode extends MrwActionControl
 	}
 
 	/**
-	 * Diese Methode gibt einen rechtsfahrenden Biermodus zurück.
+	 * Diese Methode gibt einen rechtsfahrenden Biermodus zurÃ¼ck.
 	 * @param controller Der steuernde Controller
-	 * @return Der Biermodus, der alles nach rechts fahren lässt.
+	 * @return Der Biermodus, der alles nach rechts fahren lÃ¤sst.
 	 */
 	synchronized public final static BeerMode getBeerModeRight(final MrwController controller)
 	{
@@ -111,7 +111,7 @@ public class BeerMode extends MrwActionControl
 		log.debug(">onActivate()");
 		try
 		{
-			controller.setMessage("Aktivierung Biermodus in Zählrichtung: " + inDirection);
+			controller.setMessage("Aktivierung Biermodus in ZÃ¤hlrichtung: " + inDirection);
 			clearCounter();
 			trigger.setDirection(inDirection);
 			controller.addTrigger(trigger);
@@ -148,8 +148,8 @@ public class BeerMode extends MrwActionControl
 	}
 
 	/**
-	 * Diese Methode sucht sich abhängig von der Fahrtichtung einen Zug zur Fahrt aus.
-	 * @param inDirection Die Fahrtrichtung relativ zur Zährichtung der Gleise.
+	 * Diese Methode sucht sich abhÃ¤ngig von der Fahrtichtung einen Zug zur Fahrt aus.
+	 * @param inDirection Die Fahrtrichtung relativ zur ZÃ¤hrichtung der Gleise.
 	 */
 	public void selectNextTrack(final boolean inDirection, final boolean doWait)
 	{
@@ -169,7 +169,7 @@ public class BeerMode extends MrwActionControl
 			}
 			if (via.size() == 0)
 			{
-				throw new SelectTrackException("Es gibt keine Durchfahrtmöglichkeit!");
+				throw new SelectTrackException("Es gibt keine DurchfahrtmÃ¶glichkeit!");
 			}
 			if (free.size() == 0)
 			{
@@ -203,11 +203,11 @@ public class BeerMode extends MrwActionControl
 				}
 				catch (InterruptedException e)
 				{
-					log.error("Probleme beim Warten auf nächste Biertour!");
+					log.error("Probleme beim Warten auf nÃ¤chste Biertour!");
 					log.error(e.getLocalizedMessage(), e);
 				}
 
-				controller.setMessage("Nächste Fahrstraße wird geschaltet...");
+				controller.setMessage("NÃ¤chste FahrstraÃŸe wird geschaltet...");
 				route = model.route(hops, false, inDirection);
 
 				RouteEnableRunner runner = new RouteEnableRunner(controller, route);
@@ -254,7 +254,7 @@ public class BeerMode extends MrwActionControl
 	}
 	
 	/**
-	 * Diese Methode initialisiert die Zähler der verwendeten Gleise/Züge zurück.
+	 * Diese Methode initialisiert die ZÃ¤hler der verwendeten Gleise/ZÃ¼ge zurÃ¼ck.
 	 */
 	private static void initCounter()
 	{
@@ -263,7 +263,7 @@ public class BeerMode extends MrwActionControl
 	}
 	
 	/**
-	 * Diese Methode setzt die Zähler der verwendeten Gleise/Züge zurück.
+	 * Diese Methode setzt die ZÃ¤hler der verwendeten Gleise/ZÃ¼ge zurÃ¼ck.
 	 */
 	private static void clearCounter()
 	{
@@ -272,7 +272,7 @@ public class BeerMode extends MrwActionControl
 	}
 
 	/**
-	 * Diese Methode listet auf, wie häufig ein Gleis aus dem Schattenbahnhof bzw. dem
+	 * Diese Methode listet auf, wie hÃ¤ufig ein Gleis aus dem Schattenbahnhof bzw. dem
 	 * Durchgangsbahnhof verwendet wurde.
 	 */
 	private static void dumpCounter()
@@ -291,7 +291,7 @@ public class BeerMode extends MrwActionControl
 	}
 	
 	/**
-	 * Diese Methode gibt die Fahrtrichtung zurück.
+	 * Diese Methode gibt die Fahrtrichtung zurÃ¼ck.
 	 * @return Die Fahrtrichtung dieses Biermodus.
 	 */
 	public final boolean getDirection()

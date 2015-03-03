@@ -50,7 +50,7 @@ public class AussenRechts extends TourInfo {
 	@Override
 	public String getName()
 	{
-		return "Au�en rechts";
+		return "AuÃen rechts";
 	}
 
 	@Override

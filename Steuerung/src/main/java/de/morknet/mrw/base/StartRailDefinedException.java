@@ -41,7 +41,7 @@ public class StartRailDefinedException extends InstanceException
 			final Gleis     start,
 			final Gleis     gleis)
 	{
-		super(LogUtil.printf("Für Abschnitt %s wurde schon Gleis %s als Startgleis definiert. Gleis %s kann nicht mehr gesetzt werden!",
+		super(LogUtil.printf("FÃ¼r Abschnitt %s wurde schon Gleis %s als Startgleis definiert. Gleis %s kann nicht mehr gesetzt werden!",
 				abschnitt.getNumber(),
 				start.getName(), gleis.getName()));
 	}

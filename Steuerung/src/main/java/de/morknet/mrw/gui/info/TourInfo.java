@@ -26,7 +26,7 @@ import de.morknet.mrw.automatic.TourPoint;
 import de.morknet.mrw.automatic.tourmode.TourMode;
 
 /**
- * Diese Klasse beinhaltet Informationen für eine Fahrstrecke.
+ * Diese Klasse beinhaltet Informationen fÃ¼r eine Fahrstrecke.
  * @see TourMode
  * @see TourPoint
  * @author sm
@@ -37,13 +37,13 @@ public abstract class TourInfo
 	private final List<String> nameList;
 
 	/**
-	 * Diese Methode giobt Auskunft darüber, ob die Fahrstrecke zyklisch verläuft (Kreisfahrt).
+	 * Diese Methode giobt Auskunft darÃ¼ber, ob die Fahrstrecke zyklisch verlÃ¤uft (Kreisfahrt).
 	 * @return Flag, ob Fahrtstrekce zyklisch ist.
 	 */
 	abstract public boolean isLoop();
 
 	/**
-	 * Diese Methode gibt Auskunft über die Fahrtrichtung relativ zur Zählrichtung der Gleise.
+	 * Diese Methode gibt Auskunft Ã¼ber die Fahrtrichtung relativ zur ZÃ¤hlrichtung der Gleise.
 	 * @return Flag zur Fahrtrichtung.
 	 */
 	abstract public boolean getDirection();
@@ -55,7 +55,7 @@ public abstract class TourInfo
 	abstract public String  getName();
 
 	/**
-	 * Dieser Konstruktor initialisiert die Informationen für die Tourpunkte.
+	 * Dieser Konstruktor initialisiert die Informationen fÃ¼r die Tourpunkte.
 	 * @param names Die Tourpunkte dieser Fahrtstrecke.
 	 */
 	protected TourInfo(final String [] names)
@@ -65,7 +65,7 @@ public abstract class TourInfo
 
 	/**
 	 * Diese Methode gibt die textuelle Beschreibung der Tourpunkte wider. Die Tourpunkte werden in den {@link TourPoint}-Klassen
-	 * in Gleisabschnitte aufgelöst. Diesen folgt dann die Fahrtstrecke.
+	 * in Gleisabschnitte aufgelÃ¶st. Diesen folgt dann die Fahrtstrecke.
 	 * @return Die Liste der textuellen Beschreibungen der Tourpunkte.
 	 */
 	public final List<String> getSegmentNames()
@@ -74,7 +74,7 @@ public abstract class TourInfo
 	}
 
 	/**
-	 * Fahrstrecken sind routemäßig Fahrten, weil Rangierfahrten nicht über Betriebsgruppen hinaus gelegt werden können.
+	 * Fahrstrecken sind routemÃ¤ÃŸig Fahrten, weil Rangierfahrten nicht Ã¼ber Betriebsgruppen hinaus gelegt werden kÃ¶nnen.
 	 * @return Flag, ob es sich um eine Rangierfahrt handeln soll.
 	 */
 	public boolean isShunting()

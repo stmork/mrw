@@ -26,7 +26,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * Diese Klasse repräsentiert eine CAN-Message.
+ * Diese Klasse reprÃ¤sentiert eine CAN-Message.
  * @author sm
  *
  */
@@ -73,7 +73,7 @@ public class CANMessage
 	protected int status;
 	
 	/**
-	 * Die Länge der CAN-Message. Dieser Wert darf zwischen 0 und 8 inkl. variieren. 
+	 * Die LÃ¤nge der CAN-Message. Dieser Wert darf zwischen 0 und 8 inkl. variieren. 
 	 */
 	protected int length;
 	
@@ -85,8 +85,8 @@ public class CANMessage
 	/**
 	 * Dieser Konstruktor initialisiert diese CAN-Message mit IDs und Status.
 	 * @param sid Die 11-bittige Standard-ID.
-	 * @param eid Die 18-bittige zusätzliche Extended-ID
-	 * @param status Flag, ob die Extended-ID gültig ist, bzw. ob es sich um ein Remote Frame handelt.
+	 * @param eid Die 18-bittige zusÃ¤tzliche Extended-ID
+	 * @param status Flag, ob die Extended-ID gÃ¼ltig ist, bzw. ob es sich um ein Remote Frame handelt.
 	 * @see #FRAME_EXT
 	 * @see #FRAME_REMOTE
 	 */
@@ -99,8 +99,8 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode gibt diese CAN-Meldung als Folge von Bytes zurück, so dass sie sofort
-	 * versendet werden können.
+	 * Diese Methode gibt diese CAN-Meldung als Folge von Bytes zurÃ¼ck, so dass sie sofort
+	 * versendet werden kÃ¶nnen.
 	 * @return Die zu versendenden Bytes dieser CAN-Meldung.
 	 */
 	final public byte[] getBytes()
@@ -132,9 +132,9 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode fügt dieser CAN-Message ein Byte hinzu. Es muss noch Platz im Frame (max. acht Bytes)
+	 * Diese Methode fÃ¼gt dieser CAN-Message ein Byte hinzu. Es muss noch Platz im Frame (max. acht Bytes)
 	 * sein, damit keine {@link IllegalStateException} geworfen wird.
-	 * @param i Das hinzuzufügende Byte.
+	 * @param i Das hinzuzufÃ¼gende Byte.
 	 */
 	final public void addDataByte(int i)
 	{
@@ -146,10 +146,10 @@ public class CANMessage
 	}
 	
 	/**
-	 * Diese Methode fügt dieser CAN-Message ein Wort hinzu. Es muss noch Platz im Frame (max. acht Bytes)
+	 * Diese Methode fÃ¼gt dieser CAN-Message ein Wort hinzu. Es muss noch Platz im Frame (max. acht Bytes)
 	 * sein, damit keine {@link IllegalStateException} geworfen wird. Das Wort wird in Little Endian gespeichert.
 	 * (Low Byte first).
-	 * @param i Das hinzuzufügende Wort.
+	 * @param i Das hinzuzufÃ¼gende Wort.
 	 */
 	final public void addDataWord(int i)
 	{
@@ -162,7 +162,7 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode gibt ein Datenbyte aus der CAN-Message zurück. Ein Index außerhalb des gültigen Bereichs
+	 * Diese Methode gibt ein Datenbyte aus der CAN-Message zurÃ¼ck. Ein Index auÃŸerhalb des gÃ¼ltigen Bereichs
 	 * forciert eine {@link ArrayIndexOutOfBoundsException}.
 	 * @param idx Der Datenindex.
 	 * @return Das angeforderte Datenbyte.
@@ -177,7 +177,7 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode modifiziert ein Datenbyte in der CAN-Message. Ein Index außerhalb des gültigen Bereichs
+	 * Diese Methode modifiziert ein Datenbyte in der CAN-Message. Ein Index auÃŸerhalb des gÃ¼ltigen Bereichs
 	 * forciert eine {@link ArrayIndexOutOfBoundsException}.
 	 * @param idx Der Datenindex.
 	 * @param value Das zu modifizierende Byte.
@@ -192,7 +192,7 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode gibt die Standard-ID zurück.
+	 * Diese Methode gibt die Standard-ID zurÃ¼ck.
 	 * @return Die Standard-ID.
 	 */
 	final public int getSid()
@@ -210,7 +210,7 @@ public class CANMessage
 	}
 	
 	/**
-	 * Diese Methode gibt die Extended-ID zurück. Die 18-bittige ID ist rechtsbündig!
+	 * Diese Methode gibt die Extended-ID zurÃ¼ck. Die 18-bittige ID ist rechtsbÃ¼ndig!
 	 * @return Die Extended-ID.
 	 */
 	final public int getEid()
@@ -219,7 +219,7 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode setzt die Standard-ID. Die 18-bittige ID ist rechtsbündig!
+	 * Diese Methode setzt die Standard-ID. Die 18-bittige ID ist rechtsbÃ¼ndig!
 	 * @param eid Die zu setzende Standard-ID.
 	 */
 	final public void setEid(final int eid)
@@ -273,7 +273,7 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode gibt zurück, ob es sich bei dieser CAN-Message um ein Extended Frame handelt.
+	 * Diese Methode gibt zurÃ¼ck, ob es sich bei dieser CAN-Message um ein Extended Frame handelt.
 	 * @return Flag, ob CAN-Message ein Extended Frame ist.
 	 */
 	public boolean isExtended()
@@ -282,8 +282,8 @@ public class CANMessage
 	}
 
 	/**
-	 * Diese Methode gibt die Länge der CAN-Meldung zurück. 
-	 * @return Die Länge der CAN-Meldung.
+	 * Diese Methode gibt die LÃ¤nge der CAN-Meldung zurÃ¼ck. 
+	 * @return Die LÃ¤nge der CAN-Meldung.
 	 */
 	public int length()
 	{
@@ -292,7 +292,7 @@ public class CANMessage
 
 	/**
 	 * Diese Methode loggt diese CAN-Message im Klartext aus.
-	 * @param comment Ein ergänzender Kommentar.
+	 * @param comment Ein ergÃ¤nzender Kommentar.
 	 */
 	synchronized public void dump(String comment)
 	{

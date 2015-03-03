@@ -23,7 +23,7 @@ import de.morknet.mrw.base.DeviceUnit;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Exception wird geworfen, wenn ein BatchElement als Nullpointer einem Ger‰t zugeordnet werden soll.
+ * Diese Exception wird geworfen, wenn ein BatchElement als Nullpointer einem Ger√§t zugeordnet werden soll.
  * @author smork
  *
  */
@@ -32,10 +32,10 @@ public class UndefinedBatchElementException extends BatchProcessingException {
 
 	/**
 	 * Dieser Konstruktur bereitet eine Fehlermeldung auf.
-	 * @param deviceUnit Das verursachende Ger‰t.
+	 * @param deviceUnit Das verursachende Ger√§t.
 	 */
 	public UndefinedBatchElementException(final DeviceUnit deviceUnit)
 	{
-		super(LogUtil.printf("Das BatchElement muss f¸r Ger‰t %s definiert sein!", deviceUnit));
+		super(LogUtil.printf("Das BatchElement muss f√ºr Ger√§t %s definiert sein!", deviceUnit));
 	}
 }
