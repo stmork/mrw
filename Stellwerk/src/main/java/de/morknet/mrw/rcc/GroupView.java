@@ -88,7 +88,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	private final List<Gleisteil> hauptgleise = new ArrayList<Gleisteil>();
 	
 	/**
-	 * Vorberechneter Wert abhÃâ¬ngig von der ZÃâ¬hlrichtung.
+	 * Vorberechneter Wert abhängig von der Zählrichtung.
 	 */
 	private        final int VIEW_DIRECTION;
 
@@ -101,7 +101,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	private final static boolean DEBUG = false;
 
 	/**
-	 * Diese Methode zeichnet ein einzelnes Gleis. Die Koordinaten mÃÅssen nicht sortiert sein.
+	 * Diese Methode zeichnet ein einzelnes Gleis. Die Koordinaten müssen nicht sortiert sein.
 	 * @param gc Der Grafikkontext, inden gezeichnet werden soll
 	 * @param x1 Startecke x
 	 * @param y1 Startecke y
@@ -213,7 +213,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	}
 
 	/**
-	 * Diese Methode berechnet fÃÅr die Farbgebung eines Gleisteils den Abstand vom Rasterrand. Pro Rasterelement
+	 * Diese Methode berechnet für die Farbgebung eines Gleisteils den Abstand vom Rasterrand. Pro Rasterelement
 	 * wird nur ein Balken gemalt. 
 	 * @param diff Das Steigungsdreieck.
 	 * @return Je nach Steigung negativer BASE_OFFSET, Null oder positiver BASE_OFFSET
@@ -224,11 +224,11 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	}
 
 	/**
-	 * Diese Methode zeichnet ein gewinkeltes Gleis anhand vorgegebener Koordinaten inklusive der Farbgebung fÃÅr
+	 * Diese Methode zeichnet ein gewinkeltes Gleis anhand vorgegebener Koordinaten inklusive der Farbgebung für
 	 * die Gleisnutzung.
 	 * @param gc Der Grafikkontext, in den gezeichnet wird.
-	 * @param color Die Farbgebung fÃÅr die Gleisteile.
-	 * @param path Der Koordinatenpfad fÃÅr das Gleis.
+	 * @param color Die Farbgebung für die Gleisteile.
+	 * @param path Der Koordinatenpfad für das Gleis.
 	 */
 	private static void drawRailPath(final GC gc, final Color color, final int[] path)
 	{
@@ -355,9 +355,9 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	}
 
 	/**
-	 * Diese Methode bestimmt die Farbe fÃÅr das zu zeichnende Gleisteil.
-	 * @param route Die FahrstraÃÂe des aktuellen Gleisteils. Kann null sein.
-	 * @param segment Der Gleisabschnitt zu dem das Gleisteil gehÃÂ¶rt.
+	 * Diese Methode bestimmt die Farbe für das zu zeichnende Gleisteil.
+	 * @param route Die Fahrstraße des aktuellen Gleisteils. Kann null sein.
+	 * @param segment Der Gleisabschnitt zu dem das Gleisteil gehört.
 	 * @param gt Das Gleisteil selbst.
 	 * @param next Ein Gleisteil, zu dem hingezeichnet werden muss.
 	 * @return Die berechnete Farbe.
@@ -378,10 +378,10 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 			}
 			else if (route != null)
 			{
-				// Gleisteil gehÃÂ¶rt zu einer FahrstraÃÂe.
+				// Gleisteil gehört zu einer Fahrstraße.
 				if (route.isPart(gt, next))
 				{
-					// NÃâ¬chstes Gleisteil gehÃÂ¶rt auch zur FahrstraÃÂe
+					// Nächstes Gleisteil gehört auch zur Fahrstraße
 					color = gt.isLocked() ? (segment.isEnabled() ? SEGMENT_ENABLED : SEGMENT_DISABLED) : SEGMENT_SWITCHING;
 				}
 				else
@@ -406,7 +406,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 
 	/**
 	 * Wechselt den Zustand einer Abschnittsauswahl.
-	 * @param e Das Ereignis fÃÅr die Auswahl.
+	 * @param e Das Ereignis für die Auswahl.
 	 */
 	private void addSelection(SelectionEvent e)
 	{
@@ -420,7 +420,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 			{
 				controller.addSegmentSelection(abschnitt);
 				log.info("Auswahl: +" + abschnitt.getNumber());
-				setMessage("Abschnitt " + abschnitt.getNumber() + " ausgewÃâ¬hlt.");
+				setMessage("Abschnitt " + abschnitt.getNumber() + " ausgewählt.");
 			}
 			else
 			{
@@ -432,8 +432,8 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	}
 
 	/**
-	 * Diese innere Klasse empfÃâ¬ngt das Ereignis, eine Abschnitts-Checkbox
-	 * ausgewÃâ¬hlt zu haben.
+	 * Diese innere Klasse empfängt das Ereignis, eine Abschnitts-Checkbox
+	 * ausgewählt zu haben.
 	 * @author smork
 	 *
 	 */
@@ -450,8 +450,8 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 
 
 	/**
-	 * Diese Methode legt alle Widgets in dieser Anzeige an. FÃÅr jeden Abschnitt mit einem
-	 * Gleis wird dafÃÅr eine Auswahl-Checkbox angelegt.
+	 * Diese Methode legt alle Widgets in dieser Anzeige an. Für jeden Abschnitt mit einem
+	 * Gleis wird dafür eine Auswahl-Checkbox angelegt.
 	 */
 	public void createPartControl(Composite grandparent) {
 		FormLayout layout = new FormLayout();
@@ -488,7 +488,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	}
 
 	/**
-	 * LÃÂ¶scht die Auswahl aller Abschnitts-Checkboxen.
+	 * Löscht die Auswahl aller Abschnitts-Checkboxen.
 	 */
 	public static void clearSelection()
 	{

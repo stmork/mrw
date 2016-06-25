@@ -24,7 +24,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link Action} lÃÂ¶st eine ÃÂberprÃÅfung der Verbindung zu den Mikrocontrollern aus.
+ * Diese {@link Action} löst eine Überprüfung der Verbindung zu den Mikrocontrollern aus.
  * @author sm
  *
  */

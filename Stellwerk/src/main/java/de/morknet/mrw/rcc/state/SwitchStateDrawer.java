@@ -157,7 +157,7 @@ abstract public class SwitchStateDrawer extends StateDrawer implements Coordinat
 	/**
 	 * Diese Methode holt eine Instanz, die eine Verzweigung zeichnen soll.
 	 * @param v Die zu zeichnende Verzweigung.
-	 * @return Den Zeichner fÃÅr die Verzweigung.
+	 * @return Den Zeichner für die Verzweigung.
 	 */
 	private static SwitchStateDrawer createInstance(Verzweigung v)
 	{

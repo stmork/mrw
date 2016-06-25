@@ -22,7 +22,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.base.MrwException;
 
 /**
- * Diese {@link Action} lÃÂ¶st die Ausgabe aller Fehler aus.
+ * Diese {@link Action} löst die Ausgabe aller Fehler aus.
  * @author sm
  *
  */

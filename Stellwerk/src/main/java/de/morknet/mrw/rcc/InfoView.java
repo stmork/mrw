@@ -48,7 +48,7 @@ import de.morknet.mrw.base.Abschnitt;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse reprÃâ¬sentiert eine View, in der die aktiven FahrstraÃÂen und die ausgewÃâ¬hlten Gleisabschnitte
+ * Diese Klasse repräsentiert eine View, in der die aktiven Fahrstraßen und die ausgewählten Gleisabschnitte
  * angezeigt werden.
  * @author sm
  *
@@ -161,7 +161,7 @@ public class InfoView extends RccViewPart implements InfoViewId, SelectionListen
 		data2.top    = new FormAttachment(100, -50);
 		data2.bottom = new FormAttachment(100,   0);
 		remove_button = new Button(parent, SWT.PUSH);
-		remove_button.setText("LÃÂ¶schen");
+		remove_button.setText("Löschen");
 		remove_button.addSelectionListener(this);
 		remove_button.setLayoutData(data2);
 
@@ -171,7 +171,7 @@ public class InfoView extends RccViewPart implements InfoViewId, SelectionListen
 		data3.top   = new FormAttachment(100, -50);
 		data3.bottom = new FormAttachment(100,   0);
 		remove_all_button = new Button(parent, SWT.PUSH);
-		remove_all_button.setText("Alle lÃÂ¶schen");
+		remove_all_button.setText("Alle löschen");
 		remove_all_button.addSelectionListener(this);
 		remove_all_button.setLayoutData(data3);
 		
@@ -210,8 +210,8 @@ public class InfoView extends RccViewPart implements InfoViewId, SelectionListen
 	}
 	
 	/**
-	 * Diese Methode gibt die in der InfoView ausgewÃâ¬hlte FahrstraÃÂe zurÃÅck.
-	 * @return Die ausgewÃâ¬hlte FahrstraÃÂe.
+	 * Diese Methode gibt die in der InfoView ausgewählte Fahrstraße zurück.
+	 * @return Die ausgewählte Fahrstraße.
 	 */
 	public Route getSelectedRoute()
 	{
@@ -228,8 +228,8 @@ public class InfoView extends RccViewPart implements InfoViewId, SelectionListen
 	}
 
 	/**
-	 * Diese Methode wÃâ¬hlt ein Element der ListBox aus.
-	 * @param object Das auszuwÃâ¬hlende Objekt. Es kann ein Gleisabschnitt oder eine FahrstraÃÂe sein.
+	 * Diese Methode wählt ein Element der ListBox aus.
+	 * @param object Das auszuwählende Objekt. Es kann ein Gleisabschnitt oder eine Fahrstraße sein.
 	 * @see Abschnitt
 	 * @see Route
 	 */
@@ -269,9 +269,9 @@ public class InfoView extends RccViewPart implements InfoViewId, SelectionListen
 	{
 		if (event.getSource() == remove_all_button)
 		{
-			setMessage("Alle FahrstraÃÂen werden aufgelÃÂ¶st...");
+			setMessage("Alle Fahrstraßen werden aufgelöst...");
 			controller.removeAllRoutes();
-			setMessage("Alle FahrstraÃÂen wurden aufgelÃÂ¶st...");
+			setMessage("Alle Fahrstraßen wurden aufgelöst...");
 		}
 		else
 		{
@@ -279,10 +279,10 @@ public class InfoView extends RccViewPart implements InfoViewId, SelectionListen
 
 			if (route != null)
 			{
-				setMessage("FahrstraÃÂe wird aufgelÃÂ¶st...");
+				setMessage("Fahrstraße wird aufgelöst...");
 				controller.deactivateAction(route);
 				controller.removeRoute(route);
-				setMessage("FahrstraÃÂe ist aufgelÃÂ¶st...");
+				setMessage("Fahrstraße ist aufgelöst...");
 			}
 		}
 		update();

@@ -24,7 +24,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link Action} lÃÂ¶st einen Reset der Mikrocontroller aus.
+ * Diese {@link Action} löst einen Reset der Mikrocontroller aus.
  * @author sm
  *
  */

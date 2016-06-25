@@ -25,7 +25,7 @@ import org.eclipse.swt.graphics.GC;
 import de.morknet.mrw.base.DeviceUnit;
 
 /**
- * Diese abstrakte Klasse definiert das Verhalten zum Zeichnen von GerÃâ¬ten (Signale, Weichen)
+ * Diese abstrakte Klasse definiert das Verhalten zum Zeichnen von Geäten (Signale, Weichen)
  * in einer GUI.
  * @see DeviceUnit
  * @author sm
@@ -34,7 +34,7 @@ import de.morknet.mrw.base.DeviceUnit;
 abstract class StateDrawer
 {
 	/**
-	 * Diese Methode bereitet ein GerÃâ¬t zum Zeichnen vor.
+	 * Diese Methode bereitet ein Gerät zum Zeichnen vor.
 	 */
 	abstract void prepare();
 	
@@ -45,13 +45,13 @@ abstract class StateDrawer
 	abstract void draw(GC gc);
 	
 	/**
-	 * Diese Methode berechnet einen horizontalen Versatz abhÃâ¬ngig vom zu zeichnenden GerÃâ¬t.
+	 * Diese Methode berechnet einen horizontalen Versatz abhängig vom zu zeichnenden Gerät.
 	 * @return Der horizontale Versatz.
 	 */
 	abstract int  getGX();
 
 	/**
-	 * In dieser {@link Map} werden alle zu zeichnenden GerÃâ¬te verzeichnet.
+	 * In dieser {@link Map} werden alle zu zeichnenden Geräte verzeichnet.
 	 */
 	final static Map<DeviceUnit, StateDrawer> drawers = new HashMap<DeviceUnit, StateDrawer>();
 }

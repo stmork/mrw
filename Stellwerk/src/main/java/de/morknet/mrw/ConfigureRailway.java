@@ -24,7 +24,7 @@ import org.apache.commons.logging.LogFactory;
 import de.morknet.mrw.EmptyController;
 
 /**
- * Diese Klasse ist ein ausfÃÅhrbares Programm, das die Konfiguration der Eisenbahnanlage
+ * Diese Klasse ist ein ausführbares Programm, das die Konfiguration der Eisenbahnanlage
  * in die Mikrocontroller programmiert.
  * @author sm
  *

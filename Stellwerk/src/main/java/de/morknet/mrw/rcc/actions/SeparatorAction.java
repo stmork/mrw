@@ -21,7 +21,7 @@ import de.morknet.mrw.automatic.MrwActionControl;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link MrwAction} reprÃâ¬sentiert einen Separator, hat also keine weitere FunktionalitÃâ¬t.
+ * Diese {@link MrwAction} repräsentiert einen Separator, hat also keine weitere Funktionalität.
  * @author sm
  *
  */

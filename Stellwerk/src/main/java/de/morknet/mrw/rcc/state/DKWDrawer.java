@@ -26,8 +26,8 @@ import de.morknet.mrw.base.Verzweigung;
 
 /**
  * Diese Klasse zeichnet den Lagezustand einer DKW. Da eine DKW potenziel immer zwei Fahrwege
- * hat, wird nach MÃÂ¶glichkeit nur die Variante gezeichnet, die zum Fahrweg einer FahrstraÃÂe
- * gehÃÂ¶rt.
+ * hat, wird nach Möglichkeit nur die Variante gezeichnet, die zum Fahrweg einer Fahrstraße
+ * gehört.
  * @author sm
  *
  */

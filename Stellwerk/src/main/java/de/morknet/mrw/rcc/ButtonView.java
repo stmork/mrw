@@ -32,7 +32,7 @@ import de.morknet.mrw.Route;
 import de.morknet.mrw.util.NameUtil;
 
 /**
- * Diese Klasse stellt eine View mit die Fahrtkontrollen dar. Es handelt sich dabei um fÃÅnf Buttons:
+ * Diese Klasse stellt eine View mit die Fahrtkontrollen dar. Es handelt sich dabei um fünf Buttons:
  * <ul>
  * <li>Fahrt links
  * <li>Rangieren links
@@ -69,7 +69,7 @@ public class ButtonView extends RccViewPart implements ButtonViewId
 			log.info(NameUtil.logRouteType(shunting, inDirection));
 			try
 			{
-				setMessage("FahrstraÃÂe wird geschaltet...");
+				setMessage("Fahrstraße wird geschaltet...");
 				controller.computeRoute(shunting, inDirection);
 			}
 			catch (Exception e)
@@ -95,7 +95,7 @@ public class ButtonView extends RccViewPart implements ButtonViewId
 				log.info(NameUtil.logRouteType(route));
 				try
 				{
-					setMessage("FahrstraÃÂe wird verlÃâ¬ngert...");
+					setMessage("Fahrstraße wird verlängert...");
 					controller.extendRoute(route);
 				}
 				catch (Exception e)
@@ -115,7 +115,7 @@ public class ButtonView extends RccViewPart implements ButtonViewId
 
 	/**
 	 * Diese Methode erzeugt die Buttons.
-	 * @param parent Der {@link Composite}, in den die {@link Button}s gehÃâ¬ngt werden.
+	 * @param parent Der {@link Composite}, in den die {@link Button}s gehängt werden.
 	 */
 	public void createPartControl(Composite parent)
 	{

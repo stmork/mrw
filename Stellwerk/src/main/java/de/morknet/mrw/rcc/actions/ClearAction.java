@@ -24,7 +24,7 @@ import org.eclipse.jface.action.Action;
 import de.morknet.mrw.rcc.Controller;
 
 /**
- * Diese {@link Action} lÃÂ¶st das Ausschalten aller Signale aus.
+ * Diese {@link Action} löst das Ausschalten aller Signale aus.
  * @author sm
  *
  */
