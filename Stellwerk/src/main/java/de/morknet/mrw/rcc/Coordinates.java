@@ -18,9 +18,11 @@
 package de.morknet.mrw.rcc;
 
 /**
- * Dieses Interface stellt einige Konstanten für die Darstellung des Spurplans bereit. Der Spurplan ist gerastert. In ein
- * Rasterfeld passt exakt eine Weiche oder ein Signal. Dabei kann es sich auch um ein kombiniertes Signal aus Vor- und
- * Hauptsignal handeln.
+ * Dieses Interface stellt einige Konstanten für die Darstellung des Spurplans
+ * bereit. Der Spurplan ist gerastert. In ein Rasterfeld passt exakt eine
+ * Weiche oder ein Signal. Dabei kann es sich auch um ein kombiniertes Signal
+ * aus Vor- und Hauptsignal handeln.
+ * 
  * @see GroupView
  * @author sm
  *

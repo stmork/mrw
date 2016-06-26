@@ -51,7 +51,9 @@ import de.morknet.mrw.rcc.state.SignalStateDrawer;
 import de.morknet.mrw.rcc.state.SwitchStateDrawer;
 
 /**
- * Diese Klasse stellt die Betriebsgruppe als Gleisbildstellwerk dar und verwaltet die Benutzerinteraktion.
+ * Diese Klasse stellt die Betriebsgruppe als Gleisbildstellwerk dar und
+ * verwaltet die Benutzerinteraktion.
+ * 
  * @author smork
  *
  */
@@ -68,7 +70,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	protected final Gruppe gruppe;
 
 	/**
-	 * Das ÃÅbergeordnete GUI-Element.
+	 * Das übergeordnete GUI-Element.
 	 */
 	protected Composite parent;
 
@@ -101,8 +103,9 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	private final static boolean DEBUG = false;
 
 	/**
-	 * Diese Methode zeichnet ein einzelnes Gleis. Die Koordinaten müssen nicht sortiert sein.
-	 * @param gc Der Grafikkontext, inden gezeichnet werden soll
+	 * Diese Methode zeichnet ein einzelnes Gleis. Die Koordinaten müssen nicht
+	 * sortiert sein.
+	 * @param gc Der Grafikkontext, in den gezeichnet werden soll
 	 * @param x1 Startecke x
 	 * @param y1 Startecke y
 	 * @param x2 Endecke x
@@ -213,10 +216,12 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	}
 
 	/**
-	 * Diese Methode berechnet für die Farbgebung eines Gleisteils den Abstand vom Rasterrand. Pro Rasterelement
+	 * Diese Methode berechnet für die Farbgebung eines Gleisteils den Abstand
+	 * vom Rasterrand. Pro Rasterelement
 	 * wird nur ein Balken gemalt. 
 	 * @param diff Das Steigungsdreieck.
-	 * @return Je nach Steigung negativer BASE_OFFSET, Null oder positiver BASE_OFFSET
+	 * @return Je nach Steigung negativer BASE_OFFSET, Null oder positiver
+	 * BASE_OFFSET
 	 */
 	private static int getOffset(final int diff)
 	{
@@ -224,7 +229,8 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	}
 
 	/**
-	 * Diese Methode zeichnet ein gewinkeltes Gleis anhand vorgegebener Koordinaten inklusive der Farbgebung für
+	 * Diese Methode zeichnet ein gewinkeltes Gleis anhand vorgegebener
+	 * Koordinaten inklusive der Farbgebung für
 	 * die Gleisnutzung.
 	 * @param gc Der Grafikkontext, in den gezeichnet wird.
 	 * @param color Die Farbgebung für die Gleisteile.
@@ -362,7 +368,8 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 	 * @param next Ein Gleisteil, zu dem hingezeichnet werden muss.
 	 * @return Die berechnete Farbe.
 	 */
-	private Color getSegmentState(final Abschnitt segment, final Gleisteil gt, final Gleisteil next)
+	private Color getSegmentState(
+			final Abschnitt segment, final Gleisteil gt, final Gleisteil next)
 	{
 		Color color;
 		
@@ -382,7 +389,11 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 				if (route.isPart(gt, next))
 				{
 					// Nächstes Gleisteil gehört auch zur Fahrstraße
-					color = gt.isLocked() ? (segment.isEnabled() ? SEGMENT_ENABLED : SEGMENT_DISABLED) : SEGMENT_SWITCHING;
+					color = gt.isLocked() ?
+							(segment.isEnabled() ?
+									SEGMENT_ENABLED :
+									SEGMENT_DISABLED) :
+							SEGMENT_SWITCHING;
 				}
 				else
 				{
@@ -450,8 +461,8 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 
 
 	/**
-	 * Diese Methode legt alle Widgets in dieser Anzeige an. Für jeden Abschnitt mit einem
-	 * Gleis wird dafür eine Auswahl-Checkbox angelegt.
+	 * Diese Methode legt alle Widgets in dieser Anzeige an. Für jeden
+	 * Abschnitt mit einem Gleis wird dafür eine Auswahl-Checkbox angelegt.
 	 */
 	public void createPartControl(Composite grandparent) {
 		FormLayout layout = new FormLayout();

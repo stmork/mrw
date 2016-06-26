@@ -40,6 +40,7 @@ abstract public class RccViewPart extends ViewPart
 	
 	/**
 	 * Diese Methode setzt eine Statusmeldung in die Statusleiste der GUI.
+	 * 
 	 * @param msg Die Statusmeldung.
 	 */
 	public void setMessage(String msg)
@@ -54,6 +55,7 @@ abstract public class RccViewPart extends ViewPart
 	
 	/**
 	 * Diese Methode setzt eine Fehlermeldung in die Statusleiste der GUI.
+	 * 
 	 * @param msg Die Fehlermeldung.
 	 */
 	public void setErrorMessage(String msg)
@@ -66,7 +68,9 @@ abstract public class RccViewPart extends ViewPart
 	}
 	
 	/**
-	 * Diese Methode liefert die View-ID, unter der dieser {@link ViewPart} im Eclipse registriert wird.
+	 * Diese Methode liefert die View-ID, unter der dieser {@link ViewPart}
+	 * im Eclipse registriert wird.
+	 * 
 	 * @return Die View-ID.
 	 */
 	public abstract String getId(); 

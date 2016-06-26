@@ -32,7 +32,8 @@ import de.morknet.mrw.Route;
 import de.morknet.mrw.util.NameUtil;
 
 /**
- * Diese Klasse stellt eine View mit die Fahrtkontrollen dar. Es handelt sich dabei um fünf Buttons:
+ * Diese Klasse stellt eine View mit die Fahrtkontrollen dar. Es handelt sich
+ * dabei um fünf Buttons:
  * <ul>
  * <li>Fahrt links
  * <li>Rangieren links
@@ -115,7 +116,9 @@ public class ButtonView extends RccViewPart implements ButtonViewId
 
 	/**
 	 * Diese Methode erzeugt die Buttons.
-	 * @param parent Der {@link Composite}, in den die {@link Button}s gehängt werden.
+	 * 
+	 * @param parent Der {@link Composite}, in den die {@link Button}s gehängt
+	 * werden.
 	 */
 	public void createPartControl(Composite parent)
 	{
@@ -173,7 +176,9 @@ public class ButtonView extends RccViewPart implements ButtonViewId
 	}
 
 	/**
-	 * Diese Methode aktiviert je nach Auswahlzustand die Buttons in diesem View. Die Aktualisierung erfolgt asynchron.
+	 * Diese Methode aktiviert je nach Auswahlzustand die Buttons in diesem
+	 * View. Die Aktualisierung erfolgt asynchron.
+	 * 
 	 * @param enabled Aktivierung.
 	 * @param rangieren Rangierflag.
 	 */

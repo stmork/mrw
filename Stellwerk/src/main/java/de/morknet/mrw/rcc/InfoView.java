@@ -48,10 +48,10 @@ import de.morknet.mrw.base.Abschnitt;
 import de.morknet.mrw.util.LogUtil;
 
 /**
- * Diese Klasse repräsentiert eine View, in der die aktiven Fahrstraßen und die ausgewählten Gleisabschnitte
- * angezeigt werden.
+ * Diese Klasse repräsentiert eine View, in der die aktiven Fahrstraßen und die
+ * ausgewählten Gleisabschnitte angezeigt werden.
+ * 
  * @author sm
- *
  */
 public class InfoView extends RccViewPart implements InfoViewId, SelectionListener, ISelectionChangedListener
 {

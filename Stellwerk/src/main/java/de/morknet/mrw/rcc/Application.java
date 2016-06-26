@@ -29,9 +29,10 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
 /**
- * Diese Klasse steuert das Verhalten einer Eclipse-Applikation. Hier wird der zentrale {@link Controller}
- * instanziiert, initialisiert, die Applikation gestartet und vor dem Beenden wird der {@link Controller}
- * kontrolliert deinitialisiert. 
+ * Diese Klasse steuert das Verhalten einer Eclipse-Applikation. Hier wird der
+ * zentrale {@link Controller} instanziiert, initialisiert, die Applikation
+ * gestartet und vor dem Beenden wird der {@link Controller} kontrolliert
+ * deinitialisiert. 
  */
 public class Application implements IApplication
 {

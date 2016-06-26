@@ -23,9 +23,10 @@ import java.util.List;
 import org.eclipse.jface.action.Action;
 
 /**
- * Diese Klasse verwaltet die {@link Action}s. Diese können in der GUI als Menüelemente angezeigt werden.
+ * Diese Klasse verwaltet die {@link Action}s. Diese können in der GUI als
+ * Menüelemente angezeigt werden.
+ * 
  * @author sm
- *
  */
 abstract public class ActionInitializer
 {

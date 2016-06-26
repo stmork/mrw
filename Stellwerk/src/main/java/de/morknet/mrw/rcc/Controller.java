@@ -37,8 +37,11 @@ import de.morknet.mrw.util.LogUtil;
 import de.morknet.mrw.util.MrwProperties;
 
 /**
- * Diese Klasse stellt den zentralen Controller gemäß dem MVC-Pattern dar. Dieser Controller ist von {@link MrwController}
- * abgeleitet, welcher unabhängig von der Benutzeroberfläche die Funktionalität der Eisenbahnsteuerung zur Verfügung stellt.
+ * Diese Klasse stellt den zentralen Controller gemäß dem MVC-Pattern dar.
+ * Dieser Controller ist von {@link MrwController} abgeleitet, welcher
+ * unabhängig von der Benutzeroberfläche die Funktionalität der
+ * Eisenbahnsteuerung zur Verfügung stellt.
+ * 
  * @author sm
  *
  */

@@ -23,10 +23,13 @@ import de.morknet.mrw.batch.Batch;
 import de.morknet.mrw.batch.BatchExecuter;
 
 /**
- * Diese Klasse stellt einen {@link TimerTask} bereit, mit dem blinkende Anzeigeelemente im Spurplan gezeichnet
- * werden können. Zu jedem Zustandswechsel wird eine Aktualisierung der GUI veranlasst. Das passiert aber nur, wenn
- * tatsächlich {@link Batch}es zur Verarbeitung vorliegen. Blinkende Anzeigeelemente sind die Weichen- und Signalnummern
- * der Weichen und Signale, die sich im Umlauf befinden.
+ * Diese Klasse stellt einen {@link TimerTask} bereit, mit dem blinkende
+ * Anzeigeelemente im Spurplan gezeichnet werden können. Zu jedem
+ * Zustandswechsel wird eine Aktualisierung der GUI veranlasst. Das passiert
+ * aber nur, wenn tatsächlich {@link Batch}es zur Verarbeitung vorliegen.
+ * Blinkende Anzeigeelemente sind die Weichen- und Signalnummern der Weichen
+ * und Signale, die sich im Umlauf befinden.
+ * 
  * @author sm
  *
  */
@@ -55,7 +58,9 @@ public class BlinkTask extends TimerTask
 	}
 
 	/**
-	 * Diese Methode gibt den aktuellen Zustand aus, ob Anzeigeelemente ein- oder ausgeschaltet sein soll.
+	 * Diese Methode gibt den aktuellen Zustand aus, ob Anzeigeelemente ein-
+	 * oder ausgeschaltet sein soll.
+	 * 
 	 * @return Sichtbarkeit einiger Anzeigeelemente.
 	 */
 	public boolean getToggle()
