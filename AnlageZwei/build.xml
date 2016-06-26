@@ -12,6 +12,7 @@
 	<property name="model-file"      value="./model.jar"/>
 
 	<property name="findbugs.home"     value="../findbugs"/>
+	<property name="findbugs.exclude"  value="./findbugs-exclude.xml"/>
 	<property name="findbugs.results"  value="./findbugs-results.xml"/>
 
 	<property file="${res-path}/workflow.properties" />
@@ -238,6 +239,7 @@
 				classpathref="run.classpath"
 				effort="max"
 				reportlevel="low"
+				excludeFilter="${findbugs.exclude}"
 				failonerror="true">
 			<sourcePath path="${src-path}:{gen-path}"/>
 			<class location="${bin-path}"/>
