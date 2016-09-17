@@ -80,13 +80,13 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	 */
 	private BatchElement element;
 	private final static Map<Integer, DeviceUnit> devices = new HashMap<Integer, DeviceUnit>();
-	
+
 	/**
 	 * Diese abstrakte Methode gibt das Schaltkommando zurück.
 	 * @return Das Schaltkommando passend zu diesem Gerät. 
 	 */
 	abstract protected Command getCommand();
-	
+
 	/**
 	 * Diese abstrakte Methode definiert das erzeugen einer Konfigurationsmeldung.
 	 * @return Die Konfigurationsmeldung.
@@ -216,22 +216,23 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	protected void addData(MrwMessage msg)
 	{
 	}
-	
+
 	/**
 	 * Diese Methode fügt einen Schaltauftrag einem Verarbeitungsstapel hinzu
 	 * @param batch Der Kommandostapel.
 	 */
 	final public void addCommand(final Batch batch)
 	{
-		MrwMessage msg = createMsg();
+		final MrwMessage msg = createMsg();
 
 		addData(msg);
 		batch.addBatchElement(this, msg);
 	}
 
 	/**
-	 * Diese Methode fügt dem Gerät eine Schaltzeit hinzu. So können durchschnittliche
-	 * Schaltzeiten ermittelt werden. 
+	 * Diese Methode fügt dem Gerät eine Schaltzeit hinzu. So können
+	 * durchschnittliche Schaltzeiten ermittelt werden.
+	 *  
 	 * @param elapsed Die hinzuzufügende Schaltzeit als Zeitquantum. Dieses Zeitquantum
 	 *  entspricht der Periodendauer eines Timerinterrupts auf dem Mikrocontroller. Ist
 	 *  dieses Quantum 0, wird es nicht registriert.
@@ -247,6 +248,7 @@ abstract public class DeviceUnit extends NamedElement implements Comparable<Devi
 	
 	/**
 	 * Diese Methode gibt die durchschnittliche Schaltzeit zurück.
+	 * 
 	 * @param quantum Das Timerquantum, dass der Berechnung zugrunde liegt.
 	 * @return Die absolute durchschnittliche Schaltzeit in Sekunden.
 	 */

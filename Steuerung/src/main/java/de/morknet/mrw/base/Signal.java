@@ -205,7 +205,9 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode setzt den Sollzustand eines Signals. Dabei wird das Signal entriegelt.
+	 * Diese Methode setzt den Sollzustand eines Signals. Dabei wird das Signal
+	 * entriegelt.
+	 * 
 	 * @param sc Das Schaltkommando
 	 * @param shunting  Flag, ob es sich um eine Rangierfahrt handelt.
 	 * @return Die korrigierte Fassung des Schaltkommandos.
@@ -217,8 +219,8 @@ abstract public class Signal extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode schaltet ein Signal aus, so dass es kein Signalbild mehr anzeigt. Dabei wird das
-	 * Signal entriegelt.
+	 * Diese Methode schaltet ein Signal aus, so dass es kein Signalbild mehr
+	 * anzeigt. Dabei wird das Signal entriegelt.
 	 */
 	public void off()
 	{
@@ -227,8 +229,8 @@ abstract public class Signal extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode schaltet ein Signal komplett ein, so dass alle Lampen eingeschaltet sind. Dabei wird das
-	 * Signal entriegelt.
+	 * Diese Methode schaltet ein Signal komplett ein, so dass alle Lampen
+	 * eingeschaltet sind. Dabei wird das Signal entriegelt.
 	 */
 	public void test()
 	{
@@ -246,8 +248,9 @@ abstract public class Signal extends DeviceUnit
 	}
 	
 	/**
-	 * Diese Methode berechnet aus einem Signalkommando das richtige Signalbild abhängig von diesem
-	 * Signal und ob rangiert oder gefahren werden soll.
+	 * Diese Methode berechnet aus einem Signalkommando das richtige Signalbild
+	 * abhängig von diesem Signal und ob rangiert oder gefahren werden soll.
+	 * 
 	 * @param sc Das zu interpretierende Signalkommando.
 	 * @param shunting Das Rangierflag.
 	 * @return Der korrigierte Signalkommando.
@@ -255,13 +258,16 @@ abstract public class Signal extends DeviceUnit
 	abstract protected SignalCommand setSignalCommand(SignalCommand sc, boolean shunting);
 	
 	/**
-	 * Diese Methode gibt den Kommando-Code zum Konfigurieren der Microcontroller zurück.
+	 * Diese Methode gibt den Kommando-Code zum Konfigurieren der
+	 * Microcontroller zurück.
+	 * 
 	 * @return Das Konfigurationskommando.
 	 */
 	abstract protected Command getConfigCode();
 
 	/**
 	 * Diese Methode gibt den aktuellen Zustand des Signals zurück.
+	 * 
 	 * @return Das aktuelle Signalbild dieses Signals.
 	 */
 	public SignalCode getSignalState()
@@ -270,8 +276,9 @@ abstract public class Signal extends DeviceUnit
 	}
 
 	/**
-	 * Diese Methode gibt den Kommandocode zum Schalten eines Signals in Abhängigkeit des Sollzustandes
-	 * zurück.
+	 * Diese Methode gibt den Kommandocode zum Schalten eines Signals in
+	 * Abhängigkeit des Sollzustandes zurück.
+	 * 
 	 * @return Der Schaltcode für das Schaltkommando.
 	 */
 	protected SignalCode getNominalState()

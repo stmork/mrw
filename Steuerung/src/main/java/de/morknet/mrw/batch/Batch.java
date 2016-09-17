@@ -115,15 +115,16 @@ public class Batch
 	 * @param device Das zum Kommando passende Gerät.
 	 * @param msg Das Kommando als MRW-Meldung.
 	 */
-	public void addBatchElement(DeviceUnit device, MrwMessage msg)
+	public void addBatchElement(final DeviceUnit device, final MrwMessage msg)
 	{
-		Integer id = msg.getId();
-		
+		final Integer id = msg.getId();
+
 		if (id != 0)
 		{
 			synchronized(elements)
 			{
-				BatchElement element = new BatchElement(this, device, msg);
+				final BatchElement element = new BatchElement(this, device, msg);
+
 				elements.add(element);
 				cmdCount++;
 				log.debug("BatchElement " + element + " hinzugefügt.");
@@ -140,8 +141,8 @@ public class Batch
 	{
 		synchronized (elements)
 		{
-			DeviceUnit device = element.getDeviceUnit();
-			
+			final DeviceUnit device = element.getDeviceUnit();
+
 			elements.remove(element);
 			device.clearBatchElement();
 			log.debug("BatchElement " + element + " entfernt.");

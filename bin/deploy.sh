@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MRW=${MRW:=AnlageYakindu}
+MRW=${MRW:=AnlageZwei}
 
 echo "Deploying $MRW..."
 
