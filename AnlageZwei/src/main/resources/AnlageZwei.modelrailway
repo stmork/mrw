@@ -161,7 +161,7 @@
       <lampen name="Laterne  8" unit_no="4268" schwellwert="50"/>
       <lampen name="Laterne Bahnhof  5" unit_no="4269" schwellwert="20" typ="4"/>
       <lampen name="Eisenbahnerhaus 2" unit_no="4270" schwellwert="10" typ="15"/>
-      <lampen name="Laterne  7" unit_no="4271" schwellwert="20" typ="64"/>
+      <lampen name="Laterne  7" unit_no="4271" schwellwert="50" typ="64"/>
       <lampen name="Stellwerk Aus" unit_no="4272" schwellwert="72" typ="1"/>
       <lampen name="Schuppen Büro" unit_no="4273" schwellwert="32" typ="15"/>
       <lampen name="Schuppen 1" unit_no="4274" schwellwert="26" typ="3"/>
