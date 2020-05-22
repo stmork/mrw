@@ -1,6 +1,5 @@
 #!/bin/bash
 
-svn upgrade
 set -e
 
 cd Lichtprofile
