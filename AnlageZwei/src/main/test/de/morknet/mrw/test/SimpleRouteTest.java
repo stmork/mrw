@@ -35,14 +35,14 @@ public class SimpleRouteTest extends ControllerTestBase
 		assertRoute(true,  false, "RRRR)R(XL",           "N3d", "2", "S1f");
 		assertRoute(false, true,  "RLRXRRLRRLLXRXLLRLL", "N3d", "B2");
 	}
-	
+
 	@Test
 	public void routes2()
 	{
 		assertRoute(true,  true,  "LXLLXR", "S4b", "N2c");
 		assertRoute(true,  false, "R(", "N2c", "N1a");
 	}
-	
+
 	@Test
 	public void routes3()
 	{
@@ -55,12 +55,12 @@ public class SimpleRouteTest extends ControllerTestBase
 		assertRoute(false, true,  "LRR)LLLRRRR", "SO4a", "4", "SO5a");
 		assertRoute(false, true,  "LRRR)RRR",    "SO3a", "N7a");
 	}
-	
+
 	@Test
 	public void routeError()
 	{
 		final Route route = assertRoute(false, false, "", "S5a", "S2a");
-		
+
 		Assert.assertNull("Es darf keine Fahrstraße geschaltet worden sein!", route);
 	}
 
@@ -82,7 +82,7 @@ public class SimpleRouteTest extends ControllerTestBase
 		assertExtendRoute(route,               "RRRLRR()RRX", "S2a");
 		assertCloseRoute(route);
 	}
-	
+
 	@Test
 	public void free()
 	{

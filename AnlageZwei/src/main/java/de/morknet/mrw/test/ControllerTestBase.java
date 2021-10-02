@@ -78,12 +78,12 @@ abstract public class ControllerTestBase
 			log.info(tcs.getName());
 			Assert.assertNotNull(tcs);
 			model.add(a, tcs);
-		}	
+		}
 
 		Assert.assertTrue(model.validate() == 0);
 		controller.selectRoute(null);
 		Assert.assertNull("Es darf keine Fahrstraße ausgewählt sein!", controller.getSelectedRoute());
-		
+
 		Assert.assertTrue("Es darf keine Fahrstraße vorhanden sein!", Route.getRoutes().isEmpty());
 		for (Abschnitt a : model.getSegments())
 		{
@@ -313,7 +313,7 @@ abstract public class ControllerTestBase
 		{
 			log.info(a);
 		}
-		
+
 		final BatchRunner runner = controller.computeRoute(shunting, direction);
 		if (runner != null)
 		{
@@ -321,14 +321,14 @@ abstract public class ControllerTestBase
 
 			Assert.assertFalse("Die Fahrstraße darf kein Wartungsmodus sein!", route.isMaintainance());
 			waitForRunner(runner);
-	
+
 			if (runner.getException() != null)
 			{
 				controller.removeRoute(route);
 				controller.clearSegmentSelection();
 				throw runner.getException();
 			}
-	
+
 			Assert.assertTrue(
 					LogUtil.printf("Die Anzahl der Stützpunkte einer Fahrstraße (%s) muss mindestens 2 betragen!", route.toString()),
 					route.getHopCount() >= 2);
@@ -336,7 +336,7 @@ abstract public class ControllerTestBase
 					LogUtil.printf("Die Anzahl der Stützpunkte einer Fahrstraße (%s) kann nicht größer als die Auswahl sein!", route.toString()),
 					route.getHopCount() <= segmentNames.length);
 			Assert.assertTrue("Es muss eine Fahrstraße vorhanden sein!", Route.hasRoutes());
-	
+
 			assertSwitches(runner, switchCodes);
 			assertSegments(runner);
 			assertSelectedRoute(runner);
