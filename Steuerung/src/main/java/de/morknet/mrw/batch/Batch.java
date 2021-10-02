@@ -263,14 +263,14 @@ public class Batch
 						}
 					}
 				}
-				
+
 				// Fehlerstatus loggen und Exception werfen
 				if (hasError())
 				{
 					log.info("Batch Kommandoverarbeitung mit Fehlern.");
 					throw new FailedExecutionException(this);
 				}
-				
+
 				// Unvollständigkeit loggen und Exception werfen.
 				if (!isComplete())
 				{

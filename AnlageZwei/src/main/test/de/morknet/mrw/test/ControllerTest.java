@@ -58,13 +58,13 @@ public class ControllerTest extends ControllerTestBase
 	{
 		controller.queryMicroControllerState();
 	}
-	
+
 	@Test
 	public void clearSignals()
 	{
 		controller.clearSignals();
 	}
-	
+
 	@Test
 	public void testSignals()
 	{

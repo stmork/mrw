@@ -923,10 +923,10 @@ abstract public class MrwController implements CANMessageProcessor
 		{
 			log.debug(">resetModelRailWay()");
 		}
-		
+
 		// Erst alle Actions ausschalten.
 		deactivateActions();
-		
+
 		// Modelleisenbahn komplett aussschalten.
 		BatchExecuter executer = new BatchExecuter();
 		Batch batch;

@@ -113,7 +113,7 @@ abstract public class ControllerTestBase
 			controller.addSegmentSelection(segment);
 		}
 	}
-	
+
 	final protected void sleep(final int seconds)
 	{
 		try
@@ -127,7 +127,7 @@ abstract public class ControllerTestBase
 			log.error(e.getLocalizedMessage(), e);
 		}
 	}
-	
+
 	final protected void sleep(final long millies)
 	{
 		try
@@ -141,12 +141,12 @@ abstract public class ControllerTestBase
 			log.error(e.getLocalizedMessage(), e);
 		}
 	}
-	
+
 	final protected void waitForRunner(final BatchRunner runner)
 	{
 		waitForRunner(runner, 0);
 	}
-	
+
 	final protected void waitForRunner(final BatchRunner runner, int seconds)
 	{
 		try
@@ -164,7 +164,7 @@ abstract public class ControllerTestBase
 			log.error(e.getLocalizedMessage(), e);
 		}
 	}
-	
+
 	final protected void dumpSwitches(final Route route)
 	{
 		for(Gleisteil gt : route)
@@ -179,7 +179,7 @@ abstract public class ControllerTestBase
 	}
 
 	private final static Map<Character, DirectionCode> switchCodeMap = new HashMap<Character, DirectionCode>();
-	
+
 	static
 	{
 		switchCodeMap.put('L', DirectionCode.LEFT);
@@ -364,7 +364,7 @@ abstract public class ControllerTestBase
 		assertSelectedRoute(runner);
 		Assert.assertEquals("Es darf kein Gleisabschnitt ausgewählt sein!", controller.getSegmentSelection().size(), 0);
 	}
-	
+
 	final protected void assertCloseRoute(final Route route)
 	{
 		controller.removeAllRoutes();
@@ -455,7 +455,7 @@ abstract public class ControllerTestBase
 			}
 		}
 	}
-	
+
 	final protected void simulateTour(final Route route)
 	{
 		simulateTour(route, 0);
