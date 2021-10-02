@@ -4,15 +4,15 @@
 
 	<property name="src-path"      value="./src/main/java"/>
 	<property name="bin-path"      value="./bin"/>
-	<property name="findbugs.home" value="../findbugs"/>
+	<property name="spotbugs.home" value="../spotbugs"/>
 	<property name="plugin.jar"    value="de.morknet.mrw.control.jar"/>
 
 	<!-- ==================================================== -->
 	<!--              Setting up libraries                    --> 
 	<!-- ==================================================== -->
 
-	<path id="findbugs.lib">
-		<fileset dir="${findbugs.home}">
+	<path id="spotbugs.lib">
+		<fileset dir="${spotbugs.home}">
 			<include name="lib/*.jar"/>
 		</fileset>
 	</path>
@@ -41,16 +41,16 @@
 		</fileset>
 	</path>
 
-	<path id="findbugs.classpath">
+	<path id="spotbugs.classpath">
 		<path refid="run.classpath"/>
-		<path refid="findbugs.lib"/>
+		<path refid="spotbugs.lib"/>
 	</path>
 
 	<!-- ==================================================== -->
 	<!--            Setting up target definitions             --> 
 	<!-- ==================================================== -->
 
-	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="findbugs.classpath"/>
+	<taskdef name="spotbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="spotbugs.classpath"/>
 
 	<!-- ==================================================== -->
 	<!--              Setting up build targets                --> 
@@ -110,9 +110,9 @@
 		<java classname="de.morknet.mrw.comm.test.Config" classpathref="run.classpath"/>
 	</target>
 
-	<target name="findbugs" depends="compile">
+	<target name="spotbugs" depends="compile">
 		<echo message="Checking ${ant.project.name}..."/>
-		<findbugs jvmargs="-Xmx128m" home="${findbugs.home}"
+		<spotbugs jvmargs="-Xmx128m" home="${spotbugs.home}"
 				output="xml:withMessages"
 				outputFile="findbugs-results.xml"
 				classpathref="run.classpath"
@@ -122,6 +122,6 @@
 			<sourcePath path="${src-path}"/>
 			<class location="${bin-path}"/>
 			<auxclasspath refid="run.classpath"/>
-		</findbugs>
+		</spotbugs>
 	</target>
 </project>

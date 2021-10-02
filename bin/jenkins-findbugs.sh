@@ -3,13 +3,13 @@
 set -e
 
 cd Steuerung
-ant findbugs
+ant spotbugs
 
 cd ../Stellwerk
-ant findbugs
+ant spotbugs
 
 cd ../AnlageZwei
-ant findbugs
+ant spotbugs
 
 cd ../Lichtprofile
-ant findbugs
+ant spotbugs

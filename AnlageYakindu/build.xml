@@ -50,8 +50,8 @@
 		</fileset>
 	</path>
 
-	<path id="findbugs.lib">
-		<fileset dir="${findbugs.home}">
+	<path id="spotbugs.lib">
+		<fileset dir="${spotbugs.home}">
 			<include name="**/*.jar"/>
 		</fileset>
 	</path>
@@ -103,9 +103,9 @@
 		<path refid="log4j.lib"/>
 	</path>
 
-	<path id="findbugs.classpath">
+	<path id="spotbugs.classpath">
 		<path refid="run.classpath"/>
-		<path refid="findbugs.lib"/>
+		<path refid="spotbugs.lib"/>
 	</path>
 
 	<!-- ==================================================== -->

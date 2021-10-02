@@ -11,9 +11,9 @@
 	<property name="lib-path"        value="./lib"/>
 	<property name="model-file"      value="./model.jar"/>
 
-	<property name="findbugs.home"     value="../findbugs"/>
-	<property name="findbugs.exclude"  value="./findbugs-exclude.xml"/>
-	<property name="findbugs.results"  value="./findbugs-results.xml"/>
+	<property name="spotbugs.home"     value="../spotbugs"/>
+	<property name="spotbugs.exclude"  value="./findbugs-exclude.xml"/>
+	<property name="spotbugs.results"  value="./findbugs-results.xml"/>
 
 	<property file="${res-path}/workflow.properties" />
 	<property name="gen-src-path"    value="${gen-src}"/>
@@ -63,8 +63,8 @@
 		</fileset>
 	</path>
 
-	<path id="findbugs.lib">
-		<fileset dir="${findbugs.home}">
+	<path id="spotbugs.lib">
+		<fileset dir="${spotbugs.home}">
 			<include name="lib/*.jar"/>
 		</fileset>
 	</path>
@@ -125,9 +125,9 @@
 		<path refid="coverage.lib"/>
 	</path>
 
-	<path id="findbugs.classpath">
+	<path id="spotbugs.classpath">
 		<path refid="run.classpath"/>
-		<path refid="findbugs.lib"/>
+		<path refid="spotbugs.lib"/>
 	</path>
 
 	<path id="junit.classpath">
@@ -142,7 +142,7 @@
 	<!-- ==================================================== -->
 
 	<taskdef name="workflow" classname="org.eclipse.emf.mwe.core.ant.WorkflowAntTask"           classpathref="generate.classpath"/>
-	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"               classpathref="findbugs.lib"/>
+	<taskdef name="spotbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"               classpathref="spotbugs.lib"/>
 	<taskdef name="junit"    classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="junit.classpath"/>
 
 	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
@@ -221,7 +221,7 @@
 	<!--              Setting up runtime targets              --> 
 	<!-- ==================================================== -->
 
-	<target name="jenkins" depends="clean,generate,findbugs,jacoco"/>
+	<target name="jenkins" depends="clean,generate,spotbugs,jacoco"/>
 
 	<target name="run" depends="compile">
 		<java classname="de.morknet.mrw.test.Eisenbahn" classpathref="run.classpath"/>
@@ -231,20 +231,20 @@
 		<java classname="de.morknet.mrw.test.FormsignalTest" classpathref="run.classpath"/>
 	</target>
 
-	<target name="findbugs" depends="compile">
+	<target name="spotbugs" depends="compile">
 		<echo message="Checking ${ant.project.name}..."/>
-		<findbugs jvmargs="-Xmx128m" home="${findbugs.home}"
+		<spotbugs jvmargs="-Xmx128m" home="${spotbugs.home}"
 				output="xml:withMessages"
 				outputFile="findbugs-results.xml"
 				classpathref="run.classpath"
 				effort="max"
 				reportlevel="low"
-				excludeFilter="${findbugs.exclude}"
+				excludeFilter="${spotbugs.exclude}"
 				failonerror="true">
 			<sourcePath path="${src-path}:{gen-path}"/>
 			<class location="${bin-path}"/>
 			<auxclasspath refid="run.classpath"/>
-		</findbugs>
+		</spotbugs>
 	</target>
 	
 	<target name="smoketest" depends="compile">
