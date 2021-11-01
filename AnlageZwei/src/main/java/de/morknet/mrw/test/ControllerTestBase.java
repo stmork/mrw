@@ -84,6 +84,7 @@ abstract public class ControllerTestBase
 		controller.selectRoute(null);
 		Assert.assertNull("Es darf keine Fahrstraße ausgewählt sein!", controller.getSelectedRoute());
 
+		controller.removeAllRoutes();
 		Assert.assertTrue("Es darf keine Fahrstraße vorhanden sein!", Route.getRoutes().isEmpty());
 		for (Abschnitt a : model.getSegments())
 		{
