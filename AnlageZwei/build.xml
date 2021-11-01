@@ -278,6 +278,11 @@
 		</jacoco:coverage>
 	</target>
 
+	<target name="print-version">
+		<echo>Java/JVM version: ${ant.java.version}</echo>
+		<echo>Java/JVM detail version: ${java.version}</echo>
+	</target>
+
 	<target name="jacoco" depends="test">
 		<jacoco:report>
 			<executiondata>
