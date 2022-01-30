@@ -22,10 +22,10 @@ import de.morknet.mrw.metamodel.ModelrailwayPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.LichtImpl#getAnschluss <em>Anschluss</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -54,9 +54,10 @@ public class LichtImpl extends BeleuchtungsmittelImpl implements Licht {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Anschluss getAnschluss() {
 		if (eContainerFeatureID() != ModelrailwayPackage.LICHT__ANSCHLUSS) return null;
-		return (Anschluss)eContainer();
+		return (Anschluss)eInternalContainer();
 	}
 
 	/**
@@ -74,6 +75,7 @@ public class LichtImpl extends BeleuchtungsmittelImpl implements Licht {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAnschluss(Anschluss newAnschluss) {
 		if (newAnschluss != eInternalContainer() || (eContainerFeatureID() != ModelrailwayPackage.LICHT__ANSCHLUSS && newAnschluss != null)) {
 			if (EcoreUtil.isAncestor(this, newAnschluss))

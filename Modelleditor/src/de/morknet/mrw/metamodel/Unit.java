@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Unit#getUnit_no <em>Unit no</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getUnit()
  * @model abstract="true"

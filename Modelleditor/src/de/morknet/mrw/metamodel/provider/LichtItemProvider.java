@@ -27,13 +27,7 @@ import de.morknet.mrw.metamodel.Licht;
  * @generated
  */
 public class LichtItemProvider
-	extends BeleuchtungsmittelItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends BeleuchtungsmittelItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -30,7 +30,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 */
 	public static ModelrailwayFactory init() {
 		try {
-			ModelrailwayFactory theModelrailwayFactory = (ModelrailwayFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.morknet.de/Modelrailway"); 
+			ModelrailwayFactory theModelrailwayFactory = (ModelrailwayFactory)EPackage.Registry.INSTANCE.getEFactory(ModelrailwayPackage.eNS_URI);
 			if (theModelrailwayFactory != null) {
 				return theModelrailwayFactory;
 			}
@@ -91,6 +91,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Anschluss createAnschluss() {
 		AnschlussImpl anschluss = new AnschlussImpl();
 		return anschluss;
@@ -101,6 +102,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisabschnitt createGleisabschnitt() {
 		GleisabschnittImpl gleisabschnitt = new GleisabschnittImpl();
 		return gleisabschnitt;
@@ -111,6 +113,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Modell createModell() {
 		ModellImpl modell = new ModellImpl();
 		return modell;
@@ -121,6 +124,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Controller createController() {
 		ControllerImpl controller = new ControllerImpl();
 		return controller;
@@ -131,6 +135,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleismodul createGleismodul() {
 		GleismodulImpl gleismodul = new GleismodulImpl();
 		return gleismodul;
@@ -141,6 +146,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Licht createLicht() {
 		LichtImpl licht = new LichtImpl();
 		return licht;
@@ -151,6 +157,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Ausfahrsignal createAusfahrsignal() {
 		AusfahrsignalImpl ausfahrsignal = new AusfahrsignalImpl();
 		return ausfahrsignal;
@@ -161,6 +168,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Bahnhof createBahnhof() {
 		BahnhofImpl bahnhof = new BahnhofImpl();
 		return bahnhof;
@@ -171,6 +179,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Impulsmodul createImpulsmodul() {
 		ImpulsmodulImpl impulsmodul = new ImpulsmodulImpl();
 		return impulsmodul;
@@ -181,6 +190,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Einfahrsignal createEinfahrsignal() {
 		EinfahrsignalImpl einfahrsignal = new EinfahrsignalImpl();
 		return einfahrsignal;
@@ -191,6 +201,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Weiche createWeiche() {
 		WeicheImpl weiche = new WeicheImpl();
 		return weiche;
@@ -201,6 +212,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Formvorsignal createFormvorsignal() {
 		FormvorsignalImpl formvorsignal = new FormvorsignalImpl();
 		return formvorsignal;
@@ -211,6 +223,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleis createGleis() {
 		GleisImpl gleis = new GleisImpl();
 		return gleis;
@@ -221,6 +234,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Blocksignal createBlocksignal() {
 		BlocksignalImpl blocksignal = new BlocksignalImpl();
 		return blocksignal;
@@ -231,6 +245,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Vorsignal createVorsignal() {
 		VorsignalImpl vorsignal = new VorsignalImpl();
 		return vorsignal;
@@ -241,6 +256,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DKW createDKW() {
 		DKWImpl dkw = new DKWImpl();
 		return dkw;
@@ -251,6 +267,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleissperrsignal createGleissperrsignal() {
 		GleissperrsignalImpl gleissperrsignal = new GleissperrsignalImpl();
 		return gleissperrsignal;
@@ -261,6 +278,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Formhauptsignal createFormhauptsignal() {
 		FormhauptsignalImpl formhauptsignal = new FormhauptsignalImpl();
 		return formhauptsignal;
@@ -271,6 +289,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Formgleissperrsignal createFormgleissperrsignal() {
 		FormgleissperrsignalImpl formgleissperrsignal = new FormgleissperrsignalImpl();
 		return formgleissperrsignal;
@@ -281,6 +300,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Strecke createStrecke() {
 		StreckeImpl strecke = new StreckeImpl();
 		return strecke;
@@ -291,6 +311,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Beleuchtungsmodul createBeleuchtungsmodul() {
 		BeleuchtungsmodulImpl beleuchtungsmodul = new BeleuchtungsmodulImpl();
 		return beleuchtungsmodul;
@@ -301,6 +322,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Lampe createLampe() {
 		LampeImpl lampe = new LampeImpl();
 		return lampe;
@@ -311,6 +333,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ModelrailwayPackage getModelrailwayPackage() {
 		return (ModelrailwayPackage)getEPackage();
 	}

@@ -13,6 +13,7 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.DKW#isAdIstAbzweig <em>Ad Ist Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.DKW#isBcIstAbzweig <em>Bc Ist Abzweig</em>}</li>
@@ -21,7 +22,6 @@ package de.morknet.mrw.metamodel;
  *   <li>{@link de.morknet.mrw.metamodel.DKW#getB <em>B</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.DKW#getD <em>D</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getDKW()
  * @model

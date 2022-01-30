@@ -14,11 +14,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Gruppe#getModell <em>Modell</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gruppe#getAbschnitt <em>Abschnitt</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getGruppe()
  * @model abstract="true"

@@ -30,13 +30,13 @@ import de.morknet.mrw.metamodel.ModelrailwayPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichtsignale <em>Lichtsignale</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getController <em>Controller</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichter <em>Lichter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -105,6 +105,7 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNummer() {
 		return nummer;
 	}
@@ -114,6 +115,7 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNummer(int newNummer) {
 		int oldNummer = nummer;
 		nummer = newNummer;
@@ -126,6 +128,7 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Lichtsignal> getLichtsignale() {
 		if (lichtsignale == null) {
 			lichtsignale = new EObjectWithInverseResolvingEList<Lichtsignal>(Lichtsignal.class, this, ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE, ModelrailwayPackage.LICHTSIGNAL__ANSCHLUSS);
@@ -138,9 +141,10 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Controller getController() {
 		if (eContainerFeatureID() != ModelrailwayPackage.ANSCHLUSS__CONTROLLER) return null;
-		return (Controller)eContainer();
+		return (Controller)eInternalContainer();
 	}
 
 	/**
@@ -148,6 +152,7 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Licht> getLichter() {
 		if (lichter == null) {
 			lichter = new EObjectContainmentWithInverseEList<Licht>(Licht.class, this, ModelrailwayPackage.ANSCHLUSS__LICHTER, ModelrailwayPackage.LICHT__ANSCHLUSS);
@@ -295,7 +300,7 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nummer: ");
 		result.append(nummer);
 		result.append(')');

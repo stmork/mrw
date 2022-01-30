@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#isAdIstAbzweig <em>Ad Ist Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#isBcIstAbzweig <em>Bc Ist Abzweig</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#getB <em>B</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#getD <em>D</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -139,6 +139,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isAdIstAbzweig() {
 		return adIstAbzweig;
 	}
@@ -148,6 +149,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAdIstAbzweig(boolean newAdIstAbzweig) {
 		boolean oldAdIstAbzweig = adIstAbzweig;
 		adIstAbzweig = newAdIstAbzweig;
@@ -160,6 +162,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isBcIstAbzweig() {
 		return bcIstAbzweig;
 	}
@@ -169,6 +172,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBcIstAbzweig(boolean newBcIstAbzweig) {
 		boolean oldBcIstAbzweig = bcIstAbzweig;
 		bcIstAbzweig = newBcIstAbzweig;
@@ -181,6 +185,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getA() {
 		if (a != null && a.eIsProxy()) {
 			InternalEObject oldA = (InternalEObject)a;
@@ -207,6 +212,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setA(Gleisteil newA) {
 		Gleisteil oldA = a;
 		a = newA;
@@ -219,6 +225,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getC() {
 		if (c != null && c.eIsProxy()) {
 			InternalEObject oldC = (InternalEObject)c;
@@ -245,6 +252,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setC(Gleisteil newC) {
 		Gleisteil oldC = c;
 		c = newC;
@@ -257,6 +265,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getB() {
 		if (b != null && b.eIsProxy()) {
 			InternalEObject oldB = (InternalEObject)b;
@@ -283,6 +292,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setB(Gleisteil newB) {
 		Gleisteil oldB = b;
 		b = newB;
@@ -295,6 +305,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getD() {
 		if (d != null && d.eIsProxy()) {
 			InternalEObject oldD = (InternalEObject)d;
@@ -321,6 +332,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setD(Gleisteil newD) {
 		Gleisteil oldD = d;
 		d = newD;
@@ -449,7 +461,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (adIstAbzweig: ");
 		result.append(adIstAbzweig);
 		result.append(", bcIstAbzweig: ");

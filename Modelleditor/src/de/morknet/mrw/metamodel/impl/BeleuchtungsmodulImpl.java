@@ -25,10 +25,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl#getLampen <em>Lampen</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -66,6 +66,7 @@ public class BeleuchtungsmodulImpl extends ModulImpl implements Beleuchtungsmodu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Lampe> getLampen() {
 		if (lampen == null) {
 			lampen = new EObjectContainmentWithInverseEList<Lampe>(Lampe.class, this, ModelrailwayPackage.BELEUCHTUNGSMODUL__LAMPEN, ModelrailwayPackage.LAMPE__MODUL);

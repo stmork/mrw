@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.UnitImpl#getUnit_no <em>Unit no</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -73,6 +73,7 @@ public abstract class UnitImpl extends EObjectImpl implements Unit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getUnit_no() {
 		return unit_no;
 	}
@@ -82,6 +83,7 @@ public abstract class UnitImpl extends EObjectImpl implements Unit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnit_no(int newUnit_no) {
 		int oldUnit_no = unit_no;
 		unit_no = newUnit_no;
@@ -156,7 +158,7 @@ public abstract class UnitImpl extends EObjectImpl implements Unit {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (unit_no: ");
 		result.append(unit_no);
 		result.append(')');

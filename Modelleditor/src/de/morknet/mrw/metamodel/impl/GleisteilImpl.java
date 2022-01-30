@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisteilImpl#getTeile <em>Teile</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisteilImpl#isAInZaehlrichtung <em>AIn Zaehlrichtung</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -93,6 +93,7 @@ public abstract class GleisteilImpl extends BauelementImpl implements Gleisteil 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getTeile() {
 		return teile;
 	}
@@ -102,6 +103,7 @@ public abstract class GleisteilImpl extends BauelementImpl implements Gleisteil 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTeile(int newTeile) {
 		int oldTeile = teile;
 		teile = newTeile;
@@ -114,6 +116,7 @@ public abstract class GleisteilImpl extends BauelementImpl implements Gleisteil 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isAInZaehlrichtung() {
 		return aInZaehlrichtung;
 	}
@@ -123,6 +126,7 @@ public abstract class GleisteilImpl extends BauelementImpl implements Gleisteil 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAInZaehlrichtung(boolean newAInZaehlrichtung) {
 		boolean oldAInZaehlrichtung = aInZaehlrichtung;
 		aInZaehlrichtung = newAInZaehlrichtung;
@@ -207,7 +211,7 @@ public abstract class GleisteilImpl extends BauelementImpl implements Gleisteil 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (teile: ");
 		result.append(teile);
 		result.append(", aInZaehlrichtung: ");

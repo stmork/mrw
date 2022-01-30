@@ -33,13 +33,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getUnit_no <em>Unit no</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getGruppe <em>Gruppe</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getModul <em>Modul</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getBauelement <em>Bauelement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -108,6 +108,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getUnit_no() {
 		return unit_no;
 	}
@@ -117,6 +118,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnit_no(int newUnit_no) {
 		int oldUnit_no = unit_no;
 		unit_no = newUnit_no;
@@ -129,9 +131,10 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gruppe getGruppe() {
 		if (eContainerFeatureID() != ModelrailwayPackage.GLEISABSCHNITT__GRUPPE) return null;
-		return (Gruppe)eContainer();
+		return (Gruppe)eInternalContainer();
 	}
 
 	/**
@@ -139,6 +142,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleismodul getModul() {
 		if (modul != null && modul.eIsProxy()) {
 			InternalEObject oldModul = (InternalEObject)modul;
@@ -180,6 +184,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModul(Gleismodul newModul) {
 		if (newModul != modul) {
 			NotificationChain msgs = null;
@@ -199,6 +204,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Bauelement> getBauelement() {
 		if (bauelement == null) {
 			bauelement = new EObjectContainmentWithInverseEList<Bauelement>(Bauelement.class, this, ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT, ModelrailwayPackage.BAUELEMENT__ABSCHNITT);
@@ -387,7 +393,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (unit_no: ");
 		result.append(unit_no);
 		result.append(')');

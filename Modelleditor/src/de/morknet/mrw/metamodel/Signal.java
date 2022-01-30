@@ -13,10 +13,10 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Signal#isInZaehlrichtung <em>In Zaehlrichtung</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getSignal()
  * @model abstract="true"

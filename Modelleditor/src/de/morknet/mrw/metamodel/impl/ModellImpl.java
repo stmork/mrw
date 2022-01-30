@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ModellImpl#getController <em>Controller</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ModellImpl#getGruppe <em>Gruppe</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -81,6 +81,7 @@ public class ModellImpl extends ElementImpl implements Modell {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Controller> getController() {
 		if (controller == null) {
 			controller = new EObjectContainmentWithInverseEList<Controller>(Controller.class, this, ModelrailwayPackage.MODELL__CONTROLLER, ModelrailwayPackage.CONTROLLER__MODELL);
@@ -93,6 +94,7 @@ public class ModellImpl extends ElementImpl implements Modell {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Gruppe> getGruppe() {
 		if (gruppe == null) {
 			gruppe = new EObjectContainmentWithInverseEList<Gruppe>(Gruppe.class, this, ModelrailwayPackage.MODELL__GRUPPE, ModelrailwayPackage.GRUPPE__MODELL);

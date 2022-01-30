@@ -22,13 +22,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#isIstAbzweig <em>Ist Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#isIstHauptgleis <em>Ist Hauptgleis</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#getA <em>A</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#getB <em>B</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -117,6 +117,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIstAbzweig() {
 		return istAbzweig;
 	}
@@ -126,6 +127,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIstAbzweig(boolean newIstAbzweig) {
 		boolean oldIstAbzweig = istAbzweig;
 		istAbzweig = newIstAbzweig;
@@ -138,6 +140,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIstHauptgleis() {
 		return istHauptgleis;
 	}
@@ -147,6 +150,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIstHauptgleis(boolean newIstHauptgleis) {
 		boolean oldIstHauptgleis = istHauptgleis;
 		istHauptgleis = newIstHauptgleis;
@@ -159,6 +163,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getA() {
 		if (a != null && a.eIsProxy()) {
 			InternalEObject oldA = (InternalEObject)a;
@@ -185,6 +190,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setA(Gleisteil newA) {
 		Gleisteil oldA = a;
 		a = newA;
@@ -197,6 +203,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getB() {
 		if (b != null && b.eIsProxy()) {
 			InternalEObject oldB = (InternalEObject)b;
@@ -223,6 +230,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setB(Gleisteil newB) {
 		Gleisteil oldB = b;
 		b = newB;
@@ -329,7 +337,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (istAbzweig: ");
 		result.append(istAbzweig);
 		result.append(", istHauptgleis: ");

@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.MagnetartikelImpl#getSpulen <em>Spulen</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.MagnetartikelImpl#getModul <em>Modul</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -86,6 +86,7 @@ public abstract class MagnetartikelImpl extends BauelementImpl implements Magnet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getSpulen() {
 		return spulen;
 	}
@@ -95,6 +96,7 @@ public abstract class MagnetartikelImpl extends BauelementImpl implements Magnet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSpulen(int newSpulen) {
 		int oldSpulen = spulen;
 		spulen = newSpulen;
@@ -107,6 +109,7 @@ public abstract class MagnetartikelImpl extends BauelementImpl implements Magnet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Impulsmodul getModul() {
 		if (modul != null && modul.eIsProxy()) {
 			InternalEObject oldModul = (InternalEObject)modul;
@@ -148,6 +151,7 @@ public abstract class MagnetartikelImpl extends BauelementImpl implements Magnet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModul(Impulsmodul newModul) {
 		if (newModul != modul) {
 			NotificationChain msgs = null;
@@ -270,7 +274,7 @@ public abstract class MagnetartikelImpl extends BauelementImpl implements Magnet
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (spulen: ");
 		result.append(spulen);
 		result.append(')');

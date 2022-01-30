@@ -25,13 +25,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#getSpulen <em>Spulen</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#getModul <em>Modul</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#getUnit_no <em>Unit no</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#isNeu <em>Neu</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -130,6 +130,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getSpulen() {
 		return spulen;
 	}
@@ -139,6 +140,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSpulen(int newSpulen) {
 		int oldSpulen = spulen;
 		spulen = newSpulen;
@@ -151,6 +153,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Impulsmodul getModul() {
 		if (modul != null && modul.eIsProxy()) {
 			InternalEObject oldModul = (InternalEObject)modul;
@@ -192,6 +195,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModul(Impulsmodul newModul) {
 		if (newModul != modul) {
 			NotificationChain msgs = null;
@@ -211,6 +215,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getUnit_no() {
 		return unit_no;
 	}
@@ -220,6 +225,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnit_no(int newUnit_no) {
 		int oldUnit_no = unit_no;
 		unit_no = newUnit_no;
@@ -232,6 +238,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNeu() {
 		return neu;
 	}
@@ -241,6 +248,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNeu(boolean newNeu) {
 		boolean oldNeu = neu;
 		neu = newNeu;
@@ -422,7 +430,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (spulen: ");
 		result.append(spulen);
 		result.append(", unit_no: ");

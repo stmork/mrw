@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GruppeImpl#getModell <em>Modell</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GruppeImpl#getAbschnitt <em>Abschnitt</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -71,9 +71,10 @@ public abstract class GruppeImpl extends ElementImpl implements Gruppe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Modell getModell() {
 		if (eContainerFeatureID() != ModelrailwayPackage.GRUPPE__MODELL) return null;
-		return (Modell)eContainer();
+		return (Modell)eInternalContainer();
 	}
 
 	/**
@@ -81,6 +82,7 @@ public abstract class GruppeImpl extends ElementImpl implements Gruppe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Gleisabschnitt> getAbschnitt() {
 		if (abschnitt == null) {
 			abschnitt = new EObjectContainmentWithInverseEList<Gleisabschnitt>(Gleisabschnitt.class, this, ModelrailwayPackage.GRUPPE__ABSCHNITT, ModelrailwayPackage.GLEISABSCHNITT__GRUPPE);

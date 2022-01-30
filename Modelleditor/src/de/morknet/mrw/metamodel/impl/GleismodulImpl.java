@@ -27,10 +27,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleismodulImpl#getAbschnitte <em>Abschnitte</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -69,6 +69,7 @@ public class GleismodulImpl extends ModulImpl implements Gleismodul {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Gleisabschnitt> getAbschnitte() {
 		if (abschnitte == null) {
 			abschnitte = new EObjectWithInverseResolvingEList<Gleisabschnitt>(Gleisabschnitt.class, this, ModelrailwayPackage.GLEISMODUL__ABSCHNITTE, ModelrailwayPackage.GLEISABSCHNITT__MODUL);

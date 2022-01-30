@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.SignalImpl#getUnit_no <em>Unit no</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.SignalImpl#isInZaehlrichtung <em>In Zaehlrichtung</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -94,6 +94,7 @@ public abstract class SignalImpl extends BauelementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getUnit_no() {
 		return unit_no;
 	}
@@ -103,6 +104,7 @@ public abstract class SignalImpl extends BauelementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnit_no(int newUnit_no) {
 		int oldUnit_no = unit_no;
 		unit_no = newUnit_no;
@@ -115,6 +117,7 @@ public abstract class SignalImpl extends BauelementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isInZaehlrichtung() {
 		return inZaehlrichtung;
 	}
@@ -124,6 +127,7 @@ public abstract class SignalImpl extends BauelementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInZaehlrichtung(boolean newInZaehlrichtung) {
 		boolean oldInZaehlrichtung = inZaehlrichtung;
 		inZaehlrichtung = newInZaehlrichtung;
@@ -240,7 +244,7 @@ public abstract class SignalImpl extends BauelementImpl implements Signal {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (unit_no: ");
 		result.append(unit_no);
 		result.append(", inZaehlrichtung: ");

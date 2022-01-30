@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#isCIstAbzweig <em>CIst Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#isBIstAbzweig <em>BIst Abzweig</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#getC <em>C</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#getA <em>A</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -170,6 +170,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isCIstAbzweig() {
 		return cIstAbzweig;
 	}
@@ -179,6 +180,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCIstAbzweig(boolean newCIstAbzweig) {
 		boolean oldCIstAbzweig = cIstAbzweig;
 		cIstAbzweig = newCIstAbzweig;
@@ -191,6 +193,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isBIstAbzweig() {
 		return bIstAbzweig;
 	}
@@ -200,6 +203,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBIstAbzweig(boolean newBIstAbzweig) {
 		boolean oldBIstAbzweig = bIstAbzweig;
 		bIstAbzweig = newBIstAbzweig;
@@ -212,6 +216,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isBIstBevorzugt() {
 		return bIstBevorzugt;
 	}
@@ -221,6 +226,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBIstBevorzugt(boolean newBIstBevorzugt) {
 		boolean oldBIstBevorzugt = bIstBevorzugt;
 		bIstBevorzugt = newBIstBevorzugt;
@@ -233,6 +239,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isCIstBevorzugt() {
 		return cIstBevorzugt;
 	}
@@ -242,6 +249,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCIstBevorzugt(boolean newCIstBevorzugt) {
 		boolean oldCIstBevorzugt = cIstBevorzugt;
 		cIstBevorzugt = newCIstBevorzugt;
@@ -254,6 +262,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getB() {
 		if (b != null && b.eIsProxy()) {
 			InternalEObject oldB = (InternalEObject)b;
@@ -280,6 +289,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setB(Gleisteil newB) {
 		Gleisteil oldB = b;
 		b = newB;
@@ -292,6 +302,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getC() {
 		if (c != null && c.eIsProxy()) {
 			InternalEObject oldC = (InternalEObject)c;
@@ -318,6 +329,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setC(Gleisteil newC) {
 		Gleisteil oldC = c;
 		c = newC;
@@ -330,6 +342,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisteil getA() {
 		if (a != null && a.eIsProxy()) {
 			InternalEObject oldA = (InternalEObject)a;
@@ -356,6 +369,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setA(Gleisteil newA) {
 		Gleisteil oldA = a;
 		a = newA;
@@ -493,7 +507,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (cIstAbzweig: ");
 		result.append(cIstAbzweig);
 		result.append(", bIstAbzweig: ");

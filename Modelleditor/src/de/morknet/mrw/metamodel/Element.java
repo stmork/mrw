@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Element#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getElement()
  * @model abstract="true"

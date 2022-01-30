@@ -27,10 +27,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ImpulsmodulImpl#getMagnetartikel <em>Magnetartikel</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -69,6 +69,7 @@ public class ImpulsmodulImpl extends ModulImpl implements Impulsmodul {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Magnetartikel> getMagnetartikel() {
 		if (magnetartikel == null) {
 			magnetartikel = new EObjectWithInverseResolvingEList<Magnetartikel>(Magnetartikel.class, this, ModelrailwayPackage.IMPULSMODUL__MAGNETARTIKEL, ModelrailwayPackage.MAGNETARTIKEL__MODUL);

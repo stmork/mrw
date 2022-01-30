@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ModulImpl#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ModulImpl#getController <em>Controller</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -77,6 +77,7 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNummer() {
 		return nummer;
 	}
@@ -86,6 +87,7 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNummer(int newNummer) {
 		int oldNummer = nummer;
 		nummer = newNummer;
@@ -98,9 +100,10 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Controller getController() {
 		if (eContainerFeatureID() != ModelrailwayPackage.MODUL__CONTROLLER) return null;
-		return (Controller)eContainer();
+		return (Controller)eInternalContainer();
 	}
 
 	/**
@@ -218,7 +221,7 @@ public abstract class ModulImpl extends EObjectImpl implements Modul {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nummer: ");
 		result.append(nummer);
 		result.append(')');

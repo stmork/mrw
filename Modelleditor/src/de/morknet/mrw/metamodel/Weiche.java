@@ -13,6 +13,7 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#isCIstAbzweig <em>CIst Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#isBIstAbzweig <em>BIst Abzweig</em>}</li>
@@ -22,7 +23,6 @@ package de.morknet.mrw.metamodel;
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#getC <em>C</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#getA <em>A</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getWeiche()
  * @model

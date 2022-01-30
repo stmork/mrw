@@ -22,11 +22,11 @@ import de.morknet.mrw.metamodel.ModelrailwayPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.LampeImpl#getTyp <em>Typ</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.LampeImpl#getModul <em>Modul</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -75,6 +75,7 @@ public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getTyp() {
 		return typ;
 	}
@@ -84,6 +85,7 @@ public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTyp(int newTyp) {
 		int oldTyp = typ;
 		typ = newTyp;
@@ -96,9 +98,10 @@ public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Beleuchtungsmodul getModul() {
 		if (eContainerFeatureID() != ModelrailwayPackage.LAMPE__MODUL) return null;
-		return (Beleuchtungsmodul)eContainer();
+		return (Beleuchtungsmodul)eInternalContainer();
 	}
 
 	/**
@@ -116,6 +119,7 @@ public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModul(Beleuchtungsmodul newModul) {
 		if (newModul != eInternalContainer() || (eContainerFeatureID() != ModelrailwayPackage.LAMPE__MODUL && newModul != null)) {
 			if (EcoreUtil.isAncestor(this, newModul))
@@ -253,7 +257,7 @@ public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (typ: ");
 		result.append(typ);
 		result.append(')');

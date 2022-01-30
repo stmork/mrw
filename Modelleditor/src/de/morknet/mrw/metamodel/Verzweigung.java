@@ -13,10 +13,10 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Verzweigung#isNeu <em>Neu</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getVerzweigung()
  * @model abstract="true"

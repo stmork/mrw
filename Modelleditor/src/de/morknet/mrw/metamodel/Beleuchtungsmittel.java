@@ -13,10 +13,10 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Beleuchtungsmittel#getSchwellwert <em>Schwellwert</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getBeleuchtungsmittel()
  * @model abstract="true"

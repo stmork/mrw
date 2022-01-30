@@ -329,7 +329,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ModelrailwayPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -343,7 +343,8 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		if (isInited) return (ModelrailwayPackage)EPackage.Registry.INSTANCE.getEPackage(ModelrailwayPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ModelrailwayPackageImpl theModelrailwayPackage = (ModelrailwayPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ModelrailwayPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ModelrailwayPackageImpl());
+		Object registeredModelrailwayPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ModelrailwayPackageImpl theModelrailwayPackage = registeredModelrailwayPackage instanceof ModelrailwayPackageImpl ? (ModelrailwayPackageImpl)registeredModelrailwayPackage : new ModelrailwayPackageImpl();
 
 		isInited = true;
 
@@ -356,7 +357,6 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		// Mark meta-data to indicate it can't be changed
 		theModelrailwayPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ModelrailwayPackage.eNS_URI, theModelrailwayPackage);
 		return theModelrailwayPackage;
@@ -367,6 +367,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAnschluss() {
 		return anschlussEClass;
 	}
@@ -376,6 +377,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnschluss_Nummer() {
 		return (EAttribute)anschlussEClass.getEStructuralFeatures().get(0);
 	}
@@ -385,6 +387,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnschluss_Lichtsignale() {
 		return (EReference)anschlussEClass.getEStructuralFeatures().get(1);
 	}
@@ -394,6 +397,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnschluss_Controller() {
 		return (EReference)anschlussEClass.getEStructuralFeatures().get(2);
 	}
@@ -403,6 +407,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnschluss_Lichter() {
 		return (EReference)anschlussEClass.getEStructuralFeatures().get(3);
 	}
@@ -412,6 +417,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLichtsignal() {
 		return lichtsignalEClass;
 	}
@@ -421,6 +427,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLichtsignal_Anschluss() {
 		return (EReference)lichtsignalEClass.getEStructuralFeatures().get(0);
 	}
@@ -430,6 +437,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSignal() {
 		return signalEClass;
 	}
@@ -439,6 +447,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSignal_InZaehlrichtung() {
 		return (EAttribute)signalEClass.getEStructuralFeatures().get(0);
 	}
@@ -448,6 +457,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBauelement() {
 		return bauelementEClass;
 	}
@@ -457,6 +467,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBauelement_Abschnitt() {
 		return (EReference)bauelementEClass.getEStructuralFeatures().get(0);
 	}
@@ -466,6 +477,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getElement() {
 		return elementEClass;
 	}
@@ -475,6 +487,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getElement_Name() {
 		return (EAttribute)elementEClass.getEStructuralFeatures().get(0);
 	}
@@ -484,6 +497,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGleisabschnitt() {
 		return gleisabschnittEClass;
 	}
@@ -493,6 +507,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGleisabschnitt_Gruppe() {
 		return (EReference)gleisabschnittEClass.getEStructuralFeatures().get(0);
 	}
@@ -502,6 +517,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGleisabschnitt_Modul() {
 		return (EReference)gleisabschnittEClass.getEStructuralFeatures().get(1);
 	}
@@ -511,6 +527,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGleisabschnitt_Bauelement() {
 		return (EReference)gleisabschnittEClass.getEStructuralFeatures().get(2);
 	}
@@ -520,6 +537,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUnit() {
 		return unitEClass;
 	}
@@ -529,6 +547,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUnit_Unit_no() {
 		return (EAttribute)unitEClass.getEStructuralFeatures().get(0);
 	}
@@ -538,6 +557,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGruppe() {
 		return gruppeEClass;
 	}
@@ -547,6 +567,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGruppe_Modell() {
 		return (EReference)gruppeEClass.getEStructuralFeatures().get(0);
 	}
@@ -556,6 +577,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGruppe_Abschnitt() {
 		return (EReference)gruppeEClass.getEStructuralFeatures().get(1);
 	}
@@ -565,6 +587,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getModell() {
 		return modellEClass;
 	}
@@ -574,6 +597,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getModell_Controller() {
 		return (EReference)modellEClass.getEStructuralFeatures().get(0);
 	}
@@ -583,6 +607,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getModell_Gruppe() {
 		return (EReference)modellEClass.getEStructuralFeatures().get(1);
 	}
@@ -592,6 +617,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getController() {
 		return controllerEClass;
 	}
@@ -601,6 +627,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getController_Id() {
 		return (EAttribute)controllerEClass.getEStructuralFeatures().get(0);
 	}
@@ -610,6 +637,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getController_Anschluesse() {
 		return (EReference)controllerEClass.getEStructuralFeatures().get(1);
 	}
@@ -619,6 +647,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getController_Module() {
 		return (EReference)controllerEClass.getEStructuralFeatures().get(2);
 	}
@@ -628,6 +657,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getController_Modell() {
 		return (EReference)controllerEClass.getEStructuralFeatures().get(3);
 	}
@@ -637,6 +667,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getModul() {
 		return modulEClass;
 	}
@@ -646,6 +677,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getModul_Nummer() {
 		return (EAttribute)modulEClass.getEStructuralFeatures().get(0);
 	}
@@ -655,6 +687,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getModul_Controller() {
 		return (EReference)modulEClass.getEStructuralFeatures().get(1);
 	}
@@ -664,6 +697,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGleismodul() {
 		return gleismodulEClass;
 	}
@@ -673,6 +707,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGleismodul_Abschnitte() {
 		return (EReference)gleismodulEClass.getEStructuralFeatures().get(0);
 	}
@@ -682,6 +717,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLicht() {
 		return lichtEClass;
 	}
@@ -691,6 +727,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLicht_Anschluss() {
 		return (EReference)lichtEClass.getEStructuralFeatures().get(0);
 	}
@@ -700,6 +737,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAusfahrsignal() {
 		return ausfahrsignalEClass;
 	}
@@ -709,6 +747,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getHauptlichtsignal() {
 		return hauptlichtsignalEClass;
 	}
@@ -718,6 +757,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBahnhof() {
 		return bahnhofEClass;
 	}
@@ -727,6 +767,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVerzweigung() {
 		return verzweigungEClass;
 	}
@@ -736,6 +777,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVerzweigung_Neu() {
 		return (EAttribute)verzweigungEClass.getEStructuralFeatures().get(0);
 	}
@@ -745,6 +787,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMagnetartikel() {
 		return magnetartikelEClass;
 	}
@@ -754,6 +797,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMagnetartikel_Spulen() {
 		return (EAttribute)magnetartikelEClass.getEStructuralFeatures().get(0);
 	}
@@ -763,6 +807,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMagnetartikel_Modul() {
 		return (EReference)magnetartikelEClass.getEStructuralFeatures().get(1);
 	}
@@ -772,6 +817,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getImpulsmodul() {
 		return impulsmodulEClass;
 	}
@@ -781,6 +827,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getImpulsmodul_Magnetartikel() {
 		return (EReference)impulsmodulEClass.getEStructuralFeatures().get(0);
 	}
@@ -790,6 +837,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGleisteil() {
 		return gleisteilEClass;
 	}
@@ -799,6 +847,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGleisteil_Teile() {
 		return (EAttribute)gleisteilEClass.getEStructuralFeatures().get(0);
 	}
@@ -808,6 +857,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGleisteil_AInZaehlrichtung() {
 		return (EAttribute)gleisteilEClass.getEStructuralFeatures().get(1);
 	}
@@ -817,6 +867,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEinfahrsignal() {
 		return einfahrsignalEClass;
 	}
@@ -826,6 +877,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getWeiche() {
 		return weicheEClass;
 	}
@@ -835,6 +887,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWeiche_CIstAbzweig() {
 		return (EAttribute)weicheEClass.getEStructuralFeatures().get(0);
 	}
@@ -844,6 +897,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWeiche_BIstAbzweig() {
 		return (EAttribute)weicheEClass.getEStructuralFeatures().get(1);
 	}
@@ -853,6 +907,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWeiche_BIstBevorzugt() {
 		return (EAttribute)weicheEClass.getEStructuralFeatures().get(2);
 	}
@@ -862,6 +917,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWeiche_CIstBevorzugt() {
 		return (EAttribute)weicheEClass.getEStructuralFeatures().get(3);
 	}
@@ -871,6 +927,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getWeiche_B() {
 		return (EReference)weicheEClass.getEStructuralFeatures().get(4);
 	}
@@ -880,6 +937,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getWeiche_C() {
 		return (EReference)weicheEClass.getEStructuralFeatures().get(5);
 	}
@@ -889,6 +947,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getWeiche_A() {
 		return (EReference)weicheEClass.getEStructuralFeatures().get(6);
 	}
@@ -898,6 +957,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFormvorsignal() {
 		return formvorsignalEClass;
 	}
@@ -907,6 +967,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFormsignal() {
 		return formsignalEClass;
 	}
@@ -916,6 +977,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGleis() {
 		return gleisEClass;
 	}
@@ -925,6 +987,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGleis_IstAbzweig() {
 		return (EAttribute)gleisEClass.getEStructuralFeatures().get(0);
 	}
@@ -934,6 +997,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGleis_IstHauptgleis() {
 		return (EAttribute)gleisEClass.getEStructuralFeatures().get(1);
 	}
@@ -943,6 +1007,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGleis_A() {
 		return (EReference)gleisEClass.getEStructuralFeatures().get(2);
 	}
@@ -952,6 +1017,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGleis_B() {
 		return (EReference)gleisEClass.getEStructuralFeatures().get(3);
 	}
@@ -961,6 +1027,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBlocksignal() {
 		return blocksignalEClass;
 	}
@@ -970,6 +1037,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVorsignal() {
 		return vorsignalEClass;
 	}
@@ -979,6 +1047,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDKW() {
 		return dkwEClass;
 	}
@@ -988,6 +1057,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDKW_AdIstAbzweig() {
 		return (EAttribute)dkwEClass.getEStructuralFeatures().get(0);
 	}
@@ -997,6 +1067,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDKW_BcIstAbzweig() {
 		return (EAttribute)dkwEClass.getEStructuralFeatures().get(1);
 	}
@@ -1006,6 +1077,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDKW_A() {
 		return (EReference)dkwEClass.getEStructuralFeatures().get(2);
 	}
@@ -1015,6 +1087,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDKW_C() {
 		return (EReference)dkwEClass.getEStructuralFeatures().get(3);
 	}
@@ -1024,6 +1097,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDKW_B() {
 		return (EReference)dkwEClass.getEStructuralFeatures().get(4);
 	}
@@ -1033,6 +1107,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDKW_D() {
 		return (EReference)dkwEClass.getEStructuralFeatures().get(5);
 	}
@@ -1042,6 +1117,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGleissperrsignal() {
 		return gleissperrsignalEClass;
 	}
@@ -1051,6 +1127,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFormhauptsignal() {
 		return formhauptsignalEClass;
 	}
@@ -1060,6 +1137,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFormgleissperrsignal() {
 		return formgleissperrsignalEClass;
 	}
@@ -1069,6 +1147,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStrecke() {
 		return streckeEClass;
 	}
@@ -1078,6 +1157,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBeleuchtungsmodul() {
 		return beleuchtungsmodulEClass;
 	}
@@ -1087,6 +1167,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBeleuchtungsmodul_Lampen() {
 		return (EReference)beleuchtungsmodulEClass.getEStructuralFeatures().get(0);
 	}
@@ -1096,6 +1177,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLampe() {
 		return lampeEClass;
 	}
@@ -1105,6 +1187,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLampe_Typ() {
 		return (EAttribute)lampeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1114,6 +1197,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLampe_Modul() {
 		return (EReference)lampeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1123,6 +1207,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBeleuchtungsmittel() {
 		return beleuchtungsmittelEClass;
 	}
@@ -1132,6 +1217,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBeleuchtungsmittel_Schwellwert() {
 		return (EAttribute)beleuchtungsmittelEClass.getEStructuralFeatures().get(0);
 	}
@@ -1141,6 +1227,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ModelrailwayFactory getModelrailwayFactory() {
 		return (ModelrailwayFactory)getEFactoryInstance();
 	}

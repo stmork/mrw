@@ -13,11 +13,11 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Magnetartikel#getSpulen <em>Spulen</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Magnetartikel#getModul <em>Modul</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getMagnetartikel()
  * @model abstract="true"

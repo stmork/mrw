@@ -23,10 +23,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.LichtsignalImpl#getAnschluss <em>Anschluss</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -65,6 +65,7 @@ public abstract class LichtsignalImpl extends SignalImpl implements Lichtsignal 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Anschluss getAnschluss() {
 		if (anschluss != null && anschluss.eIsProxy()) {
 			InternalEObject oldAnschluss = (InternalEObject)anschluss;
@@ -106,6 +107,7 @@ public abstract class LichtsignalImpl extends SignalImpl implements Lichtsignal 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAnschluss(Anschluss newAnschluss) {
 		if (newAnschluss != anschluss) {
 			NotificationChain msgs = null;

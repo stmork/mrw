@@ -13,13 +13,13 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Gleis#isIstAbzweig <em>Ist Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gleis#isIstHauptgleis <em>Ist Hauptgleis</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gleis#getA <em>A</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gleis#getB <em>B</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getGleis()
  * @model

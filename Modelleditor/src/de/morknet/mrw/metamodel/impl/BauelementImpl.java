@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.BauelementImpl#getAbschnitt <em>Abschnitt</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -52,9 +52,10 @@ public abstract class BauelementImpl extends ElementImpl implements Bauelement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Gleisabschnitt getAbschnitt() {
 		if (eContainerFeatureID() != ModelrailwayPackage.BAUELEMENT__ABSCHNITT) return null;
-		return (Gleisabschnitt)eContainer();
+		return (Gleisabschnitt)eInternalContainer();
 	}
 
 	/**

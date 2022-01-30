@@ -31,13 +31,7 @@ import de.morknet.mrw.metamodel.ModelrailwayPackage;
  * @generated
  */
 public class LampeItemProvider
-	extends BeleuchtungsmittelItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends BeleuchtungsmittelItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

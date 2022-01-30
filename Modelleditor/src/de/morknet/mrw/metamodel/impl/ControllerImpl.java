@@ -33,13 +33,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getAnschluesse <em>Anschluesse</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getModule <em>Module</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getModell <em>Modell</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -108,6 +108,7 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getId() {
 		return id;
 	}
@@ -117,6 +118,7 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(int newId) {
 		int oldId = id;
 		id = newId;
@@ -129,6 +131,7 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Anschluss> getAnschluesse() {
 		if (anschluesse == null) {
 			anschluesse = new EObjectContainmentWithInverseEList<Anschluss>(Anschluss.class, this, ModelrailwayPackage.CONTROLLER__ANSCHLUESSE, ModelrailwayPackage.ANSCHLUSS__CONTROLLER);
@@ -141,6 +144,7 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Modul> getModule() {
 		if (module == null) {
 			module = new EObjectContainmentWithInverseEList<Modul>(Modul.class, this, ModelrailwayPackage.CONTROLLER__MODULE, ModelrailwayPackage.MODUL__CONTROLLER);
@@ -153,9 +157,10 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Modell getModell() {
 		if (eContainerFeatureID() != ModelrailwayPackage.CONTROLLER__MODELL) return null;
-		return (Modell)eContainer();
+		return (Modell)eInternalContainer();
 	}
 
 	/**
@@ -305,7 +310,7 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (id: ");
 		result.append(id);
 		result.append(')');
