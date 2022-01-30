@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:Modelrailway="http://www.morknet.de/Modelrailway" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:nsPrefix="Modelrailway" ecore:package="de.morknet.mrw.metamodel" targetNamespace="http://www.morknet.de/Modelrailway">
+  <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="file://./Ecore.xsd"/>
+  <xsd:element ecore:ignore="true" name="Anschluss" type="Modelrailway:Anschluss"/>
+  <xsd:element ecore:ignore="true" name="Lichtsignal" type="Modelrailway:Lichtsignal"/>
+  <xsd:element ecore:ignore="true" name="Signal" type="Modelrailway:Signal"/>
+  <xsd:element ecore:ignore="true" name="Bauelement" type="Modelrailway:Bauelement"/>
+  <xsd:element ecore:ignore="true" name="Element" type="Modelrailway:Element"/>
+  <xsd:element ecore:ignore="true" name="Gleisabschnitt" type="Modelrailway:Gleisabschnitt"/>
+  <xsd:element ecore:ignore="true" name="Unit" type="Modelrailway:Unit"/>
+  <xsd:element ecore:ignore="true" name="Gruppe" type="Modelrailway:Gruppe"/>
+  <xsd:element ecore:ignore="true" name="Modell" type="Modelrailway:Modell"/>
+  <xsd:element ecore:ignore="true" name="Controller" type="Modelrailway:Controller"/>
+  <xsd:element ecore:ignore="true" name="Modul" type="Modelrailway:Modul"/>
+  <xsd:element ecore:ignore="true" name="Gleismodul" type="Modelrailway:Gleismodul"/>
+  <xsd:element ecore:ignore="true" name="Licht" type="Modelrailway:Licht"/>
+  <xsd:element ecore:ignore="true" name="Beleuchtungsmittel" type="Modelrailway:Beleuchtungsmittel"/>
+  <xsd:element ecore:ignore="true" name="Ausfahrsignal" type="Modelrailway:Ausfahrsignal"/>
+  <xsd:element ecore:ignore="true" name="Hauptlichtsignal" type="Modelrailway:Hauptlichtsignal"/>
+  <xsd:element ecore:ignore="true" name="Bahnhof" type="Modelrailway:Bahnhof"/>
+  <xsd:element ecore:ignore="true" name="Verzweigung" type="Modelrailway:Verzweigung"/>
+  <xsd:element ecore:ignore="true" name="Magnetartikel" type="Modelrailway:Magnetartikel"/>
+  <xsd:element ecore:ignore="true" name="Impulsmodul" type="Modelrailway:Impulsmodul"/>
+  <xsd:element ecore:ignore="true" name="Gleisteil" type="Modelrailway:Gleisteil"/>
+  <xsd:element ecore:ignore="true" name="Einfahrsignal" type="Modelrailway:Einfahrsignal"/>
+  <xsd:element ecore:ignore="true" name="Weiche" type="Modelrailway:Weiche"/>
+  <xsd:element ecore:ignore="true" name="Formvorsignal" type="Modelrailway:Formvorsignal"/>
+  <xsd:element ecore:ignore="true" name="Formsignal" type="Modelrailway:Formsignal"/>
+  <xsd:element ecore:ignore="true" name="Gleis" type="Modelrailway:Gleis"/>
+  <xsd:element ecore:ignore="true" name="Blocksignal" type="Modelrailway:Blocksignal"/>
+  <xsd:element ecore:ignore="true" name="Vorsignal" type="Modelrailway:Vorsignal"/>
+  <xsd:element ecore:ignore="true" name="DKW" type="Modelrailway:DKW"/>
+  <xsd:element ecore:ignore="true" name="Gleissperrsignal" type="Modelrailway:Gleissperrsignal"/>
+  <xsd:element ecore:ignore="true" name="Formhauptsignal" type="Modelrailway:Formhauptsignal"/>
+  <xsd:element ecore:ignore="true" name="Formgleissperrsignal" type="Modelrailway:Formgleissperrsignal"/>
+  <xsd:element ecore:ignore="true" name="Strecke" type="Modelrailway:Strecke"/>
+  <xsd:element ecore:ignore="true" name="Beleuchtungsmodul" type="Modelrailway:Beleuchtungsmodul"/>
+  <xsd:element ecore:ignore="true" name="Lampe" type="Modelrailway:Lampe"/>
+  <xsd:complexType name="Anschluss">
+    <xsd:sequence>
+      <xsd:element ecore:changeable="false" ecore:opposite="anschluss" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="lichter" type="Modelrailway:Licht"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:unsettable="false" name="nummer" type="ecore:EInt"/>
+    <xsd:attribute ecore:opposite="anschluss" ecore:reference="Modelrailway:Lichtsignal" name="lichtsignale">
+      <xsd:simpleType>
+        <xsd:list itemType="xsd:anyURI"/>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute ecore:changeable="false" ecore:opposite="anschluesse" ecore:reference="Modelrailway:Controller" name="controller" type="xsd:anyURI" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Lichtsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Signal">
+        <xsd:attribute ecore:opposite="lichtsignale" ecore:reference="Modelrailway:Anschluss" name="anschluss" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:implements="Modelrailway:Unit" name="Signal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Bauelement">
+        <xsd:attribute ecore:unsettable="false" name="inZaehlrichtung" type="ecore:EBoolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Bauelement">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:attribute ecore:changeable="false" ecore:opposite="bauelement" ecore:reference="Modelrailway:Gleisabschnitt" name="abschnitt" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Element">
+    <xsd:attribute name="name" type="ecore:EString"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:implements="Modelrailway:Unit" name="Gleisabschnitt">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="abschnitt" ecore:resolveProxies="true" maxOccurs="unbounded" name="bauelement" type="Modelrailway:Bauelement"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:changeable="false" ecore:opposite="abschnitt" ecore:reference="Modelrailway:Gruppe" name="gruppe" type="xsd:anyURI" use="required"/>
+        <xsd:attribute ecore:opposite="abschnitte" ecore:reference="Modelrailway:Gleismodul" name="modul" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Unit">
+    <xsd:attribute ecore:name="unit_no" ecore:unsettable="false" name="unit_no" type="ecore:EInt"/>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Gruppe">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="gruppe" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="abschnitt" type="Modelrailway:Gleisabschnitt"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:changeable="false" ecore:opposite="gruppe" ecore:reference="Modelrailway:Modell" name="modell" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Modell">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="modell" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="controller" type="Modelrailway:Controller"/>
+          <xsd:element ecore:opposite="modell" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="gruppe" type="Modelrailway:Gruppe"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Controller">
+    <xsd:sequence>
+      <xsd:element ecore:opposite="controller" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="anschluesse" type="Modelrailway:Anschluss"/>
+      <xsd:element ecore:opposite="controller" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="module" type="Modelrailway:Modul"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:unsettable="false" name="id" type="ecore:EInt"/>
+    <xsd:attribute ecore:changeable="false" ecore:opposite="controller" ecore:reference="Modelrailway:Modell" name="modell" type="xsd:anyURI" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Modul">
+    <xsd:attribute ecore:unsettable="false" name="nummer" type="ecore:EInt"/>
+    <xsd:attribute ecore:changeable="false" ecore:opposite="module" ecore:reference="Modelrailway:Controller" name="controller" type="xsd:anyURI" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="Gleismodul">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Modul">
+        <xsd:attribute ecore:opposite="modul" ecore:reference="Modelrailway:Gleisabschnitt" name="abschnitte">
+          <xsd:simpleType>
+            <xsd:restriction>
+              <xsd:simpleType>
+                <xsd:list itemType="xsd:anyURI"/>
+              </xsd:simpleType>
+              <xsd:maxLength value="4"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Licht">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Beleuchtungsmittel">
+        <xsd:attribute ecore:opposite="lichter" ecore:reference="Modelrailway:Anschluss" name="anschluss" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:implements="Modelrailway:Unit" name="Beleuchtungsmittel">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:attribute ecore:unsettable="false" name="schwellwert" type="ecore:EInt" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Ausfahrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Hauptlichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Hauptlichtsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Lichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Bahnhof">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gruppe"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:implements="Modelrailway:Magnetartikel Modelrailway:Unit" name="Verzweigung">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gleisteil">
+        <xsd:attribute ecore:unsettable="false" name="neu" type="ecore:EBoolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Magnetartikel">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Bauelement">
+        <xsd:attribute ecore:unsettable="false" name="spulen" type="ecore:EInt"/>
+        <xsd:attribute ecore:opposite="magnetartikel" ecore:reference="Modelrailway:Impulsmodul" name="modul" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Impulsmodul">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Modul">
+        <xsd:attribute ecore:opposite="modul" ecore:reference="Modelrailway:Magnetartikel" name="magnetartikel">
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Gleisteil">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Bauelement">
+        <xsd:attribute ecore:unsettable="false" name="teile" type="ecore:EInt"/>
+        <xsd:attribute ecore:unsettable="false" name="aInZaehlrichtung" type="ecore:EBoolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Einfahrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Hauptlichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Weiche">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Verzweigung">
+        <xsd:attribute ecore:unsettable="false" name="cIstAbzweig" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:unsettable="false" name="bIstAbzweig" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:unsettable="false" name="bIstBevorzugt" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:unsettable="false" name="cIstBevorzugt" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="b" type="xsd:anyURI" use="required"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="c" type="xsd:anyURI" use="required"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="a" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Formvorsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Formsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:implements="Modelrailway:Signal" name="Formsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Magnetartikel"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Gleis">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gleisteil">
+        <xsd:attribute ecore:unsettable="false" name="istAbzweig" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:unsettable="false" name="istHauptgleis" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="a" type="xsd:anyURI" use="required"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="b" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Blocksignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Hauptlichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Vorsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Lichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DKW">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Verzweigung">
+        <xsd:attribute ecore:unsettable="false" name="adIstAbzweig" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:unsettable="false" name="bcIstAbzweig" type="ecore:EBoolean"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="a" type="xsd:anyURI" use="required"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="c" type="xsd:anyURI" use="required"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="b" type="xsd:anyURI" use="required"/>
+        <xsd:attribute ecore:reference="Modelrailway:Gleisteil" name="d" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Gleissperrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Lichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Formhauptsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Formsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Formgleissperrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Formsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Strecke">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gruppe"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Beleuchtungsmodul">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Modul">
+        <xsd:sequence>
+          <xsd:element ecore:changeable="false" ecore:opposite="modul" ecore:resolveProxies="true" maxOccurs="8" minOccurs="0" name="lampen" type="Modelrailway:Lampe"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Lampe">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Beleuchtungsmittel">
+        <xsd:attribute ecore:unsettable="false" name="typ" type="ecore:EInt" use="required"/>
+        <xsd:attribute ecore:opposite="lampen" ecore:reference="Modelrailway:Beleuchtungsmodul" name="modul" type="xsd:anyURI" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

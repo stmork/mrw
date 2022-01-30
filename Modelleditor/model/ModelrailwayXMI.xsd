@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:Modelrailway="http://www.morknet.de/Modelrailway" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.morknet.de/Modelrailway">
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:complexType name="Anschluss">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="lichtsignale" type="Modelrailway:Lichtsignal"/>
+      <xsd:element name="controller" type="Modelrailway:Controller"/>
+      <xsd:element name="lichter" type="Modelrailway:Licht"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="nummer" type="xsd:int"/>
+    <xsd:attribute name="lichtsignale" type="xsd:string"/>
+    <xsd:attribute name="controller" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Anschluss" type="Modelrailway:Anschluss"/>
+  <xsd:complexType abstract="true" name="Lichtsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Signal">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="anschluss" type="Modelrailway:Anschluss"/>
+        </xsd:choice>
+        <xsd:attribute name="anschluss" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Lichtsignal" type="Modelrailway:Lichtsignal"/>
+  <xsd:complexType abstract="true" name="Signal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Bauelement">
+        <xsd:attribute name="unit_no" type="xsd:int"/>
+        <xsd:attribute name="inZaehlrichtung" type="xsd:boolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Signal" type="Modelrailway:Signal"/>
+  <xsd:complexType abstract="true" name="Bauelement">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="abschnitt" type="Modelrailway:Gleisabschnitt"/>
+        </xsd:choice>
+        <xsd:attribute name="abschnitt" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Bauelement" type="Modelrailway:Bauelement"/>
+  <xsd:complexType abstract="true" name="Element">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Element" type="Modelrailway:Element"/>
+  <xsd:complexType name="Gleisabschnitt">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="gruppe" type="Modelrailway:Gruppe"/>
+          <xsd:element name="modul" type="Modelrailway:Gleismodul"/>
+          <xsd:element name="bauelement" type="Modelrailway:Bauelement"/>
+        </xsd:choice>
+        <xsd:attribute name="unit_no" type="xsd:int"/>
+        <xsd:attribute name="gruppe" type="xsd:string"/>
+        <xsd:attribute name="modul" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Gleisabschnitt" type="Modelrailway:Gleisabschnitt"/>
+  <xsd:complexType abstract="true" name="Unit">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="unit_no" type="xsd:int"/>
+  </xsd:complexType>
+  <xsd:element name="Unit" type="Modelrailway:Unit"/>
+  <xsd:complexType abstract="true" name="Gruppe">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="modell" type="Modelrailway:Modell"/>
+          <xsd:element name="abschnitt" type="Modelrailway:Gleisabschnitt"/>
+        </xsd:choice>
+        <xsd:attribute name="modell" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Gruppe" type="Modelrailway:Gruppe"/>
+  <xsd:complexType name="Modell">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="controller" type="Modelrailway:Controller"/>
+          <xsd:element name="gruppe" type="Modelrailway:Gruppe"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Modell" type="Modelrailway:Modell"/>
+  <xsd:complexType name="Controller">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="anschluesse" type="Modelrailway:Anschluss"/>
+      <xsd:element name="module" type="Modelrailway:Modul"/>
+      <xsd:element name="modell" type="Modelrailway:Modell"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="id" type="xsd:int"/>
+    <xsd:attribute name="modell" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Controller" type="Modelrailway:Controller"/>
+  <xsd:complexType abstract="true" name="Modul">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="controller" type="Modelrailway:Controller"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="nummer" type="xsd:int"/>
+    <xsd:attribute name="controller" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Modul" type="Modelrailway:Modul"/>
+  <xsd:complexType name="Gleismodul">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Modul">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="abschnitte" type="Modelrailway:Gleisabschnitt"/>
+        </xsd:choice>
+        <xsd:attribute name="abschnitte" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Gleismodul" type="Modelrailway:Gleismodul"/>
+  <xsd:complexType name="Licht">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Beleuchtungsmittel">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="anschluss" type="Modelrailway:Anschluss"/>
+        </xsd:choice>
+        <xsd:attribute name="anschluss" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Licht" type="Modelrailway:Licht"/>
+  <xsd:complexType abstract="true" name="Beleuchtungsmittel">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Element">
+        <xsd:attribute name="unit_no" type="xsd:int"/>
+        <xsd:attribute name="schwellwert" type="xsd:int" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Beleuchtungsmittel" type="Modelrailway:Beleuchtungsmittel"/>
+  <xsd:complexType name="Ausfahrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Hauptlichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Ausfahrsignal" type="Modelrailway:Ausfahrsignal"/>
+  <xsd:complexType abstract="true" name="Hauptlichtsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Lichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Hauptlichtsignal" type="Modelrailway:Hauptlichtsignal"/>
+  <xsd:complexType name="Bahnhof">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gruppe"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Bahnhof" type="Modelrailway:Bahnhof"/>
+  <xsd:complexType abstract="true" name="Verzweigung">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gleisteil">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="modul" type="Modelrailway:Impulsmodul"/>
+        </xsd:choice>
+        <xsd:attribute name="spulen" type="xsd:int"/>
+        <xsd:attribute name="modul" type="xsd:string"/>
+        <xsd:attribute name="unit_no" type="xsd:int"/>
+        <xsd:attribute name="neu" type="xsd:boolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Verzweigung" type="Modelrailway:Verzweigung"/>
+  <xsd:complexType abstract="true" name="Magnetartikel">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Bauelement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="modul" type="Modelrailway:Impulsmodul"/>
+        </xsd:choice>
+        <xsd:attribute name="spulen" type="xsd:int"/>
+        <xsd:attribute name="modul" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Magnetartikel" type="Modelrailway:Magnetartikel"/>
+  <xsd:complexType name="Impulsmodul">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Modul">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="magnetartikel" type="Modelrailway:Magnetartikel"/>
+        </xsd:choice>
+        <xsd:attribute name="magnetartikel" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Impulsmodul" type="Modelrailway:Impulsmodul"/>
+  <xsd:complexType abstract="true" name="Gleisteil">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Bauelement">
+        <xsd:attribute name="teile" type="xsd:int"/>
+        <xsd:attribute name="aInZaehlrichtung" type="xsd:boolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Gleisteil" type="Modelrailway:Gleisteil"/>
+  <xsd:complexType name="Einfahrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Hauptlichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Einfahrsignal" type="Modelrailway:Einfahrsignal"/>
+  <xsd:complexType name="Weiche">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Verzweigung">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="b" type="Modelrailway:Gleisteil"/>
+          <xsd:element name="c" type="Modelrailway:Gleisteil"/>
+          <xsd:element name="a" type="Modelrailway:Gleisteil"/>
+        </xsd:choice>
+        <xsd:attribute name="cIstAbzweig" type="xsd:boolean"/>
+        <xsd:attribute name="bIstAbzweig" type="xsd:boolean"/>
+        <xsd:attribute name="bIstBevorzugt" type="xsd:boolean"/>
+        <xsd:attribute name="cIstBevorzugt" type="xsd:boolean"/>
+        <xsd:attribute name="b" type="xsd:string"/>
+        <xsd:attribute name="c" type="xsd:string"/>
+        <xsd:attribute name="a" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Weiche" type="Modelrailway:Weiche"/>
+  <xsd:complexType name="Formvorsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Formsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Formvorsignal" type="Modelrailway:Formvorsignal"/>
+  <xsd:complexType abstract="true" name="Formsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Magnetartikel">
+        <xsd:attribute name="unit_no" type="xsd:int"/>
+        <xsd:attribute name="inZaehlrichtung" type="xsd:boolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Formsignal" type="Modelrailway:Formsignal"/>
+  <xsd:complexType name="Gleis">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gleisteil">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="a" type="Modelrailway:Gleisteil"/>
+          <xsd:element name="b" type="Modelrailway:Gleisteil"/>
+        </xsd:choice>
+        <xsd:attribute name="istAbzweig" type="xsd:boolean"/>
+        <xsd:attribute name="istHauptgleis" type="xsd:boolean"/>
+        <xsd:attribute name="a" type="xsd:string"/>
+        <xsd:attribute name="b" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Gleis" type="Modelrailway:Gleis"/>
+  <xsd:complexType name="Blocksignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Hauptlichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Blocksignal" type="Modelrailway:Blocksignal"/>
+  <xsd:complexType name="Vorsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Lichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Vorsignal" type="Modelrailway:Vorsignal"/>
+  <xsd:complexType name="DKW">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Verzweigung">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="a" type="Modelrailway:Gleisteil"/>
+          <xsd:element name="c" type="Modelrailway:Gleisteil"/>
+          <xsd:element name="b" type="Modelrailway:Gleisteil"/>
+          <xsd:element name="d" type="Modelrailway:Gleisteil"/>
+        </xsd:choice>
+        <xsd:attribute name="adIstAbzweig" type="xsd:boolean"/>
+        <xsd:attribute name="bcIstAbzweig" type="xsd:boolean"/>
+        <xsd:attribute name="a" type="xsd:string"/>
+        <xsd:attribute name="c" type="xsd:string"/>
+        <xsd:attribute name="b" type="xsd:string"/>
+        <xsd:attribute name="d" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="DKW" type="Modelrailway:DKW"/>
+  <xsd:complexType name="Gleissperrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Lichtsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Gleissperrsignal" type="Modelrailway:Gleissperrsignal"/>
+  <xsd:complexType name="Formhauptsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Formsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Formhauptsignal" type="Modelrailway:Formhauptsignal"/>
+  <xsd:complexType name="Formgleissperrsignal">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Formsignal"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Formgleissperrsignal" type="Modelrailway:Formgleissperrsignal"/>
+  <xsd:complexType name="Strecke">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Gruppe"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Strecke" type="Modelrailway:Strecke"/>
+  <xsd:complexType name="Beleuchtungsmodul">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Modul">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="lampen" type="Modelrailway:Lampe"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Beleuchtungsmodul" type="Modelrailway:Beleuchtungsmodul"/>
+  <xsd:complexType name="Lampe">
+    <xsd:complexContent>
+      <xsd:extension base="Modelrailway:Beleuchtungsmittel">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="modul" type="Modelrailway:Beleuchtungsmodul"/>
+        </xsd:choice>
+        <xsd:attribute name="typ" type="xsd:int" use="required"/>
+        <xsd:attribute name="modul" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Lampe" type="Modelrailway:Lampe"/>
+</xsd:schema>
