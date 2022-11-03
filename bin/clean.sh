@@ -1,5 +1,9 @@
 #!/bin/bash
+
 rm -rf */bin api */*.emma */TEST*.xml
-cd mc
-make clean
-cd ..
+rm -rf *.deb target/
+
+for DIR in mc canprog tools daemon
+do
+   make -C ${DIR} clean
+done

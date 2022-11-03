@@ -1,0 +1,8 @@
+/.metadata/
+/RemoteSystemsTempFiles/
+*.o
+*.map
+*.lst
+*.out
+*.hex
+*.dep
