@@ -470,11 +470,11 @@
       <bauelement xsi:type="Modelrailway:Weiche" name="B2" modul="//@controller.12/@module.0" unit_no="3458" neu="true" cIstAbzweig="true" cIstBevorzugt="true" b="//@gruppe.2/@abschnitt.5/@bauelement.0" c="//@gruppe.2/@abschnitt.4/@bauelement.0" a="//@gruppe.2/@abschnitt.2/@bauelement.1"/>
     </abschnitt>
     <abschnitt name="HN3" unit_no="3222" modul="//@controller.11/@module.1">
-      <bauelement xsi:type="Modelrailway:Gleis" name="HN3" a="//@gruppe.2/@abschnitt.2/@bauelement.1" b="//@gruppe.2/@abschnitt.6/@bauelement.0"/>
+      <bauelement xsi:type="Modelrailway:Gleis" name="HN3" aInZaehlrichtung="true" a="//@gruppe.2/@abschnitt.6/@bauelement.0" b="//@gruppe.2/@abschnitt.2/@bauelement.1"/>
       <bauelement xsi:type="Modelrailway:Formhauptsignal" name="P3" spulen="2" modul="//@controller.12/@module.0" unit_no="3457"/>
     </abschnitt>
     <abschnitt name="H1" unit_no="3200" modul="//@controller.11/@module.0">
-      <bauelement xsi:type="Modelrailway:Gleis" name="H1" istAbzweig="true" a="//@gruppe.2/@abschnitt.2/@bauelement.2" b="//@gruppe.2/@abschnitt.5/@bauelement.1"/>
+      <bauelement xsi:type="Modelrailway:Gleis" name="H1" aInZaehlrichtung="true" istAbzweig="true" a="//@gruppe.2/@abschnitt.5/@bauelement.1" b="//@gruppe.2/@abschnitt.2/@bauelement.2"/>
     </abschnitt>
     <abschnitt name="H2" unit_no="3220" modul="//@controller.11/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="H2" a="//@gruppe.2/@abschnitt.2/@bauelement.2" b="//@gruppe.2/@abschnitt.5/@bauelement.1"/>
@@ -504,7 +504,7 @@
       <bauelement xsi:type="Modelrailway:Gleissperrsignal" name="1I" unit_no="2354" inZaehlrichtung="true" anschluss="//@controller.8/@anschluesse.0"/>
     </abschnitt>
     <abschnitt name="BW1" unit_no="3734" modul="//@controller.13/@module.1">
-      <bauelement xsi:type="Modelrailway:Gleis" name="BW1" a="//@gruppe.2/@abschnitt.8/@bauelement.1" b="//@gruppe.2/@abschnitt.12/@bauelement.0"/>
+      <bauelement xsi:type="Modelrailway:Gleis" name="BW1" aInZaehlrichtung="true" a="//@gruppe.2/@abschnitt.12/@bauelement.0" b="//@gruppe.2/@abschnitt.8/@bauelement.1"/>
       <bauelement xsi:type="Modelrailway:Formhauptsignal" name="P1" spulen="2" modul="//@controller.13/@module.0" unit_no="3714"/>
     </abschnitt>
     <abschnitt name="B1" unit_no="1943" modul="//@controller.6/@module.1">
