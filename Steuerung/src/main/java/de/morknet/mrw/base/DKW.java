@@ -61,7 +61,7 @@ public final class DKW extends Verzweigung
 		 * Weichenlage Überkreuzfahrt.
 		 */
 		AD_BC(DirectionCode.CROSS, Command.SETRGT, "Kreuz");  // Kreuz
-		
+
 		private final DirectionCode code;
 		private final Command       cmd;
 		private final String        text;
@@ -81,7 +81,7 @@ public final class DKW extends Verzweigung
 		{
 			return this.code;
 		}
-		
+
 		/**
 		 * Diese Methode gibt das Schaltkommando zurück.
 		 * @return Das Schaltkommando.

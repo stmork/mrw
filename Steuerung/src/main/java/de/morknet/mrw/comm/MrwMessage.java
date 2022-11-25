@@ -264,50 +264,43 @@ public class MrwMessage extends CANMessage
 	 * Wandelt den Inhalt dieser Meldung in Klartext um.
 	 * @return Klartext Der Klartext dieser meldung.
 	 */
-	public String toString()
-	{
+	public String toString() {
 		String cmd_text = Command.getCommand(data[0]).toString();
 
 		StringWriter sw = new StringWriter();
-		PrintWriter  pw = new PrintWriter(sw);
+		PrintWriter pw = new PrintWriter(sw);
 		int i;
 
 		if (isResult())
 		{
-			
 			String res_text = MsgCode.getMsgCode(data[1]).toString();
-            pw.printf("ID=%04x:%04x len=%d stat=%02x # %-12.12s %-22.22s %04x:%04x",
-                    sid, eid, length, status,
-                    cmd_text,
-                    res_text,
-                    getSourceControllerId(),
-                    getSourceUnitNo());
-            for (i = IDX_INFO_START;i < length; i++)
-            {
-                pw.printf(" 0x%02x", data[i]);
-            }
+			pw.printf("ID=%04x:%04x len=%d stat=%02x # %-12.12s %-22.22s %04x:%04x", sid, eid, length, status, cmd_text,
+					res_text, getSourceControllerId(), getSourceUnitNo());
+			for (i = IDX_INFO_START; i < length; i++)
+			{
+				pw.printf(" 0x%02x", data[i]);
+			}
 		}
 		else
 		{
-            pw.printf("ID=%04x:%04x len=%d stat=%02x # %s",
-                    sid, eid, length, status, cmd_text);
-            if (data[IDX_COMMAND] == Command.SETSGN.getCommand())
-            {
-                String sig_text = SignalCode.getSignalCode(data[IDX_SIGNAL_CODE]).toString();
+			pw.printf("ID=%04x:%04x len=%d stat=%02x # %s", sid, eid, length, status, cmd_text);
+			if (data[IDX_COMMAND] == Command.SETSGN.getCommand())
+			{
+				String sig_text = SignalCode.getSignalCode(data[IDX_SIGNAL_CODE]).toString();
 
-                pw.printf(" %s", sig_text);
-            }
-            else
-            {
-                for (i = 1;i < length; i++)
-                {
-                    pw.printf(" 0x%02x", data[i]);
-                }
-            }
+				pw.printf(" %s", sig_text);
+			}
+			else
+			{
+				for (i = 1; i < length; i++)
+				{
+					pw.printf(" 0x%02x", data[i]);
+				}
+			}
 		}
 		String result = sw.toString();
-	    pw.close();
-	    return result;
+		pw.close();
+		return result;
 	}
 
 	/**
