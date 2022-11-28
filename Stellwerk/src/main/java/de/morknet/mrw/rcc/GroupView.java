@@ -437,7 +437,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 			{
 				controller.removeSegmentSelection(abschnitt);
 				log.info("Auswahl: -" + abschnitt.getNumber());
-				setMessage("Abschnitt " + abschnitt.getNumber() + " abgewÃâ¬hlt.");
+				setMessage("Abschnitt " + abschnitt.getNumber() + " abgewählt.");
 			}
 		}
 	}
@@ -478,6 +478,7 @@ abstract public class GroupView extends RccViewPart implements Colors, Coordinat
 			if (g != null)
 			{
 				FormData data = new FormData();
+
 				data.left = new FormAttachment(0, g.getLogX() * SCALE_X -  8);
 				data.top  = new FormAttachment(0, g.getLogY() * SCALE_Y - 19);
 				Button button = new Button(parent, SWT.CHECK);

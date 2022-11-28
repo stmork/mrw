@@ -48,8 +48,8 @@ public class «asClassName()» extends GroupView
 	/**
 	 * Der Konstruktur.
 	 */
-    public «asClassName()»()
-    {
+	public «asClassName()»()
+	{
 		super(«getGruppenName()»);
 «FOREACH abschnitt.bauelement.typeSelect(Gleis).select(e|e.istHauptgleis) AS hg»
 		addHauptgleis(«getGleisteilName(hg)»);

@@ -499,7 +499,7 @@ public class Abschnitt extends DeviceUnit
 	public MrwMessage createConfigMessage()
 	{
 		MrwMessage msg = MrwMessage.createCommandMsg(Command.CFGRAI, ctrl_id, unit_no);
-		
+
 		msg.addDataByte(pin);
 		msg.addDataByte(pin ^ 7);
 		return msg;
@@ -534,6 +534,7 @@ public class Abschnitt extends DeviceUnit
 		if (g != null)
 		{
 			List<Gleisteil> rGleise = g.getRouting(!inDirection);
+
 			if (rGleise.size() != 1)
 			{
 				throw new NoNeighbourFoundException(this);

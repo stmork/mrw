@@ -36,53 +36,50 @@
 			<property name="AppName" value="Stellwerk «this.name»"/>
 			<property name="aboutImage" value="«about()»"/>
 			<property name="aboutText" value="Stellwerk «this.name»"/>
- 		</product>
- 	</extension>
+		</product>
+	</extension>
 
-   <extension
-         id="«asApplicationId()»"
-         point="org.eclipse.core.runtime.applications">
-      <application>
-         <run
-               class="«asPackageName()».Application">
-         </run>
-      </application>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectives">
-      <perspective
-            name="«asPerspectiveIdClassname()»"
-            class="«asPerspectivePackageName()».«asPerspectiveClassName()»"
-            icon="«icon()»"
-            id="«asPerspectiveId()»">
-      </perspective>
-   </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            allowMultiple="false"
-            class="«asPackageName()».«asInfoViewClassname()»"
-            icon="«infoIcon()»"
-            id="«asInfoViewId()»"
-            name="Info">
-      </view>
-      <view
-            allowMultiple="false"
-            class="«asPackageName()».«asButtonViewClassname()»"
-            icon="«commandIcon()»"
-            id="«asButtonViewId()»"
-            name="Kommandos">
-      </view>
+	<extension
+			id="«asApplicationId()»"
+			point="org.eclipse.core.runtime.applications">
+		<application>
+			<run
+				class="«asPackageName()».Application">
+			</run>
+		</application>
+	</extension>
+	<extension point="org.eclipse.ui.perspectives">
+		<perspective name="«asPerspectiveIdClassname()»"
+			class="«asPerspectivePackageName()».«asPerspectiveClassName()»"
+			icon="«icon()»"
+			id="«asPerspectiveId()»">
+		</perspective>
+	</extension>
+	<extension point="org.eclipse.ui.views">
+		<view
+				allowMultiple="false"
+				class="«asPackageName()».«asInfoViewClassname()»"
+				icon="«infoIcon()»"
+				id="«asInfoViewId()»"
+				name="Info">
+		</view>
+		<view
+				allowMultiple="false"
+				class="«asPackageName()».«asButtonViewClassname()»"
+				icon="«commandIcon()»"
+				id="«asButtonViewId()»"
+				name="Kommandos">
+		</view>
 «FOREACH gruppe AS grp»
-      <view
-            allowMultiple="true"
-            class="«asPackageName(grp)».«asClassName(grp)»"
-            icon="«icon(grp)»"
-            id="«asViewId(grp)»"
-            name="«asTitle(grp)»">
-      </view>
+		<view
+				allowMultiple="true"
+				class="«asPackageName(grp)».«asClassName(grp)»"
+				icon="«icon(grp)»"
+				id="«asViewId(grp)»"
+				name="«asTitle(grp)»">
+		</view>
 «ENDFOREACH»
-   </extension>
+	</extension>
 
 </plugin>
 «ENDFILE»

@@ -52,7 +52,7 @@ private boolean isAbstellgleis(Gleisabschnitt a) :
 	(!hasVerzweigungen(a)) && hasAbstellgleis(a);
 
 Gleis getStartGleis(Gleisabschnitt a) :
-	getGleise(a).size == 1 ?
+	getGleise(a).size >= 1 ?
 		getGleise(a).first() :
 		(hasAbstellgleis(a) ?
 			getGleise(a).select(g|(g.a == null) || (g.b == null)).first() :
