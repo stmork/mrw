@@ -16,6 +16,7 @@ mkdir -p ${TARGET}/lib/firmware/mrw/
 mkdir -p ${TARGET}/usr/share/doc/${PACKAGE}/
 
 cp -a ${BASE}/mc/firmware.hex ${TARGET}/lib/firmware/mrw/mrw-firmware-m32.hex
+cp -a mc/version.txt ${TARGET}/usr/share/doc/${PACKAGE}/
 
 COPYRIGHT=${TARGET}/usr/share/doc/${PACKAGE}/copyright
 echo "Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/" > $COPYRIGHT
