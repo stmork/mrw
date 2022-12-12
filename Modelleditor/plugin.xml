@@ -32,13 +32,13 @@
 
    <extension point="org.eclipse.ui.newWizards">
       <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            id="de.morknet.mrw.metamodel.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
             id="de.morknet.mrw.metamodel.presentation.ModelrailwayModelWizardID"
             name="%_UI_ModelrailwayModelWizard_label"
             class="de.morknet.mrw.metamodel.presentation.ModelrailwayModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="de.morknet.mrw.metamodel.category.ID"
             icon="mrw32.gif">
          <description>%_UI_ModelrailwayModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>

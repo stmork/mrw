@@ -1,7 +1,5 @@
 /**
- * Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
- *
- * $Id$
+ * Copyright (C) 2007-2022 committers of this modelrailway project. All rights reserved.
  */
 package de.morknet.mrw.metamodel.presentation;
 

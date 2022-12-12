@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see de.morknet.mrw.metamodel.ModelrailwayFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Modelrailway'"
  * @generated
  */
 public interface ModelrailwayPackage extends EPackage {

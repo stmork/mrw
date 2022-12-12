@@ -1562,6 +1562,26 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "originalName", "Modelrailway"
+		   });
 	}
 
 } //ModelrailwayPackageImpl
