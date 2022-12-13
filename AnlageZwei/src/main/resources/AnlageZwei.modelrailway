@@ -119,7 +119,7 @@
     </module>
   </controller>
   <controller id="14">
-    <module xsi:type="Modelrailway:Impulsmodul" nummer="1401" magnetartikel="//@gruppe.2/@abschnitt.10/@bauelement.1 //@gruppe.2/@abschnitt.10/@bauelement.0 //@gruppe.2/@abschnitt.11/@bauelement.1 //@gruppe.2/@abschnitt.8/@bauelement.1"/>
+    <module xsi:type="Modelrailway:Impulsmodul" nummer="1401" magnetartikel="//@gruppe.2/@abschnitt.10/@bauelement.0 //@gruppe.2/@abschnitt.10/@bauelement.1 //@gruppe.2/@abschnitt.11/@bauelement.1 //@gruppe.2/@abschnitt.8/@bauelement.1"/>
     <module xsi:type="Modelrailway:Gleismodul" nummer="1402" abschnitte="//@gruppe.2/@abschnitt.13 //@gruppe.2/@abschnitt.9 //@gruppe.2/@abschnitt.11 //@gruppe.2/@abschnitt.8"/>
   </controller>
   <controller id="15">
@@ -496,13 +496,13 @@
       <bauelement xsi:type="Modelrailway:Formvorsignal" name="p3" spulen="2" modul="//@controller.10/@module.0" unit_no="2947"/>
     </abschnitt>
     <abschnitt name="BW2a" unit_no="3733" modul="//@controller.13/@module.1">
-      <bauelement xsi:type="Modelrailway:Gleis" name="BW2a" a="//@gruppe.2/@abschnitt.8/@bauelement.1" b="//@gruppe.2/@abschnitt.10/@bauelement.0"/>
+      <bauelement xsi:type="Modelrailway:Gleis" name="BW2a" a="//@gruppe.2/@abschnitt.8/@bauelement.1" b="//@gruppe.2/@abschnitt.10/@bauelement.1"/>
       <bauelement xsi:type="Modelrailway:Gleissperrsignal" name="2I" unit_no="1591" anschluss="//@controller.5/@anschluesse.0"/>
     </abschnitt>
     <abschnitt name="B2" unit_no="1942" modul="//@controller.6/@module.1">
-      <bauelement xsi:type="Modelrailway:Weiche" name="B5" aInZaehlrichtung="true" modul="//@controller.13/@module.0" unit_no="3713" neu="true" bIstAbzweig="true" cIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.1" c="//@gruppe.2/@abschnitt.9/@bauelement.0" a="//@gruppe.2/@abschnitt.10/@bauelement.2"/>
-      <bauelement xsi:type="Modelrailway:Weiche" name="B6" modul="//@controller.13/@module.0" unit_no="3712" neu="true" bIstAbzweig="true" bIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.0" c="//@gruppe.2/@abschnitt.13/@bauelement.0" a="//@gruppe.2/@abschnitt.12/@bauelement.0"/>
-      <bauelement xsi:type="Modelrailway:Gleis" name="B2" istHauptgleis="true" a="//@gruppe.2/@abschnitt.10/@bauelement.0"/>
+      <bauelement xsi:type="Modelrailway:Weiche" name="B6" modul="//@controller.13/@module.0" unit_no="3712" neu="true" bIstAbzweig="true" bIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.1" c="//@gruppe.2/@abschnitt.13/@bauelement.0" a="//@gruppe.2/@abschnitt.12/@bauelement.0"/>
+      <bauelement xsi:type="Modelrailway:Weiche" name="B5" aInZaehlrichtung="true" modul="//@controller.13/@module.0" unit_no="3713" neu="true" bIstAbzweig="true" cIstBevorzugt="true" b="//@gruppe.2/@abschnitt.10/@bauelement.0" c="//@gruppe.2/@abschnitt.9/@bauelement.0" a="//@gruppe.2/@abschnitt.10/@bauelement.2"/>
+      <bauelement xsi:type="Modelrailway:Gleis" name="B2" istHauptgleis="true" a="//@gruppe.2/@abschnitt.10/@bauelement.1"/>
       <bauelement xsi:type="Modelrailway:Gleissperrsignal" name="1I" unit_no="2354" inZaehlrichtung="true" anschluss="//@controller.8/@anschluesse.0"/>
     </abschnitt>
     <abschnitt name="BW1" unit_no="3734" modul="//@controller.13/@module.1">
@@ -510,10 +510,10 @@
       <bauelement xsi:type="Modelrailway:Formhauptsignal" name="P1" spulen="2" modul="//@controller.13/@module.0" unit_no="3714"/>
     </abschnitt>
     <abschnitt name="B1" unit_no="1943" modul="//@controller.6/@module.1">
-      <bauelement xsi:type="Modelrailway:Gleis" name="B1" istHauptgleis="true" a="//@gruppe.2/@abschnitt.11/@bauelement.0" b="//@gruppe.2/@abschnitt.10/@bauelement.1"/>
+      <bauelement xsi:type="Modelrailway:Gleis" name="B1" istHauptgleis="true" a="//@gruppe.2/@abschnitt.11/@bauelement.0" b="//@gruppe.2/@abschnitt.10/@bauelement.0"/>
     </abschnitt>
     <abschnitt name="BO1" unit_no="3732" modul="//@controller.13/@module.1">
-      <bauelement xsi:type="Modelrailway:Gleis" name="BO1" a="//@gruppe.2/@abschnitt.10/@bauelement.1"/>
+      <bauelement xsi:type="Modelrailway:Gleis" name="BO1" a="//@gruppe.2/@abschnitt.10/@bauelement.0"/>
     </abschnitt>
   </gruppe>
   <gruppe xsi:type="Modelrailway:Strecke" name="West">
