@@ -51,7 +51,7 @@ public class BatchExecuter
 	 * Liste der zu verarbeitenden Batches.
 	 */
 	private final        LinkedList<Batch>  workQueue = new LinkedList<Batch>();
-	private final static AtomicInteger      idCounter   = new AtomicInteger(0);
+	private final static AtomicInteger      idCounter = new AtomicInteger(0);
 	private final        int                ID;
 
 	/**
@@ -154,7 +154,7 @@ public class BatchExecuter
 				{
 					BatchElement element = device.getBatchElement();
 					Batch batch = element.getBatch();
-					
+
 					synchronized(batch)
 					{
 						batch.processResult(msg, element);

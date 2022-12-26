@@ -45,7 +45,7 @@ public class TourModeAction extends MrwAction
 	{
 		Controller ctrl = Controller.getController();
 		List<Abschnitt> selection = ctrl.getSegmentSelection();
-		
+
 		setEnabled(((!selection.isEmpty()) && selection.get(0).isOccupied()) || isActive());
 		setChecked(isActive());
 	}

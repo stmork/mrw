@@ -62,7 +62,7 @@ abstract public class Hauptsignal extends Signal
 			nominalState = SignalCode.SIGNAL_OFF;
 			break;
 		}
-		
+
 		// Kombiniertes Vorsignal aussschalten falls keine Fahrtfreigabe.
 		if ((nominalState != SignalCode.SIGNAL_HP1) && (nominalState != SignalCode.SIGNAL_HP2))
 		{
@@ -71,7 +71,7 @@ abstract public class Hauptsignal extends Signal
 				if (s instanceof Vorsignal)
 				{
 					Vorsignal vs = (Vorsignal)s;
-					
+
 					vs.setSignal(SignalCommand.OFF, shunting);
 				}
 			}

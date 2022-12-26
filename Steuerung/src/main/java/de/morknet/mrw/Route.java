@@ -648,7 +648,7 @@ public class Route extends LinkedList<Gleisteil>
 			}
 		}
 	}
-	
+
 	/**
 	 * Diese Methode füllt die Batches mit Kommandos, um alle Gleisabschnitte
 	 * bis zum angegebenen Gleisabschnitt aufzulösen.
@@ -819,7 +819,7 @@ public class Route extends LinkedList<Gleisteil>
 			{
 				// Gleisteil hat keine Fahrstraße
 				gt.setRoute(null);
-				
+
 				// Entfernen aus Liste aller benutzten Gleisteile
 				removeTrackElement(gt);
 				
@@ -827,7 +827,7 @@ public class Route extends LinkedList<Gleisteil>
 				remove(gt);
 			}
 		}
-		
+
 		// Signale aufräumen
 		synchronized(ownedSegments)
 		{
@@ -909,7 +909,7 @@ public class Route extends LinkedList<Gleisteil>
 			log.debug("===========================================================");
 		}
 	}
-	
+
 	/**
 	 * Baut einen Text, der diese Fahrstraße beschreibt auf.
 	 * @return Der Kurztext dieser Fahrstraße
