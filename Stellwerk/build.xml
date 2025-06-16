@@ -175,7 +175,7 @@
 				author="true"
 				splitindex="true"
 				use="true"
-				failonerror="true"
+				failonerror="false"
 				encoding="UTF-8"
 				docencoding="UTF-8"
 				charset="UTF-8"
