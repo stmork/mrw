@@ -105,7 +105,7 @@
   </controller>
   <controller id="13">
     <anschluesse nummer="1340" lichtsignale="//@gruppe.2/@abschnitt.1/@bauelement.1 //@gruppe.2/@abschnitt.1/@bauelement.2 //@gruppe.1/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.2"/>
-    <anschluesse nummer="1330" lichtsignale="//@gruppe.3/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.2/@bauelement.2 //@gruppe.3/@abschnitt.3/@bauelement.3 //@gruppe.2/@abschnitt.7/@bauelement.1"/>
+    <anschluesse nummer="1330" lichtsignale="//@gruppe.3/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.2/@bauelement.2 //@gruppe.3/@abschnitt.3/@bauelement.3"/>
     <module xsi:type="Modelrailway:Impulsmodul" nummer="1301" magnetartikel="//@gruppe.2/@abschnitt.5/@bauelement.1 //@gruppe.2/@abschnitt.3/@bauelement.1 //@gruppe.2/@abschnitt.2/@bauelement.2 //@gruppe.2/@abschnitt.2/@bauelement.1"/>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1302">
       <lampen name="Gaslaterne Süd" unit_no="3476" schwellwert="34" typ="65"/>
@@ -146,6 +146,7 @@
     <module xsi:type="Modelrailway:Gleismodul" nummer="1503" abschnitte="//@gruppe.2/@abschnitt.0 //@gruppe.3/@abschnitt.0 //@gruppe.3/@abschnitt.1 //@gruppe.2/@abschnitt.1"/>
   </controller>
   <controller id="16">
+    <anschluesse nummer="1640" lichtsignale="//@gruppe.2/@abschnitt.7/@bauelement.1"/>
     <module xsi:type="Modelrailway:Gleismodul" nummer="1601" abschnitte="//@gruppe.2/@abschnitt.7 //@gruppe.2/@abschnitt.6 //@gruppe.1/@abschnitt.2 //@gruppe.1/@abschnitt.9"/>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1602">
       <lampen name="Siedlungshaus 1" unit_no="4244" schwellwert="14" typ="15"/>
@@ -488,7 +489,7 @@
     </abschnitt>
     <abschnitt name="HS3" unit_no="4224" modul="//@controller.15/@module.0">
       <bauelement xsi:type="Modelrailway:Gleis" name="HS3" a="//@gruppe.2/@abschnitt.6/@bauelement.0" b="//@gruppe.2/@abschnitt.8/@bauelement.0"/>
-      <bauelement xsi:type="Modelrailway:Einfahrsignal" name="A" unit_no="3368" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.1"/>
+      <bauelement xsi:type="Modelrailway:Ausfahrsignal" name="N3" unit_no="3368" inZaehlrichtung="true" anschluss="//@controller.15/@anschluesse.0"/>
     </abschnitt>
     <abschnitt name="BW2b" unit_no="3735" modul="//@controller.13/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="BW2b" a="//@gruppe.2/@abschnitt.7/@bauelement.0" b="//@gruppe.2/@abschnitt.8/@bauelement.1"/>

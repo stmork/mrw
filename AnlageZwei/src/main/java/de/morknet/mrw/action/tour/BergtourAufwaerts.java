@@ -36,7 +36,7 @@ public class BergtourAufwaerts extends TourInfo
 		"Bahnhof Alt Ulm C",
 		"Bahnhof Alt Ulm N2",
 		"Strecke Berg B",
-		"Strecke Berg A",
+		"Strecke Berg N3",
 		"Strecke Berg 1I"
 	};
 
