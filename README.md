@@ -32,3 +32,7 @@ subgraph Eclipse
  end
 
 ```
+
+## MRW Firmware
+Die Firmware ist in ein eigenes Repository migriert und wird hier nicht mehr
+gepflegt.

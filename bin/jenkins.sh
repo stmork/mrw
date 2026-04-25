@@ -2,9 +2,7 @@
 
 set -e
 
-cd Lichtprofile
-ant clean run
-cd ../Steuerung
+cd Steuerung
 ant clean package
 cd ../AnlageYakindu
 ant clean generate package
@@ -16,19 +14,6 @@ ant clean package javadoc
 
 cd ../Microcontroller
 ant clean generate
-
-cd ../mc
-make clean depend
-make 
-cd ../canprog
-make clean depend
-make 
-cd ../tools
-make clean depend
-make
-cd ../daemon
-make clean depend
-make
 
 cd ../AnlageZwei
 ant print-version jacoco
