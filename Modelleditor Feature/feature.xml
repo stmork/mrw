@@ -118,11 +118,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.eclipse.jface.text" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jdt.core" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="de.morknet.oaw.dependencies"/>
-      <import plugin="de.morknet.oaw.tools5"/>
-      <import plugin="org.eclipse.xtend.typesystem.xsd"/>
+      <import plugin="org.eclipse.uml2.common.edit"/>
    </requires>
 
    <plugin
@@ -130,12 +126,5 @@ This Agreement is governed by the laws of the State of New York and the intellec
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-
-   <plugin
-         id="de.morknet.mrw.generator"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
 </feature>
