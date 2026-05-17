@@ -6,13 +6,48 @@
 package de.morknet.mrw.metamodel.util;
 
 import de.morknet.mrw.metamodel.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
+
+import de.morknet.mrw.metamodel.Anschluss;
+import de.morknet.mrw.metamodel.Ausfahrsignal;
+import de.morknet.mrw.metamodel.Bahnhof;
+import de.morknet.mrw.metamodel.Bauelement;
+import de.morknet.mrw.metamodel.Beleuchtungsmittel;
+import de.morknet.mrw.metamodel.Beleuchtungsmodul;
+import de.morknet.mrw.metamodel.Blocksignal;
+import de.morknet.mrw.metamodel.Controller;
+import de.morknet.mrw.metamodel.Crossing;
+import de.morknet.mrw.metamodel.DKW;
+import de.morknet.mrw.metamodel.Einfahrsignal;
+import de.morknet.mrw.metamodel.Element;
+import de.morknet.mrw.metamodel.Formgleissperrsignal;
+import de.morknet.mrw.metamodel.Formhauptsignal;
+import de.morknet.mrw.metamodel.Formsignal;
+import de.morknet.mrw.metamodel.Formvorsignal;
+import de.morknet.mrw.metamodel.Gleis;
+import de.morknet.mrw.metamodel.Gleisabschnitt;
+import de.morknet.mrw.metamodel.Gleismodul;
+import de.morknet.mrw.metamodel.Gleissperrsignal;
+import de.morknet.mrw.metamodel.Gleisteil;
+import de.morknet.mrw.metamodel.Gruppe;
+import de.morknet.mrw.metamodel.Hauptlichtsignal;
+import de.morknet.mrw.metamodel.Impulsmodul;
+import de.morknet.mrw.metamodel.Lampe;
+import de.morknet.mrw.metamodel.Licht;
+import de.morknet.mrw.metamodel.Lichtsignal;
+import de.morknet.mrw.metamodel.Magnetartikel;
+import de.morknet.mrw.metamodel.Modell;
+import de.morknet.mrw.metamodel.ModelrailwayPackage;
+import de.morknet.mrw.metamodel.Modul;
+import de.morknet.mrw.metamodel.Signal;
+import de.morknet.mrw.metamodel.Strecke;
+import de.morknet.mrw.metamodel.Unit;
+import de.morknet.mrw.metamodel.Verzweigung;
+import de.morknet.mrw.metamodel.Vorsignal;
+import de.morknet.mrw.metamodel.Weiche;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +62,13 @@ import org.eclipse.emf.ecore.util.Switch;
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage
  * @generated
  */
-public class ModelrailwaySwitch<T> extends Switch<T> {
+public class ModelrailwaySwitch<T> {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -49,16 +90,14 @@ public class ModelrailwaySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Checks whether this is a switch for the given package.
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param ePackage the package in question.
-	 * @return whether this is a switch for the given package.
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	@Override
-	protected boolean isSwitchFor(EPackage ePackage) {
-		return ePackage == modelPackage;
+	public T doSwitch(EObject theEObject) {
+		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
 	/**
@@ -68,7 +107,26 @@ public class ModelrailwaySwitch<T> extends Switch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	@Override
+	protected T doSwitch(EClass theEClass, EObject theEObject) {
+		if (theEClass.eContainer() == modelPackage) {
+			return doSwitch(theEClass.getClassifierID(), theEObject);
+		}
+		else {
+			List<EClass> eSuperTypes = theEClass.getESuperTypes();
+			return
+				eSuperTypes.isEmpty() ?
+					defaultCase(theEObject) :
+					doSwitch(eSuperTypes.get(0), theEObject);
+		}
+	}
+
+	/**
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @generated
+	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ModelrailwayPackage.ANSCHLUSS: {
@@ -153,6 +211,13 @@ public class ModelrailwaySwitch<T> extends Switch<T> {
 				Gleismodul gleismodul = (Gleismodul)theEObject;
 				T result = caseGleismodul(gleismodul);
 				if (result == null) result = caseModul(gleismodul);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelrailwayPackage.CROSSING: {
+				Crossing crossing = (Crossing)theEObject;
+				T result = caseCrossing(crossing);
+				if (result == null) result = caseUnit(crossing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -903,6 +968,21 @@ public class ModelrailwaySwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Crossing</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Crossing</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCrossing(Crossing object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Beleuchtungsmittel</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -928,7 +1008,6 @@ public class ModelrailwaySwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

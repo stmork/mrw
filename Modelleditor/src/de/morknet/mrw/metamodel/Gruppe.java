@@ -14,17 +14,24 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Gruppe#getModell <em>Modell</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gruppe#getAbschnitt <em>Abschnitt</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getGruppe()
  * @model abstract="true"
  * @generated
  */
 public interface Gruppe extends Element {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Modell</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Modell#getGruppe <em>Gruppe</em>}'.

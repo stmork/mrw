@@ -13,7 +13,6 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#isCIstAbzweig <em>CIst Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#isBIstAbzweig <em>BIst Abzweig</em>}</li>
@@ -23,12 +22,20 @@ package de.morknet.mrw.metamodel;
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#getC <em>C</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Weiche#getA <em>A</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getWeiche()
  * @model
  * @generated
  */
 public interface Weiche extends Verzweigung {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>CIst Abzweig</b></em>' attribute.
 	 * <!-- begin-user-doc -->

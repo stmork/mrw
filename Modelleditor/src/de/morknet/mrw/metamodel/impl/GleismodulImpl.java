@@ -27,14 +27,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleismodulImpl#getAbschnitte <em>Abschnitte</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class GleismodulImpl extends ModulImpl implements Gleismodul {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
 	/**
 	 * The cached value of the '{@link #getAbschnitte() <em>Abschnitte</em>}' reference list.
 	 * <!-- begin-user-doc -->

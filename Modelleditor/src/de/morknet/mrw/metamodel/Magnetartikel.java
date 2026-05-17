@@ -13,17 +13,24 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Magnetartikel#getSpulen <em>Spulen</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Magnetartikel#getModul <em>Modul</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getMagnetartikel()
  * @model abstract="true"
  * @generated
  */
 public interface Magnetartikel extends Bauelement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Spulen</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -13,16 +13,23 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Licht#getAnschluss <em>Anschluss</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getLicht()
  * @model
  * @generated
  */
 public interface Licht extends Beleuchtungsmittel {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Anschluss</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Anschluss#getLichter <em>Lichter</em>}'.

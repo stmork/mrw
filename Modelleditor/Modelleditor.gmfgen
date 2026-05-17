@@ -2,14 +2,13 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2005/GenModel">
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel">
   <diagram
       visualID="79"
       editPartClassName="ModellEditPart"
       itemSemanticEditPolicyClassName="ModellItemSemanticEditPolicy"
-      notationViewFactoryClassName="ModellViewFactory"
-      iconProviderPriority="Low"
-      canonicalEditPolicyClassName="ModellCanonicalEditPolicy">
+      canonicalEditPolicyClassName="ModellCanonicalEditPolicy"
+      iconProviderPriority="Low">
     <diagramRunTimeClass
         href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType
@@ -24,9 +23,8 @@
         visualID="2001"
         editPartClassName="GleisabschnittEditPart"
         itemSemanticEditPolicyClassName="GleisabschnittItemSemanticEditPolicy"
-        notationViewFactoryClassName="GleisabschnittViewFactory"
-        childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3"
         canonicalEditPolicyClassName="GleisabschnittCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3"
         compartments="//@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="GleisabschnittGraphicalNodeEditPolicy"
         containers="//@diagram/@compartments.0">
@@ -55,8 +53,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4007"
           editPartClassName="GleisabschnittNameEditPart"
-          itemSemanticEditPolicyClassName="GleisabschnittNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="GleisabschnittNameViewFactory">
+          itemSemanticEditPolicyClassName="GleisabschnittNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -68,8 +65,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="Abschnitt {0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -78,7 +76,6 @@
         visualID="2002"
         editPartClassName="FormhauptsignalEditPart"
         itemSemanticEditPolicyClassName="FormhauptsignalItemSemanticEditPolicy"
-        notationViewFactoryClassName="FormhauptsignalViewFactory"
         canonicalEditPolicyClassName="FormhauptsignalCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="FormhauptsignalGraphicalNodeEditPolicy"
         containers="//@diagram/@childNodes.0">
@@ -107,8 +104,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4001"
           editPartClassName="FormhauptsignalNameEditPart"
-          itemSemanticEditPolicyClassName="FormhauptsignalNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="FormhauptsignalNameViewFactory">
+          itemSemanticEditPolicyClassName="FormhauptsignalNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -120,8 +116,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -130,7 +127,6 @@
         visualID="2003"
         editPartClassName="FormvorsignalEditPart"
         itemSemanticEditPolicyClassName="FormvorsignalItemSemanticEditPolicy"
-        notationViewFactoryClassName="FormvorsignalViewFactory"
         canonicalEditPolicyClassName="FormvorsignalCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="FormvorsignalGraphicalNodeEditPolicy"
         containers="//@diagram/@childNodes.0">
@@ -159,8 +155,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4002"
           editPartClassName="FormvorsignalNameEditPart"
-          itemSemanticEditPolicyClassName="FormvorsignalNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="FormvorsignalNameViewFactory">
+          itemSemanticEditPolicyClassName="FormvorsignalNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -172,8 +167,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -182,7 +178,6 @@
         visualID="2004"
         editPartClassName="FormgleissperrsignalEditPart"
         itemSemanticEditPolicyClassName="FormgleissperrsignalItemSemanticEditPolicy"
-        notationViewFactoryClassName="FormgleissperrsignalViewFactory"
         canonicalEditPolicyClassName="FormgleissperrsignalCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="FormgleissperrsignalGraphicalNodeEditPolicy"
         containers="//@diagram/@childNodes.0">
@@ -211,8 +206,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4003"
           editPartClassName="FormgleissperrsignalNameEditPart"
-          itemSemanticEditPolicyClassName="FormgleissperrsignalNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="FormgleissperrsignalNameViewFactory">
+          itemSemanticEditPolicyClassName="FormgleissperrsignalNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -224,8 +218,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -234,7 +229,6 @@
         visualID="2005"
         editPartClassName="GleisEditPart"
         itemSemanticEditPolicyClassName="GleisItemSemanticEditPolicy"
-        notationViewFactoryClassName="GleisViewFactory"
         canonicalEditPolicyClassName="GleisCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="GleisGraphicalNodeEditPolicy"
         containers="//@diagram/@compartments.1">
@@ -263,8 +257,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4004"
           editPartClassName="GleisNameEditPart"
-          itemSemanticEditPolicyClassName="GleisNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="GleisNameViewFactory">
+          itemSemanticEditPolicyClassName="GleisNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -276,9 +269,10 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="Gleis {0}"
             editPattern="">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -287,7 +281,6 @@
         visualID="2006"
         editPartClassName="WeicheEditPart"
         itemSemanticEditPolicyClassName="WeicheItemSemanticEditPolicy"
-        notationViewFactoryClassName="WeicheViewFactory"
         canonicalEditPolicyClassName="WeicheCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="WeicheGraphicalNodeEditPolicy"
         containers="//@diagram/@compartments.1">
@@ -316,8 +309,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4005"
           editPartClassName="WeicheNameEditPart"
-          itemSemanticEditPolicyClassName="WeicheNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="WeicheNameViewFactory">
+          itemSemanticEditPolicyClassName="WeicheNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -329,8 +321,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="Weiche {0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -339,7 +332,6 @@
         visualID="2007"
         editPartClassName="DKWEditPart"
         itemSemanticEditPolicyClassName="DKWItemSemanticEditPolicy"
-        notationViewFactoryClassName="DKWViewFactory"
         canonicalEditPolicyClassName="DKWCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DKWGraphicalNodeEditPolicy"
         containers="//@diagram/@compartments.1">
@@ -368,8 +360,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4006"
           editPartClassName="DKWNameEditPart"
-          itemSemanticEditPolicyClassName="DKWNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DKWNameViewFactory">
+          itemSemanticEditPolicyClassName="DKWNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -381,8 +372,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="DKW {0]">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -391,9 +383,8 @@
         visualID="2008"
         editPartClassName="Gleisabschnitt2EditPart"
         itemSemanticEditPolicyClassName="Gleisabschnitt2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Gleisabschnitt2ViewFactory"
-        childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9 //@diagram/@childNodes.10"
         canonicalEditPolicyClassName="Gleisabschnitt2CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.9 //@diagram/@childNodes.10"
         compartments="//@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="Gleisabschnitt2GraphicalNodeEditPolicy"
         containers="//@diagram/@topLevelNodes.2">
@@ -423,8 +414,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4016"
           editPartClassName="GleisabschnittName2EditPart"
-          itemSemanticEditPolicyClassName="GleisabschnittName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="GleisabschnittName2ViewFactory">
+          itemSemanticEditPolicyClassName="GleisabschnittName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -436,8 +426,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="Abschnitt {0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -446,7 +437,6 @@
         visualID="2009"
         editPartClassName="Formhauptsignal2EditPart"
         itemSemanticEditPolicyClassName="Formhauptsignal2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Formhauptsignal2ViewFactory"
         canonicalEditPolicyClassName="Formhauptsignal2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Formhauptsignal2GraphicalNodeEditPolicy"
         containers="//@diagram/@childNodes.7">
@@ -476,8 +466,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4010"
           editPartClassName="FormhauptsignalName2EditPart"
-          itemSemanticEditPolicyClassName="FormhauptsignalName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="FormhauptsignalName2ViewFactory">
+          itemSemanticEditPolicyClassName="FormhauptsignalName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -489,8 +478,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -499,7 +489,6 @@
         visualID="2010"
         editPartClassName="Formvorsignal2EditPart"
         itemSemanticEditPolicyClassName="Formvorsignal2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Formvorsignal2ViewFactory"
         canonicalEditPolicyClassName="Formvorsignal2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Formvorsignal2GraphicalNodeEditPolicy"
         containers="//@diagram/@childNodes.7">
@@ -529,8 +518,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4011"
           editPartClassName="FormvorsignalName2EditPart"
-          itemSemanticEditPolicyClassName="FormvorsignalName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="FormvorsignalName2ViewFactory">
+          itemSemanticEditPolicyClassName="FormvorsignalName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -542,8 +530,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -552,7 +541,6 @@
         visualID="2011"
         editPartClassName="Formgleissperrsignal2EditPart"
         itemSemanticEditPolicyClassName="Formgleissperrsignal2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Formgleissperrsignal2ViewFactory"
         canonicalEditPolicyClassName="Formgleissperrsignal2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Formgleissperrsignal2GraphicalNodeEditPolicy"
         containers="//@diagram/@childNodes.7">
@@ -582,8 +570,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4012"
           editPartClassName="FormgleissperrsignalName2EditPart"
-          itemSemanticEditPolicyClassName="FormgleissperrsignalName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="FormgleissperrsignalName2ViewFactory">
+          itemSemanticEditPolicyClassName="FormgleissperrsignalName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -595,8 +582,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -605,7 +593,6 @@
         visualID="2012"
         editPartClassName="Gleis2EditPart"
         itemSemanticEditPolicyClassName="Gleis2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Gleis2ViewFactory"
         canonicalEditPolicyClassName="Gleis2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Gleis2GraphicalNodeEditPolicy"
         containers="//@diagram/@compartments.3">
@@ -635,8 +622,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4013"
           editPartClassName="GleisName2EditPart"
-          itemSemanticEditPolicyClassName="GleisName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="GleisName2ViewFactory">
+          itemSemanticEditPolicyClassName="GleisName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -648,9 +634,10 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="Gleis {0}"
             editPattern="">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -659,7 +646,6 @@
         visualID="2013"
         editPartClassName="Weiche2EditPart"
         itemSemanticEditPolicyClassName="Weiche2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Weiche2ViewFactory"
         canonicalEditPolicyClassName="Weiche2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Weiche2GraphicalNodeEditPolicy"
         containers="//@diagram/@compartments.3">
@@ -689,8 +675,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4014"
           editPartClassName="WeicheName2EditPart"
-          itemSemanticEditPolicyClassName="WeicheName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="WeicheName2ViewFactory">
+          itemSemanticEditPolicyClassName="WeicheName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -702,8 +687,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="Weiche {0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -712,7 +698,6 @@
         visualID="2014"
         editPartClassName="DKW2EditPart"
         itemSemanticEditPolicyClassName="DKW2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DKW2ViewFactory"
         canonicalEditPolicyClassName="DKW2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DKW2GraphicalNodeEditPolicy"
         containers="//@diagram/@compartments.3">
@@ -742,8 +727,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4015"
           editPartClassName="DKWName2EditPart"
-          itemSemanticEditPolicyClassName="DKWName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DKWName2ViewFactory">
+          itemSemanticEditPolicyClassName="DKWName2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -755,8 +739,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="DKW {0]">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -765,7 +750,6 @@
         visualID="1001"
         editPartClassName="BahnhofEditPart"
         itemSemanticEditPolicyClassName="BahnhofItemSemanticEditPolicy"
-        notationViewFactoryClassName="BahnhofViewFactory"
         canonicalEditPolicyClassName="BahnhofCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="BahnhofGraphicalNodeEditPolicy">
@@ -794,8 +778,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4008"
           editPartClassName="BahnhofNameEditPart"
-          itemSemanticEditPolicyClassName="BahnhofNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="BahnhofNameViewFactory">
+          itemSemanticEditPolicyClassName="BahnhofNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -807,8 +790,9 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="Bahnhof {0}">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -817,7 +801,6 @@
         visualID="1002"
         editPartClassName="ControllerEditPart"
         itemSemanticEditPolicyClassName="ControllerItemSemanticEditPolicy"
-        notationViewFactoryClassName="ControllerViewFactory"
         canonicalEditPolicyClassName="ControllerCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ControllerGraphicalNodeEditPolicy">
       <diagramRunTimeClass
@@ -845,8 +828,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4009"
           editPartClassName="ControllerIdEditPart"
-          itemSemanticEditPolicyClassName="ControllerIdItemSemanticEditPolicy"
-          notationViewFactoryClassName="ControllerIdViewFactory">
+          itemSemanticEditPolicyClassName="ControllerIdItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -858,9 +840,10 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}"
             editPattern="">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Controller/id"/>
         </modelFacet>
       </labels>
@@ -869,9 +852,8 @@
         visualID="1003"
         editPartClassName="StreckeEditPart"
         itemSemanticEditPolicyClassName="StreckeItemSemanticEditPolicy"
-        notationViewFactoryClassName="StreckeViewFactory"
-        childNodes="//@diagram/@childNodes.7"
         canonicalEditPolicyClassName="StreckeCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.7"
         compartments="//@diagram/@compartments.2"
         graphicalNodeEditPolicyClassName="StreckeGraphicalNodeEditPolicy">
       <diagramRunTimeClass
@@ -899,8 +881,7 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="4017"
           editPartClassName="StreckeNameEditPart"
-          itemSemanticEditPolicyClassName="StreckeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StreckeNameViewFactory">
+          itemSemanticEditPolicyClassName="StreckeNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -912,9 +893,10 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
             viewPattern="{0}"
             editPattern="">
-          <metaFeature
+          <metaFeatures
               href="Modelleditor.genmodel#//Modelrailway/Element/name"/>
         </modelFacet>
       </labels>
@@ -922,8 +904,7 @@
     <links
         visualID="3001"
         editPartClassName="DKWDEditPart"
-        itemSemanticEditPolicyClassName="DKWDItemSemanticEditPolicy"
-        notationViewFactoryClassName="DKWDViewFactory">
+        itemSemanticEditPolicyClassName="DKWDItemSemanticEditPolicy">
       <diagramRunTimeClass
           href="../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -945,9 +926,8 @@
         visualID="5001"
         editPartClassName="BahnhofAbschnittCompEditPart"
         itemSemanticEditPolicyClassName="BahnhofAbschnittCompItemSemanticEditPolicy"
-        notationViewFactoryClassName="BahnhofAbschnittCompViewFactory"
-        childNodes="//@diagram/@childNodes.0"
         canonicalEditPolicyClassName="BahnhofAbschnittCompCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0"
         title="AbschnittComp"
         canCollapse="false"
         needsTitle="false"
@@ -966,9 +946,8 @@
         visualID="5002"
         editPartClassName="GleisabschnittAbschnittCompEditPart"
         itemSemanticEditPolicyClassName="GleisabschnittAbschnittCompItemSemanticEditPolicy"
-        notationViewFactoryClassName="GleisabschnittAbschnittCompViewFactory"
-        childNodes="//@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6"
         canonicalEditPolicyClassName="GleisabschnittAbschnittCompCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6"
         title="AbschnittComp"
         canCollapse="false"
         needsTitle="false"
@@ -987,7 +966,6 @@
         visualID="5003"
         editPartClassName="StreckeAbschnittCompEditPart"
         itemSemanticEditPolicyClassName="StreckeAbschnittCompItemSemanticEditPolicy"
-        notationViewFactoryClassName="StreckeAbschnittCompViewFactory"
         canonicalEditPolicyClassName="StreckeAbschnittCompCanonicalEditPolicy"
         title="AbschnittComp"
         canCollapse="false"
@@ -1007,9 +985,8 @@
         visualID="5004"
         editPartClassName="GleisabschnittAbschnittComp2EditPart"
         itemSemanticEditPolicyClassName="GleisabschnittAbschnittComp2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="GleisabschnittAbschnittComp2ViewFactory"
-        childNodes="//@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13"
         canonicalEditPolicyClassName="GleisabschnittAbschnittComp2CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13"
         title="AbschnittComp"
         canCollapse="false"
         needsTitle="false"
@@ -1127,4 +1104,15 @@
   <editor/>
   <domainGenModel
       href="Modelleditor.genmodel#/"/>
+  <labelParsers
+      extensibleViaService="true">
+    <implementations
+        xsi:type="gmfgen:PredefinedParser"
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet"/>
+  </labelParsers>
+  <contextMenus
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
 </gmfgen:GenEditorGenerator>

@@ -28,15 +28,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ModellImpl#getController <em>Controller</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ModellImpl#getGruppe <em>Gruppe</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class ModellImpl extends ElementImpl implements Modell {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The cached value of the '{@link #getController() <em>Controller</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

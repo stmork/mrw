@@ -22,15 +22,22 @@ import de.morknet.mrw.metamodel.ModelrailwayPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.LampeImpl#getTyp <em>Typ</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.LampeImpl#getModul <em>Modul</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #getTyp() <em>Typ</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,7 +108,7 @@ public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
 	@Override
 	public Beleuchtungsmodul getModul() {
 		if (eContainerFeatureID() != ModelrailwayPackage.LAMPE__MODUL) return null;
-		return (Beleuchtungsmodul)eInternalContainer();
+		return (Beleuchtungsmodul)eContainer();
 	}
 
 	/**
@@ -257,7 +264,7 @@ public class LampeImpl extends BeleuchtungsmittelImpl implements Lampe {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (typ: ");
 		result.append(typ);
 		result.append(')');

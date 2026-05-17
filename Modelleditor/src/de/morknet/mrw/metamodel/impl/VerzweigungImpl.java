@@ -25,17 +25,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#getSpulen <em>Spulen</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#getModul <em>Modul</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#getUnit_no <em>Unit no</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl#isNeu <em>Neu</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigung {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #getSpulen() <em>Spulen</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -430,7 +437,7 @@ public abstract class VerzweigungImpl extends GleisteilImpl implements Verzweigu
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (spulen: ");
 		result.append(spulen);
 		result.append(", unit_no: ");

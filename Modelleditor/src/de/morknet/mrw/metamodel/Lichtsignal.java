@@ -13,16 +13,23 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Lichtsignal#getAnschluss <em>Anschluss</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getLichtsignal()
  * @model abstract="true"
  * @generated
  */
 public interface Lichtsignal extends Signal {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
 
 	/**
 	 * Returns the value of the '<em><b>Anschluss</b></em>' reference.

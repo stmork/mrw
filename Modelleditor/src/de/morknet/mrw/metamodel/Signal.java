@@ -13,16 +13,23 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Signal#isInZaehlrichtung <em>In Zaehlrichtung</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getSignal()
  * @model abstract="true"
  * @generated
  */
 public interface Signal extends Bauelement, Unit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>In Zaehlrichtung</b></em>' attribute.
 	 * <!-- begin-user-doc -->

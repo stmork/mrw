@@ -14,17 +14,24 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Modell#getController <em>Controller</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Modell#getGruppe <em>Gruppe</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getModell()
  * @model
  * @generated
  */
 public interface Modell extends Element {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Controller</b></em>' containment reference list.
 	 * The list contents are of type {@link de.morknet.mrw.metamodel.Controller}.

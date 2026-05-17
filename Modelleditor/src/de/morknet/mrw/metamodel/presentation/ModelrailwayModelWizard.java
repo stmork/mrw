@@ -94,6 +94,13 @@ import org.eclipse.ui.PartInitException;
  */
 public class ModelrailwayModelWizard extends Wizard implements INewWizard {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -280,7 +287,6 @@ public class ModelrailwayModelWizard extends Wizard implements INewWizard {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
 				getShell().getDisplay().asyncExec
 					(new Runnable() {
-						 @Override
 						 public void run() {
 							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
 						 }
@@ -292,7 +298,7 @@ public class ModelrailwayModelWizard extends Wizard implements INewWizard {
 			try {
 				page.openEditor
 					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
+					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
 			}
 			catch (PartInitException exception) {
 				MessageDialog.openError(workbenchWindow.getShell(), ModelrailwayEditPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
@@ -472,7 +478,6 @@ public class ModelrailwayModelWizard extends Wizard implements INewWizard {
 		 */
 		protected ModifyListener validator =
 			new ModifyListener() {
-				@Override
 				public void modifyText(ModifyEvent e) {
 					setPageComplete(validatePage());
 				}

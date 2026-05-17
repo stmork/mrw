@@ -13,6 +13,7 @@ import de.morknet.mrw.metamodel.Beleuchtungsmittel;
 import de.morknet.mrw.metamodel.Beleuchtungsmodul;
 import de.morknet.mrw.metamodel.Blocksignal;
 import de.morknet.mrw.metamodel.Controller;
+import de.morknet.mrw.metamodel.Crossing;
 import de.morknet.mrw.metamodel.Einfahrsignal;
 import de.morknet.mrw.metamodel.Element;
 import de.morknet.mrw.metamodel.Formgleissperrsignal;
@@ -56,6 +57,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class ModelrailwayPackageImpl extends EPackageImpl implements ModelrailwayPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -299,6 +307,13 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass crossingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass beleuchtungsmittelEClass = null;
 
 	/**
@@ -329,7 +344,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link ModelrailwayPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -343,8 +358,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		if (isInited) return (ModelrailwayPackage)EPackage.Registry.INSTANCE.getEPackage(ModelrailwayPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredModelrailwayPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		ModelrailwayPackageImpl theModelrailwayPackage = registeredModelrailwayPackage instanceof ModelrailwayPackageImpl ? (ModelrailwayPackageImpl)registeredModelrailwayPackage : new ModelrailwayPackageImpl();
+		ModelrailwayPackageImpl theModelrailwayPackage = (ModelrailwayPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ModelrailwayPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ModelrailwayPackageImpl());
 
 		isInited = true;
 
@@ -357,6 +371,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		// Mark meta-data to indicate it can't be changed
 		theModelrailwayPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ModelrailwayPackage.eNS_URI, theModelrailwayPackage);
 		return theModelrailwayPackage;
@@ -407,9 +422,18 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAnschluss_Crossing() {
+		return (EReference)anschlussEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EReference getAnschluss_Lichter() {
-		return (EReference)anschlussEClass.getEStructuralFeatures().get(3);
+		return (EReference)anschlussEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -527,9 +551,18 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getGleisabschnitt_Crossing() {
+		return (EReference)gleisabschnittEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EReference getGleisabschnitt_Bauelement() {
-		return (EReference)gleisabschnittEClass.getEStructuralFeatures().get(2);
+		return (EReference)gleisabschnittEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1207,6 +1240,33 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCrossing() {
+		return crossingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCrossing_Anschluss() {
+		return (EReference)crossingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCrossing_Abschnitte() {
+		return (EReference)crossingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EClass getBeleuchtungsmittel() {
 		return beleuchtungsmittelEClass;
@@ -1255,6 +1315,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		createEAttribute(anschlussEClass, ANSCHLUSS__NUMMER);
 		createEReference(anschlussEClass, ANSCHLUSS__LICHTSIGNALE);
 		createEReference(anschlussEClass, ANSCHLUSS__CONTROLLER);
+		createEReference(anschlussEClass, ANSCHLUSS__CROSSING);
 		createEReference(anschlussEClass, ANSCHLUSS__LICHTER);
 
 		lichtsignalEClass = createEClass(LICHTSIGNAL);
@@ -1272,6 +1333,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		gleisabschnittEClass = createEClass(GLEISABSCHNITT);
 		createEReference(gleisabschnittEClass, GLEISABSCHNITT__GRUPPE);
 		createEReference(gleisabschnittEClass, GLEISABSCHNITT__MODUL);
+		createEReference(gleisabschnittEClass, GLEISABSCHNITT__CROSSING);
 		createEReference(gleisabschnittEClass, GLEISABSCHNITT__BAUELEMENT);
 
 		unitEClass = createEClass(UNIT);
@@ -1297,6 +1359,10 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		gleismodulEClass = createEClass(GLEISMODUL);
 		createEReference(gleismodulEClass, GLEISMODUL__ABSCHNITTE);
+
+		crossingEClass = createEClass(CROSSING);
+		createEReference(crossingEClass, CROSSING__ANSCHLUSS);
+		createEReference(crossingEClass, CROSSING__ABSCHNITTE);
 
 		lichtEClass = createEClass(LICHT);
 		createEReference(lichtEClass, LICHT__ANSCHLUSS);
@@ -1410,6 +1476,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		gruppeEClass.getESuperTypes().add(this.getElement());
 		modellEClass.getESuperTypes().add(this.getElement());
 		gleismodulEClass.getESuperTypes().add(this.getModul());
+		crossingEClass.getESuperTypes().add(this.getUnit());
 		lichtEClass.getESuperTypes().add(this.getBeleuchtungsmittel());
 		beleuchtungsmittelEClass.getESuperTypes().add(this.getElement());
 		beleuchtungsmittelEClass.getESuperTypes().add(this.getUnit());
@@ -1443,6 +1510,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		initEAttribute(getAnschluss_Nummer(), ecorePackage.getEInt(), "nummer", null, 0, 1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnschluss_Lichtsignale(), this.getLichtsignal(), this.getLichtsignal_Anschluss(), "lichtsignale", null, 0, -1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnschluss_Controller(), this.getController(), this.getController_Anschluesse(), "controller", null, 1, 1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnschluss_Crossing(), this.getCrossing(), this.getCrossing_Anschluss(), "crossing", null, 0, -1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnschluss_Lichter(), this.getLicht(), this.getLicht_Anschluss(), "lichter", null, 0, -1, Anschluss.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lichtsignalEClass, Lichtsignal.class, "Lichtsignal", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1460,6 +1528,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		initEClass(gleisabschnittEClass, Gleisabschnitt.class, "Gleisabschnitt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGleisabschnitt_Gruppe(), this.getGruppe(), this.getGruppe_Abschnitt(), "gruppe", null, 1, 1, Gleisabschnitt.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGleisabschnitt_Modul(), this.getGleismodul(), this.getGleismodul_Abschnitte(), "modul", null, 1, 1, Gleisabschnitt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGleisabschnitt_Crossing(), this.getCrossing(), this.getCrossing_Abschnitte(), "crossing", null, 0, 1, Gleisabschnitt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGleisabschnitt_Bauelement(), this.getBauelement(), this.getBauelement_Abschnitt(), "bauelement", null, 1, -1, Gleisabschnitt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitEClass, Unit.class, "Unit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1485,6 +1554,10 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		initEClass(gleismodulEClass, Gleismodul.class, "Gleismodul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGleismodul_Abschnitte(), this.getGleisabschnitt(), this.getGleisabschnitt_Modul(), "abschnitte", null, 0, 4, Gleismodul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(crossingEClass, Crossing.class, "Crossing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCrossing_Anschluss(), this.getAnschluss(), this.getAnschluss_Crossing(), "anschluss", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrossing_Abschnitte(), this.getGleisabschnitt(), this.getGleisabschnitt_Crossing(), "abschnitte", null, 1, -1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lichtEClass, Licht.class, "Licht", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLicht_Anschluss(), this.getAnschluss(), this.getAnschluss_Lichter(), "anschluss", null, 1, 1, Licht.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1562,26 +1635,6 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// http://www.eclipse.org/uml2/2.0.0/UML
-		createUMLAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createUMLAnnotations() {
-		String source = "http://www.eclipse.org/uml2/2.0.0/UML";
-		addAnnotation
-		  (this,
-		   source,
-		   new String[] {
-			   "originalName", "Modelrailway"
-		   });
 	}
 
 } //ModelrailwayPackageImpl

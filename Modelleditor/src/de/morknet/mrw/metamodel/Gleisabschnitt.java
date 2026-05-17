@@ -14,18 +14,26 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Gleisabschnitt#getGruppe <em>Gruppe</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gleisabschnitt#getModul <em>Modul</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.Gleisabschnitt#getCrossing <em>Crossing</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gleisabschnitt#getBauelement <em>Bauelement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getGleisabschnitt()
  * @model
  * @generated
  */
 public interface Gleisabschnitt extends Element, Unit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Gruppe</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Gruppe#getAbschnitt <em>Abschnitt</em>}'.
@@ -70,6 +78,34 @@ public interface Gleisabschnitt extends Element, Unit {
 	 * @generated
 	 */
 	void setModul(Gleismodul value);
+
+	/**
+	 * Returns the value of the '<em><b>Crossing</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Crossing#getAbschnitte <em>Abschnitte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Crossing</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Crossing</em>' reference.
+	 * @see #setCrossing(Crossing)
+	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getGleisabschnitt_Crossing()
+	 * @see de.morknet.mrw.metamodel.Crossing#getAbschnitte
+	 * @model opposite="abschnitte"
+	 * @generated
+	 */
+	Crossing getCrossing();
+
+	/**
+	 * Sets the value of the '{@link de.morknet.mrw.metamodel.Gleisabschnitt#getCrossing <em>Crossing</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Crossing</em>' reference.
+	 * @see #getCrossing()
+	 * @generated
+	 */
+	void setCrossing(Crossing value);
 
 	/**
 	 * Returns the value of the '<em><b>Bauelement</b></em>' containment reference list.

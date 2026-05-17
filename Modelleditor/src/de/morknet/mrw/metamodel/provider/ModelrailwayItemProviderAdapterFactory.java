@@ -37,6 +37,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  */
 public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -581,6 +588,29 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Crossing} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CrossingItemProvider crossingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.morknet.mrw.metamodel.Crossing}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCrossingAdapter() {
+		if (crossingItemProvider == null) {
+			crossingItemProvider = new CrossingItemProvider(this);
+		}
+
+		return crossingItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -690,6 +720,7 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 		if (modellItemProvider != null) modellItemProvider.dispose();
 		if (controllerItemProvider != null) controllerItemProvider.dispose();
 		if (gleismodulItemProvider != null) gleismodulItemProvider.dispose();
+		if (crossingItemProvider != null) crossingItemProvider.dispose();
 		if (lichtItemProvider != null) lichtItemProvider.dispose();
 		if (ausfahrsignalItemProvider != null) ausfahrsignalItemProvider.dispose();
 		if (bahnhofItemProvider != null) bahnhofItemProvider.dispose();

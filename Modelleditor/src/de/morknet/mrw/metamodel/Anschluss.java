@@ -16,19 +16,27 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getLichtsignale <em>Lichtsignale</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getController <em>Controller</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getCrossing <em>Crossing</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Anschluss#getLichter <em>Lichter</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getAnschluss()
  * @model
  * @generated
  */
 public interface Anschluss extends EObject {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Nummer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,6 +97,24 @@ public interface Anschluss extends EObject {
 	 * @generated
 	 */
 	Controller getController();
+
+	/**
+	 * Returns the value of the '<em><b>Crossing</b></em>' containment reference list.
+	 * The list contents are of type {@link de.morknet.mrw.metamodel.Crossing}.
+	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Crossing#getAnschluss <em>Anschluss</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Crossing</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Crossing</em>' containment reference list.
+	 * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getAnschluss_Crossing()
+	 * @see de.morknet.mrw.metamodel.Crossing#getAnschluss
+	 * @model opposite="anschluss" containment="true"
+	 * @generated
+	 */
+	EList<Crossing> getCrossing();
 
 	/**
 	 * Returns the value of the '<em><b>Lichter</b></em>' containment reference list.

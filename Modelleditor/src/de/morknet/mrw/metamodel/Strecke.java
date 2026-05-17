@@ -17,4 +17,11 @@ package de.morknet.mrw.metamodel;
  * @generated
  */
 public interface Strecke extends Gruppe {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
 } // Strecke

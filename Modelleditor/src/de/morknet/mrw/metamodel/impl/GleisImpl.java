@@ -22,17 +22,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#isIstAbzweig <em>Ist Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#isIstHauptgleis <em>Ist Hauptgleis</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#getA <em>A</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisImpl#getB <em>B</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class GleisImpl extends GleisteilImpl implements Gleis {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #isIstAbzweig() <em>Ist Abzweig</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -337,7 +344,7 @@ public class GleisImpl extends GleisteilImpl implements Gleis {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (istAbzweig: ");
 		result.append(istAbzweig);
 		result.append(", istHauptgleis: ");

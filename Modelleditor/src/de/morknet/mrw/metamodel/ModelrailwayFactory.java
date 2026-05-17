@@ -17,6 +17,12 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface ModelrailwayFactory extends EFactory {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,6 +227,15 @@ public interface ModelrailwayFactory extends EFactory {
 	 * @generated
 	 */
 	Lampe createLampe();
+
+	/**
+	 * Returns a new object of class '<em>Crossing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Crossing</em>'.
+	 * @generated
+	 */
+	Crossing createCrossing();
 
 	/**
 	 * Returns the package supported by this factory.

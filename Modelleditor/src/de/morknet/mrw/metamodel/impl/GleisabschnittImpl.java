@@ -6,6 +6,7 @@
 package de.morknet.mrw.metamodel.impl;
 
 import de.morknet.mrw.metamodel.Bauelement;
+import de.morknet.mrw.metamodel.Crossing;
 import de.morknet.mrw.metamodel.Gleisabschnitt;
 import de.morknet.mrw.metamodel.Gleismodul;
 import de.morknet.mrw.metamodel.Gruppe;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,17 +35,25 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getUnit_no <em>Unit no</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getGruppe <em>Gruppe</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getModul <em>Modul</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getCrossing <em>Crossing</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GleisabschnittImpl#getBauelement <em>Bauelement</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #getUnit_no() <em>Unit no</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,6 +83,16 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * @ordered
 	 */
 	protected Gleismodul modul;
+
+	/**
+	 * The cached value of the '{@link #getCrossing() <em>Crossing</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCrossing()
+	 * @generated
+	 * @ordered
+	 */
+	protected Crossing crossing;
 
 	/**
 	 * The cached value of the '{@link #getBauelement() <em>Bauelement</em>}' containment reference list.
@@ -134,7 +154,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	@Override
 	public Gruppe getGruppe() {
 		if (eContainerFeatureID() != ModelrailwayPackage.GLEISABSCHNITT__GRUPPE) return null;
-		return (Gruppe)eInternalContainer();
+		return (Gruppe)eContainer();
 	}
 
 	/**
@@ -204,6 +224,66 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Crossing getCrossing() {
+		if (crossing != null && crossing.eIsProxy()) {
+			InternalEObject oldCrossing = (InternalEObject)crossing;
+			crossing = (Crossing)eResolveProxy(oldCrossing);
+			if (crossing != oldCrossing) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelrailwayPackage.GLEISABSCHNITT__CROSSING, oldCrossing, crossing));
+			}
+		}
+		return crossing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Crossing basicGetCrossing() {
+		return crossing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCrossing(Crossing newCrossing, NotificationChain msgs) {
+		Crossing oldCrossing = crossing;
+		crossing = newCrossing;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelrailwayPackage.GLEISABSCHNITT__CROSSING, oldCrossing, newCrossing);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCrossing(Crossing newCrossing) {
+		if (newCrossing != crossing) {
+			NotificationChain msgs = null;
+			if (crossing != null)
+				msgs = ((InternalEObject)crossing).eInverseRemove(this, ModelrailwayPackage.CROSSING__ABSCHNITTE, Crossing.class, msgs);
+			if (newCrossing != null)
+				msgs = ((InternalEObject)newCrossing).eInverseAdd(this, ModelrailwayPackage.CROSSING__ABSCHNITTE, Crossing.class, msgs);
+			msgs = basicSetCrossing(newCrossing, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelrailwayPackage.GLEISABSCHNITT__CROSSING, newCrossing, newCrossing));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EList<Bauelement> getBauelement() {
 		if (bauelement == null) {
@@ -229,6 +309,10 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 				if (modul != null)
 					msgs = ((InternalEObject)modul).eInverseRemove(this, ModelrailwayPackage.GLEISMODUL__ABSCHNITTE, Gleismodul.class, msgs);
 				return basicSetModul((Gleismodul)otherEnd, msgs);
+			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
+				if (crossing != null)
+					msgs = ((InternalEObject)crossing).eInverseRemove(this, ModelrailwayPackage.CROSSING__ABSCHNITTE, Crossing.class, msgs);
+				return basicSetCrossing((Crossing)otherEnd, msgs);
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBauelement()).basicAdd(otherEnd, msgs);
 		}
@@ -247,6 +331,8 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 				return eBasicSetContainer(null, ModelrailwayPackage.GLEISABSCHNITT__GRUPPE, msgs);
 			case ModelrailwayPackage.GLEISABSCHNITT__MODUL:
 				return basicSetModul(null, msgs);
+			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
+				return basicSetCrossing(null, msgs);
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				return ((InternalEList<?>)getBauelement()).basicRemove(otherEnd, msgs);
 		}
@@ -282,6 +368,9 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 			case ModelrailwayPackage.GLEISABSCHNITT__MODUL:
 				if (resolve) return getModul();
 				return basicGetModul();
+			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
+				if (resolve) return getCrossing();
+				return basicGetCrossing();
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				return getBauelement();
 		}
@@ -302,6 +391,9 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 				return;
 			case ModelrailwayPackage.GLEISABSCHNITT__MODUL:
 				setModul((Gleismodul)newValue);
+				return;
+			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
+				setCrossing((Crossing)newValue);
 				return;
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				getBauelement().clear();
@@ -325,6 +417,9 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 			case ModelrailwayPackage.GLEISABSCHNITT__MODUL:
 				setModul((Gleismodul)null);
 				return;
+			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
+				setCrossing((Crossing)null);
+				return;
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				getBauelement().clear();
 				return;
@@ -346,6 +441,8 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 				return getGruppe() != null;
 			case ModelrailwayPackage.GLEISABSCHNITT__MODUL:
 				return modul != null;
+			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
+				return crossing != null;
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				return bauelement != null && !bauelement.isEmpty();
 		}
@@ -393,7 +490,7 @@ public class GleisabschnittImpl extends ElementImpl implements Gleisabschnitt {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (unit_no: ");
 		result.append(unit_no);
 		result.append(')');

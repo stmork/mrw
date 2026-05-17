@@ -123,6 +123,8 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -173,6 +175,13 @@ public class ModelrailwayEditor
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,7 +227,7 @@ public class ModelrailwayEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected List<PropertySheetPage> propertySheetPages = new ArrayList<PropertySheetPage>();
+	protected PropertySheetPage propertySheetPage;
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline.
@@ -328,7 +337,6 @@ public class ModelrailwayEditor
 	 */
 	protected IPartListener partListener =
 		new IPartListener() {
-			@Override
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
@@ -338,7 +346,7 @@ public class ModelrailwayEditor
 					}
 				}
 				else if (p instanceof PropertySheet) {
-					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
+					if (((PropertySheet)p).getCurrentPage() == propertySheetPage) {
 						getActionBarContributor().setActiveEditor(ModelrailwayEditor.this);
 						handleActivate();
 					}
@@ -347,19 +355,15 @@ public class ModelrailwayEditor
 					handleActivate();
 				}
 			}
-			@Override
 			public void partBroughtToTop(IWorkbenchPart p) {
 				// Ignore.
 			}
-			@Override
 			public void partClosed(IWorkbenchPart p) {
 				// Ignore.
 			}
-			@Override
 			public void partDeactivated(IWorkbenchPart p) {
 				// Ignore.
 			}
-			@Override
 			public void partOpened(IWorkbenchPart p) {
 				// Ignore.
 			}
@@ -413,8 +417,6 @@ public class ModelrailwayEditor
 	 */
 	protected EContentAdapter problemIndicationAdapter =
 		new EContentAdapter() {
-			protected boolean dispatching;
-
 			@Override
 			public void notifyChanged(Notification notification) {
 				if (notification.getNotifier() instanceof Resource) {
@@ -430,27 +432,21 @@ public class ModelrailwayEditor
 							else {
 								resourceToDiagnosticMap.remove(resource);
 							}
-							dispatchUpdateProblemIndication();
+
+							if (updateProblemIndication) {
+								getSite().getShell().getDisplay().asyncExec
+									(new Runnable() {
+										 public void run() {
+											 updateProblemIndication();
+										 }
+									 });
+							}
 							break;
 						}
 					}
 				}
 				else {
 					super.notifyChanged(notification);
-				}
-			}
-
-			protected void dispatchUpdateProblemIndication() {
-				if (updateProblemIndication && !dispatching) {
-					dispatching = true;
-					getSite().getShell().getDisplay().asyncExec
-						(new Runnable() {
-							 @Override
-							 public void run() {
-								 dispatching = false;
-								 updateProblemIndication();
-							 }
-						 });
 				}
 			}
 
@@ -462,8 +458,6 @@ public class ModelrailwayEditor
 			@Override
 			protected void unsetTarget(Resource target) {
 				basicUnsetTarget(target);
-				resourceToDiagnosticMap.remove(target);
-				dispatchUpdateProblemIndication();
 			}
 		};
 
@@ -475,7 +469,6 @@ public class ModelrailwayEditor
 	 */
 	protected IResourceChangeListener resourceChangeListener =
 		new IResourceChangeListener() {
-			@Override
 			public void resourceChanged(IResourceChangeEvent event) {
 				IResourceDelta delta = event.getDelta();
 				try {
@@ -484,7 +477,6 @@ public class ModelrailwayEditor
 						protected Collection<Resource> changedResources = new ArrayList<Resource>();
 						protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
-						@Override
 						public boolean visit(IResourceDelta delta) {
 							if (delta.getResource().getType() == IResource.FILE) {
 								if (delta.getKind() == IResourceDelta.REMOVED ||
@@ -499,7 +491,6 @@ public class ModelrailwayEditor
 										}
 									}
 								}
-								return false;
 							}
 
 							return true;
@@ -520,7 +511,6 @@ public class ModelrailwayEditor
 					if (!visitor.getRemovedResources().isEmpty()) {
 						getSite().getShell().getDisplay().asyncExec
 							(new Runnable() {
-								 @Override
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
@@ -533,7 +523,6 @@ public class ModelrailwayEditor
 					if (!visitor.getChangedResources().isEmpty()) {
 						getSite().getShell().getDisplay().asyncExec
 							(new Runnable() {
-								 @Override
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
 									 if (getSite().getPage().getActiveEditor() == ModelrailwayEditor.this) {
@@ -592,9 +581,8 @@ public class ModelrailwayEditor
 	 */
 	protected void handleChangedResources() {
 		if (!changedResources.isEmpty() && (!isDirty() || handleDirtyConflict())) {
-			ResourceSet resourceSet = editingDomain.getResourceSet();
 			if (isDirty()) {
-				changedResources.addAll(resourceSet.getResources());
+				changedResources.addAll(editingDomain.getResourceSet().getResources());
 			}
 			editingDomain.getCommandStack().flush();
 
@@ -603,7 +591,7 @@ public class ModelrailwayEditor
 				if (resource.isLoaded()) {
 					resource.unload();
 					try {
-						resource.load(resourceSet.getLoadOptions());
+						resource.load(Collections.EMPTY_MAP);
 					}
 					catch (IOException exception) {
 						if (!resourceToDiagnosticMap.containsKey(resource)) {
@@ -666,11 +654,14 @@ public class ModelrailwayEditor
 			}
 
 			if (markerHelper.hasMarkers(editingDomain.getResourceSet())) {
-				try {
-					markerHelper.updateMarkers(diagnostic);
-				}
-				catch (CoreException exception) {
-					ModelrailwayEditPlugin.INSTANCE.log(exception);
+				markerHelper.deleteMarkers(editingDomain.getResourceSet());
+				if (diagnostic.getSeverity() != Diagnostic.OK) {
+					try {
+						markerHelper.createMarkers(diagnostic);
+					}
+					catch (CoreException exception) {
+						ModelrailwayEditPlugin.INSTANCE.log(exception);
+					}
 				}
 			}
 		}
@@ -724,11 +715,9 @@ public class ModelrailwayEditor
 		//
 		commandStack.addCommandStackListener
 			(new CommandStackListener() {
-				 @Override
 				 public void commandStackChanged(final EventObject event) {
 					 getContainer().getDisplay().asyncExec
 						 (new Runnable() {
-							  @Override
 							  public void run() {
 								  firePropertyChange(IEditorPart.PROP_DIRTY);
 
@@ -738,14 +727,8 @@ public class ModelrailwayEditor
 								  if (mostRecentCommand != null) {
 									  setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 								  }
-								  for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext(); ) {
-									  PropertySheetPage propertySheetPage = i.next();
-									  if (propertySheetPage.getControl() == null || propertySheetPage.getControl().isDisposed()) {
-										  i.remove();
-									  }
-									  else {
-										  propertySheetPage.refresh();
-									  }
+								  if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
+									  propertySheetPage.refresh();
 								  }
 							  }
 						  });
@@ -781,7 +764,6 @@ public class ModelrailwayEditor
 		if (theSelection != null && !theSelection.isEmpty()) {
 			Runnable runnable =
 				new Runnable() {
-					@Override
 					public void run() {
 						// Try to select the items in the current content viewer of the editor.
 						//
@@ -899,7 +881,6 @@ public class ModelrailwayEditor
 					new ISelectionChangedListener() {
 						// This just notifies those things that are affected by the section.
 						//
-						@Override
 						public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
 							setSelection(selectionChangedEvent.getSelection());
 						}
@@ -955,7 +936,7 @@ public class ModelrailwayEditor
 		getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
 
 		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance(), LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance() };
+		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
 		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
 		viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
 	}
@@ -967,7 +948,7 @@ public class ModelrailwayEditor
 	 * @generated
 	 */
 	public void createModel() {
-		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
+		URI resourceURI = EditUIUtil.getURI(getEditorInput());
 		Exception exception = null;
 		Resource resource = null;
 		try {
@@ -995,11 +976,10 @@ public class ModelrailwayEditor
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		boolean hasErrors = !resource.getErrors().isEmpty();
-		if (hasErrors || !resource.getWarnings().isEmpty()) {
+		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
-					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
+					(Diagnostic.ERROR,
 					 "de.morknet.mrw.metamodel",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
@@ -1057,7 +1037,6 @@ public class ModelrailwayEditor
 
 				selectionViewer = (TreeViewer)viewerPane.getViewer();
 				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				selectionViewer.setUseHashlookup(true);
 
 				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 				selectionViewer.setInput(editingDomain.getResourceSet());
@@ -1240,11 +1219,8 @@ public class ModelrailwayEditor
 
 			getSite().getShell().getDisplay().asyncExec
 				(new Runnable() {
-					 @Override
 					 public void run() {
-						 if (!getContainer().isDisposed()) {
-							 setActivePage(0);
-						 }
+						 setActivePage(0);
 					 }
 				 });
 		}
@@ -1267,7 +1243,6 @@ public class ModelrailwayEditor
 
 		getSite().getShell().getDisplay().asyncExec
 			(new Runnable() {
-				 @Override
 				 public void run() {
 					 updateProblemIndication();
 				 }
@@ -1285,9 +1260,9 @@ public class ModelrailwayEditor
 		if (getPageCount() <= 1) {
 			setPageText(0, "");
 			if (getContainer() instanceof CTabFolder) {
+				((CTabFolder)getContainer()).setTabHeight(1);
 				Point point = getContainer().getSize();
-				Rectangle clientArea = getContainer().getClientArea();
-				getContainer().setSize(point.x,  2 * point.y - clientArea.height - clientArea.y);
+				getContainer().setSize(point.x, point.y + 6);
 			}
 		}
 	}
@@ -1303,9 +1278,9 @@ public class ModelrailwayEditor
 		if (getPageCount() > 1) {
 			setPageText(0, getString("_UI_SelectionPage_label"));
 			if (getContainer() instanceof CTabFolder) {
+				((CTabFolder)getContainer()).setTabHeight(SWT.DEFAULT);
 				Point point = getContainer().getSize();
-				Rectangle clientArea = getContainer().getClientArea();
-				getContainer().setSize(point.x, clientArea.height + clientArea.y);
+				getContainer().setSize(point.x, point.y - 6);
 			}
 		}
 	}
@@ -1331,16 +1306,17 @@ public class ModelrailwayEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public <T> T getAdapter(Class<T> key) {
+	public Object getAdapter(Class key) {
 		if (key.equals(IContentOutlinePage.class)) {
-			return showOutlineView() ? key.cast(getContentOutlinePage()) : null;
+			return showOutlineView() ? getContentOutlinePage() : null;
 		}
 		else if (key.equals(IPropertySheetPage.class)) {
-			return key.cast(getPropertySheetPage());
+			return getPropertySheetPage();
 		}
 		else if (key.equals(IGotoMarker.class)) {
-			return key.cast(this);
+			return this;
 		}
 		else {
 			return super.getAdapter(key);
@@ -1366,7 +1342,6 @@ public class ModelrailwayEditor
 
 					// Set up the tree viewer.
 					//
-					contentOutlineViewer.setUseHashlookup(true);
 					contentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 					contentOutlineViewer.setInput(editingDomain.getResourceSet());
@@ -1403,7 +1378,6 @@ public class ModelrailwayEditor
 				(new ISelectionChangedListener() {
 					 // This ensures that we handle selections correctly.
 					 //
-					 @Override
 					 public void selectionChanged(SelectionChangedEvent event) {
 						 handleContentOutlineSelection(event.getSelection());
 					 }
@@ -1420,22 +1394,23 @@ public class ModelrailwayEditor
 	 * @generated
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
-		PropertySheetPage propertySheetPage =
-			new ExtendedPropertySheetPage(editingDomain, ExtendedPropertySheetPage.Decoration.NONE, null, 0, false) {
-				@Override
-				public void setSelectionToViewer(List<?> selection) {
-					ModelrailwayEditor.this.setSelectionToViewer(selection);
-					ModelrailwayEditor.this.setFocus();
-				}
+		if (propertySheetPage == null) {
+			propertySheetPage =
+				new ExtendedPropertySheetPage(editingDomain) {
+					@Override
+					public void setSelectionToViewer(List<?> selection) {
+						ModelrailwayEditor.this.setSelectionToViewer(selection);
+						ModelrailwayEditor.this.setFocus();
+					}
 
-				@Override
-				public void setActionBars(IActionBars actionBars) {
-					super.setActionBars(actionBars);
-					getActionBarContributor().shareGlobalActions(this, actionBars);
-				}
-			};
-		propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
-		propertySheetPages.add(propertySheetPage);
+					@Override
+					public void setActionBars(IActionBars actionBars) {
+						super.setActionBars(actionBars);
+						getActionBarContributor().shareGlobalActions(this, actionBars);
+					}
+				};
+			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
+		}
 
 		return propertySheetPage;
 	}
@@ -1502,7 +1477,6 @@ public class ModelrailwayEditor
 		//
 		final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-		saveOptions.put(Resource.OPTION_LINE_DELIMITER, Resource.OPTION_LINE_DELIMITER_UNSPECIFIED);
 
 		// Do the work within an operation because this is a long running activity that modifies the workbench.
 		//
@@ -1515,9 +1489,7 @@ public class ModelrailwayEditor
 					// Save the resources to the file system.
 					//
 					boolean first = true;
-					List<Resource> resources = editingDomain.getResourceSet().getResources();
-					for (int i = 0; i < resources.size(); ++i) {
-						Resource resource = resources.get(i);
+					for (Resource resource : editingDomain.getResourceSet().getResources()) {
 						if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
 							try {
 								long timeStamp = resource.getTimeStamp();
@@ -1557,7 +1529,7 @@ public class ModelrailwayEditor
 
 	/**
 	 * This returns whether something has been persisted to the URI of the specified resource.
-	 * The implementation uses the URI converter from the editor's resource set to try to open an input stream.
+	 * The implementation uses the URI converter from the editor's resource set to try to open an input stream. 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1630,9 +1602,20 @@ public class ModelrailwayEditor
 	 */
 	@Override
 	public void gotoMarker(IMarker marker) {
-		List<?> targetObjects = markerHelper.getTargetObjects(editingDomain, marker);
-		if (!targetObjects.isEmpty()) {
-			setSelectionToViewer(targetObjects);
+		try {
+			if (marker.getType().equals(EValidator.MARKER)) {
+				String uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
+				if (uriAttribute != null) {
+					URI uri = URI.createURI(uriAttribute);
+					EObject eObject = editingDomain.getResourceSet().getEObject(uri, true);
+					if (eObject != null) {
+					  setSelectionToViewer(Collections.singleton(editingDomain.getWrapper(eObject)));
+					}
+				}
+			}
+		}
+		catch (CoreException exception) {
+			ModelrailwayEditPlugin.INSTANCE.log(exception);
 		}
 	}
 
@@ -1828,7 +1811,7 @@ public class ModelrailwayEditor
 			getActionBarContributor().setActiveEditor(null);
 		}
 
-		for (PropertySheetPage propertySheetPage : propertySheetPages) {
+		if (propertySheetPage != null) {
 			propertySheetPage.dispose();
 		}
 

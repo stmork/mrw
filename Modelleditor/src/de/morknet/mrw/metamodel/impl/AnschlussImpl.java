@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.morknet.mrw.metamodel.Anschluss;
 import de.morknet.mrw.metamodel.Controller;
+import de.morknet.mrw.metamodel.Crossing;
 import de.morknet.mrw.metamodel.Licht;
 import de.morknet.mrw.metamodel.Lichtsignal;
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
@@ -30,17 +31,25 @@ import de.morknet.mrw.metamodel.ModelrailwayPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getNummer <em>Nummer</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichtsignale <em>Lichtsignale</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getController <em>Controller</em>}</li>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getCrossing <em>Crossing</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.AnschlussImpl#getLichter <em>Lichter</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class AnschlussImpl extends EObjectImpl implements Anschluss {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #getNummer() <em>Nummer</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +79,16 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	 * @ordered
 	 */
 	protected EList<Lichtsignal> lichtsignale;
+
+	/**
+	 * The cached value of the '{@link #getCrossing() <em>Crossing</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCrossing()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Crossing> crossing;
 
 	/**
 	 * The cached value of the '{@link #getLichter() <em>Lichter</em>}' containment reference list.
@@ -144,7 +163,19 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	@Override
 	public Controller getController() {
 		if (eContainerFeatureID() != ModelrailwayPackage.ANSCHLUSS__CONTROLLER) return null;
-		return (Controller)eInternalContainer();
+		return (Controller)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Crossing> getCrossing() {
+		if (crossing == null) {
+			crossing = new EObjectContainmentWithInverseEList<Crossing>(Crossing.class, this, ModelrailwayPackage.ANSCHLUSS__CROSSING, ModelrailwayPackage.CROSSING__ANSCHLUSS);
+		}
+		return crossing;
 	}
 
 	/**
@@ -175,6 +206,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return eBasicSetContainer(otherEnd, ModelrailwayPackage.ANSCHLUSS__CONTROLLER, msgs);
+			case ModelrailwayPackage.ANSCHLUSS__CROSSING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCrossing()).basicAdd(otherEnd, msgs);
 			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLichter()).basicAdd(otherEnd, msgs);
 		}
@@ -193,6 +226,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				return ((InternalEList<?>)getLichtsignale()).basicRemove(otherEnd, msgs);
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return eBasicSetContainer(null, ModelrailwayPackage.ANSCHLUSS__CONTROLLER, msgs);
+			case ModelrailwayPackage.ANSCHLUSS__CROSSING:
+				return ((InternalEList<?>)getCrossing()).basicRemove(otherEnd, msgs);
 			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
 				return ((InternalEList<?>)getLichter()).basicRemove(otherEnd, msgs);
 		}
@@ -227,6 +262,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				return getLichtsignale();
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return getController();
+			case ModelrailwayPackage.ANSCHLUSS__CROSSING:
+				return getCrossing();
 			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
 				return getLichter();
 		}
@@ -249,6 +286,10 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				getLichtsignale().clear();
 				getLichtsignale().addAll((Collection<? extends Lichtsignal>)newValue);
 				return;
+			case ModelrailwayPackage.ANSCHLUSS__CROSSING:
+				getCrossing().clear();
+				getCrossing().addAll((Collection<? extends Crossing>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,6 +307,9 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				return;
 			case ModelrailwayPackage.ANSCHLUSS__LICHTSIGNALE:
 				getLichtsignale().clear();
+				return;
+			case ModelrailwayPackage.ANSCHLUSS__CROSSING:
+				getCrossing().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -285,6 +329,8 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 				return lichtsignale != null && !lichtsignale.isEmpty();
 			case ModelrailwayPackage.ANSCHLUSS__CONTROLLER:
 				return getController() != null;
+			case ModelrailwayPackage.ANSCHLUSS__CROSSING:
+				return crossing != null && !crossing.isEmpty();
 			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
 				return lichter != null && !lichter.isEmpty();
 		}
@@ -300,7 +346,7 @@ public class AnschlussImpl extends EObjectImpl implements Anschluss {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nummer: ");
 		result.append(nummer);
 		result.append(')');

@@ -12,17 +12,24 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Lampe#getTyp <em>Typ</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Lampe#getModul <em>Modul</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getLampe()
  * @model
  * @generated
  */
 public interface Lampe extends Beleuchtungsmittel {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Typ</b></em>' attribute.
 	 * <!-- begin-user-doc -->

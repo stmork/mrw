@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
-    copyrightText="Copyright (C) 2007-2022 committers of this modelrailway project. All rights reserved."
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" copyrightText="Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved."
     modelDirectory="/Modelleditor/src" editDirectory="/Modelleditor/src" editorDirectory="/Modelleditor/src"
     modelPluginID="de.morknet.mrw.metamodel" modelName="Modelrailway" modelPluginClass=""
     testsDirectory="" importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="6.0"
-    copyrightFields="false" editPluginID="de.morknet.mrw.metamodel" language="">
+    editPluginID="de.morknet.mrw.metamodel" language="">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
     <details key="UNION_PROPERTIES" value="REPORT"/>
@@ -40,6 +40,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/controller"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/crossing"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Anschluss/lichter"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Modelrailway.ecore#//Lichtsignal">
@@ -61,6 +63,8 @@
           ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/gruppe"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/modul"/>
+      <genFeatures xsi:type="genmodel:GenFeature" children="true" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/crossing"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/bauelement"/>
     </genClasses>
@@ -96,6 +100,12 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Gleismodul">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleismodul/abschnitte"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Crossing">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Crossing/anschluss"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Crossing/abschnitte"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Licht">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"

@@ -23,14 +23,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.LichtsignalImpl#getAnschluss <em>Anschluss</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public abstract class LichtsignalImpl extends SignalImpl implements Lichtsignal {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
 	/**
 	 * The cached value of the '{@link #getAnschluss() <em>Anschluss</em>}' reference.
 	 * <!-- begin-user-doc -->

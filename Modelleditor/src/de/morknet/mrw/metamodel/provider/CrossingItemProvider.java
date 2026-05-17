@@ -1,39 +1,42 @@
 /**
- * Copyright (C) 2010 committers of this modelrailway project. All rights reserved.
+ * Copyright (C) 2007-2022 committers of this modelrailway project. All rights reserved.
  *
  * $Id$
  */
 package de.morknet.mrw.metamodel.provider;
 
 
-import de.morknet.mrw.metamodel.Gruppe;
-import de.morknet.mrw.metamodel.ModelrailwayFactory;
-import de.morknet.mrw.metamodel.ModelrailwayPackage;
+import de.morknet.mrw.metamodel.Crossing;
 
+import de.morknet.mrw.metamodel.ModelrailwayPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Gruppe} object.
+ * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Crossing} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GruppeItemProvider
-	extends ElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class CrossingItemProvider
+	extends UnitItemProvider
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,7 +50,7 @@ public class GruppeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GruppeItemProvider(AdapterFactory adapterFactory) {
+	public CrossingItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,38 +65,65 @@ public class GruppeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAnschlussPropertyDescriptor(object);
+			addAbschnittePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Anschluss feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelrailwayPackage.Literals.GRUPPE__ABSCHNITT);
-		}
-		return childrenFeatures;
+	protected void addAnschlussPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Crossing_anschluss_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_anschluss_feature", "_UI_Crossing_type"),
+				 ModelrailwayPackage.Literals.CROSSING__ANSCHLUSS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Abschnitte feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAbschnittePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Crossing_abschnitte_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_abschnitte_feature", "_UI_Crossing_type"),
+				 ModelrailwayPackage.Literals.CROSSING__ABSCHNITTE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Crossing.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Crossing"));
 	}
 
 	/**
@@ -104,10 +134,8 @@ public class GruppeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Gruppe)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Gruppe_type") :
-			getString("_UI_Gruppe_type") + " " + label;
+		Crossing crossing = (Crossing)object;
+		return getString("_UI_Crossing_type") + " " + crossing.getUnit_no();
 	}
 
 	/**
@@ -120,12 +148,6 @@ public class GruppeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Gruppe.class)) {
-			case ModelrailwayPackage.GRUPPE__ABSCHNITT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -139,11 +161,6 @@ public class GruppeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelrailwayPackage.Literals.GRUPPE__ABSCHNITT,
-				 ModelrailwayFactory.eINSTANCE.createGleisabschnitt()));
 	}
 
 }

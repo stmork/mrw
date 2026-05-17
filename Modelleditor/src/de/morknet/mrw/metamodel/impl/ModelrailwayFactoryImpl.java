@@ -23,6 +23,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class ModelrailwayFactoryImpl extends EFactoryImpl implements ModelrailwayFactory {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -30,7 +37,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 */
 	public static ModelrailwayFactory init() {
 		try {
-			ModelrailwayFactory theModelrailwayFactory = (ModelrailwayFactory)EPackage.Registry.INSTANCE.getEFactory(ModelrailwayPackage.eNS_URI);
+			ModelrailwayFactory theModelrailwayFactory = (ModelrailwayFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.morknet.de/Modelrailway"); 
 			if (theModelrailwayFactory != null) {
 				return theModelrailwayFactory;
 			}
@@ -64,6 +71,7 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 			case ModelrailwayPackage.MODELL: return createModell();
 			case ModelrailwayPackage.CONTROLLER: return createController();
 			case ModelrailwayPackage.GLEISMODUL: return createGleismodul();
+			case ModelrailwayPackage.CROSSING: return createCrossing();
 			case ModelrailwayPackage.LICHT: return createLicht();
 			case ModelrailwayPackage.AUSFAHRSIGNAL: return createAusfahrsignal();
 			case ModelrailwayPackage.BAHNHOF: return createBahnhof();
@@ -326,6 +334,16 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	public Lampe createLampe() {
 		LampeImpl lampe = new LampeImpl();
 		return lampe;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Crossing createCrossing() {
+		CrossingImpl crossing = new CrossingImpl();
+		return crossing;
 	}
 
 	/**

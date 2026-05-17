@@ -45,6 +45,13 @@ public class AnschlussItemProvider
 		IItemLabelProvider,
 		IItemPropertySource {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -127,6 +134,7 @@ public class AnschlussItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ModelrailwayPackage.Literals.ANSCHLUSS__CROSSING);
 			childrenFeatures.add(ModelrailwayPackage.Literals.ANSCHLUSS__LICHTER);
 		}
 		return childrenFeatures;
@@ -183,6 +191,7 @@ public class AnschlussItemProvider
 			case ModelrailwayPackage.ANSCHLUSS__NUMMER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ModelrailwayPackage.ANSCHLUSS__CROSSING:
 			case ModelrailwayPackage.ANSCHLUSS__LICHTER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -200,6 +209,11 @@ public class AnschlussItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelrailwayPackage.Literals.ANSCHLUSS__CROSSING,
+				 ModelrailwayFactory.eINSTANCE.createCrossing()));
 
 		newChildDescriptors.add
 			(createChildParameter

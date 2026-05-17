@@ -33,17 +33,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getAnschluesse <em>Anschluesse</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getModule <em>Module</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.ControllerImpl#getModell <em>Modell</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class ControllerImpl extends EObjectImpl implements Controller {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -160,7 +167,7 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	@Override
 	public Modell getModell() {
 		if (eContainerFeatureID() != ModelrailwayPackage.CONTROLLER__MODELL) return null;
-		return (Modell)eInternalContainer();
+		return (Modell)eContainer();
 	}
 
 	/**
@@ -310,7 +317,7 @@ public class ControllerImpl extends EObjectImpl implements Controller {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
 		result.append(')');

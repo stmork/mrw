@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#isAdIstAbzweig <em>Ad Ist Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#isBcIstAbzweig <em>Bc Ist Abzweig</em>}</li>
@@ -31,10 +30,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#getB <em>B</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.DKWImpl#getD <em>D</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class DKWImpl extends VerzweigungImpl implements DKW {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #isAdIstAbzweig() <em>Ad Ist Abzweig</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -461,7 +468,7 @@ public class DKWImpl extends VerzweigungImpl implements DKW {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (adIstAbzweig: ");
 		result.append(adIstAbzweig);
 		result.append(", bcIstAbzweig: ");

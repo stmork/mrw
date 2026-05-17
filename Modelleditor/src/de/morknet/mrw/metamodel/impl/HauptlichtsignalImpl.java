@@ -14,10 +14,19 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Hauptlichtsignal</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * </p>
  *
  * @generated
  */
 public abstract class HauptlichtsignalImpl extends LichtsignalImpl implements Hauptlichtsignal {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

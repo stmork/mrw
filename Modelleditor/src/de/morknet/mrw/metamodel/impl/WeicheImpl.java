@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#isCIstAbzweig <em>CIst Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#isBIstAbzweig <em>BIst Abzweig</em>}</li>
@@ -32,10 +31,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#getC <em>C</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.WeicheImpl#getA <em>A</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class WeicheImpl extends VerzweigungImpl implements Weiche {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The default value of the '{@link #isCIstAbzweig() <em>CIst Abzweig</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -507,7 +514,7 @@ public class WeicheImpl extends VerzweigungImpl implements Weiche {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cIstAbzweig: ");
 		result.append(cIstAbzweig);
 		result.append(", bIstAbzweig: ");

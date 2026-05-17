@@ -16,19 +16,26 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Controller#getId <em>Id</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Controller#getAnschluesse <em>Anschluesse</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Controller#getModule <em>Module</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Controller#getModell <em>Modell</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getController()
  * @model
  * @generated
  */
 public interface Controller extends EObject {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

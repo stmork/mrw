@@ -24,6 +24,12 @@ import org.eclipse.emf.ecore.EObject;
  */
 public class ModelrailwayAdapterFactory extends AdapterFactoryImpl {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,6 +123,10 @@ public class ModelrailwayAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseGleismodul(Gleismodul object) {
 				return createGleismodulAdapter();
+			}
+			@Override
+			public Adapter caseCrossing(Crossing object) {
+				return createCrossingAdapter();
 			}
 			@Override
 			public Adapter caseLicht(Licht object) {
@@ -703,6 +713,20 @@ public class ModelrailwayAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLampeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.morknet.mrw.metamodel.Crossing <em>Crossing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.morknet.mrw.metamodel.Crossing
+	 * @generated
+	 */
+	public Adapter createCrossingAdapter() {
 		return null;
 	}
 

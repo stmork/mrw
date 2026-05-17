@@ -19,6 +19,13 @@ import org.eclipse.emf.common.util.ResourceLocator;
  */
 public final class ModelrailwayEditPlugin extends EMFPlugin {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

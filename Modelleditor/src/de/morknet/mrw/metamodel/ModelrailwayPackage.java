@@ -23,10 +23,16 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see de.morknet.mrw.metamodel.ModelrailwayFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Modelrailway'"
  * @generated
  */
 public interface ModelrailwayPackage extends EPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -97,13 +103,22 @@ public interface ModelrailwayPackage extends EPackage {
 	int ANSCHLUSS__CONTROLLER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Crossing</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANSCHLUSS__CROSSING = 3;
+
+	/**
 	 * The feature id for the '<em><b>Lichter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANSCHLUSS__LICHTER = 3;
+	int ANSCHLUSS__LICHTER = 4;
 
 	/**
 	 * The number of structural features of the '<em>Anschluss</em>' class.
@@ -112,7 +127,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANSCHLUSS_FEATURE_COUNT = 4;
+	int ANSCHLUSS_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.ElementImpl <em>Element</em>}' class.
@@ -277,7 +292,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getHauptlichtsignal()
 	 * @generated
 	 */
-	int HAUPTLICHTSIGNAL = 15;
+	int HAUPTLICHTSIGNAL = 16;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.AusfahrsignalImpl <em>Ausfahrsignal</em>}' class.
@@ -287,7 +302,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getAusfahrsignal()
 	 * @generated
 	 */
-	int AUSFAHRSIGNAL = 14;
+	int AUSFAHRSIGNAL = 15;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.BahnhofImpl <em>Bahnhof</em>}' class.
@@ -297,7 +312,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getBahnhof()
 	 * @generated
 	 */
-	int BAHNHOF = 16;
+	int BAHNHOF = 17;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.GleisteilImpl <em>Gleisteil</em>}' class.
@@ -307,7 +322,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getGleisteil()
 	 * @generated
 	 */
-	int GLEISTEIL = 20;
+	int GLEISTEIL = 21;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.VerzweigungImpl <em>Verzweigung</em>}' class.
@@ -317,7 +332,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getVerzweigung()
 	 * @generated
 	 */
-	int VERZWEIGUNG = 17;
+	int VERZWEIGUNG = 18;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.MagnetartikelImpl <em>Magnetartikel</em>}' class.
@@ -327,7 +342,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getMagnetartikel()
 	 * @generated
 	 */
-	int MAGNETARTIKEL = 18;
+	int MAGNETARTIKEL = 19;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.ImpulsmodulImpl <em>Impulsmodul</em>}' class.
@@ -337,7 +352,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getImpulsmodul()
 	 * @generated
 	 */
-	int IMPULSMODUL = 19;
+	int IMPULSMODUL = 20;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.EinfahrsignalImpl <em>Einfahrsignal</em>}' class.
@@ -347,7 +362,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getEinfahrsignal()
 	 * @generated
 	 */
-	int EINFAHRSIGNAL = 21;
+	int EINFAHRSIGNAL = 22;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.WeicheImpl <em>Weiche</em>}' class.
@@ -357,7 +372,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getWeiche()
 	 * @generated
 	 */
-	int WEICHE = 22;
+	int WEICHE = 23;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.FormsignalImpl <em>Formsignal</em>}' class.
@@ -367,7 +382,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getFormsignal()
 	 * @generated
 	 */
-	int FORMSIGNAL = 24;
+	int FORMSIGNAL = 25;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.FormvorsignalImpl <em>Formvorsignal</em>}' class.
@@ -377,7 +392,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getFormvorsignal()
 	 * @generated
 	 */
-	int FORMVORSIGNAL = 23;
+	int FORMVORSIGNAL = 24;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.GleisImpl <em>Gleis</em>}' class.
@@ -387,7 +402,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getGleis()
 	 * @generated
 	 */
-	int GLEIS = 25;
+	int GLEIS = 26;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.BlocksignalImpl <em>Blocksignal</em>}' class.
@@ -397,7 +412,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getBlocksignal()
 	 * @generated
 	 */
-	int BLOCKSIGNAL = 26;
+	int BLOCKSIGNAL = 27;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.VorsignalImpl <em>Vorsignal</em>}' class.
@@ -407,7 +422,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getVorsignal()
 	 * @generated
 	 */
-	int VORSIGNAL = 27;
+	int VORSIGNAL = 28;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.DKWImpl <em>DKW</em>}' class.
@@ -417,7 +432,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getDKW()
 	 * @generated
 	 */
-	int DKW = 28;
+	int DKW = 29;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.GleissperrsignalImpl <em>Gleissperrsignal</em>}' class.
@@ -427,7 +442,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getGleissperrsignal()
 	 * @generated
 	 */
-	int GLEISSPERRSIGNAL = 29;
+	int GLEISSPERRSIGNAL = 30;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.FormhauptsignalImpl <em>Formhauptsignal</em>}' class.
@@ -437,7 +452,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getFormhauptsignal()
 	 * @generated
 	 */
-	int FORMHAUPTSIGNAL = 30;
+	int FORMHAUPTSIGNAL = 31;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.FormgleissperrsignalImpl <em>Formgleissperrsignal</em>}' class.
@@ -447,7 +462,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getFormgleissperrsignal()
 	 * @generated
 	 */
-	int FORMGLEISSPERRSIGNAL = 31;
+	int FORMGLEISSPERRSIGNAL = 32;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.StreckeImpl <em>Strecke</em>}' class.
@@ -457,7 +472,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getStrecke()
 	 * @generated
 	 */
-	int STRECKE = 32;
+	int STRECKE = 33;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmodulImpl <em>Beleuchtungsmodul</em>}' class.
@@ -467,7 +482,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getBeleuchtungsmodul()
 	 * @generated
 	 */
-	int BELEUCHTUNGSMODUL = 33;
+	int BELEUCHTUNGSMODUL = 34;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmittelImpl <em>Beleuchtungsmittel</em>}' class.
@@ -477,7 +492,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getBeleuchtungsmittel()
 	 * @generated
 	 */
-	int BELEUCHTUNGSMITTEL = 13;
+	int BELEUCHTUNGSMITTEL = 14;
 
 	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.LichtImpl <em>Licht</em>}' class.
@@ -487,7 +502,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getLicht()
 	 * @generated
 	 */
-	int LICHT = 12;
+	int LICHT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -625,13 +640,22 @@ public interface ModelrailwayPackage extends EPackage {
 	int GLEISABSCHNITT__MODUL = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Crossing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLEISABSCHNITT__CROSSING = ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Bauelement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GLEISABSCHNITT__BAUELEMENT = ELEMENT_FEATURE_COUNT + 3;
+	int GLEISABSCHNITT__BAUELEMENT = ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Gleisabschnitt</em>' class.
@@ -640,7 +664,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLEISABSCHNITT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
+	int GLEISABSCHNITT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Unit no</b></em>' attribute.
@@ -839,6 +863,62 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @ordered
 	 */
 	int GLEISMODUL_FEATURE_COUNT = MODUL_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.LampeImpl <em>Lampe</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.morknet.mrw.metamodel.impl.LampeImpl
+	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getLampe()
+	 * @generated
+	 */
+	int LAMPE = 35;
+
+	/**
+	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.CrossingImpl <em>Crossing</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.morknet.mrw.metamodel.impl.CrossingImpl
+	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getCrossing()
+	 * @generated
+	 */
+	int CROSSING = 12;
+
+	/**
+	 * The feature id for the '<em><b>Unit no</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSSING__UNIT_NO = UNIT__UNIT_NO;
+
+	/**
+	 * The feature id for the '<em><b>Anschluss</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSSING__ANSCHLUSS = UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Abschnitte</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSSING__ABSCHNITTE = UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Crossing</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSSING_FEATURE_COUNT = UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2173,16 +2253,6 @@ public interface ModelrailwayPackage extends EPackage {
 	int BELEUCHTUNGSMODUL_FEATURE_COUNT = MODUL_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.LampeImpl <em>Lampe</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.morknet.mrw.metamodel.impl.LampeImpl
-	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getLampe()
-	 * @generated
-	 */
-	int LAMPE = 34;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2279,6 +2349,17 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnschluss_Controller();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Anschluss#getCrossing <em>Crossing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Crossing</em>'.
+	 * @see de.morknet.mrw.metamodel.Anschluss#getCrossing()
+	 * @see #getAnschluss()
+	 * @generated
+	 */
+	EReference getAnschluss_Crossing();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Anschluss#getLichter <em>Lichter</em>}'.
@@ -2406,6 +2487,17 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGleisabschnitt_Modul();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.morknet.mrw.metamodel.Gleisabschnitt#getCrossing <em>Crossing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Crossing</em>'.
+	 * @see de.morknet.mrw.metamodel.Gleisabschnitt#getCrossing()
+	 * @see #getGleisabschnitt()
+	 * @generated
+	 */
+	EReference getGleisabschnitt_Crossing();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.morknet.mrw.metamodel.Gleisabschnitt#getBauelement <em>Bauelement</em>}'.
@@ -3128,6 +3220,38 @@ public interface ModelrailwayPackage extends EPackage {
 	EReference getLampe_Modul();
 
 	/**
+	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Crossing <em>Crossing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Crossing</em>'.
+	 * @see de.morknet.mrw.metamodel.Crossing
+	 * @generated
+	 */
+	EClass getCrossing();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.morknet.mrw.metamodel.Crossing#getAnschluss <em>Anschluss</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Anschluss</em>'.
+	 * @see de.morknet.mrw.metamodel.Crossing#getAnschluss()
+	 * @see #getCrossing()
+	 * @generated
+	 */
+	EReference getCrossing_Anschluss();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.morknet.mrw.metamodel.Crossing#getAbschnitte <em>Abschnitte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Abschnitte</em>'.
+	 * @see de.morknet.mrw.metamodel.Crossing#getAbschnitte()
+	 * @see #getCrossing()
+	 * @generated
+	 */
+	EReference getCrossing_Abschnitte();
+
+	/**
 	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Beleuchtungsmittel <em>Beleuchtungsmittel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3203,6 +3327,14 @@ public interface ModelrailwayPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ANSCHLUSS__CONTROLLER = eINSTANCE.getAnschluss_Controller();
+
+		/**
+		 * The meta object literal for the '<em><b>Crossing</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANSCHLUSS__CROSSING = eINSTANCE.getAnschluss_Crossing();
 
 		/**
 		 * The meta object literal for the '<em><b>Lichter</b></em>' containment reference list feature.
@@ -3309,6 +3441,14 @@ public interface ModelrailwayPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GLEISABSCHNITT__MODUL = eINSTANCE.getGleisabschnitt_Modul();
+
+		/**
+		 * The meta object literal for the '<em><b>Crossing</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GLEISABSCHNITT__CROSSING = eINSTANCE.getGleisabschnitt_Crossing();
 
 		/**
 		 * The meta object literal for the '<em><b>Bauelement</b></em>' containment reference list feature.
@@ -3909,6 +4049,32 @@ public interface ModelrailwayPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LAMPE__MODUL = eINSTANCE.getLampe_Modul();
+
+		/**
+		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.CrossingImpl <em>Crossing</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.morknet.mrw.metamodel.impl.CrossingImpl
+		 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getCrossing()
+		 * @generated
+		 */
+		EClass CROSSING = eINSTANCE.getCrossing();
+
+		/**
+		 * The meta object literal for the '<em><b>Anschluss</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CROSSING__ANSCHLUSS = eINSTANCE.getCrossing_Anschluss();
+
+		/**
+		 * The meta object literal for the '<em><b>Abschnitte</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CROSSING__ABSCHNITTE = eINSTANCE.getCrossing_Abschnitte();
 
 		/**
 		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmittelImpl <em>Beleuchtungsmittel</em>}' class.

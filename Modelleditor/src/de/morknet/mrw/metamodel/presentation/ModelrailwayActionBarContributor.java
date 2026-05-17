@@ -52,6 +52,13 @@ public class ModelrailwayActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,7 +173,6 @@ public class ModelrailwayActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
-		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("modelrailway-settings"));
 		toolBarManager.add(new Separator("modelrailway-additions"));
 	}
@@ -203,7 +209,6 @@ public class ModelrailwayActionBarContributor
 		//
 		submenuManager.addMenuListener
 			(new IMenuListener() {
-				 @Override
 				 public void menuAboutToShow(IMenuManager menuManager) {
 					 menuManager.updateAll(true);
 				 }

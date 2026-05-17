@@ -35,7 +35,14 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class GleisabschnittItemProvider
-	extends ElementItemProvider {
+	extends ElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,6 +66,7 @@ public class GleisabschnittItemProvider
 
 			addUnit_noPropertyDescriptor(object);
 			addModulPropertyDescriptor(object);
+			addCrossingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +116,28 @@ public class GleisabschnittItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Crossing feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCrossingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Gleisabschnitt_crossing_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Gleisabschnitt_crossing_feature", "_UI_Gleisabschnitt_type"),
+				 ModelrailwayPackage.Literals.GLEISABSCHNITT__CROSSING,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -119,6 +149,7 @@ public class GleisabschnittItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ModelrailwayPackage.Literals.GLEISABSCHNITT__CROSSING);
 			childrenFeatures.add(ModelrailwayPackage.Literals.GLEISABSCHNITT__BAUELEMENT);
 		}
 		return childrenFeatures;
@@ -177,6 +208,7 @@ public class GleisabschnittItemProvider
 			case ModelrailwayPackage.GLEISABSCHNITT__UNIT_NO:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

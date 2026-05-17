@@ -13,7 +13,6 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.DKW#isAdIstAbzweig <em>Ad Ist Abzweig</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.DKW#isBcIstAbzweig <em>Bc Ist Abzweig</em>}</li>
@@ -22,12 +21,20 @@ package de.morknet.mrw.metamodel;
  *   <li>{@link de.morknet.mrw.metamodel.DKW#getB <em>B</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.DKW#getD <em>D</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getDKW()
  * @model
  * @generated
  */
 public interface DKW extends Verzweigung {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Ad Ist Abzweig</b></em>' attribute.
 	 * <!-- begin-user-doc -->

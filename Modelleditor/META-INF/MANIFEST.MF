@@ -3,12 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.morknet.mrw.metamodel;singleton:=true
 Automatic-Module-Name: de.morknet.mrw.metamodel
-Bundle-Version: 2.0.18
+Bundle-Version: 2.1.0
 Bundle-ClassPath: .
 Bundle-Activator: de.morknet.mrw.metamodel.provider.ModelrailwayEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.morknet.mrw.metamodel,
  de.morknet.mrw.metamodel.impl,
  de.morknet.mrw.metamodel.presentation,
@@ -23,3 +22,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

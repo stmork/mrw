@@ -28,15 +28,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GruppeImpl#getModell <em>Modell</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.GruppeImpl#getAbschnitt <em>Abschnitt</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public abstract class GruppeImpl extends ElementImpl implements Gruppe {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
 	/**
 	 * The cached value of the '{@link #getAbschnitt() <em>Abschnitt</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -74,7 +80,7 @@ public abstract class GruppeImpl extends ElementImpl implements Gruppe {
 	@Override
 	public Modell getModell() {
 		if (eContainerFeatureID() != ModelrailwayPackage.GRUPPE__MODELL) return null;
-		return (Modell)eInternalContainer();
+		return (Modell)eContainer();
 	}
 
 	/**

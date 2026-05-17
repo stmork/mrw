@@ -31,7 +31,14 @@ import de.morknet.mrw.metamodel.ModelrailwayPackage;
  * @generated
  */
 public class LampeItemProvider
-	extends BeleuchtungsmittelItemProvider {
+	extends BeleuchtungsmittelItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

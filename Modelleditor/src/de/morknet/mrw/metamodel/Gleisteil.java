@@ -13,17 +13,24 @@ package de.morknet.mrw.metamodel;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.morknet.mrw.metamodel.Gleisteil#getTeile <em>Teile</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.Gleisteil#isAInZaehlrichtung <em>AIn Zaehlrichtung</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.morknet.mrw.metamodel.ModelrailwayPackage#getGleisteil()
  * @model abstract="true"
  * @generated
  */
 public interface Gleisteil extends Bauelement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * Returns the value of the '<em><b>Teile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
