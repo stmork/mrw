@@ -131,7 +131,7 @@ public class GleisabschnittItemProvider
 				 ModelrailwayPackage.Literals.GLEISABSCHNITT__CROSSING,
 				 true,
 				 false,
-				 false,
+				 true,
 				 null,
 				 null,
 				 null));
@@ -149,7 +149,6 @@ public class GleisabschnittItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelrailwayPackage.Literals.GLEISABSCHNITT__CROSSING);
 			childrenFeatures.add(ModelrailwayPackage.Literals.GLEISABSCHNITT__BAUELEMENT);
 		}
 		return childrenFeatures;
@@ -208,7 +207,6 @@ public class GleisabschnittItemProvider
 			case ModelrailwayPackage.GLEISABSCHNITT__UNIT_NO:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ModelrailwayPackage.GLEISABSCHNITT__CROSSING:
 			case ModelrailwayPackage.GLEISABSCHNITT__BAUELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

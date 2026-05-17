@@ -76,6 +76,15 @@ public interface ModelrailwayFactory extends EFactory {
 	Gleismodul createGleismodul();
 
 	/**
+	 * Returns a new object of class '<em>Crossing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Crossing</em>'.
+	 * @generated
+	 */
+	Crossing createCrossing();
+
+	/**
 	 * Returns a new object of class '<em>Licht</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,15 +236,6 @@ public interface ModelrailwayFactory extends EFactory {
 	 * @generated
 	 */
 	Lampe createLampe();
-
-	/**
-	 * Returns a new object of class '<em>Crossing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Crossing</em>'.
-	 * @generated
-	 */
-	Crossing createCrossing();
 
 	/**
 	 * Returns the package supported by this factory.

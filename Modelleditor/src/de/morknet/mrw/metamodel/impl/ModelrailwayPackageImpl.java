@@ -153,6 +153,13 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass crossingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass lichtEClass = null;
 
 	/**
@@ -301,13 +308,6 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	 * @generated
 	 */
 	private EClass lampeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass crossingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -743,6 +743,33 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	@Override
 	public EReference getGleismodul_Abschnitte() {
 		return (EReference)gleismodulEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCrossing() {
+		return crossingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCrossing_Anschluss() {
+		return (EReference)crossingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCrossing_Abschnitte() {
+		return (EReference)crossingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1233,33 +1260,6 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 	@Override
 	public EReference getLampe_Modul() {
 		return (EReference)lampeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCrossing() {
-		return crossingEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCrossing_Anschluss() {
-		return (EReference)crossingEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCrossing_Abschnitte() {
-		return (EReference)crossingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**

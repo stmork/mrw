@@ -1,12 +1,11 @@
 /**
- * Copyright (C) 2007-2022 committers of this modelrailway project. All rights reserved.
+ * Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.
  *
  * $Id$
  */
 package de.morknet.mrw.metamodel;
 
 import org.eclipse.emf.common.util.EList;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Crossing extends Unit {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,7 +66,7 @@ public interface Crossing extends Unit {
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Gleisabschnitt#getCrossing <em>Crossing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Abschnitte</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Abschnitte</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -79,4 +77,5 @@ public interface Crossing extends Unit {
 	 * @generated
 	 */
 	EList<Gleisabschnitt> getAbschnitte();
+
 } // Crossing

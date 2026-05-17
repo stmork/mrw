@@ -154,6 +154,16 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Crossing createCrossing() {
+		CrossingImpl crossing = new CrossingImpl();
+		return crossing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Licht createLicht() {
 		LichtImpl licht = new LichtImpl();
@@ -334,16 +344,6 @@ public class ModelrailwayFactoryImpl extends EFactoryImpl implements Modelrailwa
 	public Lampe createLampe() {
 		LampeImpl lampe = new LampeImpl();
 		return lampe;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Crossing createCrossing() {
-		CrossingImpl crossing = new CrossingImpl();
-		return crossing;
 	}
 
 	/**

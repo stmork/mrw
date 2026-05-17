@@ -865,16 +865,6 @@ public interface ModelrailwayPackage extends EPackage {
 	int GLEISMODUL_FEATURE_COUNT = MODUL_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.LampeImpl <em>Lampe</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.morknet.mrw.metamodel.impl.LampeImpl
-	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getLampe()
-	 * @generated
-	 */
-	int LAMPE = 35;
-
-	/**
 	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.CrossingImpl <em>Crossing</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2253,6 +2243,16 @@ public interface ModelrailwayPackage extends EPackage {
 	int BELEUCHTUNGSMODUL_FEATURE_COUNT = MODUL_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.morknet.mrw.metamodel.impl.LampeImpl <em>Lampe</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.morknet.mrw.metamodel.impl.LampeImpl
+	 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getLampe()
+	 * @generated
+	 */
+	int LAMPE = 35;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2701,6 +2701,38 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGleismodul_Abschnitte();
+
+	/**
+	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Crossing <em>Crossing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Crossing</em>'.
+	 * @see de.morknet.mrw.metamodel.Crossing
+	 * @generated
+	 */
+	EClass getCrossing();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.morknet.mrw.metamodel.Crossing#getAnschluss <em>Anschluss</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Anschluss</em>'.
+	 * @see de.morknet.mrw.metamodel.Crossing#getAnschluss()
+	 * @see #getCrossing()
+	 * @generated
+	 */
+	EReference getCrossing_Anschluss();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.morknet.mrw.metamodel.Crossing#getAbschnitte <em>Abschnitte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Abschnitte</em>'.
+	 * @see de.morknet.mrw.metamodel.Crossing#getAbschnitte()
+	 * @see #getCrossing()
+	 * @generated
+	 */
+	EReference getCrossing_Abschnitte();
 
 	/**
 	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Licht <em>Licht</em>}'.
@@ -3220,38 +3252,6 @@ public interface ModelrailwayPackage extends EPackage {
 	EReference getLampe_Modul();
 
 	/**
-	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Crossing <em>Crossing</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Crossing</em>'.
-	 * @see de.morknet.mrw.metamodel.Crossing
-	 * @generated
-	 */
-	EClass getCrossing();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.morknet.mrw.metamodel.Crossing#getAnschluss <em>Anschluss</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Anschluss</em>'.
-	 * @see de.morknet.mrw.metamodel.Crossing#getAnschluss()
-	 * @see #getCrossing()
-	 * @generated
-	 */
-	EReference getCrossing_Anschluss();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.morknet.mrw.metamodel.Crossing#getAbschnitte <em>Abschnitte</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Abschnitte</em>'.
-	 * @see de.morknet.mrw.metamodel.Crossing#getAbschnitte()
-	 * @see #getCrossing()
-	 * @generated
-	 */
-	EReference getCrossing_Abschnitte();
-
-	/**
 	 * Returns the meta object for class '{@link de.morknet.mrw.metamodel.Beleuchtungsmittel <em>Beleuchtungsmittel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3613,6 +3613,32 @@ public interface ModelrailwayPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GLEISMODUL__ABSCHNITTE = eINSTANCE.getGleismodul_Abschnitte();
+
+		/**
+		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.CrossingImpl <em>Crossing</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.morknet.mrw.metamodel.impl.CrossingImpl
+		 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getCrossing()
+		 * @generated
+		 */
+		EClass CROSSING = eINSTANCE.getCrossing();
+
+		/**
+		 * The meta object literal for the '<em><b>Anschluss</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CROSSING__ANSCHLUSS = eINSTANCE.getCrossing_Anschluss();
+
+		/**
+		 * The meta object literal for the '<em><b>Abschnitte</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CROSSING__ABSCHNITTE = eINSTANCE.getCrossing_Abschnitte();
 
 		/**
 		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.LichtImpl <em>Licht</em>}' class.
@@ -4049,32 +4075,6 @@ public interface ModelrailwayPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LAMPE__MODUL = eINSTANCE.getLampe_Modul();
-
-		/**
-		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.CrossingImpl <em>Crossing</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.morknet.mrw.metamodel.impl.CrossingImpl
-		 * @see de.morknet.mrw.metamodel.impl.ModelrailwayPackageImpl#getCrossing()
-		 * @generated
-		 */
-		EClass CROSSING = eINSTANCE.getCrossing();
-
-		/**
-		 * The meta object literal for the '<em><b>Anschluss</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CROSSING__ANSCHLUSS = eINSTANCE.getCrossing_Anschluss();
-
-		/**
-		 * The meta object literal for the '<em><b>Abschnitte</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CROSSING__ABSCHNITTE = eINSTANCE.getCrossing_Abschnitte();
 
 		/**
 		 * The meta object literal for the '{@link de.morknet.mrw.metamodel.impl.BeleuchtungsmittelImpl <em>Beleuchtungsmittel</em>}' class.

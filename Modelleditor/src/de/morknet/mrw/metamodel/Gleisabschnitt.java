@@ -84,7 +84,7 @@ public interface Gleisabschnitt extends Element, Unit {
 	 * It is bidirectional and its opposite is '{@link de.morknet.mrw.metamodel.Crossing#getAbschnitte <em>Abschnitte</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Crossing</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Crossing</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

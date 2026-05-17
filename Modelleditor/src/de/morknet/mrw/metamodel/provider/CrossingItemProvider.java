@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2007-2022 committers of this modelrailway project. All rights reserved.
+ * Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.
  *
  * $Id$
  */
@@ -7,8 +7,8 @@ package de.morknet.mrw.metamodel.provider;
 
 
 import de.morknet.mrw.metamodel.Crossing;
-
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -65,32 +65,9 @@ public class CrossingItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAnschlussPropertyDescriptor(object);
 			addAbschnittePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Anschluss feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnschlussPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Crossing_anschluss_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_anschluss_feature", "_UI_Crossing_type"),
-				 ModelrailwayPackage.Literals.CROSSING__ANSCHLUSS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

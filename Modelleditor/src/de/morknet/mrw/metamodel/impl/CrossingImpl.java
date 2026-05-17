@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2007-2022 committers of this modelrailway project. All rights reserved.
+ * Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.
  *
  * $Id$
  */
@@ -11,14 +11,18 @@ import de.morknet.mrw.metamodel.Gleisabschnitt;
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -43,6 +47,7 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	 * @generated
 	 */
 	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
 	/**
 	 * The cached value of the '{@link #getAbschnitte() <em>Abschnitte</em>}' reference list.
 	 * <!-- begin-user-doc -->

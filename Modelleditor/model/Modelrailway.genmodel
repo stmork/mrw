@@ -63,8 +63,8 @@
           ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/gruppe"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/modul"/>
-      <genFeatures xsi:type="genmodel:GenFeature" children="true" createChild="false"
-          ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/crossing"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/crossing"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleisabschnitt/bauelement"/>
     </genClasses>
@@ -102,8 +102,8 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Gleismodul/abschnitte"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Modelrailway.ecore#//Crossing">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Crossing/anschluss"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference Modelrailway.ecore#//Crossing/anschluss"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Modelrailway.ecore#//Crossing/abschnitte"/>
     </genClasses>

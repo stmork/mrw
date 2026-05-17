@@ -197,6 +197,29 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Crossing} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CrossingItemProvider crossingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.morknet.mrw.metamodel.Crossing}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCrossingAdapter() {
+		if (crossingItemProvider == null) {
+			crossingItemProvider = new CrossingItemProvider(this);
+		}
+
+		return crossingItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Licht} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -585,29 +608,6 @@ public class ModelrailwayItemProviderAdapterFactory extends ModelrailwayAdapterF
 		}
 
 		return lampeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.morknet.mrw.metamodel.Crossing} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CrossingItemProvider crossingItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.morknet.mrw.metamodel.Crossing}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCrossingAdapter() {
-		if (crossingItemProvider == null) {
-			crossingItemProvider = new CrossingItemProvider(this);
-		}
-
-		return crossingItemProvider;
 	}
 
 	/**
