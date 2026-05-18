@@ -10,6 +10,7 @@ import de.morknet.mrw.metamodel.Crossing;
 import de.morknet.mrw.metamodel.Gleisabschnitt;
 import de.morknet.mrw.metamodel.ModelrailwayPackage;
 
+import de.morknet.mrw.metamodel.Unit;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.morknet.mrw.metamodel.impl.CrossingImpl#getUnit_no <em>Unit no</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.CrossingImpl#getAnschluss <em>Anschluss</em>}</li>
  *   <li>{@link de.morknet.mrw.metamodel.impl.CrossingImpl#getAbschnitte <em>Abschnitte</em>}</li>
  * </ul>
@@ -40,13 +42,33 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class CrossingImpl extends UnitImpl implements Crossing {
+public class CrossingImpl extends ElementImpl implements Crossing {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final String copyright = "Copyright (C) 2007-2026 committers of this modelrailway project. All rights reserved.";
+
+	/**
+	 * The default value of the '{@link #getUnit_no() <em>Unit no</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUnit_no()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UNIT_NO_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getUnit_no() <em>Unit no</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUnit_no()
+	 * @generated
+	 * @ordered
+	 */
+	protected int unit_no = UNIT_NO_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAbschnitte() <em>Abschnitte</em>}' reference list.
@@ -75,6 +97,27 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	protected EClass eStaticClass() {
 		return ModelrailwayPackage.Literals.CROSSING;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getUnit_no() {
+		return unit_no;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUnit_no(int newUnit_no) {
+		int oldUnit_no = unit_no;
+		unit_no = newUnit_no;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelrailwayPackage.CROSSING__UNIT_NO, oldUnit_no, unit_no));
 	}
 
 	/**
@@ -187,6 +230,8 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelrailwayPackage.CROSSING__UNIT_NO:
+				return getUnit_no();
 			case ModelrailwayPackage.CROSSING__ANSCHLUSS:
 				return getAnschluss();
 			case ModelrailwayPackage.CROSSING__ABSCHNITTE:
@@ -204,6 +249,9 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelrailwayPackage.CROSSING__UNIT_NO:
+				setUnit_no((Integer)newValue);
+				return;
 			case ModelrailwayPackage.CROSSING__ANSCHLUSS:
 				setAnschluss((Anschluss)newValue);
 				return;
@@ -223,6 +271,9 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelrailwayPackage.CROSSING__UNIT_NO:
+				setUnit_no(UNIT_NO_EDEFAULT);
+				return;
 			case ModelrailwayPackage.CROSSING__ANSCHLUSS:
 				setAnschluss((Anschluss)null);
 				return;
@@ -241,12 +292,62 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelrailwayPackage.CROSSING__UNIT_NO:
+				return unit_no != UNIT_NO_EDEFAULT;
 			case ModelrailwayPackage.CROSSING__ANSCHLUSS:
 				return getAnschluss() != null;
 			case ModelrailwayPackage.CROSSING__ABSCHNITTE:
 				return abschnitte != null && !abschnitte.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Unit.class) {
+			switch (derivedFeatureID) {
+				case ModelrailwayPackage.CROSSING__UNIT_NO: return ModelrailwayPackage.UNIT__UNIT_NO;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Unit.class) {
+			switch (baseFeatureID) {
+				case ModelrailwayPackage.UNIT__UNIT_NO: return ModelrailwayPackage.CROSSING__UNIT_NO;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (unit_no: ");
+		result.append(unit_no);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CrossingImpl

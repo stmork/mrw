@@ -22,6 +22,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.morknet.mrw.metamodel.Crossing} object.
@@ -30,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class CrossingItemProvider
-	extends UnitItemProvider
+	extends ElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -65,9 +67,32 @@ public class CrossingItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addUnit_noPropertyDescriptor(object);
 			addAbschnittePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Unit no feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUnit_noPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Unit_unit_no_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Unit_unit_no_feature", "_UI_Unit_type"),
+				 ModelrailwayPackage.Literals.UNIT__UNIT_NO,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -111,8 +136,10 @@ public class CrossingItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Crossing crossing = (Crossing)object;
-		return getString("_UI_Crossing_type") + " " + crossing.getUnit_no();
+		String label = ((Crossing)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Crossing_type") :
+			getString("_UI_Crossing_type") + " " + label;
 	}
 
 	/**
@@ -125,6 +152,12 @@ public class CrossingItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Crossing.class)) {
+			case ModelrailwayPackage.CROSSING__UNIT_NO:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

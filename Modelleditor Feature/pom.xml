@@ -13,7 +13,7 @@
 
 	<name>Modellbasierte Eisenbahnsteuerung Feature</name>
 	<artifactId>de.morknet.mrw.metamodel.feature</artifactId>
-	<version>2.1.1</version>
+	<version>2.1.2</version>
 
 	<packaging>eclipse-feature</packaging>
 </project>
