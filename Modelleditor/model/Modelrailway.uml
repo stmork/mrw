@@ -304,6 +304,7 @@
     <packagedElement xmi:type="uml:Association" xmi:id="_pv-O8ODbEd-M_tvrGvB2bA" memberEnd="_pv-O8eDbEd-M_tvrGvB2bA _pv-2AuDbEd-M_tvrGvB2bA"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_YIVFoFHqEfGBidU7FkeIAA" name="Crossing">
       <generalization xmi:id="_eQKmkFHqEfGBidU7FkeIAA" general="_s633FEMOEd-Zo7nGYHKgLw"/>
+      <generalization xmi:id="_-JvjMFLaEfG_DdWVcI8O3g" general="_s63QE0MOEd-Zo7nGYHKgLw"/>
       <ownedAttribute xmi:id="_KLfscVHsEfGBidU7FkeIAA" name="anschluss" type="_s63QAUMOEd-Zo7nGYHKgLw" isOrdered="true" association="_KLfscFHsEfGBidU7FkeIAA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KLgTgFHsEfGBidU7FkeIAA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KLfsclHsEfGBidU7FkeIAA" value="1"/>

@@ -217,6 +217,7 @@ public class ModelrailwaySwitch<T> {
 			case ModelrailwayPackage.CROSSING: {
 				Crossing crossing = (Crossing)theEObject;
 				T result = caseCrossing(crossing);
+				if (result == null) result = caseElement(crossing);
 				if (result == null) result = caseUnit(crossing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

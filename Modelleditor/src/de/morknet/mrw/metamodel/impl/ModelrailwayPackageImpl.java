@@ -1476,6 +1476,7 @@ public class ModelrailwayPackageImpl extends EPackageImpl implements Modelrailwa
 		gruppeEClass.getESuperTypes().add(this.getElement());
 		modellEClass.getESuperTypes().add(this.getElement());
 		gleismodulEClass.getESuperTypes().add(this.getModul());
+		crossingEClass.getESuperTypes().add(this.getElement());
 		crossingEClass.getESuperTypes().add(this.getUnit());
 		lichtEClass.getESuperTypes().add(this.getBeleuchtungsmittel());
 		beleuchtungsmittelEClass.getESuperTypes().add(this.getElement());

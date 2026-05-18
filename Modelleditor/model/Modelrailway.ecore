@@ -71,7 +71,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitte" upperBound="4"
         eType="#//Gleisabschnitt" eOpposite="#//Gleisabschnitt/modul"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Crossing" eSuperTypes="#//Unit">
+  <eClassifiers xsi:type="ecore:EClass" name="Crossing" eSuperTypes="#//Element #//Unit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="anschluss" lowerBound="1"
         eType="#//Anschluss" eOpposite="#//Anschluss/crossing"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="abschnitte" lowerBound="1"

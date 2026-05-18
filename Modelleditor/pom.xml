@@ -14,7 +14,7 @@
 
 	<name>Modellbasierte Eisenbahnsteuerung UI</name>
 	<artifactId>de.morknet.mrw.metamodel</artifactId>
-	<version>2.1.1</version>
+	<version>2.1.2</version>
 
 	<packaging>eclipse-plugin</packaging>
 

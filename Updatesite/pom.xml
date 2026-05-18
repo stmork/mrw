@@ -13,7 +13,7 @@
 
 	<name>Modellbasierte Eisenbahnsteuerung Updatesite</name>
 	<artifactId>de.morknet.mrw.updatesite</artifactId>
-	<version>2.1.1</version>
+	<version>2.1.0</version>
 
 	<packaging>eclipse-repository</packaging>
 </project>

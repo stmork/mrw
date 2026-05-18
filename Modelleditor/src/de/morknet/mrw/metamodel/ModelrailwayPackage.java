@@ -875,13 +875,22 @@ public interface ModelrailwayPackage extends EPackage {
 	int CROSSING = 12;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSSING__NAME = ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Unit no</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSING__UNIT_NO = UNIT__UNIT_NO;
+	int CROSSING__UNIT_NO = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Anschluss</b></em>' container reference.
@@ -890,7 +899,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSING__ANSCHLUSS = UNIT_FEATURE_COUNT + 0;
+	int CROSSING__ANSCHLUSS = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Abschnitte</b></em>' reference list.
@@ -899,7 +908,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSING__ABSCHNITTE = UNIT_FEATURE_COUNT + 1;
+	int CROSSING__ABSCHNITTE = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Crossing</em>' class.
@@ -908,7 +917,7 @@ public interface ModelrailwayPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSING_FEATURE_COUNT = UNIT_FEATURE_COUNT + 2;
+	int CROSSING_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

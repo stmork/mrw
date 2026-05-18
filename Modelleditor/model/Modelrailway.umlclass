@@ -1054,7 +1054,7 @@
     </children>
     <styles xmi:type="notation:CanonicalStyle" xmi:id="_YIsSAVHqEfGBidU7FkeIAA"/>
     <element xmi:type="uml:Class" href="Modelrailway.uml#_YIVFoFHqEfGBidU7FkeIAA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YIsSAlHqEfGBidU7FkeIAA" x="1530" y="365"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YIsSAlHqEfGBidU7FkeIAA" x="1530" y="365" width="136" height="71"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_aU5TEUMREd-lyqIZidRpcg"/>
   <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_aU5TEkMREd-lyqIZidRpcg"/>
@@ -1672,7 +1672,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_cEwHIUMREd-lyqIZidRpcg" fontName="Sans"/>
     <element xmi:type="uml:Generalization" href="Modelrailway.uml#_s63QEUMOEd-Zo7nGYHKgLw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cEwHIkMREd-lyqIZidRpcg" points="[33, -70, -8, 475]$[33, -435, -8, 110]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cEwHIkMREd-lyqIZidRpcg" points="[58, -70, 17, 475]$[58, -435, 17, 110]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUl58EMREd-lyqIZidRpcg" id="(0.4956521739130435,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cUl58UMREd-lyqIZidRpcg" id="(0.6894409937888198,0.0)"/>
   </edges>
@@ -2131,5 +2131,15 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aYxMU1HsEfGBidU7FkeIAA" points="[0, -3, -237, -29]$[0, -128, -237, -154]$[237, -128, 0, -154]$[237, 22, 0, -4]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aY02sFHsEfGBidU7FkeIAA" id="(0.7984496124031008,0.04285714285714286)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aY02sVHsEfGBidU7FkeIAA" id="(0.65,0.05714285714285714)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_-J0bsFLaEfG_DdWVcI8O3g" type="4001" source="_YIsSAFHqEfGBidU7FkeIAA" target="_aVDEE0MREd-lyqIZidRpcg" routing="Rectilinear">
+    <children xmi:type="notation:DecorationNode" xmi:id="_-J0bs1LaEfG_DdWVcI8O3g" type="6018">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_-J0btFLaEfG_DdWVcI8O3g" y="40"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_-J0bsVLaEfG_DdWVcI8O3g" fontName="Sans"/>
+    <element xmi:type="uml:Generalization" href="Modelrailway.uml#_-JvjMFLaEfG_DdWVcI8O3g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-J0bslLaEfG_DdWVcI8O3g" points="[-13, -36, 0, 235]$[-13, -261, 0, 10]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-J238FLaEfG_DdWVcI8O3g" id="(1.0,0.5142857142857142)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-J238VLaEfG_DdWVcI8O3g" id="(0.5333333333333333,0.9090909090909091)"/>
   </edges>
 </notation:Diagram>
