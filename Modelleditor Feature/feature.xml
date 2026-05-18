@@ -2,7 +2,7 @@
 <feature
       id="de.morknet.mrw.metamodel.feature"
       label="Modelleisenbahn-Editor"
-      version="2.1.0"
+      version="2.1.1"
       provider-name="MORKNet"
       plugin="de.morknet.mrw.metamodel">
 

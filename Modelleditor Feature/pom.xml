@@ -2,17 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<name>Modellbasierte Eisenbahnsteuerung Feature</name>
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.morknet.mrw</groupId>
 		<artifactId>parent</artifactId>
-		<version>2.1.0</version>
+		<version>1.0.0</version>
 		<relativePath>../de.morknet.mrw.releng/pom.xml</relativePath>
 	</parent>
 
+	<name>Modellbasierte Eisenbahnsteuerung Feature</name>
 	<artifactId>de.morknet.mrw.metamodel.feature</artifactId>
+	<version>2.1.1</version>
 
 	<packaging>eclipse-feature</packaging>
 </project>
