@@ -6,3 +6,5 @@
 *.out
 *.hex
 *.dep
+*/bin
+*/target

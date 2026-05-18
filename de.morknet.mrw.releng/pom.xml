@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<name>Modellbasierte Eisenbahnsteuerung Release Engineering</name>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.morknet.mrw</groupId>
+	<artifactId>parent</artifactId>
+	<version>2.1.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho.version>2.7.5</tycho.version>
+		<tycho-extras-version>${tycho-version}</tycho-extras-version>
+		<java.version>8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<eclipse.distro>2021-12</eclipse.distro>
+	</properties>
+
+	<modules>
+		<module>../Modelleditor</module>
+		<module>../Modelleditor Feature</module>
+		<module>../Updatesite</module>
+	</modules>
+
+	<developers>
+		<developer>
+			<name>Steffen A. Mork</name>
+			<email>info@eisenbahnsteuerung.org</email>
+			<url>http://eisenbahnsteuerung.org</url>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License</name>
+			<url>https://www.eclipse.org/legal/epl-v10.html</url>
+		</license>
+	</licenses>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+
+				<configuration>
+					<executionEnvironment>JavaSE-11</executionEnvironment>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho.version}</version>
+
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>eclipse-release</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/releases/${eclipse.distro}/</url>
+		</repository>
+	</repositories>
+</project>

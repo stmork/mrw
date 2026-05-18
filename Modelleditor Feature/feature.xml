@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.morknet.mrw.metamodel"
+      id="de.morknet.mrw.metamodel.feature"
       label="Modelleisenbahn-Editor"
       version="2.1.0"
       provider-name="MORKNet"
@@ -11,8 +11,8 @@
    </description>
 
    <copyright>
-      Copyright (C) 2010-2022 committers of this modelrailway project.
-All rights reserved.
+      Copyright (C) 2010-2026 committers of this modelrailway project.
+  All rights reserved.
    </copyright>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
@@ -123,8 +123,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <plugin
          id="de.morknet.mrw.metamodel"
-         download-size="0"
-         install-size="0"
          version="0.0.0"/>
 
 </feature>
