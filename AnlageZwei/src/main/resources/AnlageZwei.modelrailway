@@ -106,7 +106,7 @@
   <controller id="13">
     <anschluesse nummer="1340" lichtsignale="//@gruppe.2/@abschnitt.1/@bauelement.1 //@gruppe.2/@abschnitt.1/@bauelement.2 //@gruppe.1/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.2"/>
     <anschluesse nummer="1330" lichtsignale="//@gruppe.3/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.2/@bauelement.2 //@gruppe.3/@abschnitt.3/@bauelement.3">
-      <crossing unit_no="3" abschnitte="//@gruppe.3/@abschnitt.2 //@gruppe.3/@abschnitt.3"/>
+      <crossing name="UW23" unit_no="1331" abschnitte="//@gruppe.3/@abschnitt.2 //@gruppe.3/@abschnitt.3"/>
     </anschluesse>
     <module xsi:type="Modelrailway:Impulsmodul" nummer="1301" magnetartikel="//@gruppe.2/@abschnitt.5/@bauelement.1 //@gruppe.2/@abschnitt.3/@bauelement.1 //@gruppe.2/@abschnitt.2/@bauelement.2 //@gruppe.2/@abschnitt.2/@bauelement.1"/>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1302">
