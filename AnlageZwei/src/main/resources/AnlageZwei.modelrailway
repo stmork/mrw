@@ -106,7 +106,7 @@
   <controller id="13">
     <anschluesse nummer="1340" lichtsignale="//@gruppe.2/@abschnitt.1/@bauelement.1 //@gruppe.2/@abschnitt.1/@bauelement.2 //@gruppe.1/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.1 //@gruppe.3/@abschnitt.3/@bauelement.2"/>
     <anschluesse nummer="1330" lichtsignale="//@gruppe.3/@abschnitt.2/@bauelement.1 //@gruppe.3/@abschnitt.2/@bauelement.2 //@gruppe.3/@abschnitt.3/@bauelement.3">
-      <crossing unit_no="3" abschnitte="//@gruppe.3/@abschnitt.2 //@gruppe.3/@abschnitt.3"/>
+      <crossing name="UW23" unit_no="1331" abschnitte="//@gruppe.3/@abschnitt.4 //@gruppe.3/@abschnitt.5"/>
     </anschluesse>
     <module xsi:type="Modelrailway:Impulsmodul" nummer="1301" magnetartikel="//@gruppe.2/@abschnitt.5/@bauelement.1 //@gruppe.2/@abschnitt.3/@bauelement.1 //@gruppe.2/@abschnitt.2/@bauelement.2 //@gruppe.2/@abschnitt.2/@bauelement.1"/>
     <module xsi:type="Modelrailway:Beleuchtungsmodul" nummer="1302">
@@ -528,21 +528,21 @@
       <bauelement xsi:type="Modelrailway:Gleis" name="W3a" a="//@gruppe.0/@abschnitt.27/@bauelement.0" b="//@gruppe.3/@abschnitt.3/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="v302" unit_no="306" inZaehlrichtung="true" anschluss="//@controller.0/@anschluesse.0"/>
     </abschnitt>
-    <abschnitt name="W2b" unit_no="3202" modul="//@controller.11/@module.0" crossing="//@controller.12/@anschluesse.1/@crossing.0">
+    <abschnitt name="W2b" unit_no="3202" modul="//@controller.11/@module.0">
       <bauelement xsi:type="Modelrailway:Gleis" name="W2b" a="//@gruppe.3/@abschnitt.0/@bauelement.0" b="//@gruppe.3/@abschnitt.4/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Blocksignal" name="202" unit_no="3365" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.1"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="v204" unit_no="3366" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.1"/>
     </abschnitt>
-    <abschnitt name="W3b" unit_no="3221" modul="//@controller.11/@module.1" crossing="//@controller.12/@anschluesse.1/@crossing.0">
+    <abschnitt name="W3b" unit_no="3221" modul="//@controller.11/@module.1">
       <bauelement xsi:type="Modelrailway:Gleis" name="W3b" a="//@gruppe.3/@abschnitt.1/@bauelement.0" b="//@gruppe.3/@abschnitt.5/@bauelement.0"/>
       <bauelement xsi:type="Modelrailway:Blocksignal" name="302" unit_no="3379" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.0"/>
       <bauelement xsi:type="Modelrailway:Vorsignal" name="v304" unit_no="3380" inZaehlrichtung="true" anschluss="//@controller.12/@anschluesse.0"/>
       <bauelement xsi:type="Modelrailway:Einfahrsignal" name="H" unit_no="3367" anschluss="//@controller.12/@anschluesse.1"/>
     </abschnitt>
-    <abschnitt name="W2c" unit_no="3201" modul="//@controller.11/@module.0">
+    <abschnitt name="W2c" unit_no="3201" modul="//@controller.11/@module.0" crossing="//@controller.12/@anschluesse.1/@crossing.0">
       <bauelement xsi:type="Modelrailway:Gleis" name="W2c" a="//@gruppe.3/@abschnitt.2/@bauelement.0" b="//@gruppe.1/@abschnitt.2/@bauelement.0"/>
     </abschnitt>
-    <abschnitt name="W3c" unit_no="3203" modul="//@controller.11/@module.0">
+    <abschnitt name="W3c" unit_no="3203" modul="//@controller.11/@module.0" crossing="//@controller.12/@anschluesse.1/@crossing.0">
       <bauelement xsi:type="Modelrailway:Gleis" name="W3c" a="//@gruppe.3/@abschnitt.3/@bauelement.0" b="//@gruppe.1/@abschnitt.9/@bauelement.0"/>
     </abschnitt>
   </gruppe>
